@@ -7,7 +7,6 @@ namespace WebApp.Models
     {
         public LoaiNguoiDung()
         {
-            NhanVien = new HashSet<NhanVien>();
             TaiKhoan = new HashSet<TaiKhoan>();
         }
 
@@ -15,7 +14,6 @@ namespace WebApp.Models
         public string MaLoaiNguoiDung { get; set; }
         public string TenLoaiNguoiDung { get; set; }
 
-        public ICollection<NhanVien> NhanVien { get; set; }
         public ICollection<TaiKhoan> TaiKhoan { get; set; }
     }
 }

@@ -202,9 +202,9 @@ CREATE TABLE GioHang
 )
 
 --FOREIGN KEY--
-ALTER TABLE NhanVien
-	ADD
-		CONSTRAINT FK_NhanVien_IdLoaiNguoiDung FOREIGN KEY (IdLoaiNguoiDung) REFERENCES LoaiNguoiDung(Id)
+--ALTER TABLE NhanVien
+--	ADD
+--		CONSTRAINT FK_NhanVien_IdLoaiNguoiDung FOREIGN KEY (IdLoaiNguoiDung) REFERENCES LoaiNguoiDung(Id)
 
 ALTER TABLE TaiKhoan
 	ADD

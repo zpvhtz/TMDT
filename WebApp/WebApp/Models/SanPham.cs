@@ -25,7 +25,6 @@ namespace WebApp.Models
         public string Hinh { get; set; }
         public string ChiTiet { get; set; }
         public double? GiamGia { get; set; }
-        public double? DanhGia { get; set; }
         public string TinhTrang { get; set; }
 
         public TaiKhoan IdTaiKhoanNavigation { get; set; }

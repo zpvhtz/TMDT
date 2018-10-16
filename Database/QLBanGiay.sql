@@ -9,7 +9,7 @@ CREATE TABLE LoaiNguoiDung
 (
 	Id UNIQUEIDENTIFIER PRIMARY KEY,
 	MaLoaiNguoiDung VARCHAR(10) UNIQUE NOT NULL,
-	TenLoaiNguoiDung NVARCHAR(20)
+	TenLoaiNguoiDung NVARCHAR(20) --Merchant, Customer, Nhân viên--
 )
 
 --CREATE TABLE NhanVien
@@ -41,7 +41,16 @@ CREATE TABLE TaiKhoan
 	CMND VARCHAR(20),
 	IdLoaiNguoiDung UNIQUEIDENTIFIER NOT NULL, --FK--
 	NgayTao DATETIME,
+	DanhGia FLOAT,
 	TinhTrang NVARCHAR(20)
+)
+
+CREATE TABLE DanhGia
+(
+	Id UNIQUEIDENTIFIER PRIMARY KEY,
+	IdTaiKhoanDanhGia UNIQUEIDENTIFIER NOT NULL, --FK (Id người đánh giá)--
+	IdTaiKhoanDuocDanhGia UNIQUEIDENTIFIER NOT NULL, --FK (Id người được đánh giá)--
+	Diem FLOAT --Điểm đánh giá--
 )
 
 CREATE TABLE SanPham
@@ -58,7 +67,6 @@ CREATE TABLE SanPham
 	Hinh NVARCHAR(200),
 	ChiTiet NVARCHAR(500),
 	GiamGia FLOAT, -- vidu : 10 = 10% --
-	DanhGia FLOAT,
 	TinhTrang NVARCHAR(20)
 )
 
@@ -209,6 +217,11 @@ CREATE TABLE GioHang
 ALTER TABLE TaiKhoan
 	ADD
 		CONSTRAINT FK_TaiKhoan_IdLoaiNguoiDung FOREIGN KEY (IdLoaiNguoiDung) REFERENCES LoaiNguoiDung(Id)
+
+ALTER TABLE DanhGia
+	ADD
+		CONSTRAINT FK_DanhGia_IdTaiKhoanDanhGia FOREIGN KEY (IdTaiKhoanDanhGia) REFERENCES TaiKhoan(Id),
+		CONSTRAINT FK_DanhGia_IdTaiKhoanDuocDanhGia FOREIGN KEY (IdTaiKhoanDuocDanhGia) REFERENCES TaiKhoan(Id)
 
 ALTER TABLE SanPham
 	ADD

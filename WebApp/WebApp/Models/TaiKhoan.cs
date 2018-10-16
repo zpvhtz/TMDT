@@ -7,6 +7,8 @@ namespace WebApp.Models
     {
         public TaiKhoan()
         {
+            DanhGiaIdTaiKhoanDanhGiaNavigation = new HashSet<DanhGia>();
+            DanhGiaIdTaiKhoanDuocDanhGiaNavigation = new HashSet<DanhGia>();
             DiaChi = new HashSet<DiaChi>();
             GioHang = new HashSet<GioHang>();
             PhieuDat = new HashSet<PhieuDat>();
@@ -25,9 +27,12 @@ namespace WebApp.Models
         public string Cmnd { get; set; }
         public Guid IdLoaiNguoiDung { get; set; }
         public DateTime? NgayTao { get; set; }
+        public double? DanhGia { get; set; }
         public string TinhTrang { get; set; }
 
         public LoaiNguoiDung IdLoaiNguoiDungNavigation { get; set; }
+        public ICollection<DanhGia> DanhGiaIdTaiKhoanDanhGiaNavigation { get; set; }
+        public ICollection<DanhGia> DanhGiaIdTaiKhoanDuocDanhGiaNavigation { get; set; }
         public ICollection<DiaChi> DiaChi { get; set; }
         public ICollection<GioHang> GioHang { get; set; }
         public ICollection<PhieuDat> PhieuDat { get; set; }

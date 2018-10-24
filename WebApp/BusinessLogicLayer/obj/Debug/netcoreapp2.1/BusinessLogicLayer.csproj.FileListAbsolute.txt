@@ -1,0 +1,10 @@
+F:\GitHub\TMDT\WebApp\BusinessLogicLayer\bin\Debug\netcoreapp2.1\BusinessLogicLayer.deps.json
+F:\GitHub\TMDT\WebApp\BusinessLogicLayer\bin\Debug\netcoreapp2.1\BusinessLogicLayer.dll
+F:\GitHub\TMDT\WebApp\BusinessLogicLayer\bin\Debug\netcoreapp2.1\BusinessLogicLayer.pdb
+F:\GitHub\TMDT\WebApp\BusinessLogicLayer\obj\Debug\netcoreapp2.1\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+F:\GitHub\TMDT\WebApp\BusinessLogicLayer\obj\Debug\netcoreapp2.1\BusinessLogicLayer.AssemblyInfoInputs.cache
+F:\GitHub\TMDT\WebApp\BusinessLogicLayer\obj\Debug\netcoreapp2.1\BusinessLogicLayer.AssemblyInfo.cs
+F:\GitHub\TMDT\WebApp\BusinessLogicLayer\obj\Debug\netcoreapp2.1\BusinessLogicLayer.dll
+F:\GitHub\TMDT\WebApp\BusinessLogicLayer\obj\Debug\netcoreapp2.1\BusinessLogicLayer.pdb
+F:\GitHub\TMDT\WebApp\BusinessLogicLayer\bin\Debug\netcoreapp2.1\BusinessLogicLayer.runtimeconfig.json
+F:\GitHub\TMDT\WebApp\BusinessLogicLayer\bin\Debug\netcoreapp2.1\BusinessLogicLayer.runtimeconfig.dev.json

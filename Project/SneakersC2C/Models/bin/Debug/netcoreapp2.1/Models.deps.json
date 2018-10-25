@@ -1,12 +1,17 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
+<<<<<<< HEAD
     "signature": "31afe37714092512fa4a64dfd61d30e8d0afcbd3"
+=======
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+>>>>>>> 34088dc0756510ad0b33100af01cc7ea9ed78a27
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.1": {
       "Models/1.0.0": {
+<<<<<<< HEAD
         "dependencies": {
           "EntityFramework": "6.2.0",
           "PagedList.Mvc": "4.5.0"
@@ -45,6 +50,11 @@
             "fileVersion": "4.5.0.0"
           }
         }
+=======
+        "runtime": {
+          "Models.dll": {}
+        }
+>>>>>>> 34088dc0756510ad0b33100af01cc7ea9ed78a27
       }
     }
   },
@@ -53,6 +63,7 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+<<<<<<< HEAD
     },
     "EntityFramework/6.2.0": {
       "type": "package",
@@ -74,6 +85,8 @@
       "sha512": "sha512-D0M4qW2g4a9cwG8ozIKUnJheCrm5GpFTceqUl63AXWaAVnTgk+TysZYUOGMsBRuzid8aF+/E8b0bXM6+90jiEw==",
       "path": "pagedlist.mvc/4.5.0",
       "hashPath": "pagedlist.mvc.4.5.0.nupkg.sha512"
+=======
+>>>>>>> 34088dc0756510ad0b33100af01cc7ea9ed78a27
     }
   }
 }

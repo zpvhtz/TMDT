@@ -1,0 +1,14 @@
+D:\Projects\TMDT\Project\SneakerC2C\DLL\bin\Debug\netcoreapp2.1\DLL.deps.json
+D:\Projects\TMDT\Project\SneakerC2C\DLL\bin\Debug\netcoreapp2.1\DLL.dll
+D:\Projects\TMDT\Project\SneakerC2C\DLL\obj\Debug\netcoreapp2.1\DLL.csproj.CoreCompileInputs.cache
+D:\Projects\TMDT\Project\SneakerC2C\DLL\obj\Debug\netcoreapp2.1\DLL.AssemblyInfoInputs.cache
+D:\Projects\TMDT\Project\SneakerC2C\DLL\obj\Debug\netcoreapp2.1\DLL.AssemblyInfo.cs
+D:\Projects\TMDT\Project\SneakerC2C\DLL\bin\Debug\netcoreapp2.1\DLL.runtimeconfig.json
+D:\Projects\TMDT\Project\SneakerC2C\DLL\bin\Debug\netcoreapp2.1\DLL.runtimeconfig.dev.json
+D:\Projects\TMDT\Project\SneakerC2C\DLL\bin\Debug\netcoreapp2.1\DLL.pdb
+D:\Projects\TMDT\Project\SneakerC2C\DLL\obj\Debug\netcoreapp2.1\DLL.dll
+D:\Projects\TMDT\Project\SneakerC2C\DLL\obj\Debug\netcoreapp2.1\DLL.pdb
+D:\Projects\TMDT\Project\SneakerC2C\DLL\bin\Debug\netcoreapp2.1\Models.dll
+D:\Projects\TMDT\Project\SneakerC2C\DLL\bin\Debug\netcoreapp2.1\Models.pdb
+D:\Projects\TMDT\Project\SneakerC2C\DLL\obj\Debug\netcoreapp2.1\DLL.csprojAssemblyReference.cache
+D:\Projects\TMDT\Project\SneakerC2C\DLL\obj\Debug\netcoreapp2.1\DLL.csproj.CopyComplete

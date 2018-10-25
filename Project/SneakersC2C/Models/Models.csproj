@@ -6,6 +6,12 @@
 
   <ItemGroup>
     <Folder Include="EntityFramework\" />
+    <Folder Include="DataLogicLayer\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
   </ItemGroup>
 
 </Project>

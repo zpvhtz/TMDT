@@ -1,8 +1,4 @@
-﻿USE MASTER
-GO 
-DROP DATABASE QLBanGiay
-GO
-CREATE DATABASE QLBanGiay
+﻿CREATE DATABASE QLBanGiay
 GO
 --
 USE QLBanGiay
@@ -15,24 +11,6 @@ CREATE TABLE LoaiNguoiDung
 	MaLoaiNguoiDung VARCHAR(10) UNIQUE NOT NULL,
 	TenLoaiNguoiDung NVARCHAR(20) --Merchant, Customer, Nhân viên--
 )
-
---CREATE TABLE NhanVien
---(
---	Id UNIQUEIDENTIFIER PRIMARY KEY,
---	MaNhanVien VARCHAR(10) UNIQUE NOT NULL,
---	TenNhanVien NVARCHAR(100),
---	GioiTinh NVARCHAR(10),
---	NgaySinh DATE,
---	DiaChi NVARCHAR(200),
---	DienThoai VARCHAR(20),
---	CMND VARCHAR(20),
---	IdLoaiNguoiDung UNIQUEIDENTIFIER NOT NULL, --FK--
---	LuongCoBan FLOAT,
---	HeSoLuong FLOAT,
---	PhuCap FLOAT,
---	TongLuong FLOAT,
---	TinhTrang NVARCHAR(20)
---)
 
 CREATE TABLE TaiKhoan
 (
@@ -178,7 +156,7 @@ CREATE TABLE ViTriQuangcao
 	MaViTri VARCHAR(10) UNIQUE NOT NULL,
 	TenViTri NVARCHAR(100),
 	IdTrang UNIQUEIDENTIFIER NOT NULL, -- FK --
-	DonGia Float,
+	DonGia FLOAT,
 	ChuThich NVARCHAR(100)
 )
 
@@ -196,13 +174,8 @@ CREATE TABLE GiaShip
 	Id UNIQUEIDENTIFIER PRIMARY KEY,
 	Loai NVARCHAR(20), -- NOI THANH HAY NGOAI THANH
 	Gia FLOAT,
-	NgayCapNhat DateTime
+	NgayCapNhat DATETIME
 )
-
---FOREIGN KEY--
---ALTER TABLE NhanVien
---	ADD
---		CONSTRAINT FK_NhanVien_IdLoaiNguoiDung FOREIGN KEY (IdLoaiNguoiDung) REFERENCES LoaiNguoiDung(Id)
 
 ALTER TABLE TaiKhoan
 	ADD
@@ -244,10 +217,6 @@ ALTER TABLE DiaChi
 	ADD
 		CONSTRAINT FK_DiaChi_IdTaiKhoan FOREIGN KEY (IdTaiKhoan) REFERENCES TaiKhoan(Id),
 		CONSTRAINT FK_DiaChi_IdTinhThanh FOREIGN KEY (IdTinhThanh) REFERENCES TinhThanh(Id)
-
---ALTER TABLE HopDong
---	ADD
---		CONSTRAINT FK_HopDong_IdNhanVien FOREIGN KEY (IdNhanVien) REFERENCES NhanVien(Id)
 
 ALTER TABLE QuangCao
 	ADD

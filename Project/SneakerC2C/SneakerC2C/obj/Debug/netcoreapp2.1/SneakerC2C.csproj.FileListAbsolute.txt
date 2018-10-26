@@ -34,3 +34,5 @@ D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\Models.dl
 D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\DLL.pdb
 D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\Models.pdb
 D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csprojAssemblyReference.cache
+D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\MainLayout.g.cshtml.cs
+D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Home\Test.g.cshtml.cs

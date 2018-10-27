@@ -4617,24 +4617,6 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
-      "DLL/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.1",
-        "dependencies": {
-          "Microsoft.AspNetCore.App": "2.1.5",
-          "Microsoft.AspNetCore.Razor.Design": "2.1.2",
-          "Microsoft.EntityFrameworkCore": "2.1.4",
-          "Microsoft.EntityFrameworkCore.SqlServer": "2.1.4",
-          "Microsoft.EntityFrameworkCore.Tools": "2.1.4",
-          "Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DLL.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DLL.dll": {}
-        }
-      },
       "Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
@@ -4643,7 +4625,8 @@
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.EntityFrameworkCore": "2.1.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.4",
-          "Microsoft.EntityFrameworkCore.Tools": "2.1.4"
+          "Microsoft.EntityFrameworkCore.Tools": "2.1.4",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.5"
         },
         "compile": {
           "bin/placeholder/Models.dll": {}
@@ -12245,11 +12228,6 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
-    "DLL/1.0.0": {
-      "type": "project",
-      "path": "../DLL/DLL.csproj",
-      "msbuildProject": "../DLL/DLL.csproj"
-    },
     "Models/1.0.0": {
       "type": "project",
       "path": "../Models/Models.csproj",
@@ -12258,7 +12236,6 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "DLL >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.5",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.EntityFrameworkCore >= 2.1.4",
@@ -12299,9 +12276,6 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\Projects\\TMDT\\Project\\SneakerC2C\\DLL\\DLL.csproj": {
-              "projectPath": "D:\\Projects\\TMDT\\Project\\SneakerC2C\\DLL\\DLL.csproj"
-            },
             "D:\\Projects\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj": {
               "projectPath": "D:\\Projects\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj"
             }

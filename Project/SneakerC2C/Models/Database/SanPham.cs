@@ -19,6 +19,7 @@ namespace Models.Database
         public int? Size { get; set; }
         public string Mau { get; set; }
         public string Hang { get; set; }
+        public string PhanLoai { get; set; }
         public double? Gia { get; set; }
         public int? SoLuong { get; set; }
         public string Hinh { get; set; }

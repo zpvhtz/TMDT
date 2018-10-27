@@ -42,8 +42,9 @@ CREATE TABLE SanPham
 	TenSanPham NVARCHAR(100),
 	IdTaiKhoan UNIQUEIDENTIFIER NOT NULL, --FK--
 	Size INT,
-	Mau NVARCHAR(20),
-	Hang NVARCHAR(50),
+	Mau NVARCHAR(20), --Màu--
+	Hang NVARCHAR(50), --Hãng--
+	PhanLoai NVARCHAR(10), --Nam/Nữ--
 	Gia FLOAT,
 	SoLuong INT,
 	Hinh NVARCHAR(200),

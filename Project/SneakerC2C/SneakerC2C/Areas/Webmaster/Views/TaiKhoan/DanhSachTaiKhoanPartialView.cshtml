@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Models.Database.TaiKhoan>
+
+@foreach (var item in Model)
+{
+    <tr class="odd gradeX">
+        <td class="item-tendangnhap">@item.TenDangNhap</td>
+        <td class="item-ten">@item.Ten</td>
+        <td class="item-email">@item.Email</td>
+        <td class="item-dienthoai">@item.DienThoai</td>
+        <td class="item-cmnd">@item.Cmnd</td>
+        <td class="item-loainguoidung">@item.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung</td>
+        <td class="item-ngaytao">@item.NgayTao</td>
+        <td class="item-danhgia">@item.DanhGia</td>
+        <td>
+            @if (item.TinhTrang == "Không khoá")
+            {
+                <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#suaModal" id="btnSuaTaiKhoan">Sửa</button>
+                <a asp-controller="TaiKhoan" asp-action="LockTaiKhoan" asp-route-tendangnhap="@item.TenDangNhap" class="btn btn-danger">Khoá</a>
+            }
+            else
+            {
+                <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#suaModal" id="btnSuaTaiKhoan" disabled>Sửa</button>
+                <a asp-controller="TaiKhoan" asp-action="UnlockTaiKhoan" asp-route-tendangnhap="@item.TenDangNhap" class="btn btn-danger">Mở khoá</a>
+            }
+        </td>
+    </tr>
+}

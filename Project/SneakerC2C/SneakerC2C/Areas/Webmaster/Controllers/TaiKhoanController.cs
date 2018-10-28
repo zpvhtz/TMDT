@@ -11,15 +11,24 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
     [Area("Webmaster")]
     public class TaiKhoanController : Controller
     {
-        public IActionResult Index(string thongbao)
+        const int pageSize = 10;
+        int pageNumber = 1;
+
+        public IActionResult Index(string thongbao, int? pagenumber)
         {
+            //Thông báo
             if(thongbao != null)
             {
                 ViewBag.ThongBao = thongbao;
             }
-
+            //Trang
+            pageNumber = pagenumber ?? 1;
+            //List
             TaiKhoanBUS taikhoan = new TaiKhoanBUS();
-            List<TaiKhoan> list = taikhoan.GetTaiKhoans();
+            List<TaiKhoan> list = taikhoan.GetTaiKhoans(pageNumber, pageSize);
+            //Trang
+            ViewBag.TongTrang = TongTrang(list);
+            ViewBag.TrangHienTai = pageNumber;
             return View(list);
         }
 
@@ -42,6 +51,25 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             TaiKhoanBUS taikhoan = new TaiKhoanBUS();
             string thongbao = taikhoan.UnlockTaiKhoan(tendangnhap);
             return RedirectToAction("Index", "TaiKhoan", new { thongbao = thongbao });
+        }
+
+        public IActionResult Sort(string sortorder)
+        {
+            TaiKhoanBUS taikhoan = new TaiKhoanBUS();
+            List<TaiKhoan> list = taikhoan.Sort(sortorder, pageSize);
+            return PartialView("DanhSachTaiKhoanPartialView", list);
+        }
+
+        public IActionResult Search(string search)
+        {
+            TaiKhoanBUS taikhoan = new TaiKhoanBUS();
+            List<TaiKhoan> list = taikhoan.Search(search, pageSize);
+            return PartialView("DanhSachTaiKhoanPartialView", list);
+        }
+
+        public int TongTrang(List<TaiKhoan> list)
+        {
+            return ((list.Count / pageSize) + 1);
         }
     }
 }

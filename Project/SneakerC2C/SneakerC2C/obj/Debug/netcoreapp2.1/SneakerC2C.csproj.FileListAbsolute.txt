@@ -38,3 +38,4 @@ D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Vie
 D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminLeftMenuLayout.g.cshtml.cs
 D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminTopMenuLayout.g.cshtml.cs
 D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TaiKhoan\Index.g.cshtml.cs
+D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TaiKhoan\DanhSachTaiKhoanPartialView.g.cshtml.cs

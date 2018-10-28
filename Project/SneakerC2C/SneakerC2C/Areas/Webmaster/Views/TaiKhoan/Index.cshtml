@@ -14,28 +14,30 @@
         </div>
         <div class="col-lg-2">
             <div class="form-group">
-                <select class="form-control" id="sortList">
+                <select class="form-control" id="sortList" onchange="window.location.href = SearchAndSort()">
                     <option selected disabled>Sắp xếp theo</option>
-                    <option value="tendangnhap-az">Tên đăng nhập (A-Z)</option>
-                    <option value="tendangnhap-za">Tên đăng nhập (Z-A)</option>
-                    <option value="ten-az">Tên (A-Z)</option>
-                    <option value="ten-za">Tên (Z-A)</option>
+                    <option value="/Webmaster/TaiKhoan/Sort?sortorder=tendangnhap-az">Tên đăng nhập (A-Z)</option>
+                    <option value="/Webmaster/TaiKhoan/Sort?sortorder=tendangnhap-za">Tên đăng nhập (Z-A)</option>
+                    <option value="/Webmaster/TaiKhoan/Sort?sortorder=ten-az">Tên (A-Z)</option>
+                    <option value="/Webmaster/TaiKhoan/Sort?sortorder=ten-za">Tên (Z-A)</option>
                 </select>
             </div>
         </div>
         <div class="col-lg-6"></div>
         <div class="col-lg-3">
-            <div class="input-group custom-search-form">
-                <input type="text" class="form-control" id="searchList" placeholder="Search...">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </span>
-            </div>
+            <form asp-controller="TaiKhoan" asp-action="Search" method="get">
+                <div class="input-group custom-search-form">
+                    <input type="text" class="form-control" id="searchList" placeholder="Search..." name="search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+
+                </div>
+            </form>
         </div>
     </div>
-    <br />
     <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
         <thead class="thead-dark">
             <tr>
@@ -79,42 +81,106 @@
         </tbody>
     </table>
     <!-- /.table-responsive -->
-    <ul class="pagination">
+    <ul class="pagination" style="margin: 0 auto;">
         @if (ViewBag.TrangHienTai == 1)
         {
-            <li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous"><a href="#" class="pageNumber">Trước</a></li>
+            <li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous"><a href="#">Trước</a></li>
         }
         else
         {
-            <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous"><a href="#" class="pageNumber">Trước</a></li>
+            <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
+                @switch (ViewBag.TrangThai)
+                {
+                    case "index":
+                        <a asp-controller="TaiKhoan" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                        break;
+                    case "sort":
+                        <a asp-controller="TaiKhoan" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                        break;
+                    case "search":
+                        <a asp-controller="TaiKhoan" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                        break;
+                    case "searchandsort":
+                        <a asp-controller="TaiKhoan" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                        break;
+                }
+            </li>
         }
         @for (int i = 1; i <= ViewBag.TongTrang; i++)
         {
             if (i > 5)
             {
                 <li class="paginate_button" aria-controls="dataTables-example" tabindex="0"><a href="#">...</a></li>
-                <li class="paginate_button" aria-controls="dataTables-example" tabindex="0"><a href="#" class="pageNumber">@ViewBag.TongTrang</a></li>
+                <li class="paginate_button" aria-controls="dataTables-example" tabindex="0">
+                    @switch (ViewBag.TrangThai)
+                    {
+                        case "index":
+                            <a asp-controller="TaiKhoan" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                            break;
+                        case "sort":
+                            <a asp-controller="TaiKhoan" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                            break;
+                        case "search":
+                            <a asp-controller="TaiKhoan" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                            break;
+                        case "searchandsort":
+                            <a asp-controller="TaiKhoan" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                            break;
+                    }
+                </li>
                 break;
             }
             else
             {
                 if (i == ViewBag.TrangHienTai)
                 {
-                    <li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#" class="pageNumber">@i</a></li>
+                    <li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#">@i</a></li>
                 }
                 else
                 {
-                    <li class="paginate_button" aria-controls="dataTables-example" tabindex="0"><a href="#" class="pageNumber">@i</a></li>
+                    <li class="paginate_button" aria-controls="dataTables-example" tabindex="0">
+                        @switch (ViewBag.TrangThai)
+                        {
+                            case "index":
+                                <a asp-controller="TaiKhoan" asp-action="Index" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                break;
+                            case "sort":
+                                <a asp-controller="TaiKhoan" asp-action="Sort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                break;
+                            case "search":
+                                <a asp-controller="TaiKhoan" asp-action="Search" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                break;
+                            case "searchandsort":
+                                <a asp-controller="TaiKhoan" asp-action="SearchAndSort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                break;
+                        }
+                    </li>
                 }
             }
         }
         @if (ViewBag.TrangHienTai == ViewBag.TongTrang)
         {
-            <li class="paginate_button next disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="#" class="pageNumber">Tiếp</a></li>
+            <li class="paginate_button next disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="#">Tiếp</a></li>
         }
         else
         {
-            <li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="#" class="pageNumber">Tiếp</a></li>
+            <li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next">
+                @switch (ViewBag.TrangThai)
+                {
+                    case "index":
+                        <a asp-controller="TaiKhoan" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                        break;
+                    case "sort":
+                        <a asp-controller="TaiKhoan" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                        break;
+                    case "search":
+                        <a asp-controller="TaiKhoan" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                        break;
+                    case "searchandsort":
+                        <a asp-controller="TaiKhoan" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                        break;
+                }
+            </li>
         }
     </ul>
 </div>
@@ -168,6 +234,18 @@
 }
 
 <script>
+    $(document).ready(function () {
+        let sort = "@ViewBag.Sort";
+        if (sort != '') {
+            $("#sortList option").each(function () {
+                if ($(this).val().includes(sort)) {
+                    $(this).attr('selected', 'selected');
+                    return;
+                }
+            });
+        }
+    });
+
     $("#btnSuaTaiKhoan").click(function () {
         let tendangnhap = $(this).closest('tr').find('.item-tendangnhap').text();
         let email = $(this).closest('tr').find('.item-email').text();
@@ -180,53 +258,36 @@
         $("#item-sua-cmnd").val(cmnd.trim());
     });
 
-    $("#sortList").change(function () {
-        let sortorder = $("#sortList option:selected").val();
-        $.ajax({
-            url: "@Url.Action("Sort", "TaiKhoan", new { area = "Webmaster" })",
-            type: "get",
-            data: { "sortorder": sortorder },
-            success: function (data) {
-                $(".body-content").html(data);
-            },
-            error: function (data) {
-                alert("Error: " + data);
-            }
-        });
-    });
-
-    $("#searchList").keyup(function () {
-        let search = $(this).val();
-        $.ajax({
-            url: "@Url.Action("Search", "TaiKhoan", new { area = "Webmaster" })",
-            type: "get",
-            data: { "search": search },
-            success: function (data) {
-                $(".body-content").html(data);
-            },
-            error: function (data) {
-                alert("Error: " + data);
-            }
-        });
-    });
-
     $(".pageNumber").click(function () {
-        let pagenumber = $(this).closest('a').text();
-        let search = $("#searchList").val();
-        if (search == "") {
-            @*$.ajax({
-                url: "@Url.Action("Index", "TaiKhoan", new { area = "Webmaster" })",
-                type: "get",
-                data: { "pagenumber": pagenumber }, 
-                success: function (data) {
-
-                },
-                error: function (data) {
-                    alert("Error: " + data);
-                }
-            });*@
+        //Get addtional href
+        let sort = $("#sortList").val();
+        let search = "@ViewBag.Search";
+        //Href
+        var $link = $('.pageNumber');
+        var href = $link.attr('href').split('/');
+        if (sort != null && sort != '') {
+            sort = sort.substring(sort.lastIndexOf('=') + 1, sort.length);
+            href.push('&sortorder=' + sort); //here you set your new asp-route-pagenumber value
         }
-        //alert(pagenumber);
-        //alert(search);
+        if (search != null && search != '') {
+            href.push('&search=' + search); //here you set your new asp-route-pagenumber value
+        }
+        href = href.join('/');
+        href = href.toString().replace(/\/&/g, '&');
+        $link.attr('href', href);
     });
+</script>
+<script>
+    function SearchAndSort() {
+        let search = "@ViewBag.Search";
+        if (search == null || search == '') {
+            return $("#sortList").val();
+        }
+        else {
+            let href = $("#sortList").val();
+            href = href.replace("Sort", "SearchAndSort");
+            href = href + (`&search=${search}`)
+            return href;
+        }
+    }
 </script>

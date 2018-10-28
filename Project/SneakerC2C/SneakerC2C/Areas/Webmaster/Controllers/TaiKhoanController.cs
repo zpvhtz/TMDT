@@ -26,9 +26,11 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             //List
             TaiKhoanBUS taikhoan = new TaiKhoanBUS();
             List<TaiKhoan> list = taikhoan.GetTaiKhoans(pageNumber, pageSize);
-            //Trang
-            ViewBag.TongTrang = TongTrang(list);
+            List<TaiKhoan> tong = taikhoan.GetTaiKhoans();
+            //ViewBag
+            ViewBag.TongTrang = TongTrang(tong);
             ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TrangThai = "index";
             return View(list);
         }
 
@@ -53,18 +55,44 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             return RedirectToAction("Index", "TaiKhoan", new { thongbao = thongbao });
         }
 
-        public IActionResult Sort(string sortorder)
+        public IActionResult Sort(string sortorder, int? pagenumber)
         {
+            pageNumber = pagenumber ?? 1;
             TaiKhoanBUS taikhoan = new TaiKhoanBUS();
-            List<TaiKhoan> list = taikhoan.Sort(sortorder, pageSize);
-            return PartialView("DanhSachTaiKhoanPartialView", list);
+            List<TaiKhoan> list = taikhoan.Sort(sortorder, pageSize, pageNumber);
+            List<TaiKhoan> tong = taikhoan.Sort(sortorder);
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangThai = "sort";
+            ViewBag.Sort = sortorder;
+            return View("Index", list);
         }
 
-        public IActionResult Search(string search)
+        public IActionResult Search(string search, int? pagenumber)
         {
+            pageNumber = pagenumber ?? 1;
             TaiKhoanBUS taikhoan = new TaiKhoanBUS();
-            List<TaiKhoan> list = taikhoan.Search(search, pageSize);
-            return PartialView("DanhSachTaiKhoanPartialView", list);
+            List<TaiKhoan> list = taikhoan.Search(search, pageSize, pageNumber);
+            List<TaiKhoan> tong = taikhoan.Search(search, pageSize);
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangThai = "search";
+            ViewBag.Search = search;
+            return View("Index", list);
+        }
+
+        public IActionResult SearchAndSort(string search, string sortorder, int? pagenumber)
+        {
+            pageNumber = pagenumber ?? 1;
+            TaiKhoanBUS taikhoan = new TaiKhoanBUS();
+            List<TaiKhoan> list = taikhoan.SearchAndSort(search, sortorder, pageSize, pageNumber);
+            List<TaiKhoan> tong = taikhoan.SearchAndSort(search, sortorder, pageSize);
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangThai = "searchandsort";
+            ViewBag.Search = search;
+            ViewBag.Sort = sortorder;
+            return View("Index", list);
         }
 
         public int TongTrang(List<TaiKhoan> list)

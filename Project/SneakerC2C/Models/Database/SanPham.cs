@@ -10,13 +10,13 @@ namespace Models.Database
             ChiTietPhieuDat = new HashSet<ChiTietPhieuDat>();
             ChiTietPhieuGiao = new HashSet<ChiTietPhieuGiao>();
             GioHang = new HashSet<GioHang>();
+            SizeSanPham = new HashSet<SizeSanPham>();
         }
 
         public Guid Id { get; set; }
         public string MaSanPham { get; set; }
         public string TenSanPham { get; set; }
         public Guid IdTaiKhoan { get; set; }
-        public int? Size { get; set; }
         public string Mau { get; set; }
         public string Hang { get; set; }
         public string PhanLoai { get; set; }
@@ -31,5 +31,6 @@ namespace Models.Database
         public ICollection<ChiTietPhieuDat> ChiTietPhieuDat { get; set; }
         public ICollection<ChiTietPhieuGiao> ChiTietPhieuGiao { get; set; }
         public ICollection<GioHang> GioHang { get; set; }
+        public ICollection<SizeSanPham> SizeSanPham { get; set; }
     }
 }

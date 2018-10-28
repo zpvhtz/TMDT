@@ -1,6 +1,7 @@
 ﻿USE QLBanGiay
 GO
 --
+select * from TaiKhoan
 INSERT INTO LoaiNguoiDung
 	VALUES ('75523BB6-C366-4A28-A85C-B4C8C1D5747A', 'USR-WMT', N'Webmaster'),
 		   ('15CF8A9B-517E-4BAE-91E2-F30C596990ED', 'USR-CUS', N'Khách hàng'),

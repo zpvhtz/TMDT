@@ -50,10 +50,9 @@ CREATE TABLE SanPham
 	SoLuong INT,
 	Hinh NVARCHAR(200),
 	ChiTiet NVARCHAR(500),
-	GiamGia FLOAT, -- vidu : 10 = 10% --
+	GiamGia FLOAT, -- vidu : 0.1 = 10% --
 	TinhTrang NVARCHAR(20)
 )
-
 
 CREATE TABLE PhieuGiao
 (

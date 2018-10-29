@@ -66,30 +66,30 @@ namespace Models.BusinessLogicLayer
                 return false;
             }
         }
-        public bool Delete(string MaLoaiNguoiDung)
-        {
-            var user = db.LoaiNguoiDung.Find(MaLoaiNguoiDung);
-         /*   int? status = user.TINHTRANG;
-            if (status == 1)
-            {
-                status = 0;
-                user.TINHTRANG = status;
-                db.SaveChanges();
-                return true;
-            }
-            else
-            {
-                if (status == 0)
-                {
-                    status = 1;
-                    user.TINHTRANG = status;
-                    db.SaveChanges();
-                    return true;
-                }
-            }
-            return false;
-            */
-        }
+        //public bool Delete(string MaLoaiNguoiDung)
+        //{
+        //    var user = db.LoaiNguoiDung.Find(MaLoaiNguoiDung);
+        // /*   int? status = user.TINHTRANG;
+        //    if (status == 1)
+        //    {
+        //        status = 0;
+        //        user.TINHTRANG = status;
+        //        db.SaveChanges();
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        if (status == 0)
+        //        {
+        //            status = 1;
+        //            user.TINHTRANG = status;
+        //            db.SaveChanges();
+        //            return true;
+        //        }
+        //    }
+        //    return false;
+        //    */
+        //}
 
 
     }

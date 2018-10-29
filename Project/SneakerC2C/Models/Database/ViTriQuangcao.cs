@@ -16,6 +16,7 @@ namespace Models.Database
         public Guid IdTrang { get; set; }
         public double? DonGia { get; set; }
         public string ChuThich { get; set; }
+        public string TinhTrang { get; set; }
 
         public TrangQuangCao IdTrangNavigation { get; set; }
         public ICollection<GoiQuangCao> GoiQuangCao { get; set; }

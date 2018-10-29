@@ -10,7 +10,8 @@ CREATE TABLE LoaiNguoiDung
 (
 	Id UNIQUEIDENTIFIER PRIMARY KEY,
 	MaLoaiNguoiDung VARCHAR(10) UNIQUE NOT NULL,
-	TenLoaiNguoiDung NVARCHAR(20) --Merchant, Customer, Nhân viên--
+	TenLoaiNguoiDung NVARCHAR(20), --Merchant, Customer, Nhân viên--
+	TinhTrang NVARCHAR(20)
 )
 
 CREATE TABLE TaiKhoan
@@ -43,7 +44,7 @@ CREATE TABLE SanPham
 	TenSanPham NVARCHAR(100),
 	IdTaiKhoan UNIQUEIDENTIFIER NOT NULL, --FK--
 	Mau NVARCHAR(20), --Màu--
-	Hang NVARCHAR(50), --Hãng--
+	IdHangSanPham UNIQUEIDENTIFIER NOT NULL, --FK--
 	PhanLoai NVARCHAR(10), --Nam/Nữ--
 	Gia FLOAT,
 	SoLuong INT,
@@ -53,8 +54,6 @@ CREATE TABLE SanPham
 	TinhTrang NVARCHAR(20)
 )
 
-<<<<<<< HEAD
-=======
 CREATE TABLE SizeSanPham
 (
 	Id UNIQUEIDENTIFIER PRIMARY KEY,
@@ -63,7 +62,14 @@ CREATE TABLE SizeSanPham
 	TinhTrang NVARCHAR(20)
 )
 
->>>>>>> b92cf3c2e98c8916a4cd2e9085e38480dd70a615
+CREATE TABLE HangSanPham
+(
+	Id UNIQUEIDENTIFIER PRIMARY KEY,
+	MaHang VARCHAR(10) UNIQUE NOT NULL,
+	TenHang NVARCHAR(100),
+	TinhTrang NVARCHAR(20)
+)
+
 CREATE TABLE PhieuGiao
 (
 	Id UNIQUEIDENTIFIER PRIMARY KEY,
@@ -109,6 +115,7 @@ CREATE TABLE TinhThanh --Tỉnh thành--
 	Id UNIQUEIDENTIFIER PRIMARY KEY,
 	MaTinhThanh VARCHAR(10) UNIQUE NOT NULL,
 	TenTinhThanh NVARCHAR(20),
+	TinhTrang NVARCHAR(20)
 )
 
 CREATE TABLE DiaChi
@@ -150,7 +157,8 @@ CREATE TABLE GoiQuangCao
 	MaGoiQuangCao VARCHAR(10) UNIQUE NOT NULL,
 	IdViTri UNIQUEIDENTIFIER NOT NULL, -- FK -- 
 	TongTien FLOAT,
-	ThoiLuong INT --Ngày--
+	ThoiLuong INT, --Ngày--
+	TinhTrang NVARCHAR(20)
 )
 
 CREATE TABLE TrangQuangCao
@@ -158,7 +166,7 @@ CREATE TABLE TrangQuangCao
 	Id UNIQUEIDENTIFIER PRIMARY KEY,
 	MaTrang VARCHAR(10) UNIQUE NOT NULL,
 	TenTrang NVARCHAR(100),
-	ChuThich NVARCHAR(100),
+	ChuThich NVARCHAR(100)
 )
 
 CREATE TABLE ViTriQuangcao
@@ -199,7 +207,8 @@ ALTER TABLE DanhGia
 
 ALTER TABLE SanPham
 	ADD
-		CONSTRAINT FK_SanPham_IdTaiKhoan FOREIGN KEY (IdTaiKhoan) REFERENCES TaiKhoan(Id)
+		CONSTRAINT FK_SanPham_IdTaiKhoan FOREIGN KEY (IdTaiKhoan) REFERENCES TaiKhoan(Id),
+		CONSTRAINT FK_SanPham_IdHangSanPham FOREIGN KEY (IdHangSanPham) REFERENCES HangSanPham(Id)
 
 ALTER TABLE SizeSanPham
 	ADD

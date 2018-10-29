@@ -14,6 +14,7 @@ namespace Models.Database
         public string MaTrang { get; set; }
         public string TenTrang { get; set; }
         public string ChuThich { get; set; }
+        public string TinhTrang { get; set; }
 
         public ICollection<ViTriQuangcao> ViTriQuangcao { get; set; }
     }

@@ -13,6 +13,7 @@ namespace Models.Database
         public Guid Id { get; set; }
         public string MaLoaiNguoiDung { get; set; }
         public string TenLoaiNguoiDung { get; set; }
+        public string TinhTrang { get; set; }
 
         public ICollection<TaiKhoan> TaiKhoan { get; set; }
     }

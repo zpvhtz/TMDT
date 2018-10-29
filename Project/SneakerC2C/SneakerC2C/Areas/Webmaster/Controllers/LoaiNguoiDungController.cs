@@ -67,14 +67,14 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             }
             return View("Index");
         }
-        [HttpDelete]
-        public ActionResult Delete(int id)
-        {
-            var dao = new Model.DAO.DaiLyDAO();
-            var result = dao.Delete(id);
-            return RedirectToAction("Index", "DaiLy");
+        //[HttpDelete]
+        //public ActionResult Delete(int id)
+        //{
+        //    //var dao = new Model.DAO.DaiLyDAO();
+        //    //var result = dao.Delete(id);
+        //    //return RedirectToAction("Index", "DaiLy");
 
-        }
+        //}
 
     }
 }

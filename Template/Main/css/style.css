@@ -1052,7 +1052,8 @@ color: #2fdab8;
     padding-left: 1em;
     letter-spacing: 2px;
 }
-.modal-body.modal-body-sub_agile input[type="text"],.modal-body.modal-body-sub_agile input[type="email"],.modal-body.modal-body-sub_agile input[type="password"] {
+.modal-body.modal-body-sub_agile input[type="text"],.modal-body.modal-body-sub_agile input[type="email"],
+.modal-body.modal-body-sub_agile input[type="password"], .modal-body.modal-body-sub_agile input[type="tel"] {
     font-size: 14px;
     letter-spacing: 1px;
     color: #777;
@@ -1646,7 +1647,8 @@ a.single-item{
 	text-decoration:none;
 }
 .occasion-cart {
-    width: 30%;
+	width: 30%;
+	margin-top: 1.5em;
 }
 /*-- /sale --*/
    .sale-w3ls {
@@ -2822,12 +2824,12 @@ border-bottom: 1px solid #e5e3db;
     letter-spacing: 1px;
 }
 
-.css-treeview a {
+/*.css-treeview a {
     padding: 7px 0 0 31px;
     margin: 2px;
     font-size: 14px;
     letter-spacing: 1px;
-}
+}*/
 .css-treeview ul,
 .css-treeview li
 {
@@ -2847,10 +2849,10 @@ border-bottom: 1px solid #e5e3db;
 	user-select: none;
 }
 
-.css-treeview a {
+/*.css-treeview a {
     color: #999;
     text-decoration: none;
-}
+}*/
 
 .css-treeview a:hover
 {
@@ -2890,7 +2892,7 @@ border-bottom: 1px solid #e5e3db;
 	
 }
 .css-treeview label,
-.css-treeview a,
+/*.css-treeview a*/
 .css-treeview label::before
 {
 	display: inline-block;
@@ -3175,24 +3177,13 @@ font-weight: 300;
     margin-left: 10px;
     font-weight: 300;
 }
-.description{
+.brands-color{
 	margin:1.5em 0;
-}
-.description h5 {
-    color: #545454;
-    font-size: 0.9em;
-	margin-bottom:12px;
-}
-.description p{
-color: #545454;
-	line-height:1.8em;
-	margin:0.5em 0 0;
-	font-size:0.9em;
 }
 .occasional{
 	margin:2em 0;
 }
-.color-quality-right h5,.occasional h5 {
+.color-quality-right h5,.occasional h5, .brands-color h5 {
 color: #000;
     font-size: 16px;
     margin: 0 0 12px;

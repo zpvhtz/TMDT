@@ -1,0 +1,75 @@
+.logo_size_seller {
+    width: 100%;
+}
+.Banhang-content {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.Banhang-content h3 {
+    color: #fc636b;
+    padding: 5px 0;
+}
+.Banhang-img {
+    width: 350px;
+    margin: 0 auto;
+}
+/*Phân trang*/
+.phantrang {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .phantrang li {
+    display: inline;
+    text-align: center;
+  }
+  .phantrang a {
+    float: left;
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 5px 12px;
+    color: #fff;
+    margin-left: -1px;
+    border: 1px solid transparent;
+    line-height: 1.5;
+  }
+  .phantrang a.active {
+    cursor: default;
+  }
+  .phantrang a:active {
+    outline: none;
+  }
+
+  .canhgiua {
+      width: 100%;
+      margin: 0 auto;
+  }
+  .modal-1 li:first-child a {
+    -moz-border-radius: 6px 0 0 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px 0 0 6px;
+  }
+  .modal-1 li:last-child a {
+    -moz-border-radius: 0 6px 6px 0;
+    -webkit-border-radius: 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .modal-1 a {
+    border-color: #ddd;
+    color:#2fdab8;
+    background: #fff;
+  }
+  .modal-1 a:hover {
+    background: #eee;
+  }
+  .modal-1 a.active, .modal-1 a:active {
+    border-color: #2fdab8;
+    background: #2fdab8;
+    color: #fff;
+  }
+
+  

@@ -23,7 +23,6 @@ namespace Models.BusinessLogicLayer
             return db.LoaiNguoiDung.SingleOrDefault(x => x.MaLoaiNguoiDung == MaLoaiNguoiDung);
         }
 
-
         public List<LoaiNguoiDung> GetAll()
         {
             return db.LoaiNguoiDung.ToList();

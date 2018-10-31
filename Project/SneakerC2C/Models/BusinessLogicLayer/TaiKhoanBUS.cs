@@ -40,12 +40,76 @@ namespace Models
             return list;
         }
 
+        public string CreateTaiKhoan(string tendangnhap, string matkhau, string ten, string tenshop, string email, string dienthoai, string cmnd, string loainguoidung)
+        {
+            TaiKhoan taikhoan = new TaiKhoan();
+            //Kiểm tra
+            //Tên đăng nhập
+            taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();
+            if(taikhoan != null)
+            {
+                return "Tài khoản đã tồn tại";
+            }
+            //Email
+            taikhoan = context.TaiKhoan.Where(tk => tk.Email == email).SingleOrDefault();
+            if(taikhoan != null)
+            {
+                return "Email đã tồn tại";
+            }
+            //CMND
+            taikhoan = context.TaiKhoan.Where(tk => tk.Cmnd == cmnd).SingleOrDefault();
+            if(taikhoan != null)
+            {
+                return "CMND đã tồn tại";
+            }
+            //Thêm
+            LoaiNguoiDung lnd = context.LoaiNguoiDung.Where(l => l.Id == Guid.Parse(loainguoidung)).SingleOrDefault();
+
+            taikhoan = new TaiKhoan();
+            taikhoan.Id = Guid.Parse(Guid.NewGuid().ToString().ToUpper());
+            taikhoan.TenDangNhap = tendangnhap;
+            taikhoan.MatKhau = CreateMD5(matkhau);
+            taikhoan.Ten = ten;
+            if (lnd.TenLoaiNguoiDung == "Khách hàng")
+                taikhoan.TenShop = null;
+            else
+                taikhoan.TenShop = tenshop;
+            taikhoan.Email = email;
+            taikhoan.DienThoai = dienthoai;
+            taikhoan.Cmnd = cmnd;
+            taikhoan.IdLoaiNguoiDung = Guid.Parse(loainguoidung);
+            taikhoan.NgayTao = DateTime.Now;
+            taikhoan.DanhGia = 0;
+            taikhoan.ThoiHanGianHang = null;
+            taikhoan.TinhTrang = "Không khoá";
+
+            context.TaiKhoan.Add(taikhoan);
+            context.SaveChanges();
+
+            return "Thêm thành công";
+        }
+
         public string EditTaiKhoan(string tendangnhap, string matkhau, string email, string dienthoai, string cmnd)
         {
-            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();
+            TaiKhoan taikhoan = new TaiKhoan();
+            //Kiểm tra
+            //Email
+            taikhoan = context.TaiKhoan.Where(tk => tk.Email == email && email != null).SingleOrDefault();
+            if(taikhoan != null)
+            {
+                return "Email đã tồn tại";
+            }
+            //CMND
+            taikhoan = context.TaiKhoan.Where(tk => tk.Cmnd == cmnd && cmnd != null).SingleOrDefault();
+            if(taikhoan != null)
+            {
+                return "CMND đã tồn tại";
+            }
+            //Sửa
+            taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();
             if (matkhau != null)
             {
-                taikhoan.MatKhau = taikhoan.CreateMD5(matkhau);
+                taikhoan.MatKhau = CreateMD5(matkhau);
             }
             if (email != null)
             {
@@ -323,6 +387,24 @@ namespace Models
                 }
             }
             return list;
+        }
+
+        public string CreateMD5(string input)
+        {
+            // Use input string to calculate MD5 hash
+            using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
+            {
+                byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+                // Convert the byte array to hexadecimal string
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    sb.Append(hashBytes[i].ToString("X2"));
+                }
+                return sb.ToString();
+            }
         }
     }
 }

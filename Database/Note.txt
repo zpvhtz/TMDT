@@ -1,5 +1,5 @@
 Vi: TrangQuangCao, ViTriQuangCao, GoiQuangCao, QuangCao
 Khoa: TinhThanh, LoaiNguoiDung, GiaShip
-Nho: SanPham, GioHang, KhuyenMai
+Nho: SanPham, GioHang, SizeSanPham, HangSanPham
 Trung: TaiKhoan, DiaChi, DanhGia
 Tuan: PhieuDat, ChiTietPhieuDat, PhieuGiao, ChiTietPhieuGiao

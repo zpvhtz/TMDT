@@ -49,12 +49,27 @@
                             <td>
                                 <a href="/DaiLy/Edit/@item.MaLoaiNguoiDung"><button type="button" class="btn btn-primary">Sửa</button></a>
                                 <button type="button" class="btn btn-warning">
-                                    @*@Ajax.ActionLink("Khóa", "Delete", new { @id = item.MaLoaiNguoiDung }, new AjaxOptions
-                                   {
-                                       Confirm = "Bạn có muốn khóa bản ghi này?",
-                                       //OnComplete = "$('#row_" + @item.MAGIAI + "').remove()",
-                                       HttpMethod = "Delete"
-                                   })*@
+                                    @*<script>
+            function submit() {
+
+
+
+            }
+            $.ajax({
+                url: '',
+                data: {}
+            })
+            Ajax.ActionLink("Khóa", "Delete", new { @id = item.MaLoaiNguoiDung }, new AjaxOptions
+         {
+           Confirm = "Bạn có muốn khóa bản ghi này?",
+           //OnComplete = "$('#row_" + @item.MAGIAI + "').remove()",
+           HttpMethod = "Delete"
+        })
+
+            </script>*@
+
+
+
                                 </button>
                             </td>
                         </tr>

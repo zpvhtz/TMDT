@@ -32,6 +32,7 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             List<TaiKhoan> tong = taikhoan.GetTaiKhoans();
             List<LoaiNguoiDung> listlnd = loainguoidung.GetAll();
             //ViewBag
+            ViewBag.TinhThanh = taikhoan.GetTinhThanhs();
             ViewBag.TongTrang = TongTrang(tong);
             ViewBag.TrangHienTai = pageNumber;
             ViewBag.LoaiNguoiDung = listlnd;
@@ -67,11 +68,37 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             return RedirectToAction("Index", "TaiKhoan", new { thongbao = thongbao });
         }
 
-        public IActionResult GetDiaChi(string taikhoan)
+        public IActionResult GetDiaChi(string tendangnhap)
         {
             DiaChiBUS diachi = new DiaChiBUS();
-            List<DiaChi> list = diachi.GetDiaChis(taikhoan);
+            TaiKhoanBUS tk = new TaiKhoanBUS();
+            List<DiaChi> list = diachi.GetDiaChis(tendangnhap);
+            ViewBag.TenDangNhap = tendangnhap;
+            ViewBag.TinhThanh = tk.GetTinhThanhs();
             return PartialView("DiaChiPartialView", list);
+        }
+
+        public IActionResult GetThongTinDiaChi(string tendangnhap, string diachi)
+        {
+            DiaChiBUS dcbus = new DiaChiBUS();
+            TaiKhoanBUS tk = new TaiKhoanBUS();
+            DiaChi dc = dcbus.GetThongTinDiaChi(tendangnhap, diachi);
+            ViewBag.TinhThanh = tk.GetTinhThanhs();
+            return PartialView("SuaDiaChiPartialView", dc);
+        }
+
+        public IActionResult CreateDiaChi(string tendangnhap, string diachi, string tinhthanh)
+        {
+            DiaChiBUS dcbus = new DiaChiBUS();
+            string thongbao = dcbus.CreateDiaChi(tendangnhap, diachi, tinhthanh);
+            return RedirectToAction("Index", "TaiKhoan", new { thongbao = thongbao });
+        }
+
+        public IActionResult EditDiaChi(string id, string diachi, string tinhthanh)
+        {
+            DiaChiBUS dcbus = new DiaChiBUS();
+            string thongbao = dcbus.EditDiaChi(id, diachi, tinhthanh);
+            return RedirectToAction("Index", "TaiKhoan", new { thongbao = thongbao });
         }
 
         public IActionResult Sort(string sortorder, int? pagenumber)
@@ -82,6 +109,7 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             List<TaiKhoan> list = taikhoan.Sort(sortorder, pageSize, pageNumber);
             List<TaiKhoan> tong = taikhoan.Sort(sortorder);
             List<LoaiNguoiDung> listlnd = loainguoidung.GetAll();
+            ViewBag.TinhThanh = taikhoan.GetTinhThanhs();
             ViewBag.TrangHienTai = pageNumber;
             ViewBag.TongTrang = TongTrang(tong);
             ViewBag.TrangThai = "sort";
@@ -98,6 +126,7 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             List<TaiKhoan> list = taikhoan.Search(search, pageSize, pageNumber);
             List<TaiKhoan> tong = taikhoan.Search(search, pageSize);
             List<LoaiNguoiDung> listlnd = loainguoidung.GetAll();
+            ViewBag.TinhThanh = taikhoan.GetTinhThanhs();
             ViewBag.TrangHienTai = pageNumber;
             ViewBag.TongTrang = TongTrang(tong);
             ViewBag.LoaiNguoiDung = listlnd;
@@ -114,6 +143,7 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             List<TaiKhoan> list = taikhoan.SearchAndSort(search, sortorder, pageSize, pageNumber);
             List<TaiKhoan> tong = taikhoan.SearchAndSort(search, sortorder, pageSize);
             List<LoaiNguoiDung> listlnd = loainguoidung.GetAll();
+            ViewBag.TinhThanh = taikhoan.GetTinhThanhs();
             ViewBag.TrangHienTai = pageNumber;
             ViewBag.TongTrang = TongTrang(tong);
             ViewBag.LoaiNguoiDung = listlnd;

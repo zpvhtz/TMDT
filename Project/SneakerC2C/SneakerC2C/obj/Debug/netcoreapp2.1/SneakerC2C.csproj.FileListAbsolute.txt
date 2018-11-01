@@ -151,3 +151,5 @@ C:\doan\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.cs
 C:\doan\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.dll
 C:\doan\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb
 C:\doan\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\SanPham\Index.g.cshtml.cs
+D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\SanPham\Index.g.cshtml.cs
+D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TaiKhoan\SuaDiaChiPartialView.g.cshtml.cs

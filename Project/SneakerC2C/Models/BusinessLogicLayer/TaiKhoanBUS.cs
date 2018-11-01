@@ -21,6 +21,13 @@ namespace Models
             this.context = context;
         }
 
+        //Mai mốt bỏ qua TinhThanhBUS
+        public List<TinhThanh> GetTinhThanhs()
+        {
+            List<TinhThanh> list = context.TinhThanh.OrderBy(tt => tt.TenTinhThanh).ToList();
+            return list;
+        }
+
         public List<TaiKhoan> GetTaiKhoans()
         {
             List<TaiKhoan> list = context.TaiKhoan.Where(l => l.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung != "Webmaster")

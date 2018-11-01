@@ -67,6 +67,13 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             return RedirectToAction("Index", "TaiKhoan", new { thongbao = thongbao });
         }
 
+        public IActionResult GetDiaChi(string taikhoan)
+        {
+            DiaChiBUS diachi = new DiaChiBUS();
+            List<DiaChi> list = diachi.GetDiaChis(taikhoan);
+            return PartialView("DiaChiPartialView", list);
+        }
+
         public IActionResult Sort(string sortorder, int? pagenumber)
         {
             pageNumber = pagenumber ?? 1;

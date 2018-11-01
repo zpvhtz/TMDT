@@ -8,6 +8,7 @@ namespace Models.Database
         public Guid Id { get; set; }
         public Guid IdSanPham { get; set; }
         public int? Size { get; set; }
+        public int? SoLuong { get; set; }
         public string TinhTrang { get; set; }
 
         public SanPham IdSanPhamNavigation { get; set; }

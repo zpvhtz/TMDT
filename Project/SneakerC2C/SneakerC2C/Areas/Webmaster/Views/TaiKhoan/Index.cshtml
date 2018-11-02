@@ -304,18 +304,43 @@
 <div class="modal fade" id="diachiModal" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Địa chỉ</h4>
+        <form asp-area="Webmaster" asp-controller="TaiKhoan" asp-action="CreateDiaChi">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Địa chỉ</h4>
+                </div>
+                <div class="modal-body" id="diachiModal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnThemDiaChi" data-toggle="collapse" data-target="#collapseThemDiaChi">Thêm</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                </div>
             </div>
-            <div class="modal-body" id="diachiModal-body">
-                
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal sửa địa chỉ -->
+<div class="modal fade" id="suadiachiModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <form asp-area="Webmaster" asp-controller="TaiKhoan" asp-action="EditDiaChi">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Địa chỉ</h4>
+                </div>
+                <div class="modal-body" id="suadiachiModal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Sửa</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                </div>
             </div>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
 
@@ -377,6 +402,8 @@
         //Keydown event
         $("#item-them-dienthoai").keydown(validateNumber);
         $("#item-them-cmnd").keydown(validateNumber);
+        $("#item-sua-dienthoai").keydown(validateNumber);
+        $("#item-sua-cmnd").keydown(validateNumber);
     });
 
     $("#btnThemTaiKhoan").click(function () {
@@ -423,11 +450,11 @@
     });
 
     $(".btnDiaChi").click(function () {
-        let taikhoan = $(this).closest('tr').find('.item-tendangnhap').text();
+        let tendangnhap = $(this).closest('tr').find('.item-tendangnhap').text();
         $.ajax({
             url: "/Webmaster/TaiKhoan/GetDiaChi",
             type: "get",
-            data: { "taikhoan": taikhoan },
+            data: { "tendangnhap": tendangnhap },
             success: function (data) {
                 $("#diachiModal-body").html(data);
             },
@@ -435,5 +462,9 @@
                 alert("Error: " + data);
             }
         });
+    });
+
+    $("#btnThemDiaChi").click(function () {
+        $("#btnThemDiaChi").prop('type', 'submit');
     });
 </script>

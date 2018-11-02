@@ -913,7 +913,7 @@ ul.social-nav.model-3d-0.footer-social.w3_agile_social.two {
 .flickr-post ul li {
     display: inline-block;
     margin: 1% 1%;
-    width: 28%;
+    width: 100%;
 }
 p.copy-right {
     color: #848484;
@@ -2768,7 +2768,7 @@ h2.typoh2{
 	padding:90px 0;
 }
 /*-- Slider range --*/
-ul.dropdown-menu6 ,ul.dropdown-menu5{
+ul.dropdown-menu5, ul.dropdown-menu6 {
 margin:0;
 position:relative;
 }
@@ -3095,7 +3095,7 @@ ul.social-nav.model-3d-0.footer-social.w3_agile_social.single_page_w3ls {
 	padding-left:0;
 }
 .men-wear-bottom {
-    margin: 50px 0;
+    margin: 30px 0;
 }
 .men-wear-right h4 {
     color: #000;

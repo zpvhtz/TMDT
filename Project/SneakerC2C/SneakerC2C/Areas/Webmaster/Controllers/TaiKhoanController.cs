@@ -101,6 +101,13 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             return RedirectToAction("Index", "TaiKhoan", new { thongbao = thongbao });
         }
 
+        public IActionResult LockDiaChi(string id)
+        {
+            DiaChiBUS dcbus = new DiaChiBUS();
+            string thongbao = dcbus.LockDiaChi(id);
+            return RedirectToAction("Index", "TaiKhoan", new { thongbao = thongbao });
+        }
+
         public IActionResult Sort(string sortorder, int? pagenumber)
         {
             pageNumber = pagenumber ?? 1;

@@ -73,5 +73,13 @@ namespace Models.BusinessLogicLayer
             context.SaveChanges();
             return "Sửa thành công";
         }
+
+        public string LockDiaChi(string id)
+        {
+            DiaChi dc = context.DiaChi.Where(d => d.Id == Guid.Parse(id)).SingleOrDefault();
+            dc.TinhTrang = "Khoá";
+            context.SaveChanges();
+            return "Khoá thành công";
+        }
     }
 }

@@ -48,7 +48,6 @@ CREATE TABLE SanPham
 	IdHangSanPham UNIQUEIDENTIFIER NOT NULL, --FK--
 	PhanLoai NVARCHAR(10), --Nam/Nữ--
 	Gia FLOAT,
-	SoLuong INT,
 	Hinh NVARCHAR(200),
 	ChiTiet NVARCHAR(500),
 	GiamGia FLOAT, -- vidu : 0.1 = 10% --
@@ -60,6 +59,7 @@ CREATE TABLE SizeSanPham
 	Id UNIQUEIDENTIFIER PRIMARY KEY,
 	IdSanPham UNIQUEIDENTIFIER NOT NULL, --FK--
 	Size INT,
+	SoLuong INT,
 	TinhTrang NVARCHAR(20)
 )
 

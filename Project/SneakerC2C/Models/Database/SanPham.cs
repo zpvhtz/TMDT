@@ -21,7 +21,6 @@ namespace Models.Database
         public Guid IdHangSanPham { get; set; }
         public string PhanLoai { get; set; }
         public double? Gia { get; set; }
-        public int? SoLuong { get; set; }
         public string Hinh { get; set; }
         public string ChiTiet { get; set; }
         public double? GiamGia { get; set; }

@@ -1,89 +1,86 @@
 ﻿<li>
-    <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+    <a asp-area="Webmaster" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> Trang chủ</a>
 </li>
+<!--Tài khoản-->
 <li>
-    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+    <a href="#"><i class="fas fa-user"></i> Tài khoản<span class="fa arrow"></span></a>
     <ul class="nav nav-second-level">
         <li>
-            <a href="flot.html">Flot Charts</a>
+            <a asp-area="Webmaster" asp-controller="TaiKhoan" asp-action="Index">Tài khoản</a>
         </li>
         <li>
-            <a href="morris.html">Morris.js Charts</a>
+            <a asp-area="Webmaster" asp-controller="LoaiNguoiDung" asp-action="Index">Loại người dùng</a>
+        </li>
+        <li>
+            <a asp-area="#" asp-controller="#" asp-action="#">Đánh giá</a>
+        </li>
+        <li>
+            <a asp-area="#" asp-controller="#" asp-action="#">Giỏ hàng</a>
+        </li>
+        <li>
+            <a asp-area="#" asp-controller="#" asp-action="#">Lịch sử gian hàng</a>
         </li>
     </ul>
-    <!-- /.nav-second-level -->
 </li>
+<!--Sản phẩm-->
 <li>
-    <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-</li>
-<li>
-    <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-</li>
-<li>
-    <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+    <a href="#"><i class="fas fa-box-open"></i> Sản phẩm<span class="fa arrow"></span></a>
     <ul class="nav nav-second-level">
         <li>
-            <a href="panels-wells.html">Panels and Wells</a>
+            <a asp-area="#" asp-controller="#" asp-action="#">Sản phẩm</a>
         </li>
         <li>
-            <a href="buttons.html">Buttons</a>
+            <a asp-area="#" asp-controller="#" asp-action="#">Size sản phẩm</a>
         </li>
         <li>
-            <a href="notifications.html">Notifications</a>
-        </li>
-        <li>
-            <a href="typography.html">Typography</a>
-        </li>
-        <li>
-            <a href="icons.html"> Icons</a>
-        </li>
-        <li>
-            <a href="grid.html">Grid</a>
+            <a asp-area="#" asp-controller="#" asp-action="#">Hãng sản phẩm</a>
         </li>
     </ul>
-    <!-- /.nav-second-level -->
 </li>
+<!--Quảng cáo-->
 <li>
-    <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+    <a href="#"><i class="fas fa-bullhorn"></i> Quảng cáo<span class="fa arrow"></span></a>
     <ul class="nav nav-second-level">
         <li>
-            <a href="#">Second Level Item</a>
+            <a asp-area="#" asp-controller="#" asp-action="#">Quảng cáo</a>
         </li>
         <li>
-            <a href="#">Second Level Item</a>
+            <a asp-area="#" asp-controller="#" asp-action="#">Gói quảng cáo</a>
         </li>
         <li>
-            <a href="#">Third Level <span class="fa arrow"></span></a>
-            <ul class="nav nav-third-level">
-                <li>
-                    <a href="#">Third Level Item</a>
-                </li>
-                <li>
-                    <a href="#">Third Level Item</a>
-                </li>
-                <li>
-                    <a href="#">Third Level Item</a>
-                </li>
-                <li>
-                    <a href="#">Third Level Item</a>
-                </li>
-            </ul>
-            <!-- /.nav-third-level -->
+            <a asp-area="#" asp-controller="#" asp-action="#">Vị trí quảng cáo</a>
+        </li>
+        <li>
+            <a asp-area="#" asp-controller="#" asp-action="#">Trang quảng cáo</a>
         </li>
     </ul>
-    <!-- /.nav-second-level -->
 </li>
-<li class="active">
-    <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+<!--Phiếu-->
+<li>
+    <a href="#"><i class="far fa-clipboard"></i> Đơn hàng<span class="fa arrow"></span></a>
     <ul class="nav nav-second-level">
         <li>
-            <a class="active" href="blank.html">Blank Page</a>
+            <a asp-area="#" asp-controller="#" asp-action="#">Phiếu đặt hàng</a>
         </li>
         <li>
-            <a href="login.html">Login Page</a>
+            <a asp-area="#" asp-controller="#" asp-action="#">Phiếu giao hàng</a>
         </li>
     </ul>
-    <!-- /.nav-second-level -->
+</li>
+<!--Khác-->
+<li>
+    <a href="#"><i class="fas fa-ghost"></i> Khác<span class="fa arrow"></span></a>
+    <ul class="nav nav-second-level">
+        <li>
+            <a asp-area="#" asp-controller="#" asp-action="#">Giá ship</a>
+        </li>
+        <li>
+            <a asp-area="#" asp-controller="#" asp-action="#">Tỉnh thành</a>
+        </li>
+        <li>
+            <a asp-area="Webmaster" asp-controller="GianHang" asp-action="Index">Gian hàng</a>
+        </li>
+    </ul>
 </li>
 <script src="~/admintemplate/vendor/jquery/jquery.min.js"></script>
 <!-- Bootstrap Core JavaScript -->

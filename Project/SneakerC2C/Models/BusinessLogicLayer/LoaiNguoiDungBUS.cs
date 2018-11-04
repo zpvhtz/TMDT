@@ -26,7 +26,7 @@ namespace Models.BusinessLogicLayer
             return list;
         }
 
-        public List<LoaiNguoiDung> GetTaiKhoans(int pagenumber, int pagesize)
+        public List<LoaiNguoiDung> GetLoaiNguoiDungs(int pagenumber, int pagesize)
         {
             List<LoaiNguoiDung> list = context.LoaiNguoiDung
                                                   .OrderBy(l => l.TenLoaiNguoiDung)
@@ -37,13 +37,56 @@ namespace Models.BusinessLogicLayer
             return list;
         }
 
-
-
         //------------------------------------------------------ THEM SUA XOA -----------------------------------------------------------------
-
-        public string Edit(string MaLoaiNguoiDung, string TenLoaiNguoiDung, string TinhTrang)
+        public string CreateLoaiNguoiDung(string MaLoaiNguoiDung, string TenLoaiNguoiDung)
         {
-            LoaiNguoiDung loainguoidung = context.LoaiNguoiDung.Where(temp => temp.TenLoaiNguoiDung == TenLoaiNguoiDung).SingleOrDefault();
+
+            LoaiNguoiDung loainguoidung = new LoaiNguoiDung();
+
+            //----------------------- chuan hoa du lieu ----------------------- 
+            //----------------------- kiem tra ma -----------------------
+            loainguoidung = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung == MaLoaiNguoiDung).SingleOrDefault();
+            if (loainguoidung != null)
+            {
+                return "Mã loại người dùng này đã tồn tại";
+            }
+            //----------------------- kiem tra ten -----------------------
+            loainguoidung = context.LoaiNguoiDung.Where(temp => temp.TenLoaiNguoiDung == TenLoaiNguoiDung).SingleOrDefault();
+            if (loainguoidung != null)
+            {
+                return "Tên loại người dùng này đã tồn tại";
+            }
+            //----------------------- them -----------------------
+            loainguoidung = new LoaiNguoiDung();
+            loainguoidung.Id = Guid.Parse(Guid.NewGuid().ToString().ToUpper());
+            loainguoidung.MaLoaiNguoiDung = MaLoaiNguoiDung;
+            loainguoidung.TenLoaiNguoiDung = TenLoaiNguoiDung;
+            loainguoidung.TinhTrang = "Không Khóa";
+
+            context.LoaiNguoiDung.Add(loainguoidung);
+            context.SaveChanges();
+
+            return "Thêm thành công";
+        }
+        public string EditLoaiNguoiDung(string MaLoaiNguoiDung, string TenLoaiNguoiDung, string TinhTrang)
+        {
+            LoaiNguoiDung loainguoidung = new LoaiNguoiDung();
+
+            //----------------------- chuan hoa du lieu ----------------------- 
+            //----------------------- kiem tra ma -----------------------
+            loainguoidung = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung == MaLoaiNguoiDung).SingleOrDefault();
+            if (loainguoidung != null)
+            {
+                return "Mã loại người dùng này đã tồn tại";
+            }
+            //----------------------- kiem tra ten -----------------------
+            loainguoidung = context.LoaiNguoiDung.Where(temp => temp.TenLoaiNguoiDung == TenLoaiNguoiDung).SingleOrDefault();
+            if (loainguoidung != null)
+            {
+                return "Tên loại người dùng này đã tồn tại";
+            }
+            //----------------------- sua -----------------------
+            loainguoidung = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung == MaLoaiNguoiDung).SingleOrDefault();
 
             if (MaLoaiNguoiDung != null)
             {
@@ -61,7 +104,7 @@ namespace Models.BusinessLogicLayer
             return "Sửa thành công";
         }
 
-        public string Lock(string MaLoaiNguoiDung)
+        public string LockLoaiNguoiDung(string MaLoaiNguoiDung)
         {
             LoaiNguoiDung loainguoidung = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung == MaLoaiNguoiDung).SingleOrDefault();
             loainguoidung.TinhTrang = "Khoá";
@@ -69,13 +112,18 @@ namespace Models.BusinessLogicLayer
             return "Khoá thành công";
         }
 
-        public string Unlock(string MaLoaiNguoiDung)
+        public string UnlockLoaiNguoiDung(string MaLoaiNguoiDung)
         {
             LoaiNguoiDung loainguoidung = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung == MaLoaiNguoiDung).SingleOrDefault();
             loainguoidung.TinhTrang = "Không khoá";
             context.SaveChanges();
             return "Mở khoá thành công";
         }
+
+        //------------------------------------------------------ TIM KIEM -----------------------------------------------------------------
+
+
+
 
     }
 }

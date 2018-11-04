@@ -72,14 +72,14 @@
                         <td class="mau">@item.Mau</td>
                         <td class="tenhang">@item.IdHangSanPhamNavigation.TenHang</td>
                         <td class="phanloai">@item.PhanLoai</td>
-                        <td class="fa-github-alt">@item.Gia.Value.ToString("# VND")</td>
-                        <td>
+                        <td class="gia">@item.Gia.Value.ToString("# VND")</td>
+                        <td class="hinh">
                             <img src="~/Hinh/SanPham/@item.Hinh" style="width:100px; height:100px;" />
                         </td>
                         <td class="chitiet">@item.ChiTiet</td>
-                        <td class="giamgia">@item.GiamGia.Value.ToString("# %")</td>
+                        <td class="giamgia">@item.GiamGia</td>
                         <td>
-                            <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#Sua" id="SuaSp">Sửa</button>
+                            <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#Suamodal" id="SuaSp">Sửa</button>
                             <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#Khoa">Khoá</button>
                         </td>
                     </tr>
@@ -89,31 +89,108 @@
     </div>
 </div>
 <!-- /.panel-body -->
-
+<!--Modal them-->
+<div></div>
 <!--Modal sua-->
-<div class="modal fade" id="Sua" role="dialog">
+<div class="modal fade" id="Suamodal" role="dialog">
     <div class="modal-dialog">
         <form asp-controller="SanPham" asp-action="EditSP" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Sản phẩm</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Mã sản phẩm: </label>
+                        <input type="text" class="form-control" name="Maedit" id="masp-sua" />
+                    </div>
+                    <div class="form-group">
+                        <label>Tên sản phẩm: </label>
+                        <input type="text" class="form-control" name="Tenedit" id="tensp-sua" />
+                    </div>
+                    <div class="form-group">
+                        <label>Tên shop: </label>
+                        <input type="text" class="form-control" name="Tenshopedit" id="tenshop-sua" />
+                    </div>
+                    <div class="form-group">
+                        <label>Màu: </label>
+                        <input type="text" class="form-control" name="Mauedit" id="mau-sua" />
+                    </div>
+                    <div class="form-group">
+                        <label>Tên hãng: </label>
+                        <select class="form-control" id="hang-sua" name="Hangedit">
+                            @foreach (var item in ViewBag.Hang)
+                            {
+                                <option value="@item.Id">@item.TenHang</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Phân loại:</label>
+                        <select class="form-control" id="phanloai-sua" name="Phanloaiedit">
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Giá: </label>
+                        <input type="text" class="form-control" name="Giaedit" id="gia-sua" />
+                    </div>
+                    <div class="form-group">
+                        <label>Hình: </label>
+                        <input type="text" class="form-control" name="Hinhedit" id="hinh-sua" />
+                    </div>
+                    <div class="form-group">
+                        <label>Chi tiết: </label>
+                        <input type="text" class="form-control" name="Chitietedit" id="chitiet-sua" />
+                    </div>
+                    <div class="form-group">
+                        <label>Giảm giá: </label>
+                        <input type="text" class="form-control" name="Giamgiaedit" id="giamgia-sua" />
+                    </div>
+                    @*<div class="form-group">
+                <label>Giảm giá </label>
+                <input type="text" class="form-control" name="item-sua-giamgia" id="giamgia-sua" />
+            </div>*@
 
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-warning">Sửa</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
         </form>
     </div>
 </div>
 <script>
     $(document).ready(function () {
-        $("#SuaSp").Click(function () {
+        $("#SuaSp").click(function ()
+        {
             let Id = $(this).closest('tr').find('.ma').text();
-            let Ten = $(this).closest('tr').find('.ten').text();
-            let TenShop = $(this).closest('tr').find('.tenshop').val();
-            let Mau = $(this).closest('tr').find('.ma').text();
-            let Hang = $(this).closest('tr').find('.tenhang').val();
-            let PhanLoai = $(this).closest('tr').find('.phanloai').val();
-            let Gia = $(this).closest('tr').find('.gia').text();
-            let Hinh = $(this).closest('tr').find('.hinh').text();
-            let ChiTiet = $(this).closest('tr').find('.chitiet').text();
-            let GiamGia = $(this).closest('tr').find('.giamgia').text();
+            let pTen = $(this).closest('tr').find('.ten').text();
+            let pTenShop = $(this).closest('tr').find('.tenshop').text();
+            let pMau = $(this).closest('tr').find('.mau').text();
+            var pHang = document.getElementById("hang-sua");
+            //let pHang = $(this).closest('tr').find('.tenhang').val();
+            let pPhanLoai = $(this).closest('tr').find('.phanloai').val();
+            let pGia = $(this).closest('tr').find('.gia').text();
+            let pHinh = $(this).closest('tr').find('.hinh').text();
+            let pChiTiet = $(this).closest('tr').find('.chitiet').text();
+            let pGiamGia = $(this).closest('tr').find('.giamgia').text();
 
+            $("#masp-sua").val(Id.trim());
+            $("#ten-sua").val(pTen.trim());
+            $("#tenshop-sua").val(pTenShop.trim());
+            $("#mau-sua").val(pMau.trim());
+            $("#hang-sua").val(pHang.trim());
+            $("#phanloai-sua").val(pPhanLoai.trim());
+            $("#gia-sua").val(pGia.trim());
+            $("#hinh-sua").val(pHinh.trim());
+            $("#chitiet-sua").val(pChiTiet.trim());
+            $("#giamgia-sua").val(pGiamGia.trim());
         });
-        
+
     });
 </script>
 

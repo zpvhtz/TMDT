@@ -15,9 +15,10 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
     {
         public IActionResult Index(string searchString, int page = 1, int pageSize = 8)
         {
-            var temp = new LoaiNguoiDungBUS();
-            var model = temp.listAllPaging(searchString, page, pageSize);
-            return View(model);
+            //var temp = new LoaiNguoiDungBUS();
+            //var model = temp.listAllPaging(searchString, page, pageSize);
+            //return View(model);
+            return View();
         }
         [HttpGet]
         public ActionResult Create()
@@ -27,54 +28,57 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
         [HttpGet]
         public ActionResult Edit(string id)
         {
-            var temp = new LoaiNguoiDungBUS().ViewDetail(id);
-            return View(temp);
+            //var temp = new LoaiNguoiDungBUS().ViewDetail(id);
+            //return View(temp);
+            return View();
         }
 
         [HttpPost]
         public ActionResult Create(LoaiNguoiDung loainguoidung)
         {
-            if (ModelState.IsValid)
-            {
-                var bus = new LoaiNguoiDungBUS();
-                string id = bus.Insert(loainguoidung);
-                if (id != null) // if insert success, back to index
-                {
-                    return RedirectToAction("Index", "LoaiNguoiDung");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Thêm Thất Bại!");
-                }
-            }
-            return View("Index");
+            //if (ModelState.IsValid)
+            //{
+            //    var bus = new LoaiNguoiDungBUS();
+            //    string id = bus.Insert(loainguoidung);
+            //    if (id != null) // if insert success, back to index
+            //    {
+            //        return RedirectToAction("Index", "LoaiNguoiDung");
+            //    }
+            //    else
+            //    {
+            //        ModelState.AddModelError("", "Thêm Thất Bại!");
+            //    }
+            //}
+            //return View("Index");
+            return View();
         }
         [HttpPost]
         public ActionResult Edit(LoaiNguoiDung nguoidung)
         {
-            if (ModelState.IsValid)
-            {
-                var temp = new LoaiNguoiDungBUS();
-                var result = temp.Update(nguoidung);
-                if (result) // if update success, back to index
-                {
-                    return RedirectToAction("Index", "LoaiNguoiDung");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Cập Nhật Thất Bại!");
-                }
-            }
-            return View("Index");
+            //if (ModelState.IsValid)
+            //{
+            //    var temp = new LoaiNguoiDungBUS();
+            //    var result = temp.Update(nguoidung);
+            //    if (result) // if update success, back to index
+            //    {
+            //        return RedirectToAction("Index", "LoaiNguoiDung");
+            //    }
+            //    else
+            //    {
+            //        ModelState.AddModelError("", "Cập Nhật Thất Bại!");
+            //    }
+            //}
+            //return View("Index");
+            return View();
         }
 
         [HttpDelete]
         public ActionResult Delete(string id)
         {
-            var dao = new LoaiNguoiDungBUS();
-            var result = dao.Delete(id);
-            return RedirectToAction("Index", "LoaiNguoiDung");
-
+            //var dao = new LoaiNguoiDungBUS();
+            //var result = dao.Delete(id);
+            //return RedirectToAction("Index", "LoaiNguoiDung");
+            return View();
         }
 
     }

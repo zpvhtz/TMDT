@@ -6275,7 +6275,7 @@
       ]
     },
     "Microsoft.Extensions.DependencyInjection.Abstractions/2.1.1": {
-      "sha512": "R44kCSYpeZ8JmEb+SLWVdi3RttxuisvCB93zcGVU/menrIEY3klRFAH0dXyyUKmNZrUnxFJVuaVdkEuEsQ9EtA==",
+      "sha512": "PW1596sF97gpIc1JuUuYvTmeLfeqC5whbWPsWgJhN0fdwz683him3b/HB0dqhFesVssOjnnA0fEz4+S0gUeBqA==",
       "type": "package",
       "path": "microsoft.extensions.dependencyinjection.abstractions/2.1.1",
       "files": [
@@ -6564,7 +6564,7 @@
       ]
     },
     "Microsoft.Extensions.Options/2.1.1": {
-      "sha512": "A5Cu/5YMuJgEsW21WzPlpK3z+v3ZBF/cV6dl/9t19CtO3qf+EX5lB9dHBr+swsz6uZA3weH1mDXGVs6ukknDkg==",
+      "sha512": "j0zOfTt1Qm+JDW2m+6Q/aj1m4C8+onudUu4ls/fN69VxruZkMWmX1bPKkbkYIPNNxJsf4k7FOkVq5o1vEFq9pQ==",
       "type": "package",
       "path": "microsoft.extensions.options/2.1.1",
       "files": [
@@ -7544,11 +7544,10 @@
       ]
     },
     "PagedList/1.17.0": {
-      "sha512": "S31yV7g+pBRF8b/DViSQ6/T4Edij9XwatsBrGSUtYc0/nL/xe9sOJfCSq6jHA4DGcaEVYaFpbqmQhbjoaGNKTw==",
+      "sha512": "Ou6F3WKXh49hOo0TxWM+SkIGuKllYPuPPvnSYOlQ1sTrtuEyuDUhYbSJd5Sdb06i/sWUJZTjiUecEs3Ht/Hx3g==",
       "type": "package",
       "path": "pagedlist/1.17.0",
       "files": [
-        ".signature.p7s",
         "lib/net40/PagedList.dll",
         "lib/net40/PagedList.xml",
         "pagedlist.1.17.0.nupkg.sha512",
@@ -7556,11 +7555,10 @@
       ]
     },
     "PagedList.Mvc/4.5.0": {
-      "sha512": "xGTT268/6/vS+mTk39MNL9Z20410eATJvZ/UVE0bFIje17ab4cMWHokK43NoY7PLQlG9l572GA8H4JsJ9c/lMA==",
+      "sha512": "D0M4qW2g4a9cwG8ozIKUnJheCrm5GpFTceqUl63AXWaAVnTgk+TysZYUOGMsBRuzid8aF+/E8b0bXM6+90jiEw==",
       "type": "package",
       "path": "pagedlist.mvc/4.5.0",
       "files": [
-        ".signature.p7s",
         "Content/Content/PagedList.css",
         "lib/net40/PagedList.Mvc.XML",
         "lib/net40/PagedList.Mvc.dll",
@@ -12271,39 +12269,23 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\HeoBayMau\\.nuget\\packages\\": {},
-=======
-    "C:\\Users\\SocBayMau\\.nuget\\packages\\": {},
->>>>>>> b320bb291fbe5fb13de53a0491e0721daec858ae
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "D:\\Projects\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
       "projectName": "Models",
       "projectPath": "D:\\Projects\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
       "packagesPath": "C:\\Users\\HeoBayMau\\.nuget\\packages\\",
       "outputPath": "D:\\Projects\\TMDT\\Project\\SneakerC2C\\Models\\obj\\",
-=======
-      "projectUniqueName": "C:\\doan\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
-      "projectName": "Models",
-      "projectPath": "C:\\doan\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
-      "packagesPath": "C:\\Users\\SocBayMau\\.nuget\\packages\\",
-      "outputPath": "C:\\doan\\TMDT\\Project\\SneakerC2C\\Models\\obj\\",
->>>>>>> b320bb291fbe5fb13de53a0491e0721daec858ae
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\HeoBayMau\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\SocBayMau\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> b320bb291fbe5fb13de53a0491e0721daec858ae
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

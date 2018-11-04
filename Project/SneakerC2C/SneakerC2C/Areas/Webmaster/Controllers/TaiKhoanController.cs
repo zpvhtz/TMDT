@@ -30,7 +30,7 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             LoaiNguoiDungBUS loainguoidung = new LoaiNguoiDungBUS();
             List<TaiKhoan> list = taikhoan.GetTaiKhoans(pageNumber, pageSize);
             List<TaiKhoan> tong = taikhoan.GetTaiKhoans();
-            List<LoaiNguoiDung> listlnd = loainguoidung.GetAll();
+            List<LoaiNguoiDung> listlnd = loainguoidung.GetLoaiNguoiDungs();
             //ViewBag
             ViewBag.TinhThanh = taikhoan.GetTinhThanhs();
             ViewBag.TongTrang = TongTrang(tong);
@@ -115,7 +115,7 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             LoaiNguoiDungBUS loainguoidung = new LoaiNguoiDungBUS();
             List<TaiKhoan> list = taikhoan.Sort(sortorder, pageSize, pageNumber);
             List<TaiKhoan> tong = taikhoan.Sort(sortorder);
-            List<LoaiNguoiDung> listlnd = loainguoidung.GetAll();
+            List<LoaiNguoiDung> listlnd = loainguoidung.GetLoaiNguoiDungs();
             ViewBag.TinhThanh = taikhoan.GetTinhThanhs();
             ViewBag.TrangHienTai = pageNumber;
             ViewBag.TongTrang = TongTrang(tong);
@@ -132,7 +132,7 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             LoaiNguoiDungBUS loainguoidung = new LoaiNguoiDungBUS();
             List<TaiKhoan> list = taikhoan.Search(search, pageSize, pageNumber);
             List<TaiKhoan> tong = taikhoan.Search(search, pageSize);
-            List<LoaiNguoiDung> listlnd = loainguoidung.GetAll();
+            List<LoaiNguoiDung> listlnd = loainguoidung.GetLoaiNguoiDungs();
             ViewBag.TinhThanh = taikhoan.GetTinhThanhs();
             ViewBag.TrangHienTai = pageNumber;
             ViewBag.TongTrang = TongTrang(tong);
@@ -149,7 +149,7 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             LoaiNguoiDungBUS loainguoidung = new LoaiNguoiDungBUS();
             List<TaiKhoan> list = taikhoan.SearchAndSort(search, sortorder, pageSize, pageNumber);
             List<TaiKhoan> tong = taikhoan.SearchAndSort(search, sortorder, pageSize);
-            List<LoaiNguoiDung> listlnd = loainguoidung.GetAll();
+            List<LoaiNguoiDung> listlnd = loainguoidung.GetLoaiNguoiDungs();
             ViewBag.TinhThanh = taikhoan.GetTinhThanhs();
             ViewBag.TrangHienTai = pageNumber;
             ViewBag.TongTrang = TongTrang(tong);

@@ -15,6 +15,7 @@ namespace Models.Database
         public string TenGianHang { get; set; }
         public double? Gia { get; set; }
         public int? ThoiGian { get; set; }
+        public string TinhTrang { get; set; }
 
         public ICollection<LichSuGianHang> LichSuGianHang { get; set; }
     }

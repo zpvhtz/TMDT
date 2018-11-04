@@ -70,7 +70,7 @@
                         <td class="tensp">@item.TenSanPham</td>
                         <td class="tenshop">@item.IdTaiKhoanNavigation.TenShop</td>
                         <td class="mau">@item.Mau</td>
-                        <td class="tenhang">@item.IdHangSanPhamNavigation.TenHang</td>
+                        <td id="mahang" class="tenhang">@item.IdHangSanPhamNavigation.TenHang</td>
                         <td class="phanloai">@item.PhanLoai</td>
                         <td class="gia">@item.Gia.Value.ToString("# VND")</td>
                         <td class="hinh">
@@ -171,7 +171,7 @@
             let pTen = $(this).closest('tr').find('.ten').text();
             let pTenShop = $(this).closest('tr').find('.tenshop').text();
             let pMau = $(this).closest('tr').find('.mau').text();
-            var pHang = document.getElementById("hang-sua");
+            var pHang = document.getElementById("mahang");
             //let pHang = $(this).closest('tr').find('.tenhang').val();
             let pPhanLoai = $(this).closest('tr').find('.phanloai').val();
             let pGia = $(this).closest('tr').find('.gia').text();

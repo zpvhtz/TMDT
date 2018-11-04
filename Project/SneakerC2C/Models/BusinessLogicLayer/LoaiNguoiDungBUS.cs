@@ -1,95 +1,81 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Models.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using Models.Database;
-using System.Text;
-using PagedList;
 
 namespace Models.BusinessLogicLayer
 {
     public class LoaiNguoiDungBUS
     {
-        QLBanGiayContext db = null;
-
+        private readonly QLBanGiayContext context;
         public LoaiNguoiDungBUS()
         {
-            db = new QLBanGiayContext();
-        }
-        public LoaiNguoiDung GetByID(string MaLoaiNguoiDung)
-        {
-            return db.LoaiNguoiDung.SingleOrDefault(x => x.MaLoaiNguoiDung == MaLoaiNguoiDung);
+            this.context = new QLBanGiayContext();
         }
 
-        public List<LoaiNguoiDung> GetAll()
+        public LoaiNguoiDungBUS(QLBanGiayContext context)
         {
-            return db.LoaiNguoiDung.ToList();
+            this.context = context;
         }
 
-        public LoaiNguoiDung ViewDetail(string MaLoaiNguoiDung)
+        public List<LoaiNguoiDung> GetLoaiNguoiDungs()
         {
-            return db.LoaiNguoiDung.Find(MaLoaiNguoiDung);
+            List<LoaiNguoiDung> list = context.LoaiNguoiDung.ToList();
+            return list;
         }
 
-        public IEnumerable<LoaiNguoiDung> listAllPaging(string searchString, int page, int pageSize)
+        public List<LoaiNguoiDung> GetTaiKhoans(int pagenumber, int pagesize)
         {
-            IQueryable<LoaiNguoiDung> model = db.LoaiNguoiDung;
-            if (!string.IsNullOrEmpty(searchString))
+            List<LoaiNguoiDung> list = context.LoaiNguoiDung
+                                                  .OrderBy(l => l.TenLoaiNguoiDung)
+                                                  .Skip((pagenumber - 1) * pagesize)
+                                                  .Take(pagesize)
+                                                  .Include(l => l.TenLoaiNguoiDung)
+                                                  .ToList();
+            return list;
+        }
+
+
+
+        //------------------------------------------------------ THEM SUA XOA -----------------------------------------------------------------
+
+        public string Edit(string MaLoaiNguoiDung, string TenLoaiNguoiDung, string TinhTrang)
+        {
+            LoaiNguoiDung loainguoidung = context.LoaiNguoiDung.Where(temp => temp.TenLoaiNguoiDung == TenLoaiNguoiDung).SingleOrDefault();
+
+            if (MaLoaiNguoiDung != null)
             {
-                model = model.Where(x => x.TenLoaiNguoiDung.Contains(searchString));
+                loainguoidung.MaLoaiNguoiDung = MaLoaiNguoiDung;
             }
-            return model.OrderBy(x => x.TenLoaiNguoiDung).ToPagedList(page, pageSize);
-        }
-
-        public string Insert(LoaiNguoiDung entity)
-        {
-            db.LoaiNguoiDung.Add(entity);
-            db.SaveChanges();
-            return entity.MaLoaiNguoiDung;
-        }
-
-        public bool Update(LoaiNguoiDung entity)
-        {
-            try
+            if (TenLoaiNguoiDung != null)
             {
-                var loai = db.LoaiNguoiDung.Where(g => g.MaLoaiNguoiDung == entity.MaLoaiNguoiDung).SingleOrDefault();
-                loai.MaLoaiNguoiDung = entity.MaLoaiNguoiDung;
-                loai.TenLoaiNguoiDung = entity.TenLoaiNguoiDung;
-                db.SaveChanges();
-                return true;
+                loainguoidung.TenLoaiNguoiDung = TenLoaiNguoiDung;
             }
-            catch (Exception ex)
+            if (TinhTrang != null)
             {
-                return false;
+                loainguoidung.TinhTrang = TinhTrang;
             }
-        }
-        public bool Delete(string MaLoaiNguoiDung)
-        {
-               var temp = db.LoaiNguoiDung.Find(MaLoaiNguoiDung);
-               string status = temp.TinhTrang;
-               if (status == "Khóa")
-               {
-                   status = "Không Khóa";
-                   temp.TinhTrang = status;
-                   db.SaveChanges();
-                   return true;
-               }
-               else
-               {
-                   if (status == "Không Khóa")
-                   {
-                       status = "Khóa";
-                      temp.TinhTrang = status;
-                       db.SaveChanges();
-                       return true;
-                   }
-               }
-               return false;
-               
+            context.SaveChanges();
+            return "Sửa thành công";
         }
 
+        public string Lock(string MaLoaiNguoiDung)
+        {
+            LoaiNguoiDung loainguoidung = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung == MaLoaiNguoiDung).SingleOrDefault();
+            loainguoidung.TinhTrang = "Khoá";
+            context.SaveChanges();
+            return "Khoá thành công";
+        }
+
+        public string Unlock(string MaLoaiNguoiDung)
+        {
+            LoaiNguoiDung loainguoidung = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung == MaLoaiNguoiDung).SingleOrDefault();
+            loainguoidung.TinhTrang = "Không khoá";
+            context.SaveChanges();
+            return "Mở khoá thành công";
+        }
 
     }
 }

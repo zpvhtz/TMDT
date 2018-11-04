@@ -72,4 +72,88 @@
     color: #fff;
   }
 
-  
+  .bg_header_knb {
+    width: 100%;
+    height: 50px;
+    background-color: #000;
+  }
+  .logo_header_knb {
+    width: 40%;
+    float: left;
+  }
+  .logo_header_knb h4 {
+    color: #fff;
+    line-height: 50px;
+  }
+  .icon_header_knb {
+    width: 5%;
+    float: left;
+    color: #fff;
+    font-size: 35px;
+    line-height: 50px;
+    text-align: center;
+  }
+  .user_merchant {
+    width: 55%;
+    float: right;
+  }
+  .user_merchant a {
+    text-decoration: none;
+    color: #fff;
+  }
+  .user_merchant ul {
+    list-style: none;
+    float: right;
+    color: #fff;
+    line-height: 50px;
+  }
+  .user_merchant ul li {
+    float: left;
+  }
+  .user_merchant ul li i {
+    padding-right: 5px;
+  }
+  .gach_khoangcach {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .menu_knb {
+    text-align: center;
+    margin-top: 50px;
+    width: 80%;
+  }
+  .menu_knb h2 {
+    padding-bottom: 20px;
+  }
+  .menu_knb p {
+    color: #4e4e4e;
+    font-size: 20px;
+  } 
+  .menu_knb_part {
+    width: 20%;
+    float: left;
+  }
+  .menu_knb_part h4 {
+    color: #4e4e4e;
+  }
+  .menu_knb_part a {
+    text-decoration: none;
+  }
+  .menu_knb_icon {
+    width: 139px;
+    height: 139px;
+    background-color: #2fdab8;
+    border-radius: 50%;
+    margin: 35px 50px 20px 35px;
+  }
+  .menu_knb_icon i {
+    font-size: 59px;
+    color: #fff;
+    padding-top: 40px;
+  }
+  .bottom_knb {
+    margin-top: 100px;
+  }
+  .bottom_knb a {
+    color: #fc636b;
+  }

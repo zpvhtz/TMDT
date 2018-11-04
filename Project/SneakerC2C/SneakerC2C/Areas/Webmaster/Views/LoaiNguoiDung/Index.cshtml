@@ -19,14 +19,14 @@
                 <table class="table table-striped table-bordered table-hover">
                     <!--------------------------------------------- Search And Add ------------------------------------------------->
                     <div class="form-group">
-                        @*@using (Html.BeginForm("Index", "LoaiNguoiDung", FormMethod.Get))
+                       @using (Html.BeginForm("Index", "LoaiNguoiDung", FormMethod.Get))
                         {
                             <label>Nhập Tên Loại:</label>
                             <input type="text" , name="searchString">
                             <button type="submit" class="btn btn-primary">Tìm Kiếm</button>
-                        }*@
-                        <a href="/LoaiNguoiDung"><button type="submit" class="btn btn-primary">Làm Mới</button></a>
-                        <a href="/DaiLy/Create"><button type="button" class="btn btn-warning">Thêm Mới</button></a>
+                        }
+                        <a href="/Webmaster/LoaiNguoiDung"><button type="submit" class="btn btn-primary">Làm Mới</button></a>
+                        <a href="/Webmaster/LoaiNguoiDung/Create"><button type="button" class="btn btn-warning">Thêm Mới</button></a>
                     </div>
                     <!------------------------------------------- Loading Edit Delete ----------------------------------------------->
                     <thead>
@@ -47,27 +47,8 @@
                             <td> @item.TenLoaiNguoiDung</td>
                             <td> @item.TinhTrang</td>
                             <td>
-                                <a href="/DaiLy/Edit/@item.MaLoaiNguoiDung"><button type="button" class="btn btn-primary">Sửa</button></a>
-                                <button type="button" class="btn btn-warning">
-                                    @*<script>
-            function submit() {
-
-
-
-            }
-            $.ajax({
-                url: '',
-                data: {}
-            })
-            Ajax.ActionLink("Khóa", "Delete", new { @id = item.MaLoaiNguoiDung }, new AjaxOptions
-         {
-           Confirm = "Bạn có muốn khóa bản ghi này?",
-           //OnComplete = "$('#row_" + @item.MAGIAI + "').remove()",
-           HttpMethod = "Delete"
-        })
-
-            </script>*@
-
+                                <a href="/Webmaster/LoaiNguoiDung/Edit/@item.MaLoaiNguoiDung"><button type="button" class="btn btn-primary">Sửa</button></a>
+                                <button type="button" class="btn btn-warning"> Khoá
 
 
                                 </button>

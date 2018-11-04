@@ -18,9 +18,12 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
         }
         public IActionResult Index()
         {
+            
             List<SanPham> list = ctx.SanPham.Include(tk => tk.IdTaiKhoanNavigation)
                                             .Include(h => h.IdHangSanPhamNavigation)
                                              .ToList();
+            List<HangSanPham> hang = ctx.HangSanPham.ToList();
+            ViewBag.Hang= hang;
             return View(list);
         }
         public IActionResult Search(string search)

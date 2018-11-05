@@ -29,10 +29,9 @@ namespace Models.BusinessLogicLayer
         public List<LoaiNguoiDung> GetLoaiNguoiDungs(int pagenumber, int pagesize)
         {
             List<LoaiNguoiDung> list = context.LoaiNguoiDung
-                                                  .OrderBy(l => l.TenLoaiNguoiDung)
+                                                  .OrderBy(temp => temp.TenLoaiNguoiDung)
                                                   .Skip((pagenumber - 1) * pagesize)
                                                   .Take(pagesize)
-                                                  .Include(l => l.TenLoaiNguoiDung)
                                                   .ToList();
             return list;
         }
@@ -61,7 +60,7 @@ namespace Models.BusinessLogicLayer
             loainguoidung.Id = Guid.Parse(Guid.NewGuid().ToString().ToUpper());
             loainguoidung.MaLoaiNguoiDung = MaLoaiNguoiDung;
             loainguoidung.TenLoaiNguoiDung = TenLoaiNguoiDung;
-            loainguoidung.TinhTrang = "Không Khóa";
+            loainguoidung.TinhTrang = "Không khóa";
 
             context.LoaiNguoiDung.Add(loainguoidung);
             context.SaveChanges();

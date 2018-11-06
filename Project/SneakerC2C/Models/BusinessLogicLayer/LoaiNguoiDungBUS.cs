@@ -60,7 +60,7 @@ namespace Models.BusinessLogicLayer
             loainguoidung.Id = Guid.Parse(Guid.NewGuid().ToString().ToUpper());
             loainguoidung.MaLoaiNguoiDung = MaLoaiNguoiDung;
             loainguoidung.TenLoaiNguoiDung = TenLoaiNguoiDung;
-            loainguoidung.TinhTrang = "Không khóa";
+            loainguoidung.TinhTrang = "Không khoá";
 
             context.LoaiNguoiDung.Add(loainguoidung);
             context.SaveChanges();

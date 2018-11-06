@@ -55,17 +55,18 @@ GO
 
 CREATE TRIGGER TG_ThemThoiGian_GianHang ON LichSuGianHang AFTER INSERT
 AS
+	DECLARE @IdLichSuGianHang UNIQUEIDENTIFIER
 	DECLARE @IdTaiKhoan UNIQUEIDENTIFIER
 	DECLARE @IdGianHang UNIQUEIDENTIFIER
 	DECLARE @ThoiGian INT
 	DECLARE @ThoiHanGianHang DATETIME
 	--
 	DECLARE CUR CURSOR FOR
-	SELECT i.IdTaiKhoan, i.IdGianHang, g.ThoiGian
+	SELECT i.Id, i.IdTaiKhoan, i.IdGianHang, g.ThoiGian
 	FROM inserted i JOIN GianHang g ON i.IdGianHang = g.Id
 	--
 	OPEN CUR
-	FETCH NEXT FROM CUR INTO @IdTaiKhoan, @IdGianHang, @ThoiGian
+	FETCH NEXT FROM CUR INTO @IdLichSuGianHang, @IdTaiKhoan, @IdGianHang, @ThoiGian
 	WHILE @@FETCH_STATUS = 0
 	BEGIN
 		SELECT @ThoiHanGianHang = ThoiHanGianHang
@@ -74,12 +75,22 @@ AS
 		--
 		IF(@ThoiHanGianHang < GETDATE())
 		BEGIN
+			--Update LichSuGianHang--
+			UPDATE LichSuGianHang
+			SET NgayBatDau = GETDATE(), NgayKetThuc = DATEADD(MONTH, @ThoiGian, GETDATE())
+			WHERE Id = @IdLichSuGianHang
+			--Update TaiKhoan--
 			UPDATE TaiKhoan
 			SET ThoiHanGianHang = DATEADD(MONTH, @ThoiGian, GETDATE())
 			WHERE Id = @IdTaiKhoan
 		END
 		ELSE
 		BEGIN
+			--Update LichSuGianHang--
+			UPDATE LichSuGianHang
+			SET NgayBatDau = @ThoiHanGianHang, NgayKetThuc = DATEADD(MONTH, @ThoiGian, @ThoiHanGianHang)
+			WHERE Id = @IdLichSuGianHang
+			--Update TaiKhoan--
 			UPDATE TaiKhoan
 			SET	ThoiHanGianHang = DATEADD(MONTH, @ThoiGian, ThoiHanGianHang)
 			WHERE Id = @IdTaiKhoan

@@ -214,7 +214,9 @@ CREATE TABLE LichSuGianHang --Lịch sử đăng ký gian hàng--
 	Id UNIQUEIDENTIFIER PRIMARY KEY,
 	IdTaiKhoan UNIQUEIDENTIFIER NOT NULL, --FK--
 	IdGianHang UNIQUEIDENTIFIER NOT NULL, --FK--
-	NgayDangKy DATETIME
+	NgayDangKy DATETIME,
+	NgayBatDau DATETIME,
+	NgayKetThuc DATETIME
 )
 
 ALTER TABLE TaiKhoan
@@ -291,17 +293,18 @@ GO
 --Trigger cộng thời gian cho merchant--
 CREATE TRIGGER TG_ThemThoiGian_GianHang ON LichSuGianHang AFTER INSERT
 AS
+	DECLARE @IdLichSuGianHang UNIQUEIDENTIFIER
 	DECLARE @IdTaiKhoan UNIQUEIDENTIFIER
 	DECLARE @IdGianHang UNIQUEIDENTIFIER
 	DECLARE @ThoiGian INT
 	DECLARE @ThoiHanGianHang DATETIME
 	--
 	DECLARE CUR CURSOR FOR
-	SELECT i.IdTaiKhoan, i.IdGianHang, g.ThoiGian
+	SELECT i.Id, i.IdTaiKhoan, i.IdGianHang, g.ThoiGian
 	FROM inserted i JOIN GianHang g ON i.IdGianHang = g.Id
 	--
 	OPEN CUR
-	FETCH NEXT FROM CUR INTO @IdTaiKhoan, @IdGianHang, @ThoiGian
+	FETCH NEXT FROM CUR INTO @IdLichSuGianHang, @IdTaiKhoan, @IdGianHang, @ThoiGian
 	WHILE @@FETCH_STATUS = 0
 	BEGIN
 		SELECT @ThoiHanGianHang = ThoiHanGianHang
@@ -310,17 +313,27 @@ AS
 		--
 		IF(@ThoiHanGianHang < GETDATE())
 		BEGIN
+			--Update LichSuGianHang--
+			UPDATE LichSuGianHang
+			SET NgayBatDau = GETDATE(), NgayKetThuc = DATEADD(MONTH, @ThoiGian, GETDATE())
+			WHERE Id = @IdLichSuGianHang
+			--Update TaiKhoan--
 			UPDATE TaiKhoan
 			SET ThoiHanGianHang = DATEADD(MONTH, @ThoiGian, GETDATE())
 			WHERE Id = @IdTaiKhoan
 		END
 		ELSE
 		BEGIN
+			--Update LichSuGianHang--
+			UPDATE LichSuGianHang
+			SET NgayBatDau = @ThoiHanGianHang, NgayKetThuc = DATEADD(MONTH, @ThoiGian, @ThoiHanGianHang)
+			WHERE Id = @IdLichSuGianHang
+			--Update TaiKhoan--
 			UPDATE TaiKhoan
 			SET	ThoiHanGianHang = DATEADD(MONTH, @ThoiGian, ThoiHanGianHang)
 			WHERE Id = @IdTaiKhoan
 		END
-		FETCH NEXT FROM CUR INTO @IdTaiKhoan, @IdGianHang, @ThoiGian
+		FETCH NEXT FROM CUR INTO @IdLichSuGianHang, @IdTaiKhoan, @IdGianHang, @ThoiGian
 	END
 	CLOSE CUR
 	DEALLOCATE CUR
@@ -354,7 +367,7 @@ INSERT INTO GianHang
 		  ('9FDEDF57-2F92-40B9-81CA-96A37472A81E', 'GH-3', N'Gói 6 tháng', 2200000, 6, N'Không khoá'),
 		  ('80FF7A53-99C8-4505-AA5A-F19F1D82A5C6', 'GH-4', N'Gói 1 năm', 4200000, 12, N'Không khoá')
 
-INSERT INTO LichSuGianHang
+INSERT INTO LichSuGianHang(Id, IdTaiKhoan, IdGianHang, NgayDangKy)
 	VALUES('B1AD6C00-2136-476A-A120-1CCBAB3147F2', 'CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053', '80FF7A53-99C8-4505-AA5A-F19F1D82A5C6', GETDATE()),
 		  ('B4000F6F-DE84-4467-92B9-3FAF28CB9F4C', '18D79B1D-EE48-459A-AD1D-09A05A4773AD', '9FDEDF57-2F92-40B9-81CA-96A37472A81E', GETDATE()),
 		  ('F15D5293-3369-45A9-93D3-BE3D5D00378F', '499A28F6-67A2-4D2D-B027-183058A07646', '3AE382C3-D4D9-44ED-8D0C-DBFA911A13BA', GETDATE()),

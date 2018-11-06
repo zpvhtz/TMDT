@@ -107,6 +107,7 @@ namespace Models.BusinessLogicLayer
         {
             LoaiNguoiDung loainguoidung = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung == MaLoaiNguoiDung).SingleOrDefault();
             loainguoidung.TinhTrang = "Khoá";
+            loainguoidung.TinhTrang.Trim();
             context.SaveChanges();
             return "Khoá thành công";
         }
@@ -115,6 +116,7 @@ namespace Models.BusinessLogicLayer
         {
             LoaiNguoiDung loainguoidung = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung == MaLoaiNguoiDung).SingleOrDefault();
             loainguoidung.TinhTrang = "Không khoá";
+            loainguoidung.TinhTrang.Trim();
             context.SaveChanges();
             return "Mở khoá thành công";
         }

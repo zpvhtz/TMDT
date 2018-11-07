@@ -42,7 +42,7 @@ namespace Models.Database
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=HEOBAYMAU;Database=QLBanGiay;Integrated Security=True;");
+                optionsBuilder.UseSqlServer("Server=.;Database=QLBanGiay;User id=sa;Password=123456;Integrated Security=True;");
             }
         }
 

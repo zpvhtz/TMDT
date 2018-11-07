@@ -108,6 +108,14 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             return RedirectToAction("Index", "TaiKhoan", new { thongbao = thongbao });
         }
 
+        public IActionResult GetLichSuGianHang(string tendangnhap)
+        {
+            LichSuGianHangBUS lsgianhang = new LichSuGianHangBUS();
+            List<LichSuGianHang> list = lsgianhang.GetLichSuGianHangs(tendangnhap);
+            ViewBag.TenDangNhap = tendangnhap;
+            return PartialView("LichSuGianHangPartialView", list);
+        }
+
         public IActionResult Sort(string sortorder, int? pagenumber)
         {
             pageNumber = pagenumber ?? 1;

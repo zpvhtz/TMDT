@@ -67,7 +67,7 @@ namespace Models.BusinessLogicLayer
 
             return "Thêm thành công";
         }
-        public string EditLoaiNguoiDung(string MaLoaiNguoiDung, string TenLoaiNguoiDung, string TinhTrang)
+        public string EditLoaiNguoiDung(string MaLoaiNguoiDung, string TenLoaiNguoiDung)
         {
             LoaiNguoiDung loainguoidung = new LoaiNguoiDung();
 
@@ -94,10 +94,6 @@ namespace Models.BusinessLogicLayer
             if (TenLoaiNguoiDung != null)
             {
                 loainguoidung.TenLoaiNguoiDung = TenLoaiNguoiDung;
-            }
-            if (TinhTrang != null)
-            {
-                loainguoidung.TinhTrang = TinhTrang;
             }
             context.SaveChanges();
             return "Sửa thành công";

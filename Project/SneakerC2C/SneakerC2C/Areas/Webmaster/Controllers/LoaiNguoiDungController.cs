@@ -46,10 +46,10 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             return RedirectToAction("Index", "LoaiNguoiDung", new { thongbao = thongbao });
         }
 
-        public IActionResult EditLoaiNguoiDung(string item_sua_maloainguoidung, string item_sua_tenloainguoidung, string item_sua_tinhtrang)
+        public IActionResult EditLoaiNguoiDung(string item_sua_maloainguoidung, string item_sua_tenloainguoidung)
         {
             LoaiNguoiDungBUS loainguoidung = new LoaiNguoiDungBUS();
-            string thongbao = loainguoidung.EditLoaiNguoiDung(item_sua_maloainguoidung,item_sua_tenloainguoidung,item_sua_tinhtrang);
+            string thongbao = loainguoidung.EditLoaiNguoiDung(item_sua_maloainguoidung,item_sua_tenloainguoidung);
             return RedirectToAction("Index", "LoaiNguoiDung", new { thongbao = thongbao });
         }
 

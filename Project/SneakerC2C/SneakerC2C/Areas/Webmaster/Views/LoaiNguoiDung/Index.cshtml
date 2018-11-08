@@ -233,7 +233,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Mã loại người dùng</label>
-                        <input type="text" class="form-control" id="item-sua-maloainguoidung" name="item_sua_maloainguoidung">
+                        <input type="text" class="form-control" id="item-sua-maloainguoidung" name="item_sua_maloainguoidung" >
                     </div>
                     <div class="form-group">
                         <label>Tên loại người dùng</label>
@@ -248,3 +248,40 @@
         </form>
     </div>
 </div>
+
+@if (ViewBag.ThongBao != null)
+{
+    <script>
+        alert("@Html.Raw(ViewBag.ThongBao)");
+    </script>
+}
+
+
+<script>
+    $(".btnSuaLoaiNguoiDung").click(function () {
+        let maloainguoidung = $(this).closest('tr').find('.item-maloainguoidung').text();
+        let tenloainguoidung = $(this).closest('tr').find('.item-tenloainguoidung').text();
+        $("#item-sua-maloainguoidung").val(maloainguoidung.trim());
+        $("#item-sua-tenloainguoidung").val(tenloainguoidung.trim());
+
+    });
+
+    $(".pageNumber").click(function () {
+        //Get addtional href
+        let sort = $("#sortList").val();
+        let search = "@ViewBag.Search";
+        //Href
+        var $link = $('.pageNumber');
+        var href = $link.attr('href').split('/');
+        if (sort != null && sort != '') {
+            sort = sort.substring(sort.lastIndexOf('=') + 1, sort.length);
+            href.push('&sortorder=' + sort); //here you set your new asp-route-pagenumber value
+        }
+        if (search != null && search != '') {
+            href.push('&search=' + search); //here you set your new asp-route-pagenumber value
+        }
+        href = href.join('/');
+        href = href.toString().replace(/\/&/g, '&');
+        $link.attr('href', href);
+    });
+</script>

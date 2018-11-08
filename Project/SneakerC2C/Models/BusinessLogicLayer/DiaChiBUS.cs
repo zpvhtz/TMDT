@@ -29,6 +29,17 @@ namespace Models.BusinessLogicLayer
             return diachi;
         }
 
+        public List<DiaChi> GetDiaChis(int pagenumber, int pagesize)
+        {
+            List<DiaChi> diachi = context.DiaChi.OrderBy(dc => dc.Id)
+                                                .Skip((pagenumber - 1) * pagesize)
+                                                .Take(pagesize)
+                                                .Include(dc => dc.IdTaiKhoanNavigation)
+                                                .Include(dc => dc.IdTinhThanhNavigation)
+                                                .ToList();
+            return diachi;
+        }
+
         public List<DiaChi> GetDiaChis(string tendangnhap)
         {
             List<DiaChi> diachi = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap == tendangnhap)
@@ -36,6 +47,12 @@ namespace Models.BusinessLogicLayer
                                                 .Include(dc => dc.IdTinhThanhNavigation)
                                                 .ToList();
             return diachi;
+        }
+
+        public List<TinhThanh> GetTinhThanhs()
+        {
+            List<TinhThanh> tinhthanh = context.TinhThanh.ToList();
+            return tinhthanh;
         }
 
         public DiaChi GetThongTinDiaChi(string tendangnhap, string diachi)
@@ -47,13 +64,20 @@ namespace Models.BusinessLogicLayer
             return dc;
         }
 
-        public string CreateDiaChi(string tendangnhap, string diachi, string tinhthanh)
+        public string CreateDiaChi(string tendangnhap, string duong, string tinhthanh)
         {
-            TaiKhoan tk = context.TaiKhoan.Where(t => t.TenDangNhap == tendangnhap).SingleOrDefault();
+            TaiKhoan tk = new TaiKhoan();
+            //Kiểm tra
+            tk = context.TaiKhoan.Where(t => t.TenDangNhap == tendangnhap).SingleOrDefault();
+            if(tk == null)
+            {
+                return "Tên tài khoản không tồn tại";
+            }
+            //Thêm
             DiaChi dc = new DiaChi();
             dc.Id = Guid.Parse(Guid.NewGuid().ToString().ToUpper());
             dc.IdTaiKhoan = tk.Id;
-            dc.Duong = diachi;
+            dc.Duong = duong;
             dc.IdTinhThanh = Guid.Parse(tinhthanh);
             dc.TinhTrang = "Không khoá";
             context.DiaChi.Add(dc);
@@ -80,6 +104,230 @@ namespace Models.BusinessLogicLayer
             dc.TinhTrang = "Khoá";
             context.SaveChanges();
             return "Khoá thành công";
+        }
+
+        public string UnlockDiaChi(string id)
+        {
+            DiaChi dc = context.DiaChi.Where(d => d.Id == Guid.Parse(id)).SingleOrDefault();
+            dc.TinhTrang = "Không khoá";
+            context.SaveChanges();
+            return "Mở khoá thành công";
+        }
+
+        public List<DiaChi> Sort(string sortorder, int pagesize, int pagenumber)
+        {
+            List<DiaChi> list = new List<DiaChi>();
+            switch (sortorder)
+            {
+                case "taikhoan-az":
+                    list = context.DiaChi.OrderBy(dc => dc.IdTaiKhoanNavigation.TenDangNhap)
+                                         .Skip((pagenumber - 1) * pagesize)
+                                         .Take(pagesize)
+                                         .Include(dc => dc.IdTaiKhoanNavigation)
+                                         .Include(dc => dc.IdTinhThanhNavigation)
+                                         .ToList();
+                    break;
+                case "taikhoan-za":
+                    list = context.DiaChi.OrderByDescending(dc => dc.IdTaiKhoanNavigation.TenDangNhap)
+                                         .Skip((pagenumber - 1) * pagesize)
+                                         .Take(pagesize)
+                                         .Include(dc => dc.IdTaiKhoanNavigation)
+                                         .Include(dc => dc.IdTinhThanhNavigation)
+                                         .ToList();
+                    break;
+                case "tinhthanh-asc":
+                    list = context.DiaChi.OrderBy(dc => dc.IdTinhThanhNavigation.TenTinhThanh)
+                                         .Skip((pagenumber - 1) * pagesize)
+                                         .Take(pagesize)
+                                         .Include(dc => dc.IdTaiKhoanNavigation)
+                                         .Include(dc => dc.IdTinhThanhNavigation)
+                                         .ToList();
+                    break;
+                case "tinhthanh-desc":
+                    list = context.DiaChi.OrderByDescending(dc => dc.IdTinhThanhNavigation.TenTinhThanh)
+                                         .Skip((pagenumber - 1) * pagesize)
+                                         .Take(pagesize)
+                                         .Include(dc => dc.IdTaiKhoanNavigation)
+                                         .Include(dc => dc.IdTinhThanhNavigation)
+                                         .ToList();
+                    break;
+            }
+            return list;
+        }
+
+        public List<DiaChi> Sort(string sortorder)
+        {
+            List<DiaChi> list = new List<DiaChi>();
+            switch (sortorder)
+            {
+                case "taikhoan-az":
+                    list = context.DiaChi.OrderBy(dc => dc.IdTaiKhoanNavigation.TenDangNhap)
+                                         .Include(dc => dc.IdTaiKhoanNavigation)
+                                         .Include(dc => dc.IdTinhThanhNavigation)
+                                         .ToList();
+                    break;
+                case "taikhoan-za":
+                    list = context.DiaChi.OrderByDescending(dc => dc.IdTaiKhoanNavigation.TenDangNhap)
+                                         .Include(dc => dc.IdTaiKhoanNavigation)
+                                         .Include(dc => dc.IdTinhThanhNavigation)
+                                         .ToList();
+                    break;
+                case "tinhthanh-asc":
+                    list = context.DiaChi.OrderBy(dc => dc.IdTinhThanhNavigation.TenTinhThanh)
+                                         .Include(dc => dc.IdTaiKhoanNavigation)
+                                         .Include(dc => dc.IdTinhThanhNavigation)
+                                         .ToList();
+                    break;
+                case "tinhthanh-desc":
+                    list = context.DiaChi.OrderByDescending(dc => dc.IdTinhThanhNavigation.TenTinhThanh)
+                                         .Include(dc => dc.IdTaiKhoanNavigation)
+                                         .Include(dc => dc.IdTinhThanhNavigation)
+                                         .ToList();
+                    break;
+            }
+            return list;
+        }
+
+        public List<DiaChi> Search(string search, int pagesize, int pagenumber)
+        {
+            List<DiaChi> list = new List<DiaChi>();
+            if (search == null)
+            {
+                list = GetDiaChis(1, pagesize);
+            }
+            else
+            {
+                list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
+                                                  dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                     .Skip((pagenumber - 1) * pagesize)
+                                     .Take(pagesize)
+                                     .Include(dc => dc.IdTaiKhoanNavigation)
+                                     .Include(dc => dc.IdTinhThanhNavigation)
+                                     .ToList();
+            }
+            return list;
+        }
+
+        public List<DiaChi> Search(string search, int pagesize)
+        {
+            List<DiaChi> list = new List<DiaChi>();
+            if (search == null)
+            {
+                list = GetDiaChis(1, pagesize);
+            }
+            else
+            {
+                list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
+                                                  dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                     .Include(dc => dc.IdTaiKhoanNavigation)
+                                     .Include(dc => dc.IdTinhThanhNavigation)
+                                     .ToList();
+            }
+            return list;
+        }
+
+        public List<DiaChi> SearchAndSort(string search, string sortorder, int pagesize, int pagenumber)
+        {
+            List<DiaChi> list = new List<DiaChi>();
+            if (search == null)
+            {
+                list = GetDiaChis(1, pagesize);
+            }
+            else
+            {
+                switch (sortorder)
+                {
+                    case "taikhoan-az":
+                        list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
+                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                             .OrderBy(dc => dc.IdTaiKhoanNavigation.TenDangNhap)
+                                             .Include(dc => dc.IdTaiKhoanNavigation)
+                                             .Include(dc => dc.IdTinhThanhNavigation)
+                                             .Skip((pagenumber - 1) * pagesize)
+                                             .Take(pagesize)
+                                             .ToList();
+                        break;
+                    case "taikhoan-za":
+                        list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
+                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                             .OrderByDescending(dc => dc.IdTaiKhoanNavigation.TenDangNhap)
+                                             .Include(dc => dc.IdTaiKhoanNavigation)
+                                             .Include(dc => dc.IdTinhThanhNavigation)
+                                             .Skip((pagenumber - 1) * pagesize)
+                                             .Take(pagesize)
+                                             .ToList();
+                        break;
+                    case "tinhthanh-asc":
+                        list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
+                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                             .OrderBy(dc => dc.IdTinhThanhNavigation.TenTinhThanh)
+                                             .Include(dc => dc.IdTaiKhoanNavigation)
+                                             .Include(dc => dc.IdTinhThanhNavigation)
+                                             .Skip((pagenumber - 1) * pagesize)
+                                             .Take(pagesize)
+                                             .ToList();
+                        break;
+                    case "tinhthanh-desc":
+                        list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
+                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                             .OrderByDescending(dc => dc.IdTinhThanhNavigation.TenTinhThanh)
+                                             .Include(dc => dc.IdTaiKhoanNavigation)
+                                             .Include(dc => dc.IdTinhThanhNavigation)
+                                             .Skip((pagenumber - 1) * pagesize)
+                                             .Take(pagesize)
+                                             .ToList();
+                        break;
+                }
+            }
+            return list;
+        }
+
+        public List<DiaChi> SearchAndSort(string search, string sortorder, int pagesize)
+        {
+            List<DiaChi> list = new List<DiaChi>();
+            if (search == null)
+            {
+                list = GetDiaChis(1, pagesize);
+            }
+            else
+            {
+                switch (sortorder)
+                {
+                    case "tengianhang-az":
+                        list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
+                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                             .OrderBy(dc => dc.IdTaiKhoanNavigation.TenDangNhap)
+                                             .Include(dc => dc.IdTaiKhoanNavigation)
+                                             .Include(dc => dc.IdTinhThanhNavigation)
+                                             .ToList();
+                        break;
+                    case "tengianhang-za":
+                        list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
+                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                             .OrderByDescending(dc => dc.IdTaiKhoanNavigation.TenDangNhap)
+                                             .Include(dc => dc.IdTaiKhoanNavigation)
+                                             .Include(dc => dc.IdTinhThanhNavigation)
+                                             .ToList();
+                        break;
+                    case "gia-asc":
+                        list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
+                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                             .OrderBy(dc => dc.IdTinhThanhNavigation.TenTinhThanh)
+                                             .Include(dc => dc.IdTaiKhoanNavigation)
+                                             .Include(dc => dc.IdTinhThanhNavigation)
+                                             .ToList();
+                        break;
+                    case "gia-desc":
+                        list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
+                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                             .OrderByDescending(dc => dc.IdTinhThanhNavigation.TenTinhThanh)
+                                             .Include(dc => dc.IdTaiKhoanNavigation)
+                                             .Include(dc => dc.IdTinhThanhNavigation)
+                                             .ToList();
+                        break;
+                }
+            }
+            return list;
         }
     }
 }

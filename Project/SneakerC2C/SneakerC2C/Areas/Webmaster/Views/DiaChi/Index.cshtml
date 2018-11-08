@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Models.Database.GianHang>
+﻿@model IEnumerable<Models.Database.DiaChi>
 
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
@@ -9,7 +9,7 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h2 class="page-header">DANH SÁCH GIAN HÀNG</h2>
+        <h2 class="page-header">DANH SÁCH ĐỊA CHỈ</h2>
     </div>
     <!-- /.col-lg-12 -->
 </div>
@@ -24,16 +24,16 @@
                 <div class="form-group">
                     <select class="form-control" id="sortList" onchange="window.location.href = SearchAndSort()">
                         <option selected disabled>Sắp xếp theo</option>
-                        <option value="/Webmaster/GianHang/Sort?sortorder=tengianhang-az">Tên gian hàng (A-Z)</option>
-                        <option value="/Webmaster/GianHang/Sort?sortorder=tengianhang-za">Tên gian hàng (Z-A)</option>
-                        <option value="/Webmaster/GianHang/Sort?sortorder=gia-asc">Giá thấp</option>
-                        <option value="/Webmaster/GianHang/Sort?sortorder=gia-desc">Giá cao</option>
+                        <option value="/Webmaster/DiaChi/Sort?sortorder=taikhoan-az">Tên tài khoản (A-Z)</option>
+                        <option value="/Webmaster/DiaChi/Sort?sortorder=taikhoan-za">Tên tài khoản (Z-A)</option>
+                        <option value="/Webmaster/DiaChi/Sort?sortorder=tinhthanh-asc">Tên tỉnh thành (A-Z)</option>
+                        <option value="/Webmaster/DiaChi/Sort?sortorder=tinhthanh-desc">Tên tỉnh thành (Z-A)</option>
                     </select>
                 </div>
             </div>
             <div class="col-lg-6"></div>
             <div class="col-lg-3">
-                <form asp-controller="GianHang" asp-action="Search" method="get">
+                <form asp-controller="DiaChi" asp-action="Search" method="get">
                     <div class="input-group custom-search-form">
                         <input type="text" class="form-control" id="searchList" placeholder="Tìm kiếm..." name="search">
                         <span class="input-group-btn">
@@ -49,10 +49,10 @@
         <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
             <thead class="thead-dark">
                 <tr>
-                    <th>Mã</th>
-                    <th>Tên</th>
-                    <th>Giá</th>
-                    <th>Thời gian</th>
+                    <th>Id</th>
+                    <th>Tên tài khoản</th>
+                    <th>Địa chỉ</th>
+                    <th>Tên tỉnh thành</th>
                     <th></th>
                 </tr>
             </thead>
@@ -60,20 +60,20 @@
                 @foreach (var item in Model)
                 {
                     <tr class="odd gradeX">
-                        <td class="item-ma">@item.MaGianHang</td>
-                        <td class="item-ten">@item.TenGianHang</td>
-                        <td class="item-gia">@item.Gia</td>
-                        <td class="item-thoigian">@item.ThoiGian</td>
+                        <td class="item-id">@item.Id</td>
+                        <td class="item-tendangnhap">@item.IdTaiKhoanNavigation.TenDangNhap</td>
+                        <td class="item-duong">@item.Duong</td>
+                        <td class="item-tentinhthanh">@item.IdTinhThanhNavigation.TenTinhThanh</td>
                         <td>
                             @if (item.TinhTrang == "Không khoá")
                             {
-                                <button class="btn btn-primary btnSuaGianHang" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
-                                <a asp-controller="GianHang" asp-action="LockGianHang" asp-route-magianhang="@item.MaGianHang" class="btn btn-danger">Khoá</a>
+                                <button class="btn btn-primary btnSuaDiaChi" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
+                                <a asp-controller="DiaChi" asp-action="LockDiaChi" asp-route-iddiachi="@item.Id" class="btn btn-danger">Khoá</a>
                             }
                             else
                             {
-                                <button class="btn btn-primary btnSuaGianHang" type="button" data-toggle="modal" data-target="#suaModal" disabled>Sửa</button>
-                                <a asp-controller="GianHang" asp-action="UnlockGianHang" asp-route-magianhang="@item.MaGianHang" class="btn btn-danger">Mở khoá</a>
+                                <button class="btn btn-primary btnSuaDiaChi" type="button" data-toggle="modal" data-target="#suaModal" disabled>Sửa</button>
+                                <a asp-controller="DiaChi" asp-action="UnlockDiaChi" asp-route-iddiachi="@item.Id" class="btn btn-danger">Mở khoá</a>
                             }
                         </td>
                     </tr>
@@ -92,16 +92,16 @@
                     @switch (ViewBag.TrangThai)
                     {
                         case "index":
-                            <a asp-controller="GianHang" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            <a asp-controller="DiaChi" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
                             break;
                         case "sort":
-                            <a asp-controller="GianHang" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            <a asp-controller="DiaChi" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
                             break;
                         case "search":
-                            <a asp-controller="GianHang" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            <a asp-controller="DiaChi" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
                             break;
                         case "searchandsort":
-                            <a asp-controller="GianHang" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            <a asp-controller="DiaChi" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
                             break;
                     }
                 </li>
@@ -115,16 +115,16 @@
                         @switch (ViewBag.TrangThai)
                         {
                             case "index":
-                                <a asp-controller="GianHang" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                <a asp-controller="DiaChi" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
                                 break;
                             case "sort":
-                                <a asp-controller="GianHang" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                <a asp-controller="DiaChi" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
                                 break;
                             case "search":
-                                <a asp-controller="GianHang" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                <a asp-controller="DiaChi" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
                                 break;
                             case "searchandsort":
-                                <a asp-controller="GianHang" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                <a asp-controller="DiaChi" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
                                 break;
                         }
                     </li>
@@ -142,16 +142,16 @@
                             @switch (ViewBag.TrangThai)
                             {
                                 case "index":
-                                    <a asp-controller="GianHang" asp-action="Index" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="DiaChi" asp-action="Index" asp-route-pagenumber="@i" class="pageNumber">@i</a>
                                     break;
                                 case "sort":
-                                    <a asp-controller="GianHang" asp-action="Sort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="DiaChi" asp-action="Sort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
                                     break;
                                 case "search":
-                                    <a asp-controller="GianHang" asp-action="Search" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="DiaChi" asp-action="Search" asp-route-pagenumber="@i" class="pageNumber">@i</a>
                                     break;
                                 case "searchandsort":
-                                    <a asp-controller="GianHang" asp-action="SearchAndSort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="DiaChi" asp-action="SearchAndSort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
                                     break;
                             }
                         </li>
@@ -168,16 +168,16 @@
                     @switch (ViewBag.TrangThai)
                     {
                         case "index":
-                            <a asp-controller="GianHang" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            <a asp-controller="DiaChi" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
                             break;
                         case "sort":
-                            <a asp-controller="GianHang" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            <a asp-controller="DiaChi" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
                             break;
                         case "search":
-                            <a asp-controller="GianHang" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            <a asp-controller="DiaChi" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
                             break;
                         case "searchandsort":
-                            <a asp-controller="GianHang" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            <a asp-controller="DiaChi" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
                             break;
                     }
                 </li>
@@ -190,32 +190,33 @@
 <div class="modal fade" id="themModal" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
-        <form asp-controller="GianHang" asp-action="CreateGianHang" method="post">
+        <form asp-controller="DiaChi" asp-action="CreateDiaChi" method="post">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Gian hàng</h4>
+                    <h4 class="modal-title">Địa chỉ</h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Mã</label>
-                        <input type="text" class="form-control" id="item-them-ma" name="item_them_ma" required>
+                        <label>Tên tài khoản</label>
+                        <input type="text" class="form-control" id="item-them-tendangnhap" name="item_them_tendangnhap" required>
                     </div>
                     <div class="form-group">
-                        <label>Tên</label>
-                        <input type="text" class="form-control" id="item-them-ten" name="item_them_ten" required>
+                        <label>Đường</label>
+                        <input type="text" class="form-control" id="item-them-duong" name="item_them_duong" required>
                     </div>
                     <div class="form-group">
-                        <label>Giá</label>
-                        <input type="number" class="form-control" id="item-them-gia" name="item_them_gia" min="0" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Thời gian (tháng)</label>
-                        <input type="number" class="form-control" id="item-them-thoigian" name="item_them_thoigian" min="1" required>
+                        <label>Tỉnh thành</label>
+                        <select class="form-control" id="item-them-tinhthanh" name="item_them_tinhthanh">
+                            @foreach(var item in @ViewBag.ListTinhThanh)
+                            {
+                                <option value="@item.Id">@item.TenTinhThanh</option>
+                            }
+                        </select>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-warning" id="btnThemGianHang">Thêm</button>
+                    <button type="submit" class="btn btn-warning">Thêm</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                 </div>
             </div>
@@ -227,28 +228,29 @@
 <div class="modal fade" id="suaModal" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
-        <form asp-controller="GianHang" asp-action="EditGianHang" method="post">
+        <form asp-controller="DiaChi" asp-action="EditDiaChi" method="post">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Gian hàng</h4>
+                    <h4 class="modal-title">Địa chỉ</h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Mã</label>
-                        <input type="text" class="form-control" id="item-sua-ma" name="item_sua_ma" readonly>
+                        <label>Id</label>
+                        <input type="text" class="form-control" id="item-sua-id" name="item_sua_id" readonly>
                     </div>
                     <div class="form-group">
-                        <label>Tên</label>
-                        <input type="text" class="form-control" id="item-sua-ten" name="item_sua_ten">
+                        <label>Đường</label>
+                        <input type="text" class="form-control" id="item-sua-duong" name="item_sua_duong" required>
                     </div>
                     <div class="form-group">
-                        <label>Giá</label>
-                        <input type="number" class="form-control" id="item-sua-gia" name="item_sua_gia" min="0">
-                    </div>
-                    <div class="form-group">
-                        <label>Thời gian (tháng)</label>
-                        <input type="number" class="form-control" id="item-sua-thoigian" name="item_sua_thoigian" min="1">
+                        <label>Tỉnh thành</label>
+                        <select class="form-control" id="item-sua-tinhthanh" name="item_sua_tinhthanh">
+                            @foreach (var item in @ViewBag.ListTinhThanh)
+                            {
+                                <option value="@item.Id">@item.TenTinhThanh</option>
+                            }
+                        </select>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -280,26 +282,6 @@
             return href;
         }
     }
-
-    function validateNumber(e) {
-        // Allow: backspace, delete, tab, escape, enter and .
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-            // Allow: Ctrl/cmd+A
-            (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
-            // Allow: Ctrl/cmd+C
-            (e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true)) ||
-            // Allow: Ctrl/cmd+X
-            (e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true)) ||
-            // Allow: home, end, left, right
-            (e.keyCode >= 35 && e.keyCode <= 39)) {
-            // let it happen, don't do anything
-            return;
-        }
-        // Ensure that it is a number and stop the keypress
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            e.preventDefault();
-        }
-    };
 </script>
 
 <script>
@@ -316,16 +298,21 @@
         }
     });
 
-    $(".btnSuaGianHang").click(function () {
-        let ma = $(this).closest('tr').find('.item-ma').text();
-        let ten = $(this).closest('tr').find('.item-ten').text();
-        let gia = $(this).closest('tr').find('.item-gia').text();
-        let thoigian = $(this).closest('tr').find('.item-thoigian').text();
+    $(".btnSuaDiaChi").click(function () {
+        let id = $(this).closest('tr').find('.item-id').text();
+        let duong = $(this).closest('tr').find('.item-duong').text();
+        let tentinhthanh = $(this).closest('tr').find('.item-tentinhthanh').text();
 
-        $("#item-sua-ma").val(ma.trim());
-        $("#item-sua-ten").val(ten.trim());
-        $("#item-sua-gia").val(gia.trim());
-        $("#item-sua-thoigian").val(thoigian.trim());
+        $("#item-sua-id").val(id.trim());
+        $("#item-sua-duong").val(duong.trim());
+        $("#item-sua-tinhthanh option").each(function () {
+            if ($(this).text().includes(tentinhthanh)) {
+                $(this).attr('selected', true);
+            }
+            else {
+                $(this).attr('selected', false);
+            }
+        });
     });
 
     $(".pageNumber").click(function () {

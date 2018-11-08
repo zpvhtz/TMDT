@@ -39,5 +39,16 @@ namespace Models.BusinessLogicLayer
                                                               .ToList();
             return list;
         }
+
+        public List<LichSuGianHang> GetLichSuGianHangs(int pagenumber, int pagesize)
+        {
+            List<LichSuGianHang> list = context.LichSuGianHang.OrderBy(gh => gh.Id)
+                                                              .Skip((pagenumber - 1) * pagesize)
+                                                              .Take(pagesize)
+                                                              .Include(gh => gh.IdTaiKhoanNavigation)
+                                                              .Include(gh => gh.IdGianHangNavigation)
+                                                              .ToList();
+            return list;
+        }
     }
 }

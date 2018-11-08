@@ -58,6 +58,7 @@
                     <th>CMND</th>
                     <th>Loại người dùng</th>
                     <th>Ngày tạo</th>
+                    <th>Thời hạn</th>
                     <th>Đánh giá</th>
                     <th></th>
                 </tr>
@@ -74,19 +75,16 @@
                         <td class="item-cmnd">@item.Cmnd</td>
                         <td class="item-loainguoidung">@item.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung</td>
                         <td class="item-ngaytao">@item.NgayTao</td>
+                        <td class="item-thoihan">@item.ThoiHanGianHang</td>
                         <td class="item-danhgia">@item.DanhGia</td>
                         <td>
                             @if (item.TinhTrang == "Không khoá")
                             {
-                                <button class="btn btn-primary btnChiTiet" type="button" data-toggle="modal" data-target="#chitietModal">Chi tiết</button>
-                                @*<button class="btn btn-primary btnDiaChi" type="button" data-toggle="modal" data-target="#diachiModal">Địa chỉ</button>*@
                                 <button class="btn btn-primary btnSuaTaiKhoan" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
                                 <a asp-controller="TaiKhoan" asp-action="LockTaiKhoan" asp-route-tendangnhap="@item.TenDangNhap" class="btn btn-danger">Khoá</a>
                             }
                             else
                             {
-                                <button class="btn btn-primary btnChiTiet" type="button" data-toggle="modal" data-target="#chitietModal">Chi tiết</button>
-                                @*<button class="btn btn-primary btnDiaChi" type="button" data-toggle="modal" data-target="#diachiModal">Địa chỉ</button>*@
                                 <button class="btn btn-primary btnSuaTaiKhoan" type="button" data-toggle="modal" data-target="#suaModal" disabled>Sửa</button>
                                 <a asp-controller="TaiKhoan" asp-action="UnlockTaiKhoan" asp-route-tendangnhap="@item.TenDangNhap" class="btn btn-danger">Mở khoá</a>
                             }
@@ -201,37 +199,6 @@
     </div>
 </div>
 <!-- /.panel-body -->
-<!-- Modal chi tiết -->
-<div class="modal fade" id="chitietModal" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title" id="chitietModal-title">Chi tiết tài khoản</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-sm-12 col-md-3 col-lg-3 text-center">
-                        <button class="btn btn-primary btnDiaChi" type="button" data-toggle="modal" data-target="#diachiModal">Địa chỉ</button>
-                    </div>
-                    <div class="col-sm-12 col-md-3 col-lg-3 text-center">
-                        <button class="btn btn-primary btnGianHang" type="button" data-toggle="modal" data-target="#gianhangModal">Gian hàng</button>
-                    </div>
-                    <div class="col-sm-12 col-md-3 col-lg-3 text-center">
-                        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#diachiModal">Đánh giá</button>
-                    </div>
-                    <div class="col-sm-12 col-md-3 col-lg-3 text-center">
-                        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#diachiModal">Quảng cáo</button>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Modal thêm -->
 <div class="modal fade" id="themModal" role="dialog">
@@ -339,43 +306,18 @@
 <div class="modal fade" id="diachiModal" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
-        <form asp-area="Webmaster" asp-controller="TaiKhoan" asp-action="CreateDiaChi">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Địa chỉ</h4>
-                </div>
-                <div class="modal-body" id="diachiModal-body">
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnThemDiaChi" data-toggle="collapse" data-target="#collapseThemDiaChi">Thêm</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                </div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Địa chỉ</h4>
             </div>
-        </form>
-    </div>
-</div>
+            <div class="modal-body" id="diachiModal-body">
 
-<!-- Modal sửa địa chỉ -->
-<div class="modal fade" id="suadiachiModal" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <form asp-area="Webmaster" asp-controller="TaiKhoan" asp-action="EditDiaChi">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Địa chỉ</h4>
-                </div>
-                <div class="modal-body" id="suadiachiModal-body">
-
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Sửa</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                </div>
             </div>
-        </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -383,21 +325,18 @@
 <div class="modal fade" id="gianhangModal" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
-        <form asp-area="Webmaster" asp-controller="TaiKhoan" asp-action="CreateGianHang">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Gian hàng</h4>
-                </div>
-                <div class="modal-body" id="gianhangModal-body">
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnThemGianHang" data-toggle="collapse" data-target="#collapseThemGianHang">Thêm</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                </div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Gian hàng</h4>
             </div>
-        </form>
+            <div class="modal-body" id="gianhangModal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -463,18 +402,6 @@
         $("#item-sua-cmnd").keydown(validateNumber);
     });
 
-    $(".btnChiTiet").click(function () {
-        let taikhoan = $(this).closest('tr').find('.item-tendangnhap').text();
-        let loainguoidung = $(this).closest('tr').find('.item-loainguoidung').text();
-        $("#chitietModal-title").text("Tài khoản: " + taikhoan);
-        if (loainguoidung == "Khách hàng") {
-            $(".btnGianHang").attr("disabled", true);
-        }
-        else {
-            $(".btnGianHang").attr("disabled", false);
-        }
-    });
-
     $("#btnThemTaiKhoan").click(function () {
         let loainguoidung = $("#item-them-loainguoidung option:selected").text();
         if (loainguoidung == "Thương nhân") {
@@ -516,41 +443,5 @@
         href = href.join('/');
         href = href.toString().replace(/\/&/g, '&');
         $link.attr('href', href);
-    });
-
-    $(".btnDiaChi").click(function () {
-        let text = $("#chitietModal-title").text();
-        let tendangnhap = text.substring(text.lastIndexOf(' '), text.length).trim();
-        $.ajax({
-            url: "/Webmaster/TaiKhoan/GetDiaChi",
-            type: "get",
-            data: { "tendangnhap": tendangnhap },
-            success: function (data) {
-                $("#diachiModal-body").html(data);
-            },
-            error: function (data) {
-                alert("Error: " + data);
-            }
-        });
-    });
-
-    $("#btnThemDiaChi").click(function () {
-        $("#btnThemDiaChi").prop('type', 'submit');
-    });
-
-    $(".btnGianHang").click(function () {
-        let text = $("#chitietModal-title").text();
-        let tendangnhap = text.substring(text.lastIndexOf(' '), text.length).trim();
-        $.ajax({
-            url: "/Webmaster/TaiKhoan/GetLichSuGianHang",
-            type: "get",
-            data: { "tendangnhap": tendangnhap },
-            success: function (data) {
-                $("#gianhangModal-body").html(data);
-            },
-            error: function (data) {
-                alert("Error: " + data);
-            }
-        });
     });
 </script>

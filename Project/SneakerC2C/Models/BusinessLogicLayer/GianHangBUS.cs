@@ -95,6 +95,20 @@ namespace Models.BusinessLogicLayer
             return "Mở khoá thành công";
         }
 
+        public double GetGiaTien(string id)
+        {
+            GianHang gianhang = context.GianHang.Where(gh => gh.Id == Guid.Parse(id)).SingleOrDefault();
+            double giatien = gianhang.Gia ?? 0;
+            return giatien;
+        }
+
+        public int GetThoiGian(string id)
+        {
+            GianHang gianhang = context.GianHang.Where(gh => gh.Id == Guid.Parse(id)).SingleOrDefault();
+            int thoigian = gianhang.ThoiGian ?? 0;
+            return thoigian;
+        }
+
         public List<GianHang> Sort(string sortorder, int pagesize, int pagenumber)
         {
             List<GianHang> list = new List<GianHang>();

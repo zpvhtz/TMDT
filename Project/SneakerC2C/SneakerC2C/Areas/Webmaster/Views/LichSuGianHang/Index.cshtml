@@ -9,7 +9,7 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h2 class="page-header">DANH SÁCH ĐỊA CHỈ</h2>
+        <h2 class="page-header">DANH SÁCH LỊCH SỬ GIAN HÀNG</h2>
     </div>
     <!-- /.col-lg-12 -->
 </div>
@@ -18,7 +18,7 @@
         <!-- Search form -->
         <div class="row">
             <div class="col-lg-1">
-                <button class="btn btn-primary" data-toggle="modal" data-target="#themModal">Thêm</button>
+                <button id="btnThem" class="btn btn-primary" data-toggle="modal" data-target="#themModal">Thêm</button>
             </div>
             <div class="col-lg-2">
                 <div class="form-group">
@@ -189,16 +189,34 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Địa chỉ</h4>
+                    <h4 class="modal-title">Gian hàng</h4>
                 </div>
                 <div class="modal-body">
+                    <p id="them-thongbao" style="color: red;"></p>
                     <div class="form-group">
                         <label>Tên tài khoản</label>
                         <input type="text" class="form-control" id="item-them-tendangnhap" name="item_them_tendangnhap" required>
                     </div>
                     <div class="form-group">
-                        <label>Đường</label>
-                        <input type="text" class="form-control" id="item-them-duong" name="item_them_duong" required>
+                        <label>Tỉnh thành</label>
+                        <select class="form-control" id="item-them-gianhang" name="item_them_gianhang" required>
+                            @foreach (var item in @ViewBag.ListGianHang)
+                            {
+                                <option value="@item.Id">@item.TenGianHang</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Giá tiền</label>
+                        <input type="text" class="form-control" id="item-them-giatien" name="item_them_giatien" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày bắt đầu</label>
+                        <input type="datetime-local" class="form-control" id="item-them-ngaybatdau" name="item_them_ngaybatdau" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày kết thúc</label>
+                        <input type="datetime-local" class="form-control" id="item-them-ngayketthuc" name="item_them_ngayketthuc" readonly>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -233,6 +251,18 @@
 </script>
 
 <script>
+    let interval_today;
+    function SetIntervalToday() {
+        interval_today = setInterval(function () {
+            let today = new moment().format('YYYY-MM-DDTHH:mm:ss');
+            $("#item-them-ngaybatdau").val(today);
+        }, 1000);
+    };
+
+    function ClearIntervalToday() {
+        clearInterval(interval_today);
+    }
+
     $(document).ready(function () {
         //Sắp xếp
         let sort = "@ViewBag.Sort";
@@ -244,6 +274,21 @@
                 }
             });
         }
+    });
+
+    $("#btnThem").click(function () {
+        let id = $("#item-them-gianhang option:selected").val();
+        $.ajax({
+            url: "/Webmaster/LichSuGianHang/GetGiaTien",
+            type: "get",
+            data: { "id": id },
+            success: function (data) {
+                $("#item-them-giatien").val(data);
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            }
+        });
     });
 
     $(".btnSuaDiaChi").click(function () {
@@ -280,5 +325,52 @@
         href = href.join('/');
         href = href.toString().replace(/\/&/g, '&');
         $link.attr('href', href);
+    });
+
+    //Tính tiền khi thay đổi combobox (bảng thêm)
+    $("#item-them-gianhang").change(function () {
+        let id = $(this).val();
+        $.ajax({
+            url: "/Webmaster/LichSuGianHang/GetGiaTien",
+            type: "get",
+            data: { "id": id },
+            success: function (data) {
+                $("#item-them-giatien").val(data);
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            }
+        });
+    });
+
+    $("#item-them-tendangnhap").keyup(function () {
+        let tendangnhap = $(this).val();
+        $.ajax({
+            url: "/Webmaster/LichSuGianHang/CheckTaiKhoan",
+            type: "get",
+            data: { "tendangnhap": tendangnhap },
+            success: function (data) {
+                if (data == null) {
+                    $("#them-thongbao").text("Không tồn tại tài khoản " + tendangnhap);
+                    ClearIntervalToday();
+                    $("#item-them-ngaybatdau").val("");
+                }
+                else {
+                    $("#them-thongbao").text("");
+                    let thoihangianhang = data["thoiHanGianHang"];
+                    if (thoihangianhang == null) {
+                        SetIntervalToday();
+                    }
+                    else {
+                        ClearIntervalToday();
+                        let date = new moment(data["thoiHanGianhang"]).format('YYYY-MM-DDTHH:mm:ss');
+                        $("#item-them-ngaybatdau").val(date);
+                    }
+                }
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            }
+        });
     });
 </script>

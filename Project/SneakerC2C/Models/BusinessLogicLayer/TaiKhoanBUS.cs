@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Models
+namespace Models.BusinessLogicLayer
 {
     public class TaiKhoanBUS
     {
@@ -148,6 +148,12 @@ namespace Models
             taikhoan.TinhTrang = "Không khoá";
             context.SaveChanges();
             return "Mở khoá thành công";
+        }
+
+        public TaiKhoan CheckTaiKhoan(string tendangnhap)
+        {
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();
+            return taikhoan;
         }
 
         public List<TaiKhoan> Sort(string sortorder, int pagesize, int pagenumber)

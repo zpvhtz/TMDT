@@ -315,22 +315,22 @@ AS
 		BEGIN
 			--Update LichSuGianHang--
 			UPDATE LichSuGianHang
-			SET NgayBatDau = GETDATE(), NgayKetThuc = DATEADD(MONTH, @ThoiGian, GETDATE())
+			SET NgayBatDau = GETDATE(), NgayKetThuc = DATEADD(DAY, @ThoiGian, GETDATE())
 			WHERE Id = @IdLichSuGianHang
 			--Update TaiKhoan--
 			UPDATE TaiKhoan
-			SET ThoiHanGianHang = DATEADD(MONTH, @ThoiGian, GETDATE())
+			SET ThoiHanGianHang = DATEADD(DAY, @ThoiGian, GETDATE())
 			WHERE Id = @IdTaiKhoan
 		END
 		ELSE
 		BEGIN
 			--Update LichSuGianHang--
 			UPDATE LichSuGianHang
-			SET NgayBatDau = @ThoiHanGianHang, NgayKetThuc = DATEADD(MONTH, @ThoiGian, @ThoiHanGianHang)
+			SET NgayBatDau = @ThoiHanGianHang, NgayKetThuc = DATEADD(DAY, @ThoiGian, @ThoiHanGianHang)
 			WHERE Id = @IdLichSuGianHang
 			--Update TaiKhoan--
 			UPDATE TaiKhoan
-			SET	ThoiHanGianHang = DATEADD(MONTH, @ThoiGian, ThoiHanGianHang)
+			SET	ThoiHanGianHang = DATEADD(DAY, @ThoiGian, ThoiHanGianHang)
 			WHERE Id = @IdTaiKhoan
 		END
 		FETCH NEXT FROM CUR INTO @IdLichSuGianHang, @IdTaiKhoan, @IdGianHang, @ThoiGian
@@ -362,10 +362,10 @@ INSERT INTO TaiKhoan
 		  ('8634C513-90FB-4DB7-9E80-F8278ECDEF68', 'admin2', 'C84258E9C39059A89AB77D846DDAB909', 'admin2@gmail.com', N'Hoàng Tuấn', NULL, '0934125436', '6598742365', '75523BB6-C366-4A28-A85C-B4C8C1D5747A', GETDATE(), 0, NULL, N'Không khoá')
 
 INSERT INTO GianHang
-	VALUES('2AE717B5-01AC-47DB-97FF-550130D1C537', 'GH-1', N'Gói 1 tháng', 400000, 1, N'Không khoá'),
-		  ('3AE382C3-D4D9-44ED-8D0C-DBFA911A13BA', 'GH-2', N'Gói 2 tháng', 780000, 2, N'Không khoá'),
-		  ('9FDEDF57-2F92-40B9-81CA-96A37472A81E', 'GH-3', N'Gói 6 tháng', 2200000, 6, N'Không khoá'),
-		  ('80FF7A53-99C8-4505-AA5A-F19F1D82A5C6', 'GH-4', N'Gói 1 năm', 4200000, 12, N'Không khoá')
+	VALUES('2AE717B5-01AC-47DB-97FF-550130D1C537', 'GH-1', N'Gói 30 ngày', 400000, 30, N'Không khoá'),
+		  ('3AE382C3-D4D9-44ED-8D0C-DBFA911A13BA', 'GH-2', N'Gói 60 ngày', 780000, 60, N'Không khoá'),
+		  ('9FDEDF57-2F92-40B9-81CA-96A37472A81E', 'GH-3', N'Gói 6 tháng', 2200000, 180, N'Không khoá'),
+		  ('80FF7A53-99C8-4505-AA5A-F19F1D82A5C6', 'GH-4', N'Gói 1 năm', 4200000, 365, N'Không khoá')
 
 INSERT INTO LichSuGianHang(Id, IdTaiKhoan, IdGianHang, NgayDangKy)
 	VALUES('B1AD6C00-2136-476A-A120-1CCBAB3147F2', 'CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053', '80FF7A53-99C8-4505-AA5A-F19F1D82A5C6', GETDATE()),

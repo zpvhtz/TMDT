@@ -77,22 +77,22 @@ AS
 		BEGIN
 			--Update LichSuGianHang--
 			UPDATE LichSuGianHang
-			SET NgayBatDau = GETDATE(), NgayKetThuc = DATEADD(MONTH, @ThoiGian, GETDATE())
+			SET NgayBatDau = GETDATE(), NgayKetThuc = DATEADD(DAY, @ThoiGian, GETDATE())
 			WHERE Id = @IdLichSuGianHang
 			--Update TaiKhoan--
 			UPDATE TaiKhoan
-			SET ThoiHanGianHang = DATEADD(MONTH, @ThoiGian, GETDATE())
+			SET ThoiHanGianHang = DATEADD(DAY, @ThoiGian, GETDATE())
 			WHERE Id = @IdTaiKhoan
 		END
 		ELSE
 		BEGIN
 			--Update LichSuGianHang--
 			UPDATE LichSuGianHang
-			SET NgayBatDau = @ThoiHanGianHang, NgayKetThuc = DATEADD(MONTH, @ThoiGian, @ThoiHanGianHang)
+			SET NgayBatDau = @ThoiHanGianHang, NgayKetThuc = DATEADD(DAY, @ThoiGian, @ThoiHanGianHang)
 			WHERE Id = @IdLichSuGianHang
 			--Update TaiKhoan--
 			UPDATE TaiKhoan
-			SET	ThoiHanGianHang = DATEADD(MONTH, @ThoiGian, ThoiHanGianHang)
+			SET	ThoiHanGianHang = DATEADD(DAY, @ThoiGian, ThoiHanGianHang)
 			WHERE Id = @IdTaiKhoan
 		END
 		FETCH NEXT FROM CUR INTO @IdTaiKhoan, @IdGianHang, @ThoiGian

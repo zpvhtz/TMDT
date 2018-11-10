@@ -50,5 +50,18 @@ namespace Models.BusinessLogicLayer
                                                               .ToList();
             return list;
         }
+
+        public string CreateLichSuGianHang(string tendangnhap, string gianhang)
+        {
+            LichSuGianHang lichsugianhang = new LichSuGianHang();
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();
+            lichsugianhang.Id = Guid.Parse(Guid.NewGuid().ToString().ToUpper());
+            lichsugianhang.IdTaiKhoan = taikhoan.Id;
+            lichsugianhang.IdGianHang = Guid.Parse(gianhang);
+            lichsugianhang.NgayDangKy = DateTime.Now;
+            context.LichSuGianHang.Add(lichsugianhang);
+            context.SaveChanges();
+            return "Thêm thành công";
+        }
     }
 }

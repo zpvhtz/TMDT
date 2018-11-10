@@ -22,7 +22,9 @@ namespace Models.BusinessLogicLayer
 
         public List<GianHang> GetGianHangs()
         {
-            List<GianHang> list = context.GianHang.OrderBy(gh => gh.MaGianHang).ToList();
+            List<GianHang> list = context.GianHang.Where(gh => gh.TinhTrang == "Không khoá")
+                                                  .OrderBy(gh => gh.MaGianHang)
+                                                  .ToList();
             return list;
         }
 

@@ -38,6 +38,13 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             return View(list);
         }
 
+        public IActionResult CreateLichSuGianHang(string item_them_tendangnhap, string item_them_gianhang)
+        {
+            LichSuGianHangBUS lsghbus = new LichSuGianHangBUS();
+            string thongbao = lsghbus.CreateLichSuGianHang(item_them_tendangnhap, item_them_gianhang);
+            return RedirectToAction("Index", "LichSuGianHang", new { thongbao = thongbao });
+        }
+
         public double GetGiaTien(string id)
         {
             GianHangBUS gianhang = new GianHangBUS();

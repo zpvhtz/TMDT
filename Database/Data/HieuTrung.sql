@@ -100,3 +100,16 @@ AS
 	CLOSE CUR
 	DEALLOCATE CUR
 GO
+
+CREATE TRIGGER TG_SuaThoiGian_GianHang ON LichSuGianHang AFTER UPDATE
+AS
+	DECLARE @ThoiGian INT
+	DECLARE @IdTaiKhoan UNIQUEIDENTIFIER
+	--
+	SELECT @IdTaiKhoan = i.IdTaiKhoan, @ThoiGian = g.ThoiGian
+	FROM inserted i JOIN GianHang g ON i.IdGianHang = g.Id
+	--
+	UPDATE TaiKhoan
+	SET ThoiHanGianHang = DATEADD(DAY, -@ThoiGian, ThoiHanGianHang)
+	WHERE Id = @IdTaiKhoan
+GO

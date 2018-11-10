@@ -198,7 +198,8 @@ namespace Models.BusinessLogicLayer
             else
             {
                 list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
-                                                  dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                                  dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search) ||
+                                                  dc.TinhTrang.Contains(search))
                                      .Skip((pagenumber - 1) * pagesize)
                                      .Take(pagesize)
                                      .Include(dc => dc.IdTaiKhoanNavigation)
@@ -218,7 +219,8 @@ namespace Models.BusinessLogicLayer
             else
             {
                 list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
-                                                  dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                                  dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search) ||
+                                                  dc.TinhTrang.Contains(search))
                                      .Include(dc => dc.IdTaiKhoanNavigation)
                                      .Include(dc => dc.IdTinhThanhNavigation)
                                      .ToList();
@@ -239,7 +241,8 @@ namespace Models.BusinessLogicLayer
                 {
                     case "taikhoan-az":
                         list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
-                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search) ||
+                                                          dc.TinhTrang.Contains(search))
                                              .OrderBy(dc => dc.IdTaiKhoanNavigation.TenDangNhap)
                                              .Include(dc => dc.IdTaiKhoanNavigation)
                                              .Include(dc => dc.IdTinhThanhNavigation)
@@ -249,7 +252,8 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "taikhoan-za":
                         list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
-                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search) ||
+                                                          dc.TinhTrang.Contains(search))
                                              .OrderByDescending(dc => dc.IdTaiKhoanNavigation.TenDangNhap)
                                              .Include(dc => dc.IdTaiKhoanNavigation)
                                              .Include(dc => dc.IdTinhThanhNavigation)
@@ -259,7 +263,8 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "tinhthanh-asc":
                         list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
-                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search) ||
+                                                          dc.TinhTrang.Contains(search))
                                              .OrderBy(dc => dc.IdTinhThanhNavigation.TenTinhThanh)
                                              .Include(dc => dc.IdTaiKhoanNavigation)
                                              .Include(dc => dc.IdTinhThanhNavigation)
@@ -269,7 +274,8 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "tinhthanh-desc":
                         list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
-                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search) ||
+                                                          dc.TinhTrang.Contains(search))
                                              .OrderByDescending(dc => dc.IdTinhThanhNavigation.TenTinhThanh)
                                              .Include(dc => dc.IdTaiKhoanNavigation)
                                              .Include(dc => dc.IdTinhThanhNavigation)
@@ -295,7 +301,8 @@ namespace Models.BusinessLogicLayer
                 {
                     case "tengianhang-az":
                         list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
-                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search) ||
+                                                          dc.TinhTrang.Contains(search))
                                              .OrderBy(dc => dc.IdTaiKhoanNavigation.TenDangNhap)
                                              .Include(dc => dc.IdTaiKhoanNavigation)
                                              .Include(dc => dc.IdTinhThanhNavigation)
@@ -303,7 +310,8 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "tengianhang-za":
                         list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
-                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search) ||
+                                                          dc.TinhTrang.Contains(search))
                                              .OrderByDescending(dc => dc.IdTaiKhoanNavigation.TenDangNhap)
                                              .Include(dc => dc.IdTaiKhoanNavigation)
                                              .Include(dc => dc.IdTinhThanhNavigation)
@@ -311,7 +319,8 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "gia-asc":
                         list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
-                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search) ||
+                                                          dc.TinhTrang.Contains(search))
                                              .OrderBy(dc => dc.IdTinhThanhNavigation.TenTinhThanh)
                                              .Include(dc => dc.IdTaiKhoanNavigation)
                                              .Include(dc => dc.IdTinhThanhNavigation)
@@ -319,7 +328,8 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "gia-desc":
                         list = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap.Contains(search) ||
-                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search))
+                                                          dc.IdTinhThanhNavigation.TenTinhThanh.Contains(search) ||
+                                                          dc.TinhTrang.Contains(search))
                                              .OrderByDescending(dc => dc.IdTinhThanhNavigation.TenTinhThanh)
                                              .Include(dc => dc.IdTaiKhoanNavigation)
                                              .Include(dc => dc.IdTinhThanhNavigation)

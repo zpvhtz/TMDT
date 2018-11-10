@@ -53,6 +53,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Tên tài khoản</th>
+                    <th>Mã gian hàng</th>
                     <th>Tên gian hàng</th>
                     <th>Ngày đăng ký</th>
                     <th>Ngày bắt đầu</th>
@@ -66,11 +67,21 @@
                     <tr class="odd gradeX">
                         <td class="item-id">@item.Id</td>
                         <td class="item-tendangnhap">@item.IdTaiKhoanNavigation.TenDangNhap</td>
+                        <td class="item-magianhang">@item.IdGianHangNavigation.MaGianHang</td>
                         <td class="item-tengianhang">@item.IdGianHangNavigation.TenGianHang</td>
                         <td class="item-ngaydangky">@item.NgayDangKy</td>
                         <td class="item-ngaybatdau">@item.NgayBatDau</td>
                         <td class="item-ngayketthuc">@item.NgayKetThuc</td>
-                        <td><button class="btn btn-primary btnSuaLichSu" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button></td>
+                        <td>
+                            @if(item.TinhTrang == "Không khoá")
+                            {
+                                <a asp-controller="LichSuGianHang" asp-action="LockLichSuGianHang" asp-route-id="@item.Id" class="btn btn-danger">Khoá</a>
+                            }
+                            else
+                            {
+                                <button class="btn btn-danger" disabled>Đã khoá</button>
+                            }
+                        </td>
                     </tr>
                 }
             </tbody>
@@ -228,53 +239,6 @@
     </div>
 </div>
 
-<!-- Modal sửa -->
-<div class="modal fade" id="suaModal" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <form asp-controller="LichSuGianHang" asp-action="EditLichSuGianHang" method="post">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Gian hàng</h4>
-                </div>
-                <div class="modal-body">
-                    <p id="them-thongbao" style="color: red;"></p>
-                    <div class="form-group">
-                        <label>Tên tài khoản</label>
-                        <input type="text" class="form-control" id="item-sua-tendangnhap" name="item_sua_tendangnhap" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label>Tỉnh thành</label>
-                        <select class="form-control" id="item-sua-gianhang" name="item_sua_gianhang" required>
-                            @foreach (var item in @ViewBag.ListGianHang)
-                            {
-                                <option value="@item.Id">@item.TenGianHang</option>
-                            }
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Giá tiền</label>
-                        <input type="text" class="form-control" id="item-sua-giatien" name="item_sua_giatien" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label>Ngày bắt đầu</label>
-                        <input type="datetime-local" class="form-control" id="item-sua-ngaybatdau" name="item_sua_ngaybatdau" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label>Ngày kết thúc</label>
-                        <input type="datetime-local" class="form-control" id="item-sua-ngayketthuc" name="item_sua_ngayketthuc" readonly>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-warning" id="btnThemModal" disabled>Thêm</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
 @if (ViewBag.ThongBao != null)
 {
     <script>
@@ -301,8 +265,8 @@
     function SetIntervalToday() {
         interval_today = setInterval(function () {
             let today = new moment().format('YYYY-MM-DDTHH:mm:ss');
-            $("#item-them-ngaybatdau").val(today);
-            let id = $("#item-them-gianhang").val();
+            $(`#item-them-ngaybatdau`).val(today);
+            let id = $(`#item-them-gianhang`).val();
             GetThoiGian(id);
         }, 1000);
     };
@@ -322,11 +286,11 @@
                     ClearIntervalToday();
                     $("#btnThemModal").attr('disabled', true);
                     $("#them-thongbao").text("Không tồn tại tài khoản " + tendangnhap);
-                    $("#item-them-ngaybatdau").val("");
-                    $("#item-them-ngayketthuc").val("");
+                    $(`#item-them-ngaybatdau`).val("");
+                    $(`#item-them-ngayketthuc`).val("");
                 }
                 else {
-                    $("#them-thongbao").text("");
+                    $(`#them-thongbao`).text("");
                     $("#btnThemModal").attr('disabled', false);
                     let thoihangianhang = new moment(data["thoiHanGianHang"]);
                     if (thoihangianhang.isValid()) {
@@ -336,7 +300,7 @@
                         else {
                             ClearIntervalToday();
                             let date = new moment(data["thoiHanGianHang"]).format('YYYY-MM-DDTHH:mm:ss');
-                            $("#item-them-ngaybatdau").val(date);
+                            $(`#item-them-ngaybatdau`).val(date);
                         }
                     }
                     else {
@@ -357,7 +321,7 @@
             type: "get",
             data: { "id": id },
             success: function (data) {
-                $("#item-them-giatien").val(data);
+                $(`#item-them-giatien`).val(data);
             },
             error: function (data) {
                 alert("Error: " + data);
@@ -372,10 +336,10 @@
             type: "get",
             data: { "id": id },
             success: function (data) {
-                let ngaybatdau = new moment($("#item-them-ngaybatdau").val());
+                let ngaybatdau = new moment($(`#item-them-ngaybatdau`).val());
                 if (ngaybatdau.isValid()) {
                     let ngayketthuc = ngaybatdau.add(data, 'days').format('YYYY-MM-DDTHH:mm:ss');
-                    $("#item-them-ngayketthuc").val(ngayketthuc);
+                    $(`#item-them-ngayketthuc`).val(ngayketthuc);
                 }
             },
             error: function (data) {
@@ -410,23 +374,6 @@
             },
             error: function (data) {
                 alert("Error: " + data);
-            }
-        });
-    });
-
-    $(".btnSuaLichSu").click(function () {
-        let id = $(this).closest('tr').find('.item-id').text();
-        let duong = $(this).closest('tr').find('.item-duong').text();
-        let tentinhthanh = $(this).closest('tr').find('.item-tentinhthanh').text();
-
-        $("#item-sua-id").val(id.trim());
-        $("#item-sua-duong").val(duong.trim());
-        $("#item-sua-tinhthanh option").each(function () {
-            if ($(this).text().includes(tentinhthanh)) {
-                $(this).attr('selected', true);
-            }
-            else {
-                $(this).attr('selected', false);
             }
         });
     });

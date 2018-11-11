@@ -88,3 +88,4 @@ D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2
 D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CopyComplete
 D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.dll
 D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb
+D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\Home\Index.g.cshtml.cs

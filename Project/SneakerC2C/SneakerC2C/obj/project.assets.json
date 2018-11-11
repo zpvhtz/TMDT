@@ -8210,11 +8210,10 @@
       ]
     },
     "PagedList/1.17.0": {
-      "sha512": "S31yV7g+pBRF8b/DViSQ6/T4Edij9XwatsBrGSUtYc0/nL/xe9sOJfCSq6jHA4DGcaEVYaFpbqmQhbjoaGNKTw==",
+      "sha512": "Ou6F3WKXh49hOo0TxWM+SkIGuKllYPuPPvnSYOlQ1sTrtuEyuDUhYbSJd5Sdb06i/sWUJZTjiUecEs3Ht/Hx3g==",
       "type": "package",
       "path": "pagedlist/1.17.0",
       "files": [
-        ".signature.p7s",
         "lib/net40/PagedList.dll",
         "lib/net40/PagedList.xml",
         "pagedlist.1.17.0.nupkg.sha512",
@@ -8222,11 +8221,10 @@
       ]
     },
     "PagedList.Mvc/4.5.0": {
-      "sha512": "xGTT268/6/vS+mTk39MNL9Z20410eATJvZ/UVE0bFIje17ab4cMWHokK43NoY7PLQlG9l572GA8H4JsJ9c/lMA==",
+      "sha512": "D0M4qW2g4a9cwG8ozIKUnJheCrm5GpFTceqUl63AXWaAVnTgk+TysZYUOGMsBRuzid8aF+/E8b0bXM6+90jiEw==",
       "type": "package",
       "path": "pagedlist.mvc/4.5.0",
       "files": [
-        ".signature.p7s",
         "Content/Content/PagedList.css",
         "lib/net40/PagedList.Mvc.XML",
         "lib/net40/PagedList.Mvc.dll",
@@ -13065,39 +13063,23 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\ASUS\\.nuget\\packages\\": {},
-=======
-    "C:\\Users\\quachdaivy\\.nuget\\packages\\": {},
->>>>>>> a83a5d59b348c2f31b41604b6a27a2cedef775c9
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\SneakerC2C\\SneakerC2C.csproj",
       "projectName": "SneakerC2C",
       "projectPath": "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\SneakerC2C\\SneakerC2C.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
       "outputPath": "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\SneakerC2C\\obj\\",
-=======
-      "projectUniqueName": "F:\\Github stuffs\\TMDT\\Project\\SneakerC2C\\SneakerC2C\\SneakerC2C.csproj",
-      "projectName": "SneakerC2C",
-      "projectPath": "F:\\Github stuffs\\TMDT\\Project\\SneakerC2C\\SneakerC2C\\SneakerC2C.csproj",
-      "packagesPath": "C:\\Users\\quachdaivy\\.nuget\\packages\\",
-      "outputPath": "F:\\Github stuffs\\TMDT\\Project\\SneakerC2C\\SneakerC2C\\obj\\",
->>>>>>> a83a5d59b348c2f31b41604b6a27a2cedef775c9
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\quachdaivy\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> a83a5d59b348c2f31b41604b6a27a2cedef775c9
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13110,13 +13092,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-<<<<<<< HEAD
             "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj": {
               "projectPath": "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj"
-=======
-            "F:\\Github stuffs\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj": {
-              "projectPath": "F:\\Github stuffs\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj"
->>>>>>> a83a5d59b348c2f31b41604b6a27a2cedef775c9
             }
           }
         }

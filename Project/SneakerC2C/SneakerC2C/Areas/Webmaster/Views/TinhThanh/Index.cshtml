@@ -1,15 +1,16 @@
-﻿@model IEnumerable<Models.Database.LoaiNguoiDung>
+﻿@model IEnumerable<Models.Database.TinhThanh>
 
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+
+
 <div class="row">
     <div class="col-lg-12">
-        <h2 class="page-header">DANH SÁCH LOẠI NGƯỜI DÙNG</h2>
+        <h2 class="page-header">DANH SÁCH TỈNH THÀNH</h2>
     </div>
     <!-- /.col-lg-12 -->
 </div>
@@ -27,16 +28,16 @@
                 <div class="form-group">
                     <select class="form-control" id="sortList" onchange="window.location.href = SearchAndSort()">
                         <option selected disabled>Sắp xếp theo</option>
-                        <option value="/Webmaster/LoaiNguoiDung/Sort?sortorder=maloainguoidung-az">Mã loại người dùng (A-Z)</option>
-                        <option value="/Webmaster/LoaiNguoiDung/Sort?sortorder=maloainguoidung-za">Mã loại người dùng (Z-A)</option>
-                        <option value="/Webmaster/LoaiNguoiDung/Sort?sortorder=tenloainguoidung-az">Tên loại người dùng (A-Z)</option>
-                        <option value="/Webmaster/LoaiNguoiDung/Sort?sortorder=tenloainguoidung-za">Tên loại người dùng (Z-A)</option>
+                        <option value="/Webmaster/TinhThanh/Sort?sortorder=maTinhThanh-az">Mã Tỉnh Thành (A-Z)</option>
+                        <option value="/Webmaster/TinhThanh/Sort?sortorder=maTinhThanh-za">Mã Tỉnh Thành (Z-A)</option>
+                        <option value="/Webmaster/TinhThanh/Sort?sortorder=tenTinhThanh-az">Tên Tỉnh Thành (A-Z)</option>
+                        <option value="/Webmaster/TinhThanh/Sort?sortorder=tenTinhThanh-za">Tên Tỉnh Thành (Z-A)</option>
                     </select>
                 </div>
             </div>
             <!-------------------------------------------------------- SEARCH BAR ---------------------------------------------------------->
             <div class="col-lg-3">
-                <form asp-controller="LoaiNguoiDung" asp-action="Search" method="get">
+                <form asp-controller="TinhThanh" asp-action="Search" method="get">
                     <div class="input-group custom-search-form">
                         <input type="text" class="form-control" id="searchList" placeholder="Tìm kiếm..." name="search">
                         <span class="input-group-btn">
@@ -53,8 +54,8 @@
         <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
             <thead class="thead-dark">
                 <tr>
-                    <th>Mã Loại Người Dùng</th>
-                    <th>Tên Loại Người Dùng</th>
+                    <th>Mã Tỉnh Thành</th>
+                    <th>Tên Tỉnh Thành</th>
                     <th>Tình Trạng</th>
                     <th>Chức Năng</th>
                 </tr>
@@ -63,21 +64,21 @@
                 @foreach (var item in Model)
                 {
                     <tr class="odd gradeX">
-                        <td class="item-maloainguoidung">@item.MaLoaiNguoiDung</td>
-                        <td class="item-tenloainguoidung">@item.TenLoaiNguoiDung</td>
+                        <td class="item-maTinhThanh">@item.MaTinhThanh</td>
+                        <td class="item-tenTinhThanh">@item.TenTinhThanh</td>
                         <td class="item-tinhtrang">@item.TinhTrang</td>
                         <td>
                             @if (item.TinhTrang == "Không khoá")
                             {
-                                <button class="btn btn-primary btnSuaLoaiNguoiDung" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
+                                <button class="btn btn-primary btnSuaTinhThanh" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
 
-                                <a asp-controller="LoaiNguoiDung" asp-action="LockLoaiNguoiDung" asp-route-maloainguoidung="@item.MaLoaiNguoiDung" class="btn btn-danger">Khoá</a>
+                                <a asp-controller="TinhThanh" asp-action="LockTinhThanh" asp-route-maTinhThanh="@item.MaTinhThanh" class="btn btn-danger">Khoá</a>
                             }
                             else
                             {
-                                <button class="btn btn-primary  btnSuaLoaiNguoiDung" type="button" data-toggle="modal" data-target="#suaModal" disabled>Sửa</button>
+                                <button class="btn btn-primary  btnSuaTinhThanh" type="button" data-toggle="modal" data-target="#suaModal" disabled>Sửa</button>
 
-                                <a asp-controller="LoaiNguoiDung" asp-action="UnlockLoaiNguoiDung" asp-route-maloainguoidung="@item.MaLoaiNguoiDung" class="btn btn-danger">Mở khoá</a>
+                                <a asp-controller="TinhThanh" asp-action="UnlockTinhThanh" asp-route-maTinhThanh="@item.MaTinhThanh" class="btn btn-danger">Mở khoá</a>
                             }
                         </td>
                     </tr>
@@ -96,16 +97,16 @@
                     @switch (ViewBag.TrangThai)
                     {
                         case "index":
-                            <a asp-controller="LoaiNguoiDung" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            <a asp-controller="TinhThanh" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
                             break;
                         case "sort":
-                            <a asp-controller="LoaiNguoiDung" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            <a asp-controller="TinhThanh" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
                             break;
                         case "search":
-                            <a asp-controller="LoaiNguoiDung" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            <a asp-controller="TinhThanh" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
                             break;
                         case "searchandsort":
-                            <a asp-controller="LoaiNguoiDung" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            <a asp-controller="TinhThanh" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
                             break;
                     }
                 </li>
@@ -119,16 +120,16 @@
                         @switch (ViewBag.TrangThai)
                         {
                             case "index":
-                                <a asp-controller="LoaiNguoiDung" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                <a asp-controller="TinhThanh" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
                                 break;
                             case "sort":
-                                <a asp-controller="LoaiNguoiDung" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                <a asp-controller="TinhThanh" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
                                 break;
                             case "search":
-                                <a asp-controller="LoaiNguoiDung" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                <a asp-controller="TinhThanh" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
                                 break;
                             case "searchandsort":
-                                <a asp-controller="LoaiNguoiDung" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                <a asp-controller="TinhThanh" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
                                 break;
                         }
                     </li>
@@ -146,16 +147,16 @@
                             @switch (ViewBag.TrangThai)
                             {
                                 case "index":
-                                    <a asp-controller="LoaiNguoiDung" asp-action="Index" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="TinhThanh" asp-action="Index" asp-route-pagenumber="@i" class="pageNumber">@i</a>
                                     break;
                                 case "sort":
-                                    <a asp-controller="LoaiNguoiDung" asp-action="Sort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="TinhThanh" asp-action="Sort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
                                     break;
                                 case "search":
-                                    <a asp-controller="LoaiNguoiDung" asp-action="Search" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="TinhThanh" asp-action="Search" asp-route-pagenumber="@i" class="pageNumber">@i</a>
                                     break;
                                 case "searchandsort":
-                                    <a asp-controller="LoaiNguoiDung" asp-action="SearchAndSort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="TinhThanh" asp-action="SearchAndSort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
                                     break;
                             }
                         </li>
@@ -172,16 +173,16 @@
                     @switch (ViewBag.TrangThai)
                     {
                         case "index":
-                            <a asp-controller="LoaiNguoiDung" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            <a asp-controller="TinhThanh" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
                             break;
                         case "sort":
-                            <a asp-controller="LoaiNguoiDung" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            <a asp-controller="TinhThanh" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
                             break;
                         case "search":
-                            <a asp-controller="LoaiNguoiDung" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            <a asp-controller="TinhThanh" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
                             break;
                         case "searchandsort":
-                            <a asp-controller="LoaiNguoiDung" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            <a asp-controller="TinhThanh" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
                             break;
                     }
                 </li>
@@ -195,25 +196,25 @@
 <div class="modal fade" id="themModal" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
-        <form asp-controller="LoaiNguoiDung" asp-action="CreateLoaiNguoiDung" method="post">
+        <form asp-controller="TinhThanh" asp-action="CreateTinhThanh" method="post">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Loại Người Dùng</h4>
+                    <h4 class="modal-title">Tỉnh Thành</h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Mã Loại Người Dùng</label>
-                        <input type="text" class="form-control" id="item-them-tendangnhap" name="item_them_maloainguoidung" required>
+                        <label>Mã Tỉnh Thành</label>
+                        <input type="text" class="form-control" id="item-them-tendangnhap" name="item_them_maTinhThanh" required>
                     </div>
                     <div class="form-group">
-                        <label>Tên Loại Người Dùng</label>
-                        <input type="text" class="form-control" id="item-them-matkhau" name="item_them_tenloainguoidung" required>
+                        <label>Tên Tỉnh Thành </label>
+                        <input type="text" class="form-control" id="item-them-matkhau" name="item_them_tenTinhThanh" required>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-warning" id="btnThemLoaiNguoiDung">Thêm</button>
+                    <button type="submit" class="btn btn-warning" id="btnThemTinhThanh">Thêm</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                 </div>
             </div>
@@ -224,20 +225,20 @@
 <div class="modal fade" id="suaModal" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
-        <form asp-controller="LoaiNguoiDung" asp-action="EditLoaiNguoiDung" method="post">
+        <form asp-controller="TinhThanh" asp-action="EditTinhThanh" method="post">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Loại Người Dùng</h4>
+                    <h4 class="modal-title">Tỉnh Thành</h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Mã loại người dùng</label>
-                        <input type="text" class="form-control" id="item-sua-maloainguoidung" name="item_sua_maloainguoidung" readonly>
+                        <label>Mã Tỉnh Thành</label>
+                        <input type="text" class="form-control" id="item-sua-maTinhThanh" name="item_sua_maTinhThanh" readonly>
                     </div>
                     <div class="form-group">
-                        <label>Tên loại người dùng</label>
-                        <input type="text" class="form-control" id="item-sua-tenloainguoidung" name="item_sua_tenloainguoidung">
+                        <label>Tên Tỉnh Thành</label>
+                        <input type="text" class="form-control" id="item-sua-tenTinhThanh" name="item_sua_tenTinhThanh">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -258,11 +259,11 @@
 
 
 <script>
-    $(".btnSuaLoaiNguoiDung").click(function () {
-        let maloainguoidung = $(this).closest('tr').find('.item-maloainguoidung').text();
-        let tenloainguoidung = $(this).closest('tr').find('.item-tenloainguoidung').text();
-        $("#item-sua-maloainguoidung").val(maloainguoidung.trim());
-        $("#item-sua-tenloainguoidung").val(tenloainguoidung.trim());
+    $(".btnSuaTinhThanh").click(function () {
+        let maTinhThanh = $(this).closest('tr').find('.item-maTinhThanh').text();
+        let tenTinhThanh = $(this).closest('tr').find('.item-tenTinhThanh').text();
+        $("#item-sua-maTinhThanh").val(maTinhThanh.trim());
+        $("#item-sua-tenTinhThanh").val(tenTinhThanh.trim());
 
     });
 
@@ -360,3 +361,4 @@
         $link.attr('href', href);
     });
 </script>
+

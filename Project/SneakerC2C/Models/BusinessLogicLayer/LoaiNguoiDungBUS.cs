@@ -74,10 +74,10 @@ namespace Models.BusinessLogicLayer
             //----------------------- chuan hoa du lieu ----------------------- 
             //----------------------- kiem tra ma -----------------------
             loainguoidung = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung == MaLoaiNguoiDung).SingleOrDefault();
-            if (loainguoidung != null)
-            {
-                return "Mã loại người dùng này đã tồn tại";
-            }
+            //if (loainguoidung != null)
+            //{
+            //    return "Mã loại người dùng này đã tồn tại";
+            //}
             //----------------------- kiem tra ten -----------------------
             loainguoidung = context.LoaiNguoiDung.Where(temp => temp.TenLoaiNguoiDung == TenLoaiNguoiDung).SingleOrDefault();
             if (loainguoidung != null)

@@ -87,3 +87,5 @@ F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas
 D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\DiaChi\Index.g.cshtml.cs
 D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\LichSuGianHang\Index.g.cshtml.cs
 >>>>>>> b70ebcf569e32ad2c935267bb7c4d431770c4db3
+F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\DiaChi\Index.g.cshtml.cs
+F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\LichSuGianHang\Index.g.cshtml.cs

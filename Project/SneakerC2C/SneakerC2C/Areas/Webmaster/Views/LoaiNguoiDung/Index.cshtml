@@ -63,9 +63,9 @@
                 @foreach (var item in Model)
                 {
                     <tr class="odd gradeX">
-                        <td class="item-maloaingoidung">@item.MaLoaiNguoiDung</td>
-                        <td class="item-tenloaingoidung">@item.TenLoaiNguoiDung</td>
-                        <td class="item-tenloaingoidung">@item.TinhTrang</td>
+                        <td class="item-maloainguoidung">@item.MaLoaiNguoiDung</td>
+                        <td class="item-tenloainguoidung">@item.TenLoaiNguoiDung</td>
+                        <td class="item-tinhtrang">@item.TinhTrang</td>
                         <td>
                             @if (item.TinhTrang == "Không khoá")
                             {
@@ -233,7 +233,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Mã loại người dùng</label>
-                        <input type="text" class="form-control" id="item-sua-maloainguoidung" name="item_sua_maloainguoidung" >
+                        <input type="text" class="form-control" id="item-sua-maloainguoidung" name="item_sua_maloainguoidung" readonly>
                     </div>
                     <div class="form-group">
                         <label>Tên loại người dùng</label>

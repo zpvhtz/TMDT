@@ -40,3 +40,6 @@ F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.
 F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CopyComplete
 F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.dll
 F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb
+F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TrangQuangCao\Index.g.cshtml.cs
+F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\ViTriQuangcao\Index.g.cshtml.cs
+F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TinhThanh\Index.g.cshtml.cs

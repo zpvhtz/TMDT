@@ -67,5 +67,32 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             return RedirectToAction("Index", "LoaiNguoiDung", new { thongbao = thongbao });
         }
 
+        public IActionResult Sort(string sortorder, int? pagenumber)
+        {
+            pageNumber = pagenumber ?? 1;
+            LoaiNguoiDungBUS loainguoidung = new LoaiNguoiDungBUS();
+            List<LoaiNguoiDung> list = loainguoidung.Sort(sortorder, pageSize, pageNumber);
+            List<LoaiNguoiDung> tong = loainguoidung.Sort(sortorder);
+
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangThai = "sort";
+            ViewBag.Sort = sortorder;
+            return View("Index", list);
+        }
+        public IActionResult Search(string search, int? pagenumber)
+        {
+            pageNumber = pagenumber ?? 1;
+            LoaiNguoiDungBUS loainguoidung = new LoaiNguoiDungBUS();
+            List<LoaiNguoiDung> list = loainguoidung.Search(search, pageSize, pageNumber);
+            List<LoaiNguoiDung> tong = loainguoidung.Search(search, pageSize);
+
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangThai = "search";
+            ViewBag.Search = search;
+            return View("Index", list);
+        }
+
     }
 }

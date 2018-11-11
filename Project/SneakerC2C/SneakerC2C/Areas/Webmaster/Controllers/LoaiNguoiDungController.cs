@@ -98,7 +98,6 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
         {
             pageNumber = pagenumber ?? 1;
             LoaiNguoiDungBUS LoaiNguoiDung = new LoaiNguoiDungBUS();
-            LoaiNguoiDungBUS loainguoidung = new LoaiNguoiDungBUS();
             List<LoaiNguoiDung> list = LoaiNguoiDung.SearchAndSort(search, sortorder, pageSize, pageNumber);
             List<LoaiNguoiDung> tong = LoaiNguoiDung.SearchAndSort(search, sortorder, pageSize);
 

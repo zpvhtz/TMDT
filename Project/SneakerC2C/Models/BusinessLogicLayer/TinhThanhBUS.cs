@@ -238,5 +238,101 @@ namespace Models.BusinessLogicLayer
             return list;
         }
 
+        public List<TinhThanh> SearchAndSort(string search, string sortorder, int pagesize, int pagenumber)
+        {
+            List<TinhThanh> list = new List<TinhThanh>();
+            if (search == null)
+            {
+                list = GetTinhThanhs(1, pagesize);
+            }
+            else
+            {
+                switch (sortorder)
+                {
+                    case "maTinhThanh-az":
+                        list = context.TinhThanh.Where(temp => temp.MaTinhThanh.Contains(search)
+                                                        || temp.TenTinhThanh.Contains(search)
+                                                        || temp.TinhTrang.Contains(search))
+                                               .Skip((pagenumber - 1) * pagesize)
+                                               .Take(pagesize)
+                                               .OrderBy(temp => temp.MaTinhThanh)
+                                               .ToList();
+                        break;
+                    case "maTinhThanh-za":
+                        list = context.TinhThanh.Where(temp => temp.MaTinhThanh.Contains(search)
+                                                        || temp.TenTinhThanh.Contains(search)
+                                                        || temp.TinhTrang.Contains(search))
+                                               .Skip((pagenumber - 1) * pagesize)
+                                               .Take(pagesize)
+                                               .OrderByDescending(temp => temp.MaTinhThanh)
+                                               .ToList();
+                        break;
+                    case "tenTinhThanh-az":
+                        list = context.TinhThanh.Where(temp => temp.MaTinhThanh.Contains(search)
+                                                        || temp.TenTinhThanh.Contains(search)
+                                                        || temp.TinhTrang.Contains(search))
+                                               .Skip((pagenumber - 1) * pagesize)
+                                               .Take(pagesize)
+                                               .OrderBy(temp => temp.TenTinhThanh)
+                                               .ToList();
+                        break;
+                    case "tenTinhThanh-za":
+                        list = context.TinhThanh.Where(temp => temp.MaTinhThanh.Contains(search)
+                                                        || temp.TenTinhThanh.Contains(search)
+                                                        || temp.TinhTrang.Contains(search))
+                                               .Skip((pagenumber - 1) * pagesize)
+                                               .Take(pagesize)
+                                               .OrderByDescending(temp => temp.TenTinhThanh)
+                                               .ToList();
+                        break;
+                }
+            }
+            return list;
+        }
+
+        public List<TinhThanh> SearchAndSort(string search, string sortorder, int pagesize)
+        {
+            List<TinhThanh> list = new List<TinhThanh>();
+            if (search == null)
+            {
+                list = GetTinhThanhs(1, pagesize);
+            }
+            else
+            {
+                switch (sortorder)
+                {
+                    case "maTinhThanh-az":
+                        list = context.TinhThanh.Where(temp => temp.MaTinhThanh.Contains(search)
+                                                        || temp.TenTinhThanh.Contains(search)
+                                                        || temp.TinhTrang.Contains(search))
+                                               .OrderBy(l => l.MaTinhThanh)
+                                               .ToList();
+                        break;
+                    case "maTinhThanh-za":
+                        list = context.TinhThanh.Where(temp => temp.MaTinhThanh.Contains(search)
+                                                        || temp.TenTinhThanh.Contains(search)
+                                                        || temp.TinhTrang.Contains(search))
+                                               .OrderByDescending(l => l.MaTinhThanh)
+                                               .ToList();
+                        break;
+                    case "tenTinhThanh-az":
+                        list = context.TinhThanh.Where(temp => temp.MaTinhThanh.Contains(search)
+                                                        || temp.TenTinhThanh.Contains(search)
+                                                        || temp.TinhTrang.Contains(search))
+                                               .OrderBy(l => l.TenTinhThanh)
+                                               .ToList();
+                        break;
+                    case "tenTinhThanh-za":
+                        list = context.TinhThanh.Where(temp => temp.MaTinhThanh.Contains(search)
+                                                        || temp.TenTinhThanh.Contains(search)
+                                                        || temp.TinhTrang.Contains(search))
+                                               .OrderByDescending(l => l.TenTinhThanh)
+                                               .ToList();
+                        break;
+                }
+            }
+            return list;
+        }
+
     }
 }

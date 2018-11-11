@@ -95,5 +95,20 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             ViewBag.Search = search;
             return View("Index", list);
         }
+
+        public IActionResult SearchAndSort(string search, string sortorder, int? pagenumber)
+        {
+            pageNumber = pagenumber ?? 1;
+            TinhThanhBUS TinhThanh = new TinhThanhBUS();
+            List<TinhThanh> list = TinhThanh.SearchAndSort(search, sortorder, pageSize, pageNumber);
+            List<TinhThanh> tong = TinhThanh.SearchAndSort(search, sortorder, pageSize);
+
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangThai = "searchandsort";
+            ViewBag.Search = search;
+            ViewBag.Sort = sortorder;
+            return View("Index", list);
+        }
     }
 }

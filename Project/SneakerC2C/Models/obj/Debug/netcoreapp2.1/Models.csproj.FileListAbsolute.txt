@@ -9,3 +9,14 @@ D:\Projects\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.Assemb
 D:\Projects\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfo.cs
 D:\Projects\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.dll
 D:\Projects\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.pdb
+C:\doan\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.deps.json
+C:\doan\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.json
+C:\doan\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.dev.json
+C:\doan\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.dll
+C:\doan\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.pdb
+C:\doan\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.csprojAssemblyReference.cache
+C:\doan\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.csproj.CoreCompileInputs.cache
+C:\doan\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfoInputs.cache
+C:\doan\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfo.cs
+C:\doan\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.dll
+C:\doan\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.pdb

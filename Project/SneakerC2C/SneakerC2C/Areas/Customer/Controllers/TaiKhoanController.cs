@@ -17,7 +17,7 @@ namespace SneakerC2C.Areas.Customer.Controllers
         public IActionResult LogIn(string tendangnhap, string matkhau)
         {
             TaiKhoanBUS tkbus = new TaiKhoanBUS();
-            TaiKhoan taikhoan = tkbus.CheckTaiKhoan(tendangnhap, matkhau);
+            TaiKhoan taikhoan = tkbus.CheckTaiKhoan(tendangnhap, matkhau, "Khách hàng");
             string thongbao = "";
             if(taikhoan == null)
             {
@@ -44,9 +44,9 @@ namespace SneakerC2C.Areas.Customer.Controllers
                 Port = 587,
                 EnableSsl = true,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential("emailtam3197@gmail.com", "hanhphuc")
+                Credentials = new NetworkCredential("tên email gửi", "pass email gửi")
             };
-            using (var message = new MailMessage("emailtam3197@gmail.com", "tnngo.97@gmail.com")
+            using (var message = new MailMessage("tên email gửi", "tên email nhận")
             {
                 Subject = "Test Email",
                 Body = "Body"

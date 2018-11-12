@@ -50,7 +50,7 @@ CREATE TABLE SanPham
 	Gia FLOAT,
 	Hinh NVARCHAR(200),
 	ChiTiet NVARCHAR(500),
-	GiamGia FLOAT, -- vidu : 0.1 = 10% --
+	GiamGia FLOAT, -- vidu : giảm 10% = 10 --
 	TinhTrang NVARCHAR(20)
 )
 
@@ -80,7 +80,6 @@ CREATE TABLE PhieuGiao
 	DiaChi NVARCHAR(200),
 	NgayTao DATETIME,
 	NgayGiao DATETIME,
-	IdKhuyenMai UNIQUEIDENTIFIER NOT NULL, --FK--
 	TongTien FLOAT,
 	TinhTrang NVARCHAR(20)
 )
@@ -99,7 +98,6 @@ CREATE TABLE PhieuDat
 	MaPhieuDat VARCHAR(10) UNIQUE NOT NULL,
 	IdTaiKhoan UNIQUEIDENTIFIER NOT NULL, --FK--
 	NgayTao DATETIME,
-	IdKhuyenMai UNIQUEIDENTIFIER NOT NULL, --FK--
 	TongTien FLOAT,
 	TinhTrang NVARCHAR(20)
 )
@@ -108,7 +106,8 @@ CREATE TABLE ChiTietPhieuDat
 (
 	IdPhieuDat UNIQUEIDENTIFIER NOT NULL, --PK, FK--
 	IdSanPham UNIQUEIDENTIFIER NOT NULL, --PK, FK--
-	SoLuong INT
+	SoLuong INT,
+	Gia FLOAT
 )
 
 CREATE TABLE TinhThanh --Tỉnh thành--
@@ -125,17 +124,6 @@ CREATE TABLE DiaChi
 	IdTaiKhoan UNIQUEIDENTIFIER NOT NULL, --FK--
 	Duong NVARCHAR(100) NOT NULL, --Đường--
 	IdTinhThanh UNIQUEIDENTIFIER NOT NULL, --FK--
-	TinhTrang NVARCHAR(20)
-)
-
-CREATE TABLE KhuyenMai
-(
-	Id UNIQUEIDENTIFIER PRIMARY KEY,
-	MaKhuyenMai VARCHAR(10) UNIQUE NOT NULL,
-	NgayBatDau DATETIME,
-	NgayKetThuc DATETIME,
-	GiamGia FLOAT,
-	NoiDung NVARCHAR(500),
 	TinhTrang NVARCHAR(20)
 )
 
@@ -187,7 +175,6 @@ CREATE TABLE GioHang
 	IdTaiKhoan UNIQUEIDENTIFIER NOT NULL, --PK, FK--
 	IdSanPham UNIQUEIDENTIFIER NOT NULL, --PK, FK--
 	SoLuong INT,
-	ThoiGian TIME, --Thời gian còn lại, hết trả số lượng về 0--
 	TinhTrang NVARCHAR(20)
 )
 
@@ -240,8 +227,7 @@ ALTER TABLE SizeSanPham
 
 ALTER TABLE PhieuGiao
 	ADD
-		CONSTRAINT FK_PhieuGiao_IdTaiKhoan FOREIGN KEY (IdTaiKhoan) REFERENCES TaiKhoan(Id),
-		CONSTRAINT FK_PhieuGiao_IdKhuyenMai FOREIGN KEY (IdKhuyenMai) REFERENCES KhuyenMai(Id)
+		CONSTRAINT FK_PhieuGiao_IdTaiKhoan FOREIGN KEY (IdTaiKhoan) REFERENCES TaiKhoan(Id)
 
 ALTER TABLE ChiTietPhieuGiao
 	ADD
@@ -251,8 +237,7 @@ ALTER TABLE ChiTietPhieuGiao
 
 ALTER TABLE PhieuDat
 	ADD
-		CONSTRAINT FK_PhieuDat_IdTaiKhoan FOREIGN KEY (IdTaiKhoan) REFERENCES TaiKhoan(Id),
-		CONSTRAINT FK_PhieuDat_IdKhuyenMai FOREIGN KEY (IdKhuyenMai) REFERENCES KhuyenMai(Id)
+		CONSTRAINT FK_PhieuDat_IdTaiKhoan FOREIGN KEY (IdTaiKhoan) REFERENCES TaiKhoan(Id)
 
 ALTER TABLE ChiTietPhieuDat
 	ADD

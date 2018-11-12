@@ -156,6 +156,13 @@ namespace Models.BusinessLogicLayer
             return taikhoan;
         }
 
+        public TaiKhoan CheckTaiKhoan(string tendangnhap, string matkhau)
+        {
+            string pass = CreateMD5(matkhau);
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap && tk.MatKhau == pass).SingleOrDefault();
+            return taikhoan;
+        }
+
         public List<TaiKhoan> Sort(string sortorder, int pagesize, int pagenumber)
         {
             List<TaiKhoan> list = new List<TaiKhoan>();

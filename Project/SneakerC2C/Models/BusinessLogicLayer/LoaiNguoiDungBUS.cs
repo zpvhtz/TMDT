@@ -117,9 +117,222 @@ namespace Models.BusinessLogicLayer
             return "Mở khoá thành công";
         }
 
-        //------------------------------------------------------ TIM KIEM -----------------------------------------------------------------
+        //------------------------------------------------------ TIM KIEM - SAP XEP -----------------------------------------------------------------
 
+        public List<LoaiNguoiDung> Sort(string sortorder, int pagesize, int pagenumber)
+        {
+            List<LoaiNguoiDung> list = new List<LoaiNguoiDung>();
+            switch (sortorder)
+            {
+                case "maloainguoidung-az":
+                    {
+                        list = context.LoaiNguoiDung
+                                          .OrderBy(temp => temp.MaLoaiNguoiDung)
+                                          .Skip((pagenumber - 1) * pagesize)
+                                          .Take(pagesize)
+                                          .ToList();
 
+                        break;
+                    }
+                case "maloainguoidung-za":
+                    {
+                        list = context.LoaiNguoiDung
+                                          .OrderByDescending(temp => temp.MaLoaiNguoiDung)
+                                          .Skip((pagenumber - 1) * pagesize)
+                                          .Take(pagesize)
+                                          .ToList();
+
+                        break;
+                    }
+                case "tenloainguoidung-az":
+                    {
+                        list = context.LoaiNguoiDung
+                                          .OrderBy(temp => temp.TenLoaiNguoiDung)
+                                          .Skip((pagenumber - 1) * pagesize)
+                                          .Take(pagesize)
+                                          .ToList();
+                        break;
+                    }
+                case "tenloainguoidung-za":
+                    {
+                        list = context.LoaiNguoiDung
+                                      .OrderByDescending(temp => temp.TenLoaiNguoiDung)
+                                      .Skip((pagenumber - 1) * pagesize)
+                                      .Take(pagesize)
+                                      .ToList();
+                    break;
+                    }
+
+            }
+            return list;
+        }
+        public List<LoaiNguoiDung> Sort(string sortorder)
+        {
+            List<LoaiNguoiDung> list = new List<LoaiNguoiDung>();
+            switch (sortorder)
+            {
+                case "maloainguoidung-az":
+                    {
+                        list = context.LoaiNguoiDung
+                                    .OrderBy(temp => temp.MaLoaiNguoiDung)
+                                    .ToList();
+                        break;
+                    }                  
+                case "maloainguoidung-za":
+                    {
+                        list = context.LoaiNguoiDung
+                                    .OrderByDescending(temp => temp.MaLoaiNguoiDung)
+                                    .ToList();
+                        break;
+                    }                  
+                case "tenloainguoidung-az":
+                    {
+                        list = context.LoaiNguoiDung
+                                    .OrderByDescending(temp => temp.TenLoaiNguoiDung)
+                                    .ToList();
+                        break;
+                    }
+                case "tenloainguoidung-za":
+                    {
+                        list = context.LoaiNguoiDung
+                                    .OrderBy(temp => temp.TenLoaiNguoiDung)
+                                    .ToList();
+                        break;
+                    }
+            }
+            return list;
+        }
+        public List<LoaiNguoiDung> Search(string search, int pagesize, int pagenumber)
+        {
+            List<LoaiNguoiDung> list = new List<LoaiNguoiDung>();
+            if (search == null)
+            {
+                list = GetLoaiNguoiDungs(1, pagesize);
+            }
+            else
+            {
+                list = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung.Contains(search) 
+                                                        || temp.TenLoaiNguoiDung.Contains(search)
+                                                        || temp.TinhTrang.Contains(search))
+                                            .Skip((pagenumber - 1) * pagesize)
+                                            .Take(pagesize)
+                                            .ToList();                                                        
+            }
+            return list;
+        }
+
+        public List<LoaiNguoiDung> Search(string search, int pagesize)
+        {
+            List<LoaiNguoiDung> list = new List<LoaiNguoiDung>();
+            if (search == null)
+            {
+                list = GetLoaiNguoiDungs(1, pagesize);
+            }
+            else
+            {
+                list = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung.Contains(search)
+                                                        || temp.TenLoaiNguoiDung.Contains(search)
+                                                        || temp.TinhTrang.Contains(search))
+                                            .ToList();
+            }
+            return list;
+        }
+
+        public List<LoaiNguoiDung> SearchAndSort(string search, string sortorder, int pagesize, int pagenumber)
+        {
+            List<LoaiNguoiDung> list = new List<LoaiNguoiDung>();
+            if (search == null)
+            {
+                list = GetLoaiNguoiDungs(1, pagesize);
+            }
+            else
+            {
+                switch (sortorder)
+                {
+                    case "maloainguoidung-az":
+                        list = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung.Contains(search)
+                                                        || temp.TenLoaiNguoiDung.Contains(search)
+                                                        || temp.TinhTrang.Contains(search))
+                                               .Skip((pagenumber - 1) * pagesize)
+                                               .Take(pagesize)
+                                               .OrderBy(temp=>temp.MaLoaiNguoiDung)
+                                               .ToList();
+                        break;
+                    case "maloainguoidung-za":
+                        list = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung.Contains(search)
+                                                        || temp.TenLoaiNguoiDung.Contains(search)
+                                                        || temp.TinhTrang.Contains(search))
+                                               .Skip((pagenumber - 1) * pagesize)
+                                               .Take(pagesize)
+                                               .OrderByDescending(temp => temp.MaLoaiNguoiDung)
+                                               .ToList();
+                        break;
+                    case "tenloainguoidung-az":
+                        list = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung.Contains(search)
+                                                        || temp.TenLoaiNguoiDung.Contains(search)
+                                                        || temp.TinhTrang.Contains(search))
+                                               .Skip((pagenumber - 1) * pagesize)
+                                               .Take(pagesize)
+                                               .OrderBy(temp => temp.TenLoaiNguoiDung)
+                                               .ToList();
+                        break;
+                    case "tenloainguoidung-za":
+                        list = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung.Contains(search)
+                                                        || temp.TenLoaiNguoiDung.Contains(search)
+                                                        || temp.TinhTrang.Contains(search))
+                                               .Skip((pagenumber - 1) * pagesize)
+                                               .Take(pagesize)
+                                               .OrderByDescending(temp => temp.TenLoaiNguoiDung)
+                                               .ToList();
+                        break;
+                }
+            }
+            return list;
+        }
+
+        public List<LoaiNguoiDung> SearchAndSort(string search, string sortorder, int pagesize)
+        {
+            List<LoaiNguoiDung> list = new List<LoaiNguoiDung>();
+            if (search == null)
+            {
+                list = GetLoaiNguoiDungs(1, pagesize);
+            }
+            else
+            {
+                switch (sortorder)
+                {
+                    case "maloainguoidung-az":
+                        list = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung.Contains(search)
+                                                        || temp.TenLoaiNguoiDung.Contains(search)
+                                                        || temp.TinhTrang.Contains(search))
+                                               .OrderBy(l => l.MaLoaiNguoiDung)
+                                               .ToList();
+                        break;
+                    case "maloainguoidung-za":
+                        list = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung.Contains(search)
+                                                        || temp.TenLoaiNguoiDung.Contains(search)
+                                                        || temp.TinhTrang.Contains(search))
+                                               .OrderByDescending(l => l.MaLoaiNguoiDung)
+                                               .ToList();
+                        break;
+                    case "tenloainguoidung-az":
+                        list = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung.Contains(search)
+                                                        || temp.TenLoaiNguoiDung.Contains(search)
+                                                        || temp.TinhTrang.Contains(search))
+                                               .OrderBy(l => l.TenLoaiNguoiDung)
+                                               .ToList();
+                        break;
+                    case "tenloainguoidung-za":
+                        list = context.LoaiNguoiDung.Where(temp => temp.MaLoaiNguoiDung.Contains(search)
+                                                        || temp.TenLoaiNguoiDung.Contains(search)
+                                                        || temp.TinhTrang.Contains(search))
+                                               .OrderByDescending(l => l.TenLoaiNguoiDung)
+                                               .ToList();
+                        break;
+                }
+            }
+            return list;
+        }
 
 
     }

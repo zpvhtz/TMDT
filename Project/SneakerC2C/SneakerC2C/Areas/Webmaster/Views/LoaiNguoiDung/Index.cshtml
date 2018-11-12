@@ -27,10 +27,10 @@
                 <div class="form-group">
                     <select class="form-control" id="sortList" onchange="window.location.href = SearchAndSort()">
                         <option selected disabled>Sắp xếp theo</option>
-                        <option value="/Webmaster/LoaiNguoiDung/Sort?sortorder=tendangnhap-az">Tên loại người dùng (A-Z)</option>
-                        <option value="/Webmaster/LoaiNguoiDung/Sort?sortorder=tendangnhap-za">Tên loại người dùng (Z-A)</option>
-                        <option value="/Webmaster/LoaiNguoiDung/Sort?sortorder=ten-az">Tên (A-Z)</option>
-                        <option value="/Webmaster/LoaiNguoiDung/Sort?sortorder=ten-za">Tên (Z-A)</option>
+                        <option value="/Webmaster/LoaiNguoiDung/Sort?sortorder=maloainguoidung-az">Mã loại người dùng (A-Z)</option>
+                        <option value="/Webmaster/LoaiNguoiDung/Sort?sortorder=maloainguoidung-za">Mã loại người dùng (Z-A)</option>
+                        <option value="/Webmaster/LoaiNguoiDung/Sort?sortorder=tenloainguoidung-az">Tên loại người dùng (A-Z)</option>
+                        <option value="/Webmaster/LoaiNguoiDung/Sort?sortorder=tenloainguoidung-za">Tên loại người dùng (Z-A)</option>
                     </select>
                 </div>
             </div>
@@ -96,16 +96,16 @@
                     @switch (ViewBag.TrangThai)
                     {
                         case "index":
-                            <a asp-controller="TaiKhoan" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            <a asp-controller="LoaiNguoiDung" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
                             break;
                         case "sort":
-                            <a asp-controller="TaiKhoan" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            <a asp-controller="LoaiNguoiDung" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
                             break;
                         case "search":
-                            <a asp-controller="TaiKhoan" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            <a asp-controller="LoaiNguoiDung" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
                             break;
                         case "searchandsort":
-                            <a asp-controller="TaiKhoan" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            <a asp-controller="LoaiNguoiDung" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
                             break;
                     }
                 </li>
@@ -119,16 +119,16 @@
                         @switch (ViewBag.TrangThai)
                         {
                             case "index":
-                                <a asp-controller="TaiKhoan" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                <a asp-controller="LoaiNguoiDung" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
                                 break;
                             case "sort":
-                                <a asp-controller="TaiKhoan" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                <a asp-controller="LoaiNguoiDung" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
                                 break;
                             case "search":
-                                <a asp-controller="TaiKhoan" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                <a asp-controller="LoaiNguoiDung" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
                                 break;
                             case "searchandsort":
-                                <a asp-controller="TaiKhoan" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                <a asp-controller="LoaiNguoiDung" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
                                 break;
                         }
                     </li>
@@ -146,16 +146,16 @@
                             @switch (ViewBag.TrangThai)
                             {
                                 case "index":
-                                    <a asp-controller="TaiKhoan" asp-action="Index" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="LoaiNguoiDung" asp-action="Index" asp-route-pagenumber="@i" class="pageNumber">@i</a>
                                     break;
                                 case "sort":
-                                    <a asp-controller="TaiKhoan" asp-action="Sort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="LoaiNguoiDung" asp-action="Sort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
                                     break;
                                 case "search":
-                                    <a asp-controller="TaiKhoan" asp-action="Search" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="LoaiNguoiDung" asp-action="Search" asp-route-pagenumber="@i" class="pageNumber">@i</a>
                                     break;
                                 case "searchandsort":
-                                    <a asp-controller="TaiKhoan" asp-action="SearchAndSort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="LoaiNguoiDung" asp-action="SearchAndSort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
                                     break;
                             }
                         </li>
@@ -172,16 +172,16 @@
                     @switch (ViewBag.TrangThai)
                     {
                         case "index":
-                            <a asp-controller="TaiKhoan" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            <a asp-controller="LoaiNguoiDung" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
                             break;
                         case "sort":
-                            <a asp-controller="TaiKhoan" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            <a asp-controller="LoaiNguoiDung" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
                             break;
                         case "search":
-                            <a asp-controller="TaiKhoan" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            <a asp-controller="LoaiNguoiDung" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
                             break;
                         case "searchandsort":
-                            <a asp-controller="TaiKhoan" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            <a asp-controller="LoaiNguoiDung" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
                             break;
                     }
                 </li>
@@ -213,7 +213,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-warning" id="btnThemTaiKhoan">Thêm</button>
+                    <button type="submit" class="btn btn-warning" id="btnThemLoaiNguoiDung">Thêm</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                 </div>
             </div>
@@ -264,6 +264,81 @@
         $("#item-sua-maloainguoidung").val(maloainguoidung.trim());
         $("#item-sua-tenloainguoidung").val(tenloainguoidung.trim());
 
+    });
+
+    $(".pageNumber").click(function () {
+        //Get addtional href
+        let sort = $("#sortList").val();
+        let search = "@ViewBag.Search";
+        //Href
+        var $link = $('.pageNumber');
+        var href = $link.attr('href').split('/');
+        if (sort != null && sort != '') {
+            sort = sort.substring(sort.lastIndexOf('=') + 1, sort.length);
+            href.push('&sortorder=' + sort); //here you set your new asp-route-pagenumber value
+        }
+        if (search != null && search != '') {
+            href.push('&search=' + search); //here you set your new asp-route-pagenumber value
+        }
+        href = href.join('/');
+        href = href.toString().replace(/\/&/g, '&');
+        $link.attr('href', href);
+    });
+</script>
+
+<script>
+    function SearchAndSort() {
+        let search = "@ViewBag.Search";
+        if (search == null || search == '') {
+            return $("#sortList").val();
+        }
+        else {
+            let href = $("#sortList").val();
+            href = href.replace("Sort", "SearchAndSort");
+            href = href + (`&search=${search}`)
+            return href;
+        }
+    }
+
+    function validateNumber(e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            // Allow: Ctrl/cmd+A
+            (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+            // Allow: Ctrl/cmd+C
+            (e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true)) ||
+            // Allow: Ctrl/cmd+X
+            (e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true)) ||
+            // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+            // let it happen, don't do anything
+            return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    };
+</script>
+
+<script>
+    $(document).ready(function () {
+        //Sắp xếp
+        let sort = "@ViewBag.Sort";
+        if (sort != '') {
+            $("#sortList option").each(function () {
+                if ($(this).val().includes(sort)) {
+                    $(this).attr('selected', 'selected');
+                    return;
+                }
+            });
+        }
+
+        //Keydown event
+        $("#item-them-dienthoai").keydown(validateNumber);
+        $("#item-them-cmnd").keydown(validateNumber);
+        $("#item-sua-dienthoai").keydown(validateNumber);
+        $("#item-sua-cmnd").keydown(validateNumber);
     });
 
     $(".pageNumber").click(function () {

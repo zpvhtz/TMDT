@@ -1,0 +1,416 @@
+﻿@model IEnumerable<Models.Database.LichSuGianHang>
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">DANH SÁCH LỊCH SỬ GIAN HÀNG</h2>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <!-- Search form -->
+        <div class="row">
+            <div class="col-lg-1">
+                <button id="btnThem" class="btn btn-primary" data-toggle="modal" data-target="#themModal">Thêm</button>
+            </div>
+            <div class="col-lg-2">
+                <div class="form-group">
+                    <select class="form-control" id="sortList" onchange="window.location.href = SearchAndSort()">
+                        <option selected disabled>Sắp xếp theo</option>
+                        <option value="/Webmaster/LichSuGianHang/Sort?sortorder=taikhoan-az">Tên tài khoản (A-Z)</option>
+                        <option value="/Webmaster/LichSuGianHang/Sort?sortorder=taikhoan-za">Tên tài khoản (Z-A)</option>
+                        <option value="/Webmaster/LichSuGianHang/Sort?sortorder=gianhang-asc">Tên gian hàng (A-Z)</option>
+                        <option value="/Webmaster/LichSuGianHang/Sort?sortorder=gianhang-desc">Tên gian hàng (Z-A)</option>
+                        <option value="/Webmaster/LichSuGianHang/Sort?sortorder=ngaydangky-asc">Ngày đăng ký (Mới nhất)</option>
+                        <option value="/Webmaster/LichSuGianHang/Sort?sortorder=ngaydangky-desc">Ngày đăng ký (Cũ nhất)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-6"></div>
+            <div class="col-lg-3">
+                <form asp-controller="LichSuGianHang" asp-action="Search" method="get">
+                    <div class="input-group custom-search-form">
+                        <input type="text" class="form-control" id="searchList" placeholder="Tìm kiếm..." name="search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Tên tài khoản</th>
+                    <th>Mã gian hàng</th>
+                    <th>Tên gian hàng</th>
+                    <th>Ngày đăng ký</th>
+                    <th>Ngày bắt đầu</th>
+                    <th>Ngày kết thúc</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="body-content">
+                @foreach (var item in Model)
+                {
+                    <tr class="odd gradeX">
+                        <td class="item-id">@item.Id</td>
+                        <td class="item-tendangnhap">@item.IdTaiKhoanNavigation.TenDangNhap</td>
+                        <td class="item-magianhang">@item.IdGianHangNavigation.MaGianHang</td>
+                        <td class="item-tengianhang">@item.IdGianHangNavigation.TenGianHang</td>
+                        <td class="item-ngaydangky">@item.NgayDangKy</td>
+                        <td class="item-ngaybatdau">@item.NgayBatDau</td>
+                        <td class="item-ngayketthuc">@item.NgayKetThuc</td>
+                        <td>
+                            @if(item.TinhTrang == "Không khoá")
+                            {
+                                <a asp-controller="LichSuGianHang" asp-action="LockLichSuGianHang" asp-route-id="@item.Id" class="btn btn-danger">Khoá</a>
+                            }
+                            else
+                            {
+                                <button class="btn btn-danger" disabled>Đã khoá</button>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <!-- /.table-responsive -->
+        <ul class="pagination" style="margin: 0 auto;">
+            @if (ViewBag.TrangHienTai == 1)
+            {
+                <li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous"><a href="#">Trước</a></li>
+            }
+            else
+            {
+                <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
+                    @switch (ViewBag.TrangThai)
+                    {
+                        case "index":
+                            <a asp-controller="LichSuGianHang" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            break;
+                        case "sort":
+                            <a asp-controller="LichSuGianHang" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            break;
+                        case "search":
+                            <a asp-controller="LichSuGianHang" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            break;
+                        case "searchandsort":
+                            <a asp-controller="LichSuGianHang" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            break;
+                    }
+                </li>
+            }
+            @for (int i = 1; i <= ViewBag.TongTrang; i++)
+            {
+                if (i > 5)
+                {
+                    <li class="paginate_button" aria-controls="dataTables-example" tabindex="0"><a href="#">...</a></li>
+                    <li class="paginate_button" aria-controls="dataTables-example" tabindex="0">
+                        @switch (ViewBag.TrangThai)
+                        {
+                            case "index":
+                                <a asp-controller="LichSuGianHang" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                break;
+                            case "sort":
+                                <a asp-controller="LichSuGianHang" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                break;
+                            case "search":
+                                <a asp-controller="LichSuGianHang" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                break;
+                            case "searchandsort":
+                                <a asp-controller="LichSuGianHang" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                break;
+                        }
+                    </li>
+                    break;
+                }
+                else
+                {
+                    if (i == ViewBag.TrangHienTai)
+                    {
+                        <li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#">@i</a></li>
+                    }
+                    else
+                    {
+                        <li class="paginate_button" aria-controls="dataTables-example" tabindex="0">
+                            @switch (ViewBag.TrangThai)
+                            {
+                                case "index":
+                                    <a asp-controller="LichSuGianHang" asp-action="Index" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    break;
+                                case "sort":
+                                    <a asp-controller="LichSuGianHang" asp-action="Sort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    break;
+                                case "search":
+                                    <a asp-controller="LichSuGianHang" asp-action="Search" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    break;
+                                case "searchandsort":
+                                    <a asp-controller="LichSuGianHang" asp-action="SearchAndSort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    break;
+                            }
+                        </li>
+                    }
+                }
+            }
+            @if (ViewBag.TrangHienTai == ViewBag.TongTrang)
+            {
+                <li class="paginate_button next disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="#">Tiếp</a></li>
+            }
+            else
+            {
+                <li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next">
+                    @switch (ViewBag.TrangThai)
+                    {
+                        case "index":
+                            <a asp-controller="LichSuGianHang" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            break;
+                        case "sort":
+                            <a asp-controller="LichSuGianHang" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            break;
+                        case "search":
+                            <a asp-controller="LichSuGianHang" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            break;
+                        case "searchandsort":
+                            <a asp-controller="LichSuGianHang" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            break;
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+<!-- /.panel-body -->
+<!-- Modal thêm -->
+<div class="modal fade" id="themModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <form asp-controller="LichSuGianHang" asp-action="CreateLichSuGianHang" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Gian hàng</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="them-thongbao" style="color: red;"></p>
+                    <div class="form-group">
+                        <label>Tên tài khoản</label>
+                        <input type="text" class="form-control" id="item-them-tendangnhap" name="item_them_tendangnhap" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tỉnh thành</label>
+                        <select class="form-control" id="item-them-gianhang" name="item_them_gianhang" required>
+                            @foreach (var item in @ViewBag.ListGianHang)
+                            {
+                                <option value="@item.Id">@item.TenGianHang</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Giá tiền</label>
+                        <input type="text" class="form-control" id="item-them-giatien" name="item_them_giatien" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày bắt đầu</label>
+                        <input type="datetime-local" class="form-control" id="item-them-ngaybatdau" name="item_them_ngaybatdau" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày kết thúc</label>
+                        <input type="datetime-local" class="form-control" id="item-them-ngayketthuc" name="item_them_ngayketthuc" readonly>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-warning" id="btnThemModal" disabled>Thêm</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (ViewBag.ThongBao != null)
+{
+    <script>
+        alert("@Html.Raw(ViewBag.ThongBao)");
+    </script>
+}
+
+<script>
+    function SearchAndSort() {
+        let search = "@ViewBag.Search";
+        if (search == null || search == '') {
+            return $("#sortList").val();
+        }
+        else {
+            let href = $("#sortList").val();
+            href = href.replace("Sort", "SearchAndSort");
+            href = href + (`&search=${search}`)
+            return href;
+        }
+    }
+
+    let interval_today;
+
+    function SetIntervalToday() {
+        interval_today = setInterval(function () {
+            let today = new moment().format('YYYY-MM-DDTHH:mm:ss');
+            $(`#item-them-ngaybatdau`).val(today);
+            let id = $(`#item-them-gianhang`).val();
+            GetThoiGian(id);
+        }, 1000);
+    };
+
+    function ClearIntervalToday() {
+        clearInterval(interval_today);
+    }
+
+    //Thời hạn gian hàng của tài khoản
+    function CheckTaiKhoan(tendangnhap) {
+        $.ajax({
+            url: "/Webmaster/LichSuGianHang/CheckTaiKhoan",
+            type: "get",
+            data: { "tendangnhap": tendangnhap },
+            success: function (data) {
+                if (data == null) {
+                    ClearIntervalToday();
+                    $("#btnThemModal").attr('disabled', true);
+                    $("#them-thongbao").text("Không tồn tại tài khoản " + tendangnhap);
+                    $(`#item-them-ngaybatdau`).val("");
+                    $(`#item-them-ngayketthuc`).val("");
+                }
+                else {
+                    $(`#them-thongbao`).text("");
+                    $("#btnThemModal").attr('disabled', false);
+                    let thoihangianhang = new moment(data["thoiHanGianHang"]);
+                    if (thoihangianhang.isValid()) {
+                        if (thoihangianhang < new moment()) {
+                            SetIntervalToday();
+                        }
+                        else {
+                            ClearIntervalToday();
+                            let date = new moment(data["thoiHanGianHang"]).format('YYYY-MM-DDTHH:mm:ss');
+                            $(`#item-them-ngaybatdau`).val(date);
+                        }
+                    }
+                    else {
+                        SetIntervalToday();
+                    }
+                }
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            }
+        });
+    }
+
+    //Giá tiền của gian hàng
+    function GetGiaTien(id) {
+        $.ajax({
+            url: "/Webmaster/LichSuGianHang/GetGiaTien",
+            type: "get",
+            data: { "id": id },
+            success: function (data) {
+                $(`#item-them-giatien`).val(data);
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            }
+        });
+    }
+
+    //Số
+    function GetThoiGian(id) {
+        $.ajax({
+            url: "/Webmaster/LichSuGianHang/GetThoiGian",
+            type: "get",
+            data: { "id": id },
+            success: function (data) {
+                let ngaybatdau = new moment($(`#item-them-ngaybatdau`).val());
+                if (ngaybatdau.isValid()) {
+                    let ngayketthuc = ngaybatdau.add(data, 'days').format('YYYY-MM-DDTHH:mm:ss');
+                    $(`#item-them-ngayketthuc`).val(ngayketthuc);
+                }
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            }
+        });
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+        //Sắp xếp
+        let sort = "@ViewBag.Sort";
+        if (sort != '') {
+            $("#sortList option").each(function () {
+                if ($(this).val().includes(sort)) {
+                    $(this).attr('selected', 'selected');
+                    return;
+                }
+            });
+        }
+    });
+
+    $("#btnThem").click(function () {
+        let id = $("#item-them-gianhang option:selected").val();
+        $.ajax({
+            url: "/Webmaster/LichSuGianHang/GetGiaTien",
+            type: "get",
+            data: { "id": id },
+            success: function (data) {
+                $("#item-them-giatien").val(data);
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            }
+        });
+    });
+
+    $(".pageNumber").click(function () {
+        //Get addtional href
+        let sort = $("#sortList").val();
+        let search = "@ViewBag.Search";
+        //Href
+        var $link = $('.pageNumber');
+        var href = $link.attr('href').split('/');
+        if (sort != null && sort != '') {
+            sort = sort.substring(sort.lastIndexOf('=') + 1, sort.length);
+            href.push('&sortorder=' + sort); //here you set your new asp-route-pagenumber value
+        }
+        if (search != null && search != '') {
+            href.push('&search=' + search); //here you set your new asp-route-pagenumber value
+        }
+        href = href.join('/');
+        href = href.toString().replace(/\/&/g, '&');
+        $link.attr('href', href);
+    });
+
+    //Tính tiền khi thay đổi combobox (bảng thêm)
+    $("#item-them-gianhang").change(function () {
+        let id = $(this).val();
+        let tendangnhap = $("#item-them-tendangnhap").val();
+
+        GetGiaTien(id);
+        CheckTaiKhoan(tendangnhap);
+        GetThoiGian(id);
+    });
+
+    $("#item-them-tendangnhap").keyup(function () {
+        let tendangnhap = $(this).val();
+        let id = $("#item-them-gianhang").val();
+        CheckTaiKhoan(tendangnhap);
+        GetThoiGian(id);
+    });
+</script>

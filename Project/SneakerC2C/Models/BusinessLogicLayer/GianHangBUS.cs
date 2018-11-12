@@ -22,7 +22,9 @@ namespace Models.BusinessLogicLayer
 
         public List<GianHang> GetGianHangs()
         {
-            List<GianHang> list = context.GianHang.OrderBy(gh => gh.MaGianHang).ToList();
+            List<GianHang> list = context.GianHang.Where(gh => gh.TinhTrang == "Không khoá")
+                                                  .OrderBy(gh => gh.MaGianHang)
+                                                  .ToList();
             return list;
         }
 
@@ -95,6 +97,20 @@ namespace Models.BusinessLogicLayer
             return "Mở khoá thành công";
         }
 
+        public double GetGiaTien(string id)
+        {
+            GianHang gianhang = context.GianHang.Where(gh => gh.Id == Guid.Parse(id)).SingleOrDefault();
+            double giatien = gianhang.Gia ?? 0;
+            return giatien;
+        }
+
+        public int GetThoiGian(string id)
+        {
+            GianHang gianhang = context.GianHang.Where(gh => gh.Id == Guid.Parse(id)).SingleOrDefault();
+            int thoigian = gianhang.ThoiGian ?? 0;
+            return thoigian;
+        }
+
         public List<GianHang> Sort(string sortorder, int pagesize, int pagenumber)
         {
             List<GianHang> list = new List<GianHang>();
@@ -159,7 +175,8 @@ namespace Models.BusinessLogicLayer
             else
             {
                 list = context.GianHang.Where(gh => gh.MaGianHang.Contains(search) ||
-                                                    gh.TenGianHang.Contains(search))
+                                                    gh.TenGianHang.Contains(search) ||
+                                                    gh.TinhTrang.Contains(search))
                                        .Skip((pagenumber - 1) * pagesize)
                                        .Take(pagesize)
                                        .ToList();
@@ -177,7 +194,8 @@ namespace Models.BusinessLogicLayer
             else
             {
                 list = context.GianHang.Where(gh => gh.MaGianHang.Contains(search) ||
-                                                    gh.TenGianHang.Contains(search))
+                                                    gh.TenGianHang.Contains(search) ||
+                                                    gh.TinhTrang.Contains(search))
                                        .ToList();
             }
             return list;
@@ -196,7 +214,8 @@ namespace Models.BusinessLogicLayer
                 {
                     case "tengianhang-az":
                     list = context.GianHang.Where(gh => gh.MaGianHang.Contains(search) ||
-                                                        gh.TenGianHang.Contains(search))
+                                                        gh.TenGianHang.Contains(search) ||
+                                                        gh.TinhTrang.Contains(search))
                                            .OrderBy(gh => gh.TenGianHang)
                                            .Skip((pagenumber - 1) * pagesize)
                                            .Take(pagesize)
@@ -204,7 +223,8 @@ namespace Models.BusinessLogicLayer
                     break;
                     case "tengianhang-za":
                         list = context.GianHang.Where(gh => gh.MaGianHang.Contains(search) ||
-                                                            gh.TenGianHang.Contains(search))
+                                                            gh.TenGianHang.Contains(search) ||
+                                                            gh.TinhTrang.Contains(search))
                                                .OrderByDescending(gh => gh.TenGianHang)
                                                .Skip((pagenumber - 1) * pagesize)
                                                .Take(pagesize)
@@ -212,7 +232,8 @@ namespace Models.BusinessLogicLayer
                     break;
                     case "gia-asc":
                         list = context.GianHang.Where(gh => gh.MaGianHang.Contains(search) ||
-                                                            gh.TenGianHang.Contains(search))
+                                                            gh.TenGianHang.Contains(search) ||
+                                                            gh.TinhTrang.Contains(search))
                                                .OrderBy(gh => gh.Gia)
                                                .Skip((pagenumber - 1) * pagesize)
                                                .Take(pagesize)
@@ -220,7 +241,8 @@ namespace Models.BusinessLogicLayer
                     break;
                     case "gia-desc":
                         list = context.GianHang.Where(gh => gh.MaGianHang.Contains(search) ||
-                                                            gh.TenGianHang.Contains(search))
+                                                            gh.TenGianHang.Contains(search) ||
+                                                            gh.TinhTrang.Contains(search))
                                                .OrderByDescending(gh => gh.Gia)
                                                .Skip((pagenumber - 1) * pagesize)
                                                .Take(pagesize)
@@ -244,25 +266,29 @@ namespace Models.BusinessLogicLayer
                 {
                     case "tengianhang-az":
                         list = context.GianHang.Where(gh => gh.MaGianHang.Contains(search) ||
-                                                            gh.TenGianHang.Contains(search))
+                                                            gh.TenGianHang.Contains(search) ||
+                                                            gh.TinhTrang.Contains(search))
                                                .OrderBy(gh => gh.TenGianHang)
                                                .ToList();
                         break;
                     case "tengianhang-za":
                         list = context.GianHang.Where(gh => gh.MaGianHang.Contains(search) ||
-                                                            gh.TenGianHang.Contains(search))
+                                                            gh.TenGianHang.Contains(search) ||
+                                                            gh.TinhTrang.Contains(search))
                                                .OrderByDescending(gh => gh.TenGianHang)
                                                .ToList();
                         break;
                     case "gia-asc":
                         list = context.GianHang.Where(gh => gh.MaGianHang.Contains(search) ||
-                                                            gh.TenGianHang.Contains(search))
+                                                            gh.TenGianHang.Contains(search) ||
+                                                            gh.TinhTrang.Contains(search))
                                                .OrderBy(gh => gh.Gia)
                                                .ToList();
                         break;
                     case "gia-desc":
                         list = context.GianHang.Where(gh => gh.MaGianHang.Contains(search) ||
-                                                            gh.TenGianHang.Contains(search))
+                                                            gh.TenGianHang.Contains(search) ||
+                                                            gh.TinhTrang.Contains(search))
                                                .OrderByDescending(gh => gh.Gia)
                                                .ToList();
                         break;

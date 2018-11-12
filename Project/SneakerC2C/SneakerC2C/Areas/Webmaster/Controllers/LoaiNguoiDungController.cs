@@ -13,72 +13,100 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
     [Area("Webmaster")]
     public class LoaiNguoiDungController : Controller
     {
-        public IActionResult Index(string searchString, int page = 1, int pageSize = 8)
+        const int pageSize = 10;
+        int pageNumber = 1;
+        public int TongTrang(List<LoaiNguoiDung> list)
         {
-            //var temp = new LoaiNguoiDungBUS();
-            //var model = temp.listAllPaging(searchString, page, pageSize);
-            //return View(model);
-            return View();
+            return ((list.Count / pageSize) + 1);
         }
-        [HttpGet]
-        public ActionResult Create()
+        public IActionResult Index(string thongbao, int? pagenumber)
         {
-            return View();
-        }
-        [HttpGet]
-        public ActionResult Edit(string id)
-        {
-            //var temp = new LoaiNguoiDungBUS().ViewDetail(id);
-            //return View(temp);
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Create(LoaiNguoiDung loainguoidung)
-        {
-            //if (ModelState.IsValid)
-            //{
-            //    var bus = new LoaiNguoiDungBUS();
-            //    string id = bus.Insert(loainguoidung);
-            //    if (id != null) // if insert success, back to index
-            //    {
-            //        return RedirectToAction("Index", "LoaiNguoiDung");
-            //    }
-            //    else
-            //    {
-            //        ModelState.AddModelError("", "Thêm Thất Bại!");
-            //    }
-            //}
-            //return View("Index");
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Edit(LoaiNguoiDung nguoidung)
-        {
-            //if (ModelState.IsValid)
-            //{
-            //    var temp = new LoaiNguoiDungBUS();
-            //    var result = temp.Update(nguoidung);
-            //    if (result) // if update success, back to index
-            //    {
-            //        return RedirectToAction("Index", "LoaiNguoiDung");
-            //    }
-            //    else
-            //    {
-            //        ModelState.AddModelError("", "Cập Nhật Thất Bại!");
-            //    }
-            //}
-            //return View("Index");
-            return View();
+            //Thông báo
+            if (thongbao != null)
+            {
+                ViewBag.ThongBao = thongbao;
+            }
+            //Trang
+            pageNumber = pagenumber ?? 1;
+            //List
+            LoaiNguoiDungBUS loainguoidung = new LoaiNguoiDungBUS();
+            List<LoaiNguoiDung> list = loainguoidung.GetLoaiNguoiDungs(pageNumber, pageSize);
+            List<LoaiNguoiDung> tong = loainguoidung.GetLoaiNguoiDungs();
+            //ViewBag
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TrangThai = "index";
+            return View(list);
         }
 
-        [HttpDelete]
-        public ActionResult Delete(string id)
+        public IActionResult CreateLoaiNguoiDung(string item_them_maloainguoidung, string item_them_tenloainguoidung)
         {
-            //var dao = new LoaiNguoiDungBUS();
-            //var result = dao.Delete(id);
-            //return RedirectToAction("Index", "LoaiNguoiDung");
-            return View();
+            LoaiNguoiDungBUS loainguoidung = new LoaiNguoiDungBUS();
+            string thongbao = loainguoidung.CreateLoaiNguoiDung(item_them_maloainguoidung, item_them_tenloainguoidung);
+            return RedirectToAction("Index", "LoaiNguoiDung", new { thongbao = thongbao });
+        }
+
+        public IActionResult EditLoaiNguoiDung(string item_sua_maloainguoidung, string item_sua_tenloainguoidung)
+        {
+            LoaiNguoiDungBUS loainguoidung = new LoaiNguoiDungBUS();
+            string thongbao = loainguoidung.EditLoaiNguoiDung(item_sua_maloainguoidung,item_sua_tenloainguoidung);
+            return RedirectToAction("Index", "LoaiNguoiDung", new { thongbao = thongbao });
+        }
+
+        public IActionResult LockLoaiNguoiDung(string maloainguoidung)
+        {
+            LoaiNguoiDungBUS loainguoidung = new LoaiNguoiDungBUS();
+            string thongbao = loainguoidung.LockLoaiNguoiDung(maloainguoidung);
+            return RedirectToAction("Index", "LoaiNguoiDung", new { thongbao = thongbao });
+        }
+
+        public IActionResult UnlockLoaiNguoiDung(string maloainguoidung)
+        {
+            LoaiNguoiDungBUS loainguoidung = new LoaiNguoiDungBUS();
+            string thongbao = loainguoidung.UnlockLoaiNguoiDung(maloainguoidung);
+            return RedirectToAction("Index", "LoaiNguoiDung", new { thongbao = thongbao });
+        }
+
+        public IActionResult Sort(string sortorder, int? pagenumber)
+        {
+            pageNumber = pagenumber ?? 1;
+            LoaiNguoiDungBUS loainguoidung = new LoaiNguoiDungBUS();
+            List<LoaiNguoiDung> list = loainguoidung.Sort(sortorder, pageSize, pageNumber);
+            List<LoaiNguoiDung> tong = loainguoidung.Sort(sortorder);
+
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangThai = "sort";
+            ViewBag.Sort = sortorder;
+            return View("Index", list);
+        }
+        public IActionResult Search(string search, int? pagenumber)
+        {
+            pageNumber = pagenumber ?? 1;
+            LoaiNguoiDungBUS loainguoidung = new LoaiNguoiDungBUS();
+            List<LoaiNguoiDung> list = loainguoidung.Search(search, pageSize, pageNumber);
+            List<LoaiNguoiDung> tong = loainguoidung.Search(search, pageSize);
+
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangThai = "search";
+            ViewBag.Search = search;
+            return View("Index", list);
+        }
+
+        public IActionResult SearchAndSort(string search, string sortorder, int? pagenumber)
+        {
+            pageNumber = pagenumber ?? 1;
+            LoaiNguoiDungBUS LoaiNguoiDung = new LoaiNguoiDungBUS();
+            List<LoaiNguoiDung> list = LoaiNguoiDung.SearchAndSort(search, sortorder, pageSize, pageNumber);
+            List<LoaiNguoiDung> tong = LoaiNguoiDung.SearchAndSort(search, sortorder, pageSize);
+
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangThai = "searchandsort";
+            ViewBag.Search = search;
+            ViewBag.Sort = sortorder;
+            return View("Index", list);
         }
 
     }

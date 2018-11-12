@@ -37,11 +37,19 @@ namespace SneakerC2C
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             var connect = Configuration.GetConnectionString("QLBanGiayDB");
             services.AddDbContext<QLBanGiayContext>(opt => opt.UseSqlServer(connect));
+
+            //Session
+            services.AddSession(opt =>
+            {
+                //30s
+                opt.IdleTimeout = TimeSpan.FromSeconds(30);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseSession();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -58,9 +66,14 @@ namespace SneakerC2C
 
             app.UseMvc(routes =>
             {
+                //routes.MapRoute(
+                //    name: "areas",
+                //    template: "{area:exists}/{controller=LoaiNguoiDung}/{action=Index}/{id?}");
+
                 routes.MapRoute(
                     name: "areas",
-                    template: "{area:exists}/{controller=LoaiNguoiDung}/{action=Index}/{id?}");
+                    template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
 
                 //routes.MapRoute(
                 //    name: "default",

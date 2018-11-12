@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Models
+namespace Models.BusinessLogicLayer
 {
     public class TaiKhoanBUS
     {
@@ -150,6 +150,19 @@ namespace Models
             return "Mở khoá thành công";
         }
 
+        public TaiKhoan CheckTaiKhoan(string tendangnhap)
+        {
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();
+            return taikhoan;
+        }
+
+        public TaiKhoan CheckTaiKhoan(string tendangnhap, string matkhau)
+        {
+            string pass = CreateMD5(matkhau);
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap && tk.MatKhau == pass).SingleOrDefault();
+            return taikhoan;
+        }
+
         public List<TaiKhoan> Sort(string sortorder, int pagesize, int pagenumber)
         {
             List<TaiKhoan> list = new List<TaiKhoan>();
@@ -237,7 +250,8 @@ namespace Models
                                                    l.Ten.Contains(search) ||
                                                    l.DienThoai.Contains(search) ||
                                                    l.Email.Contains(search) ||
-                                                   l.Cmnd.Contains(search))
+                                                   l.Cmnd.Contains(search) ||
+                                                   l.TinhTrang.Contains(search))
                                        .Where(l => l.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung != "Webmaster")
                                        .Include(l => l.IdLoaiNguoiDungNavigation)
                                        .Skip((pagenumber - 1) * pagesize)
@@ -260,7 +274,8 @@ namespace Models
                                                    l.Ten.Contains(search) ||
                                                    l.DienThoai.Contains(search) ||
                                                    l.Email.Contains(search) ||
-                                                   l.Cmnd.Contains(search))
+                                                   l.Cmnd.Contains(search) ||
+                                                   l.TinhTrang.Contains(search))
                                        .Where(l => l.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung != "Webmaster")
                                        .Include(l => l.IdLoaiNguoiDungNavigation)
                                        .ToList();
@@ -284,7 +299,8 @@ namespace Models
                                                       l.Ten.Contains(search) ||
                                                       l.DienThoai.Contains(search) ||
                                                       l.Email.Contains(search) ||
-                                                      l.Cmnd.Contains(search))
+                                                      l.Cmnd.Contains(search) ||
+                                                      l.TinhTrang.Contains(search))
                                                .Where(l => l.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung != "Webmaster")
                                                .Include(l => l.IdLoaiNguoiDungNavigation)
                                                .Skip((pagenumber - 1) * pagesize)
@@ -297,7 +313,8 @@ namespace Models
                                                       l.Ten.Contains(search) ||
                                                       l.DienThoai.Contains(search) ||
                                                       l.Email.Contains(search) ||
-                                                      l.Cmnd.Contains(search))
+                                                      l.Cmnd.Contains(search) ||
+                                                      l.TinhTrang.Contains(search))
                                                .Where(l => l.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung != "Webmaster")
                                                .Include(l => l.IdLoaiNguoiDungNavigation)
                                                .Skip((pagenumber - 1) * pagesize)
@@ -310,7 +327,8 @@ namespace Models
                                                       l.Ten.Contains(search) ||
                                                       l.DienThoai.Contains(search) ||
                                                       l.Email.Contains(search) ||
-                                                      l.Cmnd.Contains(search))
+                                                      l.Cmnd.Contains(search) ||
+                                                      l.TinhTrang.Contains(search))
                                                .Where(l => l.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung != "Webmaster")
                                                .Include(l => l.IdLoaiNguoiDungNavigation)
                                                .Skip((pagenumber - 1) * pagesize)
@@ -323,7 +341,8 @@ namespace Models
                                                       l.Ten.Contains(search) ||
                                                       l.DienThoai.Contains(search) ||
                                                       l.Email.Contains(search) ||
-                                                      l.Cmnd.Contains(search))
+                                                      l.Cmnd.Contains(search) ||
+                                                      l.TinhTrang.Contains(search))
                                                .Where(l => l.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung != "Webmaster")
                                                .Include(l => l.IdLoaiNguoiDungNavigation)
                                                .Skip((pagenumber - 1) * pagesize)
@@ -352,7 +371,8 @@ namespace Models
                                                       l.Ten.Contains(search) ||
                                                       l.DienThoai.Contains(search) ||
                                                       l.Email.Contains(search) ||
-                                                      l.Cmnd.Contains(search))
+                                                      l.Cmnd.Contains(search) ||
+                                                      l.TinhTrang.Contains(search))
                                                .Where(l => l.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung != "Webmaster")
                                                .Include(l => l.IdLoaiNguoiDungNavigation)
                                                .OrderBy(l => l.TenDangNhap)
@@ -363,7 +383,8 @@ namespace Models
                                                       l.Ten.Contains(search) ||
                                                       l.DienThoai.Contains(search) ||
                                                       l.Email.Contains(search) ||
-                                                      l.Cmnd.Contains(search))
+                                                      l.Cmnd.Contains(search) ||
+                                                      l.TinhTrang.Contains(search))
                                                .Where(l => l.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung != "Webmaster")
                                                .Include(l => l.IdLoaiNguoiDungNavigation)
                                                .OrderByDescending(l => l.TenDangNhap)
@@ -374,7 +395,8 @@ namespace Models
                                                       l.Ten.Contains(search) ||
                                                       l.DienThoai.Contains(search) ||
                                                       l.Email.Contains(search) ||
-                                                      l.Cmnd.Contains(search))
+                                                      l.Cmnd.Contains(search) ||
+                                                      l.TinhTrang.Contains(search))
                                                .Where(l => l.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung != "Webmaster")
                                                .Include(l => l.IdLoaiNguoiDungNavigation)
                                                .OrderBy(l => l.Ten)
@@ -385,7 +407,8 @@ namespace Models
                                                       l.Ten.Contains(search) ||
                                                       l.DienThoai.Contains(search) ||
                                                       l.Email.Contains(search) ||
-                                                      l.Cmnd.Contains(search))
+                                                      l.Cmnd.Contains(search) ||
+                                                      l.TinhTrang.Contains(search))
                                                .Where(l => l.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung != "Webmaster")
                                                .Include(l => l.IdLoaiNguoiDungNavigation)
                                                .OrderByDescending(l => l.Ten)

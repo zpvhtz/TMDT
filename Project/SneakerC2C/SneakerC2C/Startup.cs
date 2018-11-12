@@ -30,7 +30,7 @@ namespace SneakerC2C
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
+                options.CheckConsentNeeded = context => false;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
@@ -38,18 +38,19 @@ namespace SneakerC2C
             var connect = Configuration.GetConnectionString("QLBanGiayDB");
             services.AddDbContext<QLBanGiayContext>(opt => opt.UseSqlServer(connect));
 
+            services.AddDistributedMemoryCache();
             //Session
             services.AddSession(opt =>
             {
-                //30s
-                opt.IdleTimeout = TimeSpan.FromSeconds(30);
+                //60s
+                opt.IdleTimeout = TimeSpan.FromSeconds(60);
+                opt.Cookie.HttpOnly = true;
             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseSession();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -63,6 +64,7 @@ namespace SneakerC2C
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseSession();
 
             app.UseMvc(routes =>
             {

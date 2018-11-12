@@ -20,6 +20,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!--//tags -->
     <link href="~/maintemplate/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/maintemplate/css/flexslider.css" type="text/css" media="screen" />
     <link href="~/maintemplate/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link href="~/maintemplate/css/font-awesome.css" rel="stylesheet">
     <link href="~/maintemplate/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
@@ -232,30 +233,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="modal-body modal-body-sub_agile">
                     <div class="col-md-8 modal_body_left modal_body_left1">
                         <h3 class="agileinfo_sign">Đăng Ký</h3>
-                        <form action="#" method="post">
+                        <form asp-area="Customer" asp-controller="TaiKhoan" asp-action="CreateTaiKhoan" method="post">
                             <div class="styled-input agile-styled-input-top">
-                                <input type="text" name="Name" required="">
+                                <input type="text" name="tendangnhap" required>
                                 <label>Tên đăng nhập</label>
                                 <span></span>
                             </div>
-                            <div class="styled-input">
-                                <input type="email" name="Email" required="">
-                                <label>Email</label>
-                                <span></span>
-                            </div>
-                            <div class="styled-input">
-                                <input type="tel" name="Sdt" required="">
-                                <label>Số điện thoại</label>
-                                <span></span>
-                            </div>
-                            <div class="styled-input">
-                                <input type="password" name="password" required="">
+                            <div class="styled-input agile-styled-input-top">
+                                <input type="password" name="matkhau" required>
                                 <label>Mật khẩu</label>
                                 <span></span>
                             </div>
-                            <div class="styled-input">
-                                <input type="password" name="Confirm Password" required="">
+                            <div class="styled-input agile-styled-input-top">
+                                <input type="password" name="confirmmatkhau" required>
                                 <label>Xác nhận mật khẩu</label>
+                                <span></span>
+                            </div>
+                            <div class="styled-input agile-styled-input-top">
+                                <input type="text" name="ten" required>
+                                <label>Tên</label>
+                                <span></span>
+                            </div>
+                            <div class="styled-input agile-styled-input-top">
+                                <input type="email" name="email" required>
+                                <label>Email</label>
                                 <span></span>
                             </div>
                             <input type="submit" value="Đăng Ký">
@@ -266,7 +267,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                     </div>
                     <div class="col-md-4 modal_body_right modal_body_right1">
-                        <img src="images/log_pic.jpg" alt=" " />
+                        <img src="~/maintemplate/images/log_pic.jpg" alt=" " />
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -526,9 +527,57 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             });
         </script>
         <!-- //here ends scrolling icon -->
+        <!-- single -->
+        <script src="~/maintemplate/js/imagezoom.js"></script>
+        <!-- single -->
+        <!-- script for responsive tabs -->
+        <script src="~/maintemplate/js/easy-responsive-tabs.js"></script>
+        <script>
+	$(document).ready(function () {
+	$('#horizontalTab').easyResponsiveTabs({
+	type: 'default', //Types: default, vertical, accordion
+	width: 'auto', //auto or any width like 600px
+	fit: true,   // 100% fit in a container
+	closed: 'accordion', // Start closed if in accordion view
+	activate: function(event) { // Callback function if tab is switched
+	var $tab = $(this);
+	var $info = $('#tabInfo');
+	var $name = $('span', $info);
+	$name.text($tab.text());
+	$info.show();
+	}
+	});
+	$('#verticalTab').easyResponsiveTabs({
+	type: 'vertical',
+	width: 'auto',
+	fit: true
+	});
+	});
+        </script>
+        <!-- FlexSlider -->
+        <script src="~/maintemplate/js/jquery.flexslider.js"></script>
+        <script>
+						// Can also be used with $(document).ready()
+							$(window).load(function() {
+								$('.flexslider').flexslider({
+								animation: "slide",
+								controlNav: "thumbnails"
+								});
+							});
+        </script>
+        <!-- //FlexSlider-->
+        <!-- //script for responsive tabs -->
+
         <!-- for bootstrap working -->
         <script type="text/javascript" src="~/maintemplate/js/bootstrap.js"></script>
 
         @RenderSection("Scripts", required: false)
 </body>
 </html>
+
+@if (ViewBag.ThongBao != null)
+{
+    <script>
+        alert("@Html.Raw(ViewBag.ThongBao)");
+    </script>
+}

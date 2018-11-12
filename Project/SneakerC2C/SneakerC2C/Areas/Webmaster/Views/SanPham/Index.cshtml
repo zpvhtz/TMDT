@@ -18,7 +18,7 @@
         <!-- Search form -->
         <div class="row">
             <div class="col-lg-1">
-                <button class="btn btn-primary" data-toggle="modal" data-target="#Them">Thêm</button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#Themmodal">Thêm</button>
             </div>
             <div class="col-lg-2">
                 <div class="form-group">
@@ -73,13 +73,13 @@
                         <td id="mahang" class="tenhang">@item.IdHangSanPhamNavigation.TenHang</td>
                         <td class="phanloai">@item.PhanLoai</td>
                         <td class="gia">@item.Gia.Value.ToString("# VND")</td>
-                        <td class="hinh">
-                            <img src="~/Hinh/SanPham/@item.Hinh" style="width:100px; height:100px;" />
+                        <td>
+                            <img src="~/Hinh/SanPham/@item.Hinh" class="img-hinh" style="width:100px; height:100px;" />
                         </td>
                         <td class="chitiet">@item.ChiTiet</td>
                         <td class="giamgia">@item.GiamGia</td>
                         <td>
-                            <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#Suamodal" id="SuaSp">Sửa</button>
+                            <button class="btn btn-danger SuaSp" type="button" data-toggle="modal" data-target="#Suamodal">Sửa</button>
                             <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#Khoa">Khoá</button>
                         </td>
                     </tr>
@@ -90,7 +90,73 @@
 </div>
 <!-- /.panel-body -->
 <!--Modal them-->
-<div></div>
+<div class="modal fade" id="Themmodal" role="dialog">
+    <div class="modal-dialog">
+        <form asp-controller="SanPham" asp-action="AddSP" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Thêm sản phẩm</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Mã sản phẩm: </label>
+                        <input type="text" class="form-control" name="Maadd" id="masp-them" />
+                    </div>
+                    <div class="form-group">
+                        <label>Tên sản phẩm: </label>
+                        <input type="text" class="form-control" name="Tenadd" id="tensp-them" />
+                    </div>
+                    <div class="form-group">
+                        <label>Tên shop: </label>
+                        <input type="text" class="form-control" name="Tenshopadd" id="tenshop-them" />
+                    </div>
+                    <div class="form-group">
+                        <label>Màu: </label>
+                        <input type="text" class="form-control" name="Mauadd" id="mau-them" />
+                    </div>
+                    <div class="form-group">
+                        <label>Tên hãng: </label>
+                        <select class="form-control" id="hang-them" name="Hangadd">
+                            @foreach (var item in ViewBag.Hang)
+                            {
+                                <option value="@item.Id">@item.TenHang</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Phân loại:</label>
+                        <select class="form-control" id="phanloai-them" name="Phanloaiadd">
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Giá: </label>
+                        <input type="text" class="form-control" name="Giaadd" id="gia-them" />
+                    </div>
+                    <div class="form-group">
+                        <label>Hình: </label>
+                        <img src="~/Hinh/SanPham/@Model" />
+                        <input class="span3" type="file" name="image-file-sp" id="image-file" style="display:none " />
+                    </div>
+                    <div class="form-group">
+                        <label>Chi tiết: </label>
+                        <input type="text" class="form-control" name="Chitietadd" id="chitiet-them" />
+                    </div>
+                    <div class="form-group">
+                        <label>Giảm giá: </label>
+                        <input type="text" class="form-control" name="Giamgiaadd" id="giamgia-them" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-warning" id="btnThemSP">Thêm</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 <!--Modal sua-->
 <div class="modal fade" id="Suamodal" role="dialog">
     <div class="modal-dialog">
@@ -149,11 +215,6 @@
                         <label>Giảm giá: </label>
                         <input type="text" class="form-control" name="Giamgiaedit" id="giamgia-sua" />
                     </div>
-                    @*<div class="form-group">
-                <label>Giảm giá </label>
-                <input type="text" class="form-control" name="item-sua-giamgia" id="giamgia-sua" />
-            </div>*@
-
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-warning">Sửa</button>
@@ -165,30 +226,53 @@
 </div>
 <script>
     $(document).ready(function () {
-        $("#SuaSp").click(function ()
+        $(".SuaSp").click(function ()
         {
             let Id = $(this).closest('tr').find('.ma').text();
-            let pTen = $(this).closest('tr').find('.ten').text();
+            let pTen = $(this).closest('tr').find('.tensp').text();
             let pTenShop = $(this).closest('tr').find('.tenshop').text();
             let pMau = $(this).closest('tr').find('.mau').text();
-            var pHang = document.getElementById("mahang");
-            //let pHang = $(this).closest('tr').find('.tenhang').val();
-            let pPhanLoai = $(this).closest('tr').find('.phanloai').val();
+            let pHang = $(this).closest('tr').find('.tenhang').text();
             let pGia = $(this).closest('tr').find('.gia').text();
-            let pHinh = $(this).closest('tr').find('.hinh').text();
+            let pHinh = $(this).closest('tr').find('.img-hinh').attr('src');
             let pChiTiet = $(this).closest('tr').find('.chitiet').text();
             let pGiamGia = $(this).closest('tr').find('.giamgia').text();
-
+            //alert(pGiamGia);
             $("#masp-sua").val(Id.trim());
-            $("#ten-sua").val(pTen.trim());
+            $("#tensp-sua").val(pTen.trim());
             $("#tenshop-sua").val(pTenShop.trim());
             $("#mau-sua").val(pMau.trim());
-            $("#hang-sua").val(pHang.trim());
-            $("#phanloai-sua").val(pPhanLoai.trim());
             $("#gia-sua").val(pGia.trim());
             $("#hinh-sua").val(pHinh.trim());
             $("#chitiet-sua").val(pChiTiet.trim());
             $("#giamgia-sua").val(pGiamGia.trim());
+
+            let pPhanLoai = $(this).closest('tr').find('.phanloai').text();
+            if (pPhanLoai != '') {
+                $("#phanloai-sua option").each(function () {
+                    if ($(this).text().includes(pPhanLoai)) {
+                        $(this).attr('selected', 'selected');
+                        //return;
+                    }
+                    else {
+                        $(this).attr('selected', false);
+                    }
+                });
+            }
+
+            let hang = $(this).closest('tr').find('.tenhang').text();
+            if (hang != '') {
+                $("#hang-sua option").each(function () {
+                    if ($(this).text().includes(hang)) {
+                        $(this).attr('selected', 'selected');
+                        //return;
+                    }
+                    else {
+                        $(this).attr('selected', false);
+                    }
+                });
+            }
+        
         });
 
     });

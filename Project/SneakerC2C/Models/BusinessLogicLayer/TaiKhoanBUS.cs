@@ -47,7 +47,7 @@ namespace Models.BusinessLogicLayer
             return list;
         }
 
-        public string CreateTaiKhoan(string tendangnhap, string matkhau, string ten, string tenshop, string email, string dienthoai, string cmnd, string loainguoidung)
+        public string CreateTaiKhoan(string tendangnhap, string matkhau, string ten, string tenshop, string email, string dienthoai, string cmnd, string loainguoidung, string tinhtrang)
         {
             TaiKhoan taikhoan = new TaiKhoan();
             //Kiểm tra
@@ -88,7 +88,7 @@ namespace Models.BusinessLogicLayer
             taikhoan.NgayTao = DateTime.Now;
             taikhoan.DanhGia = 0;
             taikhoan.ThoiHanGianHang = null;
-            taikhoan.TinhTrang = "Không khoá";
+            taikhoan.TinhTrang = tinhtrang;
 
             context.TaiKhoan.Add(taikhoan);
             context.SaveChanges();
@@ -156,11 +156,28 @@ namespace Models.BusinessLogicLayer
             return taikhoan;
         }
 
-        public TaiKhoan CheckTaiKhoan(string tendangnhap, string matkhau)
+        public TaiKhoan CheckTaiKhoan(string tendangnhap, string matkhau, string loainguoidung)
         {
             string pass = CreateMD5(matkhau);
-            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap && tk.MatKhau == pass).SingleOrDefault();
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap &&
+                                                       tk.MatKhau == pass &&
+                                                       tk.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung == loainguoidung)
+                                                .Include(tk => tk.IdLoaiNguoiDungNavigation)
+                                                .SingleOrDefault();
             return taikhoan;
+        }
+
+        public string Activate(string tendangnhap)
+        {
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();
+            if(taikhoan.TinhTrang != "Chưa kích hoạt")
+            {
+                return "Tài khoản đã được kích hoạt";
+            }
+
+            taikhoan.TinhTrang = "Không khoá";
+            context.SaveChanges();
+            return "Kích hoạt thành công";
         }
 
         public List<TaiKhoan> Sort(string sortorder, int pagesize, int pagenumber)

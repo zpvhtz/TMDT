@@ -43,7 +43,7 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
         public IActionResult CreateTaiKhoan(string item_them_tendangnhap, string item_them_matkhau, string item_them_ten, string item_them_tenshop, string item_them_email, string item_them_dienthoai, string item_them_cmnd, string item_them_loainguoidung)
         {
             TaiKhoanBUS taikhoan = new TaiKhoanBUS();
-            string thongbao = taikhoan.CreateTaiKhoan(item_them_tendangnhap, item_them_matkhau, item_them_ten, item_them_tenshop, item_them_email, item_them_dienthoai, item_them_cmnd, item_them_loainguoidung);
+            string thongbao = taikhoan.CreateTaiKhoan(item_them_tendangnhap, item_them_matkhau, item_them_ten, item_them_tenshop, item_them_email, item_them_dienthoai, item_them_cmnd, item_them_loainguoidung, "Không khoá");
             return RedirectToAction("Index", "TaiKhoan", new { thongbao = thongbao });
         }
 

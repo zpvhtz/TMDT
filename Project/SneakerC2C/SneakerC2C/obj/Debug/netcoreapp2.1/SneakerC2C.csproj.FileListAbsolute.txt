@@ -92,3 +92,4 @@ C:\Project\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C
 C:\Project\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb
 C:\Project\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MerchantLayout.g.cshtml.cs
 C:\Project\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\Home\Index.g.cshtml.cs
+C:\Project\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\SanPham\Index.g.cshtml.cs

@@ -44,9 +44,9 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                 Port = 587,
                 EnableSsl = true,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential("tên email gửi", "pass email gửi")
+                Credentials = new NetworkCredential("snkrxemail@gmail.com", "1234@abcd")
             };
-            using (var message = new MailMessage("tên email gửi", "tên email nhận")
+            using (var message = new MailMessage("snkrxemail@gmail.com", "tên email nhận")
             {
                 Subject = "Test Email",
                 Body = "Body"

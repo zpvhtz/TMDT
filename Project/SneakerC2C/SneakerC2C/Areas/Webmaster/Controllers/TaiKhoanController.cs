@@ -68,6 +68,13 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             return RedirectToAction("Index", "TaiKhoan", new { thongbao = thongbao });
         }
 
+        public IActionResult ActivateTaiKhoan(string tendangnhap)
+        {
+            TaiKhoanBUS taikhoan = new TaiKhoanBUS();
+            string thongbao = taikhoan.ActivateTaiKhoan(tendangnhap);
+            return RedirectToAction("Index", "TaiKhoan", new { thongbao = thongbao });
+        }
+
         public IActionResult GetDiaChi(string tendangnhap)
         {
             DiaChiBUS diachi = new DiaChiBUS();

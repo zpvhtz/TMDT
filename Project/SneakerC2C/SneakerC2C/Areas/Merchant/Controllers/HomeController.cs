@@ -9,8 +9,13 @@ namespace SneakerC2C.Areas.Merchant.Controllers
     [Area("Merchant")]
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(string thongbao)
         {
+            //Thông báo
+            if (thongbao != null)
+            {
+                ViewBag.ThongBao = thongbao;
+            }
             return View();
         }
     }

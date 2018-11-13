@@ -78,15 +78,24 @@
                         <td class="item-thoihan">@item.ThoiHanGianHang</td>
                         <td class="item-danhgia">@item.DanhGia</td>
                         <td>
-                            @if (item.TinhTrang == "Không khoá")
+                            @switch (item.TinhTrang)
                             {
-                                <button class="btn btn-primary btnSuaTaiKhoan" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
-                                <a asp-controller="TaiKhoan" asp-action="LockTaiKhoan" asp-route-tendangnhap="@item.TenDangNhap" class="btn btn-danger">Khoá</a>
-                            }
-                            else
-                            {
-                                <button class="btn btn-primary btnSuaTaiKhoan" type="button" data-toggle="modal" data-target="#suaModal" disabled>Sửa</button>
-                                <a asp-controller="TaiKhoan" asp-action="UnlockTaiKhoan" asp-route-tendangnhap="@item.TenDangNhap" class="btn btn-danger">Mở khoá</a>
+                                case "Không khoá":
+                                    <button class="btn btn-primary btnSuaTaiKhoan" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
+                                    <a asp-controller="TaiKhoan" asp-action="LockTaiKhoan" asp-route-tendangnhap="@item.TenDangNhap" class="btn btn-danger">Khoá</a>
+                                    break;
+                                case "Khoá":
+                                    <button class="btn btn-primary btnSuaTaiKhoan" type="button" data-toggle="modal" data-target="#suaModal" disabled>Sửa</button>
+                                    <a asp-controller="TaiKhoan" asp-action="UnlockTaiKhoan" asp-route-tendangnhap="@item.TenDangNhap" class="btn btn-danger">Mở khoá</a>
+                                    break;
+                                case "Chưa kích hoạt":
+                                    <button class="btn btn-primary btnSuaTaiKhoan" type="button" data-toggle="modal" data-target="#suaModal" disabled>Sửa</button>
+                                    <a asp-controller="TaiKhoan" asp-action="ActivateTaiKhoan" asp-route-tendangnhap="@item.TenDangNhap" class="btn btn-warning">Kích hoạt</a>
+                                    break;
+                                case "Chưa xác nhận":
+                                    <button class="btn btn-primary btnSuaTaiKhoan" type="button" data-toggle="modal" data-target="#suaModal" disabled>Sửa</button>
+                                    <a asp-controller="TaiKhoan" asp-action="ActivateTaiKhoan" asp-route-tendangnhap="@item.TenDangNhap" class="btn btn-info">Xác nhận</a>
+                                    break;
                             }
                         </td>
                     </tr>
@@ -199,7 +208,6 @@
     </div>
 </div>
 <!-- /.panel-body -->
-
 <!-- Modal thêm -->
 <div class="modal fade" id="themModal" role="dialog">
     <div class="modal-dialog">

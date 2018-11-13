@@ -48,7 +48,7 @@ namespace SneakerC2C.Areas.Customer.Controllers
 
             TaiKhoanBUS taikhoan = new TaiKhoanBUS();
             thongbao = taikhoan.CreateTaiKhoan(tendangnhap, matkhau, ten, "", email, "", "", "15CF8A9B-517E-4BAE-91E2-F30C596990ED", "Chưa kích hoạt");
-            if(thongbao == "Thêm thành công")
+            if(thongbao == "Vui lòng kiểm tra hộp thư email để kích hoạt tài khoản")
             {
                 await ActivationMail(tendangnhap);
             }

@@ -78,7 +78,7 @@ namespace Models.BusinessLogicLayer
             taikhoan.MatKhau = CreateMD5(matkhau);
             taikhoan.Ten = ten;
             if (lnd.TenLoaiNguoiDung == "Khách hàng")
-                taikhoan.TenShop = null;
+                taikhoan.TenShop = "";
             else
                 taikhoan.TenShop = tenshop;
             taikhoan.Email = email;
@@ -93,7 +93,10 @@ namespace Models.BusinessLogicLayer
             context.TaiKhoan.Add(taikhoan);
             context.SaveChanges();
 
-            return "Thêm thành công";
+            if (tinhtrang == "Chưa kích hoạt")
+                return "Vui lòng kiểm tra hộp thư email để kích hoạt tài khoản";
+            else
+                return "Thêm thành công";
         }
 
         public string EditTaiKhoan(string tendangnhap, string matkhau, string email, string dienthoai, string cmnd)
@@ -169,12 +172,28 @@ namespace Models.BusinessLogicLayer
 
         public string Activate(string tendangnhap)
         {
-            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap)
+                                                .Include(tk => tk.IdLoaiNguoiDungNavigation)
+                                                .SingleOrDefault();
             if(taikhoan.TinhTrang != "Chưa kích hoạt")
             {
                 return "Tài khoản đã được kích hoạt";
             }
+            if (taikhoan.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung == "Thương nhân")
+                taikhoan.TinhTrang = "Chưa xác nhận";
+            else
+                taikhoan.TinhTrang = "Không khoá";
+            context.SaveChanges();
 
+            if (taikhoan.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung == "Thương nhân")
+                return "Kích hoạt thành công. Vui lòng chờ tài khoản được duyệt";
+            else
+                return "Kích hoạt thành công";
+        }
+
+        public string ActivateTaiKhoan(string tendangnhap)
+        {
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();
             taikhoan.TinhTrang = "Không khoá";
             context.SaveChanges();
             return "Kích hoạt thành công";

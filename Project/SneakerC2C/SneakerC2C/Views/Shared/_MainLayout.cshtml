@@ -45,7 +45,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Đăng Ký </a></li>
                     <li> <a href="trogiup.html"><i class="fa fa-question-circle-o" aria-hidden="true"></i> Trợ Giúp </a></li>
                     <!-- <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li> -->
-                    <li><a href="index_seller.html"><i class="fa fa-vcard-o" aria-hidden="true"></i> Kênh Người Bán</a></li>
+                    <li><a asp-area="Merchant" asp-controller="Home" asp-action="Index"><i class="fa fa-vcard-o" aria-hidden="true"></i> Kênh Người Bán</a></li>
                 }
             </ul>
         </div>
@@ -213,7 +213,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                     </div>
                     <div class="col-md-4 modal_body_right modal_body_right1">
-                        <img src="images/log_pic.jpg" alt=" " />
+                        <img src="~/maintemplate/images/log_pic.jpg" alt=" " />
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -235,36 +235,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <h3 class="agileinfo_sign">Đăng Ký</h3>
                         <form asp-area="Customer" asp-controller="TaiKhoan" asp-action="CreateTaiKhoan" method="post">
                             <div class="styled-input agile-styled-input-top">
-                                <input type="text" name="tendangnhap" required>
+                                <input type="text" name="tendangnhap" required oninvalid="this.setCustomValidity('Tên đăng nhập không được để trống')" onchange="this.setCustomValidity('')">
                                 <label>Tên đăng nhập</label>
                                 <span></span>
                             </div>
-                            <div class="styled-input agile-styled-input-top">
-                                <input type="password" name="matkhau" required>
+                            <div class="styled-input">
+                                <input type="password" name="matkhau" required oninvalid="this.setCustomValidity('Mật khẩu không được để trống')" onchange="this.setCustomValidity('')">
                                 <label>Mật khẩu</label>
                                 <span></span>
                             </div>
-                            <div class="styled-input agile-styled-input-top">
-                                <input type="password" name="confirmmatkhau" required>
+                            <div class="styled-input">
+                                <input type="password" name="confirmmatkhau" required oninvalid="this.setCustomValidity('Mật khẩu không được để trống')" onchange="this.setCustomValidity('')">
                                 <label>Xác nhận mật khẩu</label>
                                 <span></span>
                             </div>
-                            <div class="styled-input agile-styled-input-top">
-                                <input type="text" name="ten" required>
+                            <div class="styled-input">
+                                <input type="text" name="ten" required oninvalid="this.setCustomValidity('Họ tên không được để trống')" onchange="this.setCustomValidity('')">
                                 <label>Tên</label>
                                 <span></span>
                             </div>
-                            <div class="styled-input agile-styled-input-top">
-                                <input type="email" name="email" required>
+                            <div class="styled-input">
+                                <input type="email" name="email" required oninvalid="this.setCustomValidity('Email không được để trống')" onchange="this.setCustomValidity('')">
                                 <label>Email</label>
                                 <span></span>
                             </div>
+                            <div class="styled-input">
+                                <input type="text" name="dienthoai" id="txtDienThoai" required oninvalid="this.setCustomValidity('Số điện thoại không được để trống')" onchange="this.setCustomValidity('')">
+                                <label>Số điện thoại</label>
+                                <span></span>
+                            </div>
+                            <div class="checkbox">
+                                    <input type="checkbox" id="chkDangKy" required oninvalid="this.setCustomValidity('Để đồng ý cần phải đồng ý với các điều khoản')" onchange="this.setCustomValidity('')"><p><a>Tôi đã đồng ý với các điều khoản khi bấm đăng ký</a></p>
+                            </div>
                             <input type="submit" value="Đăng Ký">
+                            <br />
                         </form>
 
                         <div class="clearfix"></div>
-                        <p><a href="#">Tôi đồng ý với các điều khoản khi nhấp Đăng Ký</a></p>
-
                     </div>
                     <div class="col-md-4 modal_body_right modal_body_right1">
                         <img src="~/maintemplate/images/log_pic.jpg" alt=" " />
@@ -533,43 +540,67 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- script for responsive tabs -->
         <script src="~/maintemplate/js/easy-responsive-tabs.js"></script>
         <script>
-	$(document).ready(function () {
-	$('#horizontalTab').easyResponsiveTabs({
-	type: 'default', //Types: default, vertical, accordion
-	width: 'auto', //auto or any width like 600px
-	fit: true,   // 100% fit in a container
-	closed: 'accordion', // Start closed if in accordion view
-	activate: function(event) { // Callback function if tab is switched
-	var $tab = $(this);
-	var $info = $('#tabInfo');
-	var $name = $('span', $info);
-	$name.text($tab.text());
-	$info.show();
-	}
-	});
-	$('#verticalTab').easyResponsiveTabs({
-	type: 'vertical',
-	width: 'auto',
-	fit: true
-	});
-	});
+	        $(document).ready(function () {
+	            $('#horizontalTab').easyResponsiveTabs({
+	                type: 'default', //Types: default, vertical, accordion
+	                width: 'auto', //auto or any width like 600px
+	                fit: true,   // 100% fit in a container
+	                closed: 'accordion', // Start closed if in accordion view
+	                activate: function(event) { // Callback function if tab is switched
+	                    var $tab = $(this);
+	                    var $info = $('#tabInfo');
+	                    var $name = $('span', $info);
+	                    $name.text($tab.text());
+	                    $info.show();
+	                }
+	            });
+	            $('#verticalTab').easyResponsiveTabs({
+	                type: 'vertical',
+	                width: 'auto',
+	                fit: true
+	            });
+	        });
         </script>
         <!-- FlexSlider -->
         <script src="~/maintemplate/js/jquery.flexslider.js"></script>
         <script>
-						// Can also be used with $(document).ready()
-							$(window).load(function() {
-								$('.flexslider').flexslider({
-								animation: "slide",
-								controlNav: "thumbnails"
-								});
-							});
+		// Can also be used with $(document).ready()
+			$(window).load(function() {
+				$('.flexslider').flexslider({
+				animation: "slide",
+				controlNav: "thumbnails"
+				});
+			});
         </script>
         <!-- //FlexSlider-->
         <!-- //script for responsive tabs -->
-
         <!-- for bootstrap working -->
         <script type="text/javascript" src="~/maintemplate/js/bootstrap.js"></script>
+
+        <script>
+            function validateNumber(e) {
+                // Allow: backspace, delete, tab, escape, enter and .
+                if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                    // Allow: Ctrl/cmd+A
+                    (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+                    // Allow: Ctrl/cmd+C
+                    (e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true)) ||
+                    // Allow: Ctrl/cmd+X
+                    (e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true)) ||
+                    // Allow: home, end, left, right
+                    (e.keyCode >= 35 && e.keyCode <= 39)) {
+                    // let it happen, don't do anything
+                    return;
+                }
+                // Ensure that it is a number and stop the keypress
+                if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                    e.preventDefault();
+                }
+            };
+
+            //Keydown event
+            $("#txtDienThoai").keydown(validateNumber);
+        </script>
 
         @RenderSection("Scripts", required: false)
 </body>

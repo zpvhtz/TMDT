@@ -1,0 +1,168 @@
+﻿@model IEnumerable<Models.Database.HangSanPham>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">DANH SÁCH HÃNG SẢN PHẨM</h2>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <!-- Search form -->
+        <div class="row">
+            <div class="col-lg-1">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#Themmodal">Thêm</button>
+            </div>
+            <div class="col-lg-2">
+                @*<div class="form-group">
+                        <select class="form-control" id="sortList" onchange="window.location.href = SearchAndSort()">
+                            <option selected disabled>Sắp xếp theo</option>
+                            <option value="/Webmaster/GianHang/Sort?sortorder=tengianhang-az">Tên gian hàng (A-Z)</option>
+                            <option value="/Webmaster/GianHang/Sort?sortorder=tengianhang-za">Tên gian hàng (Z-A)</option>
+                            <option value="/Webmaster/GianHang/Sort?sortorder=gia-asc">Giá thấp</option>
+                            <option value="/Webmaster/GianHang/Sort?sortorder=gia-desc">Giá cao</option>
+                        </select>
+                    </div>*@
+            </div>
+            <div class="col-lg-6"></div>
+            <div class="col-lg-3">
+                <form asp-controller="HangSanPham" asp-action="Search" method="get">
+                    <div class="input-group custom-search-form">
+                        <input type="text" class="form-control" id="searchList" placeholder="Tìm kiếm..." name="search" value="@ViewBag.CurrentFilter">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--Table-->
+        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+            <thead class="thead-dark">
+                <tr class="odd gradeX">
+                    <th>Mã hãng</th>
+                    <th><a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort" asp-route-sortorder="@ViewBag.NameSort" asp-route-currentFilter="@ViewBag.CurrentFilter">Tên hãng</a></th>
+                    @*<th><a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort" asp-route-sortorder="@ViewBag.ShopSort" asp-route-currentFilter="@ViewBag.CurrentFilter">Tên shop</a></th>
+                    <th>Màu</th>
+                    <th>Hãng</th>
+                    <th>Phân loại</th>
+                    <th><a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort" asp-route-sortorder="@ViewBag.GiaSort" asp-route-currentFilter="@ViewBag.CurrentFilter">Giá</a></th>
+                    <th>Hình</th>
+                    <th>Chi tiết</th>
+                    <th>Giảm giá</th>*@
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="body-content">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="ma">@item.MaHang</td>
+                        <td class="ten">@item.TenHang</td>
+                        <td>
+                            <button class="btn btn-danger Sua" type="button" data-toggle="modal" data-target="#Suamodal">Sửa</button>
+                            <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#Khoa">Khoá</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @*<ul class="pagination" style="margin: 0 auto;">
+            @if (ViewBag.TrangHienTai == 1)
+            {
+                <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
+                </li>
+                <a asp-page="./Index"
+                   asp-route-sortorder="@ViewBag.CurrentSort"
+                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
+                   asp-route-currentFilter="@ViewBag.CurrentFilter"
+                   class="btn btn-default disabled">
+                    Previous
+                </a>
+                <a asp-page="./Index"
+                   asp-route-sortorder="@ViewBag.CurrentSort"
+                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
+                   asp-route-currentFilter="@ViewBag.CurrentFilter"
+                   class="btn btn-default">
+                    Next
+                </a>
+            }
+            else if (ViewBag.TrangHienTai == ViewBag.TongTrang)
+            {
+                <a asp-page="./Index"
+                   asp-route-sortorder="@ViewBag.CurrentSort"
+                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
+                   asp-route-currentFilter="@ViewBag.CurrentFilter"
+                   class="btn btn-default">
+                    Previous
+                </a>
+                <a asp-page="./Index"
+                   asp-route-sortorder="@ViewBag.CurrentSort"
+                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
+                   asp-route-currentFilter="@ViewBag.CurrentFilter"
+                   class="btn btn-default disabled">
+                    Next
+                </a>
+            }
+            else
+            {
+                <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
+                </li>
+                <a asp-page="./Index"
+                   asp-route-sortorder="@ViewBag.CurrentSort"
+                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
+                   asp-route-currentFilter="@ViewBag.CurrentFilter"
+                   class="btn btn-default">
+                    Previous
+                </a>
+                <a asp-page="./Index"
+                   asp-route-sortorder="@ViewBag.CurrentSort"
+                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
+                   asp-route-currentFilter="@ViewBag.CurrentFilter"
+                   class="btn btn-default disabled">
+                    Next
+                </a>
+            }
+        </ul>*@
+
+    </div>
+</div>
+<div class="modal fade" id="themmodal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <form asp-controller="HangSanPham" asp-action="Them" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Hãng sản phẩm</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Mã hãng</label>
+                        <input type="text" class="form-control" id="item-them-mahang" name="item_them_mahang" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tên hãng</label>
+                        <input type="text" class="form-control" id="item-them-ten" name="item_them_ten" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tên</label>
+                        <input type="text" class="form-control" id="item-them-ten" name="item_them_ten" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-warning" id="btnThemHangSp">Thêm</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

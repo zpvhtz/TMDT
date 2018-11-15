@@ -20,6 +20,21 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             List<HangSanPham> list = ctx.HangSanPham.ToList();
             return View(list);
         }
-
+        public IActionResult ThemHangSanPham(string item_them_mahang,string item_them_ten)
+        {
+            //var layma = ctx.HangSanPham
+            //    .OrderByDescending(h=>h.MaHang)
+            //    .Select(h => h.MaHang)
+            //    .SingleOrDefault();
+            //ViewBag.LayMa = layma;
+            HangSanPham hang= new HangSanPham();
+            hang.Id = Guid.Parse(Guid.NewGuid().ToString().ToUpper());
+            hang.MaHang = item_them_mahang;
+            hang.TenHang = item_them_ten;
+            hang.TinhTrang = "Không khoá";
+            ctx.Add(hang);
+            ctx.SaveChanges();
+            return RedirectToAction("Index","HangSanPham");
+        }
     }
 }

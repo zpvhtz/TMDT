@@ -15,7 +15,7 @@
         <!-- Search form -->
         <div class="row">
             <div class="col-lg-1">
-                <button class="btn btn-primary" data-toggle="modal" data-target="#Themmodal">Thêm</button>
+                <button class="btn btn-primary btnThem" data-toggle="modal" data-target="#themModal">Thêm</button>
             </div>
             <div class="col-lg-2">
                 @*<div class="form-group">
@@ -67,7 +67,7 @@
                         <td class="ma">@item.MaHang</td>
                         <td class="ten">@item.TenHang</td>
                         <td>
-                            <button class="btn btn-danger Sua" type="button" data-toggle="modal" data-target="#Suamodal">Sửa</button>
+                            <button class="btn btn-danger btnSua" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
                             <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#Khoa">Khoá</button>
                         </td>
                     </tr>
@@ -135,10 +135,10 @@
 
     </div>
 </div>
-<div class="modal fade" id="themmodal" role="dialog">
+<div class="modal fade" id="themModal" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
-        <form asp-controller="HangSanPham" asp-action="Them" method="post">
+        <form asp-controller="HangSanPham" asp-action="ThemHangSanPham" method="post">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -153,10 +153,6 @@
                         <label>Tên hãng</label>
                         <input type="text" class="form-control" id="item-them-ten" name="item_them_ten" required>
                     </div>
-                    <div class="form-group">
-                        <label>Tên</label>
-                        <input type="text" class="form-control" id="item-them-ten" name="item_them_ten" required>
-                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-warning" id="btnThemHangSp">Thêm</button>
@@ -166,3 +162,40 @@
         </form>
     </div>
 </div>
+<div class="modal fade" id="suaModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <form asp-controller="HangSanPham" asp-action="SuaHangSanPham" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Hãng sản phẩm</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Mã hãng</label>
+                        <input type="text" class="form-control" id="item-sua-ma" name="item_sua_ma" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Tên hãng</label>
+                        <input type="text" class="form-control" id="item-sua-ten" name="item_sua_ten">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-warning">Sửa</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".btnSua").click(function () {
+            let pId = $(this).closest('tr').find('.ma').text();
+            let pTen = $(this).closest('tr').find('.ten').text();
+            $("#item-sua-ma").val(pId.trim());
+            $("#item-sua-ten").val(pTen.trim());
+        });
+    });
+</script>

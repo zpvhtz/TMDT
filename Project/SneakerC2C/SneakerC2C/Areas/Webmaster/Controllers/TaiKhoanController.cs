@@ -11,7 +11,7 @@ using Models.Database;
 namespace SneakerC2C.Areas.Webmaster.Controllers
 {
     [Area("Webmaster")]
-    public class TaiKhoanController : Controller
+    public class TaiKhoanController : BaseController
     {
         const int pageSize = 10;
         int pageNumber = 1;

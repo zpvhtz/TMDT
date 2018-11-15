@@ -42,8 +42,8 @@ namespace SneakerC2C
             //Session
             services.AddSession(opt =>
             {
-                //60s
-                opt.IdleTimeout = TimeSpan.FromSeconds(60);
+                //900s - 15p
+                opt.IdleTimeout = TimeSpan.FromSeconds(900);
                 opt.Cookie.HttpOnly = true;
             });
         }

@@ -5,3 +5,10 @@
 }
 
 <h2>Trang chủ</h2>
+
+@if (ViewBag.ThongBao != null)
+{
+    <script>
+        alert("@Html.Raw(ViewBag.ThongBao)");
+    </script>
+}

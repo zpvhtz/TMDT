@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http;
+@using Microsoft.AspNetCore.Mvc;
+
+@if (Context.Session.GetString("TenDangNhap") == null)
+{
+    <script>
+        location.href = "@Url.Action("Index", "Authentication")";
+    </script>
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -89,7 +98,7 @@
     <script src="~/admintemplate/vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="~/admintemplate/vendor/bootstrap/js/bootstrap.min.js"></script>
-    @*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>*@
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Metis Menu Plugin JavaScript -->
     <script src="~/admintemplate/vendor/metisMenu/metisMenu.min.js"></script>
     <!-- Custom Theme JavaScript -->

@@ -9,8 +9,14 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
     [Area("Webmaster")]
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(string thongbao)
         {
+            //Thông báo
+            if (thongbao != null)
+            {
+                ViewBag.ThongBao = thongbao;
+            }
+            
             return View();
         }
     }

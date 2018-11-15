@@ -8,7 +8,7 @@ using Models.Database;
 namespace SneakerC2C.Areas.Webmaster.Controllers
 {
     [Area("Webmaster")]
-    public class HangSanPhamController : Controller
+    public class HangSanPhamController : BaseController
     {
         private readonly QLBanGiayContext ctx;
         public HangSanPhamController(QLBanGiayContext context)

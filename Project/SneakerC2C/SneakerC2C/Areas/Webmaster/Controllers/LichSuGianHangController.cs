@@ -10,7 +10,7 @@ using Models.Database;
 namespace SneakerC2C.Areas.Webmaster.Controllers
 {
     [Area("Webmaster")]
-    public class LichSuGianHangController : Controller
+    public class LichSuGianHangController : BaseController
     {
         const int pageSize = 10;
         int pageNumber = 1;

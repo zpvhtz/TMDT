@@ -9,7 +9,7 @@ using Models.Database;
 namespace SneakerC2C.Areas.Webmaster.Controllers
 {
     [Area("Webmaster")]
-    public class SanPhamController : Controller
+    public class SanPhamController : BaseController
     {
         const int pageSize = 10;
         int pageNumber = 1;

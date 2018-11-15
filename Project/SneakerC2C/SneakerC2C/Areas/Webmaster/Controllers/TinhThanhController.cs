@@ -12,7 +12,7 @@ using Models.BusinessLogicLayer;
 namespace SneakerC2C.Areas.Webmaster.Controllers
 {
     [Area("Webmaster")]
-    public class TinhThanhController : Controller
+    public class TinhThanhController : BaseController
     {
         const int pageSize = 10;
         int pageNumber = 1;

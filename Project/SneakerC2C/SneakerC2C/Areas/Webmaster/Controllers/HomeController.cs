@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace SneakerC2C.Areas.Webmaster.Controllers
 {
     [Area("Webmaster")]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public IActionResult Index(string thongbao)
         {

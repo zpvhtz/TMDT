@@ -11,7 +11,7 @@ using Models.BusinessLogicLayer;
 namespace SneakerC2C.Areas.Webmaster.Controllers
 {
     [Area("Webmaster")]
-    public class LoaiNguoiDungController : Controller
+    public class LoaiNguoiDungController : BaseController
     {
         const int pageSize = 10;
         int pageNumber = 1;

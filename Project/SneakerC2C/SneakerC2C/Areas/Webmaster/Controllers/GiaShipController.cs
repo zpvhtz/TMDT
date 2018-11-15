@@ -11,7 +11,7 @@ using Models.BusinessLogicLayer;
 namespace SneakerC2C.Areas.Webmaster.Controllers
 {
     [Area("Webmaster")]
-    public class GiaShipController : Controller
+    public class GiaShipController : BaseController
     {
         const int pageSize = 10;
         int pageNumber = 1;

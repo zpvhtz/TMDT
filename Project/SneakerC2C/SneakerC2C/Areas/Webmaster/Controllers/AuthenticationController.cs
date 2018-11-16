@@ -46,8 +46,7 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
                 HttpContext.Response.Cookies.Delete("tendangnhap");
                 HttpContext.Response.Cookies.Delete("matkhau");
             }
-            thongbao = "Đăng nhập thành công";
-            return RedirectToAction("Index", "Home", new { thongbao = thongbao });
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult LogOut()

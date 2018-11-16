@@ -34,21 +34,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="header" id="home">
         <div class="container">
             <ul>
-                @if (Context.Session.GetString("TenDangNhap") != null)
-                {
-                    <li><i class="fa fa-user" aria-hidden="true"></i> Xin chào <b>@Context.Session.GetString("TenDangNhap")</b></li>
-                    <li> <a asp-area="Merchant" asp-controller="TaiKhoan" asp-action="LogOut"><i class="fa fa-sign-out" aria-hidden="true"></i> Đăng xuất </a></li>
-                    <li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-question" aria-hidden="true"></i> Trợ Giúp </a></li>
-                    <!-- <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li> -->
-                }
-                else
-                {
-                    <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Đăng Nhập </a></li>
-                    <li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Đăng Ký </a></li>
-                    <li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-question" aria-hidden="true"></i> Trợ Giúp </a></li>
-                    <!-- <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li> -->
-                    <li><a asp-area="Customer" asp-controller="Home" asp-action="Index"><i class="fa fa-vcard" aria-hidden="true"></i> Trang Chủ</a></li>
-                }
+                <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Đăng Nhập </a></li>
+                <li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Đăng Ký </a></li>
+                <li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-question" aria-hidden="true"></i> Trợ Giúp </a></li>
+                <!-- <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li> -->
+                <li><a asp-area="Customer" asp-controller="Home" asp-action="Index"><i class="fa fa-vcard" aria-hidden="true"></i> Trang Chủ</a></li>
             </ul>
         </div>
     </div>
@@ -74,7 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="modal-body modal-body-sub_agile">
                     <div class="col-md-8 modal_body_left modal_body_left1">
                         <h3 class="agileinfo_sign">Đăng Nhập <span>Kênh Người Bán</span></h3>
-                        <form asp-area="Merchant" asp-controller="TaiKhoan" asp-action="LogIn" method="post">
+                        <form asp-area="Merchant" asp-controller="Authentication" asp-action="LogIn" method="post">
                             <div class="styled-input agile-styled-input-top">
                                 <input type="text" name="tendangnhap" required="">
                                 <label>Tên đăng nhập</label>
@@ -138,7 +128,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="modal-body modal-body-sub_agile">
                     <div class="col-md-8 modal_body_left modal_body_left1">
                         <h3 class="agileinfo_sign">Đăng Ký <span>Kênh Người Bán</span></h3>
-                        <form asp-area="Merchant" asp-controller="TaiKhoan" asp-action="CreateTaiKhoan" method="post">
+                        <form asp-area="Merchant" asp-controller="Authentication" asp-action="CreateTaiKhoan" method="post">
                             <div class="styled-input agile-styled-input-top">
                                 <input type="text" name="tendangnhap" required oninvalid="this.setCustomValidity('Tên đăng nhập không được để trống')" onchange="this.setCustomValidity('')">
                                 <label>Tên đăng nhập</label>

@@ -36,7 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 @if (Context.Session.GetString("TenDangNhap") != null)
                 {
                     <li><i class="fa fa-user" aria-hidden="true"></i> Xin chào <b>@Context.Session.GetString("TenDangNhap")</b></li>
-                    <li> <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="LogOut"><i class="fa fa-sign-out" aria-hidden="true"></i> Đăng xuất </a></li>
+                    <li> <a asp-area="Customer" asp-controller="Authentication" asp-action="LogOut"><i class="fa fa-sign-out" aria-hidden="true"></i> Đăng xuất </a></li>
                     <li> <a href="trogiup.html"><i class="fa fa-question-circle-o" aria-hidden="true"></i> Trợ Giúp </a></li>
                 }
                 else
@@ -169,14 +169,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="modal-body modal-body-sub_agile">
                     <div class="col-md-8 modal_body_left modal_body_left1">
                         <h3 class="agileinfo_sign">Đăng Nhập</h3>
-                        <form asp-area="Customer" asp-controller="TaiKhoan" asp-action="LogIn" method="post">
+                        <form asp-area="Customer" asp-controller="Authentication" asp-action="LogIn" method="post">
                             <div class="styled-input agile-styled-input-top">
-                                <input type="text" name="tendangnhap" required>
+                                <input type="text" name="tendangnhap" required oninvalid="this.setCustomValidity('Tên đăng nhập không được để trống')" onchange="this.setCustomValidity('')">
                                 <label>Tên đăng nhập</label>
                                 <span></span>
                             </div>
                             <div class="styled-input">
-                                <input type="password" name="matkhau" required>
+                                <input type="password" name="matkhau" required oninvalid="this.setCustomValidity('Mật khẩu không được để trống')" onchange="this.setCustomValidity('')">
                                 <label>Mật khẩu</label>
                                 <span></span>
                             </div>
@@ -210,7 +210,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </ul>
                         <div class="clearfix"></div>
                         <p><a href="#" data-toggle="modal" data-target="#myModal2"> Chưa có tài khoản đăng nhập?</a></p>
-
+                        <p><a href="#" data-toggle="modal" data-target="#forgotModal"> Quên mật khẩu?</a></p>
                     </div>
                     <div class="col-md-4 modal_body_right modal_body_right1">
                         <img src="~/maintemplate/images/log_pic.jpg" alt=" " />
@@ -233,7 +233,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="modal-body modal-body-sub_agile">
                     <div class="col-md-8 modal_body_left modal_body_left1">
                         <h3 class="agileinfo_sign">Đăng Ký</h3>
-                        <form asp-area="Customer" asp-controller="TaiKhoan" asp-action="CreateTaiKhoan" method="post">
+                        <form asp-area="Customer" asp-controller="Authentication" asp-action="CreateTaiKhoan" method="post">
                             <div class="styled-input agile-styled-input-top">
                                 <input type="text" name="tendangnhap" required oninvalid="this.setCustomValidity('Tên đăng nhập không được để trống')" onchange="this.setCustomValidity('')">
                                 <label>Tên đăng nhập</label>
@@ -265,7 +265,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span></span>
                             </div>
                             <div class="checkbox">
-                                    <input type="checkbox" id="chkDangKy" required oninvalid="this.setCustomValidity('Để đồng ý cần phải đồng ý với các điều khoản')" onchange="this.setCustomValidity('')"><p><a>Tôi đã đồng ý với các điều khoản khi bấm đăng ký</a></p>
+                                <input type="checkbox" id="chkDangKy" required oninvalid="this.setCustomValidity('Để đồng ý cần phải đồng ý với các điều khoản')" onchange="this.setCustomValidity('')"><p><a>Tôi đã đồng ý với các điều khoản khi bấm đăng ký</a></p>
                             </div>
                             <input type="submit" value="Đăng Ký">
                             <br />
@@ -283,6 +283,72 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //Modal2 -->
+    <!-- Modal3 (Quên mật khẩu)-->
+    <div class="modal fade" id="forgotModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body modal-body-sub_agile">
+                    <div class="col-md-8 modal_body_left modal_body_left1">
+                        <h3 class="agileinfo_sign">Quên mật khẩu</h3>
+                        <div id="alertForgotModal" style="display: none;">
+                            <p style="color: red;" id="alertContentForgotModal">Thông báo</p>
+                        </div>
+                        <form id="forgotForm" role="form" action="" method="post">
+                            <div class="styled-input">
+                                <input type="text" name="tendangnhap" id="forgotTenDangNhap" required oninvalid="this.setCustomValidity('Cần điền vào tên đăng nhập')" onchange="this.setCustomValidity('')">
+                                <label>Tên đăng nhập</label>
+                                <span></span>
+                            </div>
+                            <div class="styled-input">
+                                <input type="email" name="email" id="forgotEmail" required oninvalid="this.setCustomValidity('Cần điền vào Email')" onchange="this.setCustomValidity('')">
+                                <label>Email</label>
+                                <span></span>
+                            </div>
+                            <input type="submit" id="btnForgotPassword" value="Đặt lại mật khẩu">
+                        </form>
+                        <ul class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
+                            <li>
+                                <a href="#" class="facebook">
+                                    <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                                    <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="twitter">
+                                    <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                                    <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="instagram">
+                                    <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                    <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="pinterest">
+                                    <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                    <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+
+                    </div>
+                    <div class="col-md-4 modal_body_right modal_body_right1">
+                        <img src="~/maintemplate/images/log_pic.jpg" alt=" " />
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- //Modal content-->
+        </div>
+    </div>
+    <!-- //Modal3 -->
     <div class="mainContainer">
         @RenderBody()
     </div>
@@ -600,6 +666,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             //Keydown event
             $("#txtDienThoai").keydown(validateNumber);
+        </script>
+        <script>
+            $("#forgotForm").submit(function (e) {
+                e.preventDefault();
+                let tendangnhap = $("#forgotTenDangNhap").val();
+                let email = $("#forgotEmail").val();
+                $.ajax({
+                    url: "/Customer/Authentication/ForgotPassword",
+                    type: "post",
+                    data: { "tendangnhap": tendangnhap, "email": email },
+                    success: function (data) {
+                        $("#alertContentForgotModal").text(data);
+                        $("#alertForgotModal").css('display', 'block');
+
+                    },
+                    error: function (data) {
+                        alert("Error: " + data);
+                    }
+                });
+            });
         </script>
 
         @RenderSection("Scripts", required: false)

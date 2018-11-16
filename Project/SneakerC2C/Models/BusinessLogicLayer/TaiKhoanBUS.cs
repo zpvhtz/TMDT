@@ -170,6 +170,14 @@ namespace Models.BusinessLogicLayer
             return taikhoan;
         }
 
+        public TaiKhoan CheckTaiKhoan(string tendangnhap, string email)
+        {
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap && tk.Email == email && tk.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung != "Webmaster")
+                                                .Include(tk => tk.IdLoaiNguoiDungNavigation)
+                                                .SingleOrDefault();
+            return taikhoan;
+        }
+
         public string Activate(string tendangnhap)
         {
             TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap)

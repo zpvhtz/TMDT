@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Models.BusinessLogicLayer;
+using Models.Database;
 
 namespace SneakerC2C.Areas.Merchant.Controllers
 {
@@ -14,7 +16,21 @@ namespace SneakerC2C.Areas.Merchant.Controllers
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             if (HttpContext.Session.GetString("TenDangNhap") == null)
-                context.Result = RedirectToAction("Index", "Authentication");
+            {
+                context.Result = RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                string sessionval = HttpContext.Session.GetString("TenDangNhap");
+                TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+                TaiKhoan taikhoan = new TaiKhoan();
+                taikhoan = taikhoanbus.CheckTaiKhoan(sessionval);
+                if(taikhoan.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung != "Thương nhân")
+                {
+                    HttpContext.Session.Remove("TenDangNhap");
+                    context.Result = RedirectToAction("Index", "Home");
+                }
+            }
             base.OnActionExecuting(context);
         }
     }

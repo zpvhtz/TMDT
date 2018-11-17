@@ -25,7 +25,11 @@ namespace SneakerC2C.Areas.Customer.Controllers
                 thongbao = "Thông tin đăng nhập không đúng";
                 return RedirectToAction("Index", "Home", new { thongbao = thongbao });
             }
-
+            if (taikhoan.TinhTrang == "Chưa kích hoạt")
+            {
+                thongbao = "Tài khoản chưa được kích hoạt, vui lòng kích hoạt thông qua email";
+                return RedirectToAction("Index", "Home", new { thongbao = thongbao });
+            }
             HttpContext.Session.SetString("TenDangNhap", taikhoan.TenDangNhap);
             thongbao = "Đăng nhập thành công";
             return RedirectToAction("Index", "Home", new { thongbao = thongbao });

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Models.BusinessLogicLayer;
+using Models.Database;
 
 namespace SneakerC2C.Areas.Merchant.Controllers
 {
     [Area("Merchant")]
-    public class HomeController : BaseController
+    public class HomeController : Controller
     {
         public IActionResult Index(string thongbao)
         {
@@ -17,6 +19,13 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                 ViewBag.ThongBao = thongbao;
             }
             return View();
+        }
+
+        public IActionResult ResetPassword(string key)
+        {
+            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+            TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoanResetPassword(key);
+            return View(taikhoan);
         }
     }
 }

@@ -40,3 +40,4 @@ C:\Users\ThoXu\Desktop\C2CSNEAKERS\TMDT\Project\SneakerC2C\Models\obj\Debug\netc
 C:\Users\ThoXu\Desktop\C2CSNEAKERS\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfo.cs
 C:\Users\ThoXu\Desktop\C2CSNEAKERS\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.dll
 C:\Users\ThoXu\Desktop\C2CSNEAKERS\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.pdb
+D:\Projects\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.csprojAssemblyReference.cache

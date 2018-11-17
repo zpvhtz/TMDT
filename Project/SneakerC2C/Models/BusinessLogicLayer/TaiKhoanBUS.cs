@@ -156,7 +156,9 @@ namespace Models.BusinessLogicLayer
 
         public TaiKhoan CheckTaiKhoan(string tendangnhap)
         {
-            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap)
+                                                .Include(tk => tk.IdLoaiNguoiDungNavigation)
+                                                .SingleOrDefault();
             return taikhoan;
         }
 
@@ -191,6 +193,7 @@ namespace Models.BusinessLogicLayer
         {
             TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();
             taikhoan.MatKhau = CreateMD5(password);
+            taikhoan.DatLaiMatKhau = 0;
             context.SaveChanges();
             return "Đổi mật khẩu thành công";
         }

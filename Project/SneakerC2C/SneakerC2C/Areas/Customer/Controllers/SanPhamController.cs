@@ -9,7 +9,7 @@ using Models.Database;
 namespace SneakerC2C.Areas.Customer.Controllers
 {
     [Area("Customer")]
-    public class SanPhamController : Controller
+    public class SanPhamController : BaseController
     {
         public IActionResult Index(string id)
         {

@@ -9,7 +9,7 @@ using Models.Database;
 namespace SneakerC2C.Areas.Customer.Controllers
 {
     [Area("Customer")]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         const int pagesize = 8;
         const int pagenumber = 1;

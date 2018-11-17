@@ -13,7 +13,7 @@ using Models.Database;
 namespace SneakerC2C.Areas.Customer.Controllers
 {
     [Area("Customer")]
-    public class TaiKhoanController : Controller
+    public class TaiKhoanController : BaseController
     {
         public async Task<IActionResult> CreateTaiKhoan(string tendangnhap, string matkhau, string confirmmatkhau, string ten, string email)
         {
@@ -71,7 +71,7 @@ namespace SneakerC2C.Areas.Customer.Controllers
             taikhoan = taikhoanbus.CheckTaiKhoan(tendangnhap);
             string kichhoat = "Để kích hoạt tài khoản, vui lòng nhấn vào link phía dưới: \n";
             var local = HttpContext.Request.Host;
-            kichhoat += "https://" + local.ToString() + "/Customer/Authentication/Activate?tendangnhap=" + tendangnhap;
+            kichhoat += "https://" + local.ToString() + "/Customer/TaiKhoan/Activate?tendangnhap=" + tendangnhap;
             var client = new SmtpClient
             {
                 Host = "smtp.gmail.com",

@@ -88,6 +88,7 @@ namespace Models.BusinessLogicLayer
             taikhoan.NgayTao = DateTime.Now;
             taikhoan.DanhGia = 0;
             taikhoan.ThoiHanGianHang = null;
+            taikhoan.DatLaiMatKhau = 0;
             taikhoan.TinhTrang = tinhtrang;
 
             context.TaiKhoan.Add(taikhoan);
@@ -176,6 +177,29 @@ namespace Models.BusinessLogicLayer
                                                 .Include(tk => tk.IdLoaiNguoiDungNavigation)
                                                 .SingleOrDefault();
             return taikhoan;
+        }
+
+        public TaiKhoan CheckTaiKhoanResetPassword(string id)
+        {
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.Id == Guid.Parse(id) && tk.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung != "Webmaster")
+                                                .Include(tk => tk.IdLoaiNguoiDungNavigation)
+                                                .SingleOrDefault();
+            return taikhoan;
+        }
+
+        public string ResetPassword(string tendangnhap, string password)
+        {
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();
+            taikhoan.MatKhau = CreateMD5(password);
+            context.SaveChanges();
+            return "Đổi mật khẩu thành công";
+        }
+
+        public void AllowResetPassword(string tendangnhap)
+        {
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();
+            taikhoan.DatLaiMatKhau = 1;
+            context.SaveChanges();
         }
 
         public string Activate(string tendangnhap)
@@ -479,6 +503,38 @@ namespace Models.BusinessLogicLayer
                 }
                 return sb.ToString();
             }
+        }
+
+        public string PasswordGenerator()
+        {
+            StringBuilder sb = new StringBuilder();
+            Random rd = new Random();
+            //Random
+            for (int i = 0; i < 11; i++)
+            {
+                bool isString = rd.Next(1, 10) % 2 == 0 ? true : false;
+                if (isString)
+                {
+                    bool isLower = rd.Next(1, 10) % 2 == 0 ? true : false;
+                    sb.Append(RandomString(isLower));
+                }
+                else
+                {
+                    sb.Append(rd.Next(1, 9));
+                }
+            }
+            return sb.ToString();
+        }
+
+        public string RandomString(bool lowerCase)
+        {
+            StringBuilder sb = new StringBuilder();
+            Random rd = new Random();
+            char ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * rd.NextDouble() + 65))); ;
+            sb.Append(ch);
+            if (lowerCase)
+                return sb.ToString().ToLower();
+            return sb.ToString();
         }
     }
 }

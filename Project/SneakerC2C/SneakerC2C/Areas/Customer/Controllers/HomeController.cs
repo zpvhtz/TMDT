@@ -29,5 +29,12 @@ namespace SneakerC2C.Areas.Customer.Controllers
             ViewBag.SanPhamMoi = spmoi;
             return View();
         }
+        
+        public IActionResult ResetPassword(string key)
+        {
+            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+            TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoanResetPassword(key);
+            return View(taikhoan);
+        }
     }
 }

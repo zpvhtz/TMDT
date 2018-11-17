@@ -50,13 +50,13 @@
                     <th>Mã hãng</th>
                     <th><a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort" asp-route-sortorder="@ViewBag.NameSort" asp-route-currentFilter="@ViewBag.CurrentFilter">Tên hãng</a></th>
                     @*<th><a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort" asp-route-sortorder="@ViewBag.ShopSort" asp-route-currentFilter="@ViewBag.CurrentFilter">Tên shop</a></th>
-                    <th>Màu</th>
-                    <th>Hãng</th>
-                    <th>Phân loại</th>
-                    <th><a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort" asp-route-sortorder="@ViewBag.GiaSort" asp-route-currentFilter="@ViewBag.CurrentFilter">Giá</a></th>
-                    <th>Hình</th>
-                    <th>Chi tiết</th>
-                    <th>Giảm giá</th>*@
+                        <th>Màu</th>
+                        <th>Hãng</th>
+                        <th>Phân loại</th>
+                        <th><a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort" asp-route-sortorder="@ViewBag.GiaSort" asp-route-currentFilter="@ViewBag.CurrentFilter">Giá</a></th>
+                        <th>Hình</th>
+                        <th>Chi tiết</th>
+                        <th>Giảm giá</th>*@
                     <th></th>
                 </tr>
             </thead>
@@ -64,11 +64,20 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td class="ma">@item.MaHang</td>
-                        <td class="ten">@item.TenHang</td>
+                        <td class="item-ma">@item.MaHang</td>
+                        <td class="item-ten">@item.TenHang</td>
                         <td>
-                            <button class="btn btn-danger btnSua" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
-                            <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#Khoa">Khoá</button>
+                            @switch (item.TinhTrang)
+                            {
+                                case "Không khoá":
+                                    <button class="btn btn-danger btnSua" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
+                                    <a asp-controller="HangSanPham" asp-action="LockHang" asp-route-mahang="@item.MaHang" class="btn btn-danger">Khoá</a>
+                                    break;
+                                case "Khoá":
+                                    <button class="btn btn-danger btnSua" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button> <a asp-controller="HangSanPham" asp-action="UnlockHang" asp-route-mahang="@item.MaHang" class="btn btn-danger">Mở khoá</a>
+                                    <a asp-controller="HangSanPham" asp-action="UnlockHang" asp-route-mahang="@item.MaHang" class="btn btn-danger">Mở khoá</a>
+                                    break;
+                            }
                         </td>
                     </tr>
                 }
@@ -76,62 +85,62 @@
         </table>
 
         @*<ul class="pagination" style="margin: 0 auto;">
-            @if (ViewBag.TrangHienTai == 1)
-            {
-                <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
-                </li>
-                <a asp-page="./Index"
-                   asp-route-sortorder="@ViewBag.CurrentSort"
-                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
-                   asp-route-currentFilter="@ViewBag.CurrentFilter"
-                   class="btn btn-default disabled">
-                    Previous
-                </a>
-                <a asp-page="./Index"
-                   asp-route-sortorder="@ViewBag.CurrentSort"
-                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
-                   asp-route-currentFilter="@ViewBag.CurrentFilter"
-                   class="btn btn-default">
-                    Next
-                </a>
-            }
-            else if (ViewBag.TrangHienTai == ViewBag.TongTrang)
-            {
-                <a asp-page="./Index"
-                   asp-route-sortorder="@ViewBag.CurrentSort"
-                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
-                   asp-route-currentFilter="@ViewBag.CurrentFilter"
-                   class="btn btn-default">
-                    Previous
-                </a>
-                <a asp-page="./Index"
-                   asp-route-sortorder="@ViewBag.CurrentSort"
-                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
-                   asp-route-currentFilter="@ViewBag.CurrentFilter"
-                   class="btn btn-default disabled">
-                    Next
-                </a>
-            }
-            else
-            {
-                <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
-                </li>
-                <a asp-page="./Index"
-                   asp-route-sortorder="@ViewBag.CurrentSort"
-                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
-                   asp-route-currentFilter="@ViewBag.CurrentFilter"
-                   class="btn btn-default">
-                    Previous
-                </a>
-                <a asp-page="./Index"
-                   asp-route-sortorder="@ViewBag.CurrentSort"
-                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
-                   asp-route-currentFilter="@ViewBag.CurrentFilter"
-                   class="btn btn-default disabled">
-                    Next
-                </a>
-            }
-        </ul>*@
+                @if (ViewBag.TrangHienTai == 1)
+                {
+                    <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
+                    </li>
+                    <a asp-page="./Index"
+                       asp-route-sortorder="@ViewBag.CurrentSort"
+                       asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
+                       asp-route-currentFilter="@ViewBag.CurrentFilter"
+                       class="btn btn-default disabled">
+                        Previous
+                    </a>
+                    <a asp-page="./Index"
+                       asp-route-sortorder="@ViewBag.CurrentSort"
+                       asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
+                       asp-route-currentFilter="@ViewBag.CurrentFilter"
+                       class="btn btn-default">
+                        Next
+                    </a>
+                }
+                else if (ViewBag.TrangHienTai == ViewBag.TongTrang)
+                {
+                    <a asp-page="./Index"
+                       asp-route-sortorder="@ViewBag.CurrentSort"
+                       asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
+                       asp-route-currentFilter="@ViewBag.CurrentFilter"
+                       class="btn btn-default">
+                        Previous
+                    </a>
+                    <a asp-page="./Index"
+                       asp-route-sortorder="@ViewBag.CurrentSort"
+                       asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
+                       asp-route-currentFilter="@ViewBag.CurrentFilter"
+                       class="btn btn-default disabled">
+                        Next
+                    </a>
+                }
+                else
+                {
+                    <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
+                    </li>
+                    <a asp-page="./Index"
+                       asp-route-sortorder="@ViewBag.CurrentSort"
+                       asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
+                       asp-route-currentFilter="@ViewBag.CurrentFilter"
+                       class="btn btn-default">
+                        Previous
+                    </a>
+                    <a asp-page="./Index"
+                       asp-route-sortorder="@ViewBag.CurrentSort"
+                       asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
+                       asp-route-currentFilter="@ViewBag.CurrentFilter"
+                       class="btn btn-default disabled">
+                        Next
+                    </a>
+                }
+            </ul>*@
 
     </div>
 </div>
@@ -145,10 +154,10 @@
                     <h4 class="modal-title">Hãng sản phẩm</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
-                        <label>Mã hãng</label>
-                        <input type="text" class="form-control" id="item-them-mahang" name="item_them_mahang" required>
-                    </div>
+                    @*<div class="form-group">
+                            <label>Mã hãng</label>
+                            <input type="text" class="form-control" id="item-them-mahang" name="item_them_mahang" required>
+                        </div>*@
                     <div class="form-group">
                         <label>Tên hãng</label>
                         <input type="text" class="form-control" id="item-them-ten" name="item_them_ten" required>
@@ -189,11 +198,17 @@
         </form>
     </div>
 </div>
+@if (ViewBag.ThongBao != null)
+{
+    <script>
+        alert("@Html.Raw(ViewBag.ThongBao)");
+    </script>
+}
 <script>
     $(document).ready(function () {
         $(".btnSua").click(function () {
-            let pId = $(this).closest('tr').find('.ma').text();
-            let pTen = $(this).closest('tr').find('.ten').text();
+            let pId = $(this).closest('tr').find('.item-ma').text();
+            let pTen = $(this).closest('tr').find('.item-ten').text();
             $("#item-sua-ma").val(pId.trim());
             $("#item-sua-ten").val(pTen.trim());
         });

@@ -51,7 +51,7 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
         {
             TaiKhoanBUS taikhoan = new TaiKhoanBUS();
             string thongbao = taikhoan.EditTaiKhoan(item_sua_tendangnhap, item_sua_matkhau, item_sua_email, item_sua_dienthoai, item_sua_cmnd);
-            return RedirectToAction("Index", "TaiKhoan", new { thongbao = thongbao});
+            return RedirectToAction("Index", "TaiKhoan");
         }
 
         public IActionResult LockTaiKhoan(string tendangnhap)

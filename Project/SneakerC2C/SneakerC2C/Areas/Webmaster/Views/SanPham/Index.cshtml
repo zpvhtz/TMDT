@@ -23,14 +23,14 @@
             </div>
             <div class="col-lg-2">
                 @*<div class="form-group">
-                    <select class="form-control" id="sortList" onchange="window.location.href = SearchAndSort()">
-                        <option selected disabled>Sắp xếp theo</option>
-                        <option value="/Webmaster/GianHang/Sort?sortorder=tengianhang-az">Tên gian hàng (A-Z)</option>
-                        <option value="/Webmaster/GianHang/Sort?sortorder=tengianhang-za">Tên gian hàng (Z-A)</option>
-                        <option value="/Webmaster/GianHang/Sort?sortorder=gia-asc">Giá thấp</option>
-                        <option value="/Webmaster/GianHang/Sort?sortorder=gia-desc">Giá cao</option>
-                    </select>
-                </div>*@
+                        <select class="form-control" id="sortList" onchange="window.location.href = SearchAndSort()">
+                            <option selected disabled>Sắp xếp theo</option>
+                            <option value="/Webmaster/GianHang/Sort?sortorder=tengianhang-az">Tên gian hàng (A-Z)</option>
+                            <option value="/Webmaster/GianHang/Sort?sortorder=tengianhang-za">Tên gian hàng (Z-A)</option>
+                            <option value="/Webmaster/GianHang/Sort?sortorder=gia-asc">Giá thấp</option>
+                            <option value="/Webmaster/GianHang/Sort?sortorder=gia-desc">Giá cao</option>
+                        </select>
+                    </div>*@
             </div>
             <div class="col-lg-6"></div>
             <div class="col-lg-3">
@@ -89,166 +89,177 @@
             </tbody>
         </table>
         @*<ul class="pagination" style="margin: 0 auto;">
-            
 
-            <a asp-page="./Index"
-               asp-route-sortOrder="@Model.CurrentSort"
-               asp-route-pageIndex="@(Model.Student.PageIndex - 1)"
-               asp-route-currentFilter="@Model.CurrentFilter"
-               class="btn btn-default @prevDisabled">
-                Previous
-            </a>
-            <a asp-page="./Index"
-               asp-route-sortOrder="@Model.CurrentSort"
-               asp-route-pageIndex="@(Model.Student.PageIndex + 1)"
-               asp-route-currentFilter="@Model.CurrentFilter"
-               class="btn btn-default @nextDisabled">
-                Next
-            </a>
-        </ul>*@
-            @*<ul class="pagination" style="margin: 0 auto;">
-            @if (ViewBag.TrangHienTai == 1)
-            {
-                <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
-                </li>
-                <a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort"
-                   asp-route-sortorder="@ViewBag.CurrentSort"
-                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
-                   asp-route-currentFilter="@ViewBag.CurrentFilter"
-                   class="btn btn-default disabled">
-                    Previous
-                </a>
-                <a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort"
-                   asp-route-sortorder="@ViewBag.CurrentSort"
-                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
-                   asp-route-currentFilter="@ViewBag.CurrentFilter"
-                   class="btn btn-default">
-                    Next
-                </a>
-            }
-            else if (ViewBag.TrangHienTai == ViewBag.TongTrang)
-            {
-                <a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort"
-                   asp-route-sortorder="@ViewBag.CurrentSort"
-                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
-                   asp-route-currentFilter="@ViewBag.CurrentFilter"
-                   class="btn btn-default">
-                    Previous
-                </a>
-                <a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort"
-                   asp-route-sortorder="@ViewBag.CurrentSort"
-                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
-                   asp-route-currentFilter="@ViewBag.CurrentFilter"
-                   class="btn btn-default disabled">
-                    Next
-                </a>
-            }
-            else
-            {
-                <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
-                </li>
-                <a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort"
-                   asp-route-sortorder="@ViewBag.CurrentSort"
-                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
-                   asp-route-currentFilter="@ViewBag.CurrentFilter"
-                   class="btn btn-default">
-                    Previous
-                </a>
-                <a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort"
-                   asp-route-sortorder="@ViewBag.CurrentSort"
-                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
-                   asp-route-currentFilter="@ViewBag.CurrentFilter"
-                   class="btn btn-default disabled">
-                    Next
-                </a>
-            }
-        </ul>*@
 
+                <a asp-page="./Index"
+                   asp-route-sortOrder="@Model.CurrentSort"
+                   asp-route-pageIndex="@(Model.Student.PageIndex - 1)"
+                   asp-route-currentFilter="@Model.CurrentFilter"
+                   class="btn btn-default @prevDisabled">
+                    Previous
+                </a>
+                <a asp-page="./Index"
+                   asp-route-sortOrder="@Model.CurrentSort"
+                   asp-route-pageIndex="@(Model.Student.PageIndex + 1)"
+                   asp-route-currentFilter="@Model.CurrentFilter"
+                   class="btn btn-default @nextDisabled">
+                    Next
+                </a>
+            </ul>*@
+        @*<ul class="pagination" style="margin: 0 auto;">
+                @if (ViewBag.TrangHienTai == 1)
+                {
+                    <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
+                    </li>
+                    <a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort"
+                       asp-route-sortorder="@ViewBag.CurrentSort"
+                       asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
+                       asp-route-currentFilter="@ViewBag.CurrentFilter"
+                       class="btn btn-default disabled">
+                        Previous
+                    </a>
+                    <a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort"
+                       asp-route-sortorder="@ViewBag.CurrentSort"
+                       asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
+                       asp-route-currentFilter="@ViewBag.CurrentFilter"
+                       class="btn btn-default">
+                        Next
+                    </a>
+                }
+                else if (ViewBag.TrangHienTai == ViewBag.TongTrang)
+                {
+                    <a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort"
+                       asp-route-sortorder="@ViewBag.CurrentSort"
+                       asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
+                       asp-route-currentFilter="@ViewBag.CurrentFilter"
+                       class="btn btn-default">
+                        Previous
+                    </a>
+                    <a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort"
+                       asp-route-sortorder="@ViewBag.CurrentSort"
+                       asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
+                       asp-route-currentFilter="@ViewBag.CurrentFilter"
+                       class="btn btn-default disabled">
+                        Next
+                    </a>
+                }
+                else
+                {
+                    <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
+                    </li>
+                    <a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort"
+                       asp-route-sortorder="@ViewBag.CurrentSort"
+                       asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
+                       asp-route-currentFilter="@ViewBag.CurrentFilter"
+                       class="btn btn-default">
+                        Previous
+                    </a>
+                    <a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort"
+                       asp-route-sortorder="@ViewBag.CurrentSort"
+                       asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
+                       asp-route-currentFilter="@ViewBag.CurrentFilter"
+                       class="btn btn-default disabled">
+                        Next
+                    </a>
+                }
+            </ul>*@
+
+    </div>
 </div>
-</div> 
 <!--panel-body -->
-      <!--Modal sua-->
+<!--Modal sua-->
 <div class="modal fade" id="Chitietsizemodal" role="dialog">
-                <div class="modal-dialog">
-                    <form asp-controller="SanPham" asp-action="Size" method="post">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Sản phẩm</h4>
-                            </div>
-                            <div class="modal-body">
-                                <table table table-striped table-bordered table-hover>
-                                    <thead>
-                                        <tr>
-                                            <th>Tên sản phẩm</th>
-                                            <th>Size</th>
-                                            <th>Số lượng</th>
-                                        </tr>
-                                    </thead>
-                                    @*<tbody>
-                                        @foreach(var item in )
-                                    </tbody>*@
-                                </table>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-warning">Sửa</button>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                            </div>
-                        </div>
-                    </form>
+    <div class="modal-dialog">
+        <form asp-controller="SanPham" asp-action="Size" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Sản phẩm</h4>
+                </div>
+                <div class="modal-body" id="modal-body-size">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-warning">Sửa</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                 </div>
             </div>
+        </form>
+    </div>
+</div>
+@if (ViewBag.ThongBao != null)
+{
+    <script>
+        alert("@Html.Raw(ViewBag.ThongBao)");
+    </script>
+}
+<script>
+    $(".Size").click(function(){
+        let masp = $(this).closest('tr').find('.ma').text();
+        $.ajax({
+            url: "/Webmaster/SanPham/GetSizeSanPham",
+            type: "get",
+            data: { "masp": masp },
+            success: function (data) {
+                $("#modal-body-size").html(data);
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            }
+        });
+    });
+</script>
 @*<script>
-                $(document).ready(function () {
-                    $(".SuaSp").click(function ()
-                    {
-                        let Id = $(this).closest('tr').find('.ma').text();
-                        let pTen = $(this).closest('tr').find('.tensp').text();
-                        let pTenShop = $(this).closest('tr').find('.tenshop').text();
-                        let pMau = $(this).closest('tr').find('.mau').text();
-                        let pHang = $(this).closest('tr').find('.tenhang').text();
-                        let pGia = $(this).closest('tr').find('.gia').text();
-                        let pHinh = $(this).closest('tr').find('.img-hinh').attr('src');
-                        let pChiTiet = $(this).closest('tr').find('.chitiet').text();
-                        let pGiamGia = $(this).closest('tr').find('.giamgia').text();
-                        //alert(pGiamGia);
-                        $("#masp-sua").val(Id.trim());
-                        $("#tensp-sua").val(pTen.trim());
-                        $("#tenshop-sua").val(pTenShop.trim());
-                        $("#mau-sua").val(pMau.trim());
-                        $("#gia-sua").val(pGia.trim());
-                        $("#hinh-sua").val(pHinh.trim());
-                        $("#chitiet-sua").val(pChiTiet.trim());
-                        $("#giamgia-sua").val(pGiamGia.trim());
+                    $(document).ready(function () {
+                        $(".SuaSp").click(function ()
+                        {
+                            let Id = $(this).closest('tr').find('.ma').text();
+                            let pTen = $(this).closest('tr').find('.tensp').text();
+                            let pTenShop = $(this).closest('tr').find('.tenshop').text();
+                            let pMau = $(this).closest('tr').find('.mau').text();
+                            let pHang = $(this).closest('tr').find('.tenhang').text();
+                            let pGia = $(this).closest('tr').find('.gia').text();
+                            let pHinh = $(this).closest('tr').find('.img-hinh').attr('src');
+                            let pChiTiet = $(this).closest('tr').find('.chitiet').text();
+                            let pGiamGia = $(this).closest('tr').find('.giamgia').text();
+                            //alert(pGiamGia);
+                            $("#masp-sua").val(Id.trim());
+                            $("#tensp-sua").val(pTen.trim());
+                            $("#tenshop-sua").val(pTenShop.trim());
+                            $("#mau-sua").val(pMau.trim());
+                            $("#gia-sua").val(pGia.trim());
+                            $("#hinh-sua").val(pHinh.trim());
+                            $("#chitiet-sua").val(pChiTiet.trim());
+                            $("#giamgia-sua").val(pGiamGia.trim());
 
-                        let pPhanLoai = $(this).closest('tr').find('.phanloai').text();
-                        if (pPhanLoai != '') {
-                            $("#phanloai-sua option").each(function () {
-                                if ($(this).text().includes(pPhanLoai)) {
-                                    $(this).attr('selected', 'selected');
-                                    //return;
-                                }
-                                else {
-                                    $(this).attr('selected', false);
-                                }
-                            });
-                        }
+                            let pPhanLoai = $(this).closest('tr').find('.phanloai').text();
+                            if (pPhanLoai != '') {
+                                $("#phanloai-sua option").each(function () {
+                                    if ($(this).text().includes(pPhanLoai)) {
+                                        $(this).attr('selected', 'selected');
+                                        //return;
+                                    }
+                                    else {
+                                        $(this).attr('selected', false);
+                                    }
+                                });
+                            }
 
-                        let hang = $(this).closest('tr').find('.tenhang').text();
-                        if (hang != '') {
-                            $("#hang-sua option").each(function () {
-                                if ($(this).text().includes(hang)) {
-                                    $(this).attr('selected', 'selected');
-                                    //return;
-                                }
-                                else {
-                                    $(this).attr('selected', false);
-                                }
-                            });
-                        }
+                            let hang = $(this).closest('tr').find('.tenhang').text();
+                            if (hang != '') {
+                                $("#hang-sua option").each(function () {
+                                    if ($(this).text().includes(hang)) {
+                                        $(this).attr('selected', 'selected');
+                                        //return;
+                                    }
+                                    else {
+                                        $(this).attr('selected', false);
+                                    }
+                                });
+                            }
+
+                        });
 
                     });
-
-                });
-</script>*@
+    </script>*@
 

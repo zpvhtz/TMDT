@@ -39,8 +39,12 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
                                     .ToList();
             return list;
         }
-        public IActionResult Index(int? pagenumber)
+        public IActionResult Index(string thongbao,int? pagenumber)
         {
+            if (thongbao != null)
+            {
+                ViewBag.ThongBao = thongbao;
+            }
             pageNumber = pagenumber ?? 1;
             List<SanPham> list = GetSanPhams(pageNumber, pageSize);
             List<SanPham> tong =GetSanPhams();
@@ -55,6 +59,15 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             ViewBag.TrangThai = "index";
             return View(list);
         }
+
+        public IActionResult GetSizeSanPham(string masp)
+        {
+            List<SizeSanPham> listsize = ctx.SizeSanPham.Where(ssp => ssp.IdSanPhamNavigation.MaSanPham == masp)
+                                                        .Include(ssp => ssp.IdSanPhamNavigation)
+                                                        .ToList();
+            return PartialView("pSizeSanPham", listsize);
+        }
+
         public IActionResult Search(string search)
         {
             List<SanPham> sp = ctx.SanPham.Where(s => s.MaSanPham.Contains(search) || s.TenSanPham.Contains(search) || s.IdTaiKhoanNavigation.TenShop.Contains(search) || s.Mau.Contains(search) || s.IdHangSanPhamNavigation.TenHang.Contains(search) || s.PhanLoai.Contains(search) || s.ChiTiet.Contains(search) || s.TinhTrang.Contains(search)).Include(s => s.IdTaiKhoanNavigation)

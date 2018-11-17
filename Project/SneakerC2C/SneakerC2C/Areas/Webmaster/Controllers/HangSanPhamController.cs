@@ -72,5 +72,11 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             ctx.SaveChanges();
             return RedirectToAction("Index", "HangSanPham");
         }
+        public IActionResult Search(string search)
+        {
+            List<HangSanPham> hang = ctx.HangSanPham.Where(s => s.MaHang.Contains(search) || s.TenHang.Contains(search))  
+                                            .ToList();
+            return View("Index", hang);
+        }
     }
 }

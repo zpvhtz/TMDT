@@ -32,7 +32,7 @@
             <div class="col-lg-3">
                 <form asp-controller="HangSanPham" asp-action="Search" method="get">
                     <div class="input-group custom-search-form">
-                        <input type="text" class="form-control" id="searchList" placeholder="Tìm kiếm..." name="search" value="@ViewBag.CurrentFilter">
+                        <input type="text" class="form-control" id="searchList" placeholder="Tìm kiếm..." name="search">
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="submit">
                                 <i class="fa fa-search"></i>
@@ -74,7 +74,7 @@
                                     <a asp-controller="HangSanPham" asp-action="LockHang" asp-route-mahang="@item.MaHang" class="btn btn-danger">Khoá</a>
                                     break;
                                 case "Khoá":
-                                    <button class="btn btn-danger btnSua" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button> <a asp-controller="HangSanPham" asp-action="UnlockHang" asp-route-mahang="@item.MaHang" class="btn btn-danger">Mở khoá</a>
+                                    <button class="btn btn-danger btnSua" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
                                     <a asp-controller="HangSanPham" asp-action="UnlockHang" asp-route-mahang="@item.MaHang" class="btn btn-danger">Mở khoá</a>
                                     break;
                             }

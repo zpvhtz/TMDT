@@ -291,6 +291,14 @@
                         <input type="password" class="form-control" id="item-sua-matkhau" name="item_sua_matkhau">
                     </div>
                     <div class="form-group">
+                        <label>Tên</label>
+                        <input type="text" class="form-control" id="item-sua-ten" name="item_sua_ten">
+                    </div>
+                    <div class="form-group">
+                        <label>Tên shop</label>
+                        <input type="text" class="form-control" id="item-sua-tenshop" name="item_sua_tenshop">
+                    </div>
+                    <div class="form-group">
                         <label>Email</label>
                         <input type="email" class="form-control" id="item-sua-email" name="item_sua_email">
                     </div>
@@ -426,11 +434,25 @@
 
     $(".btnSuaTaiKhoan").click(function () {
         let tendangnhap = $(this).closest('tr').find('.item-tendangnhap').text();
+        let ten = $(this).closest('tr').find('.item-ten').text();
+        let tenshop = $(this).closest('tr').find('.item-tenshop').text();
         let email = $(this).closest('tr').find('.item-email').text();
         let dienthoai = $(this).closest('tr').find('.item-dienthoai').text();
         let cmnd = $(this).closest('tr').find('.item-cmnd').text();
+        let loainguoidung = $(this).closest('tr').find('.item-loainguoidung').text();
+        
+        if(loainguoidung == "Khách hàng")
+        {
+            $("#item-sua-tenshop").attr('readonly', true);
+        }
+        else
+        {
+            $("#item-sua-tenshop").attr('readonly', false);
+        }
 
         $("#item-sua-tendangnhap").val(tendangnhap.trim());
+        $("#item-sua-ten").val(ten.trim());
+        $("#item-sua-tenshop").val(tenshop.trim());
         $("#item-sua-email").val(email.trim());
         $("#item-sua-dienthoai").val(dienthoai.trim());
         $("#item-sua-cmnd").val(cmnd.trim());

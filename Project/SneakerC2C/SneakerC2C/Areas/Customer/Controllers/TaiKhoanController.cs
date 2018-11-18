@@ -33,6 +33,27 @@ namespace SneakerC2C.Areas.Customer.Controllers
             return RedirectToAction("Index", "Home", new { thongbao = thongbao });
         }
 
+        public IActionResult EditTaiKhoan(string tendangnhap, string ten, string email, string dienthoai)
+        {
+            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+            string thongbao = taikhoanbus.EditTaiKhoan(tendangnhap, null, ten, null, email, dienthoai, null);
+            return RedirectToAction("Index", "Home", new { thongbao = thongbao });
+        }
+
+        public string EditPassword(string tendangnhap, string matkhau)
+        {
+            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+            string thongbao = taikhoanbus.EditTaiKhoan(tendangnhap, matkhau, null, null, null, null, null);
+            return thongbao;
+        }
+
+        public JsonResult CheckTaiKhoan(string tendangnhap)
+        {
+            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+            TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoan(tendangnhap);
+            return Json(taikhoan);
+        }
+
         public IActionResult Activate(string tendangnhap)
         {
             TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();

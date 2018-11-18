@@ -100,27 +100,37 @@ namespace Models.BusinessLogicLayer
                 return "Thêm thành công";
         }
 
-        public string EditTaiKhoan(string tendangnhap, string matkhau, string email, string dienthoai, string cmnd)
+        public string EditTaiKhoan(string tendangnhap, string matkhau, string ten, string tenshop, string email, string dienthoai, string cmnd)
         {
-            TaiKhoan taikhoan = new TaiKhoan();
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();
+            TaiKhoan taikhoancheck = new TaiKhoan();
             //Kiểm tra
             //Email
-            taikhoan = context.TaiKhoan.Where(tk => tk.Email == email && email != null).SingleOrDefault();
-            if(taikhoan != null)
+            if(taikhoan.Email != email)
             {
-                return "Email đã tồn tại";
+                taikhoancheck = context.TaiKhoan.Where(tk => tk.Email == email && email != null).SingleOrDefault();
+                if (taikhoancheck != null)
+                    return "Email đã tồn tại";
             }
             //CMND
-            taikhoan = context.TaiKhoan.Where(tk => tk.Cmnd == cmnd && cmnd != null).SingleOrDefault();
-            if(taikhoan != null)
+            if(taikhoan.Cmnd != cmnd)
             {
-                return "CMND đã tồn tại";
+                taikhoancheck = context.TaiKhoan.Where(tk => tk.Cmnd == cmnd && cmnd != null).SingleOrDefault();
+                if(taikhoancheck != null)
+                    return "CMND đã tồn tại";
             }
             //Sửa
-            taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();
             if (matkhau != null)
             {
                 taikhoan.MatKhau = CreateMD5(matkhau);
+            }
+            if (ten != null)
+            {
+                taikhoan.Ten = ten;
+            }
+            if (tenshop != null)
+            {
+                taikhoan.TenShop = tenshop;
             }
             if (email != null)
             {

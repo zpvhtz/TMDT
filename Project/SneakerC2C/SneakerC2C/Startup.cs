@@ -46,6 +46,9 @@ namespace SneakerC2C
                 opt.IdleTimeout = TimeSpan.FromSeconds(900);
                 opt.Cookie.HttpOnly = true;
             });
+
+            //Json
+            services.AddMvc().AddJsonOptions(opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -272,3 +272,4 @@ F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Snea
 F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CopyComplete
 F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.dll
 F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb
+D:\Projects\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GoiQuangCao\Index.g.cshtml.cs

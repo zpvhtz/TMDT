@@ -108,7 +108,7 @@ namespace Models.BusinessLogicLayer
                                            .Include(l => l.IdViTriNavigation)
                                            .ToList();
                     break;
-                case "tenviti-za":
+                case "tenvitri-za":
                     list = context.GoiQuangCao.OrderByDescending(gh => gh.IdViTriNavigation.TenViTri)
                                            .Skip((pagenumber - 1) * pagesize)
                                            .Take(pagesize)

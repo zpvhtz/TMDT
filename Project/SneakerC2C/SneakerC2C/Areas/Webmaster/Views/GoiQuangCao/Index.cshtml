@@ -67,13 +67,13 @@
                         <td>
                             @if (item.TinhTrang == "Không khoá")
                             {
-                                <button class="btn btn-primary btnSuaTrang" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
-                                <a asp-controller="GoiQuangCao" asp-action="LockGoiQuangCao" asp-route-mavitri="@item.MaGoiQuangCao" class="btn btn-danger">Khoá</a>
+                                <button class="btn btn-primary btnSuaGoi" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
+                                <a asp-controller="GoiQuangCao" asp-action="LockGoiQuangCao" asp-route-magoi="@item.MaGoiQuangCao" class="btn btn-danger">Khoá</a>
                             }
                             else
                             {
-                                <button class="btn btn-primary btnSuaTrang" type="button" data-toggle="modal" data-target="#suaModal" disabled>Sửa</button>
-                                <a asp-controller="GoiQuangCao" asp-action="UnlockGoiQuangCao" asp-route-mavitri="@item.MaGoiQuangCao" class="btn btn-danger">Mở khoá</a>
+                                <button class="btn btn-primary btnSuaGoi" type="button" data-toggle="modal" data-target="#suaModal" disabled>Sửa</button>
+                                <a asp-controller="GoiQuangCao" asp-action="UnlockGoiQuangCao" asp-route-magoi="@item.MaGoiQuangCao" class="btn btn-danger">Mở khoá</a>
                             }
                         </td>
                     </tr>
@@ -328,7 +328,7 @@
         }
     });
 
-    $(".btnSuaTrang").click(function () {
+    $(".btnSuaGoi").click(function () {
         let ma = $(this).closest('tr').find('.item-ma').text();
         let vitriquangcao = $(this).closest('tr').find('.item-vitriquangcao').text();
         let thoiluong = $(this).closest('tr').find('.item-thoiluong').text();
@@ -361,7 +361,7 @@
         $link.attr('href', href);
     });
 
-    function GetDonGia(id,thoiluong) {
+    function GetDonGiaThem(id,thoiluong) {
         $.ajax({
             url: "/Webmaster/GoiQuangCao/GetDonGia",
             type: "get",
@@ -376,32 +376,47 @@
         });
     }
 
+    function GetDonGiaSua(id,thoiluong) {
+        $.ajax({
+            url: "/Webmaster/GoiQuangCao/GetDonGia",
+            type: "get",
+            data: { "id": id },
+            success: function (data) {
+                let tongtien = data*thoiluong;
+                $("#item-sua-tongtien").val(tongtien);
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            }
+        });
+    }
+
     //tính tổng tiền khi chọn xong thời lượng và vị trí (thêm)
     $("#item-them-thoiluong").change(function () {
         let id = $("#item-them-vitriquangcao").val();
         let thoiluong = $(this).val();
-        GetDonGia(id,thoiluong);
+        GetDonGiaThem(id,thoiluong);
         
     });
 
     $("#item-them-vitriquangcao").change(function () {
         let id = $(this).val();
         let thoiluong = $("#item-them-thoiluong").val();
-        GetDonGia(id,thoiluong);
+        GetDonGiaThem(id,thoiluong);
        
     });
-    //tính tổng tiền khi chọn xong thời lượng và vị trí (sửa)
+    //tính tổng tiền khi chọn xong thời lượng và vị trí (thêm)
     $("#item-sua-thoiluong").change(function () {
         let id = $("#item-sua-vitriquangcao").val();
         let thoiluong = $(this).val();
-        let tongtien = GetDonGia(id) * thoiluong;
-        $("#item-sua-tongtien").val(tongtien);
+        GetDonGiaSua(id,thoiluong);
+        
     });
 
     $("#item-sua-vitriquangcao").change(function () {
         let id = $(this).val();
         let thoiluong = $("#item-sua-thoiluong").val();
-        let tongtien = GetDonGia(id) * thoiluong;
-        $("#item-sua-tongtien").val(tongtien);
+        GetDonGiaSua(id,thoiluong);
+       
     });
 </script>

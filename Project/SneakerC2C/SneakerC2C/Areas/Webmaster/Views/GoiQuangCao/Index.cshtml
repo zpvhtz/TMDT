@@ -216,7 +216,7 @@
                     </div>
                     <div class="form-group">
                         <label>Tổng Tiền </label>
-                        <input type="number" class="form-control" id="item-them-tongtien" name="item_them_tongtien" min="0" required>
+                        <input type="number" class="form-control" id="item-them-tongtien" name="item_them_tongtien" min="0" readonly required>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -258,7 +258,7 @@
                     </div>
                     <div class="form-group">
                         <label>Tổng Tiền </label>
-                        <input type="number" class="form-control" id="item-sua-tongtien" name="item_sua_tongtien" min="0" required>
+                        <input type="number" class="form-control" id="item-sua-tongtien" name="item_sua_tongtien" min="0" readonly required>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -361,13 +361,14 @@
         $link.attr('href', href);
     });
 
-    function GetDonGia(id) {
+    function GetDonGia(id,thoiluong) {
         $.ajax({
             url: "/Webmaster/GoiQuangCao/GetDonGia",
             type: "get",
             data: { "id": id },
             success: function (data) {
-                return data;
+                let tongtien = data*thoiluong;
+                $("#item-them-tongtien").val(tongtien);
             },
             error: function (data) {
                 alert("Error: " + data);
@@ -379,15 +380,15 @@
     $("#item-them-thoiluong").change(function () {
         let id = $("#item-them-vitriquangcao").val();
         let thoiluong = $(this).val();
-        let tongtien = GetDonGia(id) * thoiluong;
-        $("#item-them-tongtien").val(tongtien);
+        GetDonGia(id,thoiluong);
+        
     });
 
     $("#item-them-vitriquangcao").change(function () {
         let id = $(this).val();
         let thoiluong = $("#item-them-thoiluong").val();
-        let tongtien = GetDonGia(id) * thoiluong;
-        $("#item-them-tongtien").val(tongtien);
+        GetDonGia(id,thoiluong);
+       
     });
     //tính tổng tiền khi chọn xong thời lượng và vị trí (sửa)
     $("#item-sua-thoiluong").change(function () {

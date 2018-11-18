@@ -41,3 +41,14 @@ C:\Users\ThoXu\Desktop\C2CSNEAKERS\TMDT\Project\SneakerC2C\Models\obj\Debug\netc
 C:\Users\ThoXu\Desktop\C2CSNEAKERS\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.dll
 C:\Users\ThoXu\Desktop\C2CSNEAKERS\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.pdb
 D:\Projects\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.csprojAssemblyReference.cache
+F:\Github stuffs\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.deps.json
+F:\Github stuffs\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.json
+F:\Github stuffs\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.dev.json
+F:\Github stuffs\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.dll
+F:\Github stuffs\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.pdb
+F:\Github stuffs\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.csprojAssemblyReference.cache
+F:\Github stuffs\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.csproj.CoreCompileInputs.cache
+F:\Github stuffs\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfoInputs.cache
+F:\Github stuffs\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfo.cs
+F:\Github stuffs\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.dll
+F:\Github stuffs\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.pdb

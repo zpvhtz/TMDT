@@ -318,5 +318,11 @@ namespace Models.BusinessLogicLayer
             }
             return list;
         }
+        public double GetDonGia(string id)
+        {
+            ViTriQuangcao vitri = context.ViTriQuangcao.Where(gh => gh.Id == Guid.Parse(id)).SingleOrDefault();
+            double dongia = vitri.DonGia ?? 0;
+            return dongia;
+        }
     }
 }

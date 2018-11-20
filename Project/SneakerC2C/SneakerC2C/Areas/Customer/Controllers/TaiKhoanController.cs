@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models.BusinessLogicLayer;
 using Models.Database;
@@ -144,6 +145,20 @@ namespace SneakerC2C.Areas.Customer.Controllers
                 await client.SendMailAsync(message);
             }
             return RedirectToAction("Index", "Home");
+        }
+
+        public string AddToCart(string idsizesanpham)
+        {
+            string tendangnhap = HttpContext.Session.GetString("TenDangNhap");
+            if (tendangnhap == "" || tendangnhap == null)
+            {
+                return "Cần đăng nhập";
+            }
+            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+            TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoan(tendangnhap);
+            GioHangBUS giohangbus = new GioHangBUS();
+            string thongbao = giohangbus.AddToCart(taikhoan.Id.ToString(), idsizesanpham);
+            return thongbao;
         }
     }
 }

@@ -157,7 +157,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <form action="#" method="post" class="last">
                         <input type="hidden" name="cmd" value="_cart">
                         <input type="hidden" name="display" value="1">
-                        <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                        <button class="w3view-cart" type="button" name="submit" id="btnCart" data-toggle="modal" data-target="#cartModal" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
                     </form>
 
                 </div>
@@ -450,7 +450,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!-- //Modal content-->
         </div>
     </div>
-    <!-- //Modal4 -->
     <div class="mainContainer">
         @RenderBody()
     </div>
@@ -837,7 +836,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         data: { "tendangnhap": tendangnhap, "matkhau": matkhau },
                         success: function (data) {
                             alert(data);
-                            location.href = "@Url.Action("Index", "Home")";
+                            location.href = "@Url.Action("Index", "QuanLy")";
                         },
                         error: function (data) {
                             alert("Error: " + data);
@@ -855,5 +854,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 {
     <script>
         alert("@Html.Raw(ViewBag.ThongBao)");
+        location.href = "@Url.Action("Index", "Home")";
     </script>
 }

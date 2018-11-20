@@ -50,13 +50,13 @@
             @if (Model.GiamGia != null && Model.GiamGia != 0)
             {
                 double gia = Model.Gia * (100 - Model.GiamGia) / 100 ?? 0;
-                <p><span class="item_price">@gia vnđ</span> <del>- @Model.Gia VNĐ</del></p>
+                <p><span class="item_price">@gia.ToString("#,###") đ</span> <del>- @Model.Gia.Value.ToString("#,###") đ</del></p>
             }
             else
             {
-                <p><span class="item_price">@Model.Gia VNĐ</span></p>
+                <p><span class="item_price">@Model.Gia.Value.ToString("#,###") đ</span></p>
             }
-            <div class="rating1">
+            @*<div class="rating1">
                 <span class="starRating">
                     <input id="rating5" type="radio" name="rating" value="5">
                     <label for="rating5">5</label>
@@ -69,14 +69,14 @@
                     <input id="rating1" type="radio" name="rating" value="1">
                     <label for="rating1">1</label>
                 </span>
-            </div>
+            </div>*@
             <!--<div class="description">
-        <h5>Check delivery, payment options and charges at your location</h5>
-         <form action="#" method="post">
-        <input type="text" value="Enter pincode" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter pincode';}" required="">
-        <input type="submit" value="Check">
-        </form>
-    </div>-->
+                <h5>Check delivery, payment options and charges at your location</h5>
+                 <form action="#" method="post">
+                <input type="text" value="Enter pincode" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter pincode';}" required="">
+                <input type="submit" value="Check">
+                </form>
+            </div>-->
             <div class="brands-color">
                 <h5>Hãng : @Model.IdHangSanPhamNavigation.TenHang</h5>
             </div>
@@ -86,32 +86,27 @@
             <div class="color-quality">
                 <div class="color-quality-right">
                     <h5>Size :</h5>
-                    <select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
-                        <option value="null">35</option>
-                        <option value="null">36</option>
-                        <option value="null">37</option>
-                        <option value="null">38</option>
-                        <option value="null">39</option>
-                        <option value="null">40</option>
-                        <option value="null">41</option>
-                        <option value="null">42</option>
-                        <option value="null">43</option>
+                    <select id="sltSizeSanPham" onchange="change_country(this.value)" class="frm-field required sect">
+                        @foreach (var item in ViewBag.ListSizeSanPham)
+                        {
+                            <option value="@item.Id">@item.Size</option>
+                        }
                     </select>
                 </div>
             </div>
             <!--<div class="occasional">
-        <h5>Types :</h5>
-        <div class="colr ert">
-            <label class="radio"><input type="radio" name="radio" checked=""><i></i>Casual Shoes</label>
-        </div>
-        <div class="colr">
-            <label class="radio"><input type="radio" name="radio"><i></i>Sneakers </label>
-        </div>
-        <div class="colr">
-            <label class="radio"><input type="radio" name="radio"><i></i>Formal Shoes</label>
-        </div>
-        <div class="clearfix"> </div>
-    </div>-->
+                <h5>Types :</h5>
+                <div class="colr ert">
+                    <label class="radio"><input type="radio" name="radio" checked=""><i></i>Casual Shoes</label>
+                </div>
+                <div class="colr">
+                    <label class="radio"><input type="radio" name="radio"><i></i>Sneakers </label>
+                </div>
+                <div class="colr">
+                    <label class="radio"><input type="radio" name="radio"><i></i>Formal Shoes</label>
+                </div>
+                <div class="clearfix"> </div>
+            </div>-->
             <div class="occasion-cart">
                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
                     <form action="#" method="post">
@@ -125,13 +120,13 @@
                             <input type="hidden" name="currency_code" value="USD">
                             <input type="hidden" name="return" value=" ">
                             <input type="hidden" name="cancel_return" value=" ">
-                            <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button">
+                            <input type="button" name="submit" id="btnThemVaoGioHang" value="Thêm vào giỏ hàng" class="button">
                         </fieldset>
                     </form>
                 </div>
 
             </div>
-            <ul class="social-nav model-3d-0 footer-social w3_agile_social single_page_w3ls">
+            @*<ul class="social-nav model-3d-0 footer-social w3_agile_social single_page_w3ls">
                 <li class="share">Chia sẻ trên : </li>
                 <li>
                     <a href="#" class="facebook">
@@ -157,7 +152,7 @@
                         <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
                     </a>
                 </li>
-            </ul>
+            </ul>*@
 
         </div>
         <div class="clearfix"> </div>
@@ -165,18 +160,15 @@
         <div class="responsive_tabs_agileits">
             <div id="horizontalTab">
                 <ul class="resp-tabs-list">
-                    <li>Description</li>
-                    <li>Reviews</li>
-                    <li>Information</li>
+                    <li>Mô tả</li>
+                    <li>Đánh giá</li>
                 </ul>
                 <div class="resp-tabs-container">
                     <!--/tab_one-->
                     <div class="tab1">
-
                         <div class="single_page_agile_its_w3ls">
-                            <h6>Lorem ipsum dolor sit amet</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
-                            <p class="w3ls_para">Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
+                            <h6>@Model.TenSanPham</h6>
+                            <p>@Model.ChiTiet</p>
                         </div>
                     </div>
                     <!--//tab_one-->
@@ -212,14 +204,6 @@
                                 </div>
                             </div>
 
-                        </div>
-                    </div>
-                    <div class="tab3">
-
-                        <div class="single_page_agile_its_w3ls">
-                            <h6>Big Wing Sneakers (Navy)</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
-                            <p class="w3ls_para">Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
                         </div>
                     </div>
                 </div>
@@ -392,3 +376,20 @@
     </div>
 </div>
 <!--//single_page-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $("#btnThemVaoGioHang").click(function(){
+        let idsizesanpham = $("#sltSizeSanPham option:selected").val();
+        $.ajax({
+            url: "/Customer/TaiKhoan/AddToCart",
+            type: "post",
+            data: { "idsizesanpham": idsizesanpham },
+            success: function (data) {
+                alert(data);
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            }
+        });
+    });
+</script>

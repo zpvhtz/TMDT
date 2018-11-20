@@ -174,7 +174,7 @@ CREATE TABLE ViTriQuangcao
 CREATE TABLE GioHang
 (
 	IdTaiKhoan UNIQUEIDENTIFIER NOT NULL, --PK, FK--
-	IdSanPham UNIQUEIDENTIFIER NOT NULL, --PK, FK--
+	IdSizeSanPham UNIQUEIDENTIFIER NOT NULL, --PK, FK--
 	SoLuong INT,
 	TinhTrang NVARCHAR(20)
 )
@@ -259,8 +259,8 @@ ALTER TABLE QuangCao
 ALTER TABLE GioHang
 	ADD
 		CONSTRAINT FK_GioHang_IdTaiKhoan FOREIGN KEY (IdTaiKhoan) REFERENCES TaiKhoan(Id),
-		CONSTRAINT FK_GioHang_IdSanPham FOREIGN KEY (IdSanPham) REFERENCES SanPham(Id),
-		CONSTRAINT PK_GioHang_IdTaiKhoan_IdSanPham PRIMARY KEY (IdTaiKhoan, IdSanPham)
+		CONSTRAINT FK_GioHang_IdSizeSanPham FOREIGN KEY (IdSizeSanPham) REFERENCES SizeSanPham(Id),
+		CONSTRAINT PK_GioHang_IdTaiKhoan_IdSizeSanPham PRIMARY KEY (IdTaiKhoan, IdSizeSanPham)
 
 ALTER TABLE GoiQuangCao
 	ADD

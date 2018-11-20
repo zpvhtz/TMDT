@@ -9,7 +9,6 @@ namespace Models.Database
         {
             ChiTietPhieuDat = new HashSet<ChiTietPhieuDat>();
             ChiTietPhieuGiao = new HashSet<ChiTietPhieuGiao>();
-            GioHang = new HashSet<GioHang>();
             SizeSanPham = new HashSet<SizeSanPham>();
         }
 
@@ -30,7 +29,6 @@ namespace Models.Database
         public TaiKhoan IdTaiKhoanNavigation { get; set; }
         public ICollection<ChiTietPhieuDat> ChiTietPhieuDat { get; set; }
         public ICollection<ChiTietPhieuGiao> ChiTietPhieuGiao { get; set; }
-        public ICollection<GioHang> GioHang { get; set; }
         public ICollection<SizeSanPham> SizeSanPham { get; set; }
     }
 }

@@ -80,7 +80,7 @@ namespace AspNetCore
             WriteLiteral("            </div>\r\n            <div class=\"col-lg-6\"></div>\r\n            <div class=\"col-lg-3\">\r\n                ");
             EndContext();
             BeginContext(1561, 577, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16f23ae5d4be491999140004e143093e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "854daef4126642b6b62d270214bb3ca2", async() => {
                 BeginContext(1629, 502, true);
                 WriteLiteral(@"
                     <div class=""input-group custom-search-form"">
@@ -126,7 +126,7 @@ namespace AspNetCore
                     <th>");
             EndContext();
             BeginContext(2450, 168, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2e998ef7e0814eeda218512fe8f5a849", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd8164e4f7b74843b4b67e3011fc5c6e", async() => {
                 BeginContext(2606, 8, true);
                 WriteLiteral("Tên hãng");
                 EndContext();
@@ -216,7 +216,7 @@ namespace AspNetCore
             WriteLiteral("                                    <button class=\"btn btn-danger btnSua\" type=\"button\" data-toggle=\"modal\" data-target=\"#suaModal\">Sửa</button>\r\n                                    ");
             EndContext();
             BeginContext(3957, 117, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49b023f4fc3141459affcd601fbd55b0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1f60a9a884864aebae942957b0dd7f74", async() => {
                 BeginContext(4066, 4, true);
                 WriteLiteral("Khoá");
                 EndContext();
@@ -263,7 +263,7 @@ namespace AspNetCore
             WriteLiteral("                                    <button class=\"btn btn-danger btnSua\" type=\"button\" data-toggle=\"modal\" data-target=\"#suaModal\">Sửa</button>\r\n                                    ");
             EndContext();
             BeginContext(4348, 122, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad8f592e93764fdc930d9c6ff4491eb5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cda21688a36643b7ab08f749cc929679", async() => {
                 BeginContext(4459, 7, true);
                 WriteLiteral("Mở khoá");
                 EndContext();
@@ -321,7 +321,7 @@ namespace AspNetCore
             WriteLiteral("\r\n    </div>\r\n</div>\r\n<div class=\"modal fade\" id=\"themModal\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n        <!-- Modal content-->\r\n        ");
             EndContext();
             BeginContext(7741, 1215, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e17333a98e914908814a33d5bd9c9cb8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cd33adf852cb43158071dbb9a58994ca", async() => {
                 BeginContext(7819, 312, true);
                 WriteLiteral(@"
             <div class=""modal-content"">
@@ -369,7 +369,7 @@ namespace AspNetCore
             WriteLiteral("\r\n    </div>\r\n</div>\r\n<div class=\"modal fade\" id=\"suaModal\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n        <!-- Modal content-->\r\n        ");
             EndContext();
             BeginContext(9103, 1157, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2dd464ffc7714d2fb3a46bc798bf2166", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "406dc9fa76ce4b3f9024e694a6cf071e", async() => {
                 BeginContext(9180, 1073, true);
                 WriteLiteral(@"
             <div class=""modal-content"">

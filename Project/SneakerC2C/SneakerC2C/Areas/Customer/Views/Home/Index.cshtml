@@ -18,7 +18,6 @@
     </div>
     <!-- The Modal -->
 </div>
-
 <!-- //banner -->
 <div class="banner_bottom_agile_info">
     <div class="container">
@@ -65,29 +64,37 @@
                         <div class="col-md-3 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-front">
-                                    <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-back">
+                                    <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-front img-index">
+                                    <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-back img-index">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="single.html" class="link-product-add-cart">Chi Tiết</a>
                                         </div>
                                     </div>
                                     <!--<span class="product-new-top">New</span>-->
-
                                 </div>
                                 <div class="item-info-product ">
-                                    <h4><a href="single.html">@item.TenSanPham</a></h4>
+                                    <h4>
+                                        @if (item.TenSanPham.Length > 20)
+                                        {
+                                            <a href="single.html">@item.TenSanPham.Substring(0, 18)...</a>
+                                        }
+                                        else
+                                        {
+                                            <a href="single.html">@item.TenSanPham</a>
+                                        }
+                                    </h4>
                                     <div class="info-product-price">
                                         @if (item.GiamGia != null && item.GiamGia != 0)
                                         {
                                             double gia = item.Gia * (100 - item.GiamGia) / 100;
 
-                                            <span class="item_price">@gia</span>
-                                            <del>@item.Gia</del>
+                                            <span class="item_price">@gia.ToString("#,###") đ</span>
+                                            <del>@item.Gia.ToString("#,###") đ</del>
                                         }
                                         else
                                         {
-                                            <span class="item_price">@item.Gia</span>
+                                            <span class="item_price">@item.Gia.ToString("#,###") đ</span>
                                         }
                                     </div>
                                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
@@ -121,8 +128,8 @@
                         <div class="col-md-3 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-front">
-                                    <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-back">
+                                    <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-front img-index">
+                                    <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-back img-index">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="single.html" class="link-product-add-cart">Chi Tiết</a>
@@ -132,18 +139,27 @@
 
                                 </div>
                                 <div class="item-info-product ">
-                                    <h4><a href="single.html">@item.TenSanPham</a></h4>
+                                    <h4>
+                                        @if (item.TenSanPham.Length > 20)
+                                        {
+                                            <a href="single.html">@item.TenSanPham.Substring(0, 18)...</a>
+                                        }
+                                        else
+                                        {
+                                            <a href="single.html">@item.TenSanPham</a>
+                                        }
+                                    </h4>
                                     <div class="info-product-price">
                                         @if (item.GiamGia != null && item.GiamGia != 0)
                                         {
                                             double gia = item.Gia * (100 - item.GiamGia) / 100;
 
-                                            <span class="item_price">@gia</span>
-                                            <del>@item.Gia</del>
+                                            <span class="item_price">@gia.ToString("#,###") đ</span>
+                                            <del>@item.Gia.ToString("#,###") đ</del>
                                         }
                                         else
                                         {
-                                            <span class="item_price">@item.Gia</span>
+                                            <span class="item_price">@item.Gia.ToString("#,###") đ</span>
                                         }
                                     </div>
                                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
@@ -493,8 +509,8 @@
                         <div class="col-md-3 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-front">
-                                    <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-back">
+                                    <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-front img-index">
+                                    <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-back img-index">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="single.html" class="link-product-add-cart">Chi Tiết</a>
@@ -504,18 +520,27 @@
 
                                 </div>
                                 <div class="item-info-product ">
-                                    <h4><a href="single.html">@item.TenSanPham</a></h4>
+                                    <h4>
+                                        @if (item.TenSanPham.Length > 20)
+                                        {
+                                            <a href="single.html">@item.TenSanPham.Substring(0, 18)...</a>
+                                        }
+                                        else
+                                        {
+                                            <a href="single.html">@item.TenSanPham</a>
+                                        }
+                                    </h4>
                                     <div class="info-product-price">
                                         @if (item.GiamGia != null && item.GiamGia != 0)
                                         {
                                             double gia = item.Gia * (100 - item.GiamGia) / 100;
 
-                                            <span class="item_price">@gia</span>
-                                            <del>@item.Gia</del>
+                                            <span class="item_price">@gia.ToString("#,###") đ</span>
+                                            <del>@item.Gia.ToString("#,###") đ</del>
                                         }
                                         else
                                         {
-                                            <span class="item_price">@item.Gia</span>
+                                            <span class="item_price">@item.Gia.ToString("#,###") đ</span>
                                         }
                                     </div>
                                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">

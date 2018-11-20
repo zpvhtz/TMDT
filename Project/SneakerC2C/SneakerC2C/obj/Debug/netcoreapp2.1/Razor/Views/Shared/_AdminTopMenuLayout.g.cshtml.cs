@@ -269,7 +269,7 @@ using SneakerC2C.Models;
                 ");
             EndContext();
             BeginContext(8531, 122, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "416da6507a074020b7573f817e94b508", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e0bf1cd87b3343c289a884d96893bb84", async() => {
                 BeginContext(8607, 42, true);
                 WriteLiteral("<i class=\"fas fa-sign-out-alt\"></i> Logout");
                 EndContext();

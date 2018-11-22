@@ -1448,8 +1448,7 @@ position:relative;
 	width: 80%;
 }
 .product-men {
-    margin: top;
-    margin-top: 2em;
+    margin-top: 45px;
 }
 button.w3view-cart {
     outline: none;
@@ -1472,11 +1471,10 @@ button.w3view-cart {
 }
 .item-info-product {
     text-align: center;
-    margin: 20px 0 0;
+    margin: 10px 0 0;
 }
 .men-thumb-item::before {
     width: 100%;
-    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -1484,7 +1482,7 @@ button.w3view-cart {
     opacity: 0;
     z-index: 9;
     visibility: hidden;
-    transition: all 0.5s ease-out 0s;
+	transition: all 0.5s ease-out 0s;
 }
 .men-thumb-item .pro-image-front {
     opacity: 1;
@@ -3152,7 +3150,7 @@ font-weight: 300;
     color: #999;
 }
 .single-pro {
-    margin-top: 30px;
+    margin-top: 5px;
 }
 .pagination {
     margin: 34px 15px 0 0;

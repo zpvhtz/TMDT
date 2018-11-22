@@ -175,7 +175,7 @@ namespace Models.BusinessLogicLayer
         public TaiKhoan CheckTaiKhoan(string tendangnhap, string matkhau, string loainguoidung)
         {
             string pass = CreateMD5(matkhau);
-            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap &&
+          TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap &&
                                                        tk.MatKhau == pass &&
                                                        tk.IdLoaiNguoiDungNavigation.TenLoaiNguoiDung == loainguoidung)
                                                 .Include(tk => tk.IdLoaiNguoiDungNavigation)

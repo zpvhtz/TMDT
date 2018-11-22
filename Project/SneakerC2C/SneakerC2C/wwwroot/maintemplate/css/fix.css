@@ -1,159 +1,256 @@
 .logo_size_seller {
-    width: 100%;
+  width: 100%;
 }
 .Banhang-content {
-    text-align: center;
-    margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 .Banhang-content h3 {
-    color: #fc636b;
-    padding: 5px 0;
+  color: #fc636b;
+  padding: 5px 0;
 }
 .Banhang-img {
-    width: 350px;
-    margin: 0 auto;
+  width: 350px;
+  margin: 0 auto;
 }
 /*Phân trang*/
 .phantrang {
-    list-style: none;
-    padding: 0;
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .phantrang li {
-    display: inline;
-    text-align: center;
-  }
-  .phantrang a {
-    float: left;
-    display: block;
-    font-size: 14px;
-    text-decoration: none;
-    padding: 5px 12px;
-    color: #fff;
-    margin-left: -1px;
-    border: 1px solid transparent;
-    line-height: 1.5;
-  }
-  .phantrang a.active {
-    cursor: default;
-  }
-  .phantrang a:active {
-    outline: none;
-  }
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phantrang li {
+  display: inline;
+  text-align: center;
+}
+.phantrang a {
+  float: left;
+  display: block;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 5px 12px;
+  color: #fff;
+  margin-left: -1px;
+  border: 1px solid transparent;
+  line-height: 1.5;
+}
+.phantrang a.active {
+  cursor: default;
+}
+.phantrang a:active {
+  outline: none;
+}
 
-  .canhgiua {
-      width: 100%;
-      margin: 0 auto;
-  }
-  .modal-1 li:first-child a {
-    -moz-border-radius: 6px 0 0 6px;
-    -webkit-border-radius: 6px;
-    border-radius: 6px 0 0 6px;
-  }
-  .modal-1 li:last-child a {
-    -moz-border-radius: 0 6px 6px 0;
-    -webkit-border-radius: 0;
-    border-radius: 0 6px 6px 0;
-  }
-  .modal-1 a {
-    border-color: #ddd;
-    color:#2fdab8;
-    background: #fff;
-  }
-  .modal-1 a:hover {
-    background: #eee;
-  }
-  .modal-1 a.active, .modal-1 a:active {
-    border-color: #2fdab8;
-    background: #2fdab8;
-    color: #fff;
-  }
-
-  .bg_header_knb {
+.canhgiua {
     width: 100%;
-    height: 50px;
-    background-color: #000;
-  }
-  .logo_header_knb {
-    width: 40%;
-    float: left;
-  }
-  .logo_header_knb h4 {
-    color: #fff;
-    line-height: 50px;
-  }
-  .icon_header_knb {
-    width: 5%;
-    float: left;
-    color: #fff;
-    font-size: 35px;
-    line-height: 50px;
-    text-align: center;
-  }
-  .user_merchant {
-    width: 55%;
-    float: right;
-  }
-  .user_merchant a {
-    text-decoration: none;
-    color: #fff;
-  }
-  .user_merchant ul {
-    list-style: none;
-    float: right;
-    color: #fff;
-    line-height: 50px;
-  }
-  .user_merchant ul li {
-    float: left;
-  }
-  .user_merchant ul li i {
-    padding-right: 5px;
-  }
-  .gach_khoangcach {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-  .menu_knb {
-    text-align: center;
-    margin-top: 50px;
-    width: 80%;
-  }
-  .menu_knb h2 {
-    padding-bottom: 20px;
-  }
-  .menu_knb p {
-    color: #4e4e4e;
-    font-size: 20px;
-  } 
-  .menu_knb_part {
-    width: 20%;
-    float: left;
-  }
-  .menu_knb_part h4 {
-    color: #4e4e4e;
-  }
-  .menu_knb_part a {
-    text-decoration: none;
-  }
-  .menu_knb_icon {
-    width: 139px;
-    height: 139px;
-    background-color: #2fdab8;
-    border-radius: 50%;
-    margin: 35px 50px 20px 35px;
-  }
-  .menu_knb_icon i {
-    font-size: 59px;
-    color: #fff;
-    padding-top: 40px;
-  }
-  .bottom_knb {
-    margin-top: 100px;
-  }
-  .bottom_knb a {
-    color: #fc636b;
-  }
+    margin: 0 auto;
+}
+.modal-1 li:first-child a {
+  -moz-border-radius: 6px 0 0 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px 0 0 6px;
+}
+.modal-1 li:last-child a {
+  -moz-border-radius: 0 6px 6px 0;
+  -webkit-border-radius: 0;
+  border-radius: 0 6px 6px 0;
+}
+.modal-1 a {
+  border-color: #ddd;
+  color:#2fdab8;
+  background: #fff;
+}
+.modal-1 a:hover {
+  background: #eee;
+}
+.modal-1 a.active, .modal-1 a:active {
+  border-color: #2fdab8;
+  background: #2fdab8;
+  color: #fff;
+}
+
+.bg_header_knb {
+  width: 100%;
+  height: 50px;
+  background-color: #000;
+}
+.logo_header_knb {
+  width: 40%;
+  float: left;
+}
+.logo_header_knb h4 {
+  color: #fff;
+  line-height: 50px;
+  float: left;
+}
+.logo_header_knb i {
+  float: left;
+  line-height: 50px;
+  font-size: 18px;
+  color: #fff;
+  padding: 0 5px;
+}
+.logo_header_knb span {
+  color: #999999;
+}
+.icon_header_knb {
+  width: 5%;
+  float: left;
+  color: #fff;
+  font-size: 35px;
+  line-height: 50px;
+  text-align: center;
+}
+.user_merchant {
+  width: 55%;
+  float: right;
+}
+.user_merchant a {
+  text-decoration: none;
+  color: #fff;
+}
+.user_merchant ul {
+  list-style: none;
+  float: right;
+  color: #fff;
+  line-height: 50px;
+}
+.user_merchant ul li {
+  float: left;
+}
+.user_merchant ul li i {
+  padding-right: 5px;
+}
+.gach_khoangcach {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.menu_knb {
+  text-align: center;
+  margin-top: 50px;
+  width: 80%;
+}
+.menu_knb h2 {
+  padding-bottom: 20px;
+}
+.menu_knb p {
+  color: #4e4e4e;
+  font-size: 20px;
+} 
+.menu_knb_part {
+  width: 16.66666667%;
+  float: left;
+}
+.menu_knb_part h4 {
+  color: #4e4e4e;
+}
+.menu_knb_part a {
+  text-decoration: none;
+}
+.menu_knb_icon {
+  width: 124px;
+  height: 124px;
+  background-color: #2fdab8;
+  border-radius: 50%;
+  margin: 50px 25px 30px 25px;
+}
+.menu_knb_icon i {
+  font-size: 44px;
+  color: #fff;
+  padding-top: 40px;
+}
+.bottom_knb {
+  margin-top: 100px;
+}
+.bottom_knb a {
+  color: #fc636b;
+}
+
+.menu-qlsp {
+  padding-top: 1em;
+}
+.button-sua-xoa {
+  text-align: center;
+  margin: 1em auto;
+  width: 77%;
+}
+.button-sua {
+  font-size: 16px;
+  color: #fff;
+  background: #2fdab8;
+  text-decoration: none;
+  border: none;
+  border-radius: 0;
+  width: 45%;
+  padding: 5px 0;
+  outline: none;
+  font-weight: 600;
+}
+.button-xoa {
+  font-size: 16px;
+  color: #fff;
+  background: #fc636b;
+  text-decoration: none;
+  border: none;
+  border-radius: 0;
+  width: 45%;
+  padding: 5px 0;
+  outline: none;
+  font-weight: 600;
+}
+.hethang {
+  background-color: rgba(1, 1, 1, 0.5);
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  top: 40%;
+}
+.hethang h4 {
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+}
+
+.anhsanpham-3 {
+  width: 70%;
+  height: 187px;
+  margin: 0 auto;
+  background-color: #fff;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: contain;
+}
+.anhsanpham-4 {
+  width: 70%;
+  height: 200px;
+  margin: 0 auto;
+  background-color: #fff;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: contain;
+}
+.tieude_sanpham {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 36px;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.them_sanpham {
+  width: 100%;
+  height: 393.88px;
+  box-sizing: border-box;
+  display: flex
+}
+.icon_themsp {
+  text-align: center;
+  margin: auto;
+}

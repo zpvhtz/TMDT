@@ -23,6 +23,7 @@ namespace Models.Database
         public string Hinh { get; set; }
         public string ChiTiet { get; set; }
         public double? GiamGia { get; set; }
+        public DateTime? NgayDang { get; set; }
         public string TinhTrang { get; set; }
 
         public HangSanPham IdHangSanPhamNavigation { get; set; }

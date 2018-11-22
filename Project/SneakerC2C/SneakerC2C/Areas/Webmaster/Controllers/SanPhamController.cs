@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Models.BusinessLogicLayer;
 using Models.Database;
 
 namespace SneakerC2C.Areas.Webmaster.Controllers
@@ -52,6 +53,8 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             //                                .Include(h => h.IdHangSanPhamNavigation)
             //                                 .ToList();
             List<HangSanPham> hang = ctx.HangSanPham.ToList();
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangHienTai = pageNumber;
             ViewBag.Hang = hang;
             ViewBag.NameSort = "";
             ViewBag.GiaSort = "Gia";
@@ -68,79 +71,124 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             return PartialView("pSizeSanPham", listsize);
         }
 
-        public IActionResult Search(string search)
+        public IActionResult Sort(string sortorder, int? pagenumber)
         {
-            List<SanPham> sp = ctx.SanPham.Where(s => s.MaSanPham.Contains(search) || s.TenSanPham.Contains(search) || s.IdTaiKhoanNavigation.TenShop.Contains(search) || s.Mau.Contains(search) || s.IdHangSanPhamNavigation.TenHang.Contains(search) || s.PhanLoai.Contains(search) || s.ChiTiet.Contains(search) || s.TinhTrang.Contains(search)).Include(s => s.IdTaiKhoanNavigation)
-                                            .Include(s => s.IdHangSanPhamNavigation)
-                                            .ToList();
-            return View("Index", sp);
+            pageNumber = pagenumber ?? 1;
+            SanPhamBUS sanphambus = new SanPhamBUS();
+            List<SanPham> list = sanphambus.Sort(sortorder, pageSize, pageNumber);
+            List<SanPham> tong = sanphambus.Sort(sortorder);
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangThai = "sort";
+            ViewBag.Sort = sortorder;
+            return View("Index", list);
         }
 
-
-        public IActionResult Sort(string sortorder,string currentFilter, string search, int? pageIndex)
+        public IActionResult Search(string search, int? pagenumber)
         {
-            List<SanPham> tong = GetSanPhams();
-            CurrentSort = sortorder;
-            ViewBag.NameSort = String.IsNullOrEmpty(sortorder) ? "name_desc" : "";
-            ViewBag.GiaSort = sortorder == "Gia" ? "gia_desc" : "Gia";
-            ViewBag.ShopSort = sortorder == "Shop" ? "shop_desc" : "Shop";
-            ViewBag.CurrentFilter = search;
-            if (search != null)
-            {
-                pageIndex = 1;
-            }
-            else
-            {
-                search = currentFilter;
-            }
-
-            List<SanPham> sp = new List<SanPham>();
-            List<SanPham> spid = ctx.SanPham.Include(s => s.IdTaiKhoanNavigation)
-                                    .Include(s => s.IdHangSanPhamNavigation)
-                                    //.Skip(( - 1) * pagesize)
-                                    // .Take(pageIndex)
-                                    .ToList();
-
-            if (!String.IsNullOrEmpty(search))
-            {
-                spid=spid.Where(s => s.MaSanPham.Contains(search) || s.TenSanPham.Contains(search) || s.IdTaiKhoanNavigation.TenShop.Contains(search) || s.Mau.Contains(search) || s.IdHangSanPhamNavigation.TenHang.Contains(search) || s.PhanLoai.Contains(search) || s.ChiTiet.Contains(search) || s.TinhTrang.Contains(search))
-                                            .ToList();
-            }
-            switch (sortorder)
-            {
-                case "name_desc":
-                    spid = spid.OrderByDescending(s => s.TenSanPham).ToList();
-                    //list = ctx.SanPham.OrderByDescending(l => l.TenSanPham)
-                                       //.Skip((pagenumber - 1) * pagesize)
-                                       //// .Take(pagesize)
-                                       //.ToList();
-                    break;
-                case "Shop":
-                    spid = spid.OrderBy(s => s.IdTaiKhoanNavigation.TenShop).ToList();
-                    break;
-                case "shop_desc":
-                    spid = spid.OrderByDescending(s => s.IdTaiKhoanNavigation.TenShop).ToList();
-                    break;
-                case "Gia":
-                    spid = spid.OrderBy(s => s.Gia).ToList();
-                                      //.Include(l => l.IdTaiKhoanNavigation)
-                                      //.Include(l => l.IdHangSanPhamNavigation)
-                                      ////.Skip((pagenumber - 1) * pagesize)
-                                      ////.Take(pagesize)
-                                      //.ToList();
-                    break;
-                case "gia_desc":
-                    spid = spid.OrderByDescending(s => s.Gia).ToList();
-                    break;
-                default:
-                    spid = spid.OrderBy(s => s.TenSanPham).ToList();
-                    break;
-            }
-            //ViewBag.SP = spid;
-            ViewBag.TrangHienTai = pageIndex;
-            //spid = PaginatedList<SanPham>.Create(spid, pageIndex ?? 1, pageSize) ;
-            return View("Index", spid );
+            pageNumber = pagenumber ?? 1;
+            SanPhamBUS sanphambus = new SanPhamBUS();
+            List<SanPham> list = sanphambus.Search(search, pageSize, pageNumber);
+            List<SanPham> tong = sanphambus.Search(search, pageSize);
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangThai = "search";
+            ViewBag.Search = search;
+            return View("Index", list);
         }
+
+        public IActionResult SearchAndSort(string search, string sortorder, int? pagenumber)
+        {
+            pageNumber = pagenumber ?? 1;
+            SanPhamBUS sanphambus = new SanPhamBUS();
+            List<SanPham> list = sanphambus.SearchAndSort(search, sortorder, pageSize, pageNumber);
+            List<SanPham> tong = sanphambus.SearchAndSort(search, sortorder, pageSize);
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangThai = "searchandsort";
+            ViewBag.Search = search;
+            ViewBag.Sort = sortorder;
+            return View("Index", list);
+        }
+
+        public int TongTrang(List<SanPham> list)
+        {
+            return ((list.Count / pageSize) + 1);
+        }
+
+        //public IActionResult Search(string search)
+        //{
+        //    List<SanPham> sp = ctx.SanPham.Where(s => s.MaSanPham.Contains(search) || s.TenSanPham.Contains(search) || s.IdTaiKhoanNavigation.TenShop.Contains(search) || s.Mau.Contains(search) || s.IdHangSanPhamNavigation.TenHang.Contains(search) || s.PhanLoai.Contains(search) || s.ChiTiet.Contains(search) || s.TinhTrang.Contains(search)).Include(s => s.IdTaiKhoanNavigation)
+        //                                    .Include(s => s.IdHangSanPhamNavigation)
+        //                                    .ToList();
+        //    return View("Index", sp);
+        //}
+
+
+        //public IActionResult Sort(string sortorder,string currentFilter, string search, int? pageIndex)
+        //{
+        //    List<SanPham> tong = GetSanPhams();
+        //    CurrentSort = sortorder;
+        //    ViewBag.NameSort = String.IsNullOrEmpty(sortorder) ? "name_desc" : "";
+        //    ViewBag.GiaSort = sortorder == "Gia" ? "gia_desc" : "Gia";
+        //    ViewBag.ShopSort = sortorder == "Shop" ? "shop_desc" : "Shop";
+        //    ViewBag.CurrentFilter = search;
+        //    if (search != null)
+        //    {
+        //        pageIndex = 1;
+        //    }
+        //    else
+        //    {
+        //        search = currentFilter;
+        //    }
+
+        //    List<SanPham> sp = new List<SanPham>();
+        //    List<SanPham> spid = ctx.SanPham.Include(s => s.IdTaiKhoanNavigation)
+        //                            .Include(s => s.IdHangSanPhamNavigation)
+        //                            //.Skip(( - 1) * pagesize)
+        //                            // .Take(pageIndex)
+        //                            .ToList();
+
+        //    if (!String.IsNullOrEmpty(search))
+        //    {
+        //        spid=spid.Where(s => s.MaSanPham.Contains(search) || s.TenSanPham.Contains(search) || s.IdTaiKhoanNavigation.TenShop.Contains(search) || s.Mau.Contains(search) || s.IdHangSanPhamNavigation.TenHang.Contains(search) || s.PhanLoai.Contains(search) || s.ChiTiet.Contains(search) || s.TinhTrang.Contains(search))
+        //                                    .ToList();
+        //    }
+        //    switch (sortorder)
+        //    {
+        //        case "name_desc":
+        //            spid = spid.OrderByDescending(s => s.TenSanPham).ToList();
+        //            //list = ctx.SanPham.OrderByDescending(l => l.TenSanPham)
+        //                               //.Skip((pagenumber - 1) * pagesize)
+        //                               //// .Take(pagesize)
+        //                               //.ToList();
+        //            break;
+        //        case "Shop":
+        //            spid = spid.OrderBy(s => s.IdTaiKhoanNavigation.TenShop).ToList();
+        //            break;
+        //        case "shop_desc":
+        //            spid = spid.OrderByDescending(s => s.IdTaiKhoanNavigation.TenShop).ToList();
+        //            break;
+        //        case "Gia":
+        //            spid = spid.OrderBy(s => s.Gia).ToList();
+        //                              //.Include(l => l.IdTaiKhoanNavigation)
+        //                              //.Include(l => l.IdHangSanPhamNavigation)
+        //                              ////.Skip((pagenumber - 1) * pagesize)
+        //                              ////.Take(pagesize)
+        //                              //.ToList();
+        //            break;
+        //        case "gia_desc":
+        //            spid = spid.OrderByDescending(s => s.Gia).ToList();
+        //            break;
+        //        default:
+        //            spid = spid.OrderBy(s => s.TenSanPham).ToList();
+        //            break;
+        //    }
+        //    //ViewBag.SP = spid;
+        //    ViewBag.TrangHienTai = pageIndex;
+        //    //spid = PaginatedList<SanPham>.Create(spid, pageIndex ?? 1, pageSize) ;
+        //    return View("Index", spid );
+        //}
 
         //public IActionResult Sort(string sortorder/*, int pagesize, int pagenumber*/)
         //{

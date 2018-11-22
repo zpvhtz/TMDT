@@ -1,13 +1,14 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "11946652b6074253dcd69ad0bbcce3488ded695b"
+    "signature": "0885986579e4bc40db18adf98253139c83b134d1"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.1": {
       "Models/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Razor.Tools": "1.1.0-preview4-final",
           "Microsoft.NETCore.App": "2.1.6",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.5",
           "PagedList": "1.17.0",
@@ -15,6 +16,20 @@
         },
         "runtime": {
           "Models.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Razor.Tools/1.1.0-preview4-final": {
+        "dependencies": {
+          "Microsoft.DotNet.Cli.Utils": "1.0.0-preview2-003121",
+          "Microsoft.DotNet.ProjectModel.Loader": "1.0.0-preview2-003121",
+          "Microsoft.Extensions.PlatformAbstractions": "1.0.0",
+          "Microsoft.NETCore.App": "2.1.6"
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/dotnet-razor-tooling.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.21115"
+          }
         }
       },
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
@@ -37,6 +52,55 @@
           "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.dll": {
             "assemblyVersion": "2.8.0.0",
             "fileVersion": "2.8.0.62830"
+          }
+        }
+      },
+      "Microsoft.DotNet.Cli.Utils/1.0.0-preview2-003121": {
+        "dependencies": {
+          "Microsoft.DotNet.ProjectModel": "1.0.0-rc3-003121",
+          "NuGet.Frameworks": "4.7.0",
+          "NuGet.Packaging": "3.5.0-beta2-1484",
+          "NuGet.ProjectModel": "3.5.0-beta2-1484",
+          "NuGet.Versioning": "3.5.0-beta2-1484",
+          "System.Diagnostics.Process": "4.1.0"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Microsoft.DotNet.Cli.Utils.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Microsoft.DotNet.ProjectModel/1.0.0-rc3-003121": {
+        "dependencies": {
+          "NuGet.Packaging": "3.5.0-beta2-1484",
+          "NuGet.RuntimeModel": "3.5.0-beta2-1484",
+          "System.Runtime.Loader": "4.0.0"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Microsoft.DotNet.ProjectModel.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Microsoft.DotNet.ProjectModel.Loader/1.0.0-preview2-003121": {
+        "dependencies": {
+          "Microsoft.DotNet.ProjectModel": "1.0.0-rc3-003121",
+          "System.Runtime.Loader": "4.0.0"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Microsoft.DotNet.ProjectModel.Loader.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Extensions.PlatformAbstractions/1.0.0": {
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.20622"
           }
         }
       },
@@ -148,9 +212,55 @@
           }
         }
       },
+      "Microsoft.Win32.Primitives/4.0.1": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.1.2",
+          "Microsoft.NETCore.Targets": "2.0.0"
+        }
+      },
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.2"
+        }
+      },
+      "NuGet.Common/3.5.0-beta2-1484": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "System.Diagnostics.Process": "4.1.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/NuGet.Common.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.1484"
+          }
+        }
+      },
+      "NuGet.Configuration/3.5.0-beta2-1484": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "NuGet.Common": "3.5.0-beta2-1484"
+        },
+        "runtime": {
+          "lib/netstandard1.3/NuGet.Configuration.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.1484"
+          }
+        }
+      },
+      "NuGet.DependencyResolver.Core/3.5.0-beta2-1484": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "NuGet.Frameworks": "4.7.0",
+          "NuGet.LibraryModel": "3.5.0-beta2-1484",
+          "NuGet.Protocol.Core.v3": "3.5.0-beta2-1484",
+          "NuGet.Repositories": "3.5.0-beta2-1484",
+          "NuGet.RuntimeModel": "3.5.0-beta2-1484"
+        },
+        "runtime": {
+          "lib/netstandard1.3/NuGet.DependencyResolver.Core.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.1484"
+          }
         }
       },
       "NuGet.Frameworks/4.7.0": {
@@ -161,6 +271,134 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {
             "assemblyVersion": "4.7.0.5",
             "fileVersion": "4.7.0.5148"
+          }
+        }
+      },
+      "NuGet.LibraryModel/3.5.0-beta2-1484": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "NuGet.Frameworks": "4.7.0",
+          "NuGet.Versioning": "3.5.0-beta2-1484"
+        },
+        "runtime": {
+          "lib/netstandard1.3/NuGet.LibraryModel.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.1484"
+          }
+        }
+      },
+      "NuGet.Packaging/3.5.0-beta2-1484": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "NuGet.Common": "3.5.0-beta2-1484",
+          "NuGet.Packaging.Core": "3.5.0-beta2-1484"
+        },
+        "runtime": {
+          "lib/netstandard1.3/NuGet.Packaging.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.1484"
+          }
+        }
+      },
+      "NuGet.Packaging.Core/3.5.0-beta2-1484": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "NuGet.Common": "3.5.0-beta2-1484",
+          "NuGet.Packaging.Core.Types": "3.5.0-beta2-1484"
+        },
+        "runtime": {
+          "lib/netstandard1.3/NuGet.Packaging.Core.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.1484"
+          }
+        }
+      },
+      "NuGet.Packaging.Core.Types/3.5.0-beta2-1484": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "NuGet.Frameworks": "4.7.0",
+          "NuGet.Versioning": "3.5.0-beta2-1484"
+        },
+        "runtime": {
+          "lib/netstandard1.3/NuGet.Packaging.Core.Types.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.1484"
+          }
+        }
+      },
+      "NuGet.ProjectModel/3.5.0-beta2-1484": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "NuGet.DependencyResolver.Core": "3.5.0-beta2-1484"
+        },
+        "runtime": {
+          "lib/netstandard1.3/NuGet.ProjectModel.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.1484"
+          }
+        }
+      },
+      "NuGet.Protocol.Core.Types/3.5.0-beta2-1484": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "NuGet.Common": "3.5.0-beta2-1484",
+          "NuGet.Configuration": "3.5.0-beta2-1484",
+          "NuGet.Packaging": "3.5.0-beta2-1484"
+        },
+        "runtime": {
+          "lib/netstandard1.3/NuGet.Protocol.Core.Types.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.1484"
+          }
+        }
+      },
+      "NuGet.Protocol.Core.v3/3.5.0-beta2-1484": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "NuGet.Common": "3.5.0-beta2-1484",
+          "NuGet.Packaging": "3.5.0-beta2-1484",
+          "NuGet.Protocol.Core.Types": "3.5.0-beta2-1484"
+        },
+        "runtime": {
+          "lib/netstandard1.3/NuGet.Protocol.Core.v3.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.1484"
+          }
+        }
+      },
+      "NuGet.Repositories/3.5.0-beta2-1484": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "NuGet.Packaging": "3.5.0-beta2-1484"
+        },
+        "runtime": {
+          "lib/netstandard1.3/NuGet.Repositories.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.1484"
+          }
+        }
+      },
+      "NuGet.RuntimeModel/3.5.0-beta2-1484": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "NuGet.Frameworks": "4.7.0",
+          "NuGet.Versioning": "3.5.0-beta2-1484"
+        },
+        "runtime": {
+          "lib/netstandard1.3/NuGet.RuntimeModel.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.1484"
+          }
+        }
+      },
+      "NuGet.Versioning/3.5.0-beta2-1484": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.0/NuGet.Versioning.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.1484"
           }
         }
       },
@@ -243,7 +481,30 @@
           }
         }
       },
-      "System.Linq.Parallel/4.3.0": {}
+      "System.Diagnostics.Process/4.1.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.1.2",
+          "Microsoft.Win32.Primitives": "4.0.1",
+          "System.Threading.ThreadPool": "4.0.10"
+        },
+        "runtimeTargets": {
+          "runtime/linux/lib/_._": {
+            "rid": "linux",
+            "assetType": "runtime"
+          },
+          "runtime/osx/lib/_._": {
+            "rid": "osx",
+            "assetType": "runtime"
+          },
+          "runtime/win/lib/_._": {
+            "rid": "win",
+            "assetType": "runtime"
+          }
+        }
+      },
+      "System.Linq.Parallel/4.3.0": {},
+      "System.Runtime.Loader/4.0.0": {},
+      "System.Threading.ThreadPool/4.0.10": {}
     }
   },
   "libraries": {
@@ -251,6 +512,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.AspNetCore.Razor.Tools/1.1.0-preview4-final": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qaLvI1hjtjlkcaXDrltLuh1cXf/dUgOX+6jQBxsLymQiTey/+whU2H8zxJAQT142HVUvtnaCkuBxbU5ujTKwyg==",
+      "path": "microsoft.aspnetcore.razor.tools/1.1.0-preview4-final",
+      "hashPath": "microsoft.aspnetcore.razor.tools.1.1.0-preview4-final.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",
@@ -265,6 +533,34 @@
       "sha512": "sha512-AqCiNju6UZy9Sd8HKzxGbpbZf+P8gWpojfvs9hIRfwstqFMZ6OJXf69EUvqJ5C4rWrcf08F7G8WII74KBEFImQ==",
       "path": "microsoft.codeanalysis.workspaces.common/2.8.0",
       "hashPath": "microsoft.codeanalysis.workspaces.common.2.8.0.nupkg.sha512"
+    },
+    "Microsoft.DotNet.Cli.Utils/1.0.0-preview2-003121": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ciMMz/Nb9IbUtYcdHqHtyiJguSv3JuAhBmyHJaU+ifoNPnZ4m9C5vVqRmahddWoati2tl5rJ4RMRGvhdmd+MUQ==",
+      "path": "microsoft.dotnet.cli.utils/1.0.0-preview2-003121",
+      "hashPath": "microsoft.dotnet.cli.utils.1.0.0-preview2-003121.nupkg.sha512"
+    },
+    "Microsoft.DotNet.ProjectModel/1.0.0-rc3-003121": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pMJPcIyfzngw4EGzwV1Xl0gOxR17F03nWhWhTB3XD+3Y5etwoCXXYBqGNaf2P0QJHvx8f7yFHlNfULorBfmfZg==",
+      "path": "microsoft.dotnet.projectmodel/1.0.0-rc3-003121",
+      "hashPath": "microsoft.dotnet.projectmodel.1.0.0-rc3-003121.nupkg.sha512"
+    },
+    "Microsoft.DotNet.ProjectModel.Loader/1.0.0-preview2-003121": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vdsDgFA53XJtXlb8rG2qkudiHUbHYno1d6eKJvD8LICIOX+3mHkNDHr8U4FT5UkmkqQC1E94AmGpCxHpHHg+9A==",
+      "path": "microsoft.dotnet.projectmodel.loader/1.0.0-preview2-003121",
+      "hashPath": "microsoft.dotnet.projectmodel.loader.1.0.0-preview2-003121.nupkg.sha512"
+    },
+    "Microsoft.Extensions.PlatformAbstractions/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-K9w3Sg4KYIiVIjMfydspewLWXYs6RynJZHPcZRwvcMgS5fbT3qA6gs24xmlo5zBNUInQK8NttVc6R5bH1RJndA==",
+      "path": "microsoft.extensions.platformabstractions/1.0.0",
+      "hashPath": "microsoft.extensions.platformabstractions.1.0.0.nupkg.sha512"
     },
     "Microsoft.NETCore.App/2.1.6": {
       "type": "package",
@@ -364,6 +660,13 @@
       "path": "microsoft.visualstudio.web.codegenerators.mvc/2.1.5",
       "hashPath": "microsoft.visualstudio.web.codegenerators.mvc.2.1.5.nupkg.sha512"
     },
+    "Microsoft.Win32.Primitives/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fQnBHO9DgcmkC9dYSJoBqo6sH1VJwJprUHh8F3hbcRlxiQiBUuTntdk8tUwV490OqC2kQUrinGwZyQHTieuXRA==",
+      "path": "microsoft.win32.primitives/4.0.1",
+      "hashPath": "microsoft.win32.primitives.4.0.1.nupkg.sha512"
+    },
     "NETStandard.Library/2.0.3": {
       "type": "package",
       "serviceable": true,
@@ -371,12 +674,103 @@
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
+    "NuGet.Common/3.5.0-beta2-1484": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7E41grIgXAiXTTvjIwupBS3R+EIZmIm9yPx6RFiEk/j3fSrHfBJP3XnjoYMMmiyHobeehTllhqfiIc3sfPLjpQ==",
+      "path": "nuget.common/3.5.0-beta2-1484",
+      "hashPath": "nuget.common.3.5.0-beta2-1484.nupkg.sha512"
+    },
+    "NuGet.Configuration/3.5.0-beta2-1484": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eVNUJ39x+PzgcrYO8jYx3l9NZZ0wsLo1J0bL6qTr7HgIFbgVffCkHeOENrSL426nzXIF/lCzvHYz7ANorc1QeA==",
+      "path": "nuget.configuration/3.5.0-beta2-1484",
+      "hashPath": "nuget.configuration.3.5.0-beta2-1484.nupkg.sha512"
+    },
+    "NuGet.DependencyResolver.Core/3.5.0-beta2-1484": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WIGqDwjbP2j5gkehhSjLQYkpFTidRtvnR08RQ/sKLHcyTJyuvghy28dIm5+yhzvruWBF/2eIHG2DES63wjOILg==",
+      "path": "nuget.dependencyresolver.core/3.5.0-beta2-1484",
+      "hashPath": "nuget.dependencyresolver.core.3.5.0-beta2-1484.nupkg.sha512"
+    },
     "NuGet.Frameworks/4.7.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-KuqDbPzjOWbUM6gPMbkvdhlQ10roQAoMM7mNZ8hcY/fH+9J4Zc+qT8dLWoNzGyr0OrxQVdZdbSjy/fxwoICgGg==",
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
+    },
+    "NuGet.LibraryModel/3.5.0-beta2-1484": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-seHV5T7fABWry8WJvFK6qgws/vJdrpLFXcl/yNvonrjIeMuFaJtfk3bYJHtnLPnZ9m5O1Dmfk9zII5KBM1wvcA==",
+      "path": "nuget.librarymodel/3.5.0-beta2-1484",
+      "hashPath": "nuget.librarymodel.3.5.0-beta2-1484.nupkg.sha512"
+    },
+    "NuGet.Packaging/3.5.0-beta2-1484": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aj5z76zo4IA10go+Y0AwGxAnmkkKEpqsTKkWF7IuhMT+1PwjcaU1AtSBOkrnUXUjZ5ihFSIiTf57e1eaU5SSDQ==",
+      "path": "nuget.packaging/3.5.0-beta2-1484",
+      "hashPath": "nuget.packaging.3.5.0-beta2-1484.nupkg.sha512"
+    },
+    "NuGet.Packaging.Core/3.5.0-beta2-1484": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ycfzYxD0jGHMjbm4ehD3tPMkruZiO60GyVn/gfHqYBP96Hlz0fAlBvctxrRT2QUoLZHX8JoiDX9D/3rjji/emg==",
+      "path": "nuget.packaging.core/3.5.0-beta2-1484",
+      "hashPath": "nuget.packaging.core.3.5.0-beta2-1484.nupkg.sha512"
+    },
+    "NuGet.Packaging.Core.Types/3.5.0-beta2-1484": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6wN9t8ueeNq/QP6RBBZcJXIam6M/kfDMDDlw0/0uaL8hw5iCubLdOkKzoLV6HP1hDecXtCJRycB8Ns2i6N91+A==",
+      "path": "nuget.packaging.core.types/3.5.0-beta2-1484",
+      "hashPath": "nuget.packaging.core.types.3.5.0-beta2-1484.nupkg.sha512"
+    },
+    "NuGet.ProjectModel/3.5.0-beta2-1484": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nZWAYxRYNV+okWIfQEPCUhEAXKyI0OB0iobxHTAccfxaVihyE7yuJzGGaFu2jyE2b/fGZKOiceiuyiORtDfn6g==",
+      "path": "nuget.projectmodel/3.5.0-beta2-1484",
+      "hashPath": "nuget.projectmodel.3.5.0-beta2-1484.nupkg.sha512"
+    },
+    "NuGet.Protocol.Core.Types/3.5.0-beta2-1484": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fz5c2EFkHXIwuO9/wm74fV1dVN0ME+KERWYT/ofS3xUM3gmKiJKrgcR49mVgRTabo0dPZtrcbLccRNRMhfG4dQ==",
+      "path": "nuget.protocol.core.types/3.5.0-beta2-1484",
+      "hashPath": "nuget.protocol.core.types.3.5.0-beta2-1484.nupkg.sha512"
+    },
+    "NuGet.Protocol.Core.v3/3.5.0-beta2-1484": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wGcsSbvXzfXOUA1m2KPx/Q6ICi2NmA/D44KixM4bu1fJ1EIE0odmzcJnK+9SuQtH5Glku13Fr3bDlq3k4gcZLg==",
+      "path": "nuget.protocol.core.v3/3.5.0-beta2-1484",
+      "hashPath": "nuget.protocol.core.v3.3.5.0-beta2-1484.nupkg.sha512"
+    },
+    "NuGet.Repositories/3.5.0-beta2-1484": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZG210TFPnHNi8X9Pb1NeXM5rlplcg7GVF08hCMSllqqgk2HuCVogad7DEBHKio0qSHLPyxZbjVWMeqMHs4snXg==",
+      "path": "nuget.repositories/3.5.0-beta2-1484",
+      "hashPath": "nuget.repositories.3.5.0-beta2-1484.nupkg.sha512"
+    },
+    "NuGet.RuntimeModel/3.5.0-beta2-1484": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bPsdyfEQgk+ErFrnkkXsJ4eK0WGOwjSF0VhYKZAvqaLP7zLks87IN3ILnx8W/DRPeBcYllw/Tq7xp3OJ/zMijA==",
+      "path": "nuget.runtimemodel/3.5.0-beta2-1484",
+      "hashPath": "nuget.runtimemodel.3.5.0-beta2-1484.nupkg.sha512"
+    },
+    "NuGet.Versioning/3.5.0-beta2-1484": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Wb/qGp5hcq8LngToBKxjFkAjs5COECX4Rb62jcjGLluUp4gfH9LyvZVkMfdYcxZ4AThRU67l7wcXmZBV1dttgA==",
+      "path": "nuget.versioning/3.5.0-beta2-1484",
+      "hashPath": "nuget.versioning.3.5.0-beta2-1484.nupkg.sha512"
     },
     "PagedList/1.17.0": {
       "type": "package",
@@ -434,12 +828,33 @@
       "path": "system.composition.typedparts/1.0.31",
       "hashPath": "system.composition.typedparts.1.0.31.nupkg.sha512"
     },
+    "System.Diagnostics.Process/4.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4dlFhzwmI3hl32P+8c9hnytYtV7Xldhsokm5i7Fvv5PmTS68TQCfsuJrREIyF9N1B8zlsSomp7AVrXLe45kKFQ==",
+      "path": "system.diagnostics.process/4.1.0",
+      "hashPath": "system.diagnostics.process.4.1.0.nupkg.sha512"
+    },
     "System.Linq.Parallel/4.3.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-td7x21K8LalpjTWCzW/nQboQIFbq9i0r+PCyBBCdLWWnm4NBcdN18vpz/G9hCpUaCIfRL+ZxJNVTywlNlB1aLQ==",
       "path": "system.linq.parallel/4.3.0",
       "hashPath": "system.linq.parallel.4.3.0.nupkg.sha512"
+    },
+    "System.Runtime.Loader/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/ol/Y9N+MghH5YPeeFuad34s2mclOPJJ4fs2hnFHr04QfGpUSBlcbpp/P3fggCNrZXwVKQEKgHu7SnA43Y8ang==",
+      "path": "system.runtime.loader/4.0.0",
+      "hashPath": "system.runtime.loader.4.0.0.nupkg.sha512"
+    },
+    "System.Threading.ThreadPool/4.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pA0DnoJ59NlilSdLLwPLKECkTaVF4lbPSM70UqdJQgzJ0r3UHthhlN1T4TmrN6uiXDwPcc2+rI4+5FGtMCdj3g==",
+      "path": "system.threading.threadpool/4.0.10",
+      "hashPath": "system.threading.threadpool.4.0.10.nupkg.sha512"
     }
   }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Models.BusinessLogicLayer;
 using Models.Database;
 
 namespace SneakerC2C.Areas.Webmaster.Controllers
@@ -10,6 +11,8 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
     [Area("Webmaster")]
     public class HangSanPhamController : BaseController
     {
+        const int pageSize = 10;
+        int pageNumber = 1;
         private readonly QLBanGiayContext ctx;
         public HangSanPhamController(QLBanGiayContext context)
         {
@@ -77,6 +80,51 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             List<HangSanPham> hang = ctx.HangSanPham.Where(s => s.MaHang.Contains(search) || s.TenHang.Contains(search))  
                                             .ToList();
             return View("Index", hang);
+        }
+
+        public IActionResult Sort(string sortorder, int? pagenumber)
+        {
+            pageNumber = pagenumber ?? 1;
+            HangSanPhamBUS hangsanphambus = new HangSanPhamBUS();
+            List<HangSanPham> list = hangsanphambus.Sort(sortorder, pageSize, pageNumber);
+            List<HangSanPham> tong = hangsanphambus.Sort(sortorder);
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangThai = "sort";
+            ViewBag.Sort = sortorder;
+            return View("Index", list);
+        }
+
+        public IActionResult Search(string search, int? pagenumber)
+        {
+            pageNumber = pagenumber ?? 1;
+            HangSanPhamBUS hangsanphambus = new HangSanPhamBUS();
+            List<HangSanPham> list = hangsanphambus.Search(search, pageSize, pageNumber);
+            List<HangSanPham> tong = hangsanphambus.Search(search, pageSize);
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangThai = "search";
+            ViewBag.Search = search;
+            return View("Index", list);
+        }
+
+        public IActionResult SearchAndSort(string search, string sortorder, int? pagenumber)
+        {
+            pageNumber = pagenumber ?? 1;
+            HangSanPhamBUS hangsanphambus = new HangSanPhamBUS();
+            List<HangSanPham> list = hangsanphambus.SearchAndSort(search, sortorder, pageSize, pageNumber);
+            List<HangSanPham> tong = hangsanphambus.SearchAndSort(search, sortorder, pageSize);
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangThai = "searchandsort";
+            ViewBag.Search = search;
+            ViewBag.Sort = sortorder;
+            return View("Index", list);
+        }
+
+        public int TongTrang(List<HangSanPham> list)
+        {
+            return ((list.Count / pageSize) + 1);
         }
     }
 }

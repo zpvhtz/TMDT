@@ -18,15 +18,15 @@
                 <button class="btn btn-primary btnThem" data-toggle="modal" data-target="#themModal">Thêm</button>
             </div>
             <div class="col-lg-2">
-                @*<div class="form-group">
-                        <select class="form-control" id="sortList" onchange="window.location.href = SearchAndSort()">
-                            <option selected disabled>Sắp xếp theo</option>
-                            <option value="/Webmaster/GianHang/Sort?sortorder=tengianhang-az">Tên gian hàng (A-Z)</option>
-                            <option value="/Webmaster/GianHang/Sort?sortorder=tengianhang-za">Tên gian hàng (Z-A)</option>
-                            <option value="/Webmaster/GianHang/Sort?sortorder=gia-asc">Giá thấp</option>
-                            <option value="/Webmaster/GianHang/Sort?sortorder=gia-desc">Giá cao</option>
-                        </select>
-                    </div>*@
+                <div class="form-group">
+                    <select class="form-control" id="sortList" onchange="window.location.href = SearchAndSort()">
+                        <option selected disabled>Sắp xếp theo</option>
+                        <option value="/Webmaster/HangSanPham/Sort?sortorder=mahang-az">Mã hãng (A-Z)</option>
+                        <option value="/Webmaster/HangSanPham/Sort?sortorder=mahang-za">Mã hãng (Z-A)</option>
+                        <option value="/Webmaster/HangSanPham/Sort?sortorder=tenhang-az">Tên hãng (A-Z)</option>
+                        <option value="/Webmaster/HangSanPham/Sort?sortorder=tenhang-za">Tên hãng (Z-A)</option>
+                    </select>
+                </div>
             </div>
             <div class="col-lg-6"></div>
             <div class="col-lg-3">
@@ -50,13 +50,13 @@
                     <th>Mã hãng</th>
                     <th><a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort" asp-route-sortorder="@ViewBag.NameSort" asp-route-currentFilter="@ViewBag.CurrentFilter">Tên hãng</a></th>
                     @*<th><a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort" asp-route-sortorder="@ViewBag.ShopSort" asp-route-currentFilter="@ViewBag.CurrentFilter">Tên shop</a></th>
-                        <th>Màu</th>
-                        <th>Hãng</th>
-                        <th>Phân loại</th>
-                        <th><a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort" asp-route-sortorder="@ViewBag.GiaSort" asp-route-currentFilter="@ViewBag.CurrentFilter">Giá</a></th>
-                        <th>Hình</th>
-                        <th>Chi tiết</th>
-                        <th>Giảm giá</th>*@
+                    <th>Màu</th>
+                    <th>Hãng</th>
+                    <th>Phân loại</th>
+                    <th><a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort" asp-route-sortorder="@ViewBag.GiaSort" asp-route-currentFilter="@ViewBag.CurrentFilter">Giá</a></th>
+                    <th>Hình</th>
+                    <th>Chi tiết</th>
+                    <th>Giảm giá</th>*@
                     <th></th>
                 </tr>
             </thead>
@@ -83,64 +83,165 @@
                 }
             </tbody>
         </table>
-
-        @*<ul class="pagination" style="margin: 0 auto;">
-                @if (ViewBag.TrangHienTai == 1)
+        <ul class="pagination" style="margin: 0 auto;">
+            @if (ViewBag.TrangHienTai == 1)
+            {
+                <li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous"><a href="#">Trước</a></li>
+            }
+            else
+            {
+                <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
+                    @switch (ViewBag.TrangThai)
+                    {
+                        case "index":
+                            <a asp-controller="HangSanPham" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            break;
+                        case "sort":
+                            <a asp-controller="HangSanPham" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            break;
+                        case "search":
+                            <a asp-controller="HangSanPham" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            break;
+                        case "searchandsort":
+                            <a asp-controller="HangSanPham" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            break;
+                    }
+                </li>
+            }
+            @for (int i = 1; i <= ViewBag.TongTrang; i++)
+            {
+                if (i > 5)
                 {
-                    <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
+                    <li class="paginate_button" aria-controls="dataTables-example" tabindex="0"><a href="#">...</a></li>
+                    <li class="paginate_button" aria-controls="dataTables-example" tabindex="0">
+                        @switch (ViewBag.TrangThai)
+                        {
+                            case "index":
+                                <a asp-controller="HangSanPham" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                break;
+                            case "sort":
+                                <a asp-controller="HangSanPham" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                break;
+                            case "search":
+                                <a asp-controller="HangSanPham" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                break;
+                            case "searchandsort":
+                                <a asp-controller="HangSanPham" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                break;
+                        }
                     </li>
-                    <a asp-page="./Index"
-                       asp-route-sortorder="@ViewBag.CurrentSort"
-                       asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
-                       asp-route-currentFilter="@ViewBag.CurrentFilter"
-                       class="btn btn-default disabled">
-                        Previous
-                    </a>
-                    <a asp-page="./Index"
-                       asp-route-sortorder="@ViewBag.CurrentSort"
-                       asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
-                       asp-route-currentFilter="@ViewBag.CurrentFilter"
-                       class="btn btn-default">
-                        Next
-                    </a>
-                }
-                else if (ViewBag.TrangHienTai == ViewBag.TongTrang)
-                {
-                    <a asp-page="./Index"
-                       asp-route-sortorder="@ViewBag.CurrentSort"
-                       asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
-                       asp-route-currentFilter="@ViewBag.CurrentFilter"
-                       class="btn btn-default">
-                        Previous
-                    </a>
-                    <a asp-page="./Index"
-                       asp-route-sortorder="@ViewBag.CurrentSort"
-                       asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
-                       asp-route-currentFilter="@ViewBag.CurrentFilter"
-                       class="btn btn-default disabled">
-                        Next
-                    </a>
+                    break;
                 }
                 else
                 {
-                    <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
-                    </li>
-                    <a asp-page="./Index"
-                       asp-route-sortorder="@ViewBag.CurrentSort"
-                       asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
-                       asp-route-currentFilter="@ViewBag.CurrentFilter"
-                       class="btn btn-default">
-                        Previous
-                    </a>
-                    <a asp-page="./Index"
-                       asp-route-sortorder="@ViewBag.CurrentSort"
-                       asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
-                       asp-route-currentFilter="@ViewBag.CurrentFilter"
-                       class="btn btn-default disabled">
-                        Next
-                    </a>
+                    if (i == ViewBag.TrangHienTai)
+                    {
+                        <li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#">@i</a></li>
+                    }
+                    else
+                    {
+                        <li class="paginate_button" aria-controls="dataTables-example" tabindex="0">
+                            @switch (ViewBag.TrangThai)
+                            {
+                                case "index":
+                                    <a asp-controller="HangSanPham" asp-action="Index" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    break;
+                                case "sort":
+                                    <a asp-controller="HangSanPham" asp-action="Sort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    break;
+                                case "search":
+                                    <a asp-controller="HangSanPham" asp-action="Search" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    break;
+                                case "searchandsort":
+                                    <a asp-controller="HangSanPham" asp-action="SearchAndSort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    break;
+                            }
+                        </li>
+                    }
                 }
-            </ul>*@
+            }
+            @if (ViewBag.TrangHienTai == ViewBag.TongTrang)
+            {
+                <li class="paginate_button next disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="#">Tiếp</a></li>
+            }
+            else
+            {
+                <li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next">
+                    @switch (ViewBag.TrangThai)
+                    {
+                        case "index":
+                            <a asp-controller="HangSanPham" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            break;
+                        case "sort":
+                            <a asp-controller="HangSanPham" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            break;
+                        case "search":
+                            <a asp-controller="HangSanPham" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            break;
+                        case "searchandsort":
+                            <a asp-controller="HangSanPham" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            break;
+                    }
+                </li>
+            }
+        </ul>
+        @*<ul class="pagination" style="margin: 0 auto;">
+            @if (ViewBag.TrangHienTai == 1)
+            {
+                <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
+                </li>
+                <a asp-page="./Index"
+                   asp-route-sortorder="@ViewBag.CurrentSort"
+                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
+                   asp-route-currentFilter="@ViewBag.CurrentFilter"
+                   class="btn btn-default disabled">
+                    Previous
+                </a>
+                <a asp-page="./Index"
+                   asp-route-sortorder="@ViewBag.CurrentSort"
+                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
+                   asp-route-currentFilter="@ViewBag.CurrentFilter"
+                   class="btn btn-default">
+                    Next
+                </a>
+            }
+            else if (ViewBag.TrangHienTai == ViewBag.TongTrang)
+            {
+                <a asp-page="./Index"
+                   asp-route-sortorder="@ViewBag.CurrentSort"
+                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
+                   asp-route-currentFilter="@ViewBag.CurrentFilter"
+                   class="btn btn-default">
+                    Previous
+                </a>
+                <a asp-page="./Index"
+                   asp-route-sortorder="@ViewBag.CurrentSort"
+                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
+                   asp-route-currentFilter="@ViewBag.CurrentFilter"
+                   class="btn btn-default disabled">
+                    Next
+                </a>
+            }
+            else
+            {
+                <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
+                </li>
+                <a asp-page="./Index"
+                   asp-route-sortorder="@ViewBag.CurrentSort"
+                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai - 1)"
+                   asp-route-currentFilter="@ViewBag.CurrentFilter"
+                   class="btn btn-default">
+                    Previous
+                </a>
+                <a asp-page="./Index"
+                   asp-route-sortorder="@ViewBag.CurrentSort"
+                   asp-route-pageIndex="@Html.Raw(ViewBag.TrangHienTai + 1)"
+                   asp-route-currentFilter="@ViewBag.CurrentFilter"
+                   class="btn btn-default disabled">
+                    Next
+                </a>
+            }
+        </ul>*@
 
     </div>
 </div>
@@ -205,6 +306,51 @@
     </script>
 }
 <script>
+    $(document).ready(function () {
+        //Sắp xếp
+        let sort = "@ViewBag.Sort";
+        if (sort != '') {
+            $("#sortList option").each(function () {
+                if ($(this).val().includes(sort)) {
+                    $(this).attr('selected', 'selected');
+                    return;
+                }
+            });
+        }
+    });
+
+    function SearchAndSort() {
+        let search = "@ViewBag.Search";
+        if (search == null || search == '') {
+            return $("#sortList").val();
+        }
+        else {
+            let href = $("#sortList").val();
+            href = href.replace("Sort", "SearchAndSort");
+            href = href + (`&search=${search}`)
+            return href;
+        }
+    }
+
+    $(".pageNumber").click(function () {
+        //Get addtional href
+        let sort = $("#sortList").val();
+        let search = "@ViewBag.Search";
+        //Href
+        var $link = $('.pageNumber');
+        var href = $link.attr('href').split('/');
+        if (sort != null && sort != '') {
+            sort = sort.substring(sort.lastIndexOf('=') + 1, sort.length);
+            href.push('&sortorder=' + sort); //here you set your new asp-route-pagenumber value
+        }
+        if (search != null && search != '') {
+            href.push('&search=' + search); //here you set your new asp-route-pagenumber value
+        }
+        href = href.join('/');
+        href = href.toString().replace(/\/&/g, '&');
+        $link.attr('href', href);
+    });
+
     $(document).ready(function () {
         $(".btnSua").click(function () {
             let pId = $(this).closest('tr').find('.item-ma').text();

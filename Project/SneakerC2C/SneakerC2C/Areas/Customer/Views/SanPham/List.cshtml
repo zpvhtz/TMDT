@@ -95,18 +95,7 @@
             </div>
             <div class="men-wear-top">
                 <div id="top" class="callbacks_container">
-                    <ul class="rslides" id="slider3">
-                        <li>
-                            <img class="img-responsive" src="~/maintemplate/images/banner2.jpg" alt=" " />
-                        </li>
-                        <li>
-                            <img class="img-responsive" src="~/maintemplate/images/banner5.jpg" alt=" " />
-                        </li>
-                        <li>
-                            <img class="img-responsive" src="~/maintemplate/images/banner2.jpg" alt=" " />
-                        </li>
-
-                    </ul>
+                    <img class="img-responsive" src="~/maintemplate/images/banner2.jpg" alt=" " />
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -129,12 +118,12 @@
             }
             @foreach (var item in Model)
             {
-                if (i <= 3)
+                if (i <=3)
                 {
                     <div class="col-md-4 product-men">
                         <div class="men-pro-item simpleCart_shelfItem">
                             <div class="men-thumb-item">
-                                <div class="anhsanpham-3" style="background-image: url(56519.jpg);"></div>
+                                <div class="anhsanpham-3" style="background-image: url(/Hinh/SanPham/@item.Hinh);"></div>
                             </div>
                             <div class="item-info-product ">
                                 <h4><a href="single.html" class="tieude_sanpham">@item.TenSanPham</a></h4>
@@ -167,50 +156,97 @@
                 }
                 if (i >= 4)
                 {
-                    <div class="single-pro">
-                        @if (i <= i + 4)
-                        {
-                            <div class="col-md-3 product-men">
-                                <div class="men-pro-item simpleCart_shelfItem">
-                                    <div class="men-thumb-item">
-                                        <a href="#">
-                                            <div class="anhsanpham-4" style="background-image: url(/Hinh/SanPham/@item.Hinh);"></div>
-                                        </a>
-                                    </div>
-                                    <div class="item-info-product ">
-                                        <h4><a href="#" class="tieude_sanpham">@item.TenSanPham</a></h4>
-                                        <div class="info-product-price">
-                                            <div class="info-product-price">
-                                                @if (item.GiamGia != null && item.GiamGia != 0)
-                                                {
-                                                    double gia = item.Gia * (100 - item.GiamGia) / 100 ?? 0;
-                                                    <p><span class="item_price">@gia.ToString("#,###") đ</span> <del>- @item.Gia.Value.ToString("#,###") đ</del></p>
-                                                }
-                                                else
-                                                {
-                                                    <p><span class="item_price">@item.Gia.Value.ToString("#,###") đ</span></p>
-                                                }
-                                            </div>
-                                        </div>
-                                        <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                            <form action="#" method="post">
-                                                <fieldset>
-                                                    <input type="submit" name="submit" id="btnThemVaoGioHang" value="Thêm vào giỏ hàng" class="button" />
-                                                </fieldset>
-                                            </form>
-                                        </div>
+                    break;
+                }
+            }
+        </div>
+        
+        <div class="single-pro">
+            @{
+                int j = 1;
+            }
+            @foreach (var item in Model)
+            {
+                if (j < 4)
+                {
+                    j++;
+                    continue;
+                }
+                if (j >= 4)
+                {
+                    <div class="col-md-3 product-men">
+                        <div class="men-pro-item simpleCart_shelfItem">
+                            <div class="men-thumb-item">
+                                <a href="#">
+                                    <div class="anhsanpham-4" style="background-image: url(/Hinh/SanPham/@item.Hinh);"></div>
+                                </a>
+                            </div>
+                            <div class="item-info-product ">
+                                <h4><a href="#" class="tieude_sanpham">@item.TenSanPham</a></h4>
+                                <div class="info-product-price">
+                                    <div class="info-product-price">
+                                        @if (item.GiamGia != null && item.GiamGia != 0)
+                                        {
+                                            double gia = item.Gia * (100 - item.GiamGia) / 100 ?? 0;
+                                            <p><span class="item_price">@gia.ToString("#,###") đ</span> <del>- @item.Gia.Value.ToString("#,###") đ</del></p>
+                                        }
+                                        else
+                                        {
+                                            <p><span class="item_price">@item.Gia.Value.ToString("#,###") đ</span></p>
+                                        }
                                     </div>
                                 </div>
+                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                    <form action="#" method="post">
+                                        <fieldset>
+                                            <input type="submit" name="submit" id="btnThemVaoGioHang" value="Thêm vào giỏ hàng" class="button" />
+                                        </fieldset>
+                                    </form>
+                                </div>
                             </div>
-                            i++;
-
-                        }
-                        @if (i == i + 4)
-                        {
-                            <div class="clearfix"></div>
-                        }
+                        </div>
                     </div>
+                    j++;
+                    if (j % 4 == 0)
+                    {
+                        <div class="clearfix"></div>
+                    }
                 }
+                @*if (j >= 8)
+                {
+                    <div class="col-md-3 product-men">
+                        <div class="men-pro-item simpleCart_shelfItem">
+                            <div class="men-thumb-item">
+                                <a href="#">
+                                    <div class="anhsanpham-4" style="background-image: url(/Hinh/SanPham/@item.Hinh);"></div>
+                                </a>
+                            </div>
+                            <div class="item-info-product ">
+                                <h4><a href="#" class="tieude_sanpham">@item.TenSanPham</a></h4>
+                                <div class="info-product-price">
+                                    <div class="info-product-price">
+                                        @if (item.GiamGia != null && item.GiamGia != 0)
+                                        {
+                                            double gia = item.Gia * (100 - item.GiamGia) / 100 ?? 0;
+                                            <p><span class="item_price">@gia.ToString("#,###") đ</span> <del>- @item.Gia.Value.ToString("#,###") đ</del></p>
+                                        }
+                                        else
+                                        {
+                                            <p><span class="item_price">@item.Gia.Value.ToString("#,###") đ</span></p>
+                                        }
+                                    </div>
+                                </div>
+                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                    <form action="#" method="post">
+                                        <fieldset>
+                                            <input type="submit" name="submit" id="btnThemVaoGioHang" value="Thêm vào giỏ hàng" class="button" />
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }*@
             }
         </div>
     </div>

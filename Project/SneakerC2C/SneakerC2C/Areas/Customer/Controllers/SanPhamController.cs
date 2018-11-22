@@ -35,7 +35,8 @@ namespace SneakerC2C.Areas.Customer.Controllers
         public IActionResult List(/*string ploai*/)
         {
             //List<SanPham> list = ctx.SanPham.Where(x => x.PhanLoai == ploai).ToList();
-            List<SanPham> list = ctx.SanPham.Include(sp=>sp.IdTaiKhoanNavigation)
+            List<SanPham> list = ctx.SanPham
+                                            .Include(sp=>sp.IdTaiKhoanNavigation)
                                             .Include(sp=>sp.IdHangSanPhamNavigation)
                                 .ToList();
             return View(list);

@@ -6,103 +6,74 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Đăng nhập</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="~/admintemplate/pages/../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="~/admintemplate/pages/../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="~/admintemplate/pages/../dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="~/admintemplate/pages/../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <title>SNKRX Admin</title>
+    <!-- Bootstrap core CSS-->
+    <link href="~/admintemplate2/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="~/admintemplate2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template-->
+    <link href="~/admintemplate2/css/sb-admin.css" rel="stylesheet">
 </head>
-
-<body>
-
+<body class="bg-dark">
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="login-panel panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">ĐĂNG NHẬP</h3>
-                    </div>
-                    <div class="panel-body">
-                        <form asp-area="Webmaster" asp-controller="Authentication" asp-action="LogIn" method="post">
-                            <fieldset>
-                                @if (Context.Request.Cookies["tendangnhap"] != null && Context.Request.Cookies["matkhau"] != null)
-                                {
-                                    <div class="form-group">
-                                        <input id="txtTenDangNhap" class="form-control" placeholder="Tên đăng nhập" name="tendangnhap" type="text" value="@Context.Request.Cookies["tendangnhap"]" required oninvalid="this.setCustomValidity('Tên đăng nhập không được để trống')" onchange="this.setCustomValidity('')">
-                                    </div>
-                                    <div class="form-group">
-                                        <input id="txtMatKhau" class="form-control" placeholder="Mật khẩu" name="matkhau" type="password" value="@Context.Request.Cookies["matkhau"]" required oninvalid="this.setCustomValidity('Mật khẩu không được để trống')" onchange="this.setCustomValidity('')">
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input name="remember" type="checkbox" value="remember" checked>Ghi nhớ đăng nhập
-                                        </label>
-                                    </div>
-                                }
-                                else
-                                {
-                                    <div class="form-group">
-                                        <input id="txtTenDangNhap" class="form-control" placeholder="Tên đăng nhập" name="tendangnhap" type="text"  required oninvalid="this.setCustomValidity('Tên đăng nhập không được để trống')" onchange="this.setCustomValidity('')">
-                                    </div>
-                                    <div class="form-group">
-                                        <input id="txtMatKhau" class="form-control" placeholder="Mật khẩu" name="matkhau" type="password"  required oninvalid="this.setCustomValidity('Tên đăng nhập không được để trống')" onchange="this.setCustomValidity('')">
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input name="remember" type="checkbox" value="remember">Ghi nhớ đăng nhập
-                                        </label>
-                                    </div>
-                                }
-                                <!-- Change this to a button or input when using this as a form -->
-                                <button class="btn btn-success btn-block" type="submit">Đăng nhập</button>
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
+        <div class="card card-login mx-auto mt-5">
+            <div class="card-header" style="text-align: center;"><b>SNKRX - Đăng Nhập </b></div>
+            <div class="card-body">
+                <form asp-area="Webmaster" asp-controller="Authentication" asp-action="LogIn" method="post">
+                    <fieldset>
+                        @if (Context.Request.Cookies["tendangnhap"] != null && Context.Request.Cookies["matkhau"] != null)
+                        {
+                            <div class="form-group">
+                                <input id="txtTenDangNhap" class="form-control" placeholder="Tên đăng nhập" name="tendangnhap" type="text" value="@Context.Request.Cookies["tendangnhap"]" required oninvalid="this.setCustomValidity('Tên đăng nhập không được để trống')" onchange="this.setCustomValidity('')">
+                            </div>
+                            <div class="form-group">
+                                <input id="txtMatKhau" class="form-control" placeholder="Mật khẩu" name="matkhau" type="password" value="@Context.Request.Cookies["matkhau"]" required oninvalid="this.setCustomValidity('Mật khẩu không được để trống')" onchange="this.setCustomValidity('')">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="remember" type="checkbox" value="remember" checked>Ghi nhớ đăng nhập
+                                </label>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="form-group">
+                                <input id="txtTenDangNhap" class="form-control" placeholder="Tên đăng nhập" name="tendangnhap" type="text" required oninvalid="this.setCustomValidity('Tên đăng nhập không được để trống')" onchange="this.setCustomValidity('')">
+                            </div>
+                            <div class="form-group">
+                                <input id="txtMatKhau" class="form-control" placeholder="Mật khẩu" name="matkhau" type="password" required oninvalid="this.setCustomValidity('Tên đăng nhập không được để trống')" onchange="this.setCustomValidity('')">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="remember" type="checkbox" value="remember">Ghi nhớ đăng nhập
+                                </label>
+                            </div>
+                        }
+                        <!-- Change this to a button or input when using this as a form -->
+                        <button class="btn btn-success btn-block" type="submit">Đăng nhập</button>
+                    </fieldset>
+                </form>
+                @*<div class="text-center">
+                    <a class="d-block small mt-3" href="register.html">Register an Account</a>
+                    <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+                </div>*@
             </div>
         </div>
     </div>
-
-    <!-- jQuery -->
-    <script src="~/admintemplate/pages/../vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="~/admintemplate/pages/../vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="~/admintemplate/pages/../vendor/metisMenu/metisMenu.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="~/admintemplate/pages/../dist/js/sb-admin-2.js"></script>
-
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/admintemplate2/vendor/jquery/jquery.min.js"></script>
+    <script src="~/admintemplate2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 </body>
-
 </html>
+
 
 @if (ViewBag.ThongBao != null)
 {

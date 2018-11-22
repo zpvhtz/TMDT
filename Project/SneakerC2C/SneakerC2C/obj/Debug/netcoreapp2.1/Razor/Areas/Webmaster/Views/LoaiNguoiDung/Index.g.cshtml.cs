@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #pragma checksum "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "eb5fbfb96325797f20f8b55546593aa95e935295"
+=======
+#pragma checksum "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "7cd2e86c03b17aff3eeea9709eebe2aebfbe172b"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #pragma checksum "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "7cd2e86c03b17aff3eeea9709eebe2aebfbe172b"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -18,7 +22,11 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 <<<<<<< HEAD
+<<<<<<< HEAD
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"eb5fbfb96325797f20f8b55546593aa95e935295", @"/Areas/Webmaster/Views/LoaiNguoiDung/Index.cshtml")]
+=======
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7cd2e86c03b17aff3eeea9709eebe2aebfbe172b", @"/Areas/Webmaster/Views/LoaiNguoiDung/Index.cshtml")]
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7cd2e86c03b17aff3eeea9709eebe2aebfbe172b", @"/Areas/Webmaster/Views/LoaiNguoiDung/Index.cshtml")]
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -73,7 +81,11 @@ namespace AspNetCore
             WriteLiteral("\r\n");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 5 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 5 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 5 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -105,7 +117,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(1060, 47, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c774af21082d4a72b1ec1767c69c6a12", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f854a0978d4c4730a197ac13e879f35e", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f854a0978d4c4730a197ac13e879f35e", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -135,7 +151,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(1133, 108, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e25841be5e94c04a9c6f8fbaa7615fd", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0bb2965d432041608d999ab4523b51f3", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0bb2965d432041608d999ab4523b51f3", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -161,7 +181,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(1267, 108, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53bbc40d6eb848108ba2c8125b7c8d9e", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69955fb5bd954a7aa381af0b54b06f2c", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69955fb5bd954a7aa381af0b54b06f2c", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -187,7 +211,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(1401, 110, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "38c291db7f324fc1bd4d58886a386236", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "31398785d3cc470da003f17d689fead7", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "31398785d3cc470da003f17d689fead7", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -213,7 +241,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(1537, 110, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "db240858f232477292e1dbb80f4f7209", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5fc543d54b8d43cbb1a5cda771183197", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5fc543d54b8d43cbb1a5cda771183197", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -245,7 +277,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(1919, 579, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ff4f4dd2883c46f5859714c80c41815d", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d0ef8fc806ad4757a5cf6c51308abafe", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d0ef8fc806ad4757a5cf6c51308abafe", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -301,7 +337,11 @@ namespace AspNetCore
 ");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 61 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 61 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 61 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -315,7 +355,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(3287, 20, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 64 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 64 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 64 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -329,7 +373,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(3373, 21, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 65 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 65 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 65 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -343,7 +391,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(3453, 14, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 66 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 66 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 66 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -356,7 +408,11 @@ namespace AspNetCore
             WriteLiteral("</td>\r\n                        <td>\r\n");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 68 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 68 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 68 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -373,7 +429,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(3791, 146, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cf2b2a07c071411ab6a58a3e66d9253a", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0adec34737d441c8ab5ec28a43cd8dcd", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0adec34737d441c8ab5ec28a43cd8dcd", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -394,7 +454,11 @@ namespace AspNetCore
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 72 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 72 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 72 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -418,7 +482,11 @@ namespace AspNetCore
             WriteLiteral("\r\n");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 73 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 73 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 73 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -436,7 +504,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(4235, 151, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b205056498d04d638da1dd58f39490f5", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "972d69f98351404ab6081f7c359d7777", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "972d69f98351404ab6081f7c359d7777", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -457,7 +529,11 @@ namespace AspNetCore
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 78 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 78 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 78 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -481,7 +557,11 @@ namespace AspNetCore
             WriteLiteral("\r\n");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 79 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 79 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 79 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -493,7 +573,11 @@ namespace AspNetCore
             WriteLiteral("                        </td>\r\n                    </tr>\r\n");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 82 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 82 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 82 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -505,7 +589,11 @@ namespace AspNetCore
             WriteLiteral("            </tbody>\r\n        </table>\r\n        <!-- /.table-responsive -->\r\n        <div class=\"col-sm-12 col-md-7\">\r\n            <div class=\"dataTables_paginate paging_simple_numbers\" id=\"dataTable_paginate\">\r\n                <ul class=\"pagination\">\r\n");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 89 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 89 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 89 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -515,11 +603,14 @@ namespace AspNetCore
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(4825, 179, true);
             WriteLiteral("                        <li class=\"paginate_button previous disabled\" aria-controls=\"dataTables-example\" tabindex=\"0\" id=\"dataTables-example_previous\"><a href=\"#\">Trước</a></li>\r\n");
             EndContext();
 #line 92 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(4825, 261, true);
             WriteLiteral(@"                        <li class=""paginate_button page-item previous disabled"" id=""dataTable_previous"">
                             <a href=""#"" aria-controls=""dataTable"" data-dt-idx=""0"" tabindex=""0"" class=""page-link"">Trước</a>
@@ -527,11 +618,15 @@ namespace AspNetCore
 ");
             EndContext();
 #line 94 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                     }
                     else
                     {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #line default
 #line hidden
@@ -540,6 +635,8 @@ namespace AspNetCore
             EndContext();
 #line 96 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 
 #line default
 #line hidden
@@ -547,6 +644,9 @@ namespace AspNetCore
             WriteLiteral("                        <li class=\"paginate_button previous\" aria-controls=\"dataTables-example\" tabindex=\"0\" id=\"dataTables-example_previous\">\r\n");
             EndContext();
 #line 99 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                              switch (ViewBag.TrangThai)
                             {
@@ -555,6 +655,7 @@ namespace AspNetCore
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(5355, 36, true);
             WriteLiteral("                                    ");
             EndContext();
@@ -562,12 +663,17 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6aa7e108b8fb4fbe906c25d9fc9c84e1", async() => {
                 BeginContext(5522, 5, true);
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(5439, 36, true);
             WriteLiteral("                                    ");
             EndContext();
             BeginContext(5475, 140, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5860b9dbdab248a19c35c01d6faf90d6", async() => {
                 BeginContext(5606, 5, true);
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                 WriteLiteral("Trước");
                 EndContext();
@@ -585,7 +691,11 @@ namespace AspNetCore
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 99 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 102 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 102 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -606,21 +716,28 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(5531, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 100 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(5615, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 103 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                                     break;
                                 case "sort":
 
 #line default
 #line hidden
+<<<<<<< HEAD
 <<<<<<< HEAD
             BeginContext(5623, 36, true);
             WriteLiteral("                                    ");
@@ -629,12 +746,17 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d9ec34cba56b45ce95615caecdde1ce8", async() => {
                 BeginContext(5789, 5, true);
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(5707, 36, true);
             WriteLiteral("                                    ");
             EndContext();
             BeginContext(5743, 139, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fdcc25820305477ca0efe97d505edbf1", async() => {
                 BeginContext(5873, 5, true);
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                 WriteLiteral("Trước");
                 EndContext();
@@ -652,7 +774,11 @@ namespace AspNetCore
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 102 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 105 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 105 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -673,21 +799,28 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(5798, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 103 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(5882, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 106 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                                     break;
                                 case "search":
 
 #line default
 #line hidden
+<<<<<<< HEAD
 <<<<<<< HEAD
             BeginContext(5892, 36, true);
             WriteLiteral("                                    ");
@@ -696,12 +829,17 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bde3c362062747b3ae44eebae081fbb7", async() => {
                 BeginContext(6060, 5, true);
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(5976, 36, true);
             WriteLiteral("                                    ");
             EndContext();
             BeginContext(6012, 141, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e63f4df54a3d4a2897e1e53f504403e5", async() => {
                 BeginContext(6144, 5, true);
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                 WriteLiteral("Trước");
                 EndContext();
@@ -719,7 +857,11 @@ namespace AspNetCore
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 105 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 108 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 108 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -740,21 +882,28 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(6069, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 106 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(6153, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 109 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                                     break;
                                 case "searchandsort":
 
 #line default
 #line hidden
+<<<<<<< HEAD
 <<<<<<< HEAD
             BeginContext(6170, 36, true);
             WriteLiteral("                                    ");
@@ -763,12 +912,17 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "92ddcb26c81a4c34ba07c5ea961c8882", async() => {
                 BeginContext(6345, 5, true);
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(6254, 36, true);
             WriteLiteral("                                    ");
             EndContext();
             BeginContext(6290, 148, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6299b1355a364f73a7210a4aa305fd3a", async() => {
                 BeginContext(6429, 5, true);
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                 WriteLiteral("Trước");
                 EndContext();
@@ -786,7 +940,11 @@ namespace AspNetCore
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 108 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 111 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 111 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -807,15 +965,21 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(6354, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 109 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(6438, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 112 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                                     break;
                             }
@@ -823,26 +987,35 @@ namespace AspNetCore
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(6431, 31, true);
             WriteLiteral("                        </li>\r\n");
             EndContext();
 #line 112 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(6515, 31, true);
             WriteLiteral("                        </li>\r\n");
             EndContext();
 #line 115 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                     }
 
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(6485, 20, true);
             WriteLiteral("                    ");
             EndContext();
 #line 113 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(6569, 20, true);
             WriteLiteral("                    ");
             EndContext();
@@ -850,11 +1023,15 @@ namespace AspNetCore
             WriteLiteral("\r\n");
             EndContext();
 #line 117 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                      for (int i = 1; i <= ViewBag.TongTrang; i++)
                     {
                         if (i > 5)
                         {
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 #line default
@@ -878,6 +1055,8 @@ namespace AspNetCore
 #line 122 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
                                                                                                                                                                Write(ViewBag.TongTrang);
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
                             
 
 #line default
@@ -904,6 +1083,9 @@ namespace AspNetCore
                 BeginContext(7670, 17, false);
 #line 131 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
                                                                                                                                                                    Write(ViewBag.TongTrang);
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
 
 #line default
@@ -923,8 +1105,13 @@ namespace AspNetCore
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 122 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
                                                                                                        WriteLiteral(Html.Raw(ViewBag.TongTrang));
+=======
+#line 131 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+                                                                                                           WriteLiteral(Html.Raw(ViewBag.TongTrang));
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 131 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
                                                                                                            WriteLiteral(Html.Raw(ViewBag.TongTrang));
@@ -945,6 +1132,7 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(7207, 2, true);
             WriteLiteral("\r\n");
             EndContext();
@@ -963,6 +1151,8 @@ namespace AspNetCore
 #line 125 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
                                                                                                                                                               Write(ViewBag.TongTrang);
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(7691, 2, true);
             WriteLiteral("\r\n");
             EndContext();
@@ -980,6 +1170,9 @@ namespace AspNetCore
                 BeginContext(7967, 17, false);
 #line 134 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
                                                                                                                                                                   Write(ViewBag.TongTrang);
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
 
 #line default
@@ -999,8 +1192,13 @@ namespace AspNetCore
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 125 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
                                                                                                       WriteLiteral(Html.Raw(ViewBag.TongTrang));
+=======
+#line 134 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+                                                                                                          WriteLiteral(Html.Raw(ViewBag.TongTrang));
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 134 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
                                                                                                           WriteLiteral(Html.Raw(ViewBag.TongTrang));
@@ -1021,6 +1219,7 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(7492, 2, true);
             WriteLiteral("\r\n");
             EndContext();
@@ -1039,6 +1238,8 @@ namespace AspNetCore
 #line 128 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
                                                                                                                                                                 Write(ViewBag.TongTrang);
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(7988, 2, true);
             WriteLiteral("\r\n");
             EndContext();
@@ -1056,6 +1257,9 @@ namespace AspNetCore
                 BeginContext(8268, 17, false);
 #line 137 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
                                                                                                                                                                     Write(ViewBag.TongTrang);
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
 
 #line default
@@ -1075,8 +1279,13 @@ namespace AspNetCore
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 128 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
                                                                                                         WriteLiteral(Html.Raw(ViewBag.TongTrang));
+=======
+#line 137 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+                                                                                                            WriteLiteral(Html.Raw(ViewBag.TongTrang));
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 137 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
                                                                                                             WriteLiteral(Html.Raw(ViewBag.TongTrang));
@@ -1097,6 +1306,7 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(7781, 2, true);
             WriteLiteral("\r\n");
             EndContext();
@@ -1115,6 +1325,8 @@ namespace AspNetCore
 #line 131 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
                                                                                                                                                                        Write(ViewBag.TongTrang);
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(8289, 2, true);
             WriteLiteral("\r\n");
             EndContext();
@@ -1132,6 +1344,9 @@ namespace AspNetCore
                 BeginContext(8583, 17, false);
 #line 140 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
                                                                                                                                                                            Write(ViewBag.TongTrang);
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
 
 #line default
@@ -1151,8 +1366,13 @@ namespace AspNetCore
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 131 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
                                                                                                                WriteLiteral(Html.Raw(ViewBag.TongTrang));
+=======
+#line 140 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+                                                                                                                   WriteLiteral(Html.Raw(ViewBag.TongTrang));
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 140 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
                                                                                                                    WriteLiteral(Html.Raw(ViewBag.TongTrang));
@@ -1173,6 +1393,7 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(8084, 2, true);
             WriteLiteral("\r\n");
             EndContext();
@@ -1187,6 +1408,8 @@ namespace AspNetCore
             EndContext();
 #line 135 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(8604, 2, true);
             WriteLiteral("\r\n");
             EndContext();
@@ -1200,6 +1423,9 @@ namespace AspNetCore
             WriteLiteral("                            </li>\r\n");
             EndContext();
 #line 144 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                             break;
                         }
@@ -1208,6 +1434,7 @@ namespace AspNetCore
                             if (i == ViewBag.TrangHienTai)
                             {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #line default
 #line hidden
@@ -1218,6 +1445,8 @@ namespace AspNetCore
 #line 141 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
                                                                                                                           Write(i);
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
                                 
 
 #line default
@@ -1238,6 +1467,7 @@ namespace AspNetCore
             BeginContext(9291, 1, false);
 #line 153 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
                                                                                                                      Write(i);
+<<<<<<< HEAD
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
 
 #line default
@@ -1259,6 +1489,12 @@ namespace AspNetCore
             EndContext();
 #line 146 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+
+#line default
+#line hidden
+            EndContext();
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(9292, 45, true);
             WriteLiteral("</a>\r\n                                </li>\r\n");
             EndContext();
@@ -1294,6 +1530,9 @@ namespace AspNetCore
             WriteLiteral("</a>                              \r\n");
             EndContext();
 #line 161 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                                      switch (ViewBag.TrangThai)
                                     {
@@ -1301,6 +1540,7 @@ namespace AspNetCore
 
 #line default
 #line hidden
+<<<<<<< HEAD
 <<<<<<< HEAD
             BeginContext(8920, 44, true);
             WriteLiteral("                                            ");
@@ -1310,6 +1550,8 @@ namespace AspNetCore
                 BeginContext(9063, 1, false);
 #line 149 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(9945, 44, true);
             WriteLiteral("                                            ");
             EndContext();
@@ -1317,6 +1559,9 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dd5b840db7da4d72b9ddf4f736f1d7a1", async() => {
                 BeginContext(10088, 1, false);
 #line 164 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                                                                                                                                          Write(i);
 
@@ -1337,7 +1582,11 @@ namespace AspNetCore
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 149 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 164 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 164 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -1358,21 +1607,28 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(9068, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 150 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(10093, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 165 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                                             break;
                                         case "sort":
 
 #line default
 #line hidden
+<<<<<<< HEAD
 <<<<<<< HEAD
             BeginContext(9176, 44, true);
             WriteLiteral("                                            ");
@@ -1382,6 +1638,8 @@ namespace AspNetCore
                 BeginContext(9318, 1, false);
 #line 152 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(10201, 44, true);
             WriteLiteral("                                            ");
             EndContext();
@@ -1389,6 +1647,9 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "65a0efe74a7747e0b0c90dc550d0a5c6", async() => {
                 BeginContext(10343, 1, false);
 #line 167 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                                                                                                                                         Write(i);
 
@@ -1409,7 +1670,11 @@ namespace AspNetCore
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 152 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 167 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 167 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -1430,21 +1695,28 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(9323, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 153 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(10348, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 168 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                                             break;
                                         case "search":
 
 #line default
 #line hidden
+<<<<<<< HEAD
 <<<<<<< HEAD
             BeginContext(9433, 44, true);
             WriteLiteral("                                            ");
@@ -1454,6 +1726,8 @@ namespace AspNetCore
                 BeginContext(9577, 1, false);
 #line 155 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(10458, 44, true);
             WriteLiteral("                                            ");
             EndContext();
@@ -1461,6 +1735,9 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "85139e0473fa45e3b3af5679e729f0b8", async() => {
                 BeginContext(10602, 1, false);
 #line 170 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                                                                                                                                           Write(i);
 
@@ -1481,7 +1758,11 @@ namespace AspNetCore
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 155 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 170 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 170 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -1502,21 +1783,28 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(9582, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 156 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(10607, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 171 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                                             break;
                                         case "searchandsort":
 
 #line default
 #line hidden
+<<<<<<< HEAD
 <<<<<<< HEAD
             BeginContext(9699, 44, true);
             WriteLiteral("                                            ");
@@ -1526,6 +1814,8 @@ namespace AspNetCore
                 BeginContext(9850, 1, false);
 #line 158 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(10724, 44, true);
             WriteLiteral("                                            ");
             EndContext();
@@ -1533,6 +1823,9 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e2e53aebc13f4b0d83ada6982953dbec", async() => {
                 BeginContext(10875, 1, false);
 #line 173 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                                                                                                                                                  Write(i);
 
@@ -1553,7 +1846,11 @@ namespace AspNetCore
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 158 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 173 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 173 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -1574,15 +1871,21 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(9855, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 159 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(10880, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 174 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                                             break;
                                     }
@@ -1590,15 +1893,21 @@ namespace AspNetCore
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(9948, 39, true);
             WriteLiteral("                                </li>\r\n");
             EndContext();
 #line 162 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(10973, 39, true);
             WriteLiteral("                                </li>\r\n");
             EndContext();
 #line 177 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                             }
                         }
@@ -1606,6 +1915,7 @@ namespace AspNetCore
 
 #line default
 #line hidden
+<<<<<<< HEAD
 <<<<<<< HEAD
             BeginContext(10068, 20, true);
             WriteLiteral("                    ");
@@ -1621,6 +1931,8 @@ namespace AspNetCore
             EndContext();
 #line 168 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(11093, 20, true);
             WriteLiteral("                    ");
             EndContext();
@@ -1639,6 +1951,9 @@ namespace AspNetCore
             EndContext();
 #line 187 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                     }
                     else
@@ -1647,15 +1962,21 @@ namespace AspNetCore
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(10402, 136, true);
             WriteLiteral("                        <li class=\"paginate_button next\" aria-controls=\"dataTables-example\" tabindex=\"0\" id=\"dataTables-example_next\">\r\n");
             EndContext();
 #line 172 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(11715, 136, true);
             WriteLiteral("                        <li class=\"paginate_button next\" aria-controls=\"dataTables-example\" tabindex=\"0\" id=\"dataTables-example_next\">\r\n");
             EndContext();
 #line 192 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                              switch (ViewBag.TrangThai)
                             {
@@ -1664,6 +1985,7 @@ namespace AspNetCore
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(10673, 36, true);
             WriteLiteral("                                    ");
             EndContext();
@@ -1671,12 +1993,17 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bbe43ac77c0841c08d390120a3356dcf", async() => {
                 BeginContext(10840, 4, true);
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(11986, 36, true);
             WriteLiteral("                                    ");
             EndContext();
             BeginContext(12022, 139, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "40e351b3c80d497a943eef1ca4805a81", async() => {
                 BeginContext(12153, 4, true);
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                 WriteLiteral("Tiếp");
                 EndContext();
@@ -1694,7 +2021,11 @@ namespace AspNetCore
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 175 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 195 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 195 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -1715,21 +2046,28 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(10848, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 176 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(12161, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 196 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                                     break;
                                 case "sort":
 
 #line default
 #line hidden
+<<<<<<< HEAD
 <<<<<<< HEAD
             BeginContext(10940, 36, true);
             WriteLiteral("                                    ");
@@ -1738,12 +2076,17 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3e7bc34ce20f478fa4e9a3859d9923bd", async() => {
                 BeginContext(11106, 4, true);
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(12253, 36, true);
             WriteLiteral("                                    ");
             EndContext();
             BeginContext(12289, 138, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "374933946f4e42d9ba4bae3c412201e4", async() => {
                 BeginContext(12419, 4, true);
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                 WriteLiteral("Tiếp");
                 EndContext();
@@ -1761,7 +2104,11 @@ namespace AspNetCore
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 178 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 198 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 198 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -1782,21 +2129,28 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(11114, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 179 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(12427, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 199 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                                     break;
                                 case "search":
 
 #line default
 #line hidden
+<<<<<<< HEAD
 <<<<<<< HEAD
             BeginContext(11208, 36, true);
             WriteLiteral("                                    ");
@@ -1805,12 +2159,17 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e7226fd0a0af40f1a29e7f8dfcc8ce89", async() => {
                 BeginContext(11376, 4, true);
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(12521, 36, true);
             WriteLiteral("                                    ");
             EndContext();
             BeginContext(12557, 140, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "23ca2ffef3d4414591e1a2daa5693c28", async() => {
                 BeginContext(12689, 4, true);
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                 WriteLiteral("Tiếp");
                 EndContext();
@@ -1828,7 +2187,11 @@ namespace AspNetCore
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 181 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 201 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 201 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -1849,21 +2212,28 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(11384, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 182 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(12697, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 202 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                                     break;
                                 case "searchandsort":
 
 #line default
 #line hidden
+<<<<<<< HEAD
 <<<<<<< HEAD
             BeginContext(11485, 36, true);
             WriteLiteral("                                    ");
@@ -1872,12 +2242,17 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ae5d76f0348493ba2e65a46deb79739", async() => {
                 BeginContext(11660, 4, true);
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(12798, 36, true);
             WriteLiteral("                                    ");
             EndContext();
             BeginContext(12834, 147, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "683bc691938040049434629aaf3172c3", async() => {
                 BeginContext(12973, 4, true);
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                 WriteLiteral("Tiếp");
                 EndContext();
@@ -1895,7 +2270,11 @@ namespace AspNetCore
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 184 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+#line 204 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 204 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -1916,15 +2295,21 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(11668, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 185 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(12981, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 205 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                                     break;
                             }
@@ -1932,20 +2317,27 @@ namespace AspNetCore
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(11745, 31, true);
             WriteLiteral("                        </li>\r\n");
             EndContext();
 #line 188 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(13058, 31, true);
             WriteLiteral("                        </li>\r\n");
             EndContext();
 #line 208 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                     }
 
 #line default
 #line hidden
+<<<<<<< HEAD
 <<<<<<< HEAD
             BeginContext(11799, 1733, true);
             WriteLiteral(@"                </ul>
@@ -1979,10 +2371,15 @@ namespace AspNetCore
             </div>
         </div>
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(13112, 391, true);
             WriteLiteral(@"                </ul>
             </div>
         </div>
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
         <!-- /.panel-body -->
         <!-------------------------------------------------------- INSERT MODAL ---------------------------------------------------------->
@@ -1993,6 +2390,7 @@ namespace AspNetCore
                 ");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(13532, 1437, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2d8a3a39e5b42deb1c32242b6b29484", async() => {
                 BeginContext(13616, 1346, true);
@@ -2002,6 +2400,8 @@ namespace AspNetCore
                             <button type=""button"" class=""close"" data-dismiss=""modal"">&times;</button>
                             <h4 class=""modal-title"">Loại Người Dùng</h4>
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(13503, 1441, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "07b7c583d59e4661915681b6c136c933", async() => {
                 BeginContext(13587, 103, true);
@@ -2009,6 +2409,9 @@ namespace AspNetCore
                 EndContext();
                 BeginContext(13797, 1140, true);
                 WriteLiteral(@"                            <h4 class=""modal-title"">Loại Người Dùng</h4>
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                         </div>
                         <div class=""modal-body"">
@@ -2023,6 +2426,7 @@ namespace AspNetCore
 
                         </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <div c");
                 WriteLiteral(@"lass=""modal-footer"">
                             <button type=""submit"" class=""btn btn-warning"" id=""btnThemLoaiNguoiDung"">Thêm</button>
@@ -2031,10 +2435,15 @@ namespace AspNetCore
                     </div>
                 ");
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
                         <div class=""modal-footer"">
                             <button type=""submit"" class=""btn btn-warning"" id=""btnThemLoaiNguoiDung"">Thêm</button>
                             <button type=""button"" class=""btn btn-dang");
                 WriteLiteral("er\" data-dismiss=\"modal\">Đóng</button>\r\n                        </div>\r\n                    </div>\r\n                ");
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                 EndContext();
             }
@@ -2058,7 +2467,11 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(14969, 336, true);
+=======
+            BeginContext(14944, 336, true);
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             BeginContext(14944, 336, true);
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -2072,9 +2485,15 @@ namespace AspNetCore
                 ");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(15305, 1406, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c59c08b4bbe44301a263ced29234726b", async() => {
                 BeginContext(15387, 1317, true);
+=======
+            BeginContext(15280, 1406, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a51fb2f71084413ae7f5b9124497c5e", async() => {
+                BeginContext(15362, 1317, true);
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             BeginContext(15280, 1406, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a51fb2f71084413ae7f5b9124497c5e", async() => {
@@ -2125,15 +2544,21 @@ namespace AspNetCore
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(16711, 40, true);
             WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n");
             EndContext();
 #line 278 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(16686, 40, true);
             WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n");
             EndContext();
 #line 272 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
          if (ViewBag.ThongBao != null)
         {
@@ -2141,17 +2566,23 @@ namespace AspNetCore
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(16802, 37, true);
             WriteLiteral("            <script>\r\n        alert(\"");
             EndContext();
             BeginContext(16840, 26, false);
 #line 281 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(16777, 37, true);
             WriteLiteral("            <script>\r\n        alert(\"");
             EndContext();
             BeginContext(16815, 26, false);
 #line 275 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
           Write(Html.Raw(ViewBag.ThongBao));
 
@@ -2159,22 +2590,32 @@ namespace AspNetCore
 #line hidden
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(16866, 28, true);
             WriteLiteral("\");\r\n            </script>\r\n");
             EndContext();
 #line 283 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(16841, 28, true);
             WriteLiteral("\");\r\n            </script>\r\n");
             EndContext();
 #line 277 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
         }
 
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(16905, 546, true);
+=======
+            BeginContext(16880, 546, true);
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             BeginContext(16880, 546, true);
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -2195,8 +2636,13 @@ namespace AspNetCore
         let search = """);
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(17452, 14, false);
 #line 298 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+            BeginContext(17427, 14, false);
+#line 292 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             BeginContext(17427, 14, false);
 #line 292 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
@@ -2207,7 +2653,11 @@ namespace AspNetCore
 #line hidden
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(17466, 714, true);
+=======
+            BeginContext(17441, 714, true);
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             BeginContext(17441, 714, true);
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -2233,8 +2683,13 @@ namespace AspNetCore
         let search = """);
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(18181, 14, false);
 #line 317 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+            BeginContext(18156, 14, false);
+#line 311 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             BeginContext(18156, 14, false);
 #line 311 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
@@ -2245,7 +2700,11 @@ namespace AspNetCore
 #line hidden
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(18195, 1347, true);
+=======
+            BeginContext(18170, 1347, true);
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             BeginContext(18170, 1347, true);
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -2289,8 +2748,13 @@ namespace AspNetCore
         let sort = """);
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(19543, 12, false);
 #line 353 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+            BeginContext(19518, 12, false);
+#line 347 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             BeginContext(19518, 12, false);
 #line 347 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
@@ -2301,7 +2765,11 @@ namespace AspNetCore
 #line hidden
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(19555, 675, true);
+=======
+            BeginContext(19530, 675, true);
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             BeginContext(19530, 675, true);
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -2328,8 +2796,13 @@ namespace AspNetCore
         let search = """);
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(20231, 14, false);
 #line 373 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+=======
+            BeginContext(20206, 14, false);
+#line 367 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             BeginContext(20206, 14, false);
 #line 367 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\LoaiNguoiDung\Index.cshtml"
@@ -2340,7 +2813,11 @@ namespace AspNetCore
 #line hidden
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(20245, 640, true);
+=======
+            BeginContext(20220, 640, true);
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             BeginContext(20220, 640, true);
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398

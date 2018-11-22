@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #pragma checksum "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Authentication\Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "e55f3ce540b95ecd23ba68793f71249e900e8fbe"
+=======
+#pragma checksum "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Authentication\Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "e55f3ce540b95ecd23ba68793f71249e900e8fbe"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #pragma checksum "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Authentication\Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "e55f3ce540b95ecd23ba68793f71249e900e8fbe"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -72,7 +76,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(120, 697, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d023702f413a423e8ff48aab0c2d6425", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d01869ce9e0a4dfa9b469770d6e73a63", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d01869ce9e0a4dfa9b469770d6e73a63", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -89,7 +97,11 @@ namespace AspNetCore
                 EndContext();
                 BeginContext(454, 86, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f47a83aa1ad14b738178c5bac82417fc", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "014ded9677fa49bc903f5cf848c15672", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "014ded9677fa49bc903f5cf848c15672", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -112,7 +124,11 @@ namespace AspNetCore
                 EndContext();
                 BeginContext(590, 103, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "a84115aa013148fcb236a7abde557ace", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "a3f661963d084d649a86dc673c3345e1", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "a3f661963d084d649a86dc673c3345e1", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -136,7 +152,11 @@ namespace AspNetCore
                 EndContext();
                 BeginContext(744, 64, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "444fe417c3e6428a890ec97e39832b9e", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "821bad9a922149bf8ac363c1551b2d0b", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "821bad9a922149bf8ac363c1551b2d0b", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -174,7 +194,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(819, 3563, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16065e81814c4a8291d3ad8743234bec", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b5801a5d1f9d4f69a8e6fadc02be18ee", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b5801a5d1f9d4f69a8e6fadc02be18ee", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -183,7 +207,11 @@ namespace AspNetCore
                 EndContext();
                 BeginContext(1075, 2678, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "be083ccf820d44b886a258889e81f03d", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a07a03d1b494ea39057b724e44ab2f4", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a07a03d1b494ea39057b724e44ab2f4", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -230,8 +258,11 @@ WriteAttributeValue("", 1941, Context.Request.Cookies["matkhau"], 1941, 35, fals
 ");
                     EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 43 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Authentication\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 #line 43 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Authentication\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                         }
@@ -255,8 +286,11 @@ WriteAttributeValue("", 1941, Context.Request.Cookies["matkhau"], 1941, 35, fals
 ");
                     EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 57 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Authentication\Index.cshtml"
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 #line 57 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Authentication\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                         }
@@ -296,7 +330,11 @@ WriteAttributeValue("", 1941, Context.Request.Cookies["matkhau"], 1941, 35, fals
                 EndContext();
                 BeginContext(4108, 68, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1204b7173ef5476eb8b9db7bcfc5977d", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "25178e5501e843d8b55fe1fba5242953", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "25178e5501e843d8b55fe1fba5242953", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -318,7 +356,11 @@ WriteAttributeValue("", 1941, Context.Request.Cookies["matkhau"], 1941, 35, fals
                 EndContext();
                 BeginContext(4182, 84, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c4e2ba47910b4220ac456561fb7c75fe", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c2a01b446184febba18df156ece3816", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c2a01b446184febba18df156ece3816", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -355,7 +397,11 @@ WriteAttributeValue("", 1941, Context.Request.Cookies["matkhau"], 1941, 35, fals
             WriteLiteral("\r\n</html>\r\n\r\n\r\n");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 78 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Authentication\Index.cshtml"
+=======
+#line 78 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Authentication\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 78 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Authentication\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -369,7 +415,11 @@ WriteAttributeValue("", 1941, Context.Request.Cookies["matkhau"], 1941, 35, fals
             EndContext();
             BeginContext(4462, 26, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 81 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Authentication\Index.cshtml"
+=======
+#line 81 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Authentication\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 81 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Authentication\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -382,7 +432,11 @@ WriteAttributeValue("", 1941, Context.Request.Cookies["matkhau"], 1941, 35, fals
             WriteLiteral("\");\r\n    </script>\r\n");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 83 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Authentication\Index.cshtml"
+=======
+#line 83 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Authentication\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #line 83 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Authentication\Index.cshtml"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398

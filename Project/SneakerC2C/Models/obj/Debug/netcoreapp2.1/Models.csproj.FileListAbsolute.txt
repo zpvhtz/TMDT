@@ -9,8 +9,11 @@ D:\ASP.NET\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.pdb
 D:\ASP.NET\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.dll
 D:\ASP.NET\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 D:\ASP.NET\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.csprojAssemblyReference.cache
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 F:\GitHub\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.deps.json
 F:\GitHub\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.json
 F:\GitHub\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.dev.json
@@ -22,4 +25,7 @@ F:\GitHub\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.Assembly
 F:\GitHub\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfo.cs
 F:\GitHub\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.dll
 F:\GitHub\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.pdb
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398

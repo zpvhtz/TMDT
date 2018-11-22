@@ -66,7 +66,11 @@ using SneakerC2C.Models;
         {
             BeginContext(0, 224, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5c5520b186047f9aa57d187ee5c3cbf", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50f357e1471e4d919c4d210ee51b44ef", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50f357e1471e4d919c4d210ee51b44ef", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -75,7 +79,11 @@ using SneakerC2C.Models;
                 EndContext();
                 BeginContext(41, 71, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eef8ccde415e457a8b3370fd5612da00", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9cc05b21b7420db88688654d33c5e2", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9cc05b21b7420db88688654d33c5e2", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -97,7 +105,11 @@ using SneakerC2C.Models;
                 EndContext();
                 BeginContext(118, 90, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "25518ff24c404ca4b8a1885bf0343be7", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b09eb4753974e77a44b83952a445910", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b09eb4753974e77a44b83952a445910", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -136,7 +148,11 @@ using SneakerC2C.Models;
             EndContext();
             BeginContext(226, 944, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0549c336d60c4115bbe469982013e141", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2f35c556de06455692585f1f22b2c6a6", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2f35c556de06455692585f1f22b2c6a6", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -145,7 +161,11 @@ using SneakerC2C.Models;
                 EndContext();
                 BeginContext(267, 399, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d6d55caf3a54fa5aba8ca7bd8820f27", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "77f5349b39884a69bf87f3244da1f809", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "77f5349b39884a69bf87f3244da1f809", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -177,7 +197,11 @@ using SneakerC2C.Models;
                 EndContext();
                 BeginContext(672, 482, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f19d0f7aec1b469a9d83f6359733a8b4", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d893f1bc14e4f2f9c4114331e645008", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d893f1bc14e4f2f9c4114331e645008", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398

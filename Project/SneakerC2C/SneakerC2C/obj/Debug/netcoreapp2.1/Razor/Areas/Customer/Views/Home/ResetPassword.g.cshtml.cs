@@ -119,7 +119,11 @@ else
             EndContext();
             BeginContext(1249, 1008, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bcd4ae47667547a9b3bbd629084d911d", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8acd83a4aed4904865ec2394ed0fd8a", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8acd83a4aed4904865ec2394ed0fd8a", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -194,7 +198,11 @@ else
             EndContext();
             BeginContext(4156, 55, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b3d5ba5168cb4b2a948713111a4c12a8", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b1cd9dfe325b4177a4d4d04e27ce580f", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b1cd9dfe325b4177a4d4d04e27ce580f", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398

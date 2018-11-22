@@ -54,7 +54,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(328, 50, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "5addcda2dc614e318bc76d5a7a1765c2", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "4eb8419c126548ad8dec0d466dc69fb7", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "4eb8419c126548ad8dec0d466dc69fb7", async() => {
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398

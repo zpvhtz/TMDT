@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #pragma checksum "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\HangSanPham\Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "6f3a7c2361aeedf0838849de95b024379319d6e4"
+=======
+#pragma checksum "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\HangSanPham\Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "980d6aee77644361fa0ccbeba977929d5edad344"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #pragma checksum "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\HangSanPham\Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "980d6aee77644361fa0ccbeba977929d5edad344"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -205,10 +209,13 @@ namespace AspNetCore
             WriteLiteral("\r\n                    </select>\r\n                </div>\r\n            </div>\r\n            <div class=\"col-lg-6\"></div>\r\n            <div class=\"col-lg-3\">\r\n                ");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(1533, 577, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd28a960da704a4ea1d275b91bd91461", async() => {
                 BeginContext(1601, 502, true);
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(1561, 577, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f0b7129dbbd043a9a9a30a537eb02e3b", async() => {
                 BeginContext(1629, 502, true);
@@ -257,10 +264,13 @@ namespace AspNetCore
                     <th>");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(2422, 168, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "207c98c2faaf4b8e9e412f95b99d258c", async() => {
                 BeginContext(2578, 8, true);
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(2450, 168, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c6887302597407ebe096596459957b8", async() => {
                 BeginContext(2606, 8, true);
@@ -323,8 +333,13 @@ namespace AspNetCore
             WriteLiteral("                    <tr>\r\n                        <td class=\"item-ma\">");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(3469, 11, false);
 #line 67 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\HangSanPham\Index.cshtml"
+=======
+            BeginContext(3525, 11, false);
+#line 67 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\HangSanPham\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             BeginContext(3525, 11, false);
 #line 67 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\HangSanPham\Index.cshtml"
@@ -338,8 +353,13 @@ namespace AspNetCore
             WriteLiteral("</td>\r\n                        <td class=\"item-ten\">");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(3533, 12, false);
 #line 68 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\HangSanPham\Index.cshtml"
+=======
+            BeginContext(3589, 12, false);
+#line 68 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\HangSanPham\Index.cshtml"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             BeginContext(3589, 12, false);
 #line 68 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\HangSanPham\Index.cshtml"
@@ -363,10 +383,13 @@ namespace AspNetCore
             WriteLiteral("                                    <button class=\"btn btn-danger btnSua\" type=\"button\" data-toggle=\"modal\" data-target=\"#suaModal\">Sửa</button>\r\n                                    ");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(3901, 117, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "536f3deb10884543a3ac3cd1c2e21008", async() => {
                 BeginContext(4010, 4, true);
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(3957, 117, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "043dfafe76a042a095b70817e1bdd982", async() => {
                 BeginContext(4066, 4, true);
@@ -416,10 +439,13 @@ namespace AspNetCore
             WriteLiteral("                                    <button class=\"btn btn-danger btnSua\" type=\"button\" data-toggle=\"modal\" data-target=\"#suaModal\">Sửa</button>\r\n                                    ");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(4292, 122, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "00a523fd320846e08eb2f90bcda1a357", async() => {
                 BeginContext(4403, 7, true);
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(4348, 122, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "be80c9444df94fe8811a01322fe2413b", async() => {
                 BeginContext(4459, 7, true);
@@ -486,6 +512,7 @@ namespace AspNetCore
             WriteLiteral("                <li class=\"paginate_button previous disabled\" aria-controls=\"dataTables-example\" tabindex=\"0\" id=\"dataTables-example_previous\"><a href=\"#\">Trước</a></li>\r\n");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 90 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\HangSanPham\Index.cshtml"
             }
             else
@@ -511,6 +538,8 @@ namespace AspNetCore
                 BeginContext(5348, 5, true);
                 WriteLiteral("Trước");
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(7741, 1215, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c0ee29af60e04cd19c8ed6f7c520a01e", async() => {
                 BeginContext(7819, 312, true);
@@ -605,6 +634,7 @@ namespace AspNetCore
             WriteLiteral("\r\n");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 101 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\HangSanPham\Index.cshtml"
                             break;
                         case "search":
@@ -619,6 +649,8 @@ namespace AspNetCore
                 BeginContext(5834, 5, true);
                 WriteLiteral("Trước");
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
             BeginContext(9103, 1157, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e5bcdb3173e42369c2dc0e6f8e6ffab", async() => {
                 BeginContext(9180, 1073, true);
@@ -679,10 +711,13 @@ namespace AspNetCore
             WriteLiteral("\r\n");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 104 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\HangSanPham\Index.cshtml"
                             break;
                         case "searchandsort":
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 #line 201 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\HangSanPham\Index.cshtml"
  if (ViewBag.ThongBao != null)
 {
@@ -755,12 +790,15 @@ namespace AspNetCore
             WriteLiteral("            ");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 111 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\HangSanPham\Index.cshtml"
              for (int i = 1; i <= ViewBag.TongTrang; i++)
             {
                 if (i > 5)
                 {
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 #line 206 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\HangSanPham\Index.cshtml"
 }
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398

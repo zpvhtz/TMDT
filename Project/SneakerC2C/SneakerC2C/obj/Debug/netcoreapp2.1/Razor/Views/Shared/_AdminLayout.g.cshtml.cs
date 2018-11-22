@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #pragma checksum "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Views\Shared\_AdminLayout.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "9ef580d568a1e8244bc3ae6a563d26c14cf2b7b5"
+=======
+#pragma checksum "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Views\Shared\_AdminLayout.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "892c42e200e8af7fdc1efba4d52332c2e1ef8134"
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
 #pragma checksum "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Views\Shared\_AdminLayout.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "892c42e200e8af7fdc1efba4d52332c2e1ef8134"
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -37,7 +41,11 @@ using Microsoft.AspNetCore.Http;
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9ef580d568a1e8244bc3ae6a563d26c14cf2b7b5", @"/Views/Shared/_AdminLayout.cshtml")]
+=======
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"892c42e200e8af7fdc1efba4d52332c2e1ef8134", @"/Views/Shared/_AdminLayout.cshtml")]
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"892c42e200e8af7fdc1efba4d52332c2e1ef8134", @"/Views/Shared/_AdminLayout.cshtml")]
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -49,8 +57,13 @@ using Microsoft.AspNetCore.Http;
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_2 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("href", new global::Microsoft.AspNetCore.Html.HtmlString("~/admintemplate2/vendor/fontawesome-free/css/all.min.css"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_3 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("type", new global::Microsoft.AspNetCore.Html.HtmlString("text/css"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
 <<<<<<< HEAD
+<<<<<<< HEAD
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_4 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("href", new global::Microsoft.AspNetCore.Html.HtmlString("~/admintemplate/vendor/datatables/dataTables.bootstrap4.css"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_5 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("href", new global::Microsoft.AspNetCore.Html.HtmlString("~/admintemplate/css/sb-admin.css"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+=======
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_4 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("href", new global::Microsoft.AspNetCore.Html.HtmlString("~/admintemplate2/vendor/datatables/dataTables.bootstrap4.css"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_5 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("href", new global::Microsoft.AspNetCore.Html.HtmlString("~/admintemplate2/css/sb-admin.css"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_4 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("href", new global::Microsoft.AspNetCore.Html.HtmlString("~/admintemplate2/vendor/datatables/dataTables.bootstrap4.css"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_5 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("href", new global::Microsoft.AspNetCore.Html.HtmlString("~/admintemplate2/css/sb-admin.css"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -60,15 +73,21 @@ using Microsoft.AspNetCore.Http;
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_8 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "LogOut", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_9 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Authentication", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
 <<<<<<< HEAD
+<<<<<<< HEAD
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_10 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/admintemplate/vendor/jquery/jquery.min.js"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_11 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/admintemplate/vendor/bootstrap/js/bootstrap.bundle.min.js"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_12 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/admintemplate/vendor/jquery-easing/jquery.easing.min.js"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_13 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/admintemplate/js/sb-admin.min.js"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
 =======
+=======
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_10 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/admintemplate2/vendor/jquery/jquery.min.js"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_11 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/admintemplate2/vendor/bootstrap/js/bootstrap.bundle.min.js"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_12 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/admintemplate2/vendor/jquery-easing/jquery.easing.min.js"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_13 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/admintemplate2/js/sb-admin.min.js"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_14 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("id", new global::Microsoft.AspNetCore.Html.HtmlString("page-top"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         #line hidden
@@ -100,8 +119,13 @@ using Microsoft.AspNetCore.Http;
             WriteLiteral("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(104, 827, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d7045dc0b1a445999e5ca400cd45949b", async() => {
+=======
+            BeginContext(104, 831, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "059796352b444a188a240302d328fdd7", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             BeginContext(104, 831, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "059796352b444a188a240302d328fdd7", async() => {
@@ -118,8 +142,13 @@ using Microsoft.AspNetCore.Http;
     ");
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(440, 85, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "5a00632e784d4271af8a2fe866e2aa48", async() => {
+=======
+                BeginContext(440, 86, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d4c77850c08d44438ec4f46c4923eb77", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 BeginContext(440, 86, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d4c77850c08d44438ec4f46c4923eb77", async() => {
@@ -142,8 +171,13 @@ using Microsoft.AspNetCore.Http;
                 WriteLiteral("\r\n    <!-- Custom fonts for this template-->\r\n    ");
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(575, 102, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "cef3757e9da34a40970998c901ef5500", async() => {
+=======
+                BeginContext(576, 103, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "2a03ba37ee6d4aa08cedab46344a6c89", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 BeginContext(576, 103, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "2a03ba37ee6d4aa08cedab46344a6c89", async() => {
@@ -167,8 +201,13 @@ using Microsoft.AspNetCore.Http;
                 WriteLiteral("\r\n    <!-- Page level plugin CSS-->\r\n    ");
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(718, 90, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "b10ab40dbe244ebcaffcfbcd688e909d", async() => {
+=======
+                BeginContext(720, 91, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "11de158065204a5c80bafbd645c9e055", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 BeginContext(720, 91, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "11de158065204a5c80bafbd645c9e055", async() => {
@@ -191,8 +230,13 @@ using Microsoft.AspNetCore.Http;
                 WriteLiteral("\r\n    <!-- Custom styles for this template-->\r\n    ");
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(859, 63, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "5a581953c4034aa1a10ff3c7f7fa427a", async() => {
+=======
+                BeginContext(862, 64, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d3b4b90092914d02bd5f29e587e00819", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 BeginContext(862, 64, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d3b4b90092914d02bd5f29e587e00819", async() => {
@@ -230,9 +274,15 @@ using Microsoft.AspNetCore.Http;
             WriteLiteral("\r\n");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(933, 2418, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0183508023aa40538e9917338dac71cd", async() => {
                 BeginContext(953, 8, true);
+=======
+            BeginContext(937, 2422, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bf909faa51654997b953896959598607", async() => {
+                BeginContext(957, 8, true);
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             BeginContext(937, 2422, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bf909faa51654997b953896959598607", async() => {
@@ -268,7 +318,11 @@ Write(Html.Partial("_AdminTopMenuLayout.cshtml"));
 #line hidden
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(1224, 1506, true);
+=======
+                BeginContext(1228, 1506, true);
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 BeginContext(1228, 1506, true);
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -307,6 +361,7 @@ Write(Html.Partial("_AdminTopMenuLayout.cshtml"));
                 <div class=""modal-footer"">
                     <button class=""btn btn-secondary"" type=""button"" data-dismiss=""modal"">Cancel</button>
                     ");
+<<<<<<< HEAD
                 EndContext();
 <<<<<<< HEAD
                 BeginContext(2730, 110, false);
@@ -345,11 +400,41 @@ Write(Html.Partial("_AdminTopMenuLayout.cshtml"));
                 BeginContext(2957, 67, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c2fd355e1f9441d93ef3422545f89e9", async() => {
 =======
+=======
+                EndContext();
+                BeginContext(2734, 110, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ff0d81eeaf304d289337cb95ec73b585", async() => {
+                    BeginContext(2834, 6, true);
+                    WriteLiteral("Logout");
+                    EndContext();
+                }
+                );
+                __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
+                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper);
+                __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Area = (string)__tagHelperAttribute_7.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_7);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Action = (string)__tagHelperAttribute_8.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_8);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Controller = (string)__tagHelperAttribute_9.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_9);
+                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+                if (!__tagHelperExecutionContext.Output.IsContentModified)
+                {
+                    await __tagHelperExecutionContext.SetOutputContentAsync();
+                }
+                Write(__tagHelperExecutionContext.Output);
+                __tagHelperExecutionContext = __tagHelperScopeManager.End();
+                EndContext();
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
                 BeginContext(2844, 117, true);
                 WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <!-- Bootstrap core JavaScript-->\r\n    ");
                 EndContext();
                 BeginContext(2961, 68, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84d99b4df5ee4352bd267fffac40eddb", async() => {
+<<<<<<< HEAD
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
+=======
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
                 }
                 );
@@ -365,11 +450,19 @@ Write(Html.Partial("_AdminTopMenuLayout.cshtml"));
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(3024, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(3030, 83, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "184aef0532f6416ebf6696203aab8173", async() => {
+=======
+                BeginContext(3029, 6, true);
+                WriteLiteral("\r\n    ");
+                EndContext();
+                BeginContext(3035, 84, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0207ec0325c9460f852abae165617f74", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 BeginContext(3029, 6, true);
                 WriteLiteral("\r\n    ");
@@ -391,11 +484,19 @@ Write(Html.Partial("_AdminTopMenuLayout.cshtml"));
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(3113, 42, true);
                 WriteLiteral("\r\n    <!-- Core plugin JavaScript-->\r\n    ");
                 EndContext();
                 BeginContext(3155, 81, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "191dc837556045e8a36d51842d3b5f15", async() => {
+=======
+                BeginContext(3119, 42, true);
+                WriteLiteral("\r\n    <!-- Core plugin JavaScript-->\r\n    ");
+                EndContext();
+                BeginContext(3161, 82, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e27d42936aaf45899733590c6be54642", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 BeginContext(3119, 42, true);
                 WriteLiteral("\r\n    <!-- Core plugin JavaScript-->\r\n    ");
@@ -417,11 +518,19 @@ Write(Html.Partial("_AdminTopMenuLayout.cshtml"));
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(3236, 48, true);
                 WriteLiteral("\r\n    <!-- Custom scripts for all pages-->\r\n    ");
                 EndContext();
                 BeginContext(3284, 58, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72df1df005b7492b8bb566f0761676af", async() => {
+=======
+                BeginContext(3243, 48, true);
+                WriteLiteral("\r\n    <!-- Custom scripts for all pages-->\r\n    ");
+                EndContext();
+                BeginContext(3291, 59, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1db43ee468b748769fe08740c9e51274", async() => {
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 BeginContext(3243, 48, true);
                 WriteLiteral("\r\n    <!-- Custom scripts for all pages-->\r\n    ");
@@ -443,7 +552,11 @@ Write(Html.Partial("_AdminTopMenuLayout.cshtml"));
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(3342, 2, true);
+=======
+                BeginContext(3350, 2, true);
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
                 BeginContext(3350, 2, true);
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398
@@ -463,7 +576,11 @@ Write(Html.Partial("_AdminTopMenuLayout.cshtml"));
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(3351, 11, true);
+=======
+            BeginContext(3359, 11, true);
+>>>>>>> 696c1368a926eaece5521df161cd70b520028398
 =======
             BeginContext(3359, 11, true);
 >>>>>>> 696c1368a926eaece5521df161cd70b520028398

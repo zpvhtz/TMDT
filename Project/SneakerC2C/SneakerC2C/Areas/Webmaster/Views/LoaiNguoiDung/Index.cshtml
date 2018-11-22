@@ -88,10 +88,13 @@
                 <ul class="pagination">
                     @if (ViewBag.TrangHienTai == 1)
                     {
-                        <li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous"><a href="#">Trước</a></li>
+                        <li class="paginate_button page-item previous disabled" id="dataTable_previous">
+                            <a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Trước</a>
+                        </li>
                     }
                     else
                     {
+
                         <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
                             @switch (ViewBag.TrangThai)
                             {
@@ -110,27 +113,33 @@
                             }
                         </li>
                     }
+                    @* Page number *@
                     @for (int i = 1; i <= ViewBag.TongTrang; i++)
                     {
                         if (i > 5)
                         {
-                            <li class="paginate_button" aria-controls="dataTables-example" tabindex="0"><a href="#">...</a></li>
-                            <li class="paginate_button" aria-controls="dataTables-example" tabindex="0">
-                                @switch (ViewBag.TrangThai)
-                                {
-                                    case "index":
-                                        <a asp-controller="LoaiNguoiDung" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
-                                        break;
-                                    case "sort":
-                                        <a asp-controller="LoaiNguoiDung" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
-                                        break;
-                                    case "search":
-                                        <a asp-controller="LoaiNguoiDung" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
-                                        break;
-                                    case "searchandsort":
-                                        <a asp-controller="LoaiNguoiDung" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
-                                        break;
-                                }
+                            @*<li class="paginate_button" aria-controls="dataTables-example" tabindex="0"><a href="#">...</a></li>
+                             <li class="paginate_button" aria-controls="dataTables-example" tabindex="0">*@
+
+                            <li class="paginate_button page-item active"> <a href="#" aria-controls="dataTable" tabindex="0" class="page-link">...</a> </li>
+                            <li class="paginate_button page-item active">
+                                <a href="#" aria-controls="dataTable" tabindex="0" class="page-link">
+
+                                    @switch (ViewBag.TrangThai)
+                                    {
+                                        case "index":
+                                            <a asp-controller="LoaiNguoiDung" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                            break;
+                                        case "sort":
+                                            <a asp-controller="LoaiNguoiDung" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                            break;
+                                        case "search":
+                                            <a asp-controller="LoaiNguoiDung" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                            break;
+                                        case "searchandsort":
+                                            <a asp-controller="LoaiNguoiDung" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                            break;
+                                    }
                             </li>
                             break;
                         }
@@ -138,11 +147,17 @@
                         {
                             if (i == ViewBag.TrangHienTai)
                             {
-                                <li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#">@i</a></li>
+
+                                @*<li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#">@i</a></li>*@
+                                <li class="paginate_button page-item active">
+                                    <a href="#" aria-controls="dataTable" data-dt-idx="@i" tabindex="0" class="page-link">@i</a>
+                                </li>
                             }
                             else
                             {
-                                <li class="paginate_button" aria-controls="dataTables-example" tabindex="0">
+                                @*<li class="paginate_button" aria-controls="dataTables-example" tabindex="0">*@
+                                <li class="paginate_button page-item active">
+                                    <a href="#" aria-controls="dataTable" data-dt-idx="@i" tabindex="0" class="page-link">@i</a>                              
                                     @switch (ViewBag.TrangThai)
                                     {
                                         case "index":
@@ -162,9 +177,14 @@
                             }
                         }
                     }
+                    @* Next Button *@
                     @if (ViewBag.TrangHienTai == ViewBag.TongTrang)
                     {
-                        <li class="paginate_button next disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="#">Tiếp</a></li>
+                        @*<li class="paginate_button next disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="#">Tiếp</a></li>*@
+                        <li class="paginate_button page-item next" id="dataTable_next">
+                            <a href="#" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link">Tiếp</a>
+                        </li>
+
                     }
                     else
                     {
@@ -189,32 +209,6 @@
                 </ul>
             </div>
         </div>
-        <div class="col-sm-12 col-md-7">
-            <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
-                <ul class="pagination">
-
-                    <li class="paginate_button page-item previous disabled" id="dataTable_previous">
-                        <a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Trước</a>
-                    </li>
-
-                    <li class="paginate_button page-item active">
-                        <a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a>
-                    </li>
-
-                    <li class="paginate_button page-item ">
-                        <a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a>
-                    </li>
-
-                    <li class="paginate_button page-item ">
-                        <a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a>
-                    </li>
-
-                    <li class="paginate_button page-item next" id="dataTable_next">
-                        <a href="#" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link">Sau</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
         <!-- /.panel-body -->
         <!-------------------------------------------------------- INSERT MODAL ---------------------------------------------------------->
 
@@ -224,8 +218,8 @@
                 <form asp-controller="LoaiNguoiDung" asp-action="CreateLoaiNguoiDung" method="post">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Loại Người Dùng</h4>
+                            @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                            <h4 class="modal-title"><b>Loại Người Dùng</b></h4>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
@@ -253,8 +247,8 @@
                 <form asp-controller="LoaiNguoiDung" asp-action="EditLoaiNguoiDung" method="post">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Loại Người Dùng</h4>
+                            @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                            <h4 class="modal-title"><b>Loại Người Dùng</b></h4>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">

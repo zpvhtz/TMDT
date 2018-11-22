@@ -1,0 +1,217 @@
+﻿@model IEnumerable<Models.Database.SanPham>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="banner-bootom-w3-agileits">
+    <div class="container">
+        <!-- mens -->
+        <div class="col-md-4 products-left">
+            <div class="filter-price">
+                <h3>Tìm kiếm theo giá</h3>
+                <ul class="dropdown-menu6">
+                    <li>
+                        <div id="slider-range"></div>
+                        <input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
+                    </li>
+                </ul>
+            </div>
+            <div class="css-treeview">
+                <h4>Danh Mục</h4>
+                <ul class="tree-list-pad">
+                    <li>
+                        <label for="item-0" style="color: #fc636b"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Giày Nam</label>
+                    </li>
+                    <li>
+                        <a href="womens.html"><label for="item-1"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Giày Nữ</label></a>
+                    </li>
+                    <li>
+                        <input type="checkbox" checked="checked" id="item-2" /><label for="item-2"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Thương Hiệu</label>
+                        <ul>
+                            <li>
+                                <a href="#"><label for="item-2-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Adidas</label></a>
+                            </li>
+                            <li>
+                                <a href="#"><label for="item-2-1"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Air Jordan</label></a>
+                            </li>
+                            <li>
+                                <a href="#"><label for="item-2-2"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Balenciaga</label></a>
+                            </li>
+                            <li>
+                                <a href="#"><label for="item-2-3"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Converse</label></a>
+                            </li>
+                            <li>
+                                <a href="#"><label for="item-2-4"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> New Balance</label></a>
+                            </li>
+                            <li>
+                                <a href="#"><label for="item-2-5"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Nike</label></a>
+                            </li>
+                            <li>
+                                <a href="#"><label for="item-2-6"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Puma</label></a>
+                            </li>
+                            <li>
+                                <a href="#"><label for="item-2-7"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Vans</label></a>
+                            </li>
+                            <li>
+                                <a href="#"><label for="item-2-8"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Khác</label></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="community-poll">
+                <h4>Đánh giá</h4>
+                <div class="swit form">
+                    <form>
+                        <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio" checked=""><i></i>4 sao trở lên</label> </div></div>
+                        <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>3 sao trở lên</label> </div></div>
+                        <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>2 sao trở lên</label> </div></div>
+                        <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>1 sao trở lên</label> </div></div>
+                        <input type="submit" value="TÌM">
+                    </form>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="col-md-8 products-right">
+            <h5>Giày Nam</h5>
+            <div class="sort-grid">
+                <div class="sorting">
+                    <h6>Tìm kiếm theo</h6>
+                    <select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
+                        <option value="null">Mặc định</option>
+                        <option value="null">Mới Nhất</option>
+                        <option value="null">Bán Chạy</option>
+                        <option value="null">Giá(Cao - Thấp)</option>
+                        <option value="null">Giá(Thấp - Cao)</option>
+                    </select>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="men-wear-top">
+                <div id="top" class="callbacks_container">
+                    <ul class="rslides" id="slider3">
+                        <li>
+                            <img class="img-responsive" src="~/maintemplate/images/banner2.jpg" alt=" " />
+                        </li>
+                        <li>
+                            <img class="img-responsive" src="~/maintemplate/images/banner5.jpg" alt=" " />
+                        </li>
+                        <li>
+                            <img class="img-responsive" src="~/maintemplate/images/banner2.jpg" alt=" " />
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="men-wear-bottom">
+                <div class="col-sm-4 men-wear-left">
+                    <img class="img-responsive" src="~/maintemplate/images/bb2.jpg" alt=" " />
+                </div>
+                <div class="col-sm-8 men-wear-right">
+                    <h4>Exclusive Men's <span>Collections</span></h4>
+                    <p>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        accusantium doloremque laudantium, veritatis et quasi architecto beatae vitae dicta sunt
+                        explicabo.
+                    </p>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            @{
+                int i = 1;
+            }
+            @foreach (var item in Model)
+            {
+                if (i <= 3)
+                {
+                    <div class="col-md-4 product-men">
+                        <div class="men-pro-item simpleCart_shelfItem">
+                            <div class="men-thumb-item">
+                                <div class="anhsanpham-3" style="background-image: url(56519.jpg);"></div>
+                            </div>
+                            <div class="item-info-product ">
+                                <h4><a href="single.html" class="tieude_sanpham">@item.TenSanPham</a></h4>
+                                <div class="info-product-price">
+                                    @if (item.GiamGia != null && item.GiamGia != 0)
+                                    {
+                                        double gia = item.Gia * (100 - item.GiamGia) / 100 ?? 0;
+                                        <p><span class="item_price">@gia.ToString("#,###") đ</span> <del>- @item.Gia.Value.ToString("#,###") đ</del></p>
+                                    }
+                                    else
+                                    {
+                                        <p><span class="item_price">@item.Gia.Value.ToString("#,###") đ</span></p>
+                                    }
+                                </div>
+                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                    <form action="#" method="post">
+                                        <fieldset>
+                                            <input type="submit" name="submit" id="btnThemGioHang" value="Thêm vào giỏ hàng" class="button">
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    i++;
+                }
+                if (i == 4)
+                {
+                    <div class="clearfix"></div>
+                }
+                if (i >= 4)
+                {
+                    <div class="single-pro">
+                        @if (i <= i + 4)
+                        {
+                            <div class="col-md-3 product-men">
+                                <div class="men-pro-item simpleCart_shelfItem">
+                                    <div class="men-thumb-item">
+                                        <a href="#">
+                                            <div class="anhsanpham-4" style="background-image: url(/Hinh/SanPham/@item.Hinh);"></div>
+                                        </a>
+                                    </div>
+                                    <div class="item-info-product ">
+                                        <h4><a href="#" class="tieude_sanpham">@item.TenSanPham</a></h4>
+                                        <div class="info-product-price">
+                                            <div class="info-product-price">
+                                                @if (item.GiamGia != null && item.GiamGia != 0)
+                                                {
+                                                    double gia = item.Gia * (100 - item.GiamGia) / 100 ?? 0;
+                                                    <p><span class="item_price">@gia.ToString("#,###") đ</span> <del>- @item.Gia.Value.ToString("#,###") đ</del></p>
+                                                }
+                                                else
+                                                {
+                                                    <p><span class="item_price">@item.Gia.Value.ToString("#,###") đ</span></p>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                            <form action="#" method="post">
+                                                <fieldset>
+                                                    <input type="submit" name="submit" id="btnThemVaoGioHang" value="Thêm vào giỏ hàng" class="button" />
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            i++;
+
+                        }
+                        @if (i == i + 4)
+                        {
+                            <div class="clearfix"></div>
+                        }
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

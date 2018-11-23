@@ -7,19 +7,19 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<div class="row">
-    <div class="col-lg-12">
-        <h2 class="page-header">DANH SÁCH GÓI QUẢNG CÁO</h2>
-    </div>
-    <!-- /.col-lg-12 -->
-</div>
+
+<h1 class="page-header">DANH SÁCH GÓI QUẢNG CÁO</h1>
+<hr>
+
 <div class="panel panel-default">
     <div class="panel-body">
         <!-- Search form -->
         <div class="row">
+            <!-------------------------------------------------------- INSERT ---------------------------------------------------------->
             <div class="col-lg-1">
                 <button class="btn btn-primary" data-toggle="modal" data-target="#themModal">Thêm</button>
             </div>
+            <!-------------------------------------------------------- SEARCH CATEGORY ---------------------------------------------------------->
             <div class="col-lg-2">
                 <div class="form-group">
                     <select class="form-control" id="sortList" onchange="window.location.href = SearchAndSort()">
@@ -31,7 +31,7 @@
                     </select>
                 </div>
             </div>
-            <div class="col-lg-6"></div>
+            <!-------------------------------------------------------- SEARCH BAR ---------------------------------------------------------->
             <div class="col-lg-3">
                 <form asp-controller="GoiQuangCao" asp-action="Search" method="get">
                     <div class="input-group custom-search-form">
@@ -45,6 +45,8 @@
                     </div>
                 </form>
             </div>
+
+            <!-------------------------------------------------------- MAIN TABLE ---------------------------------------------------------->
         </div>
         <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
             <thead class="thead-dark">
@@ -53,229 +55,254 @@
                     <th>Tên Vị Trí</th>
                     <th>Thời Lượng (Tuần)</th>
                     <th>Tổng Tiền</th>
-                    <th></th>
+                    <th>Chức năng</th>
                 </tr>
             </thead>
             <tbody class="body-content">
                 @foreach (var item in Model)
                 {
-                    <tr class="odd gradeX">
-                        <td class="item-ma">@item.MaGoiQuangCao</td>
-                        <td class="item-vitriquangcao">@item.IdViTriNavigation.TenViTri</td>
-                        <td class="item-thoiluong">@item.ThoiLuong</td>
-                        <td class="item-tongtien">@item.TongTien</td>  
-                        <td>
-                            @if (item.TinhTrang == "Không khoá")
-                            {
-                                <button class="btn btn-primary btnSuaGoi" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
-                                <a asp-controller="GoiQuangCao" asp-action="LockGoiQuangCao" asp-route-magoi="@item.MaGoiQuangCao" class="btn btn-danger">Khoá</a>
-                            }
-                            else
-                            {
-                                <button class="btn btn-primary btnSuaGoi" type="button" data-toggle="modal" data-target="#suaModal" disabled>Sửa</button>
-                                <a asp-controller="GoiQuangCao" asp-action="UnlockGoiQuangCao" asp-route-magoi="@item.MaGoiQuangCao" class="btn btn-danger">Mở khoá</a>
-                            }
-                        </td>
-                    </tr>
+                <tr class="odd gradeX">
+                    <td class="item-ma">@item.MaGoiQuangCao</td>
+                    <td class="item-vitriquangcao">@item.IdViTriNavigation.TenViTri</td>
+                    <td class="item-thoiluong">@item.ThoiLuong</td>
+                    <td class="item-tongtien">@item.TongTien</td>
+                    <td>
+                        @if (item.TinhTrang == "Không khoá")
+                        {
+                            <button class="btn btn-primary btnSuaGoi" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
+
+                            <a asp-controller="GoiQuangCao" asp-action="LockGoiQuangCao" asp-route-magoi="@item.MaGoiQuangCao" class="btn btn-danger">Khoá</a>
+                        }
+                        else
+                        {
+                            <button class="btn btn-primary  btnSuaGoi" type="button" data-toggle="modal" data-target="#suaModal" disabled>Sửa</button>
+
+                            <a asp-controller="GoiQuangCao" asp-action="UnlockGoiQuangCao" asp-route-magoi="@item.MaGoiQuangCao" class="btn btn-danger">Mở khoá</a>
+                        }
+                    </td>
+                </tr>
                 }
             </tbody>
         </table>
         <!-- /.table-responsive -->
-        <ul class="pagination" style="margin: 0 auto;">
-            @if (ViewBag.TrangHienTai == 1)
-            {
-                <li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous"><a href="#">Trước</a></li>
-            }
-            else
-            {
-                <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
-                    @switch (ViewBag.TrangThai)
+        <div class="col-sm-12 col-md-7">
+            <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+                <ul class="pagination">
+                    @if (ViewBag.TrangHienTai == 1)
                     {
-                        case "index":
-                            <a asp-controller="GoiQuangCao" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
-                            break;
-                        case "sort":
-                            <a asp-controller="GoiQuangCao" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
-                            break;
-                        case "search":
-                            <a asp-controller="GoiQuangCao" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
-                            break;
-                        case "searchandsort":
-                            <a asp-controller="GoiQuangCao" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
-                            break;
-                    }
-                </li>
-            }
-            @for (int i = 1; i <= ViewBag.TongTrang; i++)
-            {
-                if (i > 5)
-                {
-                    <li class="paginate_button" aria-controls="dataTables-example" tabindex="0"><a href="#">...</a></li>
-                    <li class="paginate_button" aria-controls="dataTables-example" tabindex="0">
-                        @switch (ViewBag.TrangThai)
-                        {
-                            case "index":
-                                <a asp-controller="GoiQuangCao" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
-                                break;
-                            case "sort":
-                                <a asp-controller="GoiQuangCao" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
-                                break;
-                            case "search":
-                                <a asp-controller="GoiQuangCao" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
-                                break;
-                            case "searchandsort":
-                                <a asp-controller="GoiQuangCao" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
-                                break;
-                        }
-                    </li>
-                    break;
-                }
-                else
-                {
-                    if (i == ViewBag.TrangHienTai)
-                    {
-                        <li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#">@i</a></li>
+                        <li class="paginate_button page-item previous disabled" id="dataTable_previous">
+                            <a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Trước</a>
+                        </li>
                     }
                     else
                     {
-                        <li class="paginate_button" aria-controls="dataTables-example" tabindex="0">
+
+                        <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
                             @switch (ViewBag.TrangThai)
                             {
                                 case "index":
-                                    <a asp-controller="GoiQuangCao" asp-action="Index" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="GoiQuangCao" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
                                     break;
                                 case "sort":
-                                    <a asp-controller="GoiQuangCao" asp-action="Sort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="GoiQuangCao" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
                                     break;
                                 case "search":
-                                    <a asp-controller="GoiQuangCao" asp-action="Search" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="GoiQuangCao" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
                                     break;
                                 case "searchandsort":
-                                    <a asp-controller="GoiQuangCao" asp-action="SearchAndSort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="GoiQuangCao" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
                                     break;
                             }
                         </li>
                     }
-                }
-            }
-            @if (ViewBag.TrangHienTai == ViewBag.TongTrang)
-            {
-                <li class="paginate_button next disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="#">Tiếp</a></li>
-            }
-            else
-            {
-                <li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next">
-                    @switch (ViewBag.TrangThai)
+                    @* Page number *@
+                    @for (int i = 1; i <= ViewBag.TongTrang; i++)
                     {
-                        case "index":
-                            <a asp-controller="GoiQuangCao" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                        if (i > 5)
+                        {
+                            @*<li class="paginate_button" aria-controls="dataTables-example" tabindex="0"><a href="#">...</a></li>
+                                <li class="paginate_button" aria-controls="dataTables-example" tabindex="0">*@
+
+                            <li class="paginate_button page-item active"> <a href="#" aria-controls="dataTable" tabindex="0" class="page-link">...</a> </li>
+                            <li class="paginate_button page-item active">
+                                <a href="#" aria-controls="dataTable" tabindex="0" class="page-link">
+
+                                    @switch (ViewBag.TrangThai)
+                                    {
+                                        case "index":
+                                            <a asp-controller="GoiQuangCao" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                            break;
+                                        case "sort":
+                                            <a asp-controller="GoiQuangCao" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                            break;
+                                        case "search":
+                                            <a asp-controller="GoiQuangCao" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                            break;
+                                        case "searchandsort":
+                                            <a asp-controller="GoiQuangCao" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                            break;
+                                    }
+                            </li>
                             break;
-                        case "sort":
-                            <a asp-controller="GoiQuangCao" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
-                            break;
-                        case "search":
-                            <a asp-controller="GoiQuangCao" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
-                            break;
-                        case "searchandsort":
-                            <a asp-controller="GoiQuangCao" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
-                            break;
+                        }
+                        else
+                        {
+                            if (i == ViewBag.TrangHienTai)
+                            {
+
+                                @*<li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#">@i</a></li>*@
+                                <li class="paginate_button page-item active">
+                                    <a href="#" aria-controls="dataTable" data-dt-idx="@i" tabindex="0" class="page-link">@i</a>
+                                </li>
+                            }
+                            else
+                            {
+                                @*<li class="paginate_button" aria-controls="dataTables-example" tabindex="0">*@
+                                <li class="paginate_button page-item active">
+                                    <a href="#" aria-controls="dataTable" data-dt-idx="@i" tabindex="0" class="page-link">@i</a>
+                                    @switch (ViewBag.TrangThai)
+                                    {
+                                        case "index":
+                                            <a asp-controller="GoiQuangCao" asp-action="Index" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                            break;
+                                        case "sort":
+                                            <a asp-controller="GoiQuangCao" asp-action="Sort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                            break;
+                                        case "search":
+                                            <a asp-controller="GoiQuangCao" asp-action="Search" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                            break;
+                                        case "searchandsort":
+                                            <a asp-controller="GoiQuangCao" asp-action="SearchAndSort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                            break;
+                                    }
+                                </li>
+                            }
+                        }
                     }
-                </li>
-            }
-        </ul>
-    </div>
-</div>
-<!-- /.panel-body -->
-<!-- Modal thêm -->
-<div class="modal fade" id="themModal" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <form asp-controller="GoiQuangCao" asp-action="CreateGoiQuangCao" method="post">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Gói Quảng Cáo</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Mã</label>
-                        <input type="text" class="form-control" id="item-them-ma" name="item_them_ma" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Tên vị trí</label>
-                        <select class="form-control" id="item-them-vitriquangcao" name="item_them_vitriquangcao">
-                            @foreach (var item in ViewBag.ViTriQuangcao)
-                            {
-                                <option value="@item.Id">@item.TenViTri</option>
-                            }
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Thời Lương</label>
-                        <input type="number" class="form-control" id="item-them-thoiluong" name="item_them_thoiluong" min="1" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Tổng Tiền </label>
-                        <input type="number" class="form-control" id="item-them-tongtien" name="item_them_tongtien" min="0" readonly required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-warning" id="btnThemTrang">Thêm</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
+                    @* Next Button *@
+                    @if (ViewBag.TrangHienTai == ViewBag.TongTrang)
+                    {
+                        @*<li class="paginate_button next disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="#">Tiếp</a></li>*@
+                        <li class="paginate_button page-item next" id="dataTable_next">
+                            <a href="#" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link">Tiếp</a>
+                        </li>
 
-<!-- Modal sửa -->
-<div class="modal fade" id="suaModal" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <form asp-controller="GoiQuangCao" asp-action="EditGoiQuangCao" method="post">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Gói Quảng Cáo</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Mã</label>
-                        <input type="text" class="form-control" id="item-sua-ma" name="item_sua_ma" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label>Tên vị trí</label>
-                        <select class="form-control" id="item-sua-vitriquangcao" name="item_sua_vitriquangcao">
-                            @foreach (var item in ViewBag.ViTriQuangcao)
+                    }
+                    else
+                    {
+                        <li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next">
+                            @switch (ViewBag.TrangThai)
                             {
-                                <option value="@item.Id">@item.TenViTri</option>
+                                case "index":
+                                    <a asp-controller="GoiQuangCao" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                                    break;
+                                case "sort":
+                                    <a asp-controller="GoiQuangCao" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                                    break;
+                                case "search":
+                                    <a asp-controller="GoiQuangCao" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                                    break;
+                                case "searchandsort":
+                                    <a asp-controller="GoiQuangCao" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                                    break;
                             }
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Thời Lương</label>
-                        <input type="number" class="form-control" id="item-sua-thoiluong" name="item_sua_thoiluong" min="1" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Tổng Tiền </label>
-                        <input type="number" class="form-control" id="item-sua-tongtien" name="item_sua_tongtien" min="0" readonly required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-warning">Sửa</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                </div>
+                        </li>
+                    }
+                </ul>
             </div>
-        </form>
-    </div>
-</div>
+        </div>
+        <!-- /.panel-body -->
+        <!-------------------------------------------------------- INSERT MODAL ---------------------------------------------------------->
 
-@if (ViewBag.ThongBao != null)
-{
-    <script>
+        <div class="modal fade" id="themModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <form asp-controller="GoiQuangCao" asp-action="CreateGoiQuangCao" method="post">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                            <h4 class="modal-title"><b>Gói Quảng Cáo</b></h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Mã</label>
+                                <input type="text" class="form-control" id="item-them-ma" name="item_them_ma" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Tên vị trí</label>
+                                <select class="form-control" id="item-them-vitriquangcao" name="item_them_vitriquangcao">
+                                    @foreach (var item in ViewBag.ViTriQuangcao)
+                                    {
+                                        <option value="@item.Id">@item.TenViTri</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Thời Lương</label>
+                                <input type="number" class="form-control" id="item-them-thoiluong" name="item_them_thoiluong" min="1" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Tổng Tiền </label>
+                                <input type="number" class="form-control" id="item-them-tongtien" name="item_them_tongtien" min="0" readonly required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-warning" id="btnThemTrang">Thêm</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-------------------------------------------------------- UPDATE MODAL ---------------------------------------------------------->
+        <div class="modal fade" id="suaModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <form asp-controller="GoiQuangCao" asp-action="EditGoiQuangCao" method="post">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                            <h4 class="modal-title"><b>Gói Quảng Cáo</b></h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Mã</label>
+                                <input type="text" class="form-control" id="item-sua-ma" name="item_sua_ma" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Tên vị trí</label>
+                                <select class="form-control" id="item-sua-vitriquangcao" name="item_sua_vitriquangcao">
+                                    @foreach (var item in ViewBag.ViTriQuangcao)
+                                    {
+                                        <option value="@item.Id">@item.TenViTri</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Thời Lương</label>
+                                <input type="number" class="form-control" id="item-sua-thoiluong" name="item_sua_thoiluong" min="1" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Tổng Tiền </label>
+                                <input type="number" class="form-control" id="item-sua-tongtien" name="item_sua_tongtien" min="0" readonly required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-warning">Sửa</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        @if (ViewBag.ThongBao != null)
+        {
+            <script>
         alert("@Html.Raw(ViewBag.ThongBao)");
-    </script>
-}
+            </script>
+        }
+
 
 <script>
     function SearchAndSort() {
@@ -312,9 +339,9 @@
             e.preventDefault();
         }
     };
-</script>
+        </script>
 
-<script>
+        <script>
     $(document).ready(function () {
         //Sắp xếp
         let sort = "@ViewBag.Sort";
@@ -396,27 +423,27 @@
         let id = $("#item-them-vitriquangcao").val();
         let thoiluong = $(this).val();
         GetDonGiaThem(id,thoiluong);
-        
+
     });
 
     $("#item-them-vitriquangcao").change(function () {
         let id = $(this).val();
         let thoiluong = $("#item-them-thoiluong").val();
         GetDonGiaThem(id,thoiluong);
-       
+
     });
     //tính tổng tiền khi chọn xong thời lượng và vị trí (thêm)
     $("#item-sua-thoiluong").change(function () {
         let id = $("#item-sua-vitriquangcao").val();
         let thoiluong = $(this).val();
         GetDonGiaSua(id,thoiluong);
-        
+
     });
 
     $("#item-sua-vitriquangcao").change(function () {
         let id = $(this).val();
         let thoiluong = $("#item-sua-thoiluong").val();
         GetDonGiaSua(id,thoiluong);
-       
+
     });
-</script>
+        </script>

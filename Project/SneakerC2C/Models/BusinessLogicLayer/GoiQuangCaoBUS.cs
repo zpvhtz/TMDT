@@ -55,7 +55,7 @@ namespace Models.BusinessLogicLayer
             goi = new GoiQuangCao();
             goi.Id = Guid.Parse(Guid.NewGuid().ToString().ToUpper());
             goi.MaGoiQuangCao = ma;
-            
+
             goi.IdViTri = Guid.Parse(vitriquangcao);
 
             goi.TongTien = tongtien;
@@ -72,7 +72,7 @@ namespace Models.BusinessLogicLayer
             GoiQuangCao goi = new GoiQuangCao();
             //Sửa
             goi = context.GoiQuangCao.Where(gh => gh.MaGoiQuangCao == ma).SingleOrDefault();
-            
+
             goi.IdViTri = Guid.Parse(vitriquangcao);
             goi.TongTien = tongtien;
             goi.ThoiLuong = thoiluong;
@@ -176,7 +176,7 @@ namespace Models.BusinessLogicLayer
             {
                 list = context.GoiQuangCao.Where(gh => gh.MaGoiQuangCao.Contains(search) ||
                                                     gh.IdViTriNavigation.TenViTri.Contains(search))
-                                                           
+
                                        .Skip((pagenumber - 1) * pagesize)
                                        .Take(pagesize)
                                        .Include(l => l.IdViTriNavigation)
@@ -307,6 +307,6 @@ namespace Models.BusinessLogicLayer
             }
             return list;
         }
-        
+
     }
 }

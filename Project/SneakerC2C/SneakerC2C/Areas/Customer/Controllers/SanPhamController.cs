@@ -32,13 +32,13 @@ namespace SneakerC2C.Areas.Customer.Controllers
             return View(sanpham);
         }
         //trang list san pham
-        public IActionResult List(/*string ploai*/)
+        public IActionResult List(string ploai)
         {
             //List<SanPham> list = ctx.SanPham.Where(x => x.PhanLoai == ploai).ToList();
-            List<SanPham> list = ctx.SanPham
+            List<SanPham> list = ctx.SanPham.Where(sp => sp.PhanLoai == ploai)
                                             .Include(sp=>sp.IdTaiKhoanNavigation)
                                             .Include(sp=>sp.IdHangSanPhamNavigation)
-                                .ToList();
+                                            .ToList();
             return View(list);
         }
 

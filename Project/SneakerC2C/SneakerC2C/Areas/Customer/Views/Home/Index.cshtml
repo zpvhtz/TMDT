@@ -1,4 +1,5 @@
-﻿@model  IEnumerable<Models.Database.SanPham>
+﻿@model IEnumerable<Models.Database.SanPham>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "Index";
@@ -59,7 +60,7 @@
             <div class="resp-tabs-container">
                 <!--/tab_one-->
                 <div class="tab1">
-                    @foreach(var item in ViewBag.SanPhamNam)
+                    @foreach (var item in ViewBag.SanPhamNam)
                     {
                         <div class="col-md-3 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
@@ -68,7 +69,7 @@
                                     <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-back img-index">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
-                                            <a href="single.html" class="link-product-add-cart">Chi Tiết</a>
+                                            <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id" class="link-product-add-cart">Chi Tiết</a>
                                         </div>
                                     </div>
                                     <!--<span class="product-new-top">New</span>-->
@@ -77,11 +78,11 @@
                                     <h4>
                                         @if (item.TenSanPham.Length > 20)
                                         {
-                                            <a href="single.html">@item.TenSanPham.Substring(0, 18)...</a>
+                                            <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id">@item.TenSanPham.Substring(0, 18)...</a>
                                         }
                                         else
                                         {
-                                            <a href="single.html">@item.TenSanPham</a>
+                                            <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id">@item.TenSanPham</a>
                                         }
                                     </h4>
                                     <div class="info-product-price">
@@ -116,7 +117,7 @@
 
                                 </div>
                             </div>
-                        </div>   
+                        </div>
                     }
                     <div class="clearfix"></div>
                 </div>
@@ -132,7 +133,7 @@
                                     <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-back img-index">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
-                                            <a href="single.html" class="link-product-add-cart">Chi Tiết</a>
+                                            <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id" class="link-product-add-cart">Chi Tiết</a>
                                         </div>
                                     </div>
                                     <!--<span class="product-new-top">New</span>-->
@@ -142,11 +143,11 @@
                                     <h4>
                                         @if (item.TenSanPham.Length > 20)
                                         {
-                                            <a href="single.html">@item.TenSanPham.Substring(0, 18)...</a>
+                                            <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id">@item.TenSanPham.Substring(0, 18)...</a>
                                         }
                                         else
                                         {
-                                            <a href="single.html">@item.TenSanPham</a>
+                                            <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id">@item.TenSanPham</a>
                                         }
                                     </h4>
                                     <div class="info-product-price">
@@ -513,7 +514,7 @@
                                     <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-back img-index">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
-                                            <a href="single.html" class="link-product-add-cart">Chi Tiết</a>
+                                            <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id" class="link-product-add-cart">Chi Tiết</a>
                                         </div>
                                     </div>
                                     <!--<span class="product-new-top">New</span>-->
@@ -523,11 +524,11 @@
                                     <h4>
                                         @if (item.TenSanPham.Length > 20)
                                         {
-                                            <a href="single.html">@item.TenSanPham.Substring(0, 18)...</a>
+                                            <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id">@item.TenSanPham.Substring(0, 18)...</a>
                                         }
                                         else
                                         {
-                                            <a href="single.html">@item.TenSanPham</a>
+                                            <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id">@item.TenSanPham</a>
                                         }
                                     </h4>
                                     <div class="info-product-price">

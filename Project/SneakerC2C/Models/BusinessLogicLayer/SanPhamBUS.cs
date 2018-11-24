@@ -29,11 +29,34 @@ namespace Models.BusinessLogicLayer
                                              .SingleOrDefault();
             return sanpham;
         }
+
         public List<SanPham> GetSanPhams()
         {
             List<SanPham> list = context.SanPham.OrderBy(sp => sp.MaSanPham)
                                                 .Include(sp => sp.IdHangSanPhamNavigation)
                                                 .Include(sp => sp.IdTaiKhoanNavigation)
+                                                .ToList();
+            return list;
+        }
+
+        public List<SanPham> GetSanPhams(string ploai)
+        {
+            List<SanPham> list = context.SanPham.Where(sp => sp.PhanLoai == ploai)
+                                                .Include(sp => sp.IdTaiKhoanNavigation)
+                                                .Include(sp => sp.IdHangSanPhamNavigation)
+                                                .OrderByDescending(sp => sp.MaSanPham)
+                                                .ToList();
+            return list;
+        }
+
+        public List<SanPham> GetSanPhams(string ploai, int pagenumber, int pagesize)
+        {
+            List<SanPham> list = context.SanPham.Where(sp => sp.PhanLoai == ploai)
+                                                .Include(sp => sp.IdTaiKhoanNavigation)
+                                                .Include(sp => sp.IdHangSanPhamNavigation)
+                                                .OrderByDescending(sp => sp.MaSanPham)
+                                                .Skip((pagenumber - 1) * pagesize)
+                                                .Take(pagesize)
                                                 .ToList();
             return list;
         }
@@ -128,6 +151,14 @@ namespace Models.BusinessLogicLayer
                                           .Take(pagesize)
                                           .ToList();
                     break;
+                case "moinhat":
+                    list = context.SanPham.OrderByDescending(sp => sp.NgayDang)
+                                          .Include(sp => sp.IdTaiKhoanNavigation)
+                                          .Include(sp => sp.IdHangSanPhamNavigation)
+                                          .Skip((pagenumber - 1) * pagesize)
+                                          .Take(pagesize)
+                                          .ToList();
+                    break;
             }
             return list;
         }
@@ -169,6 +200,12 @@ namespace Models.BusinessLogicLayer
                     break;
                 case "gia-desc":
                     list = context.SanPham.OrderByDescending(sp => sp.Gia)
+                                          .Include(sp => sp.IdTaiKhoanNavigation)
+                                          .Include(sp => sp.IdHangSanPhamNavigation)
+                                          .ToList();
+                    break;
+                case "moinhat":
+                    list = context.SanPham.OrderByDescending(sp => sp.NgayDang)
                                           .Include(sp => sp.IdTaiKhoanNavigation)
                                           .Include(sp => sp.IdHangSanPhamNavigation)
                                           .ToList();
@@ -310,6 +347,19 @@ namespace Models.BusinessLogicLayer
                                       .OrderByDescending(sp => sp.Gia)
                                       .ToList();
                         break;
+                    case "moinhat":
+                        list = context.SanPham.Where(sp => sp.MaSanPham.Contains(search) ||
+                                                   sp.TenSanPham.Contains(search) ||
+                                                   sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
+                                                   sp.Mau.Contains(search) ||
+                                                   sp.Gia.ToString().Contains(search))
+                                      .Include(sp => sp.IdTaiKhoanNavigation)
+                                      .Include(sp => sp.IdHangSanPhamNavigation)
+                                      .Skip((pagenumber - 1) * pagesize)
+                                      .Take(pagesize)
+                                      .OrderByDescending(sp => sp.NgayDang)
+                                      .ToList();
+                        break;
                 }
             }
             return list;
@@ -390,6 +440,17 @@ namespace Models.BusinessLogicLayer
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderByDescending(sp => sp.Gia)
+                                      .ToList();
+                        break;
+                    case "moinhat":
+                        list = context.SanPham.Where(sp => sp.MaSanPham.Contains(search) ||
+                                                   sp.TenSanPham.Contains(search) ||
+                                                   sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
+                                                   sp.Mau.Contains(search) ||
+                                                   sp.Gia.ToString().Contains(search))
+                                      .Include(sp => sp.IdTaiKhoanNavigation)
+                                      .Include(sp => sp.IdHangSanPhamNavigation)
+                                      .OrderByDescending(sp => sp.NgayDang)
                                       .ToList();
                         break;
                 }

@@ -64,7 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="header-bot">
         <div class="header-bot_inner_wthreeinfo_header_mid">
             <div class="col-md-4 header-middle">
-                <form action="#" method="post">
+                <form asp-area="Customer" asp-controller="SanPham" asp-action="Search" method="get">
                     <input type="search" name="search" placeholder="Tìm kiếm..." required="">
                     <input type="submit" value=" ">
                     <div class="clearfix"></div>
@@ -129,7 +129,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav menu__list">
-                                <li class="active menu__item menu__item--current"><a class="menu__link" href="index.html">Trang Chủ <span class="sr-only">(current)</span></a></li>
+                                <li class="active menu__item menu__item--current"><a class="menu__link" asp-area="Customer" asp-controller="Home" asp-action="Index">Trang Chủ <span class="sr-only">(current)</span></a></li>
                                 <li class=" menu__item"><a class="menu__link" href="about.html">Giới Thiệu</a></li>
                                 <li class=" menu__item"><a class="menu__link" asp-area="Customer" asp-controller="SanPham" asp-action="List" asp-route-ploai="Nam">Giày Nam</a></li>
                                 <li class=" menu__item"><a class="menu__link" asp-area="Customer" asp-controller="SanPham" asp-action="List" asp-route-ploai="Nữ">Giày Nữ</a></li>

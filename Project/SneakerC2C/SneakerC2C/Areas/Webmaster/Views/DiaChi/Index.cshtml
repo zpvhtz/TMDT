@@ -84,24 +84,26 @@
         <ul class="pagination" style="margin: 0 auto;">
             @if (ViewBag.TrangHienTai == 1)
             {
-                <li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous"><a href="#">Trước</a></li>
+                <li class="paginate_button page-item previous disabled" id="dataTable_previous">
+                    <a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Trước</a>
+                </li>
             }
             else
             {
-                <li class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
+                <li class="paginate_button page-item previous" id="dataTable_previous">
                     @switch (ViewBag.TrangThai)
                     {
                         case "index":
-                            <a asp-controller="DiaChi" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            <a asp-controller="DiaChi" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link pageNumber">Trước</a>
                             break;
                         case "sort":
-                            <a asp-controller="DiaChi" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            <a asp-controller="DiaChi" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link pageNumber">Trước</a>
                             break;
                         case "search":
-                            <a asp-controller="DiaChi" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            <a asp-controller="DiaChi" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link pageNumber">Trước</a>
                             break;
                         case "searchandsort":
-                            <a asp-controller="DiaChi" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="pageNumber">Trước</a>
+                            <a asp-controller="DiaChi" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link pageNumber">Trước</a>
                             break;
                     }
                 </li>
@@ -110,8 +112,8 @@
             {
                 if (i > 5)
                 {
-                    <li class="paginate_button" aria-controls="dataTables-example" tabindex="0"><a href="#">...</a></li>
-                    <li class="paginate_button" aria-controls="dataTables-example" tabindex="0">
+                    <li class="paginate_button page-item" disabled><a class="page-link" aria-controls="dataTable" data-dt-idx="0" tabindex="0" href="#">...</a></li>
+                    <li class="paginate_button page-item">
                         @switch (ViewBag.TrangThai)
                         {
                             case "index":
@@ -134,24 +136,24 @@
                 {
                     if (i == ViewBag.TrangHienTai)
                     {
-                        <li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#">@i</a></li>
+                        <li class="paginate_button page-item active"><a href="#" class="page-link" aria-controls="dataTable" data-dt-idx="2" tabindex="0">@i</a></li>
                     }
                     else
                     {
-                        <li class="paginate_button" aria-controls="dataTables-example" tabindex="0">
+                        <li class="paginate_button page-item" aria-controls="dataTables-example" tabindex="0">
                             @switch (ViewBag.TrangThai)
                             {
                                 case "index":
-                                    <a asp-controller="DiaChi" asp-action="Index" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="DiaChi" asp-action="Index" asp-route-pagenumber="@i" class="page-link pageNumber" aria-controls="dataTable" data-dt-idx="3" tabindex="0">@i</a>
                                     break;
                                 case "sort":
-                                    <a asp-controller="DiaChi" asp-action="Sort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="DiaChi" asp-action="Sort" asp-route-pagenumber="@i" class="page-link pageNumber" aria-controls="dataTable" data-dt-idx="3" tabindex="0">@i</a>
                                     break;
                                 case "search":
-                                    <a asp-controller="DiaChi" asp-action="Search" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="DiaChi" asp-action="Search" asp-route-pagenumber="@i" class="page-link pageNumber" aria-controls="dataTable" data-dt-idx="3" tabindex="0">@i</a>
                                     break;
                                 case "searchandsort":
-                                    <a asp-controller="DiaChi" asp-action="SearchAndSort" asp-route-pagenumber="@i" class="pageNumber">@i</a>
+                                    <a asp-controller="DiaChi" asp-action="SearchAndSort" asp-route-pagenumber="@i" class="page-link pageNumber" aria-controls="dataTable" data-dt-idx="3" tabindex="0">@i</a>
                                     break;
                             }
                         </li>
@@ -160,24 +162,24 @@
             }
             @if (ViewBag.TrangHienTai == ViewBag.TongTrang)
             {
-                <li class="paginate_button next disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="#">Tiếp</a></li>
+                <li class="paginate_button page-item next disabled" id="dataTable_next"><a class="page-link" aria-controls="dataTable" data-dt-idx="7" tabindex="0" href="#">Tiếp</a></li>
             }
             else
             {
-                <li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next">
+                <li class="paginate_button page-item next" id="dataTable_next">
                     @switch (ViewBag.TrangThai)
                     {
                         case "index":
-                            <a asp-controller="DiaChi" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            <a asp-controller="DiaChi" asp-action="Index" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link pageNumber">Tiếp</a>
                             break;
                         case "sort":
-                            <a asp-controller="DiaChi" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            <a asp-controller="DiaChi" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link pageNumber">Tiếp</a>
                             break;
                         case "search":
-                            <a asp-controller="DiaChi" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            <a asp-controller="DiaChi" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link pageNumber">Tiếp</a>
                             break;
                         case "searchandsort":
-                            <a asp-controller="DiaChi" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">Tiếp</a>
+                            <a asp-controller="DiaChi" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link pageNumber">Tiếp</a>
                             break;
                     }
                 </li>

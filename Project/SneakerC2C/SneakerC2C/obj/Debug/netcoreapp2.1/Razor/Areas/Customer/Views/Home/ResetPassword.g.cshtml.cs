@@ -118,7 +118,11 @@ else
                         ");
             EndContext();
             BeginContext(1249, 1008, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a19e580558364fb7adf0bb0ee776dd10", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "deccf4fe0aa3490e85c495bf131e5b5d", async() => {
+>>>>>>> fbf89f7f34b766428815dcc1c506ccd4189fe052
                 BeginContext(1306, 944, true);
                 WriteLiteral(@"
                             <div class=""styled-input"">
@@ -189,7 +193,11 @@ else
                         ");
             EndContext();
             BeginContext(4156, 55, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9a338f81480a4f3babc0548d8138b5d1", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "c9d63ec100ce4064a8faf4a98bd29a4c", async() => {
+>>>>>>> fbf89f7f34b766428815dcc1c506ccd4189fe052
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

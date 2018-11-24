@@ -29,6 +29,8 @@ namespace SneakerC2C.Areas.Customer.Controllers
             SanPham sanpham = sanphambus.GetSanPham(idd);
             List<SizeSanPham> listsizesanpham = sizesanphambus.GetSize(idd);
             ViewBag.ListSizeSanPham = listsizesanpham;
+            List<HangSanPham> hang = ctx.HangSanPham.ToList();
+            ViewBag.Hang = hang;
             return View(sanpham);
         }
         //trang list san pham
@@ -39,9 +41,25 @@ namespace SneakerC2C.Areas.Customer.Controllers
                                             .Include(sp=>sp.IdTaiKhoanNavigation)
                                             .Include(sp=>sp.IdHangSanPhamNavigation)
                                             .ToList();
+            List<HangSanPham> hang = ctx.HangSanPham.ToList();
+            ViewBag.Hang = hang;
             return View(list);
         }
-
+        public IActionResult ThuongHieu(string mahang)
+        {
+            List<HangSanPham> hang = ctx.HangSanPham.ToList();
+            List<SanPham> list = ctx.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang)
+                                            .Include(sp => sp.IdTaiKhoanNavigation)
+                                            .Include(sp => sp.IdHangSanPhamNavigation)
+                                            .ToList();
+            ViewBag.Hang = hang;
+            return View("List",list);
+        }
+        public IActionResult Sort()
+        {
+            
+            return View();
+        }
 
     }
 }

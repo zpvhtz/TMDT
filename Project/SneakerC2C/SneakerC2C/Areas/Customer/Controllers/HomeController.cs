@@ -11,10 +11,18 @@ namespace SneakerC2C.Areas.Customer.Controllers
     [Area("Customer")]
     public class HomeController : BaseController
     {
+
+        private readonly QLBanGiayContext ctx;
+        public HomeController(QLBanGiayContext context)
+        {
+            ctx = context;
+        }
         const int pagesize = 8;
         const int pagenumber = 1;
         public IActionResult Index(string thongbao)
         {
+            List<HangSanPham> hang = ctx.HangSanPham.ToList();
+            ViewBag.Hang = hang;
             //Thông báo
             if (thongbao != null)
             {

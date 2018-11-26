@@ -58,9 +58,34 @@
             <div class="filter-price">
                 <h3>Tìm kiếm theo giá</h3>
                 <ul class="dropdown-menu6">
-                    <li>
-                        <div id="slider-range"></div>
-                        <input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
+                    <li style="text-align: center;">
+                        <div id="slider-range">
+                        </div>
+                        @if (ViewBag.Search != null || ViewBag.ThuongHieu != null || ViewBag.PhanLoai != null)
+                        {
+                        <form asp-area="Customer" asp-controller="SanPham" asp-action="FilterAndSearch" method="get">
+                            <input type="text" name="filter" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
+                            <input hidden type="text" name="search" value="@ViewBag.Search" style="border: 0; color: #ffffff; font-weight: normal;" />
+                            <input hidden type="text" name="ploai" value="@ViewBag.PhanLoai" style="border: 0; color: #ffffff; font-weight: normal;" />
+                            <input hidden type="text" name="mahang" value="@ViewBag.ThuongHieu" style="border: 0; color: #ffffff; font-weight: normal;" />
+                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                <fieldset>
+                                    <input type="submit" id="btnFilter" value="Lọc" class="button">
+                                </fieldset>
+                            </div>
+                        </form>
+                        }
+                        else
+                        {
+                            <form asp-area="Customer" asp-controller="SanPham" asp-action="Filter" method="get">
+                                <input type="text" name="filter" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
+                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                    <fieldset>
+                                        <input type="submit" id="btnFilter" name="submit" value="Lọc" class="button">
+                                    </fieldset>
+                                </div>
+                            </form>
+                        }
                     </li>
                 </ul>
             </div>
@@ -188,7 +213,7 @@
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
                                     <form action="#" method="post">
                                         <fieldset>
-                                            <input type="submit" name="submit" id="btnThemGioHang" value="Thêm vào giỏ hàng" class="button">
+                                            <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btnThemGioHang">
                                         </fieldset>
                                     </form>
                                 </div>
@@ -246,7 +271,7 @@
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
                                     <form action="#" method="post">
                                         <fieldset>
-                                            <input type="submit" name="submit" id="btnThemVaoGioHang" value="Thêm vào giỏ hàng" class="button" />
+                                            <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btnThemVaoGioHang" />
                                         </fieldset>
                                     </form>
                                 </div>
@@ -315,13 +340,34 @@
                         <a asp-controller="SanPham" asp-action="List" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="prev pageNumber">&laquo</a>
                         break;
                     case "sort":
-                        <a asp-controller="SanPham" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="prev pageNumber">Trước</a>
+                        <a asp-controller="SanPham" asp-action="Sort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="prev pageNumber">&laquo</a>
                         break;
                     case "search":
-                        <a asp-controller="SanPham" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="prev pageNumber">Trước</a>
+                        <a asp-controller="SanPham" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="prev pageNumber">&laquo</a>
                         break;
                     case "searchandsort":
-                        <a asp-controller="SanPham" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="prev pageNumber">Trước</a>
+                        <a asp-controller="SanPham" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="prev pageNumber">&laquo</a>
+                        break;
+                    case "ploai":
+                        <a asp-controller="SanPham" asp-action="PhanLoai" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="prev pageNumber">&laquo</a>
+                        break;
+                    case "thuonghieu":
+                        <a asp-controller="SanPham" asp-action="ThuongHieu" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="prev pageNumber">&laquo</a>
+                        break;
+                    case "classifyandsort":
+                        <a asp-controller="SanPham" asp-action="ClassifyAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="prev pageNumber">&laquo</a>
+                        break;
+                    case "brandandsort":
+                        <a asp-controller="SanPham" asp-action="BrandAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="prev pageNumber">&laquo</a>
+                        break;
+                    case "filter":
+                        <a asp-controller="SanPham" asp-action="Filter" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="prev pageNumber">&laquo</a>
+                        break;
+                    case "filterandsearch":
+                        <a asp-controller="SanPham" asp-action="FilterAndSearch" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="prev pageNumber">&laquo</a>
+                        break;
+                    case "filterandsearchandsort":
+                        <a asp-controller="SanPham" asp-action="FilterAndSearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" class="prev pageNumber">&laquo</a>
                         break;
                 }
             </li>
@@ -345,6 +391,27 @@
                             break;
                         case "searchandsort":
                             <a asp-controller="SanPham" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                            break;
+                        case "ploai":
+                            <a asp-controller="SanPham" asp-action="PhanLoai" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                            break;
+                        case "thuonghieu":
+                            <a asp-controller="SanPham" asp-action="ThuongHieu" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                            break;
+                        case "classifyandsort":
+                            <a asp-controller="SanPham" asp-action="ClassifyAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                            break;
+                        case "brandandsort":
+                            <a asp-controller="SanPham" asp-action="BrandAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                            break;
+                        case "filter":
+                            <a asp-controller="SanPham" asp-action="Filter" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                            break;
+                        case "filterandsearch":
+                            <a asp-controller="SanPham" asp-action="FilterAndSearch" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                            break;
+                        case "filterandsearchandsort":
+                            <a asp-controller="SanPham" asp-action="FilterAndSearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
                             break;
                     }
                 </li>
@@ -373,6 +440,27 @@
                             case "searchandsort":
                                 <a asp-controller="SanPham" asp-action="SearchAndSort" asp-route-pagenumber="@trang" class="pageNumber">@trang</a>
                                 break;
+                            case "ploai":
+                                <a asp-controller="SanPham" asp-action="PhanLoai" asp-route-pagenumber="@trang" class="pageNumber">@trang</a>
+                                break;
+                            case "thuonghieu":
+                                <a asp-controller="SanPham" asp-action="ThuongHieu" asp-route-pagenumber="@trang" class="pageNumber">@trang</a>
+                                break;
+                            case "classifyandsort":
+                                <a asp-controller="SanPham" asp-action="ClassifyAndSort" asp-route-pagenumber="@trang" class="pageNumber">@trang</a>
+                                break;
+                            case "brandandsort":
+                                <a asp-controller="SanPham" asp-action="BrandAndSort" asp-route-pagenumber="@trang" class="pageNumber">@trang</a>
+                                break;
+                            case "filter":
+                                <a asp-controller="SanPham" asp-action="Filter" asp-route-pagenumber="@trang" class="pageNumber">@trang</a>
+                                break;
+                            case "filterandsearch":
+                                <a asp-controller="SanPham" asp-action="FilterAndSearch" asp-route-pagenumber="@trang" class="pageNumber">@trang</a>
+                                break;
+                            case "filterandsearchandsort":
+                                <a asp-controller="SanPham" asp-action="FilterAndSearchAndSort" asp-route-pagenumber="@trang" class="pageNumber">@trang</a>
+                                break;
                         }
                     </li>
                 }
@@ -399,6 +487,27 @@
                     case "searchandsort":
                         <a asp-controller="SanPham" asp-action="SearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">&raquo;</a>
                         break;
+                    case "ploai":
+                        <a asp-controller="SanPham" asp-action="PhanLoai" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">&raquo;</a>
+                        break;
+                    case "thuonghieu":
+                        <a asp-controller="SanPham" asp-action="ThuongHieu" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">&raquo;</a>
+                        break;
+                    case "classifyandsort":
+                        <a asp-controller="SanPham" asp-action="ClassifyAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">&raquo;</a>
+                        break;
+                    case "brandandsort":
+                        <a asp-controller="SanPham" asp-action="BrandAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">&raquo;</a>
+                        break;
+                    case "filter":
+                        <a asp-controller="SanPham" asp-action="Filter" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">&raquo;</a>
+                        break;
+                    case "filterandsearch":
+                        <a asp-controller="SanPham" asp-action="FilterAndSearch" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">&raquo;</a>
+                        break;
+                    case "filterandsearchandsort":
+                        <a asp-controller="SanPham" asp-action="FilterAndSearchAndSort" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" class="pageNumber">&raquo;</a>
+                        break;
                 }
             </li>
         }
@@ -423,22 +532,52 @@
     });
 
     function SearchAndSort() {
-        let search = "@ViewBag.Search";
-        if (search == null || search == '') {
-            return $("#sortList").val();
+        let search = "@Html.Raw(ViewBag.Search)";
+        let ploai = "@Html.Raw(ViewBag.PhanLoai)";
+        let mahang = "@Html.Raw(ViewBag.ThuongHieu)";
+        let filter = "@Html.Raw(ViewBag.Filter)";
+        if (filter != null || filter != '') {
+            let href = $("#sortList").val();
+            href = href.replace("Sort", "FilterAndSearchAndSort");
+            href = href + (`&search=${search}&ploai=${ploai}&mahang=${mahang}&filter=${filter}`)
+            return href;
         }
         else {
-            let href = $("#sortList").val();
-            href = href.replace("Sort", "SearchAndSort");
-            href = href + (`&search=${search}`)
-            return href;
+            if (search == null || search == '') {
+                if (ploai == null || ploai == '') {
+                    if (mahang == null || mahang == '') {
+                        return $("#sortList").val();
+                    }
+                    else {
+                        let href = $("#sortList").val();
+                        href = href.replace("Sort", "BrandAndSort");
+                        href = href + (`&mahang=${mahang}`)
+                        return href;
+                    }
+                }
+                else {
+                    let href = $("#sortList").val();
+                    href = href.replace("Sort", "ClassifyAndSort");
+                    href = href + (`&ploai=${ploai}`)
+                    return href;
+                }
+            }
+            else {
+                let href = $("#sortList").val();
+                href = href.replace("Sort", "SearchAndSort");
+                href = href + (`&search=${search}`)
+                return href;
+            }   
         }
     }
 
     $(".pageNumber").click(function () {
         //Get addtional href
         let sort = $("#sortList").val();
-        let search = "@ViewBag.Search";
+        let search = "@Html.Raw(ViewBag.Search)";
+        let ploai = "@Html.Raw(ViewBag.PhanLoai)";
+        let mahang = "@Html.Raw(ViewBag.ThuongHieu)";
+        let filter = "@Html.Raw(ViewBag.Filter)";
         //Href
         var $link = $('.pageNumber');
         var href = $link.attr('href').split('/');
@@ -449,8 +588,26 @@
         if (search != null && search != '') {
             href.push('&search=' + search); //here you set your new asp-route-pagenumber value
         }
+        if(ploai != null && ploai != '') {
+            href.push('&ploai=' + ploai); //here you set your new asp-route-pagenumber value
+        }
+        if (mahang != null && mahang != '') {
+            href.push('&mahang=' + mahang); //here you set your new asp-route-pagenumber value
+        }
+        if (filter != null && filter != '') {
+            href.push('&filter=' + filter); //here you set your new asp-route-pagenumber value
+        }
         href = href.join('/');
         href = href.toString().replace(/\/&/g, '&');
         $link.attr('href', href);
+    });
+
+    $("#amount").change(function () {
+        console.log($(this).val());
+        console.log("a");
+    });
+    $("#amount").mouseover(function () {
+        console.log("a");
+        console.log($(this).val());
     });
 </script>

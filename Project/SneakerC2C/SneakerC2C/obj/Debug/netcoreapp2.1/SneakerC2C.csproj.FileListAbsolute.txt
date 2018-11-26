@@ -293,3 +293,6 @@ C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.Vi
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CopyComplete
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.dll
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb
+C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\ListSP.g.cshtml.cs
+C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\KhoaSP.g.cshtml.cs
+C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\ConHang.g.cshtml.cs

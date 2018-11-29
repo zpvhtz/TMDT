@@ -606,3 +606,115 @@
   justify-content: flex-end;
   margin-right: 30px;
 }
+.form_chuthich {
+  width: 100%;
+  margin-top: 15px;
+  background-color: #fff;  
+}
+.form_15_30 {
+  padding: 15px 30px;
+  display: flex;
+}
+.loi_nhan {
+  width: 50%; 
+  float: left;
+  display: flex;
+  align-items: center;
+}
+.loi_nhan input[type="text"] {
+  font-size: 12px;
+  height: 40px;
+  width: 70%;
+  margin: 0 10px;
+}
+.txt_thanh_toan {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+.phuong_thuc_thanh_toan {
+  width: 30%;
+}
+/*radio-button*/
+.radio_pt_tt {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.radio_pt_tt_disable {
+  margin: 0;
+}
+.radio_pt_tt input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+.radio_pt_tt:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.radio_pt_tt input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.radio_pt_tt input:checked ~ .checkmark:after {
+  display: block;
+}
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+}
+.tong_tienhang {
+  width: 100%;
+  display: inherit;
+  justify-content: flex-end;
+  color: #666666;
+}
+.tong_tienhang p {
+  padding: 10px 0;
+}
+.txt_dathang {
+  width: 12%;
+}
+.gia_dathang {
+  width: 15%;
+  text-align: right;
+}
+.gia_tong {
+  color: #fc636b;
+  font-size: 20px;
+}
+.form_chuthich hr {
+  margin: 0;
+}
+.button-dathang {
+  width: 100%;
+    display: inherit;
+    align-items: center;
+    justify-content: flex-end;
+}

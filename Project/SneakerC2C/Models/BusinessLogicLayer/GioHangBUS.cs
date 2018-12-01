@@ -21,12 +21,14 @@ namespace Models.BusinessLogicLayer
             this.context = context;
         }
 
-        public List<GioHang> GetGioHangs(string idtaikhoan)
+        public List<GioHang> GetGioHangs(string tendangnhap)
         {
-            List<GioHang> list = context.GioHang.Where(gh => gh.IdTaiKhoan == Guid.Parse(idtaikhoan))
+            List<GioHang> list = context.GioHang.Where(gh => gh.IdTaiKhoanNavigation.TenDangNhap == tendangnhap)
                                                 .Include(gh => gh.IdTaiKhoanNavigation)
                                                 .Include(gh => gh.IdSizeSanPhamNavigation)
                                                 .Include(gh => gh.IdSizeSanPhamNavigation.IdSanPhamNavigation)
+                                                .Include(gh => gh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation)
+                                                .OrderByDescending(gh => gh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoan)
                                                 .ToList();
             return list;
         }
@@ -45,7 +47,17 @@ namespace Models.BusinessLogicLayer
             giohang.SoLuong = 1;
             giohang.TinhTrang = "Không khoá";
             context.GioHang.Add(giohang);
+            context.SaveChanges();
             return "Thêm vào giỏ hàng thành công";
+        }
+
+        public string DeleteFromCart(string idtaikhoan, string idsizesanpham)
+        {
+            GioHang giohang = new GioHang();
+            giohang = context.GioHang.Where(gh => gh.IdTaiKhoan == Guid.Parse(idtaikhoan) && gh.IdSizeSanPham == Guid.Parse(idsizesanpham)).SingleOrDefault();
+            context.GioHang.Remove(giohang);
+            context.SaveChanges();
+            return "Xoá sản phẩm khỏi giỏ hàng thành công";
         }
     }
 }

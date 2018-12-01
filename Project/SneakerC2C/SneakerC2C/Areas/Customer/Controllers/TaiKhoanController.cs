@@ -150,15 +150,21 @@ namespace SneakerC2C.Areas.Customer.Controllers
         public string AddToCart(string idsizesanpham)
         {
             string tendangnhap = HttpContext.Session.GetString("TenDangNhap");
-            if (tendangnhap == "" || tendangnhap == null)
-            {
-                return "Cần đăng nhập";
-            }
             TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
             TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoan(tendangnhap);
             GioHangBUS giohangbus = new GioHangBUS();
             string thongbao = giohangbus.AddToCart(taikhoan.Id.ToString(), idsizesanpham);
             return thongbao;
+        }
+
+        public IActionResult DeleteFromCart(string idsizesanpham)
+        {
+            string tendangnhap = HttpContext.Session.GetString("TenDangNhap");
+            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+            TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoan(tendangnhap);
+            GioHangBUS giohangbus = new GioHangBUS();
+            string thongbao = giohangbus.DeleteFromCart(taikhoan.Id.ToString(), idsizesanpham);
+            return RedirectToAction("GioHang", "SanPham", new { tendangnhap = tendangnhap });
         }
     }
 }

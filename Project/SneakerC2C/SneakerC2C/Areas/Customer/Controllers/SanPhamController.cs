@@ -56,6 +56,13 @@ namespace SneakerC2C.Areas.Customer.Controllers
             return View(list);
         }
 
+        public IActionResult GioHang(string tendangnhap)
+        {
+            GioHangBUS giohangbus = new GioHangBUS();
+            List<GioHang> list = giohangbus.GetGioHangs(tendangnhap);
+            return View(list);
+        }
+
         public IActionResult PhanLoai(string ploai, int? pagenumber)
         {
             ploai = ploai == "Nam" ? "Nam" : "Nữ";
@@ -156,6 +163,8 @@ namespace SneakerC2C.Areas.Customer.Controllers
             ViewBag.TrangThai = "filterandsearch";
             ViewBag.Filter = filter;
             ViewBag.Search = search;
+            if (ploai != null)
+                ViewBag.PhanLoai = ploai == "Nam" ? "Nam" : "Nu";
             ViewBag.ThuongHieu = mahang;
             if(ploai != null && ploai != "")
             {
@@ -172,8 +181,13 @@ namespace SneakerC2C.Areas.Customer.Controllers
 
         public IActionResult FilterAndSearchAndSort(string search, string ploai, string mahang, string filter, string sortorder, int? pagenumber)
         {
-            float minprice = float.Parse(filter.Substring(filter.IndexOf('đ') + 1, filter.IndexOf(' ') - 1));
-            float maxprice = float.Parse(filter.Substring(filter.LastIndexOf('đ') + 1));
+            float minprice = 0;
+            float maxprice = float.MaxValue;
+            if (filter != null)
+            {
+                minprice = float.Parse(filter.Substring(filter.IndexOf('đ') + 1, filter.IndexOf(' ') - 1));
+                maxprice = float.Parse(filter.Substring(filter.LastIndexOf('đ') + 1));
+            }
             pageNumber = pagenumber ?? 1;
             SanPhamBUS sanphambus = new SanPhamBUS();
             List<SanPham> list = sanphambus.FilterAndSearchAndSort(minprice, maxprice, search, ploai, mahang, sortorder, pageSize, pageNumber);
@@ -184,6 +198,8 @@ namespace SneakerC2C.Areas.Customer.Controllers
             ViewBag.Filter = filter;
             ViewBag.Search = search;
             ViewBag.Sort = sortorder;
+            if(ploai != null)
+                ViewBag.PhanLoai = ploai == "Nam" ? "Nam" : "Nu";
             ViewBag.ThuongHieu = mahang;
             if (ploai != null && ploai != "")
             {

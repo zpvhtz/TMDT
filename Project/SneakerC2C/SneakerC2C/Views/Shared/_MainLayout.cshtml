@@ -150,10 +150,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="top_nav_right">
                 <div class="wthreecartaits wthreecartaits2 cart cart box_1">
-                    <form action="#" method="post" class="last">
+                    <form asp-area="Customer" asp-controller="SanPham" asp-action="GioHang" asp-route-tendangnhap="@Context.Session.GetString("TenDangNhap")" method="post" class="last">
                         <input type="hidden" name="cmd" value="_cart">
                         <input type="hidden" name="display" value="1">
-                        <button class="w3view-cart" type="button" name="submit" id="btnCart" data-toggle="modal" data-target="#cartModal" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                        @*<a asp-area="Customer" asp-controller="SanPham" asp-action="GioHang" asp-route-idtaikhoan="@Context.Session.GetString("TenDangNhap")" class="w3view-cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a>*@
+                        <button class="w3view-cart" type="submit" name="submit" id="btnCart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
                     </form>
 
                 </div>
@@ -644,7 +645,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- Custom-JavaScript-File-Links -->
         <script src="~/maintemplate/js/responsiveslides.min.js"></script>
         <!-- cart-js -->
-        <script src="~/maintemplate/js/minicart.min.js"></script>
+        @*<script src="~/maintemplate/js/minicart.min.js"></script>
         <script>
             // Mini Cart
             paypal.minicart.render({
@@ -654,7 +655,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             if (~window.location.search.indexOf('reset=true')) {
                 paypal.minicart.reset();
             }
-        </script>
+        </script>*@
 
         <!-- //cart-js -->
         <script type='text/javascript'>

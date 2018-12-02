@@ -28,7 +28,7 @@
             <div class="agile_inner_breadcrumb">
 
                 <ul class="w3_short">
-                    <li><a href="index.html">Trang Chủ</a><i>|</i></li>
+                    <li><a asp-area="Customer" asp-controller="Home" asp-action="Index">Trang Chủ</a><i>|</i></li>
                     @if (Context.Request.QueryString.Value.Contains("ploai=Nam"))
                     {
                         <li>Giày nam</li>
@@ -63,17 +63,17 @@
                         </div>
                         @if (ViewBag.Search != null || ViewBag.ThuongHieu != null || ViewBag.PhanLoai != null)
                         {
-                        <form asp-area="Customer" asp-controller="SanPham" asp-action="FilterAndSearch" method="get">
-                            <input type="text" name="filter" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
-                            <input hidden type="text" name="search" value="@ViewBag.Search" style="border: 0; color: #ffffff; font-weight: normal;" />
-                            <input hidden type="text" name="ploai" value="@ViewBag.PhanLoai" style="border: 0; color: #ffffff; font-weight: normal;" />
-                            <input hidden type="text" name="mahang" value="@ViewBag.ThuongHieu" style="border: 0; color: #ffffff; font-weight: normal;" />
-                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                <fieldset>
-                                    <input type="submit" id="btnFilter" value="Lọc" class="button">
-                                </fieldset>
-                            </div>
-                        </form>
+                            <form asp-area="Customer" asp-controller="SanPham" asp-action="FilterAndSearch" method="get">
+                                <input type="text" name="filter" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
+                                <input hidden type="text" name="search" value="@ViewBag.Search" style="border: 0; color: #ffffff; font-weight: normal;" />
+                                <input hidden type="text" name="ploai" value="@ViewBag.PhanLoai" style="border: 0; color: #ffffff; font-weight: normal;" />
+                                <input hidden type="text" name="mahang" value="@ViewBag.ThuongHieu" style="border: 0; color: #ffffff; font-weight: normal;" />
+                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                    <fieldset>
+                                        <input type="submit" id="btnFilter" value="Lọc" class="button">
+                                    </fieldset>
+                                </div>
+                            </form>
                         }
                         else
                         {
@@ -195,7 +195,9 @@
                     <div class="col-md-4 product-men">
                         <div class="men-pro-item simpleCart_shelfItem">
                             <div class="men-thumb-item">
-                                <div class="anhsanpham-3" style="background-image: url(/Hinh/SanPham/@item.Hinh);"></div>
+                                <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id">
+                                    <div class="anhsanpham-3" style="background-image: url(/Hinh/SanPham/@item.Hinh);"></div>
+                                </a>
                             </div>
                             <div class="item-info-product ">
                                 <h4><a href="single.html" class="tieude_sanpham">@item.TenSanPham</a></h4>
@@ -210,13 +212,13 @@
                                         <p><span class="item_price">@item.Gia.Value.ToString("#,###") đ</span></p>
                                     }
                                 </div>
-                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                @*<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
                                     <form action="#" method="post">
                                         <fieldset>
                                             <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btnThemGioHang">
                                         </fieldset>
                                     </form>
-                                </div>
+                                </div>*@
                             </div>
                         </div>
                     </div>
@@ -249,7 +251,7 @@
                     <div class="col-md-3 product-men">
                         <div class="men-pro-item simpleCart_shelfItem">
                             <div class="men-thumb-item">
-                                <a href="#">
+                                <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id">
                                     <div class="anhsanpham-4" style="background-image: url(/Hinh/SanPham/@item.Hinh);"></div>
                                 </a>
                             </div>
@@ -268,13 +270,13 @@
                                         }
                                     </div>
                                 </div>
-                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                @*<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
                                     <form action="#" method="post">
                                         <fieldset>
                                             <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btnThemVaoGioHang" />
                                         </fieldset>
                                     </form>
-                                </div>
+                                </div>*@
                             </div>
                         </div>
                     </div>
@@ -567,7 +569,7 @@
                 href = href.replace("Sort", "SearchAndSort");
                 href = href + (`&search=${search}`)
                 return href;
-            }   
+            }
         }
     }
 

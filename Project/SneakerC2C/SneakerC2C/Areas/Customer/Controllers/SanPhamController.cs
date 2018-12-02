@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Models.BusinessLogicLayer;
 using Models.Database;
+using Newtonsoft.Json;
 
 namespace SneakerC2C.Areas.Customer.Controllers
 {
@@ -20,6 +21,12 @@ namespace SneakerC2C.Areas.Customer.Controllers
         public SanPhamController(QLBanGiayContext context)
         {
             ctx = context;
+        }
+
+        public class Cart
+        {
+            public string Id { get; set; }
+            public int SL { get; set; }
         }
         public IActionResult Index(string id)
         {
@@ -56,10 +63,35 @@ namespace SneakerC2C.Areas.Customer.Controllers
             return View(list);
         }
 
-        public IActionResult GioHang(string tendangnhap)
+        [HttpPost]
+        public IActionResult GioHang(string tendangnhap, string cart)
         {
-            GioHangBUS giohangbus = new GioHangBUS();
-            List<GioHang> list = giohangbus.GetGioHangs(tendangnhap);
+            string thongbao = "";
+            List<GioHang> list = new List<GioHang>();
+            Dictionary<string, int> json = JsonConvert.DeserializeObject<Dictionary<string, int>>(cart);
+            if (tendangnhap != "" && tendangnhap != null)
+            {
+                GioHangBUS giohangbus = new GioHangBUS();
+                TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+                TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoan(tendangnhap);
+                foreach (var item in json)
+                {
+                    thongbao = giohangbus.AddToCart(taikhoan.Id.ToString(), item.Key, item.Value);
+                }
+                list = giohangbus.GetGioHangs(tendangnhap);
+            }
+            else
+            {
+                foreach(var item in json)
+                {
+                    GioHang giohang = new GioHang();
+                    giohang.IdSizeSanPham = Guid.Parse(item.Key);
+                    giohang.IdTaiKhoan = Guid.Parse("3BA4CBB1-98AC-4768-BCE2-0B226C49DC56");
+                    giohang.SoLuong = item.Value;
+                    giohang.TinhTrang = "Không khoá";
+                    list.Add(giohang);
+                }                
+            }
             return View(list);
         }
 

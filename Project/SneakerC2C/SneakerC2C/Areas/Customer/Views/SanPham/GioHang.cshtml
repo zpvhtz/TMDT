@@ -95,7 +95,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             {
                 string idtaikhoantemp = item.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoan.ToString();
                 @if (idtaikhoantemp != idtaikhoan)
-                {   <br />
+                {   
+                    <br />
                     <div class="cart_theoshop">
                         <div class="cart_theoshop_header">
                             <div class="checkbox_giohang">
@@ -153,7 +154,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                         </div>
                         <div class="thanhtien_giohang">
-                            <h5>₫1.080.000</h5>
+                            @if (item.IdSizeSanPhamNavigation.IdSanPhamNavigation.GiamGia != null && item.IdSizeSanPhamNavigation.IdSanPhamNavigation.GiamGia != 0)
+                            {
+                                double gia = item.IdSizeSanPhamNavigation.IdSanPhamNavigation.Gia * (100 - item.IdSizeSanPhamNavigation.IdSanPhamNavigation.GiamGia) / 100 ?? 0;
+                                <h5>@gia.ToString("#,###") đ</h5>
+                            }
+                            else
+                            {
+                                <h5>@item.IdSizeSanPhamNavigation.IdSanPhamNavigation.Gia.Value.ToString("#,###") đ</h5>
+                            }
                         </div>
                         <div class="thaotac_giohang">
                             <form asp-area="Customer" asp-controller="TaiKhoan" asp-action="DeleteFromCart" asp-route-idsizesanpham="@item.IdSizeSanPham" style="width: 100%;">
@@ -188,7 +197,91 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </body>
 </html>
 <script type="text/javascript" src="~/maintemplate/js/jquery-2.1.4.min.js"></script>
+
 <script>
+    function validateNumber(e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            // Allow: Ctrl/cmd+A
+            (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+            // Allow: Ctrl/cmd+C
+            (e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true)) ||
+            // Allow: Ctrl/cmd+X
+            (e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true)) ||
+            // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+            // let it happen, don't do anything
+            return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    };
+
+    function getTotalPrice() {
+        let totalPrice = 0;
+        let row = 0;
+
+        $(".thanhtien_giohang h5").each(function () {
+            if (row == 0) {
+                row++;
+            }
+            else {
+                let pricetext = $(this).text().trim();
+                pricetext = pricetext.replace(/\,/g, '');
+                pricetext = pricetext.substring(0, pricetext.indexOf(' '));
+
+                let price = parseFloat(pricetext);
+                totalPrice += price;
+                console.log(price);   
+            }
+        });
+
+        $(".tong_giatien h2").text(totalPrice.toLocaleString() + ' đ');
+    }
+</script>
+
+<script>
+    $(".soluong").keydown(validateNumber);
+
+    $(".soluong").change(function () {
+        let pricetext = $(this).closest('.cart_theoshop_item').find('.dongia_giohang').text().trim();
+        pricetext = pricetext.replace(/\,/g, '');
+        pricetext = pricetext.substring(0, pricetext.indexOf(' '));
+
+        let price = parseFloat(pricetext);
+        let quantity = parseInt($(this).val());
+        let totalPrice = price * quantity;
+
+        $(this).closest('.cart_theoshop_item').find('.thanhtien_giohang').html(`<h5>${totalPrice.toLocaleString()} đ</h5>`);
+        getTotalPrice();
+    });
+
+    $(".soluong").keyup(function () {
+        let totalPrice = 0;
+  
+        let pricetext = $(this).closest('.cart_theoshop_item').find('.dongia_giohang').text().trim();
+        pricetext = pricetext.replace(/\,/g, '');
+        pricetext = pricetext.substring(0, pricetext.indexOf(' '));
+
+        if ($(this).val() == null || $(this).val() == '') {
+            let price = parseFloat(pricetext);
+            let quantity = 0;
+            let totalPrice = price * quantity;
+            $(this).val(0);
+        }
+        else {
+            let price = parseFloat(pricetext);
+            let quantity = parseInt($(this).val());
+            let totalPrice = price * quantity;
+        }
+
+        $(this).closest('.cart_theoshop_item').find('.thanhtien_giohang').html(`<h5>${totalPrice.toLocaleString()} đ</h5>`);
+        getTotalPrice();
+    });
+
+
     $("#btnMuaHang").click(function(){
         let tendangnhap = "@Context.Session.GetString("TenDangNhap")";
         if(tendangnhap == "") {

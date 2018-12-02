@@ -416,7 +416,7 @@
     $("#btnThemVaoGioHang").click(function () {
         let tendangnhap = "@Context.Session.GetString("TenDangNhap")";
         let idsizesanpham = $("#sltSizeSanPham option:selected").val().trim();
-        let soluong = $("#txtSoLuong").val();
+        let soluong = parseInt($("#txtSoLuong").val());
         let arrCartItem = {};
 
         if (tendangnhap == "") {
@@ -428,10 +428,10 @@
             //Nếu tồn tại
             if (arrCartItem[idsizesanpham]) {
                 let soluongcu = arrCartItem[idsizesanpham];
-                arrCartItem[idsizesanpham] = parseInt(soluongcu) + parseInt(soluong);
+                arrCartItem[idsizesanpham] = parseInt(soluongcu) + soluong;
             }
             else {
-                arrCartItem[idsizesanpham] = parseInt(soluong);
+                arrCartItem[idsizesanpham] = soluong;
             }
             //Add to storage
             localStorage.setItem("Cart", JSON.stringify(arrCartItem));
@@ -441,7 +441,7 @@
             $.ajax({
                 url: "/Customer/TaiKhoan/AddToCart",
                 type: "post",
-                data: { "idsizesanpham": idsizesanpham },
+                data: { "idsizesanpham": idsizesanpham, "soluong": soluong },
                 success: function (data) {
                     alert(data);
                 },

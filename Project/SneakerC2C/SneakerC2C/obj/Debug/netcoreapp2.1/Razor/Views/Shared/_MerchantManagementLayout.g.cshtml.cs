@@ -92,7 +92,7 @@ using Microsoft.AspNetCore.Http;
             WriteLiteral("\r\n<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(96, 1571, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9a1f1bd324964724b7990b51ba044f30", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c9f684bab51495d9c699bddae5938bc", async() => {
                 BeginContext(102, 708, true);
                 WriteLiteral(@"
     <title>SNKRX - Kênh Người Bán</title>
@@ -108,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     ");
                 EndContext();
                 BeginContext(810, 93, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e3facaff54e64a40ac4ccab0fd4acf88", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d92b01645c8d4ab297e2f650bb8687e8", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -129,7 +129,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(909, 89, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "8b174e4b1e1046e2ab42c2fd9431376a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "590fd87e8c0b4cbf857b8afbd7750c10", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -150,7 +150,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(1004, 66, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "38fc3447bd894e069ea94cb176fb2436", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "612c64ef167741e6a0e784c5f27c0070", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -169,7 +169,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(1076, 92, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "822b956824bd4e08a351023048d02d5f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "0cb7807a065748aeaf7d16c4b7ae90a3", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -189,7 +189,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 WriteLiteral("\r\n\r\n    ");
                 EndContext();
                 BeginContext(1176, 92, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5d7bfbab331e4d068be75fcdefb8ebe2", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1c5caf6b87384513bf7d72bc30bb3d7c", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -210,7 +210,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(1274, 65, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6acb07dafab74eca9129c7c94bf7e12b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "851a81daf3494dd9bd902cb2ff14f29a", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -249,7 +249,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(1669, 10918, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8b21ff5f33aa42b7928e5814ed76e24b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98bfdbe07ba5435380c1fd873ae7bd4e", async() => {
                 BeginContext(1675, 464, true);
                 WriteLiteral(@"
     <div class=""container-fluid bg_header_knb"">
@@ -288,7 +288,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li>");
                 EndContext();
                 BeginContext(3139, 88, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b802fe29469489b89af136d65d2e85c", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e2307af3febc402aa80f639a8fd591ad", async() => {
                     BeginContext(3214, 9, true);
                     WriteLiteral("Đăng Xuất");
                     EndContext();
@@ -331,7 +331,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         ");
                 EndContext();
                 BeginContext(3989, 2651, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4757e87276fa48fdab19de94449807ab", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "174b8984df2a480c9706f7cdd68cb5c8", async() => {
                     BeginContext(4081, 2552, true);
                     WriteLiteral(@"
                             <div class=""styled-input agile-styled-input-top"">
@@ -396,7 +396,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 WriteLiteral("\r\n\r\n                        <div class=\"clearfix\"></div>\r\n                    </div>\r\n                    <div class=\"col-md-4 modal_body_right modal_body_right1\">\r\n                        ");
                 EndContext();
                 BeginContext(6829, 55, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f2c4484966d2461a87a25e053aff15f7", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "aa35db19decb457989058b25c46e5541", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -438,7 +438,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 WriteLiteral("          </div>\r\n                        ");
                 EndContext();
                 BeginContext(7950, 1512, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1f1a87928f524f158b57d56540ae0db8", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "222e576f5b0f40a9a673d5f27b3121d9", async() => {
                     BeginContext(8010, 1445, true);
                     WriteLiteral(@"
                             <div class=""styled-input agile-styled-input-top"">
@@ -484,7 +484,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 WriteLiteral("\r\n\r\n                        <div class=\"clearfix\"></div>\r\n                    </div>\r\n                    <div class=\"col-md-4 modal_body_right modal_body_right1\">\r\n                        ");
                 EndContext();
                 BeginContext(9651, 55, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "929dcf94c0ee48ab8dc7904a3bee8a2e", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "425f06c2c16d48c6b931b571a532268b", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -513,7 +513,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 WriteLiteral("\r\n    </div>\r\n    ");
                 EndContext();
                 BeginContext(9990, 84, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "439c41c42fb64f4bb7d7054f17aa0244", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0930565cc5684269ad3124334107d8ae", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -532,7 +532,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(10080, 77, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e67818b065144dda9f0d311654a163dd", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "36a48643734047cda94b4ede854f326a", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

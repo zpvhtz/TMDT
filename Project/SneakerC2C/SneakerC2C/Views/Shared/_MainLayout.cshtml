@@ -150,11 +150,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="top_nav_right">
                 <div class="wthreecartaits wthreecartaits2 cart cart box_1">
-                    <form asp-area="Customer" asp-controller="SanPham" asp-action="GioHang" asp-route-tendangnhap="@Context.Session.GetString("TenDangNhap")" method="post" class="last">
+                    <form class="last">
                         <input type="hidden" name="cmd" value="_cart">
                         <input type="hidden" name="display" value="1">
                         @*<a asp-area="Customer" asp-controller="SanPham" asp-action="GioHang" asp-route-idtaikhoan="@Context.Session.GetString("TenDangNhap")" class="w3view-cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a>*@
-                        <button class="w3view-cart" type="submit" name="submit" id="btnCart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                        <button class="w3view-cart" type="button" name="submit" id="btnCart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
                     </form>
 
                 </div>
@@ -802,6 +802,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             //Keydown event
             $("#txtDienThoai").keydown(validateNumber);
+
+            function getCart() {
+                return JSON.parse(localStorage.getItem("Cart"));
+            }
         </script>
         <script>
             $("#forgotForm").submit(function (e) {
@@ -878,6 +882,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         }
                     });
                 }
+            });
+
+            $("#btnCart").click(function () {
+                let tendangnhap = "@Context.Session.GetString("TenDangNhap")";
+                let cart = localStorage.getItem("Cart");
+
+                $.ajax({
+                    url: "/Customer/SanPham/GioHang",
+                    type: "post",
+                    data: { "tendangnhap": tendangnhap, "cart": cart },
+                    success: function (data) {
+                        console.log(data);
+                    },
+                    error: function (data) {
+                        alert("Error: " + data);
+                    }
+                });
             });
         </script>
 

@@ -33,21 +33,25 @@ namespace Models.BusinessLogicLayer
             return list;
         }
 
-        public string AddToCart(string idtaikhoan, string idsizesanpham)
+        public string AddToCart(string idtaikhoan, string idsizesanpham, int soluong)
         {
             GioHang giohang = new GioHang();
             giohang = context.GioHang.Where(gh => gh.IdTaiKhoan == Guid.Parse(idtaikhoan) && gh.IdSizeSanPham == Guid.Parse(idsizesanpham)).SingleOrDefault();
             if(giohang != null)
             {
-                return "Đã tồn tại sản phẩm trong giỏ hàng";
+                giohang.SoLuong = giohang.SoLuong + soluong;
+                context.SaveChanges();
             }
-            giohang = new GioHang();
-            giohang.IdTaiKhoan = Guid.Parse(idtaikhoan);
-            giohang.IdSizeSanPham = Guid.Parse(idsizesanpham);
-            giohang.SoLuong = 1;
-            giohang.TinhTrang = "Không khoá";
-            context.GioHang.Add(giohang);
-            context.SaveChanges();
+            else
+            {
+                giohang = new GioHang();
+                giohang.IdTaiKhoan = Guid.Parse(idtaikhoan);
+                giohang.IdSizeSanPham = Guid.Parse(idsizesanpham);
+                giohang.SoLuong = soluong;
+                giohang.TinhTrang = "Không khoá";
+                context.GioHang.Add(giohang);
+                context.SaveChanges();
+            }
             return "Thêm vào giỏ hàng thành công";
         }
 

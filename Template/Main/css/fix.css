@@ -148,6 +148,8 @@
 .menu_knb_part {
   width: 16.66666667%;
   float: left;
+  display: flex;
+  justify-content: center;
 }
 .menu_knb_part h4 {
   color: #4e4e4e;
@@ -160,7 +162,8 @@
   height: 124px;
   background-color: #2fdab8;
   border-radius: 50%;
-  margin: 50px 25px 30px 25px;
+  margin-top: 50px;
+  margin-bottom: 30px;
 }
 .menu_knb_icon i {
   font-size: 44px;
@@ -347,14 +350,17 @@
   background-color: #fff;
   display: flex;
   margin: 15px 0;
+  padding: 15px 0;
+}
+.checkbox_none {
+  width: 5%;
+  padding: 0;
 }
 .checkbox_giohang {
   width: 5%;
-  float: left;
   display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 1;
   padding: 15px 0;
 }
 .checkbox_giohang input[type=checkbox] {
@@ -417,7 +423,6 @@
 }
 .sanpham_giohang {
   width: 35%;
-  float: inherit;
   display: flex;
   align-items: center;
 } 
@@ -433,28 +438,24 @@
 }
 .dongia_giohang {
   width: 20%;
-  float: left;
   display: inherit;
   align-items: center;
   justify-content: center;
 }
 .soluong_giohang {
   width: 15%;
-  float: left;
   display: inherit;
   align-items: center;
   justify-content: center;
 }
 .thanhtien_giohang {
   width: 15%;
-  float: left;
   display: inherit;
   align-items: center;
   justify-content: center;
 }
 .thaotac_giohang {
   width: 10%;
-  float: left;
   display: inherit;
   align-items: center;
   justify-content: center;
@@ -670,7 +671,7 @@
   background-color: #ccc;
 }
 .radio_pt_tt input:checked ~ .checkmark {
-  background-color: #2196F3;
+  background-color: #2fdab8;
 }
 .checkmark:after {
     content: "";
@@ -717,4 +718,136 @@
     display: inherit;
     align-items: center;
     justify-content: flex-end;
+}
+
+.customer_quanly {
+  width: 100%;
+  height: auto;
+  margin: 30px 0;
+  display: flex;
+  justify-content: flex-start;
+}
+.customer_quanly span {
+  font-size: 14px;
+}
+.cus_left {
+  width: 30%;
+  margin: 0 30px;
+}
+.menu_cus_item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.menu_cus_icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu_cus_icon i {
+  color: #fff;
+}
+.menu_cus_content {
+  color: #333333;
+}
+.cus_right {
+  width: 70%;
+  margin: 0 30px;
+  font-size: 14px;
+}
+.cus_tt_canhan {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.cus_tt_canhan label {
+  width: 20%;
+  text-align: right;
+  margin-right: 15px;
+  color: #666;
+  font-weight: 100;
+}
+.cus_tt_canhan h5 {
+  margin-right: 15px;
+}
+.cus_tt_canhan button {
+  border: none;
+  background-color: #fff;
+  color:#337ab7;
+  font-size: 14px;
+}
+.cus_tt_canhan_button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.cus_tt_canhan input[type="text"], input[type="password"] {
+  width: 50%;
+  padding: 5px 15px;
+}
+.cus_tt_canhan select {
+  padding: 5px 15px;
+}
+.khoang-trong {
+  width: 20%;
+  margin-right: 15px;
+}
+.button_luu {
+  padding: 5px 15px;
+  background-color: #fc636b;
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+}
+.bg_header_cus {
+  width: 100%;
+  background-color: #000;
+  padding: 5px 0;
+}
+.container-fix {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.knb_header {
+  width: 50%;
+}
+.knb_header a {
+  width: 50%;
+  font-size: 14px;
+  color: #fff;
+}
+.user_cus {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 14px;
+}
+.user_cus a {
+  text-decoration: none;
+  color: #fff;
+
+}
+.user_cus_user {
+  width: 20%;
+  margin-right: 30px;
+  border-right: 1px solid #ddd;
+}
+.donmua_header {
+  width: 100%;
+  padding: 15px 0;
+}
+
+.menu_cus li {
+  width: 20%;
+  font-size: 14px;
+  text-transform: capitalize;
+  padding: 12px;
 }

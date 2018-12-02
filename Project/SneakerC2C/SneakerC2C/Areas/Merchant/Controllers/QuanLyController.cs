@@ -44,16 +44,32 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                                            .ToList();
             return View(list);
         }
-        //public List<SizeSanPham> GetSize()
-        //{
-        //    List<SizeSanPham> size=ctx.SizeSanPham.Where(s=>s.IdSanPhamNavigation)
-        //}
+        public IActionResult GetSize(string masp)
+        {
+            List<SanPham> list = ctx.SanPham.Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap"))
+                                           .Include(sp => sp.IdTaiKhoanNavigation)
+                                           .Include(sp => sp.IdHangSanPhamNavigation)
+                                           .ToList();
+            List<SizeSanPham> listsize = ctx.SizeSanPham.Where(sp => list.Contains(sp.IdSanPhamNavigation)).ToList(); ;
+            
+            return PartialView("pSize", listsize);
+        }
         public IActionResult ConHang()
         {
             var listsize = ctx.SizeSanPham.Where(s => s.SoLuong > 0)
                                         .Include(s => s.IdSanPhamNavigation)
                                         .Select(s => s.IdSanPham)
                                         .Distinct()
+                                        .ToList();
+            List<SanPham> list = ctx.SanPham.Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap"))
+                                            .Where(sp => listsize.Contains(sp.Id)).ToList();
+            return View(list);
+        }
+        public IActionResult HetHang()
+        {
+            var listsize = ctx.SizeSanPham.Where(s => s.SoLuong == 0)
+                                        .Include(s => s.IdSanPhamNavigation)
+                                        .Select(s => s.IdSanPham)
                                         .ToList();
             List<SanPham> list = ctx.SanPham.Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap"))
                                             .Where(sp => listsize.Contains(sp.Id)).ToList();

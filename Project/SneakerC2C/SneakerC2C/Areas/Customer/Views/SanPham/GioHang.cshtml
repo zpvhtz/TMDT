@@ -7,115 +7,116 @@
 @{
     Layout = null;
 }
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>SNKRX - Giỏ Hàng</title>
-    <!--/tags -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Elite Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+@if (Model != null)
+{
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>SNKRX - Giỏ Hàng</title>
+        <!--/tags -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="Elite Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <script type="application/x-javascript">
-        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-               function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!--//tags -->
-    <link href="~/maintemplate/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="~/maintemplate/css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="~/maintemplate/css/font-awesome.css" rel="stylesheet">
-    <link href="~/maintemplate/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
+        <script type="application/x-javascript">
+            addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+                   function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <!--//tags -->
+        <link href="~/maintemplate/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="~/maintemplate/css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="~/maintemplate/css/font-awesome.css" rel="stylesheet">
+        <link href="~/maintemplate/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
 
-    <link href="~/maintemplate/css/fix.css" rel="stylesheet" type='text/css' />
-    <!-- //for bootstrap working -->
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
-    <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
-</head>
-<body>
-    <div class="container-fluid bg_header_knb">
-        <div class="container">
-            <div class="icon_header_knb">
-                <i class="fa fa-shopping-bag"></i>
-            </div>
-            <div class="logo_header_knb">
-                <a asp-area="Customer" asp-controller="Home" asp-action="Index">
-                    <h4><span>Trang Chủ</span></h4>
-                </a>
-                <a href="#">
-                    <i class="fa fa-angle-right"></i>
-                    <h4>Giỏ Hàng</h4>
-                </a>
-            </div>
-            @if (Context.Session.GetString("TenDangNhap") != null)
-            {
-                <div class="user_merchant">
-                    <ul>
-                        <li><i class="fa fa-user"></i></li>
-                        <li>@Context.Session.GetString("TenDangNhap")</li>
-                        <li class="gach_khoangcach">|</li>
-                        <a asp-area="Customer" asp-controller="Authentication" asp-action="LogOut">
-                            <li><i class="fa fa-sign-out"></i></li>
-                            <li>Đăng Xuất</li>
-                        </a>
-                    </ul>
-                </div>   
-            }
-        </div>
-    </div>
-    <div class="container-fluid bg_giohang">
-        <div class="container">
-            <div class="header_giohang">
-                <div class="checkbox_giohang">
-                    <div class="checkboxFive">
-                        <input type="checkbox" id="c1" name="" />
-                        <label for="c1"></label>
+        <link href="~/maintemplate/css/fix.css" rel="stylesheet" type='text/css' />
+        <!-- //for bootstrap working -->
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+        <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+    </head>
+    <body onload="TestChoVui();">
+        <div class="container-fluid bg_header_knb">
+            <div class="container">
+                <div class="icon_header_knb">
+                    <i class="fa fa-shopping-bag"></i>
+                </div>
+                <div class="logo_header_knb">
+                    <a asp-area="Customer" asp-controller="Home" asp-action="Index">
+                        <h4><span>Trang Chủ</span></h4>
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-angle-right"></i>
+                        <h4>Giỏ Hàng</h4>
+                    </a>
+                </div>
+                @if (Context.Session.GetString("TenDangNhap") != null)
+                {
+                    <div class="user_merchant">
+                        <ul>
+                            <li><i class="fa fa-user"></i></li>
+                            <li>@Context.Session.GetString("TenDangNhap")</li>
+                            <li class="gach_khoangcach">|</li>
+                            <a asp-area="Customer" asp-controller="Authentication" asp-action="LogOut">
+                                <li><i class="fa fa-sign-out"></i></li>
+                                <li>Đăng Xuất</li>
+                            </a>
+                        </ul>
                     </div>
-                </div>
-                <div class="sanpham_giohang">
-                    <h5>Sản Phẩm</h5>
-                </div>
-                <div class="dongia_giohang">
-                    <h5>Đơn Giá</h5>
-                </div>
-                <div class="soluong_giohang">
-                    <h5>Số Lượng</h5>
-                </div>
-                <div class="thanhtien_giohang">
-                    <h5>Thành Tiền</h5>
-                </div>
-                <div class="thaotac_giohang">
-                    <h5>Thao Tác</h5>
-                </div>
+                }
             </div>
-            @{
-
-                string idtaikhoan = "";
-            }
-            @foreach (var item in Model)
-            {
-                string idtaikhoantemp = item.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoan.ToString();
-                @if (idtaikhoantemp != idtaikhoan)
-                {   
-                    <br />
-                    <div class="cart_theoshop">
-                        <div class="cart_theoshop_header">
-                            <div class="checkbox_giohang">
-                                <div class="checkboxFive">
-                                    <input type="checkbox" id="c2" name="" />
-                                    <label for="c2"></label>
-                                </div>
-                            </div>
-                            <div class="sanpham_giohang">
-                                <a href="#">
-                                    <i class="fa fa-bank"></i>
-                                    <h5>@item.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenShop</h5>
-                                </a>
-                            </div>
+        </div>
+        <div class="container-fluid bg_giohang">
+            <div class="container">
+                <div class="header_giohang">
+                    <div class="checkbox_giohang">
+                        <div class="checkboxFive">
+                            <input type="checkbox" id="c1" name="" />
+                            <label for="c1"></label>
                         </div>
                     </div>
+                    <div class="sanpham_giohang">
+                        <h5>Sản Phẩm</h5>
+                    </div>
+                    <div class="dongia_giohang">
+                        <h5>Đơn Giá</h5>
+                    </div>
+                    <div class="soluong_giohang">
+                        <h5>Số Lượng</h5>
+                    </div>
+                    <div class="thanhtien_giohang">
+                        <h5>Thành Tiền</h5>
+                    </div>
+                    <div class="thaotac_giohang">
+                        <h5>Thao Tác</h5>
+                    </div>
+                </div>
+                @{
 
-                    idtaikhoan = idtaikhoantemp;
+                    string idtaikhoan = "";
                 }
+                @foreach (var item in Model)
+                {
+                    string idtaikhoantemp = item.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoan.ToString();
+                    @if (idtaikhoantemp != idtaikhoan)
+                    {
+                        <br />
+                        <div class="cart_theoshop">
+                            <div class="cart_theoshop_header">
+                                <div class="checkbox_giohang">
+                                    <div class="checkboxFive">
+                                        <input type="checkbox" id="c2" name="" />
+                                        <label for="c2"></label>
+                                    </div>
+                                </div>
+                                <div class="sanpham_giohang">
+                                    <a href="#">
+                                        <i class="fa fa-bank"></i>
+                                        <h5>@item.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenShop</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        idtaikhoan = idtaikhoantemp;
+                    }
                     <div class="cart_theoshop_item">
                         <div class="checkbox_giohang">
                             <div class="checkboxFive">
@@ -170,31 +171,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 @*<input type="submit" value="Xoá" class="button-xoa">*@
                             </form>
                         </div>
-                </div>
-            } 
-            <div class="form_nen"></div>
-            <div class="form_tongtien">
-                <div class="checkbox_giohang checkbox_fix">
-                    <div class="checkboxFive">
-                        <input type="checkbox" id="c8" name="" />
-                        <label for="c8"></label>
                     </div>
-                </div>
-                <div class="sanpham_giohang chon_all">
-                    <h5>Chọn tất cả sản phẩm</h5>
-                </div>
-                <div class="tong_giatien">
-                    <h4>Tổng tiền hàng: </h4>
-                    <h2>₫2.000.000</h2>
-                </div>
-                <div class="button-muahang">
-                    <button class="btn-muahang" id="btnMuaHang">Mua Hàng</button>
+                }
+                <div class="form_nen"></div>
+                <div class="form_tongtien">
+                    <div class="checkbox_giohang checkbox_fix">
+                        <div class="checkboxFive">
+                            <input type="checkbox" id="c8" name="" />
+                            <label for="c8"></label>
+                        </div>
+                    </div>
+                    <div class="sanpham_giohang chon_all">
+                        <h5>Chọn tất cả sản phẩm</h5>
+                    </div>
+                    <div class="tong_giatien">
+                        <h4>Tổng tiền hàng: </h4>
+                        <h2>₫2.000.000</h2>
+                    </div>
+                    <div class="button-muahang">
+                        <button class="btn-muahang" id="btnMuaHang">Mua Hàng</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</body>
+    </body>
 </html>
 <script type="text/javascript" src="~/maintemplate/js/jquery-2.1.4.min.js"></script>
 
@@ -234,7 +235,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 let price = parseFloat(pricetext);
                 totalPrice += price;
-                console.log(price);   
             }
         });
 
@@ -243,49 +243,73 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </script>
 
 <script>
-    $(".soluong").keydown(validateNumber);
+        $(".soluong").keydown(validateNumber);
 
-    $(".soluong").change(function () {
-        let pricetext = $(this).closest('.cart_theoshop_item').find('.dongia_giohang').text().trim();
-        pricetext = pricetext.replace(/\,/g, '');
-        pricetext = pricetext.substring(0, pricetext.indexOf(' '));
+        $(document).ready(function () {
+            console.log('a');
+            getTotalPrice();
+        });
 
-        let price = parseFloat(pricetext);
-        let quantity = parseInt($(this).val());
-        let totalPrice = price * quantity;
+        $(".soluong").change(function () {
 
-        $(this).closest('.cart_theoshop_item').find('.thanhtien_giohang').html(`<h5>${totalPrice.toLocaleString()} đ</h5>`);
-        getTotalPrice();
-    });
+            let pricetext = $(this).closest('.cart_theoshop_item').find('.dongia_giohang').text().trim();
+            pricetext = pricetext.replace(/\,/g, '');
+            pricetext = pricetext.substring(0, pricetext.indexOf(' '));
 
-    $(".soluong").keyup(function () {
-        let totalPrice = 0;
-  
-        let pricetext = $(this).closest('.cart_theoshop_item').find('.dongia_giohang').text().trim();
-        pricetext = pricetext.replace(/\,/g, '');
-        pricetext = pricetext.substring(0, pricetext.indexOf(' '));
-
-        if ($(this).val() == null || $(this).val() == '') {
-            let price = parseFloat(pricetext);
-            let quantity = 0;
-            let totalPrice = price * quantity;
-            $(this).val(0);
-        }
-        else {
             let price = parseFloat(pricetext);
             let quantity = parseInt($(this).val());
             let totalPrice = price * quantity;
-        }
 
-        $(this).closest('.cart_theoshop_item').find('.thanhtien_giohang').html(`<h5>${totalPrice.toLocaleString()} đ</h5>`);
-        getTotalPrice();
-    });
+            $(this).closest('.cart_theoshop_item').find('.thanhtien_giohang').html(`<h5>${totalPrice.toLocaleString()} đ</h5>`);
+            getTotalPrice();
+        });
+
+        $(".soluong").keyup(function () {
+            let totalPrice = 0;
+
+            let pricetext = $(this).closest('.cart_theoshop_item').find('.dongia_giohang').text().trim();
+            pricetext = pricetext.replace(/\,/g, '');
+            pricetext = pricetext.substring(0, pricetext.indexOf(' '));
 
 
-    $("#btnMuaHang").click(function(){
-        let tendangnhap = "@Context.Session.GetString("TenDangNhap")";
-        if(tendangnhap == "") {
-            alert("Vui lòng đăng nhập để thanh toán");
-        }
+
+            if ($(this).val() == null || $(this).val() == '') {
+                let price = parseFloat(pricetext);
+                let quantity = 0;
+                totalPrice = price * quantity;
+                $(this).val(0);
+            }
+            else {
+                let price = parseFloat(pricetext);
+                let quantity = parseInt($(this).val());
+                totalPrice = price * quantity;
+
+            }
+
+            $(this).closest('.cart_theoshop_item').find('.thanhtien_giohang').html(`<h5>${totalPrice.toLocaleString()} đ</h5>`);
+            getTotalPrice();
+        });
+
+
+        $("#btnMuaHang").click(function(){
+            let tendangnhap = "@Context.Session.GetString("TenDangNhap")";
+            if(tendangnhap == "") {
+                alert("Vui lòng đăng nhập để thanh toán");
+            }
+        });
+</script>
+}
+else
+{
+<script type="text/javascript" src="~/maintemplate/js/jquery-2.1.4.min.js"></script>
+<form asp-area="Customer" asp-controller="SanPham" asp-action="GioHang" asp-route-tendangnhap="@Context.Session.GetString("TenDangNhap")" method="post" id="frmSubmit" class="last">
+    <input id="local-storage" type="hidden" value="" name="cart" />
+    <button class="w3view-cart" type="submit" id="btnCart"><i class="fa fa-cart-arrow-down" aria-hidden="true" hidden></i></button>
+</form>
+<script>
+    $(document).ready(function () {
+        $('#local-storage').val(localStorage.getItem("Cart"));
+        $('#frmSubmit').submit();
     });
 </script>
+}

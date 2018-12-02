@@ -63,15 +63,22 @@ namespace SneakerC2C.Areas.Customer.Controllers
             return View(list);
         }
 
+        public IActionResult GioHang()
+        {
+            string tendangnhap = HttpContext.Session.GetString("TenDangNhap");
+            return View("GioHang", null);
+        }
+
         [HttpPost]
         public IActionResult GioHang(string tendangnhap, string cart)
         {
             string thongbao = "";
             List<GioHang> list = new List<GioHang>();
+            GioHangBUS giohangbus = new GioHangBUS();
             Dictionary<string, int> json = JsonConvert.DeserializeObject<Dictionary<string, int>>(cart);
+
             if (tendangnhap != "" && tendangnhap != null)
             {
-                GioHangBUS giohangbus = new GioHangBUS();
                 TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
                 TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoan(tendangnhap);
                 foreach (var item in json)
@@ -85,10 +92,11 @@ namespace SneakerC2C.Areas.Customer.Controllers
                 foreach(var item in json)
                 {
                     GioHang giohang = new GioHang();
-                    giohang.IdSizeSanPham = Guid.Parse(item.Key);
-                    giohang.IdTaiKhoan = Guid.Parse("3BA4CBB1-98AC-4768-BCE2-0B226C49DC56");
-                    giohang.SoLuong = item.Value;
-                    giohang.TinhTrang = "Không khoá";
+                    giohang = giohangbus.AddSingleItem(item);
+                    //giohang.IdSizeSanPham = Guid.Parse(item.Key);
+                    //giohang.IdTaiKhoan = Guid.Parse("3BA4CBB1-98AC-4768-BCE2-0B226C49DC56");
+                    //giohang.SoLuong = item.Value;
+                    //giohang.TinhTrang = "Không khoá";
                     list.Add(giohang);
                 }                
             }

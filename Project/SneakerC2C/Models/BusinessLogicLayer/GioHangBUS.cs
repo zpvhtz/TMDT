@@ -63,5 +63,28 @@ namespace Models.BusinessLogicLayer
             context.SaveChanges();
             return "Xoá sản phẩm khỏi giỏ hàng thành công";
         }
+
+        public GioHang AddSingleItem(KeyValuePair<string, int> item)
+        {
+            //Khai báo
+            GioHang giohang = new GioHang();
+            TaiKhoan taikhoan = new TaiKhoan();
+            SanPham sanpham = new SanPham();
+            SizeSanPham sizesanpham = new SizeSanPham();
+            //Lấy dữ liệu cho từng class
+            sizesanpham = context.SizeSanPham.Where(s => s.Id == Guid.Parse(item.Key)).SingleOrDefault();
+            sanpham = context.SanPham.Where(sp => sp.Id == sizesanpham.IdSanPham).SingleOrDefault();
+            taikhoan = context.TaiKhoan.Where(tk => tk.Id == sanpham.IdTaiKhoan).SingleOrDefault();
+
+            giohang.IdSizeSanPham = Guid.Parse(item.Key);
+            giohang.IdTaiKhoan = Guid.Parse("3BA4CBB1-98AC-4768-BCE2-0B226C49DC56");
+            giohang.SoLuong = item.Value;
+            giohang.TinhTrang = "Không khoá";
+            giohang.IdSizeSanPhamNavigation = sizesanpham;
+            giohang.IdTaiKhoanNavigation = taikhoan;
+            giohang.IdSizeSanPhamNavigation.IdSanPhamNavigation = sanpham;
+
+            return giohang;
+        }
     }
 }

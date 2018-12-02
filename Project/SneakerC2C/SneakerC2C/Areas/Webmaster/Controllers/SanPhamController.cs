@@ -255,37 +255,7 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
         //    if()
         //    return RedirectToAction("Index", sp);
         //}
-        //public IActionResult EditSP(string Maedit, string Tenedit, string Tenshopedit, string Mauedit, string Hangedit, string Phanloaiedit, string Giaedit, string Hinhedit, string Chitietedit, string Giamgiaedit)
-        //{
-        //    var sp = ctx.SanPham.Where(s => s.MaSanPham == Maedit).SingleOrDefault();
-        //    if(Tenedit !=null)
-        //    {
-        //        sp.TenSanPham = Tenedit;
-        //    }
-        //    if (Mauedit != null)
-        //    {
-        //        sp.Mau = Mauedit;
-        //    }
-        //        sp.PhanLoai = Phanloaiedit;
-        //    if (Giaedit != null)
-        //    {
-        //        sp.Gia = float.Parse(Giaedit);
-        //    }
-        //    if (Hinhedit != null)
-        //    {
-        //        sp.Hinh = Hinhedit;
-        //    }
-        //    if (Chitietedit != null)
-        //    {
-        //        sp.ChiTiet = Chitietedit;
-        //    }
-        //    if (Giamgiaedit != null)
-        //    {
-        //        sp.GiamGia = float.Parse(Giamgiaedit);
-        //    }
-        //    ctx.SaveChanges();
-        //    return RedirectToAction("Index",sp);
-        //}
+        
     }
 
 }

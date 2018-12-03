@@ -787,7 +787,7 @@
   justify-content: flex-start;
   align-items: center;
 }
-.cus_tt_canhan input[type="text"], input[type="password"] {
+.cus_tt_canhan input[type="text"], input[type="password"], input[type="tel"] {
   width: 50%;
   padding: 5px 15px;
 }
@@ -850,4 +850,103 @@
   font-size: 14px;
   text-transform: capitalize;
   padding: 12px;
+}
+.form_donhang {
+  width: 100%;
+  height: auto;
+  padding: 30px 0;
+}
+.ql_donhang {
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  padding: 15px;
+}
+.tenshop_donhang {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.trangthai_donhang {
+  width: 65%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 14px;
+  color: #fc636b;
+}
+.thongtin_donhang {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.sp_donhang {
+  width: 100%;
+}
+.hinh_donhang {
+  margin: 0;
+}
+.ten_sp_donhang {
+  width: 70%;
+}
+.button_chitiet_huy_donhang {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.chitiet_dh_right {
+  width: 60%;
+}
+.chuthich_giaohang {
+  width: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.chuthich_giaohang p {
+  font-size: 12px;
+  color: #666;
+}
+.chuthich_giaohang a {
+  font-size: 14px;
+}
+.tongtien_thanhtoan {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 24px;
+  color: #fc636b;
+  margin-bottom: 15px;
+}
+.tongtien_thanhtoan h5 {
+  color: #333333;
+  padding-right: 15px;
+}
+.button_ct_huy {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.button_ct_huy button {
+  margin-left: 15px;
+  background-color: #fff;
+  border: 1px solid #2fdab8;
+  color: #666;
+  padding: 7px 15px;
+  border-radius: 1px;
+}
+.resp-tabs-container hr {
+  margin: 15px 0;
+}
+.tt_donhang {
+  width: calc(30% - 80px);
+  justify-content: flex-end;
+}
+.button_ct_huy .button_danhgia {
+  background-color: #2fdab8;
+  border: 1px solid #2fdab8;
+  color: #fff;
+  padding: 7px 25px;
 }

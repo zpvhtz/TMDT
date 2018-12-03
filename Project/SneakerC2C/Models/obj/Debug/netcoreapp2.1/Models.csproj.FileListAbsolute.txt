@@ -49,4 +49,3 @@ C:\Code\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyIn
 C:\Code\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfo.cs
 C:\Code\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.dll
 C:\Code\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.pdb
-F:\ASP.NET\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.csprojAssemblyReference.cache

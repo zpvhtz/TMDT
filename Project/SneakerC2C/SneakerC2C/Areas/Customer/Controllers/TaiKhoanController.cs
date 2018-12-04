@@ -16,6 +16,82 @@ namespace SneakerC2C.Areas.Customer.Controllers
     [Area("Customer")]
     public class TaiKhoanController : BaseController
     {
+        public IActionResult ThongTinTaiKhoan()
+        {
+            string sessionval = HttpContext.Session.GetString("TenDangNhap");
+            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+            TaiKhoan taikhoan = new TaiKhoan();
+            if(sessionval != "" && sessionval != null)
+            {
+                taikhoan = taikhoanbus.CheckTaiKhoan(sessionval);
+            }
+            else
+            {
+                taikhoan = null;
+            }
+            HangSanPhamBUS hangsanphambus = new HangSanPhamBUS();
+            List<HangSanPham> hang = hangsanphambus.GetHangSanPhams();
+            ViewBag.Hang = hang;
+            return View(taikhoan);
+        }
+
+        public IActionResult ThongTinDiaChi()
+        {
+            string sessionval = HttpContext.Session.GetString("TenDangNhap");
+            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+            TaiKhoan taikhoan = new TaiKhoan();
+            if (sessionval != "" && sessionval != null)
+            {
+                taikhoan = taikhoanbus.CheckTaiKhoan(sessionval);
+            }
+            else
+            {
+                taikhoan = null;
+            }
+
+            HangSanPhamBUS hangsanphambus = new HangSanPhamBUS();
+            List<HangSanPham> hang = hangsanphambus.GetHangSanPhams();
+
+            TinhThanhBUS tinhthanhbus = new TinhThanhBUS();
+            List<TinhThanh> tinhthanh = tinhthanhbus.GetTinhThanhs();
+            ViewBag.Hang = hang;
+            ViewBag.TinhThanh = tinhthanh;
+            return View(taikhoan);
+        }
+
+        public IActionResult DoiMatKhau()
+        {
+            string sessionval = HttpContext.Session.GetString("TenDangNhap");
+            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+            TaiKhoan taikhoan = new TaiKhoan();
+            if (sessionval != "" && sessionval != null)
+            {
+                taikhoan = taikhoanbus.CheckTaiKhoan(sessionval);
+            }
+            else
+            {
+                taikhoan = null;
+            }
+            HangSanPhamBUS hangsanphambus = new HangSanPhamBUS();
+            List<HangSanPham> hang = hangsanphambus.GetHangSanPhams();
+            ViewBag.Hang = hang;
+            return View(taikhoan);
+        }
+
+        public string ThemDiaChi(string tendangnhap, string duong, string tinhthanh)
+        {
+            DiaChiBUS diachibus = new DiaChiBUS();
+            string thongbao = diachibus.CreateDiaChi(tendangnhap, duong, tinhthanh);
+            return thongbao;
+        }
+
+        public string EditThongTin(string tendangnhap, string email, string sdt)
+        {
+            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+            string thongbao = taikhoanbus.EditTaiKhoan(tendangnhap, null, null, null, email, sdt, null);
+            return thongbao;
+        }
+
         public async Task<IActionResult> CreateTaiKhoan(string tendangnhap, string matkhau, string confirmmatkhau, string ten, string email)
         {
             string thongbao = "";
@@ -41,10 +117,18 @@ namespace SneakerC2C.Areas.Customer.Controllers
             return RedirectToAction("Index", "Home", new { thongbao = thongbao });
         }
 
-        public string EditPassword(string tendangnhap, string matkhau)
+        public string EditPassword(string tendangnhap, string matkhaucu, string matkhaumoi)
         {
             TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
-            string thongbao = taikhoanbus.EditTaiKhoan(tendangnhap, matkhau, null, null, null, null, null);
+            string thongbao = "";
+            if(taikhoanbus.CheckOldPassword(tendangnhap, matkhaucu))
+            {
+                thongbao = taikhoanbus.EditTaiKhoan(tendangnhap, matkhaumoi, null, null, null, null, null);
+            }
+            else
+            {
+                thongbao = "Mật khẩu cũ không trùng khớp";
+            }
             return thongbao;
         }
 

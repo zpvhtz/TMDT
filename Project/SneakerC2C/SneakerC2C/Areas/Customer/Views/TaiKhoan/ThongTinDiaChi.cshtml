@@ -1,0 +1,115 @@
+﻿@model Models.Database.TaiKhoan
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "ThongTinDiaChi";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@if (Model != null)
+{
+    <div class="container">
+        <div class="customer_quanly">
+            <div class="cus_left">
+                <h4><span>Tên: </span>@Model.Ten</h4>
+                <hr>
+                <div class="menu_cus">
+                    <a class="menu_cus_item" asp-area="Customer" asp-controller="TaiKhoan" asp-action="ThongTinTaiKhoan">
+                        <div class="menu_cus_icon" style="background-color: #2fdab8;">
+                            <i class="fa fa-user-o"></i>
+                        </div>
+                        <div class="menu_cus_content">
+                            <h5>Tài Khoản</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="menu_cus">
+                    <a class="menu_cus_item" asp-area="Customer" asp-controller="TaiKhoan" asp-action="ThongTinDiaChi">
+                        <div class="menu_cus_icon" style="background-color:rgb(68, 181, 255);">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="menu_cus_content">
+                            <h5>Địa Chỉ</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="menu_cus">
+                    <a class="menu_cus_item" asp-area="Customer" asp-controller="TaiKhoan" asp-action="DoiMatKhau">
+                        <div class="menu_cus_icon" style="background-color:rgb(255, 193, 7);">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                        <div class="menu_cus_content">
+                            <h5>Đổi mật khẩu</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="menu_cus">
+                    <a class="menu_cus_item" href="customer-donmua.html">
+                        <div class="menu_cus_icon" style="background-color:rgb(255, 87, 34);">
+                            <i class="fa fa-shopping-basket"></i>
+                        </div>
+                        <div class="menu_cus_content">
+                            <h5>Đơn Mua</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="cus_right">
+                <h4>Địa Chỉ</h4>
+                <hr>
+                @*<div class="cus_tt_canhan">
+                        <label>Tên</label>
+                        <input type="text" placeholder="Nhập tên người nhận hàng">
+                    </div>*@
+                <form id="frmAddAddress" method="post" role="form" action="">
+                    <div class="cus_tt_canhan">
+                        <label>Tỉnh/Thành phố</label>
+                        <select name="tinhthanh" id="cbbTinhThanh">
+                            @foreach (var item in ViewBag.TinhThanh)
+                            {
+                                <option value="@item.Id">@item.TenTinhThanh</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="cus_tt_canhan">
+                        <label>Địa chỉ chi tiết</label>
+                        <input type="text" placeholder="Nhập địa chỉ chi tiết" name="duong" id="txtDiaChi" pattern=".{5,}" required oninvalid="this.setCustomValidity('Địa chỉ cần ít nhất 5 ký tự')" onchange="this.setCustomValidity('')">
+                    </div>
+                    <div class="cus_tt_canhan_button">
+                        <div class="khoang-trong"></div>
+                        <button type="submit" class="button_luu">Lưu</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- js -->
+    <script type="text/javascript" src="~/maintemplate/js/jquery-2.1.4.min.js"></script>
+    <script>
+        $("#frmAddAddress").submit(function (e) {
+            e.preventDefault();
+            let tendangnhap = "@Model.TenDangNhap";
+            let diachi = $("#txtDiaChi").val();
+            let tinh = $("#cbbTinhThanh").val();
+            $.ajax({
+                url: "/Customer/TaiKhoan/ThemDiaChi",
+                type: "post",
+                data: { "tendangnhap": tendangnhap, "duong": diachi, "tinhthanh": tinh },
+                success: function (data) {
+                    alert(data);
+                    location.href = "@Url.Action("ThongTinTaiKhoan", "TaiKhoan")";
+                },
+                error: function (data) {
+                    alert("Error: " + data);
+                }
+            });
+        });
+    </script>
+}
+else
+{
+    <script>
+        window.location.href = "@Url.Action("Index", "QuanLy")";
+    </script>
+}

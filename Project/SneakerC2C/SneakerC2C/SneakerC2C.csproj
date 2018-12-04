@@ -27,7 +27,6 @@
   <ItemGroup>
     <Folder Include="Areas\Customer\Data\" />
     <Folder Include="Areas\Customer\Models\" />
-    <Folder Include="Areas\Customer\Views\TaiKhoan\" />
     <Folder Include="Areas\Merchant\Data\" />
     <Folder Include="Areas\Merchant\Models\" />
     <Folder Include="Areas\Webmaster\Data\" />

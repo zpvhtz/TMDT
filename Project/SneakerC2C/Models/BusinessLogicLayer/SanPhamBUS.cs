@@ -454,6 +454,19 @@ namespace Models.BusinessLogicLayer
                                               .Take(pagesize)
                                               .ToList();
                         break;
+                    case "banchay":
+                        list = context.SanPham.Where(sp => (sp.MaSanPham.Contains(search) ||
+                                                   sp.TenSanPham.Contains(search) ||
+                                                   sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
+                                                   sp.Mau.Contains(search)) &&
+                                                   sp.Gia >= minprice && sp.Gia <= maxprice)
+                                              .Include(sp => sp.IdTaiKhoanNavigation)
+                                              .Include(sp => sp.IdHangSanPhamNavigation)
+                                              .OrderBy(sp => sp.NgayDang)
+                                              .Skip((pagenumber - 1) * pagesize)
+                                              .Take(pagesize)
+                                              .ToList();
+                        break;
                 }
                 return list;
             }
@@ -525,6 +538,15 @@ namespace Models.BusinessLogicLayer
                                               .Take(pagesize)
                                               .ToList();
                         break;
+                    case "banchay":
+                        list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
+                                              .Include(sp => sp.IdTaiKhoanNavigation)
+                                              .Include(sp => sp.IdHangSanPhamNavigation)
+                                              .OrderBy(sp => sp.NgayDang)
+                                              .Skip((pagenumber - 1) * pagesize)
+                                              .Take(pagesize)
+                                              .ToList();
+                        break;
                 }
                 return list;
             }
@@ -587,6 +609,15 @@ namespace Models.BusinessLogicLayer
                                               .ToList();
                         break;
                     case "moinhat":
+                        list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
+                                              .Include(sp => sp.IdTaiKhoanNavigation)
+                                              .Include(sp => sp.IdHangSanPhamNavigation)
+                                              .OrderBy(sp => sp.NgayDang)
+                                              .Skip((pagenumber - 1) * pagesize)
+                                              .Take(pagesize)
+                                              .ToList();
+                        break;
+                    case "banchay":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
                                               .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
@@ -685,6 +716,17 @@ namespace Models.BusinessLogicLayer
                                               .OrderBy(sp => sp.NgayDang)
                                               .ToList();
                         break;
+                    case "banchay":
+                        list = context.SanPham.Where(sp => (sp.MaSanPham.Contains(search) ||
+                                                   sp.TenSanPham.Contains(search) ||
+                                                   sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
+                                                   sp.Mau.Contains(search)) &&
+                                                   sp.Gia >= minprice && sp.Gia <= maxprice)
+                                              .Include(sp => sp.IdTaiKhoanNavigation)
+                                              .Include(sp => sp.IdHangSanPhamNavigation)
+                                              .OrderBy(sp => sp.NgayDang)
+                                              .ToList();
+                        break;
                 }
                 return list;
             }
@@ -742,6 +784,13 @@ namespace Models.BusinessLogicLayer
                                               .OrderBy(sp => sp.NgayDang)
                                               .ToList();
                         break;
+                    case "banchay":
+                        list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
+                                              .Include(sp => sp.IdTaiKhoanNavigation)
+                                              .Include(sp => sp.IdHangSanPhamNavigation)
+                                              .OrderBy(sp => sp.NgayDang)
+                                              .ToList();
+                        break;
                 }
                 return list;
             }
@@ -792,6 +841,13 @@ namespace Models.BusinessLogicLayer
                                               .ToList();
                         break;
                     case "moinhat":
+                        list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
+                                              .Include(sp => sp.IdTaiKhoanNavigation)
+                                              .Include(sp => sp.IdHangSanPhamNavigation)
+                                              .OrderBy(sp => sp.NgayDang)
+                                              .ToList();
+                        break;
+                    case "banchay":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
                                               .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)

@@ -1,239 +1,3 @@
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.deps.json
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.runtimeconfig.json
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.runtimeconfig.dev.json
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.dll
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.pdb
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.Views.dll
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.Views.pdb
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\Models.dll
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\Models.pdb
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csprojAssemblyReference.cache
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CoreCompileInputs.cache
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorAssemblyInfo.cache
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorAssemblyInfo.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.AssemblyInfoInputs.cache
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.AssemblyInfo.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.TagHelpers.input.cache
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.TagHelpers.output.cache
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorCoreGenerate.cache
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\Home\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\Home\ResetPassword.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\SanPham\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\SanPham\List.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\Home\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\Home\ResetPassword.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\Authentication\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\DiaChi\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GianHang\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GiaShip\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GoiQuangCao\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\HangSanPham\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\Home\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\LichSuGianHang\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\LoaiNguoiDung\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\SanPham\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\SanPham\pSizeSanPham.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TaiKhoan\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TinhThanh\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TrangQuangCao\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\ViTriQuangcao\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminLayout.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminLeftMenuLayout.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminTopMenuLayout.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MainLayout.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MerchantLayout.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MerchantManagementLayout.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorTargetAssemblyInfo.cache
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorTargetAssemblyInfo.cs
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.Views.pdb
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CopyComplete
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.dll
-F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.deps.json
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.runtimeconfig.json
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.runtimeconfig.dev.json
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.dll
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.pdb
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.Views.dll
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.Views.pdb
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\Models.dll
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\Models.pdb
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csprojAssemblyReference.cache
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CoreCompileInputs.cache
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorAssemblyInfo.cache
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorAssemblyInfo.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.AssemblyInfoInputs.cache
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.AssemblyInfo.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.TagHelpers.input.cache
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.TagHelpers.output.cache
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorCoreGenerate.cache
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\Home\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\Home\ResetPassword.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\SanPham\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\SanPham\List.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\Home\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\Home\ResetPassword.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\Authentication\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\DiaChi\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GianHang\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GiaShip\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GoiQuangCao\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\HangSanPham\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\Home\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\LichSuGianHang\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\LoaiNguoiDung\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\SanPham\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\SanPham\pSizeSanPham.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TaiKhoan\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TinhThanh\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TrangQuangCao\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\ViTriQuangcao\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminLayout.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminLeftMenuLayout.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminTopMenuLayout.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MainLayout.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MerchantLayout.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MerchantManagementLayout.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorTargetAssemblyInfo.cache
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorTargetAssemblyInfo.cs
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.Views.pdb
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CopyComplete
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.dll
-D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.deps.json
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.runtimeconfig.json
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.runtimeconfig.dev.json
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.dll
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.pdb
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.Views.dll
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.Views.pdb
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\Models.dll
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\Models.pdb
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csprojAssemblyReference.cache
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CoreCompileInputs.cache
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorAssemblyInfo.cache
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorAssemblyInfo.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.AssemblyInfoInputs.cache
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.AssemblyInfo.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.TagHelpers.input.cache
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.TagHelpers.output.cache
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorCoreGenerate.cache
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\Home\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\Home\ResetPassword.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\SanPham\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\SanPham\List.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\Home\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\Home\ResetPassword.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\Authentication\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\DiaChi\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GianHang\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GiaShip\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GoiQuangCao\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\HangSanPham\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\Home\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\LichSuGianHang\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\LoaiNguoiDung\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\SanPham\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\SanPham\pSizeSanPham.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TaiKhoan\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TinhThanh\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TrangQuangCao\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\ViTriQuangcao\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminLayout.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminLeftMenuLayout.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminTopMenuLayout.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MainLayout.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MerchantLayout.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MerchantManagementLayout.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorTargetAssemblyInfo.cache
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorTargetAssemblyInfo.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.Views.pdb
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CopyComplete
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.dll
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.deps.json
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.runtimeconfig.json
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.runtimeconfig.dev.json
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.dll
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.pdb
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.Views.dll
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.Views.pdb
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\Models.dll
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\Models.pdb
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csprojAssemblyReference.cache
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CoreCompileInputs.cache
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorAssemblyInfo.cache
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorAssemblyInfo.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.AssemblyInfoInputs.cache
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.AssemblyInfo.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.TagHelpers.input.cache
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.TagHelpers.output.cache
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorCoreGenerate.cache
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\Home\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\Home\ResetPassword.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\SanPham\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\SanPham\List.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\Home\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\Home\ResetPassword.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\Authentication\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\DiaChi\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GianHang\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GiaShip\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GoiQuangCao\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\HangSanPham\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\Home\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\LichSuGianHang\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\LoaiNguoiDung\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\SanPham\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\SanPham\pSizeSanPham.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TaiKhoan\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TinhThanh\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TrangQuangCao\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\ViTriQuangcao\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminLayout.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminLeftMenuLayout.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminTopMenuLayout.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MainLayout.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MerchantLayout.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MerchantManagementLayout.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorTargetAssemblyInfo.cache
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorTargetAssemblyInfo.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.Views.pdb
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CopyComplete
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.dll
-F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.deps.json
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.runtimeconfig.json
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.runtimeconfig.dev.json
@@ -254,11 +18,17 @@ C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.Ta
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorCoreGenerate.cache
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\Home\Index.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\Home\ResetPassword.g.cshtml.cs
+C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\SanPham\GioHang.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\SanPham\Index.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\SanPham\List.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\Home\Index.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\Home\ResetPassword.g.cshtml.cs
+C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\ConHang.g.cshtml.cs
+C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\HetHang.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\Index.g.cshtml.cs
+C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\KhoaSP.g.cshtml.cs
+C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\ListSP.g.cshtml.cs
+C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\pSize.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\Authentication\Index.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\DiaChi\Index.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GianHang\Index.g.cshtml.cs
@@ -293,6 +63,68 @@ C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.Vi
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CopyComplete
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.dll
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb
-C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\ListSP.g.cshtml.cs
-C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\KhoaSP.g.cshtml.cs
-C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\ConHang.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.deps.json
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.runtimeconfig.json
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.runtimeconfig.dev.json
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.dll
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.pdb
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.Views.dll
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.Views.pdb
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\Models.dll
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\Models.pdb
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csprojAssemblyReference.cache
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CoreCompileInputs.cache
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorAssemblyInfo.cache
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorAssemblyInfo.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.AssemblyInfoInputs.cache
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.AssemblyInfo.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.TagHelpers.input.cache
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.TagHelpers.output.cache
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorCoreGenerate.cache
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\Home\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\Home\ResetPassword.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\SanPham\GioHang.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\SanPham\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\SanPham\List.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\Home\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\Home\ResetPassword.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\ConHang.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\HetHang.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\KhoaSP.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\ListSP.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\pSize.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\Authentication\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\DiaChi\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GianHang\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GiaShip\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GoiQuangCao\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\HangSanPham\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\Home\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\LichSuGianHang\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\LoaiNguoiDung\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\SanPham\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\SanPham\pSizeSanPham.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TaiKhoan\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TinhThanh\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\TrangQuangCao\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\ViTriQuangcao\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminLayout.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminLeftMenuLayout.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminTopMenuLayout.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MainLayout.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MerchantLayout.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MerchantManagementLayout.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorTargetAssemblyInfo.cache
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.RazorTargetAssemblyInfo.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.Views.pdb
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CopyComplete
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.dll
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb

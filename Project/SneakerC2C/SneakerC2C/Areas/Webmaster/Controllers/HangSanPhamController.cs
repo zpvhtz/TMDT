@@ -31,19 +31,19 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
         {
             
             //Mã tự tăng
-            string layma = ctx.HangSanPham
-                .OrderByDescending(h => h.MaHang)
-                .Select(h => h.MaHang)
-                .FirstOrDefault();
-            int vitri = layma.IndexOf("-");
-            string tmp = layma.Substring(0, vitri);
-            int so = int.Parse(layma.Substring(vitri + 1, layma.Length-1-vitri));
-            so = so + 1;
-            string Ma = tmp +"-"+ so;
+            //string layma = ctx.HangSanPham
+            //    .OrderByDescending(h => h.MaHang)
+            //    .Select(h => h.MaHang)
+            //    .FirstOrDefault();
+            //int vitri = layma.IndexOf("-");
+            //string tmp = layma.Substring(0, vitri);
+            //int so = int.Parse(layma.Substring(vitri + 1, layma.Length-1-vitri));
+            //so = so + 1;
+            //string Ma = tmp +"-"+ so;
             //
             HangSanPham hang = new HangSanPham();
             hang.Id = Guid.Parse(Guid.NewGuid().ToString().ToUpper());
-            hang.MaHang = Ma;
+            hang.MaHang = item_them_mahang;
             hang.TenHang = item_them_ten;
             hang.TinhTrang = "Không khoá";
             ctx.Add(hang);

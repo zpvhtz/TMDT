@@ -14,7 +14,7 @@
             <ul class="resp-tabs-list">
                 <a asp-area="Merchant" asp-controller="QuanLy" asp-action="ListSP"><li style="background-color: #fc636b">Tất cả</li></a>
                 <a asp-area="Merchant" asp-controller="QuanLy" asp-action="ConHang"><li>còn hàng</li></a>
-                <a href="merchant-quanly-sanpham-hethang.html"><li>hết hàng</li></a>
+                <a asp-area="Merchant" asp-controller="QuanLy" asp-action="HetHang"><li>hết hàng</li></a>
                 <a asp-area="Merchant" asp-controller="QuanLy" asp-action="KhoaSP"><li>đã bị khoá</li></a>
             </ul>
             <div class="col-md-4 header-middle fix_timkiem_merchant">
@@ -31,7 +31,7 @@
                         <div class="men-pro-item simpleCart_shelfItem" style="padding:0;">
                             <a href="#" style="text-decoration: none;">
                                 <div class="them_sanpham">
-                                    <div class="icon_themsp">
+                                    <div class="icon_themsp"  data-toggle="modal" data-target="#themModal">
                                         <i class="fa fa-plus-circle" style="font-size:66px;"></i>
                                         <h4>Thêm 1 sản phẩm mới</h4>
                                     </div>
@@ -69,7 +69,7 @@
                                         <div class="button-sua-xoa">
                                             <form>
                                                 <input type="button" value="Size" class="btnSize" />
-                                                <input type="button" value="Sửa" class="button-sua" onclick="location.href='#'" />
+                                                <button class="btn btn-danger btnSua" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
                                                 <input type="submit" value="Xoá" class="button-xoa" />
                                             </form>
                                         </div>
@@ -140,7 +140,6 @@
                     }
                 </div>
                 <!--//tab_one-->
-                
                 <!--phân trang-->
                 <ul class="phantrang modal-1" style="padding-top: 1.5em;">
                     <li><a href="#" class="prev">&laquo</a></li>
@@ -160,6 +159,186 @@
         </div>
     </div>
 </div>
-<!-- //quanlysanpham --> 
+<!-- //quanlysanpham -->
+<!--modal them sp-->
+<div class="modal fade" id="themModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <form asp-controller="QuanLy" asp-action="ThemSP" enctype="multipart/form-data" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Sản phẩm</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Mã sản phẩm</label>
+                        <input type="text" class="form-control" id="item-them-ma" name="item_them_ma" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tên sản phẩm</label>
+                        <input type="text" class="form-control" id="item-them-tensp" name="item_them_tensp" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Màu</label>
+                        <input type="text" class="form-control" id="item-them-mau" name="item_them_mau">
+                    </div>
+                    <div class="form-group">
+                        <label>Hãng sản phẩm</label>
+                        <select class="form-control" id="item-them-hang" name="item_them_hang">
+                            @foreach (var item in ViewBag.HangSanPham)
+                            {
+                                <option value="@item.Id">@item.TenHang</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Phân loại</label>
+                        <select class="form-control" id="item-them-phanloai" name="item_them_phanloai">
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Giá</label>
+                        <input type="text" class="form-control" id="item-them-gia" name="item_them_gia">
+                    </div>
+                    <div class="form-group">
+                        <label>Hinh</label>
+                        <input type="file" class="form-control" id="item-them-hinh" name="item_them_hinh" multiple>
+                    </div>
+                    <div class="form-group">
+                        <label>Chi tiết</label>
+                        <input type="text" class="form-control" id="item-them-chitiet" name="item_them_chitiet">
+                    </div>
+                    <div class="form-group">
+                        <label>Giảm giá</label>
+                        <input type="text" class="form-control" id="item-them-giamgia" name="item_them_giamgia">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-warning" id="btnThem">Thêm</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal fade" id="suaModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <form asp-controller="QuanLy" asp-action="SuaSP" enctype="multipart/form-data" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Sản phẩm</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Tên sản phẩm</label>
+                        <input type="text" class="form-control" id="item-sua-tensp" name="item_sua_tensp" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Màu</label>
+                        <input type="text" class="form-control" id="item-sua-mau" name="item_sua_mau">
+                    </div>
+                    <div class="form-group">
+                        <label>Hãng sản phẩm</label>
+                        <select class="form-control" id="item-sua-hang" name="item_sua_hang">
+                            @foreach (var item in ViewBag.HangSanPham)
+                            {
+                                <option value="@item.Id">@item.TenHang</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Phân loại</label>
+                        <select class="form-control" id="item-sua-phanloai" name="item_sua_phanloai">
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Giá</label>
+                        <input type="text" class="form-control" id="item-sua-gia" name="item_sua_gia">
+                    </div>
+                    <div class="form-group">
+                        <label>Hinh</label>
+                        <input type="file" class="form-control" id="item-sua-hinh" name="item_sua_hinh" multiple>
+                    </div>
+                    <div class="form-group">
+                        <label>Chi tiết</label>
+                        <input type="text" class="form-control" id="item-sua-chitiet" name="item_sua_chitiet">
+                    </div>
+                    <div class="form-group">
+                        <label>Giảm giá</label>
+                        <input type="text" class="form-control" id="item-sua-giamgia" name="item_sua_giamgia">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-warning" id="btnThem">Sửa</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".men-thumb-item").click(function () {
 
-<!--modal size-->
+        });
+    });
+</script>
+@*<script>
+    $(document).ready(function () {
+        $(".SuaSp").click(function () {
+            let pricetext = $(this).closest('.cart_theoshop_item').find('.tieude_sanpham').text().trim();
+            let pTen = $(this).closest('.tab1').find('.tensp').text();
+            let pTenShop = $(this).closest('tr').find('.tenshop').text();
+            let pMau = $(this).closest('tr').find('.mau').text();
+            let pHang = $(this).closest('tr').find('.tenhang').text();
+            let pGia = $(this).closest('tr').find('.item_price').text();
+            let pHinh = $(this).closest('tr').find('.img-hinh').attr('src');
+            let pChiTiet = $(this).closest('tr').find('.chitiet').text();
+            let pGiamGia = $(this).closest('tr').find('.giamgia').text();
+            //alert(pGiamGia);
+            $("#masp-sua").val(Id.trim());
+            $("#tensp-sua").val(pTen.trim());
+            $("#tenshop-sua").val(pTenShop.trim());
+            $("#mau-sua").val(pMau.trim());
+            $("#gia-sua").val(pGia.trim());
+            $("#hinh-sua").val(pHinh.trim());
+            $("#chitiet-sua").val(pChiTiet.trim());
+            $("#giamgia-sua").val(pGiamGia.trim());
+
+            let pPhanLoai = $(this).closest('tr').find('.phanloai').text();
+            if (pPhanLoai != '') {
+                $("#phanloai-sua option").each(function () {
+                    if ($(this).text().includes(pPhanLoai)) {
+                        $(this).attr('selected', 'selected');
+                        //return;
+                    }
+                    else {
+                        $(this).attr('selected', false);
+                    }
+                });
+            }
+
+            let hang = $(this).closest('tr').find('.tenhang').text();
+            if (hang != '') {
+                $("#hang-sua option").each(function () {
+                    if ($(this).text().includes(hang)) {
+                        $(this).attr('selected', 'selected');
+                        //return;
+                    }
+                    else {
+                        $(this).attr('selected', false);
+                    }
+                });
+            }
+
+        });
+
+    });
+</script>*@

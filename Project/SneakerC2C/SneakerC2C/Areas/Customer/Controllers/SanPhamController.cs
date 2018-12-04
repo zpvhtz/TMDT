@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Models.BusinessLogicLayer;
 using Models.Database;
+using Newtonsoft.Json;
 
 namespace SneakerC2C.Areas.Customer.Controllers
 {
@@ -20,6 +21,12 @@ namespace SneakerC2C.Areas.Customer.Controllers
         public SanPhamController(QLBanGiayContext context)
         {
             ctx = context;
+        }
+
+        public class Cart
+        {
+            public string Id { get; set; }
+            public int SL { get; set; }
         }
         public IActionResult Index(string id)
         {
@@ -53,6 +60,46 @@ namespace SneakerC2C.Areas.Customer.Controllers
             ViewBag.TongTrang = TongTrang(tong);
             ViewBag.TrangHienTai = pageNumber;
             ViewBag.TrangThai = "index";
+            return View(list);
+        }
+
+        public IActionResult GioHang()
+        {
+            string tendangnhap = HttpContext.Session.GetString("TenDangNhap");
+            return View("GioHang", null);
+        }
+
+        [HttpPost]
+        public IActionResult GioHang(string tendangnhap, string cart)
+        {
+            string thongbao = "";
+            List<GioHang> list = new List<GioHang>();
+            GioHangBUS giohangbus = new GioHangBUS();
+            Dictionary<string, int> json = JsonConvert.DeserializeObject<Dictionary<string, int>>(cart);
+
+            if (tendangnhap != "" && tendangnhap != null)
+            {
+                TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+                TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoan(tendangnhap);
+                foreach (var item in json)
+                {
+                    thongbao = giohangbus.AddToCart(taikhoan.Id.ToString(), item.Key, item.Value);
+                }
+                list = giohangbus.GetGioHangs(tendangnhap);
+            }
+            else
+            {
+                foreach(var item in json)
+                {
+                    GioHang giohang = new GioHang();
+                    giohang = giohangbus.AddSingleItem(item);
+                    //giohang.IdSizeSanPham = Guid.Parse(item.Key);
+                    //giohang.IdTaiKhoan = Guid.Parse("3BA4CBB1-98AC-4768-BCE2-0B226C49DC56");
+                    //giohang.SoLuong = item.Value;
+                    //giohang.TinhTrang = "Không khoá";
+                    list.Add(giohang);
+                }                
+            }
             return View(list);
         }
 
@@ -156,6 +203,8 @@ namespace SneakerC2C.Areas.Customer.Controllers
             ViewBag.TrangThai = "filterandsearch";
             ViewBag.Filter = filter;
             ViewBag.Search = search;
+            if (ploai != null)
+                ViewBag.PhanLoai = ploai == "Nam" ? "Nam" : "Nu";
             ViewBag.ThuongHieu = mahang;
             if(ploai != null && ploai != "")
             {
@@ -172,8 +221,13 @@ namespace SneakerC2C.Areas.Customer.Controllers
 
         public IActionResult FilterAndSearchAndSort(string search, string ploai, string mahang, string filter, string sortorder, int? pagenumber)
         {
-            float minprice = float.Parse(filter.Substring(filter.IndexOf('đ') + 1, filter.IndexOf(' ') - 1));
-            float maxprice = float.Parse(filter.Substring(filter.LastIndexOf('đ') + 1));
+            float minprice = 0;
+            float maxprice = float.MaxValue;
+            if (filter != null)
+            {
+                minprice = float.Parse(filter.Substring(filter.IndexOf('đ') + 1, filter.IndexOf(' ') - 1));
+                maxprice = float.Parse(filter.Substring(filter.LastIndexOf('đ') + 1));
+            }
             pageNumber = pagenumber ?? 1;
             SanPhamBUS sanphambus = new SanPhamBUS();
             List<SanPham> list = sanphambus.FilterAndSearchAndSort(minprice, maxprice, search, ploai, mahang, sortorder, pageSize, pageNumber);
@@ -184,6 +238,8 @@ namespace SneakerC2C.Areas.Customer.Controllers
             ViewBag.Filter = filter;
             ViewBag.Search = search;
             ViewBag.Sort = sortorder;
+            if(ploai != null)
+                ViewBag.PhanLoai = ploai == "Nam" ? "Nam" : "Nu";
             ViewBag.ThuongHieu = mahang;
             if (ploai != null && ploai != "")
             {

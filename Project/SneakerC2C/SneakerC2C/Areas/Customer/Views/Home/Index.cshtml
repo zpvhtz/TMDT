@@ -65,14 +65,9 @@
                         <div class="col-md-3 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-front img-index">
-                                    <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-back img-index">
-                                    <div class="men-cart-pro">
-                                        <div class="inner-men-cart-pro">
-                                            <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id" class="link-product-add-cart">Chi Tiết</a>
-                                        </div>
-                                    </div>
-                                    <!--<span class="product-new-top">New</span>-->
+                                    <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id">
+                                        <div class="anhsanpham-4" style="background-image: url(/Hinh/SanPham/@item.Hinh);"></div>
+                                    </a>
                                 </div>
                                 <div class="item-info-product ">
                                     <h4>
@@ -98,7 +93,7 @@
                                             <span class="item_price">@item.Gia.ToString("#,###") đ</span>
                                         }
                                     </div>
-                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                    @*<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
                                         <form action="#" method="post">
                                             <fieldset>
                                                 <input type="hidden" name="cmd" value="_cart" />
@@ -113,7 +108,7 @@
                                                 <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button" />
                                             </fieldset>
                                         </form>
-                                    </div>
+                                    </div>*@
 
                                 </div>
                             </div>
@@ -129,15 +124,9 @@
                         <div class="col-md-3 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-front img-index">
-                                    <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-back img-index">
-                                    <div class="men-cart-pro">
-                                        <div class="inner-men-cart-pro">
-                                            <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id" class="link-product-add-cart">Chi Tiết</a>
-                                        </div>
-                                    </div>
-                                    <!--<span class="product-new-top">New</span>-->
-
+                                    <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id">
+                                        <div class="anhsanpham-4" style="background-image: url(/Hinh/SanPham/@item.Hinh);"></div>
+                                    </a>
                                 </div>
                                 <div class="item-info-product ">
                                     <h4>
@@ -163,7 +152,7 @@
                                             <span class="item_price">@item.Gia.ToString("#,###") đ</span>
                                         }
                                     </div>
-                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                    @*<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
                                         <form action="#" method="post">
                                             <fieldset>
                                                 <input type="hidden" name="cmd" value="_cart" />
@@ -178,7 +167,7 @@
                                                 <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button" />
                                             </fieldset>
                                         </form>
-                                    </div>
+                                    </div>*@
 
                                 </div>
                             </div>
@@ -510,15 +499,9 @@
                         <div class="col-md-3 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-front img-index">
-                                    <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-back img-index">
-                                    <div class="men-cart-pro">
-                                        <div class="inner-men-cart-pro">
-                                            <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id" class="link-product-add-cart">Chi Tiết</a>
-                                        </div>
-                                    </div>
-                                    <!--<span class="product-new-top">New</span>-->
-
+                                    <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id">
+                                        <div class="anhsanpham-4" style="background-image: url(/Hinh/SanPham/@item.Hinh);"></div>
+                                    </a>
                                 </div>
                                 <div class="item-info-product ">
                                     <h4>
@@ -544,7 +527,7 @@
                                             <span class="item_price">@item.Gia.ToString("#,###") đ</span>
                                         }
                                     </div>
-                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                    @*<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
                                         <form action="#" method="post">
                                             <fieldset>
                                                 <input type="hidden" name="cmd" value="_cart" />
@@ -559,7 +542,7 @@
                                                 <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button" />
                                             </fieldset>
                                         </form>
-                                    </div>
+                                    </div>*@
 
                                 </div>
                             </div>

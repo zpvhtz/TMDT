@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Models.Database.SanPham>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "HetHang";
+    Layout = "~/Views/Shared/_MerchantManagementLayout.cshtml";
+}
+<div class="new_arrivals_agile_w3ls_info menu-qlsp">
+    <div class="container">
+        <div id="horizontalTab">
+            <ul class="resp-tabs-list">
+                <a asp-area="Merchant" asp-controller="QuanLy" asp-action="ListSP"><li>Tất cả</li></a>
+                <a asp-area="Merchant" asp-controller="QuanLy" asp-action="ConHang"><li>còn hàng</li></a>
+                <a asp-area="Merchant" asp-controller="QuanLy" asp-action="HetHang"><li style="background-color: #fc636b">hết hàng</li></a>
+                <a asp-area="Merchant" asp-controller="QuanLy" asp-action="KhoaSP"><li>đã bị khoá</li></a>
+            </ul>
+            <div class="col-md-4 header-middle fix_timkiem_merchant">
+                <form action="#" method="post">
+                    <input type="search" name="search" placeholder="Tìm kiếm..." required="">
+                    <input type="submit" value=" ">
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+            <div class="resp-tabs-container">
+                <!--/tab_one-->
+                <div class="tab1">
+                    @{
+                        int i = 0;
+                    }
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-3 product-men margin_merchant">
+                            <div class="men-pro-item simpleCart_shelfItem">
+                                <div class="men-thumb-item">
+                                    <div class="men-thumb-item">
+                                        <div class="anhsanpham-3" style="background-image: url(/Hinh/SanPham/@item.Hinh);"></div>
+                                    </div>
+                                </div>
+                                <div class="item-info-product ">
+                                    <h4><a href="single.html" class="tieude_sanpham">@item.TenSanPham</a></h4>
+                                    <div class="info-product-price">
+                                        @if (item.GiamGia != null && item.GiamGia != 0)
+                                        {
+                                            double gia = item.Gia * (100 - item.GiamGia) / 100 ?? 0;
+                                            <p><span class="item_price">@gia.ToString("#,###") đ</span> <del>- @item.Gia.Value.ToString("#,###") đ</del></p>
+                                        }
+                                        else
+                                        {
+                                            <p><span class="item_price">@item.Gia.Value.ToString("#,###") đ</span></p>
+                                        }
+                                    </div>
+                                    <div class="button-sua-xoa">
+                                        <form>
+                                            <input type="button" value="Sửa" class="button-sua" onclick="location.href='#'" />
+                                            <input type="submit" value="Xoá" class="button-xoa" />
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        i++;
+                        if (i % 4 == 0)
+                        {
+                            <div class="clearfix"></div>
+                        }
+                    }
+                </div>
+                <!--//tab_one-->
+                <!--phân trang-->
+                <ul class="phantrang modal-1" style="padding-top: 1.5em;">
+                    <li><a href="#" class="prev">&laquo</a></li>
+                    <li><a href="#" class="active">1</a></li>
+                    <li> <a href="#">2</a></li>
+                    <li> <a href="#">3</a></li>
+                    <li> <a href="#">4</a></li>
+                    <li> <a href="#">5</a></li>
+                    <li> <a href="#">6</a></li>
+                    <li> <a href="#">7</a></li>
+                    <li> <a href="#">8</a></li>
+                    <li> <a href="#">9</a></li>
+                    <li><a href="#" class="next">&raquo;</a></li>
+                </ul>
+                <!--hết phân trang-->
+            </div>
+        </div>
+    </div>
+</div>

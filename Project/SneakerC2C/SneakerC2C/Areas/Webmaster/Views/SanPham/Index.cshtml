@@ -56,12 +56,12 @@
             <thead class="thead-dark">
                 <tr class="odd gradeX">
                     <th>Mã sản phẩm</th>
-                    <th><a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort" asp-route-sortorder="@ViewBag.NameSort" asp-route-currentFilter="@ViewBag.CurrentFilter">Tên sản phẩm</a></th>
-                    <th><a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort" asp-route-sortorder="@ViewBag.ShopSort" asp-route-currentFilter="@ViewBag.CurrentFilter">Tên shop</a></th>
+                    <th>Tên sản phẩm</th>
+                    <th>Tên shop</th>
                     <th>Màu</th>
                     <th>Hãng</th>
                     <th>Phân loại</th>
-                    <th><a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort" asp-route-sortorder="@ViewBag.GiaSort" asp-route-currentFilter="@ViewBag.CurrentFilter">Giá</a></th>
+                    <th>Giá</th>
                     <th>Hình</th>
                     <th>Chi tiết</th>
                     <th>Giảm giá</th>
@@ -71,24 +71,38 @@
             <tbody class="body-content">
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td class="ma">@item.MaSanPham</td>
-                        <td class="tensp">@item.TenSanPham</td>
-                        <td class="tenshop">@item.IdTaiKhoanNavigation.TenShop</td>
-                        <td class="mau">@item.Mau</td>
-                        <td id="mahang" class="tenhang">@item.IdHangSanPhamNavigation.TenHang</td>
-                        <td class="phanloai">@item.PhanLoai</td>
-                        <td class="gia">@item.Gia.Value.ToString("# VND")</td>
-                        <td>
-                            <img src="~/Hinh/SanPham/@item.Hinh" class="img-hinh" style="width:100px; height:100px;" />
-                        </td>
-                        <td class="chitiet">@item.ChiTiet</td>
-                        <td class="giamgia">@item.GiamGia</td>
-                        <td>
-                            <button class="btn btn-danger Size" type="button" data-toggle="modal" data-target="#Chitietsizemodal">Size</button>
-                            <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#Khoa">Khoá</button>
-                        </td>
-                    </tr>
+                <tr>
+                    <td class="ma">@item.MaSanPham</td>
+                    <td class="tensp">@item.TenSanPham</td>
+                    <td class="tenshop">@item.IdTaiKhoanNavigation.TenShop</td>
+                    <td class="mau">@item.Mau</td>
+                    <td id="mahang" class="tenhang">@item.IdHangSanPhamNavigation.TenHang</td>
+                    <td class="phanloai">@item.PhanLoai</td>
+                    <td class="gia">@item.Gia.Value.ToString("# VND")</td>
+                    <td>
+                        <img src="~/Hinh/SanPham/@item.Hinh" class="img-hinh" style="width:100px; height:100px;" />
+                    </td>
+                    <td class="chitiet">@item.ChiTiet</td>
+                    <td class="giamgia">@item.GiamGia</td>
+                    <td>
+                        @switch (item.TinhTrang)
+                        {
+                            case "Không khoá":
+                                <button class="btn btn-info Size" type="button" data-toggle="modal" data-target="#Chitietsizemodal">Size</button>
+                                <a asp-controller="SanPham" asp-action="LockSP" asp-route-ma="@item.MaSanPham" class="btn btn-danger">Khoá</a>
+                                break;
+                            case "Khoá":
+                                <button class="btn btn-info Size" type="button" data-toggle="modal" data-target="#Chitietsizemodal">Size</button>
+                                <a asp-controller="SanPham" asp-action="UnLockSP" asp-route-ma="@item.MaSanPham" class="btn btn-danger">Mở khoá</a>
+                                break;
+                            default:
+                                {
+                                 <button class="btn btn-danger" type="button">Người bán đã khoá</button>  
+                                }
+                                break;
+                        }
+                    </td>
+                </tr>
                 }
             </tbody>
         </table>
@@ -288,7 +302,6 @@
                     
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-warning">Sửa</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                 </div>
             </div>

@@ -23,7 +23,7 @@ namespace Models.BusinessLogicLayer
 
         public SanPham GetSanPham(string id)
         {
-            SanPham sanpham = context.SanPham.Where(sp => sp.Id == Guid.Parse(id))
+            SanPham sanpham = context.SanPham.Where(sp => sp.Id == Guid.Parse(id) && sp.TinhTrang =="Không khoá")
                                              .Include(sp => sp.IdTaiKhoanNavigation)
                                              .Include(sp => sp.IdHangSanPhamNavigation)
                                              .SingleOrDefault();

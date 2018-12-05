@@ -14,7 +14,7 @@
                 <a asp-area="Merchant" asp-controller="QuanLy" asp-action="HetHang"><li>hết hàng</li></a>
                 <a asp-area="Merchant" asp-controller="QuanLy" asp-action="KhoaSP"><li>đã bị khoá</li></a>
             </ul>
-            <div class="col-md-4 header-middle fix_timkiem_merchant">
+            <div class="col-md-5 header-middle fix_timkiem_merchant">
                 <form action="#" method="post">
                     <input type="search" name="search" placeholder="Tìm kiếm..." required="">
                     <input type="submit" value=" ">
@@ -33,6 +33,7 @@
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
                                     <div class="men-thumb-item">
+                                        <input class="txtid-sanpham" type="text" hidden value="@item.Id" />
                                         <div class="anhsanpham-3" style="background-image: url(/Hinh/SanPham/@item.Hinh);"></div>
                                     </div>
                                 </div>
@@ -52,7 +53,7 @@
                                     <div class="button-sua-xoa">
                                         <form>
                                             <input type="button" value="Sửa" class="button-sua" onclick="location.href='#'" />
-                                            <input type="submit" value="Xoá" class="button-xoa" />
+                                            <input type="button" value="Xoá" class="button-xoa btnXoa" />
                                         </form>
                                     </div>
                                 </div>
@@ -66,23 +67,64 @@
                     }
                 </div>
                 <!--//tab_one-->
-                <!--phân trang-->
-                <ul class="phantrang modal-1" style="padding-top: 1.5em;">
-                    <li><a href="#" class="prev">&laquo</a></li>
-                    <li><a href="#" class="active">1</a></li>
-                    <li> <a href="#">2</a></li>
-                    <li> <a href="#">3</a></li>
-                    <li> <a href="#">4</a></li>
-                    <li> <a href="#">5</a></li>
-                    <li> <a href="#">6</a></li>
-                    <li> <a href="#">7</a></li>
-                    <li> <a href="#">8</a></li>
-                    <li> <a href="#">9</a></li>
-                    <li><a href="#" class="next">&raquo;</a></li>
-                </ul>
-                <!--hết phân trang-->
+
             </div>
+
         </div>
     </div>
+    <div>
+        <!--phân trang-->
+        <ul class="phantrang modal-1" style="padding-top: 1.5em;">
+            <li><a href="#" class="prev">&laquo</a></li>
+            <li><a href="#" class="active">1</a></li>
+            <li> <a href="#">2</a></li>
+            <li> <a href="#">3</a></li>
+            <li> <a href="#">4</a></li>
+            <li> <a href="#">5</a></li>
+            <li> <a href="#">6</a></li>
+            <li> <a href="#">7</a></li>
+            <li> <a href="#">8</a></li>
+            <li> <a href="#">9</a></li>
+            <li><a href="#" class="next">&raquo;</a></li>
+        </ul>
+        <!--hết phân trang-->
+    </div>
 </div>
+<div class="modal fade" id="suaModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <form asp-controller="QuanLy" asp-action="EditSP" enctype="multipart/form-data" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Sản phẩm</h4>
+                </div>
+                <div class="modal-body" id="modal-body-suachitiet">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-warning" id="btnSua">Sửa</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    $(".btnSuaChiTiet").click(function () {
+        let id = $(this).closest(".men-pro-item").find(".txtid-sanpham").val();
+        $.ajax({
+            url: "/Merchant/QuanLy/GetProductDetails",
+            type: "post",
+            data: { "id": id },
+            success: function (data) {
+                $("#modal-body-suachitiet").html(data);
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            }
+        });
+    });
+</script>
+
 

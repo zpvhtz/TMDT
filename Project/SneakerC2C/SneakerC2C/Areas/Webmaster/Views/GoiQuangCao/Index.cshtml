@@ -226,11 +226,11 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Mã</label>
-                                <input type="text" class="form-control" id="item-them-ma" name="item_them_ma" required>
+                                <input type="text" class="form-control" id="item-them-ma" name="item-them-ma" required>
                             </div>
                             <div class="form-group">
                                 <label>Tên vị trí</label>
-                                <select class="form-control" id="item-them-vitriquangcao" name="item_them_vitriquangcao">
+                                <select class="form-control" id="item-them-vitriquangcao" name="item-them-vitriquangcao">
                                     @foreach (var item in ViewBag.ViTriQuangcao)
                                     {
                                         <option value="@item.Id">@item.TenViTri</option>
@@ -239,11 +239,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Thời Lương</label>
-                                <input type="number" class="form-control" id="item-them-thoiluong" name="item_them_thoiluong" min="1" required>
+                                <input type="number" class="form-control" id="item-them-thoiluong" name="item-them-thoiluong" min="1" required>
                             </div>
                             <div class="form-group">
                                 <label>Tổng Tiền </label>
-                                <input type="number" class="form-control" id="item-them-tongtien" name="item_them_tongtien" min="0" readonly required>
+                                <input type="number" class="form-control" id="item-them-tongtien" name="item-them-tongtien" min="0" readonly required>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -267,11 +267,11 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Mã</label>
-                                <input type="text" class="form-control" id="item-sua-ma" name="item_sua_ma" readonly>
+                                <input type="text" class="form-control" id="item-sua-ma" name="item-sua-ma" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Tên vị trí</label>
-                                <select class="form-control" id="item-sua-vitriquangcao" name="item_sua_vitriquangcao">
+                                <select class="form-control" id="item-sua-vitriquangcao" name="item-sua-vitriquangcao">
                                     @foreach (var item in ViewBag.ViTriQuangcao)
                                     {
                                         <option value="@item.Id">@item.TenViTri</option>
@@ -280,11 +280,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Thời Lương</label>
-                                <input type="number" class="form-control" id="item-sua-thoiluong" name="item_sua_thoiluong" min="1" required>
+                                <input type="number" class="form-control" id="item-sua-thoiluong" name="item-sua-thoiluong" min="1" required>
                             </div>
                             <div class="form-group">
                                 <label>Tổng Tiền </label>
-                                <input type="number" class="form-control" id="item-sua-tongtien" name="item_sua_tongtien" min="0" readonly required>
+                                <input type="number" class="form-control" id="item-sua-tongtien" name="item-sua-tongtien" min="0" readonly required>
                             </div>
                         </div>
                         <div class="modal-footer">

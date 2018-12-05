@@ -60,11 +60,7 @@ using SneakerC2C.Models;
             WriteLiteral("<nav class=\"navbar navbar-expand navbar-dark bg-dark static-top\">\r\n    <button class=\"btn btn-link btn-sm text-white order-1 order-sm-0\" id=\"sidebarToggle\" href=\"#\">\r\n        <i class=\"fas fa-bars\"></i>\r\n    </button>\r\n    ");
             EndContext();
             BeginContext(223, 115, false);
-<<<<<<< HEAD
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2057d9ba2c004a1297c39fe18296c695", async() => {
-=======
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f29af3be98c3475a93c69a71213dbc38", async() => {
->>>>>>> 0fdbb7345061bd67596ce7d542cb96709ff61efb
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f0987a4fea884489804e55f4a054a9cb", async() => {
                 BeginContext(314, 20, true);
                 WriteLiteral("<b>SNKRX - Admin</b>");
                 EndContext();
@@ -91,11 +87,7 @@ using SneakerC2C.Models;
             WriteLiteral("\r\n\r\n    <!-- Navbar Search -->\r\n    ");
             EndContext();
             BeginContext(374, 491, false);
-<<<<<<< HEAD
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9a389d4631424cd990ba2d45c571ebd5", async() => {
-=======
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2aa4e16d5b8b44108b901ec561aa3817", async() => {
->>>>>>> 0fdbb7345061bd67596ce7d542cb96709ff61efb
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c5ace2055e284b7d911db05638617ee4", async() => {
                 BeginContext(459, 399, true);
                 WriteLiteral(@"
         <div class=""input-group"">

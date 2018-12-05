@@ -18,7 +18,7 @@
                 <a asp-area="Merchant" asp-controller="QuanLy" asp-action="KhoaSP"><li>đã bị khoá</li></a>
             </ul>
             <div class="col-md-5 header-middle fix_timkiem_merchant">
-                <form action="#" method="post">
+                <form asp-action="Search" asp-controller="QuanLy">
                     <input type="search" name="search" placeholder="Tìm kiếm..." required="">
                     <input type="submit" value=" ">
                     <div class="clearfix"></div>
@@ -123,7 +123,7 @@
                                         </div>
                                         <div class="button-sua-xoa">
                                             <form>
-                                                <input type="button" value="Sửa" class="button-sua" onclick="location.href='#'" />
+                                                <button class="button-sua btnSuaChiTiet" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
                                                 <input type="button" value="Xoá" class="button-xoa btnXoa" />
                                             </form>
                                         </div>
@@ -283,14 +283,14 @@
                         <label>Giảm giá</label>
                         <input type="text" class="form-control" id="item-them-giamgia" name="item_them_giamgia">
                     </div>
-                    <div class="form-group">
+                    @*<div class="form-group">
                         <label>Size</label>
                         <input type="number" class="form-control" id="item-them-size" name="item_them_size">
                     </div>
                     <div class="form-group">
                         <label>Số lượng</label>
                         <input type="number" class="form-control" id="item-them-soluong" name="item_them_soluong">
-                    </div>
+                    </div>*@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-warning" id="btnThem">Thêm</button>
@@ -328,19 +328,18 @@
 <!-- js -->
 <script type="text/javascript" src="~/maintemplate/js/jquery-2.1.4.min.js"></script>
 <script>
-    $(".btnSuaChiTiet").click(function () {
-        let id = $(this).closest(".men-pro-item").find(".txtid-sanpham").val();
-        $.ajax({
-            url: "/Merchant/QuanLy/GetProductDetails",
-            type: "post",
-            data: { "id": id },
-            success: function (data) {
-                $("#modal-body-suachitiet").html(data);
-            },
-            error: function (data) {
-                alert("Error: " + data);
-            }
-        });
+   $(".pageNumber").click(function () {
+        //Get addtional href
+        let search = "@ViewBag.Search";
+        //Href
+        var $link = $('.pageNumber');
+        var href = $link.attr('href').split('/');
+        if (search != null && search != '') {
+            href.push('&search=' + search); //here you set your new asp-route-pagenumber value
+        }
+        href = href.join('/');
+        href = href.toString().replace(/\/&/g, '&');
+        $link.attr('href', href);
     });
     $(".btnSuaChiTiet").click(function () {
         let id = $(this).closest(".men-pro-item").find(".txtid-sanpham").val();

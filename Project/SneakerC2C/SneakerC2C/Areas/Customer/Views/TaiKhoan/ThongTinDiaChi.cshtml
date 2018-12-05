@@ -55,39 +55,211 @@
                 </div>
             </div>
             <div class="cus_right">
-                <h4>Địa Chỉ</h4>
-                <hr>
-                @*<div class="cus_tt_canhan">
-                        <label>Tên</label>
-                        <input type="text" placeholder="Nhập tên người nhận hàng">
-                    </div>*@
-                <form id="frmAddAddress" method="post" role="form" action="">
-                    <div class="cus_tt_canhan">
-                        <label>Tỉnh/Thành phố</label>
-                        <select name="tinhthanh" id="cbbTinhThanh">
-                            @foreach (var item in ViewBag.TinhThanh)
-                            {
-                                <option value="@item.Id">@item.TenTinhThanh</option>
-                            }
-                        </select>
+                <div class="header_diachi">
+                    <h4>Địa Chỉ</h4>
+                    <div class="button_themdiachi">
+                        <button class="button-sua" data-toggle="modal" data-target="#modalSuaDiaChi">
+                            <i class="fa fa-plus"></i>
+                            Thêm Địa Chỉ Mới
+                        </button>
                     </div>
-                    <div class="cus_tt_canhan">
-                        <label>Địa chỉ chi tiết</label>
-                        <input type="text" placeholder="Nhập địa chỉ chi tiết" name="duong" id="txtDiaChi" pattern=".{5,}" required oninvalid="this.setCustomValidity('Địa chỉ cần ít nhất 5 ký tự')" onchange="this.setCustomValidity('')">
+                </div>
+                @foreach (var item in ViewBag.DiaChi)
+                {
+                    <hr>
+                    <div class="cus_diachi">
+                        <label>Địa chỉ</label>
+                        <p class="txtIdDiaChi" hidden>@item.Id</p>
+                        <h5>@item.Duong, @item.IdTinhThanhNavigation.TenTinhThanh</h5>
+                        <div class="button_ct_huy button_diachi">
+                            <button class="button_sua_xoa btnSua" data-toggle="modal" data-target="#modalSuaDiaChi">Sửa</button>
+                            <button class="button_sua_xoa btnXoa">Xoá</button>
+                        </div>
                     </div>
-                    <div class="cus_tt_canhan_button">
-                        <div class="khoang-trong"></div>
-                        <button type="submit" class="button_luu">Lưu</button>
+                }
+            </div>
+            @*<div class="cus_right">
+                    <h4>Địa Chỉ</h4>
+                    <hr>
+                    <form id="frmAddAddress" method="post" role="form" action="">
+                        <div class="cus_tt_canhan">
+                            <label>Tỉnh/Thành phố</label>
+                            <select name="tinhthanh" id="cbbTinhThanh">
+                                @foreach (var item in ViewBag.TinhThanh)
+                                {
+                                    <option value="@item.Id">@item.TenTinhThanh</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="cus_tt_canhan">
+                            <label>Địa chỉ chi tiết</label>
+                            <input type="text" placeholder="Nhập địa chỉ chi tiết" name="duong" id="txtDiaChi" pattern=".{5,}" required oninvalid="this.setCustomValidity('Địa chỉ cần ít nhất 5 ký tự')" onchange="this.setCustomValidity('')">
+                        </div>
+                        <div class="cus_tt_canhan_button">
+                            <div class="khoang-trong"></div>
+                            <button type="submit" class="button_luu">Lưu</button>
+                        </div>
+                    </form>
+                </div>*@
+        </div>
+    </div>
+
+    <!-- Modal sửa địa chi -->
+    <div id="modalSuaDiaChi" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Địa chỉ</h4>
+                </div>
+                <form id="frmThemDiaChi" method="post" role="form">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Địa chỉ</label>
+                            <input type="text" class="form-control" id="item-them-diachi" name="item_them_diachi" pattern=".{5,}" required oninvalid="this.setCustomValidity('Địa chỉ cần ít nhất 5 ký tự')" onchange="this.setCustomValidity('')">
+                        </div>
+                        <div class="form-group">
+                            <label>Tỉnh thành:</label>
+                            <select class="form-control" id="item-them-tinhthanh" name="item_them_tinhthanh">
+                                @foreach (var item in ViewBag.TinhThanh)
+                                {
+                                    <option value="@item.Id">@item.TenTinhThanh</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Thêm</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                     </div>
                 </form>
             </div>
+
         </div>
     </div>
+    <!-- //Modal sửa địa chi -->
+
+    <!-- Modal thêm địa chi -->
+    <div id="modalThemDiaChi" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Địa chỉ</h4>
+                </div>
+                <form id="frmSuaDiaChi" method="post" role="form">
+                    <div class="modal-body">
+                        <input type="text" id="item-sua-id" name="item_sua_id" value="" hidden readonly />
+                        <div class="form-group">
+                            <label>Địa chỉ</label>
+                            <input type="text" class="form-control" id="item-sua-diachi" name="item_sua_diachi" pattern=".{5,}" required oninvalid="this.setCustomValidity('Địa chỉ cần ít nhất 5 ký tự')" onchange="this.setCustomValidity('')">
+                        </div>
+                        <div class="form-group">
+                            <label>Tỉnh thành:</label>
+                            <select class="form-control" id="item-sua-tinhthanh" name="item_sua_tinhthanh">
+                                @foreach (var item in ViewBag.TinhThanh)
+                                {
+                                    <option value="@item.Id">@item.TenTinhThanh</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Sửa</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <!-- //Modal thêm địa chi -->
 
     <!-- js -->
     <script type="text/javascript" src="~/maintemplate/js/jquery-2.1.4.min.js"></script>
     <script>
-        $("#frmAddAddress").submit(function (e) {
+        $(".btnXoa").click(function () {
+            let id = $(this).closest(".cus_diachi").find(".txtIdDiaChi").text().trim();
+            $.ajax({
+                url: "/Customer/TaiKhoan/KhoaDiaChi",
+                type: "post",
+                data: { "id": id },
+                success: function (data) {
+                    alert(data);
+                    location.href = "@Url.Action("ThongTinTaiKhoan", "TaiKhoan")";
+                },
+                error: function (data) {
+                    alert("Error: " + data);
+                }
+            });
+        })
+
+        $(".btnSua").click(function () {
+            let id = $(this).closest(".cus_diachi").find(".txtIdDiaChi").text().trim();
+            let diachi = $(this).closest(".cus_diachi").find("h5").text();
+            let tinhthanh = diachi.substring(diachi.lastIndexOf(',') + 1).trim();
+            diachi = diachi.substring(0, diachi.lastIndexOf(',')).trim();
+
+            $("#item-sua-id").val(id);
+            $("#item-sua-diachi").val(diachi);
+            $("#item-sua-tinhthanh option").each(function () {
+                if ($(this).text() == tinhthanh) {
+                    $(this).attr('selected', true);
+                }
+                else {
+                    $(this).attr('selected', false);
+                }
+            });
+        });
+
+        $("#frmSuaDiaChi").submit(function (e) {
+            e.preventDefault();
+            let id = $("#item-sua-id").val();
+            let diachi = $("#item-sua-diachi").val();
+            let tinhthanh = $("#item-sua-tinhthanh").val();
+            $.ajax({
+                url: "/Customer/TaiKhoan/SuaDiaChi",
+                type: "post",
+                data: { "id": id, "diachi": diachi, "tinhthanh": tinhthanh },
+                success: function (data) {
+                    alert(data);
+                    location.href = "@Url.Action("ThongTinTaiKhoan", "TaiKhoan")";
+                },
+                error: function (data) {
+                    alert("Error: " + data);
+                }
+            });
+        });
+
+        $("#frmThemDiaChi").submit(function (e) {
+            e.preventDefault();
+            let tendangnhap = "@Model.TenDangNhap"
+            let diachi = $("#item-them-diachi").val();
+            let tinhthanh = $("#item-them-tinhthanh").val();
+            $.ajax({
+                url: "/Customer/TaiKhoan/ThemDiaChi",
+                type: "post",
+                data: { "tendangnhap": tendangnhap, "diachi": diachi, "tinhthanh": tinhthanh },
+                success: function (data) {
+                    if (data == "Khách hàng không được có hơn 5 địa chỉ") {
+                        alert(data);
+                    }
+                    else {
+                        alert(data);
+                        location.href = "@Url.Action("ThongTinTaiKhoan", "TaiKhoan")";
+                    }
+                },
+                error: function (data) {
+                    alert("Error: " + data);
+                }
+            });
+        });
+
+        @*$("#frmAddAddress").submit(function (e) {
             e.preventDefault();
             let tendangnhap = "@Model.TenDangNhap";
             let diachi = $("#txtDiaChi").val();
@@ -104,7 +276,7 @@
                     alert("Error: " + data);
                 }
             });
-        });
+        });*@
     </script>
 }
 else

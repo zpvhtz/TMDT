@@ -54,8 +54,16 @@ namespace SneakerC2C.Areas.Customer.Controllers
 
             TinhThanhBUS tinhthanhbus = new TinhThanhBUS();
             List<TinhThanh> tinhthanh = tinhthanhbus.GetTinhThanhs();
+
+            DiaChiBUS diachibus = new DiaChiBUS();
+            List<DiaChi> diachi = new List<DiaChi>();
+
+            if (taikhoan != null)
+                diachi = diachibus.GetDiaChisCus(taikhoan.TenDangNhap);
+
             ViewBag.Hang = hang;
             ViewBag.TinhThanh = tinhthanh;
+            ViewBag.DiaChi = diachi;
             return View(taikhoan);
         }
 
@@ -78,10 +86,25 @@ namespace SneakerC2C.Areas.Customer.Controllers
             return View(taikhoan);
         }
 
-        public string ThemDiaChi(string tendangnhap, string duong, string tinhthanh)
+        public string ThemDiaChi(string tendangnhap, string diachi, string tinhthanh)
         {
             DiaChiBUS diachibus = new DiaChiBUS();
-            string thongbao = diachibus.CreateDiaChi(tendangnhap, duong, tinhthanh);
+            string thongbao = diachibus.CreateDiaChi(tendangnhap, diachi, tinhthanh);
+            return thongbao;
+        }
+
+        public string SuaDiaChi(string id, string diachi, string tinhthanh)
+        {
+            DiaChiBUS diachibus = new DiaChiBUS();
+            string thongbao = diachibus.EditDiaChi(id, diachi, tinhthanh);
+            return thongbao;
+        }
+
+        public string KhoaDiaChi(string id)
+        {
+            DiaChiBUS diachibus = new DiaChiBUS();
+            string thongbao = diachibus.LockDiaChi(id);
+            thongbao = "Xoá thành công";
             return thongbao;
         }
 

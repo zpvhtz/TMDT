@@ -75,30 +75,37 @@ namespace SneakerC2C.Areas.Customer.Controllers
             string thongbao = "";
             List<GioHang> list = new List<GioHang>();
             GioHangBUS giohangbus = new GioHangBUS();
-            Dictionary<string, int> json = JsonConvert.DeserializeObject<Dictionary<string, int>>(cart);
+            Dictionary<string, int> json = new Dictionary<string, int>();
+            if (cart != null && cart != "")
+            {
+                json = JsonConvert.DeserializeObject<Dictionary<string, int>>(cart);
+            }
+                
 
             if (tendangnhap != "" && tendangnhap != null)
             {
                 TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
                 TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoan(tendangnhap);
-                foreach (var item in json)
+                if(json.Count > 0)
                 {
-                    thongbao = giohangbus.AddToCart(taikhoan.Id.ToString(), item.Key, item.Value);
+                    foreach (var item in json)
+                    {
+                        thongbao = giohangbus.AddToCart(taikhoan.Id.ToString(), item.Key, item.Value);
+                    }
                 }
                 list = giohangbus.GetGioHangs(tendangnhap);
             }
             else
             {
-                foreach(var item in json)
+                if(json.Count > 0)
                 {
-                    GioHang giohang = new GioHang();
-                    giohang = giohangbus.AddSingleItem(item);
-                    //giohang.IdSizeSanPham = Guid.Parse(item.Key);
-                    //giohang.IdTaiKhoan = Guid.Parse("3BA4CBB1-98AC-4768-BCE2-0B226C49DC56");
-                    //giohang.SoLuong = item.Value;
-                    //giohang.TinhTrang = "Không khoá";
-                    list.Add(giohang);
-                }                
+                    foreach (var item in json)
+                    {
+                        GioHang giohang = new GioHang();
+                        giohang = giohangbus.AddSingleItem(item);
+                        list.Add(giohang);
+                    }
+                }           
             }
             return View(list);
         }

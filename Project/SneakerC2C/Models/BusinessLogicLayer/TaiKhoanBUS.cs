@@ -208,6 +208,20 @@ namespace Models.BusinessLogicLayer
             return "Đổi mật khẩu thành công";
         }
 
+        public bool CheckOldPassword(string tendangnhap, string password)
+        {
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();
+            string oldpassword = CreateMD5(password);
+            if(taikhoan.MatKhau == oldpassword)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public void AllowResetPassword(string tendangnhap)
         {
             TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();

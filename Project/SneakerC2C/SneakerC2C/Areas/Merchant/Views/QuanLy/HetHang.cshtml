@@ -14,7 +14,7 @@
                 <a asp-area="Merchant" asp-controller="QuanLy" asp-action="KhoaSP"><li>đã bị khoá</li></a>
             </ul>
             <div class="col-md-5 header-middle fix_timkiem_merchant">
-                <form action="#" method="post">
+                <form asp-action="SearchHH" asp-controller="QuanLy" >
                     <input type="search" name="search" placeholder="Tìm kiếm..." required="">
                     <input type="submit" value=" ">
                     <div class="clearfix"></div>
@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="button-sua-xoa">
                                         <form>
-                                            <input type="button" value="Sửa" class="button-sua" onclick="location.href='#'" />
+                                            <button class="button-sua btnSuaChiTiet" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
                                             <input type="button" value="Xoá" class="button-xoa btnXoa" />
                                         </form>
                                     </div>
@@ -86,7 +86,7 @@
                             <a asp-controller="QuanLy" asp-action="HetHang" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link pageNumber">Trước</a>
                             break;
                         case "search":
-                            <a asp-controller="QuanLy" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link pageNumber">Trước</a>
+                            <a asp-controller="QuanLy" asp-action="SearchHH" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link pageNumber">Trước</a>
                             break;
                     }
                 </li>
@@ -104,7 +104,7 @@
                                 break;
 
                             case "search":
-                                <a asp-controller="QuanLy" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                <a asp-controller="QuanLy" asp-action="SearchHH" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
                                 break;
 
                         }
@@ -123,10 +123,10 @@
                             @switch (ViewBag.TrangThai)
                             {
                                 case "index":
-                                    <a asp-controller="QuanLy" asp-action="HetHang" asp-route-pagenumber="@k" class="page-link pageNumber" aria-controls="dataTable" data-dt-idx="3" tabindex="0">@i</a>
+                                    <a asp-controller="QuanLy" asp-action="HetHang" asp-route-pagenumber="@k" class="page-link pageNumber" aria-controls="dataTable" data-dt-idx="3" tabindex="0">@k</a>
                                     break;
                                 case "search":
-                                    <a asp-controller="QuanLy" asp-action="Search" asp-route-pagenumber="@k" class="page-link pageNumber" aria-controls="dataTable" data-dt-idx="3" tabindex="0">@i</a>
+                                    <a asp-controller="QuanLy" asp-action="SearchHH" asp-route-pagenumber="@k" class="page-link pageNumber" aria-controls="dataTable" data-dt-idx="3" tabindex="0">@k</a>
                                     break;
                             }
                         </li>
@@ -146,7 +146,7 @@
                             <a asp-controller="QuanLy" asp-action="HetHang" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link pageNumber">Tiếp</a>
                             break;
                         case "search":
-                            <a asp-controller="QuanLy" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link pageNumber">Tiếp</a>
+                            <a asp-controller="QuanLy" asp-action="SearchHH" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link pageNumber">Tiếp</a>
                             break;
                     }
                 </li>
@@ -176,13 +176,12 @@
 </div>
 <script type="text/javascript" src="~/maintemplate/js/jquery-2.1.4.min.js"></script>
 <script>
-    $(".pageNumber").click(function () {
+     $(".pageNumber").click(function () {
         //Get addtional href
         let search = "@ViewBag.Search";
         //Href
         var $link = $('.pageNumber');
         var href = $link.attr('href').split('/');
-        }
         if (search != null && search != '') {
             href.push('&search=' + search); //here you set your new asp-route-pagenumber value
         }

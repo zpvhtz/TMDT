@@ -86,12 +86,85 @@ as
 	having SUM(SoLuong)>0
 go
 ---het hang
-alter proc p_hethang
+alter proc p_hethang (@TenDangNhap VARCHAR(20)) 
 as
-	select * from SanPham where TinhTrang=N'Không khoá' and Id in
+	select sp.Id, sp.MaSanPham, sp.TenSanPham, sp.IdTaiKhoan, sp.Mau, sp.IdHangSanPham, sp.PhanLoai, sp.Gia, sp.Hinh, sp.ChiTiet, sp.GiamGia, sp.NgayDang, sp.TinhTrang
+	from SanPham sp JOIN TaiKhoan tk ON sp.IdTaiKhoan = tk.Id
+	where sp.TinhTrang = N'Không khoá' and tk.TenDangNhap = @TenDangNhap and sp.Id in
 	(
 		select IdSanPham from SizeSanPham
 		group by IdSanPham
 		having SUM(SoLuong)=0
 	) 
 go
+
+ALTER PROC P_HetHang_Pagging (@TenDangNhap VARCHAR(20), @pageSize INT, @pageNumber INT)
+AS
+	DECLARE @Skip INT
+	SET @Skip = ((@pageNumber - 1) * @pageSize)
+	--
+	select sp.Id, sp.MaSanPham, sp.TenSanPham, sp.IdTaiKhoan, sp.Mau, sp.IdHangSanPham, sp.PhanLoai, sp.Gia, sp.Hinh, sp.ChiTiet, sp.GiamGia, sp.NgayDang, sp.TinhTrang
+	FROM SanPham sp JOIN TaiKhoan tk ON sp.IdTaiKhoan = tk.Id
+	WHERE sp.TinhTrang = N'Không khoá' AND tk.TenDangNhap = @TenDangNhap AND sp.Id IN
+	(
+		SELECT IdSanPham
+		FROM SizeSanPham
+		GROUP BY IdSanPham
+		HAVING SUM(SoLuong) = 0
+	)
+	ORDER BY Id
+	OFFSET @Skip ROWS
+	FETCH NEXT @pageSize ROWS ONLY
+GO
+
+---SEARCH
+ALTER PROC P_HetHang_Search (@TenDangNhap VARCHAR(20), @search NVARCHAR(100), @pageSize INT, @pageNumber INT)
+AS
+	DECLARE @Skip INT
+	DECLARE @searchString NVARCHAR(100)
+	SET @Skip = ((@pageNumber - 1) * @pageSize)
+	SET @searchString = '%' + @search + '%'
+	--
+	SELECT sp.Id, sp.MaSanPham, sp.TenSanPham, sp.IdTaiKhoan, sp.Mau, sp.IdHangSanPham, sp.PhanLoai, sp.Gia, sp.Hinh, sp.ChiTiet, sp.GiamGia, sp.NgayDang, sp.TinhTrang
+	FROM SanPham sp JOIN TaiKhoan tk ON sp.IdTaiKhoan = tk.Id
+	WHERE sp.TinhTrang = N'Không khoá' AND (TenSanPham LIKE @searchString OR Mau LIKE @searchString OR Gia LIKE @searchString) AND tk.TenDangNhap = @TenDangNhap AND sp.Id IN
+	(
+		SELECT IdSanPham
+		FROM SizeSanPham
+		GROUP BY IdSanPham
+		HAVING SUM(SoLuong) = 0
+	)
+	ORDER BY sp.Id
+	OFFSET @Skip ROWS
+	FETCH NEXT @pageSize ROWS ONLY
+GO
+
+ALTER PROC P_HetHang_Search_NotPagging (@TenDangNhap VARCHAR(20), @search NVARCHAR(100))
+AS
+	DECLARE @Skip INT
+	DECLARE @searchString NVARCHAR(100)
+	SET @searchString = '%' + @search + '%'
+	--
+	SELECT sp.Id, sp.MaSanPham, sp.TenSanPham, sp.IdTaiKhoan, sp.Mau, sp.IdHangSanPham, sp.PhanLoai, sp.Gia, sp.Hinh, sp.ChiTiet, sp.GiamGia, sp.NgayDang, sp.TinhTrang
+	FROM SanPham sp JOIN TaiKhoan tk ON sp.IdTaiKhoan = tk.Id
+	WHERE sp.TinhTrang = N'Không khoá' AND (TenSanPham LIKE @searchString OR Mau LIKE @searchString OR Gia LIKE @searchString) AND tk.TenDangNhap = @TenDangNhap AND sp.Id IN
+	(
+		SELECT IdSanPham
+		FROM SizeSanPham
+		GROUP BY IdSanPham
+		HAVING SUM(SoLuong) = 0
+	)
+	ORDER BY sp.Id
+GO
+
+SELECT MaSanPham, TenSanPham
+FROM SanPham sp JOIN TaiKhoan tk ON sp.IdTaiKhoan = tk.Id
+WHERE tk.TenDangNhap = 'merchant1' AND sp.Id IN
+(
+SELECT IdSanPham
+		FROM SizeSanPham
+		GROUP BY IdSanPham
+		HAVING SUM(SoLuong) = 0
+)
+
+exec P_HetHang_Search 'merchant1', N'Aktiv', 12, 1

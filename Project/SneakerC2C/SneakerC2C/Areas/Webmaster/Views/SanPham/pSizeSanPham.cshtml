@@ -10,13 +10,16 @@
     </thead>
     
     <tbody>
-        @foreach(var item in Model)
+        @foreach (var item in Model)
         {
-            <tr>
-                <td>@item.IdSanPhamNavigation.TenSanPham</td>
-                <td>@item.Size</td>
-                <td>@item.SoLuong</td>
-            </tr>
+            if (item.SoLuong > 0)
+            {
+                <tr>
+                    <td>@item.IdSanPhamNavigation.TenSanPham</td>
+                    <td>@item.Size</td>
+                    <td>@item.SoLuong</td>
+                </tr>
+            }
         }
     </tbody>
 </table>

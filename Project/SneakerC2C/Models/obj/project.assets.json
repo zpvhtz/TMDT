@@ -9509,7 +9509,10 @@
       "type": "package",
       "path": "system.diagnostics.process/4.1.0",
       "files": [
+<<<<<<< HEAD
+=======
         ".nupkg.metadata",
+>>>>>>> b97e3c82312ede63dab98bc1645a6b3df03bb71a
         ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -11653,7 +11656,10 @@
       "type": "package",
       "path": "system.runtime.loader/4.0.0",
       "files": [
+<<<<<<< HEAD
+=======
         ".nupkg.metadata",
+>>>>>>> b97e3c82312ede63dab98bc1645a6b3df03bb71a
         ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -12982,7 +12988,10 @@
       "type": "package",
       "path": "system.threading.threadpool/4.0.10",
       "files": [
+<<<<<<< HEAD
+=======
         ".nupkg.metadata",
+>>>>>>> b97e3c82312ede63dab98bc1645a6b3df03bb71a
         ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -13373,23 +13382,55 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\hieut\\.nuget\\packages\\": {},
+=======
+<<<<<<< HEAD
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\tnngo\\.nuget\\packages\\": {},
+>>>>>>> b97e3c82312ede63dab98bc1645a6b3df03bb71a
+>>>>>>> a41228d6d76afdeee307101533c43fbdbadb95aa
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "D:\\ASP.NET\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
       "projectName": "Models",
       "projectPath": "D:\\ASP.NET\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
       "packagesPath": "C:\\Users\\hieut\\.nuget\\packages\\",
       "outputPath": "D:\\ASP.NET\\TMDT\\Project\\SneakerC2C\\Models\\obj\\",
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
+      "projectName": "Models",
+      "projectPath": "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\Models\\obj\\",
+=======
+      "projectUniqueName": "C:\\Code\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
+      "projectName": "Models",
+      "projectPath": "C:\\Code\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
+      "packagesPath": "C:\\Users\\tnngo\\.nuget\\packages\\",
+      "outputPath": "C:\\Code\\TMDT\\Project\\SneakerC2C\\Models\\obj\\",
+>>>>>>> b97e3c82312ede63dab98bc1645a6b3df03bb71a
+>>>>>>> a41228d6d76afdeee307101533c43fbdbadb95aa
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\hieut\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\tnngo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> b97e3c82312ede63dab98bc1645a6b3df03bb71a
+>>>>>>> a41228d6d76afdeee307101533c43fbdbadb95aa
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13466,6 +13507,15 @@
   },
   "logs": [
     {
+<<<<<<< HEAD
+=======
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file F:\\GitHub\\TMDT\\Project\\SneakerC2C\\Models\\obj\\Models.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
+    {
+>>>>>>> a41228d6d76afdeee307101533c43fbdbadb95aa
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,

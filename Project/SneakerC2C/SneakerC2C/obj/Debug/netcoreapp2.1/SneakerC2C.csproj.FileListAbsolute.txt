@@ -21,6 +21,9 @@ C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\C
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\SanPham\GioHang.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\SanPham\Index.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\SanPham\List.g.cshtml.cs
+C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\TaiKhoan\DoiMatKhau.g.cshtml.cs
+C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\TaiKhoan\ThongTinDiaChi.g.cshtml.cs
+C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\TaiKhoan\ThongTinTaiKhoan.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\Home\Index.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\Home\ResetPassword.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\ConHang.g.cshtml.cs
@@ -29,6 +32,10 @@ C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\M
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\KhoaSP.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\ListSP.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\pSize.g.cshtml.cs
+C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\pSuaSanPham.g.cshtml.cs
+C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\TaiKhoan\DoiMatKhau.g.cshtml.cs
+C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\TaiKhoan\ThongTinDiaChi.g.cshtml.cs
+C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\TaiKhoan\ThongTinTaiKhoan.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\Authentication\Index.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\DiaChi\Index.g.cshtml.cs
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GianHang\Index.g.cshtml.cs
@@ -63,6 +70,7 @@ C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.Vi
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CopyComplete
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.dll
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb
+<<<<<<< HEAD
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.deps.json
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.runtimeconfig.json
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.runtimeconfig.dev.json
@@ -193,3 +201,5 @@ F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.
 F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CopyComplete
 F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.dll
 F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb
+=======
+>>>>>>> b97e3c82312ede63dab98bc1645a6b3df03bb71a

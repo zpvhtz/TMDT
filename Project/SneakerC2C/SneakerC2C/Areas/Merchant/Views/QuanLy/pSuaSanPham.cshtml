@@ -1,0 +1,86 @@
+﻿@model Models.Database.SanPham
+<div class="form-group">
+    <label>Mã sản phẩm</label>
+    <input type="text" class="form-control" id="item-sua-ma" name="item_sua_ma" value="@Model.MaSanPham" readonly>
+</div>
+<div class="form-group">
+    <label>Tên sản phẩm</label>
+    <input type="text" class="form-control" id="item-sua-tensp" name="item_sua_tensp" value="@Model.TenSanPham" readonly>
+</div>
+<div class="form-group">
+    <label>Màu</label>
+    <input type="text" class="form-control" id="item-sua-mau" name="item_sua_mau" value="@Model.Mau">
+</div>
+<div class="form-group">
+    <label>Hãng sản phẩm</label>
+    <select class="form-control" id="item-sua-hang" name="item_sua_hang">
+        @foreach (var item in ViewBag.HangSanPham)
+        {
+            <option value="@item.Id">@item.TenHang</option>
+        }
+    </select>
+</div>
+<div class="form-group">
+    <label>Phân loại</label>
+    <select class="form-control" id="item-sua-phanloai" name="item_sua_phanloai">
+        <option value="Nam">Nam</option>
+        <option value="Nữ">Nữ</option>
+    </select>
+</div>
+<div class="form-group">
+    <label>Giá</label>
+    <input type="text" class="form-control" id="item-sua-gia" name="item_sua_gia" value="@Model.Gia">
+</div>
+<div class="form-group">
+    <label>Hinh</label>
+    <img class="form-control" src="~/Hinh/SanPham/@Model.Hinh" style="width:200px; height:200px;" />
+    <input type="file" class="form-control" id="item-sua-hinh" name="item_sua_hinh" multiple>
+</div>
+<div class="form-group">
+    <label>Chi tiết</label>
+    <input type="text" class="form-control" id="item-sua-chitiet" name="item_sua_chitiet" value="@Model.ChiTiet">
+</div>
+<div class="form-group">
+    <label>Giảm giá</label>
+    <input type="text" class="form-control" id="item-sua-giamgia" name="item_sua_giamgia" value="@Model.GiamGia">
+</div>
+<div class="form-group">
+    <label>Size</label>
+    <select class="form-control" id="item-sua-size" name="item_sua_size">
+        <option value="không" selected>Không</option>
+        @foreach(var item in ViewBag.ListSizeSanPham)
+        {
+            <option value="@item.Id">@item.Size</option>
+        }
+    </select>
+</div>
+<div class="form-group">
+    <label>Số lượng</label>
+    <input type="number" class="form-control" id="item-sua-soluong" name="item_sua_soluong" value="0" readonly>
+</div>
+
+<script>
+    $("#item-sua-size").change(function(){
+        let id = $(this).val();
+        if (id == "không")
+        {
+            $("#item-sua-soluong").attr('readonly', true);
+        }
+        else
+        {
+            $("#item-sua-soluong").attr('readonly', false);
+
+            $.ajax({
+            url: "/Merchant/QuanLy/GetQuantity",
+            type: "post",
+            data: { "id": id },
+            success: function (data) {
+                $("#item-sua-soluong").val(data);
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            }
+        });
+        }
+    });
+</script>

@@ -70,11 +70,11 @@
                             @switch (item.TinhTrang)
                             {
                                 case "Không khoá":
-                                    <button class="btn btn-danger btnSua" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
+                                    <button class="btn btn-primary btnSua" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
                                     <a asp-controller="HangSanPham" asp-action="LockHang" asp-route-mahang="@item.MaHang" class="btn btn-danger">Khoá</a>
                                     break;
                                 case "Khoá":
-                                    <button class="btn btn-danger btnSua" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
+                                    <button class="btn btn-primary btnSua" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
                                     <a asp-controller="HangSanPham" asp-action="UnlockHang" asp-route-mahang="@item.MaHang" class="btn btn-danger">Mở khoá</a>
                                     break;
                             }

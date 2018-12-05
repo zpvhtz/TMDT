@@ -39,13 +39,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li><i class="fa fa-user"></i></li>
                     <li>Xin chào @Context.Session.GetString("TenDangNhap")</li>
                     <li class="gach_khoangcach">|</li>
-                    <li class="dropdown">
+                    <a href="#">
+                        <li><i class="fa fa-unlock-alt" aria-hidden="true"></i></li>
+                        <li><a asp-area="Merchant" asp-controller="TaiKhoan" asp-action="ThongTinTaiKhoan">Thông tin tài khoản</a></li>
+                    </a>
+                    @*<li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Thay đổi thông tin <span class="caret"></span></a>
                         <ul class="dropdown-menu ul-header" style="background: #000;">
                             <li class="li-header"><a class="a-header" id="a-edit-modal" href="#" data-toggle="modal" data-target="#informationModal">Tài khoản</a></li>
                             <li class="li-header"><a class="a-header" id="a-password-modal" href="#" data-toggle="modal" data-target="#passwordModal">Mật khẩu</a></li>
                         </ul>
-                    </li>
+                    </li>*@
                     <li class="gach_khoangcach">|</li>
                     <a href="#">
                         <li><i class="fa fa-sign-out"></i></li>

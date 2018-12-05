@@ -36,6 +36,11 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                 thongbao = "Tài khoản chưa được xác nhận, vui lòng chờ hoặc liên hệ Webmaster để xác nhận";
                 return RedirectToAction("Index", "Home", new { thongbao = thongbao });
             }
+            if(taikhoan.TinhTrang == "Khoá")
+            {
+                thongbao = "Tài khoản đã bị khoá, vui lòng liên hệ Webmaster để mở khoá";
+                return RedirectToAction("Index", "Home", new { thongbao = thongbao });
+            }
             HttpContext.Session.SetString("TenDangNhap", taikhoan.TenDangNhap);
             thongbao = "Đăng nhập thành công";
             return RedirectToAction("Index", "QuanLy", new { thongbao = thongbao });

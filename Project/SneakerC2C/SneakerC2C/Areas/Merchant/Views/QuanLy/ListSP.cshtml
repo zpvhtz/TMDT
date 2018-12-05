@@ -17,8 +17,8 @@
                 <a asp-area="Merchant" asp-controller="QuanLy" asp-action="HetHang"><li>hết hàng</li></a>
                 <a asp-area="Merchant" asp-controller="QuanLy" asp-action="KhoaSP"><li>đã bị khoá</li></a>
             </ul>
-            <div class="col-md-4 header-middle fix_timkiem_merchant">
-                <form action="#" method="post">
+            <div class="col-md-5 header-middle fix_timkiem_merchant">
+                <form asp-action="Search" asp-controller="QuanLy">
                     <input type="search" name="search" placeholder="Tìm kiếm..." required="">
                     <input type="submit" value=" ">
                     <div class="clearfix"></div>
@@ -31,7 +31,7 @@
                         <div class="men-pro-item simpleCart_shelfItem" style="padding:0;">
                             <a href="#" style="text-decoration: none;">
                                 <div class="them_sanpham">
-                                    <div class="icon_themsp"  data-toggle="modal" data-target="#themModal">
+                                    <div class="icon_themsp" data-toggle="modal" data-target="#themModal">
                                         <i class="fa fa-plus-circle" style="font-size:66px;"></i>
                                         <h4>Thêm 1 sản phẩm mới</h4>
                                     </div>
@@ -50,6 +50,7 @@
                                 <div class="men-pro-item simpleCart_shelfItem">
                                     <div class="men-thumb-item">
                                         <div class="men-thumb-item">
+                                            <input class="txtid-sanpham" type="text" hidden value="@item.Id" />
                                             <div class="anhsanpham-3" style="background-image: url(/Hinh/SanPham/@item.Hinh);"></div>
                                         </div>
                                     </div>
@@ -68,9 +69,8 @@
                                         </div>
                                         <div class="button-sua-xoa">
                                             <form>
-                                                <input type="button" value="Size" class="btnSize" />
-                                                <button class="btn btn-danger btnSua" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
-                                                <input type="submit" value="Xoá" class="button-xoa" />
+                                                <button class="button-sua btnSuaChiTiet" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
+                                                <input type="button" value="Xoá" class="button-xoa btnXoa" />
                                             </form>
                                         </div>
                                     </div>
@@ -123,9 +123,8 @@
                                         </div>
                                         <div class="button-sua-xoa">
                                             <form>
-                                                <input type="button" value="Size" class="btnSize" />
-                                                <input type="button" value="Sửa" class="button-sua" onclick="location.href='#'" />
-                                                <input type="submit" value="Xoá" class="button-xoa" />
+                                                <button class="button-sua btnSuaChiTiet" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
+                                                <input type="button" value="Xoá" class="button-xoa btnXoa" />
                                             </form>
                                         </div>
                                     </div>
@@ -140,23 +139,92 @@
                     }
                 </div>
                 <!--//tab_one-->
-                <!--phân trang-->
-                <ul class="phantrang modal-1" style="padding-top: 1.5em;">
-                    <li><a href="#" class="prev">&laquo</a></li>
-                    <li><a href="#" class="active">1</a></li>
-                    <li> <a href="#">2</a></li>
-                    <li> <a href="#">3</a></li>
-                    <li> <a href="#">4</a></li>
-                    <li> <a href="#">5</a></li>
-                    <li> <a href="#">6</a></li>
-                    <li> <a href="#">7</a></li>
-                    <li> <a href="#">8</a></li>
-                    <li> <a href="#">9</a></li>
-                    <li><a href="#" class="next">&raquo;</a></li>
-                </ul>
-                <!--hết phân trang-->
             </div>
         </div>
+    </div>
+     <div>
+         <ul class="phantrang modal-1" style="padding-top: 1.5em;">
+             @if (ViewBag.TrangHienTai == 1)
+             {
+                 <li class="paginate_button page-item previous disabled" id="dataTable_previous">
+                     <a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Trước</a>
+                 </li>
+             }
+             else
+             {
+                 <li class="paginate_button page-item previous" id="dataTable_previous">
+                     @switch (ViewBag.TrangThai)
+                     {
+                         case "index":
+                             <a asp-controller="QuanLy" asp-action="ListSP" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link pageNumber">Trước</a>
+                             break;
+                         case "search":
+                             <a asp-controller="QuanLy" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link pageNumber">Trước</a>
+                             break;
+                     }
+                 </li>
+             }
+             @for (int k = 1; k <= ViewBag.TongTrang; k++)
+             {
+                 if (k > 5)
+                 {
+                     <li class="paginate_button page-item" disabled><a class="page-link" aria-controls="dataTable" data-dt-idx="0" tabindex="0" href="#">...</a></li>
+                     <li class="paginate_button page-item">
+                         @switch (ViewBag.TrangThai)
+                         {
+                             case "index":
+                                 <a asp-controller="QuanLy" asp-action="ListSP" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                 break;
+                            
+                             case "search":
+                                 <a asp-controller="QuanLy" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                 break;
+                            
+                         }
+                     </li>
+                     break;
+                 }
+                 else
+                 {
+                     if (k == ViewBag.TrangHienTai)
+                     {
+                         <li class="paginate_button page-item active"><a href="#" class="page-link" aria-controls="dataTable" data-dt-idx="2" tabindex="0">@k</a></li>
+                     }
+                     else
+                     {
+                         <li class="paginate_button page-item" aria-controls="dataTables-example" tabindex="0">
+                             @switch (ViewBag.TrangThai)
+                             {
+                                 case "index":
+                                     <a asp-controller="QuanLy" asp-action="ListSP" asp-route-pagenumber="@k" class="page-link pageNumber" aria-controls="dataTable" data-dt-idx="3" tabindex="0">@i</a>
+                                     break;
+                                 case "search":
+                                     <a asp-controller="QuanLy" asp-action="Search" asp-route-pagenumber="@k" class="page-link pageNumber" aria-controls="dataTable" data-dt-idx="3" tabindex="0">@i</a>
+                                     break;
+                             }
+                         </li>
+                     }
+                 }
+             }
+             @if (ViewBag.TrangHienTai == ViewBag.TongTrang)
+             {
+                 <li class="paginate_button page-item next disabled" id="dataTable_next"><a class="page-link" aria-controls="dataTable" data-dt-idx="7" tabindex="0" href="#">Tiếp</a></li>
+             }
+             else
+             {
+                 <li class="paginate_button page-item next" id="dataTable_next">
+                     @switch (ViewBag.TrangThai)
+                     {
+                         case "index":
+                             <a asp-controller="QuanLy" asp-action="ListSP" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link pageNumber">Tiếp</a>
+                             break;
+                         case "search":
+                             <a asp-controller="QuanLy" asp-action="Search" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link pageNumber">Tiếp</a>
+                             break;
+                     }
+                 </li>
+             }
+         </ul>
     </div>
 </div>
 <!-- //quanlysanpham -->
@@ -205,7 +273,7 @@
                     </div>
                     <div class="form-group">
                         <label>Hinh</label>
-                        <input type="file" class="form-control" id="item-them-hinh" name="item_them_hinh" multiple>
+                        <input type="file" class="form-control" id="item-them-hinh" name="item_them_hinh">
                     </div>
                     <div class="form-group">
                         <label>Chi tiết</label>
@@ -215,6 +283,14 @@
                         <label>Giảm giá</label>
                         <input type="text" class="form-control" id="item-them-giamgia" name="item_them_giamgia">
                     </div>
+                    @*<div class="form-group">
+                        <label>Size</label>
+                        <input type="number" class="form-control" id="item-them-size" name="item_them_size">
+                    </div>
+                    <div class="form-group">
+                        <label>Số lượng</label>
+                        <input type="number" class="form-control" id="item-them-soluong" name="item_them_soluong">
+                    </div>*@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-warning" id="btnThem">Thêm</button>
@@ -227,118 +303,71 @@
 <div class="modal fade" id="suaModal" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
-        <form asp-controller="QuanLy" asp-action="SuaSP" enctype="multipart/form-data" method="post">
+        <form asp-controller="QuanLy" asp-action="EditSP" enctype="multipart/form-data" method="post">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Sản phẩm</h4>
                 </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Tên sản phẩm</label>
-                        <input type="text" class="form-control" id="item-sua-tensp" name="item_sua_tensp" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Màu</label>
-                        <input type="text" class="form-control" id="item-sua-mau" name="item_sua_mau">
-                    </div>
-                    <div class="form-group">
-                        <label>Hãng sản phẩm</label>
-                        <select class="form-control" id="item-sua-hang" name="item_sua_hang">
-                            @foreach (var item in ViewBag.HangSanPham)
-                            {
-                                <option value="@item.Id">@item.TenHang</option>
-                            }
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Phân loại</label>
-                        <select class="form-control" id="item-sua-phanloai" name="item_sua_phanloai">
-                            <option value="Nam">Nam</option>
-                            <option value="Nữ">Nữ</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Giá</label>
-                        <input type="text" class="form-control" id="item-sua-gia" name="item_sua_gia">
-                    </div>
-                    <div class="form-group">
-                        <label>Hinh</label>
-                        <input type="file" class="form-control" id="item-sua-hinh" name="item_sua_hinh" multiple>
-                    </div>
-                    <div class="form-group">
-                        <label>Chi tiết</label>
-                        <input type="text" class="form-control" id="item-sua-chitiet" name="item_sua_chitiet">
-                    </div>
-                    <div class="form-group">
-                        <label>Giảm giá</label>
-                        <input type="text" class="form-control" id="item-sua-giamgia" name="item_sua_giamgia">
-                    </div>
+                <div class="modal-body" id="modal-body-suachitiet">
+
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-warning" id="btnThem">Sửa</button>
+                    <button type="submit" class="btn btn-warning" id="btnSua">Sửa</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        $(".men-thumb-item").click(function () {
+<!--modal size>
+    <div class="modal fade" id="suaModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
 
+<!-- js -->
+<script type="text/javascript" src="~/maintemplate/js/jquery-2.1.4.min.js"></script>
+<script>
+   $(".pageNumber").click(function () {
+        //Get addtional href
+        let search = "@ViewBag.Search";
+        //Href
+        var $link = $('.pageNumber');
+        var href = $link.attr('href').split('/');
+        if (search != null && search != '') {
+            href.push('&search=' + search); //here you set your new asp-route-pagenumber value
+        }
+        href = href.join('/');
+        href = href.toString().replace(/\/&/g, '&');
+        $link.attr('href', href);
+    });
+    $(".btnSuaChiTiet").click(function () {
+        let id = $(this).closest(".men-pro-item").find(".txtid-sanpham").val();
+        $.ajax({
+            url: "/Merchant/QuanLy/GetProductDetails",
+            type: "post",
+            data: { "id": id },
+            success: function (data) {
+                $("#modal-body-suachitiet").html(data);
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            }
+        });
+    });
+    $(".btnXoa").click(function () {
+        let id = $(this).closest(".men-pro-item").find(".txtid-sanpham").val();
+        $.ajax({
+            url: "/Merchant/QuanLy/XoaSP",
+            type: "post",
+            data: { "id": id },
+            success: function (data) {
+                alert("Xoá thành công");
+                window.location = "@Url.Action("ListSP", "QuanLy")";
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            }
         });
     });
 </script>
-@*<script>
-    $(document).ready(function () {
-        $(".SuaSp").click(function () {
-            let pricetext = $(this).closest('.cart_theoshop_item').find('.tieude_sanpham').text().trim();
-            let pTen = $(this).closest('.tab1').find('.tensp').text();
-            let pTenShop = $(this).closest('tr').find('.tenshop').text();
-            let pMau = $(this).closest('tr').find('.mau').text();
-            let pHang = $(this).closest('tr').find('.tenhang').text();
-            let pGia = $(this).closest('tr').find('.item_price').text();
-            let pHinh = $(this).closest('tr').find('.img-hinh').attr('src');
-            let pChiTiet = $(this).closest('tr').find('.chitiet').text();
-            let pGiamGia = $(this).closest('tr').find('.giamgia').text();
-            //alert(pGiamGia);
-            $("#masp-sua").val(Id.trim());
-            $("#tensp-sua").val(pTen.trim());
-            $("#tenshop-sua").val(pTenShop.trim());
-            $("#mau-sua").val(pMau.trim());
-            $("#gia-sua").val(pGia.trim());
-            $("#hinh-sua").val(pHinh.trim());
-            $("#chitiet-sua").val(pChiTiet.trim());
-            $("#giamgia-sua").val(pGiamGia.trim());
-
-            let pPhanLoai = $(this).closest('tr').find('.phanloai').text();
-            if (pPhanLoai != '') {
-                $("#phanloai-sua option").each(function () {
-                    if ($(this).text().includes(pPhanLoai)) {
-                        $(this).attr('selected', 'selected');
-                        //return;
-                    }
-                    else {
-                        $(this).attr('selected', false);
-                    }
-                });
-            }
-
-            let hang = $(this).closest('tr').find('.tenhang').text();
-            if (hang != '') {
-                $("#hang-sua option").each(function () {
-                    if ($(this).text().includes(hang)) {
-                        $(this).attr('selected', 'selected');
-                        //return;
-                    }
-                    else {
-                        $(this).attr('selected', false);
-                    }
-                });
-            }
-
-        });
-
-    });
-</script>*@

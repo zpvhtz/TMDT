@@ -5039,6 +5039,7 @@
       "sha512": "j+5U/D9DWcMQGUhfx/q14qlU/7UH0oqUa1tC9/4pVwMJSJuKOF+KBBJrv57kzc/2c/vtWdinpUywmEg4jT+zug==",
       "type": "package",
       "path": "jquery/1.8.0",
+      "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5954,10 +5955,12 @@
       ]
     },
     "Microsoft.AspNetCore.Razor.Design/2.1.2": {
-      "sha512": "sa/cztXesLyTgCiYuef0RK2EAImnak0w2wrjCh/YBTvbn4iV2eTy0q3F8CyUkGiaYEyxUKGVTko6+7SMRBL4Gg==",
+      "sha512": "ab4+TZw3Sxqrr5TwrwVyABeQkhSxYMJXgG6yZw7T+r6Vz+hcOt+pK79o15ESG7kZvWAK9wRG7emnTIia5O6R1Q==",
       "type": "package",
       "path": "microsoft.aspnetcore.razor.design/2.1.2",
+      "hasTools": true,
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "build/netstandard2.0/Microsoft.AspNetCore.Razor.Design.CodeGeneration.targets",
         "build/netstandard2.0/Microsoft.AspNetCore.Razor.Design.props",
@@ -6090,7 +6093,7 @@
       ]
     },
     "Microsoft.AspNetCore.Routing.Abstractions/2.1.1": {
-      "sha512": "+Yxsy/ZcCthcziktuhfC6WpQ/cZzgD/IsQ96xefNKrCzIm9jXjfNK3ONsoScvyFFihNohp7zAVPiic5J6CvUDw==",
+      "sha512": "9saJjHhST3JmFKuZ1mPU9FJcpgUyPNoJxRMSV2nkSjiEekQN4jxswtBBeIRVDonjq50KKqSWbcyyQtvV4tgKzw==",
       "type": "package",
       "path": "microsoft.aspnetcore.routing.abstractions/2.1.1",
       "files": [
@@ -6335,6 +6338,7 @@
       "sha512": "HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
       "type": "package",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
+      "hasTools": true,
       "files": [
         ".nupkg.metadata",
         "ThirdPartyNotices.rtf",
@@ -6644,6 +6648,7 @@
       "sha512": "+mMAfPku3xFvFgzEYtFYZ6yek8EJz6NJq6AhO/yaqW2RS+6INWS54dfhy3qOddX2EXqE1ZEhkz5L1Zf1F8rAdQ==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.tools/2.1.4",
+      "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -13438,55 +13443,23 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\tnngo\\.nuget\\packages\\": {},
-=======
-<<<<<<< HEAD
-    "C:\\Users\\ASUS\\.nuget\\packages\\": {},
-=======
-    "C:\\Users\\HeoBayMau\\.nuget\\packages\\": {},
->>>>>>> e29e459a164cb7866954c7ce2901800752507746
->>>>>>> 0fdbb7345061bd67596ce7d542cb96709ff61efb
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Code\\TMDT\\Project\\SneakerC2C\\SneakerC2C\\SneakerC2C.csproj",
       "projectName": "SneakerC2C",
       "projectPath": "C:\\Code\\TMDT\\Project\\SneakerC2C\\SneakerC2C\\SneakerC2C.csproj",
       "packagesPath": "C:\\Users\\tnngo\\.nuget\\packages\\",
       "outputPath": "C:\\Code\\TMDT\\Project\\SneakerC2C\\SneakerC2C\\obj\\",
-=======
-<<<<<<< HEAD
-      "projectUniqueName": "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\SneakerC2C\\SneakerC2C.csproj",
-      "projectName": "SneakerC2C",
-      "projectPath": "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\SneakerC2C\\SneakerC2C.csproj",
-      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\SneakerC2C\\obj\\",
-=======
-      "projectUniqueName": "F:\\ASP.NET\\TMDT\\Project\\SneakerC2C\\SneakerC2C\\SneakerC2C.csproj",
-      "projectName": "SneakerC2C",
-      "projectPath": "F:\\ASP.NET\\TMDT\\Project\\SneakerC2C\\SneakerC2C\\SneakerC2C.csproj",
-      "packagesPath": "C:\\Users\\HeoBayMau\\.nuget\\packages\\",
-      "outputPath": "F:\\ASP.NET\\TMDT\\Project\\SneakerC2C\\SneakerC2C\\obj\\",
->>>>>>> e29e459a164cb7866954c7ce2901800752507746
->>>>>>> 0fdbb7345061bd67596ce7d542cb96709ff61efb
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\tnngo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-<<<<<<< HEAD
-        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\HeoBayMau\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> e29e459a164cb7866954c7ce2901800752507746
->>>>>>> 0fdbb7345061bd67596ce7d542cb96709ff61efb
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13499,18 +13472,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-<<<<<<< HEAD
             "C:\\Code\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj": {
               "projectPath": "C:\\Code\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj"
-=======
-<<<<<<< HEAD
-            "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj": {
-              "projectPath": "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj"
-=======
-            "F:\\ASP.NET\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj": {
-              "projectPath": "F:\\ASP.NET\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj"
->>>>>>> e29e459a164cb7866954c7ce2901800752507746
->>>>>>> 0fdbb7345061bd67596ce7d542cb96709ff61efb
             }
           }
         }
@@ -13584,6 +13547,12 @@
     }
   },
   "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Code\\TMDT\\Project\\SneakerC2C\\SneakerC2C\\obj\\SneakerC2C.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
     {
       "code": "NU1701",
       "level": "Warning",

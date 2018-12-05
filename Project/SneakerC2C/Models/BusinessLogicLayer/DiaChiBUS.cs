@@ -98,6 +98,16 @@ namespace Models.BusinessLogicLayer
             return "Sửa thành công";
         }
 
+        public string EditDiaChiMer(string tendangnhap, string duong, string tinhthanh)
+        {
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();
+            DiaChi diachi = context.DiaChi.Where(dc => dc.IdTaiKhoan == taikhoan.Id).SingleOrDefault();
+            diachi.Duong = duong;
+            diachi.IdTinhThanh = Guid.Parse(tinhthanh);
+            context.SaveChanges();
+            return "Sửa thành công";
+        }
+
         public string LockDiaChi(string id)
         {
             DiaChi dc = context.DiaChi.Where(d => d.Id == Guid.Parse(id)).SingleOrDefault();

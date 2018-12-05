@@ -128,4 +128,13 @@ F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CopyComplete
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.dll
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb
+<<<<<<< HEAD
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\pSuaSanPham.g.cshtml.cs
+=======
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\TaiKhoan\ThongTinTaiKhoan.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\TaiKhoan\ThongTinDiaChi.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\TaiKhoan\DoiMatKhau.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\TaiKhoan\ThongTinTaiKhoan.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\TaiKhoan\ThongTinDiaChi.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\TaiKhoan\DoiMatKhau.g.cshtml.cs
+>>>>>>> 0fdbb7345061bd67596ce7d542cb96709ff61efb

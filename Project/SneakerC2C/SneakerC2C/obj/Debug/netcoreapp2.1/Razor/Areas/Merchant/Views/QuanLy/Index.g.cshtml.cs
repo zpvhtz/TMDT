@@ -57,7 +57,11 @@ namespace AspNetCore
         ");
             EndContext();
             BeginContext(465, 220, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ce107d0dfb224b61bdd1a9a6ab3eae97", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4a4c63dd2c1346339860d041ccf5bd5f", async() => {
+>>>>>>> 0fdbb7345061bd67596ce7d542cb96709ff61efb
                 BeginContext(534, 147, true);
                 WriteLiteral("\r\n            <div class=\"menu_knb_icon\">\r\n                <i class=\"fa fa-inbox\"></i>\r\n            </div>\r\n            <h4>Sản Phẩm</h4>\r\n        ");
                 EndContext();

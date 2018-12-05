@@ -13373,23 +13373,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tnngo\\.nuget\\packages\\": {},
+    "C:\\Users\\hieut\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Code\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
+      "projectUniqueName": "D:\\ASP.NET\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
       "projectName": "Models",
-      "projectPath": "C:\\Code\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
-      "packagesPath": "C:\\Users\\tnngo\\.nuget\\packages\\",
-      "outputPath": "C:\\Code\\TMDT\\Project\\SneakerC2C\\Models\\obj\\",
+      "projectPath": "D:\\ASP.NET\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
+      "packagesPath": "C:\\Users\\hieut\\.nuget\\packages\\",
+      "outputPath": "D:\\ASP.NET\\TMDT\\Project\\SneakerC2C\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\tnngo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hieut\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13465,12 +13465,6 @@
     }
   },
   "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Code\\TMDT\\Project\\SneakerC2C\\Models\\obj\\Models.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    },
     {
       "code": "NU1701",
       "level": "Warning",

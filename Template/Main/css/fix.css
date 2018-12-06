@@ -611,6 +611,9 @@
   justify-content: flex-end;
   margin-right: 30px;
 }
+.form_padding_15_30 {
+  padding: 15px 30px;
+}
 .form_chuthich {
   width: 100%;
   margin-top: 15px;
@@ -642,7 +645,9 @@
 }
 /*radio-button*/
 .radio_pt_tt {
-  display: block;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   position: relative;
   padding-left: 35px;
   margin-bottom: 10px;
@@ -686,7 +691,7 @@
   display: block;
 }
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+.checkmark:after {
   top: 5px;
   left: 5px;
   width: 10px;
@@ -696,12 +701,11 @@
 }
 .tong_tienhang {
   width: 100%;
-  display: inherit;
+  display: flex;
   justify-content: flex-end;
+  align-items: center;
   color: #666666;
-}
-.tong_tienhang p {
-  padding: 10px 0;
+  margin-top: 15px;
 }
 .txt_dathang {
   width: 12%;
@@ -735,7 +739,7 @@
   font-size: 14px;
 }
 .cus_left {
-  width: 30%;
+  width: 20%;
   margin: 0 30px;
 }
 .menu_cus_item {
@@ -760,7 +764,7 @@
   color: #333333;
 }
 .cus_right {
-  width: 70%;
+  width: 80%;
   margin: 0 30px;
   font-size: 14px;
 }
@@ -942,7 +946,7 @@
   border: 1px solid #2fdab8;
   color: #666;
   padding: 7px 15px;
-  border-radius: 1px;
+  border-radius: 2px;
 }
 .resp-tabs-container hr {
   margin: 15px 0;
@@ -956,14 +960,16 @@
 }
 .tt_donhang h6 {
   line-height: 16px;
-  color: #666;
 }
 .button_danhgia {
   background-color: #2fdab8;
   border: 1px solid #2fdab8;
   color: #fff;
   padding: 7px 25px;
-  border-radius: 3px;
+  border-radius: 2px;
+}
+.button_danhgia a {
+  color: #fff;
 }
 .ten_sp_donban {
   width: 30%;
@@ -1004,6 +1010,7 @@
   display: flex;
   justify-content: flex-end;
 }
+
 .button_chitiet {
   background-color:#2fdab8;
   border: none;
@@ -1055,6 +1062,35 @@
   align-items: center;
   justify-content: flex-end;
 }
+dialog {
+  border: 1px solid #999999;
+  padding: 1em 30px;
+}
+.danhgia_sao {
+  color: #ffde00;
+  font-size: 18px;
+}
+dialog h3{
+  padding-bottom: 10px;
+  text-align: center;
+}
+dialog h5 {
+  padding-bottom: 15px;
+  text-align: center;
+  color: #666666;
+}
+.button_gui {
+  padding: 5px 15px;
+  background-color: #2fdab8;
+  color: #fff;
+  border: 1px solid #2fdab8;
+}
+.button_thoat {
+  padding: 5px 15px;
+  background-color: #fc636b;
+  color: #fff;
+  border: 1px solid #fc636b;
+}
 /* Quảng cáo*/
 .quangcao {
   width: 100%;
@@ -1080,7 +1116,7 @@
 }
 .quangcao_item2 {
   width: 50%;
-  height: 200px;
+  height: 180px;
 }
 .anh_quangcao2 {
   width: 100%;

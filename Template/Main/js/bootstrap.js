@@ -2315,3 +2315,22 @@ if (typeof jQuery === 'undefined') {
   })
 
 }(jQuery);
+
+(function() {
+  var btn_danhgia = document.getElementById('btn_danhgia');
+  var danhgia = document.getElementById('danhgia');
+
+  // “Update details” button opens the <dialog> modally
+  btn_danhgia.addEventListener('click', function() {
+    danhgia.showModal();
+  });
+})();
+(function() {
+  var btn_xemlai_danhgia = document.getElementById('btn_xemlai_danhgia');
+  var xemlai_danhgia = document.getElementById('xemlai_danhgia');
+
+  // “Update details” button opens the <dialog> modally
+  btn_xemlai_danhgia.addEventListener('click', function() {
+    xemlai_danhgia.showModal();
+  });
+})();

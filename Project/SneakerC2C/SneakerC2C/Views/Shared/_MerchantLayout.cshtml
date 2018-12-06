@@ -1,4 +1,6 @@
-﻿@using Microsoft.AspNetCore.Http;
+﻿@model IEnumerable<Models.Database.TinhThanh>
+
+@using Microsoft.AspNetCore.Http;
 @using Microsoft.AspNetCore.Mvc;
 
 @{
@@ -25,6 +27,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="~/maintemplate/css/easy-responsive-tabs.css" rel="stylesheet" type='text/css' />
 
     <link href="~/maintemplate/css/fix.css" rel="stylesheet" type='text/css' />
+    <link href="~/css/custom.css" rel="stylesheet" type="text/css"/>
     <!-- //for bootstrap working -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
@@ -175,6 +178,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="styled-input">
                                 <input type="text" name="cmnd" id="txtCMND" pattern=".{9,10}" required oninvalid="this.setCustomValidity('CMND không hợp lệ')" onchange="this.setCustomValidity('')">
                                 <label>Số CMND</label>
+                                <span></span>
+                            </div>
+                            <div class="styled-input">
+                                <input type="text" name="diachi" id="txtDiaChi" pattern=".{6,}" required oninvalid="this.setCustomValidity('Địa chỉ chứa ít nhất 6 ký tự')" onchange="this.setCustomValidity('')">
+                                <label>Địa chỉ</label>
+                                <span></span>
+                            </div>
+                            <div class="styled-input">
+                                @*<input type="text" name="diachi" id="txtDiaChi" pattern=".{6,}" required oninvalid="this.setCustomValidity('Địa chỉ chứa ít nhất 6 ký tự')" onchange="this.setCustomValidity('')">*@
+                                <select id="cbbTinhThanh" name="tinhthanh" class="combobox-format">
+                                    @foreach(var item in Model)
+                                    {
+                                        <option value="@item.Id">@item.TenTinhThanh</option>
+                                    }
+                                </select>
+                                @*<label>Địa chỉ</label>*@
                                 <span></span>
                             </div>
                             <div class="checkbox">

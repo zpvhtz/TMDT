@@ -10,7 +10,9 @@ namespace Models.Database
         public Guid IdGoiQuangCao { get; set; }
         public Guid IdTaiKhoan { get; set; }
         public string Hinh { get; set; }
+        
         public DateTime? NgayBatDau { get; set; }
+      
         public DateTime? NgayKetThuc { get; set; }
         public string ChuThich { get; set; }
         public string TinhTrang { get; set; }

@@ -95,7 +95,14 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             return thongbao;
         }
 
-        public async Task<IActionResult> CreateTaiKhoan(string tendangnhap, string matkhau, string confirmmatkhau, string ten, string tenshop, string email, string dienthoai, string cmnd)
+        public string CreateDiaChi(string tendangnhap, string diachi, string tinhthanh)
+        {
+            DiaChiBUS diachibus = new DiaChiBUS();
+            string thongbao = diachibus.CreateDiaChi(tendangnhap, diachi, tinhthanh);
+            return thongbao;
+        }
+
+        public async Task<IActionResult> CreateTaiKhoan(string tendangnhap, string matkhau, string confirmmatkhau, string ten, string tenshop, string email, string dienthoai, string cmnd, string diachi, string tinhthanh)
         {
             string thongbao = "";
             if (matkhau != confirmmatkhau)
@@ -106,6 +113,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
 
             TaiKhoanBUS taikhoan = new TaiKhoanBUS();
             thongbao = taikhoan.CreateTaiKhoan(tendangnhap, matkhau, ten, tenshop, email, dienthoai, cmnd, "EA9FC9A5-9C26-40A4-9E8E-BB3DAE4E0156", "Chưa kích hoạt");
+            thongbao = CreateDiaChi(tendangnhap, diachi, tinhthanh);
             if (thongbao == "Vui lòng kiểm tra hộp thư email để kích hoạt tài khoản")
             {
                 await ActivationMail(tendangnhap);

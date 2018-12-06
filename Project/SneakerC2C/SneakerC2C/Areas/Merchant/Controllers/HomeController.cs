@@ -18,7 +18,9 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             {
                 ViewBag.ThongBao = thongbao;
             }
-            return View();
+            TinhThanhBUS tinhthanhbus = new TinhThanhBUS();
+            List<TinhThanh> list = tinhthanhbus.GetTinhThanhs();
+            return View(list);
         }
 
         public IActionResult ResetPassword(string key)

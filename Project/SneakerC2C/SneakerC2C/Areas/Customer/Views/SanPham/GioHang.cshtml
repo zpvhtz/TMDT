@@ -32,7 +32,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
         <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
     </head>
-    <body onload="TestChoVui();">
+    <body>
         <div class="container-fluid bg_header_knb">
             <div class="container">
                 <div class="icon_header_knb">
@@ -145,11 +145,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <div class="soluong_giohang">
                             <div class="tang_soluong">
-                                <button class="button_tanggiam_sl">
+                                <button class="button_tanggiam_sl" id="btnGiamSoLuong">
                                     <i class="fa fa-minus"></i>
                                 </button>
                                 <input class="soluong" type="text" value="1">
-                                <button class="button_tanggiam_sl">
+                                <button class="button_tanggiam_sl" id="btnTangSoLuong">
                                     <i class="fa fa-plus"></i>
                                 </button>
                             </div>
@@ -246,12 +246,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         $(".soluong").keydown(validateNumber);
 
         $(document).ready(function () {
-            console.log('a');
             getTotalPrice();
         });
 
         $(".soluong").change(function () {
-
             let pricetext = $(this).closest('.cart_theoshop_item').find('.dongia_giohang').text().trim();
             pricetext = pricetext.replace(/\,/g, '');
             pricetext = pricetext.substring(0, pricetext.indexOf(' '));
@@ -288,6 +286,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             $(this).closest('.cart_theoshop_item').find('.thanhtien_giohang').html(`<h5>${totalPrice.toLocaleString()} đ</h5>`);
             getTotalPrice();
+        });
+
+        $("#btnTangSoLuong").click(function () {
+            let value = $(".soluong").val();
+            value = parseInt(value) + 1;
+
+            $(".soluong").val(value);
+        });
+
+        $("#btnGiamSoLuong").click(function () {
+            let value = $(".soluong").val();
+            value = parseInt(value) - 1;
+
+            $(".soluong").val(value);
         });
 
 

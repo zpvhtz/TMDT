@@ -32,7 +32,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <i class="fa fa-shopping-bag"></i>
             </div>
             <div class="logo_header_knb">
-                <h4>SNKRX - Kênh Người Bán</h4>
+                <a asp-area="Merchant" asp-controller="QuanLy" asp-action="Index">
+                    <h4><span>Trang Chủ</span></h4>
+                </a>
+                @*<a asp-area="Merchant" asp-controller="QuanLy" asp-action="ListSP">
+                    <i class="fa fa-angle-right"></i>
+                    <h4>Sản Phẩm</h4>
+                </a>*@
             </div>
             <div class="user_merchant">
                 <ul>
@@ -59,6 +65,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
     </div>
+
     <!-- Modal4 (Thay đổi thông tin) -->
     <div class="modal fade" id="informationModal" tabindex="-1" role="dialog">
         <div class="modal-dialog">

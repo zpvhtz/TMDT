@@ -488,9 +488,13 @@
 }
 .form_ten_sp_giohang {
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  flex-direction: column;
+  max-height: 3.2rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-word;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     padding: .5rem 2rem 0 1rem;
     font-size: 14px;
     line-height: 1.6rem;
@@ -875,6 +879,9 @@
   font-size: 14px;
   color: #fc636b;
 }
+.id_donhang {
+  color:#777;
+}
 .thongtin_donhang {
   width: 100%;
   display: flex;
@@ -942,11 +949,141 @@
 }
 .tt_donhang {
   width: calc(30% - 80px);
-  justify-content: flex-end;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
 }
-.button_ct_huy .button_danhgia {
+.tt_donhang h6 {
+  line-height: 16px;
+  color: #666;
+}
+.button_danhgia {
   background-color: #2fdab8;
   border: 1px solid #2fdab8;
   color: #fff;
   padding: 7px 25px;
+  border-radius: 3px;
 }
+.ten_sp_donban {
+  width: 30%;
+}
+.soluong_donban {
+  width: 5%;
+}
+.donban_right {
+  width: calc(65% - 80px);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.tongtien_donban {
+  width: 25%;
+  text-align: center;
+  color: #fc636b;
+  font-weight: bold;
+  margin-right: 30px;
+
+}
+.tongtien_donban h6 {
+  color: #FFC200;
+  border: 1px solid #FFC200;
+  padding: 5px 0;
+}
+.trangthai_donban {
+  width: 30%;
+  color: #2fdab8;
+  font-weight: bold;
+  text-align: center;
+}
+.trangthai_donban h6 {
+  color: #666;
+}
+.button_donban {
+  width: 45%;
+  display: flex;
+  justify-content: flex-end;
+}
+.button_chitiet {
+  background-color:#2fdab8;
+  border: none;
+  margin-left: 15px;
+  color: #fff;
+  padding: 5px 15px;
+}
+.chuthich_donban {
+  width: 100%;
+}
+.cus_diachi {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.cus_diachi label {
+  width: 20%;
+  text-align: right;
+  margin-right: 15px;
+  color: #666;
+  font-weight: 100;
+}
+.cus_diachi h5 {
+  margin-right: 15px;
+  width: 40%;
+}
+.button_diachi {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 40%;
+}
+.button_sua_xoa {
+  padding: 5px 15px;
+  font-size: 12px;
+}
+.header_diachi {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.header_diachi h4 {
+  width: 40%;
+}
+.button_themdiachi {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+/* Quảng cáo*/
+.quangcao {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-start;
+}
+.quangcao_item {
+  width: 25%;
+  height: 200px;
+}
+.fix_kichthuoc_qc {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  background-color: #2fdab8;
+  margin: 0 auto;
+}
+.anh_quangcao1 {
+  width: 250px;
+  height: 100%;
+  border-radius: 5px;
+}
+.quangcao_item2 {
+  width: 50%;
+  height: 200px;
+}
+.anh_quangcao2 {
+  width: 100%;
+  height: 100%;
+}
+/* Hết quảng cáo*/

@@ -49,6 +49,15 @@ namespace Models.BusinessLogicLayer
             return diachi;
         }
 
+        public List<DiaChi> GetDiaChisCus(string tendangnhap)
+        {
+            List<DiaChi> diachi = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap == tendangnhap && dc.TinhTrang == "Không khoá")
+                                                .Include(dc => dc.IdTaiKhoanNavigation)
+                                                .Include(dc => dc.IdTinhThanhNavigation)
+                                                .ToList();
+            return diachi;
+        }
+
         public List<TinhThanh> GetTinhThanhs()
         {
             List<TinhThanh> tinhthanh = context.TinhThanh.ToList();
@@ -72,6 +81,12 @@ namespace Models.BusinessLogicLayer
             if(tk == null)
             {
                 return "Tên tài khoản không tồn tại";
+            }
+
+            List<DiaChi> listdiachi = context.DiaChi.Where(d => d.IdTaiKhoan == tk.Id && d.TinhTrang == "Không khoá").ToList();
+            if(listdiachi.Count == 5)
+            {
+                return "Khách hàng không được có hơn 5 địa chỉ";
             }
             //Thêm
             DiaChi dc = new DiaChi();

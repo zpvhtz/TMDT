@@ -47,13 +47,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>*@
                     <li> <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="ThongTinTaiKhoan"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Thông tin cá nhân </a></li>
                     <li> <a asp-area="Customer" asp-controller="Authentication" asp-action="LogOut"><i class="fa fa-sign-out" aria-hidden="true"></i> Đăng xuất </a></li>
-                    <li> <a href="trogiup.html"><i class="fa fa-question-circle-o" aria-hidden="true"></i> Trợ Giúp </a></li>
+                    <li> <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"></i> Trợ Giúp </a></li>
                 }
                 else
                 {
                     <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Đăng Nhập </a></li>
                     <li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Đăng Ký </a></li>
-                    <li> <a href="trogiup.html"><i class="fa fa-question-circle-o" aria-hidden="true"></i> Trợ Giúp </a></li>
+                    <li> <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"></i> Trợ Giúp </a></li>
                     <!-- <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li> -->
                     <li><a asp-area="Merchant" asp-controller="Home" asp-action="Index"><i class="fa fa-vcard-o" aria-hidden="true"></i> Kênh Người Bán</a></li>
                 }
@@ -143,7 +143,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         }
                                     </ul>
                                 </li>
-                                <li class=" menu__item"><a class="menu__link" href="contact.html">Liên Hệ</a></li>
+                                <li class=" menu__item"><a class="menu__link" href="#">Liên Hệ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -494,11 +494,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="col-md-4 sign-gd" style="width: 30%">
                         <h4>Danh mục</h4>
                         <ul>
-                            <li><a href="index.html">Trang Chủ</a></li>
-                            <li><a href="mens.html">Giày Nam</a></li>
-                            <li><a href="womens.html">Giày Nữ</a></li>
-                            <li><a href="about.html">Giới Thiệu Về SNKRX</a></li>
-                            <li><a href="contact.html">Liên Hệ</a></li>
+                            <li><a asp-area="Customer" asp-controller="Home" asp-action="Index">Trang Chủ</a></li>
+                            <li><a asp-area="Customer" asp-controller="SanPham" asp-action="PhanLoai" asp-route-ploai="Nam">Giày Nam</a></li>
+                            <li><a asp-area="Customer" asp-controller="SanPham" asp-action="PhanLoai" asp-route-ploai="Nu">Giày Nữ</a></li>
+                            <li><a href="#">Giới Thiệu Về SNKRX</a></li>
+                            <li><a href="#">Liên Hệ</a></li>
                         </ul>
                     </div>
 

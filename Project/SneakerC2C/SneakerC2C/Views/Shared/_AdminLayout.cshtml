@@ -84,10 +84,16 @@
     <script src="~/admintemplate2/js/demo/chart-bar-demo.js"></script>
     <script src="~/admintemplate2/js/demo/chart-pie-demo.js"></script>
     <script>
-        window.onload = LoadDuLieu
+        $(document).ready(function()
+        {
+            LoadDuLieuArea($("#nbd").val(), $("#nkt").val());
+            LoadDuLieuArea1($("#nbd").val(), $("#nkt").val());
+            LoadDuLieuBar($("#nbd").val(), $("#nkt").val());
+            //LoadDuLieuPie($("#nbd").val());
+            LoadDuLieuPie();
+        });
     </script>
-    <script>
-        window.onload = LoadDuLieu1
-    </script>
+
+
 </body>
 </html>

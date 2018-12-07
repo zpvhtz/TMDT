@@ -118,11 +118,15 @@ else
                         ");
             EndContext();
             BeginContext(1253, 1008, false);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a16704039b54f918349d7c6e295b6c9", async() => {
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b22b6c112054c56bbd4fbc61a41f7a6", async() => {
 >>>>>>> e9818b6b2a2fe2af6d0c441537dc11eea1775a12
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "971ca8563c3042038b46920dabe454b1", async() => {
+>>>>>>> Stashed changes
                 BeginContext(1310, 944, true);
                 WriteLiteral(@"
                             <div class=""styled-input"">
@@ -193,11 +197,15 @@ else
                         ");
             EndContext();
             BeginContext(4160, 55, false);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "cbc4ed51e77c4f02ba3d676adf7b95cb", async() => {
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "987c400b6c624d5e969e9253699385f9", async() => {
 >>>>>>> e9818b6b2a2fe2af6d0c441537dc11eea1775a12
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "8d39bfde8c4e444bb0591be5a163b6ec", async() => {
+>>>>>>> Stashed changes
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

@@ -31,6 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //for bootstrap working -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+    <link href="~/css/custom.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container-fluid bg_header_knb">
@@ -49,10 +50,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="user_merchant">
                 <ul>
-                    <a href="#">
-                        <li><i class="fa fa-user"></i></li>
-                        <li>customer1</li>
-                    </a>
+                    @*<a href="#">*@
+                    <li><i class="fa fa-user"></i></li>
+                    <li>@ViewBag.TaiKhoan.TenDangNhap</li>
+                    @*</a>*@
                     <li class="gach_khoangcach">|</li>
                     <a asp-area="Customer" asp-controller="Authentication" asp-action="LogOut">
                         <li><i class="fa fa-sign-out"></i></li>
@@ -70,8 +71,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h4>Địa chỉ nhận hàng</h4>
                 </div>
                 <div class="content_diachi">
-                    <h4><b>Xù (0932753277) </b>133/8 Vĩnh Viễn F4, Quận 10, TPHCM</h4>
-                    <a href="#">Thay Đổi</a>
+                    <h4><b>@ViewBag.TaiKhoan.Ten (@ViewBag.TaiKhoan.DienThoai) </b>@ViewBag.FirstAddress.Duong, @ViewBag.FirstAddress.IdTinhThanhNavigation.TenTinhThanh</h4>
+                    <a href="#" data-toggle="modal" data-target="#addressModal">Thay Đổi</a>
                 </div>
             </div>
             <div class="thanhtoan form_sp_thanhtoan">
@@ -183,7 +184,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <p>Tổng tiền hàng</p>
                         </div>
                         <div class="gia_dathang">
-                            <p>₫300.000</p>
+                            <p id="txtTienDatHang">₫300.000</p>
                         </div>
                     </div>
                     <div class="tong_tienhang">
@@ -211,7 +212,88 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
             </div>
         </div>
-                </div>
+    </div>
+    <div>
+        @foreach (var item in ViewBag.Merchants)
+        {
+            <p>@item.TenShop</p>
+        }
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="addressModal" role="dialog">
+        <div class="modal-dialog">
 
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Danh sách địa chỉ</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered table-hover table-condensed">
+                        <thead>
+                            <tr>
+                                <th class="center-text-td">Đường</th>
+                                <th class="center-text-td">Tỉnh thành</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(var item in ViewBag.ListAddress)
+                            {
+                                <tr>
+                                    <td>@item.Duong</td>
+                                    <td>@item.IdTinhThanhNavigation.TenTinhThanh</td>
+                                    <td class="center-text-td">
+                                        <button class="btn btn-primary">Chọn</button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </body>
 </html>
+
+<script type="text/javascript" src="~/maintemplate/js/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+    function GetTongTienHang() {
+        let totalPrice = 0;
+        let row = 0;
+        $(".thanhtien_giohang h5").each(function () {
+            if (row == 0) {
+                row++;
+            }
+            else {
+                let pricetext = $(this).text().trim();
+                pricetext = pricetext.replace(/\,/g, '');
+                pricetext = pricetext.substring(0, pricetext.indexOf(' '));
+
+                let price = parseFloat(pricetext);
+                totalPrice += price;
+            }
+        });
+
+        $("#txtTienDatHang").text(totalPrice.toLocaleString() + ' đ');
+    }
+</script>
+
+<script>
+    $(document).ready(function(){
+        let tendangnhap = "@Context.Session.GetString("TenDangNhap")";
+        if(tendangnhap == null || tendangnhap == "") {
+            window.location.href = "@Url.Action("Index", "Home")";
+        }
+
+        GetTongTienHang();
+    });
+</script>

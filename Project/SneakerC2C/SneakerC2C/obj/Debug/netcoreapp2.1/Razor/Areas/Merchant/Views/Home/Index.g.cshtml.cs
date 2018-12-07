@@ -53,11 +53,15 @@ namespace AspNetCore
             WriteLiteral("\r\n<div class=\"container\">\r\n    <div class=\"Banhang-content\">\r\n        <h3>Quản lý shop của bạn một cách hiệu quả hơn</h3>\r\n        <h3>trên SNRKX với SNRKX - Kênh Người bán</h3>\r\n    </div>\r\n    <div class=\"Banhang-img\">\r\n        ");
             EndContext();
             BeginContext(328, 50, false);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d0a3175c10a0434d8c2db17f5ab26804", async() => {
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "201413a950ab4c5e8b14b7f2624abe0e", async() => {
 >>>>>>> e9818b6b2a2fe2af6d0c441537dc11eea1775a12
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "2e962faca3f2443483d81b89683520d6", async() => {
+>>>>>>> Stashed changes
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

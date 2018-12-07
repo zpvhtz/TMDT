@@ -105,6 +105,7 @@
                                 <div class="men-pro-item simpleCart_shelfItem">
                                     <div class="men-thumb-item">
                                         <div class="men-thumb-item">
+                                            <input class="txtid-sanpham" type="text" hidden value="@item.Id" />
                                             <div class="anhsanpham-3" style="background-image: url(/Hinh/SanPham/@item.Hinh);"></div>
                                         </div>
                                     </div>
@@ -229,7 +230,7 @@
 </div>
 <!-- //quanlysanpham -->
 <!--modal them sp-->
-<div class="modal fade" id="themModal" role="dialog">
+<div class="modal fade form1" id="themModal" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
         <form asp-controller="QuanLy" asp-action="ThemSP" enctype="multipart/form-data" method="post">
@@ -239,6 +240,7 @@
                     <h4 class="modal-title">Sản phẩm</h4>
                 </div>
                 <div class="modal-body">
+                    <div asp-validation-summary="All" class="text-danger"></div>
                     <div class="form-group">
                         <label>Mã sản phẩm</label>
                         <input type="text" class="form-control" id="item-them-ma" name="item_them_ma" required>
@@ -269,7 +271,7 @@
                     </div>
                     <div class="form-group">
                         <label>Giá</label>
-                        <input type="text" class="form-control" id="item-them-gia" name="item_them_gia">
+                        <input type="text" class="form-control" id="item-them-gia" name="item_them_gia" required> 
                     </div>
                     <div class="form-group">
                         <label>Hinh</label>
@@ -283,14 +285,6 @@
                         <label>Giảm giá</label>
                         <input type="text" class="form-control" id="item-them-giamgia" name="item_them_giamgia">
                     </div>
-                    @*<div class="form-group">
-                        <label>Size</label>
-                        <input type="number" class="form-control" id="item-them-size" name="item_them_size">
-                    </div>
-                    <div class="form-group">
-                        <label>Số lượng</label>
-                        <input type="number" class="form-control" id="item-them-soluong" name="item_them_soluong">
-                    </div>*@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-warning" id="btnThem">Thêm</button>
@@ -320,14 +314,17 @@
         </form>
     </div>
 </div>
-<!--modal size>
-    <div class="modal fade" id="suaModal" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-
-<!-- js -->
 <script type="text/javascript" src="~/maintemplate/js/jquery-2.1.4.min.js"></script>
-<script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js" type="text/javascript"></script>
+<script type="text/javascript">
+    //$(document).ready(function () {
+    //    $(".form1").validate({
+    //        rules:
+    //        {
+    //            item-them-gia: { digits:"Nhập số!"}
+    //        },
+    //    })
+    //})
    $(".pageNumber").click(function () {
         //Get addtional href
         let search = "@ViewBag.Search";

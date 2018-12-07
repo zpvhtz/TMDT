@@ -95,12 +95,13 @@
                                 <button class="btn btn-info Size" type="button" data-toggle="modal" data-target="#Chitietsizemodal">Size</button>
                                 <a asp-controller="SanPham" asp-action="UnLockSP" asp-route-ma="@item.MaSanPham" class="btn btn-danger">Mở khoá</a>
                                 break;
-                            default:
-                                {
-                                 <button class="btn btn-danger" type="button">Người bán đã khoá</button>  
-                                }
+                            case "Chưa duyệt":
+                                <a asp-controller="SanPham" asp-action="Duyet" asp-route-ma="@item.MaSanPham" class="btn btn-danger">Khoá</a>
                                 break;
-                        }
+                            default:
+                                <button class="btn btn-danger" type="button">Người bán đã khoá</button>
+                                    break;
+                            }
                     </td>
                 </tr>
                 }

@@ -1045,12 +1045,12 @@ color: #2fdab8;
     padding:2em !important;
 }
 .modal-title {
-    font-size: 1.1em;
+    font-size: 20px;
     color: #212121;
     text-transform: uppercase;
     font-weight: 700;
-    padding-left: 1em;
-    letter-spacing: 2px;
+	letter-spacing: 2px;
+	text-align: center;
 }
 .modal-body.modal-body-sub_agile input[type="text"],.modal-body.modal-body-sub_agile input[type="email"],
 .modal-body.modal-body-sub_agile input[type="password"], .modal-body.modal-body-sub_agile input[type="tel"] {

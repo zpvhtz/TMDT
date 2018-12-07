@@ -144,15 +144,7 @@
             }
             <div class="sort-grid">
                 <div class="sorting">
-                    <h6>Tìm kiếm theo</h6>
-                    @*<select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
-                            <option value="null">Mặc định</option>
-                            <option value="null">Mới Nhất</option>
-                            <option value="null">Bán Chạy</option>
-                            <option value="null">Giá(Cao - Thấp)</option>
-                            <option value="null">Giá(Thấp - Cao)</option>
-                        </select>*@
-                    <select class="form-control" id="sortList" onchange="window.location.href = SearchAndSort()">
+                    <select class="form-control frm-field required sect" id="sortList" onchange="window.location.href = SearchAndSort()">
                         <option selected disabled>Sắp xếp theo</option>
                         <option value="/Customer/SanPham/Sort?sortorder=moinhat">Mới nhất</option>
                         <option value="/Customer/SanPham/Sort?sortorder=banchay">Bán chạy</option>
@@ -167,7 +159,18 @@
             </div>
             <div class="men-wear-top">
                 <div id="top" class="callbacks_container">
-                    <img class="img-responsive" src="~/maintemplate/images/banner2.jpg" alt=" " />
+                    @*<ul class="rslides" id="slider3">*@
+                        @*<li>*@
+                            <img class="img-responsive" src="~/maintemplate/images/banner2.jpg" alt=" " />
+                        @*</li>
+                        <li>
+                            <img class="img-responsive" src="~/maintemplate/images/banner5.jpg" alt=" " />
+                        </li>
+                        <li>
+                            <img class="img-responsive" src="~/maintemplate/images/banner2.jpg" alt=" " />
+                        </li>*@
+
+                    </ul>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -213,12 +216,12 @@
                                     }
                                 </div>
                                 @*<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btnThemGioHang">
-                                        </fieldset>
-                                    </form>
-                                </div>*@
+                                <form action="#" method="post">
+                                    <fieldset>
+                                        <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btnThemGioHang">
+                                    </fieldset>
+                                </form>
+                            </div>*@
                             </div>
                         </div>
                     </div>
@@ -286,41 +289,6 @@
                         <div class="clearfix"></div>
                     }
                 }
-                @*if (j >= 8)
-                    {
-                        <div class="col-md-3 product-men">
-                            <div class="men-pro-item simpleCart_shelfItem">
-                                <div class="men-thumb-item">
-                                    <a href="#">
-                                        <div class="anhsanpham-4" style="background-image: url(/Hinh/SanPham/@item.Hinh);"></div>
-                                    </a>
-                                </div>
-                                <div class="item-info-product ">
-                                    <h4><a href="#" class="tieude_sanpham">@item.TenSanPham</a></h4>
-                                    <div class="info-product-price">
-                                        <div class="info-product-price">
-                                            @if (item.GiamGia != null && item.GiamGia != 0)
-                                            {
-                                                double gia = item.Gia * (100 - item.GiamGia) / 100 ?? 0;
-                                                <p><span class="item_price">@gia.ToString("#,###") đ</span> <del>- @item.Gia.Value.ToString("#,###") đ</del></p>
-                                            }
-                                            else
-                                            {
-                                                <p><span class="item_price">@item.Gia.Value.ToString("#,###") đ</span></p>
-                                            }
-                                        </div>
-                                    </div>
-                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                        <form action="#" method="post">
-                                            <fieldset>
-                                                <input type="submit" name="submit" id="btnThemVaoGioHang" value="Thêm vào giỏ hàng" class="button" />
-                                            </fieldset>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    }*@
             }
         </div>
     </div>

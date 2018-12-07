@@ -26,14 +26,16 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
        public string CurrentSort { get; set; }
         public List<SanPham> GetSanPhams()
         {
-            List<SanPham> list = ctx.SanPham.Include(tk => tk.IdTaiKhoanNavigation)
+            List<SanPham> list = ctx.SanPham.OrderByDescending(sp => sp.NgayDang)
+                                            .Include(tk => tk.IdTaiKhoanNavigation)
                                             .Include(h => h.IdHangSanPhamNavigation)
                                             .ToList();
             return list;
         }
         public List<SanPham> GetSanPhams(int pagenumber, int pagesize)
         {
-            List<SanPham> list=ctx.SanPham.Include(s => s.IdTaiKhoanNavigation)
+            List<SanPham> list=ctx.SanPham.OrderByDescending(sp=>sp.NgayDang)
+                                    .Include(s => s.IdTaiKhoanNavigation)
                                     .Include(s => s.IdHangSanPhamNavigation)
                                     .Skip((pagenumber - 1) * pagesize)
                                      .Take(pagesize)
@@ -61,6 +63,13 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             ViewBag.ShopSort = "Shop";
             ViewBag.TrangThai = "index";
             return View(list);
+        }
+        public IActionResult Duyet(string ma)
+        {
+            SanPham sp = ctx.SanPham.Where(h => h.MaSanPham == ma).SingleOrDefault();
+            sp.TinhTrang = "Không khoá";
+            ctx.SaveChanges();
+            return RedirectToAction("Index", "SanPham");
         }
         public IActionResult LockSP(string ma)
         {

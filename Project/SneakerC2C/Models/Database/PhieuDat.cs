@@ -13,6 +13,7 @@ namespace Models.Database
         public Guid Id { get; set; }
         public string MaPhieuDat { get; set; }
         public Guid IdTaiKhoan { get; set; }
+        public string DiaChi { get; set; }
         public DateTime? NgayTao { get; set; }
         public double? TongTien { get; set; }
         public string TinhTrang { get; set; }

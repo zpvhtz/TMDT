@@ -86,7 +86,7 @@ namespace AspNetCore
             WriteLiteral("</h4>\r\n                <hr>\r\n                <div class=\"menu_cus\">\r\n                    ");
             EndContext();
             BeginContext(459, 441, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "54ee40a6e26c4d32872815a0ec99c43c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5edd918c4447408887aff04061105166", async() => {
                 BeginContext(560, 336, true);
                 WriteLiteral(@"
                         <div class=""menu_cus_icon"" style=""background-color: #2fdab8;"">
@@ -120,7 +120,7 @@ namespace AspNetCore
             WriteLiteral("\r\n                </div>\r\n                <div class=\"menu_cus\">\r\n                    ");
             EndContext();
             BeginContext(986, 450, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e68b8fa2efe3441db6f4c13f99609d50", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "14de357b0363452f9c84838b7198aaf9", async() => {
                 BeginContext(1085, 347, true);
                 WriteLiteral(@"
                         <div class=""menu_cus_icon"" style=""background-color:rgb(68, 181, 255);"">
@@ -154,7 +154,7 @@ namespace AspNetCore
             WriteLiteral("\r\n                </div>\r\n                <div class=\"menu_cus\">\r\n                    ");
             EndContext();
             BeginContext(1522, 444, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "19ef9303d32349aeb8e47b69ddd06f0b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "02f8a57861624d6d93acdc9294b57d01", async() => {
                 BeginContext(1617, 345, true);
                 WriteLiteral(@"
                         <div class=""menu_cus_icon"" style=""background-color:rgb(255, 193, 7);"">
@@ -204,7 +204,7 @@ namespace AspNetCore
                 ");
             EndContext();
             BeginContext(2627, 1294, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "895f50d734b24d8cb0380ec8872b8900", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1bfcf10f370f46db8d5226ad5716f197", async() => {
                 BeginContext(2695, 157, true);
                 WriteLiteral("\r\n                    <div class=\"cus_tt_canhan\">\r\n                        <label>Email</label>\r\n                        <input type=\"email\" id=\"txtSuaEmail\"");
                 EndContext();
@@ -270,7 +270,7 @@ WriteAttributeValue("", 3337, Model.DienThoai, 3337, 16, false);
             WriteLiteral("    <!-- js -->\r\n    ");
             EndContext();
             BeginContext(3994, 84, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "042b9f08db9f4a2d99ee1692b5c57e8c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e0e3c7b93dea4bcdb3825a2104136b38", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

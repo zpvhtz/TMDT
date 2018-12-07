@@ -71,3 +71,4 @@ F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Area
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLyTaiKhoan\DoiMatKhau.g.cshtml.cs
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLyTaiKhoan\ThongTinDiaChi.g.cshtml.cs
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLyTaiKhoan\ThongTinTaiKhoan.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\DonHang\DatHang.g.cshtml.cs

@@ -372,6 +372,100 @@ AS
 	DEALLOCATE CUR
 GO
 
+CREATE TRIGGER TG_CongSoLuong_SizeSanPham_PhieuDat ON PhieuDat AFTER UPDATE
+AS
+	DECLARE @IdPhieuDat UNIQUEIDENTIFIER
+	DECLARE @TinhTrang NVARCHAR(20)
+	--
+	SELECT @IdPhieuDat = Id, @TinhTrang = TinhTrang
+	FROM inserted
+	--
+	IF(@TinhTrang = N'Đã huỷ')
+	BEGIN
+		DECLARE @IdSizeSanPham UNIQUEIDENTIFIER
+		DECLARE @SoLuong INT
+		--
+		DECLARE CUR CURSOR FOR
+		SELECT IdSizeSanPham, SoLuong
+		FROM ChiTietPhieuDat
+		WHERE IdPhieuDat = @IdPhieuDat
+		--
+		OPEN CUR
+		FETCH NEXT FROM CUR INTO @IdSizeSanPham, @SoLuong
+		WHILE @@FETCH_STATUS = 0
+		BEGIN
+			UPDATE SizeSanPham
+			SET SoLuong = SoLuong + @SoLuong
+			WHERE Id = @IdSizeSanPham
+			--
+			FETCH NEXT FROM CUR INTO @IdSizeSanPham, @SoLuong
+		END
+		CLOSE CUR
+		DEALLOCATE CUR
+	END
+GO
+
+CREATE TRIGGER TG_ThemPhieuGiao_PhieuDat ON PhieuDat AFTER UPDATE
+AS
+	DECLARE @TinhTrang NVARCHAR(20)
+	DECLARE @IdTaiKhoan UNIQUEIDENTIFIER
+	DECLARE @IdPhieuDat UNIQUEIDENTIFIER
+	DECLARE @DiaChi NVARCHAR(200)
+	DECLARE @TongTien FLOAT
+	--
+	SELECT @TinhTrang = TinhTrang, @IdTaiKhoan = IdTaiKhoan, @DiaChi = DiaChi, @TongTien = TongTien, @IdPhieuDat = Id
+	FROM inserted
+	--
+	IF(@TinhTrang = N'Đã xác nhận')
+	BEGIN
+		DECLARE @MaPhieuGiao VARCHAR(10)
+		--Lấy mã phiếu giao mới nhất--
+		SELECT TOP 1 @MaPhieuGiao = MaPhieuGiao
+		FROM PhieuGiao
+		ORDER BY CAST(SUBSTRING(MaPhieuGiao, 4, LEN(MaPhieuGiao)) AS INT) DESC
+		--
+		DECLARE @IdPhieuGiao UNIQUEIDENTIFIER
+		SET @IdPhieuGiao = NEWID()
+		--
+		IF(@MaPhieuGiao IS NULL)
+		BEGIN
+			INSERT INTO PhieuGiao
+				VALUES(@IdPhieuGiao, 'PG-1', '', @IdTaiKhoan, @DiaChi, GETDATE(), '', @TongTien, NULL, N'Đang chuẩn bị')
+		END
+		ELSE
+		BEGIN
+			--Lấy mã mới--
+			DECLARE @STT INT = CAST(SUBSTRING(@MaPhieuGiao, 4, LEN(@MaPhieuGiao)) AS INT)
+			SET @STT = @STT + 1
+			SET @MaPhieuGiao = 'PG-' + CONVERT(VARCHAR(7), @STT)
+			--
+			INSERT INTO PhieuGiao
+				VALUES(@IdPhieuGiao, @MaPhieuGiao, '', @IdTaiKhoan, @DiaChi, GETDATE(), '', @TongTien, NULL, N'Đang chuẩn bị')
+		END
+		--Thêm vào chi tiết--
+		DECLARE @IdSizeSanPham UNIQUEIDENTIFIER
+		DECLARE @SoLuong INT	
+		DECLARE @Gia FLOAT
+		--
+		DECLARE CUR CURSOR FOR
+		SELECT IdSizeSanPham, SoLuong, Gia
+		FROM ChiTietPhieuDat
+		WHERE IdPhieuDat = @IdPhieuDat
+		--
+		OPEN CUR
+		FETCH NEXT FROM CUR INTO @IdSizeSanPham, @SoLuong, @Gia
+		WHILE @@FETCH_STATUS = 0
+		BEGIN
+			INSERT INTO ChiTietPhieuGiao
+				VALUES(@IdPhieuGiao, @IdSizeSanPham, @SoLuong, @Gia)
+			--
+			FETCH NEXT FROM CUR INTO @IdSizeSanPham, @SoLuong, @Gia
+		END
+		CLOSE CUR
+		DEALLOCATE CUR
+	END
+GO
+
 --DỮ LIỆU--
 INSERT INTO LoaiNguoiDung
 	VALUES ('75523BB6-C366-4A28-A85C-B4C8C1D5747A', 'USR-WMT', N'Webmaster', N'Không khoá'),

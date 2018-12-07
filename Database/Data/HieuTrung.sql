@@ -53,66 +53,66 @@ INSERT INTO LichSuGianHang
 		  ('1640280A-A9BC-485C-8FD1-5A3A3D2546A7', '739E7B3F-D6B8-4C48-81B4-487B75589E80', '2AE717B5-01AC-47DB-97FF-550130D1C537', GETDATE())
 GO
 
-CREATE TRIGGER TG_ThemThoiGian_GianHang ON LichSuGianHang AFTER INSERT
-AS
-	DECLARE @IdLichSuGianHang UNIQUEIDENTIFIER
-	DECLARE @IdTaiKhoan UNIQUEIDENTIFIER
-	DECLARE @IdGianHang UNIQUEIDENTIFIER
-	DECLARE @ThoiGian INT
-	DECLARE @ThoiHanGianHang DATETIME
-	--
-	DECLARE CUR CURSOR FOR
-	SELECT i.Id, i.IdTaiKhoan, i.IdGianHang, g.ThoiGian
-	FROM inserted i JOIN GianHang g ON i.IdGianHang = g.Id
-	--
-	OPEN CUR
-	FETCH NEXT FROM CUR INTO @IdLichSuGianHang, @IdTaiKhoan, @IdGianHang, @ThoiGian
-	WHILE @@FETCH_STATUS = 0
-	BEGIN
-		SELECT @ThoiHanGianHang = ThoiHanGianHang
-		FROM TaiKhoan
-		WHERE Id = @IdTaiKhoan
-		--
-		IF(@ThoiHanGianHang < GETDATE())
-		BEGIN
-			--Update LichSuGianHang--
-			UPDATE LichSuGianHang
-			SET NgayBatDau = GETDATE(), NgayKetThuc = DATEADD(DAY, @ThoiGian, GETDATE())
-			WHERE Id = @IdLichSuGianHang
-			--Update TaiKhoan--
-			UPDATE TaiKhoan
-			SET ThoiHanGianHang = DATEADD(DAY, @ThoiGian, GETDATE())
-			WHERE Id = @IdTaiKhoan
-		END
-		ELSE
-		BEGIN
-			--Update LichSuGianHang--
-			UPDATE LichSuGianHang
-			SET NgayBatDau = @ThoiHanGianHang, NgayKetThuc = DATEADD(DAY, @ThoiGian, @ThoiHanGianHang)
-			WHERE Id = @IdLichSuGianHang
-			--Update TaiKhoan--
-			UPDATE TaiKhoan
-			SET	ThoiHanGianHang = DATEADD(DAY, @ThoiGian, ThoiHanGianHang)
-			WHERE Id = @IdTaiKhoan
-		END
-		FETCH NEXT FROM CUR INTO @IdTaiKhoan, @IdGianHang, @ThoiGian
-	END
-	CLOSE CUR
-	DEALLOCATE CUR
-GO
+--CREATE TRIGGER TG_ThemThoiGian_GianHang ON LichSuGianHang AFTER INSERT
+--AS
+--	DECLARE @IdLichSuGianHang UNIQUEIDENTIFIER
+--	DECLARE @IdTaiKhoan UNIQUEIDENTIFIER
+--	DECLARE @IdGianHang UNIQUEIDENTIFIER
+--	DECLARE @ThoiGian INT
+--	DECLARE @ThoiHanGianHang DATETIME
+--	--
+--	DECLARE CUR CURSOR FOR
+--	SELECT i.Id, i.IdTaiKhoan, i.IdGianHang, g.ThoiGian
+--	FROM inserted i JOIN GianHang g ON i.IdGianHang = g.Id
+--	--
+--	OPEN CUR
+--	FETCH NEXT FROM CUR INTO @IdLichSuGianHang, @IdTaiKhoan, @IdGianHang, @ThoiGian
+--	WHILE @@FETCH_STATUS = 0
+--	BEGIN
+--		SELECT @ThoiHanGianHang = ThoiHanGianHang
+--		FROM TaiKhoan
+--		WHERE Id = @IdTaiKhoan
+--		--
+--		IF(@ThoiHanGianHang < GETDATE())
+--		BEGIN
+--			--Update LichSuGianHang--
+--			UPDATE LichSuGianHang
+--			SET NgayBatDau = GETDATE(), NgayKetThuc = DATEADD(DAY, @ThoiGian, GETDATE())
+--			WHERE Id = @IdLichSuGianHang
+--			--Update TaiKhoan--
+--			UPDATE TaiKhoan
+--			SET ThoiHanGianHang = DATEADD(DAY, @ThoiGian, GETDATE())
+--			WHERE Id = @IdTaiKhoan
+--		END
+--		ELSE
+--		BEGIN
+--			--Update LichSuGianHang--
+--			UPDATE LichSuGianHang
+--			SET NgayBatDau = @ThoiHanGianHang, NgayKetThuc = DATEADD(DAY, @ThoiGian, @ThoiHanGianHang)
+--			WHERE Id = @IdLichSuGianHang
+--			--Update TaiKhoan--
+--			UPDATE TaiKhoan
+--			SET	ThoiHanGianHang = DATEADD(DAY, @ThoiGian, ThoiHanGianHang)
+--			WHERE Id = @IdTaiKhoan
+--		END
+--		FETCH NEXT FROM CUR INTO @IdTaiKhoan, @IdGianHang, @ThoiGian
+--	END
+--	CLOSE CUR
+--	DEALLOCATE CUR
+--GO
 
-CREATE TRIGGER TG_SuaThoiGian_GianHang ON LichSuGianHang AFTER UPDATE
-AS
-	DECLARE @ThoiGian INT
-	DECLARE @IdTaiKhoan UNIQUEIDENTIFIER
-	--
-	SELECT @IdTaiKhoan = i.IdTaiKhoan, @ThoiGian = g.ThoiGian
-	FROM inserted i JOIN GianHang g ON i.IdGianHang = g.Id
-	--
-	UPDATE TaiKhoan
-	SET ThoiHanGianHang = DATEADD(DAY, -@ThoiGian, ThoiHanGianHang)
-	WHERE Id = @IdTaiKhoan
-GO
+--CREATE TRIGGER TG_SuaThoiGian_GianHang ON LichSuGianHang AFTER UPDATE
+--AS
+--	DECLARE @ThoiGian INT
+--	DECLARE @IdTaiKhoan UNIQUEIDENTIFIER
+--	--
+--	SELECT @IdTaiKhoan = i.IdTaiKhoan, @ThoiGian = g.ThoiGian
+--	FROM inserted i JOIN GianHang g ON i.IdGianHang = g.Id
+--	--
+--	UPDATE TaiKhoan
+--	SET ThoiHanGianHang = DATEADD(DAY, -@ThoiGian, ThoiHanGianHang)
+--	WHERE Id = @IdTaiKhoan
+--GO
 
 CREATE TRIGGER TG_TruSoLuong_SizeSanPham_ChiTietPhieuDat ON ChiTietPhieuDat AFTER INSERT
 AS
@@ -155,35 +155,68 @@ AS
 			--
 			FETCH NEXT FROM CUR INTO @IdSizeSanPham, @SoLuong
 		END
+		CLOSE CUR
+		DEALLOCATE CUR
 	END
 GO
 
---CREATE TRIGGER TG_ThemPhieuGiao_PhieuDat ON PhieuDat AFTER UPDATE
---AS
---	DECLARE @TinhTrang NVARCHAR(20)
---	DECLARE @IdTaiKhoan UNIQUEIDENTIFIER
---	DECLARE @DiaChi NVARCHAR(200)
---	DECLARE @TongTien FLOAT
---	--
---	SELECT @TinhTrang = TinhTrang, @IdTaiKhoan = IdTaiKhoan, @DiaChi = DiaChi, @TongTien = TongTien
---	FROM inserted
---	--
---	IF(@TinhTrang = N'Đã xác nhận')
---	BEGIN
---		DECLARE @MaPhieuGiao VARCHAR(10)
---		--Lấy mã phiếu giao mới nhất--
---		SELECT TOP 1 @MaPhieuGiao = MaPhieuGiao
---		FROM PhieuGiao
---		ORDER BY CAST(SUBSTRING(MaPhieuGiao, 4, LEN(MaPhieuGiao)) AS INT) DESC
---		--
---		IF(@MaPhieuGiao IS NULL)
---		BEGIN
---			INSERT INTO PhieuGiao
---				VALUES(NEWID(), 'PG-1', '', @IdTaiKhoan, @DiaChi, GETDATE(), '', @TongTien, )
---		END
---		ELSE
---		BEGIN
-
---		END
---	END
---GO
+CREATE TRIGGER TG_ThemPhieuGiao_PhieuDat ON PhieuDat AFTER UPDATE
+AS
+	DECLARE @TinhTrang NVARCHAR(20)
+	DECLARE @IdTaiKhoan UNIQUEIDENTIFIER
+	DECLARE @IdPhieuDat UNIQUEIDENTIFIER
+	DECLARE @DiaChi NVARCHAR(200)
+	DECLARE @TongTien FLOAT
+	--
+	SELECT @TinhTrang = TinhTrang, @IdTaiKhoan = IdTaiKhoan, @DiaChi = DiaChi, @TongTien = TongTien, @IdPhieuDat = Id
+	FROM inserted
+	--
+	IF(@TinhTrang = N'Đã xác nhận')
+	BEGIN
+		DECLARE @MaPhieuGiao VARCHAR(10)
+		--Lấy mã phiếu giao mới nhất--
+		SELECT TOP 1 @MaPhieuGiao = MaPhieuGiao
+		FROM PhieuGiao
+		ORDER BY CAST(SUBSTRING(MaPhieuGiao, 4, LEN(MaPhieuGiao)) AS INT) DESC
+		--
+		DECLARE @IdPhieuGiao UNIQUEIDENTIFIER
+		SET @IdPhieuGiao = NEWID()
+		--
+		IF(@MaPhieuGiao IS NULL)
+		BEGIN
+			INSERT INTO PhieuGiao
+				VALUES(@IdPhieuGiao, 'PG-1', '', @IdTaiKhoan, @DiaChi, GETDATE(), '', @TongTien, NULL, N'Đang chuẩn bị')
+		END
+		ELSE
+		BEGIN
+			--Lấy mã mới--
+			DECLARE @STT INT = CAST(SUBSTRING(@MaPhieuGiao, 4, LEN(@MaPhieuGiao)) AS INT)
+			SET @STT = @STT + 1
+			SET @MaPhieuGiao = 'PG-' + CONVERT(VARCHAR(7), @STT)
+			--
+			INSERT INTO PhieuGiao
+				VALUES(@IdPhieuGiao, @MaPhieuGiao, '', @IdTaiKhoan, @DiaChi, GETDATE(), '', @TongTien, NULL, N'Đang chuẩn bị')
+		END
+		--Thêm vào chi tiết--
+		DECLARE @IdSizeSanPham UNIQUEIDENTIFIER
+		DECLARE @SoLuong INT	
+		DECLARE @Gia FLOAT
+		--
+		DECLARE CUR CURSOR FOR
+		SELECT IdSizeSanPham, SoLuong, Gia
+		FROM ChiTietPhieuDat
+		WHERE IdPhieuDat = @IdPhieuDat
+		--
+		OPEN CUR
+		FETCH NEXT FROM CUR INTO @IdSizeSanPham, @SoLuong, @Gia
+		WHILE @@FETCH_STATUS = 0
+		BEGIN
+			INSERT INTO ChiTietPhieuGiao
+				VALUES(@IdPhieuGiao, @IdSizeSanPham, @SoLuong, @Gia)
+			--
+			FETCH NEXT FROM CUR INTO @IdSizeSanPham, @SoLuong, @Gia
+		END
+		CLOSE CUR
+		DEALLOCATE CUR
+	END
+GO

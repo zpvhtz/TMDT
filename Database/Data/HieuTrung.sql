@@ -162,8 +162,10 @@ GO
 --AS
 --	DECLARE @TinhTrang NVARCHAR(20)
 --	DECLARE @IdTaiKhoan UNIQUEIDENTIFIER
+--	DECLARE @DiaChi NVARCHAR(200)
+--	DECLARE @TongTien FLOAT
 --	--
---	SELECT @TinhTrang = TinhTrang, @IdTaiKhoan = IdTaiKhoan
+--	SELECT @TinhTrang = TinhTrang, @IdTaiKhoan = IdTaiKhoan, @DiaChi = DiaChi, @TongTien = TongTien
 --	FROM inserted
 --	--
 --	IF(@TinhTrang = N'Đã xác nhận')
@@ -177,7 +179,7 @@ GO
 --		IF(@MaPhieuGiao IS NULL)
 --		BEGIN
 --			INSERT INTO PhieuGiao
---				VALUES(NEWID(), 'PG-1', '', @IdTaiKhoan, )
+--				VALUES(NEWID(), 'PG-1', '', @IdTaiKhoan, @DiaChi, GETDATE(), '', @TongTien, )
 --		END
 --		ELSE
 --		BEGIN

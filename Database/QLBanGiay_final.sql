@@ -83,7 +83,7 @@ CREATE TABLE PhieuGiao
 	NgayTao DATETIME,
 	NgayGiao DATETIME,
 	TongTien FLOAT,
-	DanhGia NVARCHAR(20), --Chưa đánh giá/Đã đánh giá--
+	DanhGia INT, --Chưa đánh giá/Đã đánh giá--
 	TinhTrang NVARCHAR(20)
 )
 

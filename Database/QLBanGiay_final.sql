@@ -83,13 +83,14 @@ CREATE TABLE PhieuGiao
 	NgayTao DATETIME,
 	NgayGiao DATETIME,
 	TongTien FLOAT,
+	DanhGia NVARCHAR(20), --Chưa đánh giá/Đã đánh giá--
 	TinhTrang NVARCHAR(20)
 )
 
 CREATE TABLE ChiTietPhieuGiao
 (
 	IdPhieuGiao UNIQUEIDENTIFIER NOT NULL, --PK, FK--
-	IdSanPham UNIQUEIDENTIFIER NOT NULL, --PK, FK--
+	IdSizeSanPham UNIQUEIDENTIFIER NOT NULL, --PK, FK--
 	SoLuong INT,
 	Gia FLOAT
 )
@@ -107,7 +108,7 @@ CREATE TABLE PhieuDat
 CREATE TABLE ChiTietPhieuDat
 (
 	IdPhieuDat UNIQUEIDENTIFIER NOT NULL, --PK, FK--
-	IdSanPham UNIQUEIDENTIFIER NOT NULL, --PK, FK--
+	IdSizeSanPham UNIQUEIDENTIFIER NOT NULL, --PK, FK--
 	SoLuong INT,
 	Gia FLOAT
 )
@@ -234,8 +235,8 @@ ALTER TABLE PhieuGiao
 ALTER TABLE ChiTietPhieuGiao
 	ADD
 		CONSTRAINT FK_ChiTietPhieuGiao_IdPhieuGiao FOREIGN KEY (IdPhieuGiao) REFERENCES PhieuGiao(Id),
-		CONSTRAINT FK_ChiTietPhieuGiao_IdSanPham FOREIGN KEY (IdSanPham) REFERENCES SanPham(Id),
-		CONSTRAINT PK_ChiTietPhieuGiao_IdPhieuGiao_IdSanPham PRIMARY KEY (IdPhieuGiao, IdSanPham)
+		CONSTRAINT FK_ChiTietPhieuGiao_IdSizeSanPham FOREIGN KEY (IdSizeSanPham) REFERENCES SizeSanPham(Id),
+		CONSTRAINT PK_ChiTietPhieuGiao_IdPhieuGiao_IdSanPham PRIMARY KEY (IdPhieuGiao, IdSizeSanPham)
 
 ALTER TABLE PhieuDat
 	ADD
@@ -244,8 +245,8 @@ ALTER TABLE PhieuDat
 ALTER TABLE ChiTietPhieuDat
 	ADD
 		CONSTRAINT FK_ChiTietPhieuDat_IdPhieuDat FOREIGN KEY (IdPhieuDat) REFERENCES PhieuDat(Id),
-		CONSTRAINT FK_ChiTietPhieuDat_IdSanPham FOREIGN KEY (IdSanPham) REFERENCES SanPham(Id),
-		CONSTRAINT PK_ChiTietPhieuDat_IdPhieuDat_IdSanPham PRIMARY KEY (IdPhieuDat, IdSanPham)
+		CONSTRAINT FK_ChiTietPhieuDat_IdSizeSanPham FOREIGN KEY (IdSizeSanPham) REFERENCES SizeSanPham(Id),
+		CONSTRAINT PK_ChiTietPhieuDat_IdPhieuDat_IdSanPham PRIMARY KEY (IdPhieuDat, IdSizeSanPham)
 
 ALTER TABLE DiaChi
 	ADD

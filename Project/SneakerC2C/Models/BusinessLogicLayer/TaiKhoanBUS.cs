@@ -229,9 +229,9 @@ namespace Models.BusinessLogicLayer
             context.SaveChanges();
         }
 
-        public string Activate(string tendangnhap)
+        public string Activate(string id)
         {
-            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap)
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.Id == Guid.Parse(id))
                                                 .Include(tk => tk.IdLoaiNguoiDungNavigation)
                                                 .SingleOrDefault();
             if(taikhoan.TinhTrang != "Chưa kích hoạt")

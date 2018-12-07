@@ -162,10 +162,10 @@ namespace SneakerC2C.Areas.Customer.Controllers
             return Json(taikhoan);
         }
 
-        public IActionResult Activate(string tendangnhap)
+        public IActionResult Activate(string key)
         {
             TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
-            string thongbao = taikhoanbus.Activate(tendangnhap);
+            string thongbao = taikhoanbus.Activate(key);
             return RedirectToAction("Index", "Home", new { thongbao = thongbao });
         }
 
@@ -200,7 +200,7 @@ namespace SneakerC2C.Areas.Customer.Controllers
             taikhoan = taikhoanbus.CheckTaiKhoan(tendangnhap);
             string kichhoat = "Để kích hoạt tài khoản, vui lòng nhấn vào link phía dưới: \n";
             var local = HttpContext.Request.Host;
-            kichhoat += "https://" + local.ToString() + "/Customer/TaiKhoan/Activate?tendangnhap=" + tendangnhap;
+            kichhoat += "https://" + local.ToString() + "/Customer/TaiKhoan/Activate?key=" + taikhoan.Id;
             var client = new SmtpClient
             {
                 Host = "smtp.gmail.com",

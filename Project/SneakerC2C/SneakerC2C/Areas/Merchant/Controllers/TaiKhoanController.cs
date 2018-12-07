@@ -13,59 +13,8 @@ using Models.Database;
 namespace SneakerC2C.Areas.Merchant.Controllers
 {
     [Area("Merchant")]
-    public class TaiKhoanController : BaseController
+    public class TaiKhoanController : Controller
     {
-        public IActionResult ThongTinTaiKhoan()
-        {
-            string sessionval = HttpContext.Session.GetString("TenDangNhap");
-            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
-            TaiKhoan taikhoan = new TaiKhoan();
-            if (sessionval != "" && sessionval != null)
-            {
-                taikhoan = taikhoanbus.CheckTaiKhoan(sessionval);
-            }
-            else
-            {
-                taikhoan = null;
-            }
-            return View(taikhoan);
-        }
-
-        public IActionResult ThongTinDiaChi()
-        {
-            string sessionval = HttpContext.Session.GetString("TenDangNhap");
-            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
-            TaiKhoan taikhoan = new TaiKhoan();
-            if (sessionval != "" && sessionval != null)
-            {
-                taikhoan = taikhoanbus.CheckTaiKhoan(sessionval);
-            }
-            else
-            {
-                taikhoan = null;
-            }
-            TinhThanhBUS tinhthanhbus = new TinhThanhBUS();
-            List<TinhThanh> tinhthanh = tinhthanhbus.GetTinhThanhs();
-            ViewBag.TinhThanh = tinhthanh;
-            return View(taikhoan);
-        }
-
-        public IActionResult DoiMatKhau()
-        {
-            string sessionval = HttpContext.Session.GetString("TenDangNhap");
-            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
-            TaiKhoan taikhoan = new TaiKhoan();
-            if (sessionval != "" && sessionval != null)
-            {
-                taikhoan = taikhoanbus.CheckTaiKhoan(sessionval);
-            }
-            else
-            {
-                taikhoan = null;
-            }
-            return View(taikhoan);
-        }
-
         public string EditDiaChi(string tendangnhap, string duong, string tinhthanh)
         {
             DiaChiBUS diachibus = new DiaChiBUS();
@@ -95,11 +44,10 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             return thongbao;
         }
 
-        public string CreateDiaChi(string tendangnhap, string diachi, string tinhthanh)
+        public void CreateDiaChi(string tendangnhap, string diachi, string tinhthanh)
         {
             DiaChiBUS diachibus = new DiaChiBUS();
-            string thongbao = diachibus.CreateDiaChi(tendangnhap, diachi, tinhthanh);
-            return thongbao;
+            diachibus.CreateDiaChi(tendangnhap, diachi, tinhthanh);
         }
 
         public async Task<IActionResult> CreateTaiKhoan(string tendangnhap, string matkhau, string confirmmatkhau, string ten, string tenshop, string email, string dienthoai, string cmnd, string diachi, string tinhthanh)
@@ -113,7 +61,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
 
             TaiKhoanBUS taikhoan = new TaiKhoanBUS();
             thongbao = taikhoan.CreateTaiKhoan(tendangnhap, matkhau, ten, tenshop, email, dienthoai, cmnd, "EA9FC9A5-9C26-40A4-9E8E-BB3DAE4E0156", "Chưa kích hoạt");
-            thongbao = CreateDiaChi(tendangnhap, diachi, tinhthanh);
+            CreateDiaChi(tendangnhap, diachi, tinhthanh);
             if (thongbao == "Vui lòng kiểm tra hộp thư email để kích hoạt tài khoản")
             {
                 await ActivationMail(tendangnhap);
@@ -142,10 +90,10 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             return Json(taikhoan);
         }
 
-        public IActionResult Activate(string tendangnhap)
+        public IActionResult Activate(string key)
         {
             TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
-            string thongbao = taikhoanbus.Activate(tendangnhap);
+            string thongbao = taikhoanbus.Activate(key);
             return RedirectToAction("Index", "Home", new { thongbao = thongbao });
         }
 
@@ -180,7 +128,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             taikhoan = taikhoanbus.CheckTaiKhoan(tendangnhap);
             string kichhoat = "Để kích hoạt tài khoản, vui lòng nhấn vào link phía dưới: \n";
             var local = HttpContext.Request.Host;
-            kichhoat += "https://" + local.ToString() + "/Merchant/TaiKhoan/Activate?tendangnhap=" + tendangnhap;
+            kichhoat += "https://" + local.ToString() + "/Merchant/TaiKhoan/Activate?key=" + taikhoan.Id;
             var client = new SmtpClient
             {
                 Host = "smtp.gmail.com",

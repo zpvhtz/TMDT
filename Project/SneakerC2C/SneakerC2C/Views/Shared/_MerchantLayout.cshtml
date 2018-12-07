@@ -186,14 +186,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span></span>
                             </div>
                             <div class="styled-input">
-                                @*<input type="text" name="diachi" id="txtDiaChi" pattern=".{6,}" required oninvalid="this.setCustomValidity('Địa chỉ chứa ít nhất 6 ký tự')" onchange="this.setCustomValidity('')">*@
                                 <select id="cbbTinhThanh" name="tinhthanh" class="combobox-format">
                                     @foreach(var item in Model)
                                     {
                                         <option value="@item.Id">@item.TenTinhThanh</option>
                                     }
                                 </select>
-                                @*<label>Địa chỉ</label>*@
                                 <span></span>
                             </div>
                             <div class="checkbox">

@@ -411,28 +411,6 @@ namespace SneakerC2C.Areas.Merchant.Controllers
         }
         public IActionResult ThemSP(string item_them_ma,string item_them_tensp,string item_them_mau, string item_them_hang, string item_them_phanloai, string item_them_gia, string item_them_chitiet, string item_them_giamgia, IFormFile item_them_hinh,int item_them_size,int item_them_soluong)
         {
-                //long size = item_them_hinh.Sum(f => f.Length);
-
-                //// full path to file in temp location
-                
-                //foreach (var formFile in item_them_hinh)
-                //{
-                //    if (formFile.Length > 0)
-                //    {
-                //        using (var stream = new FileStream(filePath, FileMode.Create))
-                //        {
-                //        formFile.CopyTo(stream);
-                //        }
-                //    }
-                //}
-            if(item_them_hinh != null)
-            {
-                var path = Directory.GetCurrentDirectory() + @"/wwwroot/Hinh/SanPham/" + item_them_hinh.FileName;
-                using (var stream = new FileStream(path, FileMode.Create))
-                {
-                    item_them_hinh.CopyTo(stream);
-                }
-            }
             SanPham sp = new SanPham();
      
             //string layma = ctx.SanPham
@@ -456,10 +434,16 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             sp.PhanLoai = item_them_phanloai;
             sp.Gia = double.Parse(item_them_gia);
 
-
-
-            // full path to file in temp location
-            sp.Hinh = item_them_hinh.FileName;
+            if (item_them_hinh != null)
+            {
+                var path = Directory.GetCurrentDirectory() + @"/wwwroot/Hinh/SanPham/" + item_them_hinh.FileName;
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    item_them_hinh.CopyTo(stream);
+                }
+                // full path to file in temp location
+                sp.Hinh = item_them_hinh.FileName;
+            }
             sp.ChiTiet = item_them_chitiet;
             sp.NgayDang = DateTime.Now;
             sp.TinhTrang = "Không khoá";

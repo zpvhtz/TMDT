@@ -53,112 +53,170 @@ INSERT INTO LichSuGianHang
 		  ('1640280A-A9BC-485C-8FD1-5A3A3D2546A7', '739E7B3F-D6B8-4C48-81B4-487B75589E80', '2AE717B5-01AC-47DB-97FF-550130D1C537', GETDATE())
 GO
 
-CREATE TRIGGER TG_ThemThoiGian_GianHang ON LichSuGianHang AFTER INSERT
+--CREATE TRIGGER TG_ThemThoiGian_GianHang ON LichSuGianHang AFTER INSERT
+--AS
+--	DECLARE @IdLichSuGianHang UNIQUEIDENTIFIER
+--	DECLARE @IdTaiKhoan UNIQUEIDENTIFIER
+--	DECLARE @IdGianHang UNIQUEIDENTIFIER
+--	DECLARE @ThoiGian INT
+--	DECLARE @ThoiHanGianHang DATETIME
+--	--
+--	DECLARE CUR CURSOR FOR
+--	SELECT i.Id, i.IdTaiKhoan, i.IdGianHang, g.ThoiGian
+--	FROM inserted i JOIN GianHang g ON i.IdGianHang = g.Id
+--	--
+--	OPEN CUR
+--	FETCH NEXT FROM CUR INTO @IdLichSuGianHang, @IdTaiKhoan, @IdGianHang, @ThoiGian
+--	WHILE @@FETCH_STATUS = 0
+--	BEGIN
+--		SELECT @ThoiHanGianHang = ThoiHanGianHang
+--		FROM TaiKhoan
+--		WHERE Id = @IdTaiKhoan
+--		--
+--		IF(@ThoiHanGianHang < GETDATE())
+--		BEGIN
+--			--Update LichSuGianHang--
+--			UPDATE LichSuGianHang
+--			SET NgayBatDau = GETDATE(), NgayKetThuc = DATEADD(DAY, @ThoiGian, GETDATE())
+--			WHERE Id = @IdLichSuGianHang
+--			--Update TaiKhoan--
+--			UPDATE TaiKhoan
+--			SET ThoiHanGianHang = DATEADD(DAY, @ThoiGian, GETDATE())
+--			WHERE Id = @IdTaiKhoan
+--		END
+--		ELSE
+--		BEGIN
+--			--Update LichSuGianHang--
+--			UPDATE LichSuGianHang
+--			SET NgayBatDau = @ThoiHanGianHang, NgayKetThuc = DATEADD(DAY, @ThoiGian, @ThoiHanGianHang)
+--			WHERE Id = @IdLichSuGianHang
+--			--Update TaiKhoan--
+--			UPDATE TaiKhoan
+--			SET	ThoiHanGianHang = DATEADD(DAY, @ThoiGian, ThoiHanGianHang)
+--			WHERE Id = @IdTaiKhoan
+--		END
+--		FETCH NEXT FROM CUR INTO @IdTaiKhoan, @IdGianHang, @ThoiGian
+--	END
+--	CLOSE CUR
+--	DEALLOCATE CUR
+--GO
+
+--CREATE TRIGGER TG_SuaThoiGian_GianHang ON LichSuGianHang AFTER UPDATE
+--AS
+--	DECLARE @ThoiGian INT
+--	DECLARE @IdTaiKhoan UNIQUEIDENTIFIER
+--	--
+--	SELECT @IdTaiKhoan = i.IdTaiKhoan, @ThoiGian = g.ThoiGian
+--	FROM inserted i JOIN GianHang g ON i.IdGianHang = g.Id
+--	--
+--	UPDATE TaiKhoan
+--	SET ThoiHanGianHang = DATEADD(DAY, -@ThoiGian, ThoiHanGianHang)
+--	WHERE Id = @IdTaiKhoan
+--GO
+
+CREATE TRIGGER TG_TruSoLuong_SizeSanPham_ChiTietPhieuDat ON ChiTietPhieuDat AFTER INSERT
 AS
-	DECLARE @IdLichSuGianHang UNIQUEIDENTIFIER
-	DECLARE @IdTaiKhoan UNIQUEIDENTIFIER
-	DECLARE @IdGianHang UNIQUEIDENTIFIER
-	DECLARE @ThoiGian INT
-	DECLARE @ThoiHanGianHang DATETIME
+	DECLARE @IdSizeSanPham UNIQUEIDENTIFIER
+	DECLARE @SoLuong INT
 	--
-	DECLARE CUR CURSOR FOR
-	SELECT i.Id, i.IdTaiKhoan, i.IdGianHang, g.ThoiGian
-	FROM inserted i JOIN GianHang g ON i.IdGianHang = g.Id
+	SELECT @IdSizeSanPham = IdSizeSanPham, @SoLuong = SoLuong
+	FROM inserted
 	--
-	OPEN CUR
-	FETCH NEXT FROM CUR INTO @IdLichSuGianHang, @IdTaiKhoan, @IdGianHang, @ThoiGian
-	WHILE @@FETCH_STATUS = 0
+	UPDATE SizeSanPham
+	SET SoLuong = SoLuong - @SoLuong
+	WHERE Id = @IdSizeSanPham
+GO
+
+CREATE TRIGGER TG_CongSoLuong_SizeSanPham_PhieuDat ON PhieuDat AFTER UPDATE
+AS
+	DECLARE @IdPhieuDat UNIQUEIDENTIFIER
+	DECLARE @TinhTrang NVARCHAR(20)
+	--
+	SELECT @IdPhieuDat = Id, @TinhTrang = TinhTrang
+	FROM inserted
+	--
+	IF(@TinhTrang = N'Đã huỷ')
 	BEGIN
-		SELECT @ThoiHanGianHang = ThoiHanGianHang
-		FROM TaiKhoan
-		WHERE Id = @IdTaiKhoan
+		DECLARE @IdSizeSanPham UNIQUEIDENTIFIER
+		DECLARE @SoLuong INT
 		--
-		IF(@ThoiHanGianHang < GETDATE())
+		DECLARE CUR CURSOR FOR
+		SELECT IdSizeSanPham, SoLuong
+		FROM ChiTietPhieuDat
+		WHERE IdPhieuDat = @IdPhieuDat
+		--
+		OPEN CUR
+		FETCH NEXT FROM CUR INTO @IdSizeSanPham, @SoLuong
+		WHILE @@FETCH_STATUS = 0
 		BEGIN
-			--Update LichSuGianHang--
-			UPDATE LichSuGianHang
-			SET NgayBatDau = GETDATE(), NgayKetThuc = DATEADD(DAY, @ThoiGian, GETDATE())
-			WHERE Id = @IdLichSuGianHang
-			--Update TaiKhoan--
-			UPDATE TaiKhoan
-			SET ThoiHanGianHang = DATEADD(DAY, @ThoiGian, GETDATE())
-			WHERE Id = @IdTaiKhoan
+			UPDATE SizeSanPham
+			SET SoLuong = SoLuong + @SoLuong
+			WHERE Id = @IdSizeSanPham
+			--
+			FETCH NEXT FROM CUR INTO @IdSizeSanPham, @SoLuong
+		END
+		CLOSE CUR
+		DEALLOCATE CUR
+	END
+GO
+
+CREATE TRIGGER TG_ThemPhieuGiao_PhieuDat ON PhieuDat AFTER UPDATE
+AS
+	DECLARE @TinhTrang NVARCHAR(20)
+	DECLARE @IdTaiKhoan UNIQUEIDENTIFIER
+	DECLARE @IdPhieuDat UNIQUEIDENTIFIER
+	DECLARE @DiaChi NVARCHAR(200)
+	DECLARE @TongTien FLOAT
+	--
+	SELECT @TinhTrang = TinhTrang, @IdTaiKhoan = IdTaiKhoan, @DiaChi = DiaChi, @TongTien = TongTien, @IdPhieuDat = Id
+	FROM inserted
+	--
+	IF(@TinhTrang = N'Đã xác nhận')
+	BEGIN
+		DECLARE @MaPhieuGiao VARCHAR(10)
+		--Lấy mã phiếu giao mới nhất--
+		SELECT TOP 1 @MaPhieuGiao = MaPhieuGiao
+		FROM PhieuGiao
+		ORDER BY CAST(SUBSTRING(MaPhieuGiao, 4, LEN(MaPhieuGiao)) AS INT) DESC
+		--
+		DECLARE @IdPhieuGiao UNIQUEIDENTIFIER
+		SET @IdPhieuGiao = NEWID()
+		--
+		IF(@MaPhieuGiao IS NULL)
+		BEGIN
+			INSERT INTO PhieuGiao
+				VALUES(@IdPhieuGiao, 'PG-1', '', @IdTaiKhoan, @DiaChi, GETDATE(), '', @TongTien, NULL, N'Đang chuẩn bị')
 		END
 		ELSE
 		BEGIN
-			--Update LichSuGianHang--
-			UPDATE LichSuGianHang
-			SET NgayBatDau = @ThoiHanGianHang, NgayKetThuc = DATEADD(DAY, @ThoiGian, @ThoiHanGianHang)
-			WHERE Id = @IdLichSuGianHang
-			--Update TaiKhoan--
-			UPDATE TaiKhoan
-			SET	ThoiHanGianHang = DATEADD(DAY, @ThoiGian, ThoiHanGianHang)
-			WHERE Id = @IdTaiKhoan
+			--Lấy mã mới--
+			DECLARE @STT INT = CAST(SUBSTRING(@MaPhieuGiao, 4, LEN(@MaPhieuGiao)) AS INT)
+			SET @STT = @STT + 1
+			SET @MaPhieuGiao = 'PG-' + CONVERT(VARCHAR(7), @STT)
+			--
+			INSERT INTO PhieuGiao
+				VALUES(@IdPhieuGiao, @MaPhieuGiao, '', @IdTaiKhoan, @DiaChi, GETDATE(), '', @TongTien, NULL, N'Đang chuẩn bị')
 		END
-		FETCH NEXT FROM CUR INTO @IdTaiKhoan, @IdGianHang, @ThoiGian
+		--Thêm vào chi tiết--
+		DECLARE @IdSizeSanPham UNIQUEIDENTIFIER
+		DECLARE @SoLuong INT	
+		DECLARE @Gia FLOAT
+		--
+		DECLARE CUR CURSOR FOR
+		SELECT IdSizeSanPham, SoLuong, Gia
+		FROM ChiTietPhieuDat
+		WHERE IdPhieuDat = @IdPhieuDat
+		--
+		OPEN CUR
+		FETCH NEXT FROM CUR INTO @IdSizeSanPham, @SoLuong, @Gia
+		WHILE @@FETCH_STATUS = 0
+		BEGIN
+			INSERT INTO ChiTietPhieuGiao
+				VALUES(@IdPhieuGiao, @IdSizeSanPham, @SoLuong, @Gia)
+			--
+			FETCH NEXT FROM CUR INTO @IdSizeSanPham, @SoLuong, @Gia
+		END
+		CLOSE CUR
+		DEALLOCATE CUR
 	END
-	CLOSE CUR
-	DEALLOCATE CUR
 GO
-
-CREATE TRIGGER TG_SuaThoiGian_GianHang ON LichSuGianHang AFTER UPDATE
-AS
-	DECLARE @ThoiGian INT
-	DECLARE @IdTaiKhoan UNIQUEIDENTIFIER
-	--
-	SELECT @IdTaiKhoan = i.IdTaiKhoan, @ThoiGian = g.ThoiGian
-	FROM inserted i JOIN GianHang g ON i.IdGianHang = g.Id
-	--
-	UPDATE TaiKhoan
-	SET ThoiHanGianHang = DATEADD(DAY, -@ThoiGian, ThoiHanGianHang)
-	WHERE Id = @IdTaiKhoan
-GO
-
-INSERT INTO SanPham
-VALUES ('B77D9CF5-E9A2-4D31-9490-25E4E3971C61','G-1',N'Supernova Aktiv Da9657','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Đen','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',2380000,N'56519.jpg',N'Làm bằng vải, cao su','',N'Không Khoá'),
-	   ('1BACE5D5-2C2B-41DA-9825-8ABAC7C95E38','G-2',N'Supernova Aktiv Da9657','CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053',N'Đen','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',2380000,N'56519.jpg','','',N'Không Khoá'),
-	   ('8BF0E51F-1C56-4033-A3D2-88B6D9FE2AA6','G-3',N'Adidas NMD R1 OG','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Đen Xanh Đỏ','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',6800000,N'adidas_nmd_r1 og.jpg','','',N'Không khoá'),
-	   ('51889068-C03B-4C21-A5DE-60F94775F5E8','G-4',N'Supreme x Vans Sk8-Mid Pro','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Vàng nâu','41505B64-32C5-4CC7-8791-4CF6EE5788E8',N'Nam',5000000,N'vans-supreme-leopard.jpg','','',N'Không khoá'),
-	   ('EE9FB193-E170-4675-949A-211BB4BA1D6A','G-5',N'Converse Chuck Taylor','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Đen','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1788000,N'converse_chuck_taylor_allstar.jpg','',10,N'Không khoá'),
-	   ('0D60B157-20D6-4CD3-BAF8-92D346FBD47E','G-6',N'Adidas NMD R2','CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053',N'Trắng','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nữ',2600000,N'adidas_nmd_r2.jpg','','',N'Không khoá'),
-	   
-	   ('CDA692F1-8559-454D-8702-E89D06CBA617','G-7',N'Converse Chuck Taylor All Star Dainty Holiday Scene Seasonal Canvas','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Trắng','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1200000,N'chuck-taylor-all-star-dainty-holiday-scene-seasonal-canvas.jpg',N'','',N'Không Khoá'),
-	   ('3014E623-489E-4258-8B49-B3583107347F','G-8',N'Converse Chuck Taylor All Star Shoreline Wonderland','CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053',N'Tím','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1300000,N'chuck-taylor-all-star-shoreline-wonderland.jpg','','',N'Không Khoá'),
-	   ('1949BFBC-D0A7-4B5D-879F-AA4B43067DE0','G-9',N'Converse Chuck Taylor All Star Seasonal Canvas Color','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Xanh','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1200000,N'chuck-taylor-all-star-seasonal-canvas-color.jpg','','',N'Không khoá'),
-	   ('DA742174-B221-4FD0-8305-572073C7E045','G-10',N'Converse Chuck Taylor All Star Leather Gator','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Kem','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1800000,N'chuck-taylor-all-star-leather-gator.jpg','','',N'Không khoá'),
-	   ('6FA36E51-6939-4456-B602-25B9DF0DEA54','G-11',N'Converse Chuck Taylor All Star Seasonal Color','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Xanh','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1100000,N'chuck-taylor-all-star-seasonal-color.jpg','','',N'Không khoá'),  
-	   ('9B7FB6AD-6A62-41AD-936F-5AE5EFBB4E96','G-12',N'Adidas Ultraboost Shoes','CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053',N'Trắng','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',4000000,N'ultraboost-shoes.jpg','','',N'Không khoá'),
-	   ('7DED44CB-C3DA-4701-8051-BCB2BFE57E1D','G-13',N'Adidas Ultraboost Lth Shoes','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Xanh','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',4500000,N'ultraboost-ltd-shoes.jpg',N'','',N'Không Khoá'),
-	   ('0233F0B6-E01D-445B-8064-8EBB798B8B63','G-14',N'Adidas NMD R1 Shoes','CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053',N'Trắng','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',2000000,N'superstar-shoes.jpg','','',N'Không Khoá'),
-	   ('1E770E9C-A7F6-4829-BC99-2B2C231C2432','G-15',N'Adidas Superstar Shoes','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Đen','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',3000000,N'nmd-r1-shoes.jpg','','',N'Không khoá'),
-	   ('413BC289-D522-4725-874F-4A276C6E77DB','G-16',N'Vans Old Skool','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Kem','41505B64-32C5-4CC7-8791-4CF6EE5788E8',N'Nữ',1400000,N'old-skool.jpg','','',N'Không khoá'),
-	   ('BEB67101-F488-4177-8366-E8C735BB86F2','G-17',N'Vans Primary Check Old Skool','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Đen','41505B64-32C5-4CC7-8791-4CF6EE5788E8',N'Nam',1400000,N'primary-check-old-skool.jpg','',10,N'Không khoá'),
-	   ('19AB2F52-E016-4F1E-85D4-786533782B01','G-18',N'Vans Authentic','CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053',N'Tím','41505B64-32C5-4CC7-8791-4CF6EE5788E8',N'Nữ',1200000,N'authentic.jpg','','',N'Không khoá')
-
-INSERT INTO SizeSanPham
-VALUES ('9DB9792B-CA17-4060-8C17-1C398BDFF9A1','B77D9CF5-E9A2-4D31-9490-25E4E3971C61',39,10,N'Không Khoá'),
-	   ('960BA7B5-EDC6-41A3-9689-EFCAD8C45A48','B77D9CF5-E9A2-4D31-9490-25E4E3971C61',40,5,N'Không Khoá'),
-	   ('A901122E-4F32-416C-92F9-26DE5D022985','B77D9CF5-E9A2-4D31-9490-25E4E3971C61',41,5,N'Không Khoá'),
-	   ('A8397480-0235-44EC-9A9C-8B7004DCA206','1BACE5D5-2C2B-41DA-9825-8ABAC7C95E38',41,10,N'Không Khoá'),
-	   ('D0019043-1336-41E1-B4FD-2BBB31DEA240','1BACE5D5-2C2B-41DA-9825-8ABAC7C95E38',42,10,N'Không Khoá'),
-	   ('7465CA3A-91C1-4350-A314-8557D54F02BD','8BF0E51F-1C56-4033-A3D2-88B6D9FE2AA6',37,5,N'Không Khoá'),
-	   ('71F50A50-D64F-4B96-9700-AC7ED4F0282A','8BF0E51F-1C56-4033-A3D2-88B6D9FE2AA6',38,5,N'Không Khoá'),
-	   ('A6F70D91-C23B-40B6-A1D0-6CE314954E76','51889068-C03B-4C21-A5DE-60F94775F5E8',38,5,N'Không Khoá'),
-	   ('48624EED-58C3-4F30-9262-911869A36524','51889068-C03B-4C21-A5DE-60F94775F5E8',39,5,N'Không Khoá'),
-	   ('C4A3F5F0-5281-4AE4-A348-1BC8794F35FF','EE9FB193-E170-4675-949A-211BB4BA1D6A',36,10,N'Không Khoá'),
-	   ('471D8D5B-377A-4547-8B30-BD903FE48664','EE9FB193-E170-4675-949A-211BB4BA1D6A',37,10,N'Không Khoá'),
-	   ('07B732E8-E414-4D85-9789-3CF5DEDA30DF','0D60B157-20D6-4CD3-BAF8-92D346FBD47E',37,10,N'Không Khoá'),
-	   ('60E99C83-381F-4EA7-B497-53CB76097740','0D60B157-20D6-4CD3-BAF8-92D346FBD47E',38,10,N'Không Khoá'),
-	   ('3125ACC4-D605-48CA-B0BC-95E790097C0F','CDA692F1-8559-454D-8702-E89D06CBA617',39,10,N'Không Khoá'),
-	   ('19A7C401-5BEA-444D-AA9B-F37D1D5780D9','CDA692F1-8559-454D-8702-E89D06CBA617',40,5,N'Không Khoá'),
-	   ('3630AE58-4C96-41B2-8492-BC5FDDC7B260','3014E623-489E-4258-8B49-B3583107347F',41,5,N'Không Khoá'),
-	   ('4BF2DD46-8C54-4F8C-B20D-4E9D9A94412C','1949BFBC-D0A7-4B5D-879F-AA4B43067DE0',41,10,N'Không Khoá'),
-	   ('F13CD985-8D13-44EF-8B9F-731FF6FB5CC8','DA742174-B221-4FD0-8305-572073C7E045',42,10,N'Không Khoá'),
-	   ('898DEFA0-928B-4F2A-8F09-D0934E7BA200','6FA36E51-6939-4456-B602-25B9DF0DEA54',37,5,N'Không Khoá'),
-	   ('AD8800FB-5D6C-481D-ABDE-9170BF5E0C19','9B7FB6AD-6A62-41AD-936F-5AE5EFBB4E96',38,5,N'Không Khoá'),
-	   ('E6339AE8-C1C3-4D58-A2C8-361EC74DB5B7','7DED44CB-C3DA-4701-8051-BCB2BFE57E1D',38,5,N'Không Khoá'),
-	   ('214B2BC8-2AF4-4F1D-BB23-596C2D07FB50','0233F0B6-E01D-445B-8064-8EBB798B8B63',39,5,N'Không Khoá'),
-	   ('7A7CBC55-9C24-4F40-832C-AD6F00ED9E41','1E770E9C-A7F6-4829-BC99-2B2C231C2432',36,10,N'Không Khoá'),
-	   ('728527C7-1960-4225-8231-F6F2CB6540E3','413BC289-D522-4725-874F-4A276C6E77DB',37,10,N'Không Khoá'),
-	   ('42E34F22-4515-4F39-93AC-D7A972EB2448','BEB67101-F488-4177-8366-E8C735BB86F2',37,10,N'Không Khoá'),
-	   ('DC5FA8BB-75B0-4761-98A1-00F816663CFB','19AB2F52-E016-4F1E-85D4-786533782B01',38,10,N'Không Khoá')

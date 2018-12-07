@@ -33,9 +33,6 @@ F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Area
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\ListSP.g.cshtml.cs
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\pSize.g.cshtml.cs
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLy\pSuaSanPham.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\TaiKhoan\DoiMatKhau.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\TaiKhoan\ThongTinDiaChi.g.cshtml.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\TaiKhoan\ThongTinTaiKhoan.g.cshtml.cs
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\Authentication\Index.g.cshtml.cs
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\DiaChi\Index.g.cshtml.cs
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\GianHang\Index.g.cshtml.cs
@@ -71,3 +68,6 @@ F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.dll
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Webmaster\Views\QuangCao\Index.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLyTaiKhoan\DoiMatKhau.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLyTaiKhoan\ThongTinDiaChi.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Merchant\Views\QuanLyTaiKhoan\ThongTinTaiKhoan.g.cshtml.cs

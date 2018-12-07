@@ -132,13 +132,13 @@ namespace SneakerC2C.Areas.Customer.Controllers
             List<HangSanPham> listhang = ctx.HangSanPham.ToList();
             //Trang
             pageNumber = pagenumber ?? 1;
-            List<SanPham> list = ctx.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang)
+            List<SanPham> list = ctx.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá")
                                             .Include(sp => sp.IdTaiKhoanNavigation)
                                             .Include(sp => sp.IdHangSanPhamNavigation)
                                             .Skip((pageNumber - 1) * pageSize)
                                             .Take(pageSize)
                                             .ToList();
-            List<SanPham> tong = ctx.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang)
+            List<SanPham> tong = ctx.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá")
                                             .Include(sp => sp.IdTaiKhoanNavigation)
                                             .Include(sp => sp.IdHangSanPhamNavigation)
                                             .ToList();

@@ -86,5 +86,12 @@ namespace Models.BusinessLogicLayer
 
             return giohang;
         }
+
+        public void AddQuantity(string idtaikhoan, string idsizesanpham, int quantity)
+        {
+            GioHang giohang = context.GioHang.Where(gh => gh.IdSizeSanPham == Guid.Parse(idsizesanpham) && gh.IdTaiKhoan == Guid.Parse(idtaikhoan)).SingleOrDefault();
+            giohang.SoLuong = quantity;
+            context.SaveChanges();
+        }
     }
 }

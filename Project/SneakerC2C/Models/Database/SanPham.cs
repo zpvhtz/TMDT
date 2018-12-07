@@ -20,8 +20,8 @@ namespace Models.Database
         public string Mau { get; set; }
         public Guid IdHangSanPham { get; set; }
         public string PhanLoai { get; set; }
-        //[Required(ErrorMessage ="Xin hãy nhập giá")]
-        //[Range(0.01,100000000,ErrorMessage ="Gía phải nằm trong khoảng 0,01 VND đến 100 triệu VND")]
+        [Required(ErrorMessage ="Xin hãy nhập giá")]
+        [Range(0.01,100000000,ErrorMessage ="Gía phải nằm trong khoảng 0,01 VND đến 100 triệu VND")]
         public double? Gia { get; set; }
         public string Hinh { get; set; }
         public string ChiTiet { get; set; }

@@ -1,37 +1,33 @@
-let obj = {}
-let lbl = []
-let dt = []
-let lblstr = "";
-let temp = 0;
-function LoadDuLieu1() {
-    console.log("LOG")
+let obj_bar = {}
+let lbl_bar = []
+let dt_bar = []
+let lblstr_bar = "";
+let temp_bar = 0;
+
+function LoadDuLieuBar(nbd, nkt) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            obj = JSON.parse(this.responseText);
-            for (let i = 0; i < obj.length; i++) {
-                lbl.push(obj[i]["Thang"]);
-                dt.push(parseInt(obj[i]["ThuNhap"]));
+            dt_bar = [];
+            lbl_bar = [];
+            obj_bar = JSON.parse(this.responseText);
+            console.log(dt_bar);
+            for (let i = 0; i < obj_bar.length; i++) {
+                lbl_bar.push(obj_bar[i]["Thang"]);
+                dt_bar.push(parseInt(obj_bar[i]["ThuNhap"]));
             }
-            let temp2 = (Math.max(...dt) / 200000)
-            console.log(temp2)
-            temp = Math.round((Math.max(...dt) / 200000)) * 200000 + 200000
-            Test();
-            Test2();
+            let temp2_bar = (Math.max(...dt_bar) / 200000)
+            temp_bar = Math.round((Math.max(...dt_bar) / 200000)) * 200000 + 200000
+            console.log(temp_bar);
+            Test_bar();
 
         }
     };
-    xhttp.open("GET", "https://localhost:44386/Webmaster/Home/GetThongKeMerchant", true);
+    xhttp.open("GET", "https://localhost:44386/Webmaster/Home/GetThongKeMerChant?nbd=" + nbd.toString() + "&nkt=" + nkt.toString(), true);
     xhttp.send();
 }
 
-
-
-
-
-function Test() {
-
-
+function Test_bar() {
 
     // Set new default font family and font color to mimic Bootstrap's default styling
     Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
@@ -43,13 +39,13 @@ function Test() {
       type: 'bar',
       data: {
           //labels: ["January", "February", "March", "April", "May", "June"],
-          labels: lbl
+          labels: lbl_bar,
           datasets: [{
-          label: "Revenue",
+          label: "Doanh Thu",
           backgroundColor: "rgba(2,117,216,1)",
           borderColor: "rgba(2,117,216,1)",
           //data: [4215, 5312, 6251, 7841, 9821, 14984],
-          data:dt,
+              data: dt_bar,
         }],
       },
       options: {
@@ -62,14 +58,14 @@ function Test() {
               display: false
             },
             ticks: {
-              maxTicksLimit: 6
+              maxTicksLimit: 100
             }
           }],
           yAxes: [{
             ticks: {
               min: 0,
-              max: temp,
-              maxTicksLimit: 5
+                max: temp_bar,
+              maxTicksLimit: 10
             },
             gridLines: {
               display: true
@@ -77,7 +73,7 @@ function Test() {
           }],
         },
         legend: {
-          display: false
+          display: true
         }
       }
     });

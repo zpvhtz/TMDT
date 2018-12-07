@@ -221,7 +221,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
         {
             List<SizeSanPham> size = ctx.SizeSanPham.ToList();
             ViewBag.Size = size;
-            var listsize = ctx.SizeSanPham.Where(s => s.SoLuong > 0)
+            var listsize = ctx.SizeSanPham.Where(s => s.SoLuong > 0 && s.TinhTrang == "Không khoá")
                                         .Include(s => s.IdSanPhamNavigation)
                                         .Select(s => s.IdSanPham)
                                         .Distinct()
@@ -234,7 +234,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
         {
             List<SizeSanPham> size = ctx.SizeSanPham.ToList();
             ViewBag.Size = size;
-            var listsize = ctx.SizeSanPham.Where(s => s.SoLuong > 0)
+            var listsize = ctx.SizeSanPham.Where(s => s.SoLuong > 0 && s.TinhTrang == "Không khoá")
                                         .Include(s => s.IdSanPhamNavigation)
                                         .Select(s => s.IdSanPham)
                                         .Distinct()
@@ -284,7 +284,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             {
                 List<SizeSanPham> size = ctx.SizeSanPham.ToList();
                 ViewBag.Size = size;
-                var listsize = ctx.SizeSanPham.Where(s => s.SoLuong > 0)
+                var listsize = ctx.SizeSanPham.Where(s => s.SoLuong > 0 )
                                             .Include(s => s.IdSanPhamNavigation)
                                             .Select(s => s.IdSanPham)
                                             .Distinct()
@@ -293,7 +293,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                                                    l.TenSanPham.Contains(search) ||
                                                    l.Mau.Contains(search))
                     .Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap"))
-                                                .Where(sp => listsize.Contains(sp.Id))
+                                                .Where(sp => listsize.Contains(sp.Id) &&sp.TinhTrang == "Không khoá")
                                                .Skip((pagenumber - 1) * pagesize)
                                                .Take(pagesize)
                                                .ToList();
@@ -320,14 +320,22 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                 list = ctx.SanPham.Where(l => l.Gia.ToString().Contains(search) ||
                                                    l.TenSanPham.Contains(search) ||
                                                    l.Mau.Contains(search))
-                    .Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap"))
+                    .Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap")&& sp.TinhTrang == "Không khoá")
                                                 .Where(sp => listsize.Contains(sp.Id))
                                                .ToList();
             }
             return list;
         }
 
-
+        public bool IsNumber(string pValue)
+        {
+            foreach (Char c in pValue)
+            {
+                if (!Char.IsDigit(c))
+                    return false;
+            }
+            return true;
+        }
         //lấy tổng sp
         public List<SanPham> GetHH ()
         {
@@ -432,6 +440,8 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             sp.Mau = item_them_mau;
             sp.IdHangSanPham = Guid.Parse(item_them_hang);
             sp.PhanLoai = item_them_phanloai;
+            
+
             sp.Gia = double.Parse(item_them_gia);
 
             if (item_them_hinh != null)
@@ -446,8 +456,8 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             }
             sp.ChiTiet = item_them_chitiet;
             sp.NgayDang = DateTime.Now;
-            sp.TinhTrang = "Không khoá";
-            ctx.Add(sp);
+            sp.TinhTrang = "Chưa duyệt";
+            ctx.SanPham.Add(sp);
             ctx.SaveChanges();
             return RedirectToAction("ListSP");
         }

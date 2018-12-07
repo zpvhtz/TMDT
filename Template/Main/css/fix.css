@@ -1167,6 +1167,16 @@
   width: 55%;
   margin: 0 auto;
 }
+
+.thongtin span {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fc636b;
+}
+.img_shop {
+  display: flex;
+  justify-content: flex-end;
+}
 /* Quảng cáo*/
 .quangcao {
   width: 100%;
@@ -1197,5 +1207,14 @@
 .anh_quangcao2 {
   width: 100%;
   height: 100%;
+}
+.quangcao_item3 {
+  width: 33.333333%;
+  height: 100px;
+}
+.anh_quangcao3 {
+  width: 350px;
+  height: 110%;
+  border-radius: 3px;
 }
 /* Hết quảng cáo*/

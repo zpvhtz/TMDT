@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace Models.Database
 {
-    public partial class ChiTietPhieuDat
+    public partial class ChiTietDonHang
     {
-        public Guid IdPhieuDat { get; set; }
+        public Guid IdDonHang { get; set; }
         public Guid IdSizeSanPham { get; set; }
         public int? SoLuong { get; set; }
-        public double? Gia { get; set; }
+        public double? DonGia { get; set; }
 
-        public PhieuDat IdPhieuDatNavigation { get; set; }
+        public DonHang IdDonHangNavigation { get; set; }
         public SizeSanPham IdSizeSanPhamNavigation { get; set; }
     }
 }

@@ -7,8 +7,7 @@ namespace Models.Database
     {
         public SizeSanPham()
         {
-            ChiTietPhieuDat = new HashSet<ChiTietPhieuDat>();
-            ChiTietPhieuGiao = new HashSet<ChiTietPhieuGiao>();
+            ChiTietDonHang = new HashSet<ChiTietDonHang>();
             GioHang = new HashSet<GioHang>();
         }
 
@@ -19,8 +18,7 @@ namespace Models.Database
         public string TinhTrang { get; set; }
 
         public SanPham IdSanPhamNavigation { get; set; }
-        public ICollection<ChiTietPhieuDat> ChiTietPhieuDat { get; set; }
-        public ICollection<ChiTietPhieuGiao> ChiTietPhieuGiao { get; set; }
+        public ICollection<ChiTietDonHang> ChiTietDonHang { get; set; }
         public ICollection<GioHang> GioHang { get; set; }
     }
 }

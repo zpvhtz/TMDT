@@ -312,6 +312,86 @@ ALTER TABLE LichSuGianHang
 		CONSTRAINT FK_LichSuGianHang_IdGianHang FOREIGN KEY (IdGianHang) REFERENCES GianHang(Id)
 GO
 
+--STORE PROCEDURED--
+---tao pro list con hang, het hang
+CREATE PROC p_conhang 
+as
+	select IdSanPham,SUM(SoLuong) as SoLuong from SizeSanPham
+	group by IdSanPham
+	having SUM(SoLuong)>0
+go
+---het hang
+CREATE PROC p_hethang (@TenDangNhap VARCHAR(20)) 
+as
+	select sp.Id, sp.MaSanPham, sp.TenSanPham, sp.IdTaiKhoan, sp.Mau, sp.IdHangSanPham, sp.PhanLoai, sp.Gia, sp.Hinh, sp.ChiTiet, sp.GiamGia, sp.NgayDang, sp.TinhTrang
+	from SanPham sp JOIN TaiKhoan tk ON sp.IdTaiKhoan = tk.Id
+	where sp.TinhTrang = N'Không khoá' and tk.TenDangNhap = @TenDangNhap and sp.Id in
+	(
+		select IdSanPham from SizeSanPham
+		group by IdSanPham
+		having SUM(SoLuong)=0
+	) 
+go
+
+CREATE PROC P_HetHang_Pagging (@TenDangNhap VARCHAR(20), @pageSize INT, @pageNumber INT)
+AS
+	DECLARE @Skip INT
+	SET @Skip = ((@pageNumber - 1) * @pageSize)
+	--
+	select sp.Id, sp.MaSanPham, sp.TenSanPham, sp.IdTaiKhoan, sp.Mau, sp.IdHangSanPham, sp.PhanLoai, sp.Gia, sp.Hinh, sp.ChiTiet, sp.GiamGia, sp.NgayDang, sp.TinhTrang
+	FROM SanPham sp JOIN TaiKhoan tk ON sp.IdTaiKhoan = tk.Id
+	WHERE sp.TinhTrang = N'Không khoá' AND tk.TenDangNhap = @TenDangNhap AND sp.Id IN
+	(
+		SELECT IdSanPham
+		FROM SizeSanPham
+		GROUP BY IdSanPham
+		HAVING SUM(SoLuong) = 0
+	)
+	ORDER BY Id
+	OFFSET @Skip ROWS
+	FETCH NEXT @pageSize ROWS ONLY
+GO
+
+---SEARCH
+CREATE PROC P_HetHang_Search (@TenDangNhap VARCHAR(20), @search NVARCHAR(100), @pageSize INT, @pageNumber INT)
+AS
+	DECLARE @Skip INT
+	DECLARE @searchString NVARCHAR(100)
+	SET @Skip = ((@pageNumber - 1) * @pageSize)
+	SET @searchString = '%' + @search + '%'
+	--
+	SELECT sp.Id, sp.MaSanPham, sp.TenSanPham, sp.IdTaiKhoan, sp.Mau, sp.IdHangSanPham, sp.PhanLoai, sp.Gia, sp.Hinh, sp.ChiTiet, sp.GiamGia, sp.NgayDang, sp.TinhTrang
+	FROM SanPham sp JOIN TaiKhoan tk ON sp.IdTaiKhoan = tk.Id
+	WHERE sp.TinhTrang = N'Không khoá' AND (TenSanPham LIKE @searchString OR Mau LIKE @searchString OR Gia LIKE @searchString) AND tk.TenDangNhap = @TenDangNhap AND sp.Id IN
+	(
+		SELECT IdSanPham
+		FROM SizeSanPham
+		GROUP BY IdSanPham
+		HAVING SUM(SoLuong) = 0
+	)
+	ORDER BY sp.Id
+	OFFSET @Skip ROWS
+	FETCH NEXT @pageSize ROWS ONLY
+GO
+
+CREATE PROC P_HetHang_Search_NotPagging (@TenDangNhap VARCHAR(20), @search NVARCHAR(100))
+AS
+	DECLARE @Skip INT
+	DECLARE @searchString NVARCHAR(100)
+	SET @searchString = '%' + @search + '%'
+	--
+	SELECT sp.Id, sp.MaSanPham, sp.TenSanPham, sp.IdTaiKhoan, sp.Mau, sp.IdHangSanPham, sp.PhanLoai, sp.Gia, sp.Hinh, sp.ChiTiet, sp.GiamGia, sp.NgayDang, sp.TinhTrang
+	FROM SanPham sp JOIN TaiKhoan tk ON sp.IdTaiKhoan = tk.Id
+	WHERE sp.TinhTrang = N'Không khoá' AND (TenSanPham LIKE @searchString OR Mau LIKE @searchString OR Gia LIKE @searchString) AND tk.TenDangNhap = @TenDangNhap AND sp.Id IN
+	(
+		SELECT IdSanPham
+		FROM SizeSanPham
+		GROUP BY IdSanPham
+		HAVING SUM(SoLuong) = 0
+	)
+	ORDER BY sp.Id
+GO
+
 --TRIGGER--
 --Trigger cộng thời gian cho merchant--
 CREATE TRIGGER TG_ThemThoiGian_GianHang ON LichSuGianHang AFTER INSERT
@@ -405,6 +485,7 @@ AS
 	DEALLOCATE CUR
 GO
 
+--Trigger cộng lại số lượng cho sản phẩm nếu đơn huỷ--
 CREATE TRIGGER TG_CongSoLuong_SizeSanPham_DonHang ON DonHang AFTER UPDATE
 AS
 	DECLARE @IdDonHang UNIQUEIDENTIFIER
@@ -525,7 +606,7 @@ INSERT INTO DiaChi
 		  ('8D644CFB-1075-4895-AA04-4EC46EA6B786', '8634C513-90FB-4DB7-9E80-F8278ECDEF68', N'56 Bành Văn Trân P7 Q.Tân Bình', '1D683773-5757-4C4E-BE2B-5537B5F567BD', N'Không khoá')
 
 INSERT INTO GiaShip
-	VALUES('1BF4BA79-1047-40CE-8E46-A8309E249912',N'Nội Thành',100000,GETDATE()),
+	VALUES('1BF4BA79-1047-40CE-8E46-A8309E249912',N'Nội Thành',10000,GETDATE()),
 	      ('B54D15BF-12D2-4223-9C36-A4AD02AC923B',N'Ngoại Thành',20000,GETDATE())
 
 INSERT INTO HangSanPham
@@ -536,31 +617,49 @@ INSERT INTO HangSanPham
 		  ('C35D6991-9D6F-482E-9AC2-F6DA6A70D2D5','H-5',N'No brand',N'Không khoá')
 
 INSERT INTO SanPham
-VALUES ('B77D9CF5-E9A2-4D31-9490-25E4E3971C61','G-1',N'Supernova Aktiv Da9657','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Đen','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',2380000,N'56519.jpg',N'Làm bằng vải, cao su','', GETDATE(),N'Không khoá'),
-	   ('1BACE5D5-2C2B-41DA-9825-8ABAC7C95E38','G-2',N'Supernova Aktiv Da9657','CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053',N'Đen','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',2380000,N'56519.jpg','','', GETDATE(),N'Không khoá'),
-	   ('8BF0E51F-1C56-4033-A3D2-88B6D9FE2AA6','G-3',N'Adidas NMD R1 OG','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Đen Xanh Đỏ','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',6800000,N'adidas_nmd_r1og.jpg','','', GETDATE(),N'Không khoá'),
-	   ('51889068-C03B-4C21-A5DE-60F94775F5E8','G-4',N'Supreme x Vans Sk8-Mid Pro','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Vàng nâu','41505B64-32C5-4CC7-8791-4CF6EE5788E8',N'Nam',5000000,N'vans-supreme-leopard.jpg','','', GETDATE(),N'Không khoá'),
-	   ('EE9FB193-E170-4675-949A-211BB4BA1D6A','G-5',N'Converse Chuck Taylor','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Đen','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1788000,N'converse_chuck_taylor_allstar.jpg','',10, GETDATE(),N'Không khoá'),
-	   ('0D60B157-20D6-4CD3-BAF8-92D346FBD47E','G-6',N'Adidas NMD R2','CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053',N'Trắng','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nữ',2600000,N'adidas_nmd_r2.jpg','','', GETDATE(),N'Không khoá'),
-	   ('CDA692F1-8559-454D-8702-E89D06CBA617','G-7',N'Converse Chuck Taylor All Star Dainty Holiday Scene Seasonal Canvas','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Trắng','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1200000,N'chuck-taylor-all-star-dainty-holiday-scene-seasonal-canvas.jpg',N'','', GETDATE(),N'Không khoá'),
-	   ('3014E623-489E-4258-8B49-B3583107347F','G-8',N'Converse Chuck Taylor All Star Shoreline Wonderland','CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053',N'Tím','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1300000,N'chuck-taylor-all-star-shoreline-wonderland.jpg','','', GETDATE(),N'Không khoá'),
-	   ('1949BFBC-D0A7-4B5D-879F-AA4B43067DE0','G-9',N'Converse Chuck Taylor All Star Seasonal Canvas Color','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Xanh','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1200000,N'chuck-taylor-all-star-seasonal-canvas-color.jpg','','', GETDATE(),N'Không khoá'),
-	   ('DA742174-B221-4FD0-8305-572073C7E045','G-10',N'Converse Chuck Taylor All Star Leather Gator','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Kem','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1800000,N'chuck-taylor-all-star-leather-gator.jpg','','', GETDATE(),N'Không khoá'),
-	   ('6FA36E51-6939-4456-B602-25B9DF0DEA54','G-11',N'Converse Chuck Taylor All Star Seasonal Color','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Xanh','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1100000,N'chuck-taylor-all-star-seasonal-color.jpg','','', GETDATE(),N'Không khoá'),  
-	   ('9B7FB6AD-6A62-41AD-936F-5AE5EFBB4E96','G-12',N'Adidas Ultraboost Shoes','CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053',N'Trắng','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',4000000,N'ultraboost-shoes.jpg','','', GETDATE(),N'Không khoá'),
-	   ('7DED44CB-C3DA-4701-8051-BCB2BFE57E1D','G-13',N'Adidas Ultraboost Lth Shoes','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Xanh','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',4500000,N'ultraboost-ltd-shoes.jpg',N'','', GETDATE(),N'Không khoá'),
-	   ('0233F0B6-E01D-445B-8064-8EBB798B8B63','G-14',N'Adidas NMD R1 Shoes','CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053',N'Trắng','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',2000000,N'superstar-shoes.jpg','','', GETDATE(),N'Không khoá'),
-	   ('1E770E9C-A7F6-4829-BC99-2B2C231C2432','G-15',N'Adidas Superstar Shoes','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Đen','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',3000000,N'nmd-r1-shoes.jpg','','', GETDATE(),N'Không khoá'),
-	   ('413BC289-D522-4725-874F-4A276C6E77DB','G-16',N'Vans Old Skool','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Kem','41505B64-32C5-4CC7-8791-4CF6EE5788E8',N'Nữ',1400000,N'old-skool.jpg','','', GETDATE(),N'Không khoá'),
-	   ('BEB67101-F488-4177-8366-E8C735BB86F2','G-17',N'Vans Primary Check Old Skool','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Đen','41505B64-32C5-4CC7-8791-4CF6EE5788E8',N'Nam',1400000,N'primary-check-old-skool.jpg','',10, GETDATE(),N'Không khoá'),
-	   ('19AB2F52-E016-4F1E-85D4-786533782B01','G-18',N'Vans Authentic','CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053',N'Tím','41505B64-32C5-4CC7-8791-4CF6EE5788E8',N'Nữ',1200000,N'authentic.jpg','','', GETDATE(),N'Không khoá'),
-	   ('81D3E3F0-A94C-4069-9A0F-A94154657349','G-19',N'Converse X Hello Kitty Chuck Taylor All Star Canvas Low Top','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Đen','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1600000,N'converse-x-hello-kitty-chuck-taylor-all-star-canvas-low-top.jpg','','', GETDATE(),N'Không khoá'),
-	   ('4DBF0115-F61B-48C4-92C0-050293D0779A','G-20',N'Converse X Hello Kitty Chuck Taylor All Star Canvas High Top','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Trắng','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1700000,N'converse-x-hello-kitty-chuck-taylor-all-star-canvas-high-top.jpg','','', GETDATE(),N'Không khoá'),
-	   ('3C811136-99D5-4F17-AE13-D6DBA8B89121','G-21',N'Converse Chuck Taylor All Star Ombre Wash','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Xanh','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1300000,N'chuck-taylor-all-star-ombre-wash.jpg','','', GETDATE(),N'Không khoá'),
-	   ('2123AE43-CFC7-4F3E-A8B0-4150BE4A8647','G-22',N'Converse Chuck Taylor All Star Mono Suede','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Đỏ','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1500000,N'chuck-taylor-all-star-mono-suede.jpg','','', GETDATE(),N'Không khoá'),
-	   ('2E3831FD-71A3-4A21-B635-E674ED0533AF','G-23',N'Converse Chuck Taylor All Star Perf Canvas','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Xám xanh','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1200000,N'chuck-taylor-all-star-perf-canvas.jpg','','', GETDATE(),N'Không khoá'),
-	   ('98ABFB8C-5CA6-4EA4-A8A7-8BCABB34198A','G-24',N'Converse Chuck Taylor All Star Mono Glam','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Xanh','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1200000,N'chuck-taylor-all-star-mono-glam.jpg','','', GETDATE(),N'Không khoá'),
-	   ('03407BDD-CD07-42B6-8F74-D26F8B00A30E','G-25',N'Converse Chuck Taylor All Star Leather & Thermal','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Xám xanh','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1600000,N'chuck-taylor-all-star-leather--thermal.jpg','','', GETDATE(),N'Không khoá'),
-	   ('DDB53D71-1FB7-41FE-97C8-FFA6EEF17337','G-26',N'Converse Chuck Taylor All Star Coral Animal Metallic','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Trắng/Vàng','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1200000,N'chuck-taylor-all-star-coral-animal-metallic.jpg','','', GETDATE(),N'Không khoá'),
-	   ('F5FA3C92-F0E7-4A8F-B498-773647707B60','G-27',N'Converse Chuck Taylor All Star Gemma Festival Poly Knit','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Trắng/Xanh','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1200000,N'chuck-taylor-all-star-gemma-festival-poly-knit.jpg','','', GETDATE(),N'Không khoá'),
-	   ('FF1DD7BD-CA33-447E-AEE3-D7BDDB69BBCC','G-28',N'Converse Chuck Taylor All Star Gemma Engineered Lace','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Vàng','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1200000,N'chuck-taylor-all-star-gemma-engineered-lace.jpg','','', GETDATE(),N'Không khoá')
+	VALUES ('B77D9CF5-E9A2-4D31-9490-25E4E3971C61','G-1',N'Supernova Aktiv Da9657','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Đen','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',2380000,N'56519.jpg',N'Làm bằng vải, cao su','', GETDATE(),N'Không khoá'),
+		   ('1BACE5D5-2C2B-41DA-9825-8ABAC7C95E38','G-2',N'Supernova Aktiv Da9657','CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053',N'Đen','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',2380000,N'56519.jpg','','', GETDATE(),N'Không khoá'),
+		   ('8BF0E51F-1C56-4033-A3D2-88B6D9FE2AA6','G-3',N'Adidas NMD R1 OG','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Đen Xanh Đỏ','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',6800000,N'adidas_nmd_r1og.jpg','','', GETDATE(),N'Không khoá'),
+		   ('51889068-C03B-4C21-A5DE-60F94775F5E8','G-4',N'Supreme x Vans Sk8-Mid Pro','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Vàng nâu','41505B64-32C5-4CC7-8791-4CF6EE5788E8',N'Nam',5000000,N'vans-supreme-leopard.jpg','','', GETDATE(),N'Không khoá'),
+		   ('EE9FB193-E170-4675-949A-211BB4BA1D6A','G-5',N'Converse Chuck Taylor','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Đen','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1788000,N'converse_chuck_taylor_allstar.jpg','',10, GETDATE(),N'Không khoá'),
+		   ('0D60B157-20D6-4CD3-BAF8-92D346FBD47E','G-6',N'Adidas NMD R2','CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053',N'Trắng','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nữ',2600000,N'adidas_nmd_r2.jpg','','', GETDATE(),N'Không khoá'),
+		   ('CDA692F1-8559-454D-8702-E89D06CBA617','G-7',N'Converse Chuck Taylor All Star Dainty Holiday Scene Seasonal Canvas','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Trắng','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1200000,N'chuck-taylor-all-star-dainty-holiday-scene-seasonal-canvas.jpg',N'','', GETDATE(),N'Không khoá'),
+		   ('3014E623-489E-4258-8B49-B3583107347F','G-8',N'Converse Chuck Taylor All Star Shoreline Wonderland','CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053',N'Tím','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1300000,N'chuck-taylor-all-star-shoreline-wonderland.jpg','','', GETDATE(),N'Không khoá'),
+		   ('1949BFBC-D0A7-4B5D-879F-AA4B43067DE0','G-9',N'Converse Chuck Taylor All Star Seasonal Canvas Color','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Xanh','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1200000,N'chuck-taylor-all-star-seasonal-canvas-color.jpg','','', GETDATE(),N'Không khoá'),
+		   ('DA742174-B221-4FD0-8305-572073C7E045','G-10',N'Converse Chuck Taylor All Star Leather Gator','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Kem','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1800000,N'chuck-taylor-all-star-leather-gator.jpg','','', GETDATE(),N'Không khoá'),
+		   ('6FA36E51-6939-4456-B602-25B9DF0DEA54','G-11',N'Converse Chuck Taylor All Star Seasonal Color','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Xanh','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1100000,N'chuck-taylor-all-star-seasonal-color.jpg','','', GETDATE(),N'Không khoá'),  
+		   ('9B7FB6AD-6A62-41AD-936F-5AE5EFBB4E96','G-12',N'Adidas Ultraboost Shoes','CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053',N'Trắng','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',4000000,N'ultraboost-shoes.jpg','','', GETDATE(),N'Không khoá'),
+		   ('7DED44CB-C3DA-4701-8051-BCB2BFE57E1D','G-13',N'Adidas Ultraboost Lth Shoes','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Xanh','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',4500000,N'ultraboost-ltd-shoes.jpg',N'','', GETDATE(),N'Không khoá'),
+		   ('0233F0B6-E01D-445B-8064-8EBB798B8B63','G-14',N'Adidas NMD R1 Shoes','CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053',N'Trắng','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',2000000,N'superstar-shoes.jpg','','', GETDATE(),N'Không khoá'),
+		   ('1E770E9C-A7F6-4829-BC99-2B2C231C2432','G-15',N'Adidas Superstar Shoes','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Đen','5D85DE48-9D68-4F79-A951-24201CF7D4D4',N'Nam',3000000,N'nmd-r1-shoes.jpg','','', GETDATE(),N'Không khoá'),
+		   ('413BC289-D522-4725-874F-4A276C6E77DB','G-16',N'Vans Old Skool','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Kem','41505B64-32C5-4CC7-8791-4CF6EE5788E8',N'Nữ',1400000,N'old-skool.jpg','','', GETDATE(),N'Không khoá'),
+		   ('BEB67101-F488-4177-8366-E8C735BB86F2','G-17',N'Vans Primary Check Old Skool','18D79B1D-EE48-459A-AD1D-09A05A4773AD',N'Đen','41505B64-32C5-4CC7-8791-4CF6EE5788E8',N'Nam',1400000,N'primary-check-old-skool.jpg','',10, GETDATE(),N'Không khoá'),
+		   ('19AB2F52-E016-4F1E-85D4-786533782B01','G-18',N'Vans Authentic','CA2EE7E2-7F64-4A5A-A49B-E22E9E05F053',N'Tím','41505B64-32C5-4CC7-8791-4CF6EE5788E8',N'Nữ',1200000,N'authentic.jpg','','', GETDATE(),N'Không khoá'),
+		   ('81D3E3F0-A94C-4069-9A0F-A94154657349','G-19',N'Converse X Hello Kitty Chuck Taylor All Star Canvas Low Top','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Đen','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1600000,N'converse-x-hello-kitty-chuck-taylor-all-star-canvas-low-top.jpg','','', GETDATE(),N'Không khoá'),
+		   ('4DBF0115-F61B-48C4-92C0-050293D0779A','G-20',N'Converse X Hello Kitty Chuck Taylor All Star Canvas High Top','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Trắng','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1700000,N'converse-x-hello-kitty-chuck-taylor-all-star-canvas-high-top.jpg','','', GETDATE(),N'Không khoá'),
+		   ('3C811136-99D5-4F17-AE13-D6DBA8B89121','G-21',N'Converse Chuck Taylor All Star Ombre Wash','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Xanh','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1300000,N'chuck-taylor-all-star-ombre-wash.jpg','','', GETDATE(),N'Không khoá'),
+		   ('2123AE43-CFC7-4F3E-A8B0-4150BE4A8647','G-22',N'Converse Chuck Taylor All Star Mono Suede','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Đỏ','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1500000,N'chuck-taylor-all-star-mono-suede.jpg','','', GETDATE(),N'Không khoá'),
+		   ('2E3831FD-71A3-4A21-B635-E674ED0533AF','G-23',N'Converse Chuck Taylor All Star Perf Canvas','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Xám xanh','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1200000,N'chuck-taylor-all-star-perf-canvas.jpg','','', GETDATE(),N'Không khoá'),
+		   ('98ABFB8C-5CA6-4EA4-A8A7-8BCABB34198A','G-24',N'Converse Chuck Taylor All Star Mono Glam','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Xanh','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1200000,N'chuck-taylor-all-star-mono-glam.jpg','','', GETDATE(),N'Không khoá'),
+		   ('03407BDD-CD07-42B6-8F74-D26F8B00A30E','G-25',N'Converse Chuck Taylor All Star Leather & Thermal','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Xám xanh','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1600000,N'chuck-taylor-all-star-leather--thermal.jpg','','', GETDATE(),N'Không khoá'),
+		   ('DDB53D71-1FB7-41FE-97C8-FFA6EEF17337','G-26',N'Converse Chuck Taylor All Star Coral Animal Metallic','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Trắng/Vàng','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1200000,N'chuck-taylor-all-star-coral-animal-metallic.jpg','','', GETDATE(),N'Không khoá'),
+		   ('F5FA3C92-F0E7-4A8F-B498-773647707B60','G-27',N'Converse Chuck Taylor All Star Gemma Festival Poly Knit','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Trắng/Xanh','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1200000,N'chuck-taylor-all-star-gemma-festival-poly-knit.jpg','','', GETDATE(),N'Không khoá'),
+		   ('FF1DD7BD-CA33-447E-AEE3-D7BDDB69BBCC','G-28',N'Converse Chuck Taylor All Star Gemma Engineered Lace','1A31055B-A4BB-4BD7-81AB-1792CEB4B080',N'Vàng','DE7797B9-028B-4DF7-A6B0-5E10A45E0608',N'Nữ',1200000,N'chuck-taylor-all-star-gemma-engineered-lace.jpg','','', GETDATE(),N'Không khoá')
+
+INSERT INTO TrangQuangCao
+	VALUES ('75523BB6-C366-4A28-A85C-B4C8C1D5747A', 'AD-HOME', N'Trang chủ', N'Test',N'Không khoá'),
+		   ('15CF8A9B-517E-4BAE-91E2-F30C596990ED', 'AD-GH', N'Gian Hàng', N'Test',N'Không khoá'),
+		   ('EA9FC9A5-9C26-40A4-9E8E-BB3DAE4E0156', 'AD-AD', N'Quảng Cáo', N'Test',N'Không khoá')		   
+
+INSERT INTO ViTriQuangcao
+	VALUES ('5284E840-16E1-4C73-9D00-1ACA5FF4642D', 'VT-HOME1', N'Trang chủ 1','75523BB6-C366-4A28-A85C-B4C8C1D5747A',60000, N'Test', N'Không khoá'),
+		   ('FF517A22-38AE-4584-8447-0A41594EDEC3', 'VT-GH1', N'Gian Hàng 1', '15CF8A9B-517E-4BAE-91E2-F30C596990ED',50000,  N'Test', N'Không khoá'),
+		   ('8C46E232-2EDF-4186-A5EA-901E5ABE0D33', 'VT-AD1', N'Quảng Cáo 1', 'EA9FC9A5-9C26-40A4-9E8E-BB3DAE4E0156',66666,  N'Test',N'Không khoá')
+
+INSERT INTO GoiQuangCao
+	VALUES('8804015b-62f8-46ed-b2bd-e662a1730381','G-HOME11', '5284E840-16E1-4C73-9D00-1ACA5FF4642D',60000,1,N'Không khoá'),
+		  ('66f36fc5-8d06-4d5e-ab8b-76d46c935ca6','G-HOME14', '5284E840-16E1-4C73-9D00-1ACA5FF4642D',2400000,4,N'Không khoá')
+
+INSERT INTO QuangCao
+	VALUES ('51791099-c591-436f-aa87-6e9d860378ac','QC-1','8804015b-62f8-46ed-b2bd-e662a1730381','18D79B1D-EE48-459A-AD1D-09A05A4773AD','','2018-9-1','2018-9-9','',N'Không khoá'),
+		   ('14329aca-9c43-4736-94bf-e420778a17f0','QC-2','8804015b-62f8-46ed-b2bd-e662a1730381','18D79B1D-EE48-459A-AD1D-09A05A4773AD','','2018-9-17','2018-10-11','',N'Không khoá')

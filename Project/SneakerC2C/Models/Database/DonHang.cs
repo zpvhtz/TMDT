@@ -3,25 +3,26 @@ using System.Collections.Generic;
 
 namespace Models.Database
 {
-    public partial class PhieuGiao
+    public partial class DonHang
     {
-        public PhieuGiao()
+        public DonHang()
         {
-            ChiTietPhieuGiao = new HashSet<ChiTietPhieuGiao>();
+            ChiTietDonHang = new HashSet<ChiTietDonHang>();
         }
 
         public Guid Id { get; set; }
-        public string MaPhieuGiao { get; set; }
-        public string Cmndgiao { get; set; }
+        public string MaDonHang { get; set; }
+        public string CmndnguoiGiao { get; set; }
         public Guid IdTaiKhoan { get; set; }
-        public string DiaChi { get; set; }
+        public string DiaChiGiao { get; set; }
         public DateTime? NgayTao { get; set; }
         public DateTime? NgayGiao { get; set; }
         public double? TongTien { get; set; }
-        public int? DanhGia { get; set; }
+        public double? DiemDanhGia { get; set; }
+        public string TinhTrangDanhGia { get; set; }
         public string TinhTrang { get; set; }
 
         public TaiKhoan IdTaiKhoanNavigation { get; set; }
-        public ICollection<ChiTietPhieuGiao> ChiTietPhieuGiao { get; set; }
+        public ICollection<ChiTietDonHang> ChiTietDonHang { get; set; }
     }
 }

@@ -26,25 +26,25 @@ namespace Models.BusinessLogicLayer
             this.context = context;
         }
 
-        public List<DoanhThuMerchant> GetDoanhThuMerchants(DateTime nbd, DateTime nkt)
-        {
-            var list = from phieugiao in context.PhieuGiao
-                       join taikhoan in context.TaiKhoan on phieugiao.IdTaiKhoan equals taikhoan.Id
+        //public List<DoanhThuMerchant> GetDoanhThuMerchants(DateTime nbd, DateTime nkt)
+        //{
+        //    var list = from phieugiao in context.PhieuGiao
+        //               join taikhoan in context.TaiKhoan on phieugiao.IdTaiKhoan equals taikhoan.Id
 
-                       //where phieugiao.NgayGiao.Value >= nbd && phieugiao.NgayGiao.Value <= nkt
-                       where phieugiao.NgayGiao.Value.Month >= nbd.Month && phieugiao.NgayGiao.Value.Month <= nkt.Month
-                           && phieugiao.NgayGiao.Value.Year >= nbd.Year && phieugiao.NgayGiao.Value.Year <= nkt.Year
-                       group new { phieugiao, taikhoan } by new { phieugiao.NgayGiao.Value.Month, phieugiao.NgayGiao.Value.Year } into khoadeptrai
-                       select new DoanhThuMerchant
-                       {
-                           Thang = khoadeptrai.Key.Month,
-                           Nam = khoadeptrai.Key.Year,
-                           SoLuong = khoadeptrai.Select(k => k.phieugiao.Id).Distinct().Count(),
-                           ThuNhap = (double)khoadeptrai.Sum(k => k.phieugiao.TongTien)
-                       };
-            List<DoanhThuMerchant> listthongke = list.ToList();
-            return listthongke;
-        }
+        //               //where phieugiao.NgayGiao.Value >= nbd && phieugiao.NgayGiao.Value <= nkt
+        //               where phieugiao.NgayGiao.Value.Month >= nbd.Month && phieugiao.NgayGiao.Value.Month <= nkt.Month
+        //                   && phieugiao.NgayGiao.Value.Year >= nbd.Year && phieugiao.NgayGiao.Value.Year <= nkt.Year
+        //               group new { phieugiao, taikhoan } by new { phieugiao.NgayGiao.Value.Month, phieugiao.NgayGiao.Value.Year } into khoadeptrai
+        //               select new DoanhThuMerchant
+        //               {
+        //                   Thang = khoadeptrai.Key.Month,
+        //                   Nam = khoadeptrai.Key.Year,
+        //                   SoLuong = khoadeptrai.Select(k => k.phieugiao.Id).Distinct().Count(),
+        //                   ThuNhap = (double)khoadeptrai.Sum(k => k.phieugiao.TongTien)
+        //               };
+        //    List<DoanhThuMerchant> listthongke = list.ToList();
+        //    return listthongke;
+        //}
         public List<SoLuongNguoiDung> GetSoLuongNguoiDung()
         {
             var list = from taikhoan in context.TaiKhoan

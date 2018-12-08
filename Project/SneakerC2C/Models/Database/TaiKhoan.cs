@@ -10,10 +10,9 @@ namespace Models.Database
             DanhGiaIdTaiKhoanDanhGiaNavigation = new HashSet<DanhGia>();
             DanhGiaIdTaiKhoanDuocDanhGiaNavigation = new HashSet<DanhGia>();
             DiaChi = new HashSet<DiaChi>();
+            DonHang = new HashSet<DonHang>();
             GioHang = new HashSet<GioHang>();
             LichSuGianHang = new HashSet<LichSuGianHang>();
-            PhieuDat = new HashSet<PhieuDat>();
-            PhieuGiao = new HashSet<PhieuGiao>();
             QuangCao = new HashSet<QuangCao>();
             SanPham = new HashSet<SanPham>();
         }
@@ -37,10 +36,9 @@ namespace Models.Database
         public ICollection<DanhGia> DanhGiaIdTaiKhoanDanhGiaNavigation { get; set; }
         public ICollection<DanhGia> DanhGiaIdTaiKhoanDuocDanhGiaNavigation { get; set; }
         public ICollection<DiaChi> DiaChi { get; set; }
+        public ICollection<DonHang> DonHang { get; set; }
         public ICollection<GioHang> GioHang { get; set; }
         public ICollection<LichSuGianHang> LichSuGianHang { get; set; }
-        public ICollection<PhieuDat> PhieuDat { get; set; }
-        public ICollection<PhieuGiao> PhieuGiao { get; set; }
         public ICollection<QuangCao> QuangCao { get; set; }
         public ICollection<SanPham> SanPham { get; set; }
     }

@@ -70,7 +70,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <i class="fa fa-map-marker"></i>
                     <h4>Địa chỉ nhận hàng</h4>
                 </div>
-                <div class="content_diachi">
+                <div class="content_diachi" id="partialDiaChi">
+                    <!--Đây sử dụng partial view pDiaChi-->
+                    <input type="text" value="@ViewBag.FirstAddress.Id" id="txtIdDiaChi" readonly hidden/>
                     <h4><b>@ViewBag.TaiKhoan.Ten (@ViewBag.TaiKhoan.DienThoai) </b>@ViewBag.FirstAddress.Duong, @ViewBag.FirstAddress.IdTinhThanhNavigation.TenTinhThanh</h4>
                     <a href="#" data-toggle="modal" data-target="#addressModal">Thay Đổi</a>
                 </div>
@@ -187,37 +189,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <p id="txtTienDatHang">₫300.000</p>
                         </div>
                     </div>
-                    <div class="tong_tienhang">
-                        <div class="txt_dathang">
-                            <p>Phí vận chuyển</p>
-                        </div>
-                        <div class="gia_dathang">
-                            <p>₫50.000</p>
-                        </div>
+                    <br />
+                    <hr />
+                    <div class="tong_tienhang" id="partialPhiShip">
+                        <!--Partial View ở đây-->
                     </div>
+                    <br />
+                    <hr />
                     <div class="tong_tienhang">
                         <div class="txt_dathang">
                             <p>Tổng thanh toán</p>
                         </div>
                         <div class="gia_dathang">
-                            <p class="gia_tong">₫350.000</p>
+                            <p class="gia_tong" id="txtTongTienThanhToan">₫350.000</p>
                         </div>
                     </div>
                 </div>
                 <hr>
                 <div class="form_15_30">
                     <div class="button-dathang">
-                        <button class="btn-muahang">Đặt Hàng</button>
+                        <button class="btn-muahang" id="btnDatHang">Đặt Hàng</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div>
-        @foreach (var item in ViewBag.Merchants)
-        {
-            <p>@item.TenShop</p>
-        }
     </div>
     <!-- Modal -->
     <div class="modal fade" id="addressModal" role="dialog">
@@ -242,10 +237,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             @foreach(var item in ViewBag.ListAddress)
                             {
                                 <tr>
-                                    <td>@item.Duong</td>
-                                    <td>@item.IdTinhThanhNavigation.TenTinhThanh</td>
+                                    <td class="item-duong">
+                                        <input type="text" value="@item.Id" readonly hidden class="item-idduong"/>
+                                        @item.Duong
+                                    </td>
+                                    <td class="item-tinhthanh">@item.IdTinhThanhNavigation.TenTinhThanh</td>
                                     <td class="center-text-td">
-                                        <button class="btn btn-primary">Chọn</button>
+                                        <button class="btn btn-primary btnChonDiaChiMoi">Chọn</button>
                                     </td>
                                 </tr>
                             }
@@ -285,6 +283,63 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         $("#txtTienDatHang").text(totalPrice.toLocaleString() + ' đ');
     }
+
+    function GetPhiShip(id) {
+        let tendangnhap = "@Context.Session.GetString("TenDangNhap")";
+        let iddiachi = id;
+        $.ajax({
+            url: "/Customer/DonHang/GetPhiShip",
+            type: "post",
+            data: { "tendangnhap": tendangnhap, "iddiachi": iddiachi },
+            success: function (data) {
+                $("#partialPhiShip").html(data);
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            },
+            async: false
+            //Nhớ xài async hoặc dùng 1 request chứa tất cả dữ liệu, k là bị DDoS
+        });
+    }
+
+    function GetDiaChi(id) {
+        let tendangnhap = "@Context.Session.GetString("TenDangNhap")";
+        let iddiachi = id;
+        $.ajax({
+            url: "/Customer/DonHang/GetDiaChi",
+            type: "post",
+            data: { "tendangnhap": tendangnhap, "iddiachi": iddiachi },
+            success: function (data) {
+                $("#partialDiaChi").html(data);
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            },
+            async: false
+            //Nhớ xài async hoặc dùng 1 request chứa tất cả dữ liệu, k là bị DDoS
+        });
+    }
+
+    function GetTongPhiShip() {
+        let totalPrice = 0;
+        $(".item-tienship").each(function () {
+            let pricetext = $(this).text();
+            pricetext = pricetext.replace(/\,/g, '');
+            pricetext = pricetext.substring(0, pricetext.indexOf(' '));
+
+            let price = parseFloat(pricetext);
+            totalPrice += price;
+        });
+        
+        let pricetext = $("#txtTienDatHang").text();
+        pricetext = pricetext.replace(/\,/g, '');
+        pricetext = pricetext.substring(0, pricetext.indexOf(' '));
+
+        let price = parseFloat(pricetext);
+        totalPrice += price;
+
+        $("#txtTongTienThanhToan").text(totalPrice.toLocaleString() + ' đ');
+    }
 </script>
 
 <script>
@@ -294,6 +349,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             window.location.href = "@Url.Action("Index", "Home")";
         }
 
+        let iddiachi = $("#txtIdDiaChi").val();
+        GetPhiShip(iddiachi);
         GetTongTienHang();
+        GetTongPhiShip();
+    });
+
+    $(".btnChonDiaChiMoi").click(function () {
+        let iddiachi = $(this).closest('tr').find('.item-idduong').val();
+        GetDiaChi(iddiachi);
+        $("#addressModal").modal('toggle');
+        GetPhiShip(iddiachi);
+        GetTongPhiShip();
+        //console.log(iddiachi);
+    });
+
+    $("#btnDatHang").click(function () {
+        let tendangnhap = "@Context.Session.GetString("TenDangNhap")";
+        $.ajax({
+            url: "/Customer/DonHang/CheckDonHang",
+            type: "post",
+            data: { "tendangnhap": tendangnhap },
+            success: function (data) {
+                if (data == "Đặt hàng thành công") {
+                    alert(data);
+                }
+                else {
+                    alert(data);
+                }
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            },
+            async: false
+            //Nhớ xài async hoặc dùng 1 request chứa tất cả dữ liệu, k là bị DDoS
+        });
     });
 </script>

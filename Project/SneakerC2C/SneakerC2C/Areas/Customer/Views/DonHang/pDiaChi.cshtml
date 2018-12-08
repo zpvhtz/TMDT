@@ -1,0 +1,5 @@
+﻿@model Models.Database.DiaChi
+
+<input type="text" value="@Model.Id" id="txtIdDiaChi" readonly hidden/>
+<h4><b>@ViewBag.TaiKhoan.Ten (@ViewBag.TaiKhoan.DienThoai) </b>@Model.Duong, @Model.IdTinhThanhNavigation.TenTinhThanh</h4>
+<a href="#" data-toggle="modal" data-target="#addressModal">Thay Đổi</a>

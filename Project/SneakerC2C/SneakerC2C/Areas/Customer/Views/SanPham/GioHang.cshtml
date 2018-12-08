@@ -303,6 +303,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     $(".soluong").keyup(function () {
         let totalPrice = 0;
+        let quantity = 0;
 
         let pricetext = $(this).closest('.cart_theoshop_item').find('.dongia_giohang').text().trim();
         pricetext = pricetext.replace(/\,/g, '');
@@ -310,13 +311,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         if ($(this).val() == null || $(this).val() == '') {
             let price = parseFloat(pricetext);
-            let quantity = 0;
+            quantity = 0;
             totalPrice = price * quantity;
             $(this).val(0);
         }
         else {
             let price = parseFloat(pricetext);
-            let quantity = parseInt($(this).val());
+            quantity = parseInt($(this).val());
             totalPrice = price * quantity;
 
         }

@@ -9,6 +9,7 @@ using Models.Database;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Models.DTO;
+using System.Globalization;
 
 namespace SneakerC2C.Areas.Webmaster.Controllers
 {
@@ -47,17 +48,20 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             return View(list);
         }
 
-        public IActionResult CreateQuangCao(string item_them_ma, string item_them_goiquangcao, string item_them_taikhoan, IFormFile item_them_hinh, DateTime item_them_ngaybatdau, DateTime item_them_ngayketthuc, string item_them_chuthich)
+        public IActionResult CreateQuangCao(string item_them_ma, string item_them_goiquangcao, string item_them_taikhoan, IFormFile item_them_hinh, int item_them_nam, int item_them_thang, int item_them_ngay, string item_them_ngayketthuc, string item_them_chuthich)
         {
             QuangCaoBUS quangcao = new QuangCaoBUS();
-            
-                var uniqueFileName = GetUniqueFileName(item_them_hinh.FileName);
+            DateTime item_them_ngaybatdau = new DateTime(item_them_nam, item_them_thang, item_them_ngay);
+           // DateTime ngayketthuc = DateTime.ParseExact(item_them_ngayketthuc, "d/M/yyyy", CultureInfo.InvariantCulture);
+
+            var uniqueFileName = GetUniqueFileName(item_them_hinh.FileName);
                 var fileName = Path.GetFileName(item_them_hinh.FileName);
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images\\quangcao", fileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\Hinh\\QuangCao", fileName);
                 item_them_hinh.CopyTo(new FileStream(filePath, FileMode.Create));
                 string hinh = fileName;
+               
 
-                string thongbao = quangcao.CreateQuangCao(item_them_ma, item_them_goiquangcao, item_them_taikhoan, hinh, item_them_ngaybatdau, item_them_ngayketthuc, item_them_chuthich);
+                string thongbao = quangcao.CreateQuangCao(item_them_ma, item_them_goiquangcao, item_them_taikhoan, hinh, item_them_ngaybatdau, item_them_chuthich);
                 
             return RedirectToAction("Index", "QuangCao", new { thongbao = thongbao });
         }
@@ -70,10 +74,20 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
                       + Path.GetExtension(fileName);
         }
 
-        public IActionResult EditQuangCao(string item_sua_ma, string item_sua_goiquangcao, string item_sua_taikhoan, string item_sua_hinh, DateTime item_sua_ngaybatdau, DateTime item_sua_ngayketthuc, string item_sua_chuthich)
+        public IActionResult EditQuangCao(string item_sua_ma, string item_sua_goiquangcao, string item_sua_taikhoan, IFormFile item_sua_hinh, DateTime item_sua_ngaybatdau, DateTime item_sua_ngayketthuc, string item_sua_chuthich)
         {
             QuangCaoBUS quangcao = new QuangCaoBUS();
-            string thongbao = quangcao.EditQuangCao(item_sua_ma, item_sua_goiquangcao, item_sua_taikhoan, item_sua_hinh, item_sua_ngaybatdau, item_sua_ngayketthuc, item_sua_chuthich);
+            string hinh;
+            if (item_sua_hinh != null)
+            {
+                var uniqueFileName = GetUniqueFileName(item_sua_hinh.FileName);
+                var fileName = Path.GetFileName(item_sua_hinh.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\Hinh\\QuangCao", fileName);
+                item_sua_hinh.CopyTo(new FileStream(filePath, FileMode.Create));
+                hinh = fileName;
+            }
+            else hinh = null;
+            string thongbao = quangcao.EditQuangCao(item_sua_ma, item_sua_goiquangcao, item_sua_taikhoan, hinh, item_sua_ngaybatdau, item_sua_ngayketthuc, item_sua_chuthich);
             return RedirectToAction("Index", "QuangCao", new { thongbao = thongbao });
         }
 
@@ -81,6 +95,13 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
         {
             QuangCaoBUS quangcao = new QuangCaoBUS();
             string thongbao = quangcao.LockQuangCao(maquangcao);
+            return RedirectToAction("Index", "QuangCao", new { thongbao = thongbao });
+        }
+
+        public IActionResult LockQuangCao2(string maquangcao)
+        {
+            QuangCaoBUS quangcao = new QuangCaoBUS();
+            string thongbao = quangcao.LockQuangCao2(maquangcao);
             return RedirectToAction("Index", "QuangCao", new { thongbao = thongbao });
         }
 
@@ -159,6 +180,16 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             QuangCaoBUS quangcao = new QuangCaoBUS();
             List<QuangCaoThichHop> qc = quangcao.GetDates(nam, thang, goi);
             return qc;
+        }
+        public int GetThoiLuong(string goi)
+        {
+            QuangCaoBUS quangcao = new QuangCaoBUS();
+            return quangcao.GetThoiLuong(goi);
+        }
+        public string GetTenViTri(string goi)
+        {
+            QuangCaoBUS quangcao = new QuangCaoBUS();
+            return quangcao.GetTenViTri(goi);
         }
     }
 }

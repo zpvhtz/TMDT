@@ -72,7 +72,7 @@
                     <td class="item-ma">@item.MaQuangCao</td>
                     <td class="item-goiquangcao">@item.IdGoiQuangCaoNavigation.MaGoiQuangCao</td>
                     <td class="item-taikhoan">@item.IdTaiKhoanNavigation.TenDangNhap</td>
-                    <td class="item-hinh"><img src="@Url.Content("~/images/quangcao/" + @item.Hinh)"/></td>
+                    <td class="item-hinh"><img src="@Url.Content("~/Hinh/quangcao/" + @item.Hinh)"/></td>
                     <td class="item-ngaybatdau">@item.NgayBatDau</td>
                     <td class="item-ngayketthuc">@item.NgayKetThuc</td>
                     <td class="item-chuthich">@item.ChuThich</td>
@@ -83,6 +83,7 @@
                             <button class="btn btn-primary btnSuaGoi" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
 
                             <a asp-controller="QuangCao" asp-action="LockQuangCao" asp-route-maquangcao="@item.MaQuangCao" class="btn btn-danger">Khoá</a>
+                            <a asp-controller="QuangCao" asp-action="LockQuangCao2" asp-route-maquangcao="@item.MaQuangCao" class="btn btn-danger">Huỷ</a>
                         }
                         else
                         {
@@ -237,11 +238,11 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Mã</label>
-                                <input type="text" class="form-control" id="item-them-ma" name="item-them-ma" required>
+                                <input type="text" class="form-control" id="item_them_ma" name="item_them_ma" required>
                             </div>
                             <div class="form-group">
                                 <label>Mã Gói</label>
-                                <select class="form-control" id="item-them-goiquangcao" name="item-them-goiquangcao">
+                                <select class="form-control" id="item_them_goiquangcao" name="item_them_goiquangcao" required onchange="changegoi()">
                                     @foreach (var item in ViewBag.GoiQuangCao)
                                     {
                                         <option value="@item.Id">@item.MaGoiQuangCao</option>
@@ -249,40 +250,48 @@
                                 </select>
                             </div>
                             <div class="form-group">
+                                <label>Tên Vị Trí </label>
+                                <input type="text" class="form-control" id="item_them_tenvitri" name="item_them_tenvitri" disable readonly />
+                            </div>
+                            <div class="form-group">
+                                <label>Thời Lượng</label>
+                                <input type="text" class="form-control" id="item_them_thoiluong" name="item_them_thoiluong" disable readonly />
+                            </div>
+                            <div class="form-group">
                                 <label>Tài Khoản</label>
-                                <select class="form-control" id="item-them-taikhoan" name="item-them-taikhoan">
-                                    @foreach (var item in ViewBag.TaiKhoan)
-                                    {
-                                        <option value="@item.Id">@item.TenDangNhap</option>
-                                    }
-                                </select>
+                                <input type="text" class="form-control" id="item_them_taikhoan" name="item_them_taikhoan"  required />
                             </div>
                             <div class="form-group">
                                 <label>Chọn file hình</label>
 
-                                <input type="file" class="form-control" id="item-them-hinh" name="item-them-hinh" required" />
+                                <input type="file" class="form-control" id="item_them_hinh" name="item_them_hinh" accept='image/*' required />
 
                             </div>
                             <div class="form-group">
                                 <label>Chọn năm bắt đầu</label>
 
-                                <input type="number" class="form-control" id="item-them-nam" name="item-them-nam" required min="@DateTime.Now.Year.ToString()" onchange="minthang()" />
+                                <input type="number" class="form-control" id="item_them_nam" name="item_them_nam" required min="@DateTime.Now.Year.ToString()" readonly onchange="changenam()" />
 
                             </div>
                             <div class="form-group">
                                 <label>Chọn tháng bắt đầu</label>
 
-                                <input type="number" class="form-control" id="item-them-thang" name="item-them-thang" max="12" required readonly />
+                                <input type="number" class="form-control" id="item_them_thang" name="item_them_thang" max="12" required readonly onchange="changethang()" />
 
                             </div>
                             <div class="form-group">
                                 <label>Chọn ngày bắt đầu</label>
-                                <select class="form-control" id="item-them-ngay" name="item-them-ngay" required readonly />
+                                <select class="form-control" id="item_them_ngay" name="item_them_ngay" required onchange="changengay()" >
+                                </select>
                             </div>
-                            
-                            <div class="form-group">
+
+                           @*<div class="form-group">
                                 <label>Ngày kết thúc </label>
-                                <input type="text" class="form-control" id="item-them-ngayketthuc" name="item-them-ngayketthuc" readonly />
+                                <input type="text" class="form-control" id="item_them_ngayketthuc" name="item_them_ngayketthuc" readonly />
+                            </div>*@
+                            <div class="form-group">
+                                <label>Chú thích </label>
+                                <input type="text" class="form-control" id="item_them_chuthich" name="item_them_chuthich"  />
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -295,46 +304,44 @@
         </div>
         <!-------------------------------------------------------- UPDATE MODAL ---------------------------------------------------------->
         <div class="modal fade" id="suaModal" role="dialog">
-            <div class="modal-dialog">
+           <div class="modal-dialog">
                 <!-- Modal content-->
-                <form asp-controller="QuangCao" asp-action="EditQuangCao" method="post">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Mã</label>
-                            <input type="text" class="form-control" id="item-sua-ma" name="item-sua-ma" required>
+                <form asp-controller="QuangCao" asp-action="EditQuangCao" method="post" enctype="multipart/form-data">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                            <h4 class="modal-title"><b>Quảng Cáo</b></h4>
                         </div>
-                        <div class="form-group">
-                            <label>Mã Gói</label>
-                            <select class="form-control" id="item-sua-goiquangcao" name="item-sua-goiquangcao">
-                                @foreach (var item in ViewBag.GoiQuangCao)
-                                {
-                                    <option value="@item.Id">@item.MaGoiQuangCao</option>
-                                }
-                            </select>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Mã</label>
+                                <input type="text" class="form-control" id="item_sua_ma" name="item_sua_ma" readonly required>
+                            </div>
+                            <div class="form-group">
+                                <label>Mã Gói</label>
+                                <input type="text" class="form-control" id="item_sua_goiquangcao" name="item_sua_goiquangcao" readonly required>
+                            </div>
+                            <div class="form-group">
+                                <label>Tài Khoản</label>
+                                <input type="text" class="form-control" id="item_sua_taikhoan" name="item_sua_taikhoan" readonly required />
+                            </div>
+                            <div class="form-group">
+                                <label>Chọn file hình</label>
+
+                                <input type="file" class="form-control" id="item_sua_hinh" name="item_sua_hinh" accept='image/*' />
+
+                            </div>
+
+                            <div class="form-group">
+                                <label>Chú Thích </label>
+                                <input type="text" class="form-control" id="item_sua_chuthich" name="item_sua_chuthich" />
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>Tài Khoản</label>
-                            <select class="form-control" id="item-sua-taikhoan" name="item-sua-taikhoan">
-                                @foreach (var item in ViewBag.TaiKhoan)
-                                {
-                                    <option value="@item.Id">@item.Ten</option>
-                                }
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Ngày bắt đầu</label>
-                            <input type="date" class="form-control" id="item-sua-ngaybatdau" name="item-sua-ngaybatdau" readonly required />
-                        </div>
-                        <div class="form-group">
-                            <label>Ngày kết thúc </label>
-                            <input type="date" class="form-control" id="item-sua-ngayketthuc" name="item-sua-ngayketthuc" min="0" readonly />
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-warning">Sửa</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-warning">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                    </div>
-</div>
                 </form>
             </div>
         </div>
@@ -347,7 +354,8 @@
         }
 
 
-        <script>
+ <script>
+     document.getElementById('item_them_goiquangcao').selectedIndex = "-1";
     function SearchAndSort() {
         let search = "@ViewBag.Search";
         if (search == null || search == '') {
@@ -359,8 +367,8 @@
             href = href + (`&search=${search}`)
             return href;
         }
-        $("#item-them-thoiluong").keydown(validateNumber);
-        $("#item-sua-thoiluong").keydown(validateNumber);
+        $("#item_them_thoiluong").keydown(validateNumber);
+        $("#item_sua_thoiluong").keydown(validateNumber);
     }
 
     function validateNumber(e) {
@@ -385,6 +393,7 @@
         </script>
 
         <script>
+            
     $(document).ready(function () {
         //Sắp xếp
         let sort = "@ViewBag.Sort";
@@ -400,15 +409,17 @@
 
     $(".btnSuaGoi").click(function () {
         let ma = $(this).closest('tr').find('.item-ma').text();
-        let vitriquangcao = $(this).closest('tr').find('.item-vitriquangcao').text();
-        let thoiluong = $(this).closest('tr').find('.item-thoiluong').text();
-        let tongtien = $(this).closest('tr').find('.item-tongtien').text();
+        let goiquangcao = $(this).closest('tr').find('.item-goiquangcao').text();
+        
+        let taikhoan = $(this).closest('tr').find('.item-taikhoan').text();
+        let chuthich = $(this).closest('tr').find('.item-chuthich').text();
 
-
-        $("#item-sua-ma").val(ma.trim());
-        $("#item-sua-vitriquangcao").val(vitriquangcao.trim());
-        $("#item-sua-thoiluong").val(thoiluong.trim());
-        $("#item-sua-tongtien").val(tongtien.trim());
+       
+        $("#item_sua_ma").val(ma.trim());
+        document.getElementById("item_sua_goiquangcao").value = goiquangcao;
+        document.getElementById("item_sua_taikhoan").value = taikhoan;
+      
+        $("#item_sua_chuthich").val(chuthich.trim());
 
     });
 
@@ -431,27 +442,14 @@
         $link.attr('href', href);
     });
 
-    function GetDonGiaThem(id,thoiluong) {
-        $.ajax({
-            url: "/Webmaster/QuangCao/GetDonGia",
-            type: "get",
-            data: { "id": id },
-            success: function (data) {
-                let tongtien = data*thoiluong;
-                $("#item-them-tongtien").val(tongtien);
-            },
-            error: function (data) {
-                alert("Error: " + data);
-            }
-        });
-            }
+            
             function availabledates(nam, thang, goi) {
                 $.ajax({
                     url: "/Webmaster/QuangCao/GetDates",
                     type: "post",
                     data: { "nam": nam, "thang":thang, "goi":goi },
                     success: function (data) {
-                        var select = document.getElementById("item-them-ngay");
+                        var select = document.getElementById("item_them_ngay");
                         for (var i in data) {
                             var option = document.createElement("option");
                             option.text = data[i].day;
@@ -464,24 +462,111 @@
                     }
                 });
             }
-            function minthang() {
+            
+            function getthoiluong(goi) {
+                $.ajax({
+                    url: "/Webmaster/QuangCao/GetThoiLuong",
+                    type: "post",
+                    data: { "goi": goi },
+                    
+                    success: function (data) {
+                        document.getElementById('item_them_thoiluong').value = data + " tuần";
+                        
+                        },
+
+                    
+                    error: function (data) {
+                        alert("Error: " + data);
+                    }
+                });
+            }
+            var thoiluong;
+            function setthoiluong(something) {
+                thoiluong = something;
+            }
+            function gettenvitri(goi) {
+                $.ajax({
+                    url: "/Webmaster/QuangCao/GetTenViTri",
+                    type: "post",
+                    data: { "goi": goi },
+
+                    success: function (data) {
+                        document.getElementById('item_them_tenvitri').value = data;
+                        
+                    },
+
+
+                    error: function (data) {
+                        alert("Error: " + data);
+                    }
+                });
+            }
+            
+            function changenam() {
+                document.getElementById('item_them_thang').readOnly = false;
                 
-                var nam = document.getElementById('item-them-nam').value;
-                
-                var goi = document.getElementById('item-them-goiquangcao').value;
-                
+
+                var nam = document.getElementById('item_them_nam').value;
+                var goi = document.getElementById('item_them_goiquangcao').value;
+                var thang = document.getElementById('item_them_thang').value;  
+
+
+
                 if (nam ==@DateTime.Now.Year) {
-                    document.getElementById('item-them-thang').min =@DateTime.Now.Month;
-                    document.getElementById('item-them-thang').value =@DateTime.Now.Month;
+                    document.getElementById('item_them_thang').min =@DateTime.Now.Month;
+
                 }
                 else {
-                    document.getElementById('item-them-thang').min =1;
-                    document.getElementById('item-them-thang').value =1;
+                    document.getElementById('item_them_thang').min = 1;
+
                 }
-                var thang = document.getElementById('item-them-thang').value;
+               
+                document.getElementById("item_them_ngay").options.length = 0;
+                document.getElementById("item_them_thang").value = null;
+              
+            }
                 
+
+
+                
+           async function changethang() {  
+               while (document.getElementById("item_them_ngay").options.length > 0) {
+                   document.getElementById("item_them_ngay").remove(0);
+               }
+                    document.getElementById('item_them_ngay').readOnly = false;
+                var nam = document.getElementById('item_them_nam').value;    
+                var goi = document.getElementById('item_them_goiquangcao').value;      
+                var thang = document.getElementById('item_them_thang').value;     
                 availabledates(nam, thang, goi);
+                
                
             
-    }
+            }
+            
+            function changengay() {  
+                
+            }
+            function changegoi() {
+                var goi = document.getElementById('item_them_goiquangcao').value;    
+                document.getElementById("item_them_nam").readOnly = false;
+                document.getElementById('item_them_ngay').readOnly = true;
+                document.getElementById('item_them_thang').readOnly = true;
+                document.getElementById('item_them_nam').value = null;
+                document.getElementById('item_them_ngay').value = null;
+                document.getElementById('item_them_thang').value = null;
+                //document.getElementById('item_them_ngayketthuc').value = null;
+                getthoiluong(goi);
+                gettenvitri(goi);
+            }
+           //function ngayketthuc() {
+           //     var nam = document.getElementById('item_them_nam').value;
+           //     var ngay = document.getElementById('item_them_ngay').value;
+           //     var thang = document.getElementById('item_them_thang').value;
+           //     var d = new Date(nam, thang - 1, ngay);
+
+           //     d.setDate(d.getDate() + thoiluong * 7);
+           //     var month = d.getMonth() + 1;
+           //     document.getElementById('item_them_ngayketthuc').value = d.getDate() + '/' + month + '/' + d.getFullYear();
+           // }
+            
         </script>

@@ -8405,6 +8405,15 @@
       "path": "pagedlist/1.17.0",
       "files": [
         ".nupkg.metadata",
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+        ".nupkg.metadata",
+=======
+>>>>>>> 72ab8e90e35bf871c73bd12a3664ca1322497a1d
+>>>>>>> 00300afbbe4d6561717a3e862c698cff199e88f2
+>>>>>>> 387342a96ca60a78b993d2d8b222b68bcf63c95a
         ".signature.p7s",
         "lib/net40/PagedList.dll",
         "lib/net40/PagedList.xml",
@@ -8418,6 +8427,15 @@
       "path": "pagedlist.mvc/4.5.0",
       "files": [
         ".nupkg.metadata",
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+        ".nupkg.metadata",
+=======
+>>>>>>> 72ab8e90e35bf871c73bd12a3664ca1322497a1d
+>>>>>>> 00300afbbe4d6561717a3e862c698cff199e88f2
+>>>>>>> 387342a96ca60a78b993d2d8b222b68bcf63c95a
         ".signature.p7s",
         "Content/Content/PagedList.css",
         "lib/net40/PagedList.Mvc.XML",
@@ -13373,23 +13391,85 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\tnngo\\.nuget\\packages\\": {},
+=======
+<<<<<<< HEAD
+    "C:\\Users\\hieut\\.nuget\\packages\\": {},
+=======
+<<<<<<< HEAD
+    "C:\\Users\\tnngo\\.nuget\\packages\\": {},
+=======
+<<<<<<< HEAD
+    "C:\\Users\\ThoXu\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\HeoBayMau\\.nuget\\packages\\": {},
+>>>>>>> e39a80d2031bcb34567d8148d72565c87ac67280
+>>>>>>> 72ab8e90e35bf871c73bd12a3664ca1322497a1d
+>>>>>>> 00300afbbe4d6561717a3e862c698cff199e88f2
+>>>>>>> 387342a96ca60a78b993d2d8b222b68bcf63c95a
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "D:\\ASP.NET\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
+      "projectName": "Models",
+      "projectPath": "D:\\ASP.NET\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
+      "packagesPath": "C:\\Users\\hieut\\.nuget\\packages\\",
+      "outputPath": "D:\\ASP.NET\\TMDT\\Project\\SneakerC2C\\Models\\obj\\",
+=======
+<<<<<<< HEAD
+>>>>>>> 387342a96ca60a78b993d2d8b222b68bcf63c95a
       "projectUniqueName": "C:\\Code\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
       "projectName": "Models",
       "projectPath": "C:\\Code\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
       "packagesPath": "C:\\Users\\tnngo\\.nuget\\packages\\",
       "outputPath": "C:\\Code\\TMDT\\Project\\SneakerC2C\\Models\\obj\\",
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\ThoXu\\Desktop\\C2CSNEAKERS\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
+      "projectName": "Models",
+      "projectPath": "C:\\Users\\ThoXu\\Desktop\\C2CSNEAKERS\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
+      "packagesPath": "C:\\Users\\ThoXu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ThoXu\\Desktop\\C2CSNEAKERS\\TMDT\\Project\\SneakerC2C\\Models\\obj\\",
+=======
+      "projectUniqueName": "F:\\ASP.NET\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
+      "projectName": "Models",
+      "projectPath": "F:\\ASP.NET\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
+      "packagesPath": "C:\\Users\\HeoBayMau\\.nuget\\packages\\",
+      "outputPath": "F:\\ASP.NET\\TMDT\\Project\\SneakerC2C\\Models\\obj\\",
+>>>>>>> e39a80d2031bcb34567d8148d72565c87ac67280
+>>>>>>> 72ab8e90e35bf871c73bd12a3664ca1322497a1d
+>>>>>>> 00300afbbe4d6561717a3e862c698cff199e88f2
+>>>>>>> 387342a96ca60a78b993d2d8b222b68bcf63c95a
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\tnngo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
+        "C:\\Users\\hieut\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
+        "C:\\Users\\tnngo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
+        "C:\\Users\\ThoXu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\HeoBayMau\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> e39a80d2031bcb34567d8148d72565c87ac67280
+>>>>>>> 72ab8e90e35bf871c73bd12a3664ca1322497a1d
+>>>>>>> 00300afbbe4d6561717a3e862c698cff199e88f2
+>>>>>>> 387342a96ca60a78b993d2d8b222b68bcf63c95a
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

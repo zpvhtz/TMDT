@@ -147,5 +147,26 @@ namespace Models.BusinessLogicLayer
             List<TaiKhoan> listtaikhoan = context.TaiKhoan.Where(tk => listgiohang.Contains(tk.Id)).ToList();
             return listtaikhoan;
         }
+
+        public List<DiaChi> GetPhiShip(string tendangnhap)
+        {
+            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+            TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoan(tendangnhap);
+
+            var listgiohang = context.GioHang.Where(gh => gh.IdTaiKhoan == taikhoan.Id)
+                                             .Include(gh => gh.IdSizeSanPhamNavigation)
+                                             .Include(gh => gh.IdSizeSanPhamNavigation.IdSanPhamNavigation)
+                                             .Include(gh => gh.IdTaiKhoanNavigation)
+                                             .Select(gh => gh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoan)
+                                             .Distinct()
+                                             .ToList();
+
+            List<DiaChi> listdiachimerchant = context.DiaChi.Where(dc => listgiohang.Contains(dc.IdTaiKhoan))
+                                                            .Include(dc => dc.IdTaiKhoanNavigation)
+                                                            .Include(dc => dc.IdTinhThanhNavigation)
+                                                            .ToList();
+
+            return listdiachimerchant;
+        }
     }
 }

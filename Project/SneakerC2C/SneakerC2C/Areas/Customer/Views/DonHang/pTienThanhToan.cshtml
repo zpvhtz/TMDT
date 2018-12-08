@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Models.Database.DiaChi>
+
+<div class="txt_dathang">
+    <p>Phí vận chuyển</p>
+</div>
+<div class="gia_dathang">
+    @foreach(var item in Model)
+    {
+        <b>@item.IdTaiKhoanNavigation.TenShop</b>
+        @if(item.IdTinhThanh != ViewBag.DiaChi.IdTinhThanh)
+        {
+            <p class="item-tienship">@ViewBag.GiaShipNoiThanh.Gia.ToString("#,###") đ</p>
+        }
+        else
+        {
+            <p class="item-tienship">@ViewBag.GiaShipNgoaiThanh.Gia.ToString("#,###") đ</p>
+        }
+    }
+</div>

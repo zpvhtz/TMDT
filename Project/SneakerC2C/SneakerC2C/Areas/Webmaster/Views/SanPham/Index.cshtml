@@ -96,7 +96,7 @@
                                 <a asp-controller="SanPham" asp-action="UnLockSP" asp-route-ma="@item.MaSanPham" class="btn btn-danger">Mở khoá</a>
                                 break;
                             case "Chưa duyệt":
-                                <a asp-controller="SanPham" asp-action="Duyet" asp-route-ma="@item.MaSanPham" class="btn btn-danger">Khoá</a>
+                                <a asp-controller="SanPham" asp-action="Duyet" asp-route-ma="@item.MaSanPham" class="btn btn-danger">Duyệt</a>
                                 break;
                             default:
                                 <button class="btn btn-danger" type="button">Người bán đã khoá</button>

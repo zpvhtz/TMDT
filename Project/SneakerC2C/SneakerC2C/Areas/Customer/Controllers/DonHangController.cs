@@ -90,9 +90,13 @@ namespace SneakerC2C.Areas.Customer.Controllers
             return "";
         }
 
-        public void CreateDonDatHang(string tendangnhap)
+        public void CreateDonDatHang(string tendangnhap, string iddiachi, float tongtien)
         {
-
+            string checktendangnhap = HttpContext.Session.GetString("TenDangNhap");
+            if (checktendangnhap != null && checktendangnhap != "")
+            {
+                donhangbus.CreateDonDatHang(tendangnhap, iddiachi, tongtien);
+            }
         }
     }
 }

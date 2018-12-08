@@ -340,6 +340,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         $("#txtTongTienThanhToan").text(totalPrice.toLocaleString() + ' đ');
     }
+
+    function CreateDonDatHang() {
+        let pricetext = $("#txtTongTienThanhToan").text();
+        pricetext = pricetext.replace(/\,/g, '');
+        pricetext = pricetext.substring(0, pricetext.indexOf(' '));
+        
+        let tendangnhap = "@Context.Session.GetString("TenDangNhap")";
+        let iddiachi = $("#txtIdDiaChi").val();
+        let tongtien = parseFloat(pricetext);
+
+        console.log(tendangnhap);
+        console.log(iddiachi);
+        console.log(tongtien);
+
+        $.ajax({
+            url: "/Customer/DonHang/CreateDonDatHang",
+            type: "post",
+            data: { "tendangnhap": tendangnhap, "iddiachi": iddiachi, "tongtien": tongtien },
+            success: function (data) {
+                window.location.href = "@Url.Action("Index", "Home")";
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            },
+            async: false
+            //Nhớ xài async hoặc dùng 1 request chứa tất cả dữ liệu, k là bị DDoS
+        });
+    }
 </script>
 
 <script>
@@ -373,6 +401,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             success: function (data) {
                 if (data == "Đặt hàng thành công") {
                     alert(data);
+                    CreateDonDatHang();
                 }
                 else {
                     alert(data);

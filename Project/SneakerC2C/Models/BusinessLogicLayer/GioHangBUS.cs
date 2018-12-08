@@ -104,6 +104,16 @@ namespace Models.BusinessLogicLayer
             return "Xoá sản phẩm khỏi giỏ hàng thành công";
         }
 
+        public void DeleteAllFromCart(string idtaikhoan)
+        {
+            List<GioHang> listgiohang = context.GioHang.Where(gh => gh.IdTaiKhoan == Guid.Parse(idtaikhoan)).ToList();
+            foreach(var item in listgiohang)
+            {
+                context.GioHang.Remove(item);
+                context.SaveChanges();
+            }
+        }
+
         public GioHang AddSingleItem(KeyValuePair<string, int> item)
         {
             //Khai báo

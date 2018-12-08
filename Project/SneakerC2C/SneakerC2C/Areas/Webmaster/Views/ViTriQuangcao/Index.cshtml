@@ -228,15 +228,15 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Mã</label>
-                                <input type="text" class="form-control" id="item-them-ma" name="item-them-ma" required>
+                                <input type="text" class="form-control" id="item_them_ma" name="item_them_ma" required>
                             </div>
                             <div class="form-group">
                                 <label>Tên</label>
-                                <input type="text" class="form-control" id="item-them-ten" name="item-them-ten" required>
+                                <input type="text" class="form-control" id="item_them_ten" name="item_them_ten" required>
                             </div>
                             <div class="form-group">
                                 <label>Trang</label>
-                                <select class="form-control" id="item-them-trangquangcao" name="item-them-trangquangcao">
+                                <select class="form-control" id="item_them_trangquangcao" name="item_them_trangquangcao">
                                     @foreach (var item in ViewBag.TrangQuangCao)
                                     {
                                         <option value="@item.Id">@item.TenTrang</option>
@@ -245,11 +245,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Đơn Giá</label>
-                                <input type="number" class="form-control" id="item-them-dongia" name="item-them-dongia" min="0" required>
+                                <input type="number" class="form-control" id="item_them_dongia" name="item_them_dongia" min="0" required>
                             </div>
                             <div class="form-group">
                                 <label>Chú Thích</label>
-                                <input type="text" class="form-control" id="item-them-chuthich" name="item-them-chuthich">
+                                <input type="text" class="form-control" id="item_them_chuthich" name="item_them_chuthich">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -273,15 +273,15 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Mã</label>
-                                <input type="text" class="form-control" id="item-sua-ma" name="item-sua-ma" readonly>
+                                <input type="text" class="form-control" id="item_sua_ma" name="item_sua_ma" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Tên</label>
-                                <input type="text" class="form-control" id="item-sua-ten" name="item-sua-ten">
+                                <input type="text" class="form-control" id="item_sua_ten" name="item_sua_ten">
                             </div>
                             <div class="form-group">
                                 <label>Trang</label>
-                                <select class="form-control" id="item-sua-trangquangcao" name="item-sua-trangquangcao">
+                                <select class="form-control" id="item_sua_trangquangcao" name="item_sua_trangquangcao">
                                     @foreach (var item in ViewBag.TrangQuangCao)
                                     {
                                         <option value="@item.Id">@item.TenTrang</option>
@@ -290,11 +290,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Đơn Giá</label>
-                                <input type="number" class="form-control" id="item-sua-dongia" name="item-sua-dongia" min="0" readonly required>
+                                <input type="number" class="form-control" id="item_sua_dongia" name="item_sua_dongia" min="0" readonly required>
                             </div>
                             <div class="form-group">
                                 <label>Chú Thích</label>
-                                <input type="text" class="form-control" id="item-sua-chuthich" name="item-sua-chuthich">
+                                <input type="text" class="form-control" id="item_sua_chuthich" name="item_sua_chuthich">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -326,8 +326,8 @@
             href = href + (`&search=${search}`)
             return href;
         }
-        $("#item-them-dongia").keydown(validateNumber);
-        $("#item-sua-dongia").keydown(validateNumber);
+        $("#item_them_dongia").keydown(validateNumber);
+        $("#item_sua_dongia").keydown(validateNumber);
     }
 
     function validateNumber(e) {
@@ -372,10 +372,10 @@
         let chuthich = $(this).closest('tr').find('.item-chuthich').text();
 
 
-        $("#item-sua-ma").val(ma.trim());
-        $("#item-sua-ten").val(ten.trim());
-        $("#item-sua-dongia").val(dongia.trim());
-        $("#item-sua-chuthich").val(chuthich.trim());
+        $("#item_sua_ma").val(ma.trim());
+        $("#item_sua_ten").val(ten.trim());
+        $("#item_sua_dongia").val(dongia.trim());
+        $("#item_sua_chuthich").val(chuthich.trim());
 
     });
 

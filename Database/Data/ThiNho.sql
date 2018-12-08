@@ -157,14 +157,15 @@ AS
 	ORDER BY sp.Id
 GO
 
-SELECT MaSanPham, TenSanPham
-FROM SanPham sp JOIN TaiKhoan tk ON sp.IdTaiKhoan = tk.Id
-WHERE tk.TenDangNhap = 'merchant1' AND sp.Id IN
-(
-SELECT IdSanPham
-		FROM SizeSanPham
-		GROUP BY IdSanPham
-		HAVING SUM(SoLuong) = 0
-)
+----SELECT MaSanPham, TenSanPham
+----FROM SanPham sp JOIN TaiKhoan tk ON sp.IdTaiKhoan = tk.Id
+----WHERE tk.TenDangNhap = 'merchant1' AND sp.Id IN
+----(
+----SELECT IdSanPham
+----		FROM SizeSanPham
+----		GROUP BY IdSanPham
+----		HAVING SUM(SoLuong) = 0
+----)
 
-exec P_HetHang_Search 'merchant1', N'Aktiv', 12, 1
+--exec P_HetHang_Search 'merchant1', N'Aktiv', 12, 1
+

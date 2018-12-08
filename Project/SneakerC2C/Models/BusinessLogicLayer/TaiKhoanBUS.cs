@@ -258,6 +258,34 @@ namespace Models.BusinessLogicLayer
             return "Kích hoạt thành công";
         }
 
+        public DiaChi GetFirstAddress(string tendangnhap)
+        {
+            DiaChi diachi = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap == tendangnhap)
+                                          .Include(dc => dc.IdTaiKhoanNavigation)
+                                          .Include(dc => dc.IdTinhThanhNavigation)
+                                          .FirstOrDefault();
+            return diachi;
+        }
+
+        public List<DiaChi> GetAllAddress(string tendangnhap)
+        {
+            List<DiaChi> diachi = context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap == tendangnhap)
+                                                .Include(dc => dc.IdTaiKhoanNavigation)
+                                                .Include(dc => dc.IdTinhThanhNavigation)
+                                                .ToList();
+            return diachi;
+        }
+
+        public DiaChi GetChoosenAddress(string iddiachi)
+        {
+            DiaChi diachi = new DiaChi();
+            diachi = context.DiaChi.Where(dc => dc.Id == Guid.Parse(iddiachi))
+                                   .Include(dc => dc.IdTaiKhoanNavigation)
+                                   .Include(dc => dc.IdTinhThanhNavigation)
+                                   .SingleOrDefault();
+            return diachi;
+        }
+
         public List<TaiKhoan> Sort(string sortorder, int pagesize, int pagenumber)
         {
             List<TaiKhoan> list = new List<TaiKhoan>();

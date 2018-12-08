@@ -88,31 +88,51 @@ namespace SneakerC2C.Areas.Customer.Controllers
 
         public string ThemDiaChi(string tendangnhap, string diachi, string tinhthanh)
         {
-            DiaChiBUS diachibus = new DiaChiBUS();
-            string thongbao = diachibus.CreateDiaChi(tendangnhap, diachi, tinhthanh);
-            return thongbao;
+            string checktendangnhap = HttpContext.Session.GetString("TenDangNhap");
+            if (checktendangnhap != null && checktendangnhap != "")
+            {
+                DiaChiBUS diachibus = new DiaChiBUS();
+                string thongbao = diachibus.CreateDiaChi(tendangnhap, diachi, tinhthanh);
+                return thongbao;
+            }
+            return "";
         }
 
         public string SuaDiaChi(string id, string diachi, string tinhthanh)
         {
-            DiaChiBUS diachibus = new DiaChiBUS();
-            string thongbao = diachibus.EditDiaChi(id, diachi, tinhthanh);
-            return thongbao;
+            string checktendangnhap = HttpContext.Session.GetString("TenDangNhap");
+            if (checktendangnhap != null && checktendangnhap != "")
+            {
+                DiaChiBUS diachibus = new DiaChiBUS();
+                string thongbao = diachibus.EditDiaChi(id, diachi, tinhthanh);
+                return thongbao;
+            }
+            return "";
         }
 
         public string KhoaDiaChi(string id)
         {
-            DiaChiBUS diachibus = new DiaChiBUS();
-            string thongbao = diachibus.LockDiaChi(id);
-            thongbao = "Xoá thành công";
-            return thongbao;
+            string checktendangnhap = HttpContext.Session.GetString("TenDangNhap");
+            if (checktendangnhap != null && checktendangnhap != "")
+            {
+                DiaChiBUS diachibus = new DiaChiBUS();
+                string thongbao = diachibus.LockDiaChi(id);
+                thongbao = "Xoá thành công";
+                return thongbao;
+            }
+            return "";
         }
 
         public string EditThongTin(string tendangnhap, string email, string sdt)
         {
-            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
-            string thongbao = taikhoanbus.EditTaiKhoan(tendangnhap, null, null, null, email, sdt, null);
-            return thongbao;
+            string checktendangnhap = HttpContext.Session.GetString("TenDangNhap");
+            if (checktendangnhap != null && checktendangnhap != "")
+            {
+                TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+                string thongbao = taikhoanbus.EditTaiKhoan(tendangnhap, null, null, null, email, sdt, null);
+                return thongbao;
+            }
+            return "";
         }
 
         public async Task<IActionResult> CreateTaiKhoan(string tendangnhap, string matkhau, string confirmmatkhau, string ten, string email)
@@ -135,24 +155,34 @@ namespace SneakerC2C.Areas.Customer.Controllers
 
         public IActionResult EditTaiKhoan(string tendangnhap, string ten, string email, string dienthoai)
         {
-            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
-            string thongbao = taikhoanbus.EditTaiKhoan(tendangnhap, null, ten, null, email, dienthoai, null);
-            return RedirectToAction("Index", "Home", new { thongbao = thongbao });
+            string checktendangnhap = HttpContext.Session.GetString("TenDangNhap");
+            if (checktendangnhap != null && checktendangnhap != "")
+            {
+                TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+                string thongbao = taikhoanbus.EditTaiKhoan(tendangnhap, null, ten, null, email, dienthoai, null);
+                return RedirectToAction("Index", "Home", new { thongbao = thongbao });
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         public string EditPassword(string tendangnhap, string matkhaucu, string matkhaumoi)
         {
-            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
-            string thongbao = "";
-            if(taikhoanbus.CheckOldPassword(tendangnhap, matkhaucu))
+            string checktendangnhap = HttpContext.Session.GetString("TenDangNhap");
+            if (checktendangnhap != null && checktendangnhap != "")
             {
-                thongbao = taikhoanbus.EditTaiKhoan(tendangnhap, matkhaumoi, null, null, null, null, null);
+                TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+                string thongbao = "";
+                if (taikhoanbus.CheckOldPassword(tendangnhap, matkhaucu))
+                {
+                    thongbao = taikhoanbus.EditTaiKhoan(tendangnhap, matkhaumoi, null, null, null, null, null);
+                }
+                else
+                {
+                    thongbao = "Mật khẩu cũ không trùng khớp";
+                }
+                return thongbao;
             }
-            else
-            {
-                thongbao = "Mật khẩu cũ không trùng khớp";
-            }
-            return thongbao;
+            return "";
         }
 
         public JsonResult CheckTaiKhoan(string tendangnhap)
@@ -256,22 +286,32 @@ namespace SneakerC2C.Areas.Customer.Controllers
 
         public string AddToCart(string idsizesanpham, int soluong)
         {
-            string tendangnhap = HttpContext.Session.GetString("TenDangNhap");
-            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
-            TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoan(tendangnhap);
-            GioHangBUS giohangbus = new GioHangBUS();
-            string thongbao = giohangbus.AddToCart(taikhoan.Id.ToString(), idsizesanpham, soluong);
-            return thongbao;
+            string checktendangnhap = HttpContext.Session.GetString("TenDangNhap");
+            if (checktendangnhap != null && checktendangnhap != "")
+            {
+                string tendangnhap = HttpContext.Session.GetString("TenDangNhap");
+                TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+                TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoan(tendangnhap);
+                GioHangBUS giohangbus = new GioHangBUS();
+                string thongbao = giohangbus.AddToCart(taikhoan.Id.ToString(), idsizesanpham, soluong);
+                return thongbao;
+            }
+            return "";
         }
 
         public IActionResult DeleteFromCart(string idsizesanpham)
         {
-            string tendangnhap = HttpContext.Session.GetString("TenDangNhap");
-            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
-            TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoan(tendangnhap);
-            GioHangBUS giohangbus = new GioHangBUS();
-            string thongbao = giohangbus.DeleteFromCart(taikhoan.Id.ToString(), idsizesanpham);
-            return RedirectToAction("GioHang", "SanPham", new { tendangnhap = tendangnhap });
-        }
+            string checktendangnhap = HttpContext.Session.GetString("TenDangNhap");
+            if (checktendangnhap != null && checktendangnhap != "")
+            {
+                string tendangnhap = HttpContext.Session.GetString("TenDangNhap");
+                TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+                TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoan(tendangnhap);
+                GioHangBUS giohangbus = new GioHangBUS();
+                string thongbao = giohangbus.DeleteFromCart(taikhoan.Id.ToString(), idsizesanpham);
+                return RedirectToAction("GioHang", "SanPham", new { tendangnhap = tendangnhap });
+            }
+            return RedirectToAction("Index", "Home");
+    }
     }
 }

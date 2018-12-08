@@ -29,7 +29,9 @@ namespace Models.BusinessLogicLayer
             List<QuangCao> list = context.QuangCao.OrderBy(gh => gh.MaQuangCao)
                 .Include(gh => gh.IdGoiQuangCaoNavigation)
                 .Include(gh => gh.IdTaiKhoanNavigation)
+                .Where(gh =>gh.TinhTrang != "Sai dữ liệu")
                 .ToList();
+                
             return list;
         }
 
@@ -40,7 +42,7 @@ namespace Models.BusinessLogicLayer
             
             goiqc = context.GoiQuangCao.Where(gh => gh.Id == Guid.Parse(goi)).SingleOrDefault();
             SqlConnection con = new SqlConnection("Server =.\\QUACHDAIVYTRUE; Database = QLBanGiay; User id = sa; Password = daivypro; Integrated Security = True");
-            var cmd = new SqlCommand("select day from [dbo].[ngaythichhop]('9','2018','8804015b-62f8-46ed-b2bd-e662a1730381')", con);
+            var cmd = new SqlCommand("select day from [dbo].[ngaythichhop](@thang,@nam,@goi)", con);
             con.Open();
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("thang", thang);
@@ -60,7 +62,20 @@ namespace Models.BusinessLogicLayer
             // Info.  
             return lst;
         }
-    
+        public int GetThoiLuong(string goi)
+        {
+            GoiQuangCao goiqc = new GoiQuangCao();
+            goiqc = context.GoiQuangCao.Where(gh => gh.Id == Guid.Parse(goi)).SingleOrDefault();
+           
+            return Convert.ToInt32(goiqc.ThoiLuong);
+        }
+        public string GetTenViTri(string goi)
+        {
+            GoiQuangCao goiqc = new GoiQuangCao();
+            goiqc = context.GoiQuangCao.Where(gh => gh.Id == Guid.Parse(goi)).Include(gh => gh.IdViTriNavigation).SingleOrDefault();
+            return goiqc.IdViTriNavigation.TenViTri;
+        }
+
 
         public List<QuangCao> GetQuangCaos(int pagenumber, int pagesize)
         {
@@ -69,14 +84,16 @@ namespace Models.BusinessLogicLayer
                                                   .Take(pagesize)
                                                   .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                                   .ToList();
             return list;
         }
 
-        public string CreateQuangCao(string ma, string goiquangcao, string taikhoan, string hinh, DateTime ngaybatdau, DateTime ngayketthuc, string chuthich)
+        public string CreateQuangCao(string ma, string goiquangcao, string taikhoan, string hinh, DateTime ngaybatdau, string chuthich)
         {
             QuangCao quangcao;
             GoiQuangCao goi;
+            TaiKhoan tk;
 
             //Kiểm tra
             //Tên đăng nhập
@@ -85,6 +102,12 @@ namespace Models.BusinessLogicLayer
             {
                 return "Quảng cáo này đã tồn tại";
             }
+            tk = context.TaiKhoan.Where(gh => gh.Id == Guid.Parse(taikhoan)).SingleOrDefault();
+            if( tk == null)
+            {
+                return "Không tồn tại tài khoản này";
+            }
+           
             //Thêm
             quangcao = new QuangCao();
             quangcao.Id = Guid.Parse(Guid.NewGuid().ToString().ToUpper());
@@ -92,10 +115,12 @@ namespace Models.BusinessLogicLayer
 
             quangcao.IdGoiQuangCao = Guid.Parse(goiquangcao);
             quangcao.IdTaiKhoan = Guid.Parse(taikhoan);
-            
+          
             quangcao.Hinh = hinh;
             quangcao.NgayBatDau = ngaybatdau;
-            quangcao.NgayKetThuc = ngayketthuc;
+            goi = context.GoiQuangCao.Where(gh => gh.Id == Guid.Parse(goiquangcao)).SingleOrDefault();
+            quangcao.NgayKetThuc = ngaybatdau.AddDays(Convert.ToDouble(goi.ThoiLuong) * 7);
+
             quangcao.ChuThich = chuthich;
             quangcao.TinhTrang = "Không khoá";
 
@@ -108,8 +133,14 @@ namespace Models.BusinessLogicLayer
         {
             QuangCao quangcao = new QuangCao();
             GoiQuangCao goi;
+            
             //Sửa
             quangcao = context.QuangCao.Where(gh => gh.MaQuangCao == ma).SingleOrDefault();
+            if(hinh!=null)
+            {
+                quangcao.Hinh = hinh;
+            }
+            
             quangcao.ChuThich = chuthich;
             context.SaveChanges();
             return "Sửa thành công";
@@ -119,6 +150,14 @@ namespace Models.BusinessLogicLayer
         {
             QuangCao quangcao = context.QuangCao.Where(gh => gh.MaQuangCao == ma).SingleOrDefault();
             quangcao.TinhTrang = "Khoá";
+            context.SaveChanges();
+            return "Khoá thành công";
+        }
+
+        public string LockQuangCao2(string ma)
+        {
+            QuangCao quangcao = context.QuangCao.Where(gh => gh.MaQuangCao == ma).SingleOrDefault();
+            quangcao.TinhTrang = "Sai dữ liệu";
             context.SaveChanges();
             return "Khoá thành công";
         }
@@ -142,6 +181,7 @@ namespace Models.BusinessLogicLayer
                                            .Take(pagesize)
                                            .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                            .ToList();
                     break;
                 case "ngaybatdau-desc":
@@ -150,6 +190,7 @@ namespace Models.BusinessLogicLayer
                                            .Take(pagesize)
                                            .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                            .ToList();
                     break;
 
@@ -159,6 +200,7 @@ namespace Models.BusinessLogicLayer
                                            .Take(pagesize)
                                            .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                            .ToList();
                     break;
                 case "ngayketthuc-desc":
@@ -167,6 +209,7 @@ namespace Models.BusinessLogicLayer
                                            .Take(pagesize)
                                            .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                            .ToList();
                     break;
                 case "goiquangcao-az":
@@ -175,6 +218,7 @@ namespace Models.BusinessLogicLayer
                                            .Take(pagesize)
                                            .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                            .ToList();
                     break;
                 case "goiquangcao-za":
@@ -183,6 +227,7 @@ namespace Models.BusinessLogicLayer
                                            .Take(pagesize)
                                            .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                            .ToList();
                     break;
                 case "taikhoan-az":
@@ -191,6 +236,7 @@ namespace Models.BusinessLogicLayer
                                            .Take(pagesize)
                                            .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                            .ToList();
                     break;
                 case "taikhoan-za":
@@ -199,6 +245,7 @@ namespace Models.BusinessLogicLayer
                                            .Take(pagesize)
                                            .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                            .ToList();
                     break;
 
@@ -216,6 +263,7 @@ namespace Models.BusinessLogicLayer
                                           
                                            .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                            .ToList();
                     break;
                 case "ngaybatdau-desc":
@@ -223,6 +271,7 @@ namespace Models.BusinessLogicLayer
                                            
                                            .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                            .ToList();
                     break;
 
@@ -231,6 +280,7 @@ namespace Models.BusinessLogicLayer
                                            
                                            .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                            .ToList();
                     break;
                 case "ngayketthuc-desc":
@@ -238,6 +288,7 @@ namespace Models.BusinessLogicLayer
                                            
                                            .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                            .ToList();
                     break;
                 case "goiquangcao-az":
@@ -245,6 +296,7 @@ namespace Models.BusinessLogicLayer
                                           
                                            .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                            .ToList();
                     break;
                 case "goiquangcao-za":
@@ -252,6 +304,7 @@ namespace Models.BusinessLogicLayer
                                          
                                            .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                            .ToList();
                     break;
                 case "taikhoan-az":
@@ -259,6 +312,7 @@ namespace Models.BusinessLogicLayer
 
                                            .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                            .ToList();
                     break;
                 case "taikhoan-za":
@@ -266,6 +320,7 @@ namespace Models.BusinessLogicLayer
 
                                            .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                            .ToList();
                     break;
             }
@@ -289,6 +344,7 @@ namespace Models.BusinessLogicLayer
                                        .Take(pagesize)
                                        .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                        .ToList();
             }
             return list;
@@ -309,6 +365,7 @@ namespace Models.BusinessLogicLayer
                                                     gh.Hinh.Contains(search))
                                                             .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                        .ToList();
             }
             return list;
@@ -336,6 +393,7 @@ namespace Models.BusinessLogicLayer
                                                .OrderBy(gh => gh.NgayBatDau)
                                                .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                                .ToList();
                         break;
                     case "ngaybatdau-desc":
@@ -349,6 +407,7 @@ namespace Models.BusinessLogicLayer
                                                .OrderByDescending(gh => gh.NgayBatDau)
                                                .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                                .ToList();
                         break;
                     case "ngayketthuc-asc":
@@ -362,6 +421,7 @@ namespace Models.BusinessLogicLayer
                                                .OrderBy(gh => gh.NgayKetThuc)
                                                .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                                .ToList();
                         break;
                     case "ngayketthuc-desc":
@@ -375,6 +435,7 @@ namespace Models.BusinessLogicLayer
                                                .OrderByDescending(gh => gh.NgayKetThuc)
                                                .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                                .ToList();
                         break;
                     case "goiquangcao-asc":
@@ -388,6 +449,7 @@ namespace Models.BusinessLogicLayer
                                                .OrderBy(gh => gh.IdGoiQuangCaoNavigation.MaGoiQuangCao)
                                                .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                                .ToList();
                         break;
                     case "goiquangcao-desc":
@@ -401,6 +463,7 @@ namespace Models.BusinessLogicLayer
                                                .OrderByDescending(gh => gh.IdGoiQuangCaoNavigation.MaGoiQuangCao)
                                                .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                                .ToList();
                         break;
                     case "taikhoan-az":
@@ -414,6 +477,7 @@ namespace Models.BusinessLogicLayer
                                                .OrderBy(gh => gh.IdTaiKhoanNavigation.Ten)
                                                .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                                .ToList();
                         break;
                     case "taikhoan-za":
@@ -427,6 +491,7 @@ namespace Models.BusinessLogicLayer
                                                .OrderByDescending(gh => gh.IdTaiKhoanNavigation.Ten)
                                                .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                                .ToList();
                         break;
 
@@ -455,6 +520,7 @@ namespace Models.BusinessLogicLayer
                                                .OrderBy(gh => gh.NgayBatDau)
                                                .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                                .ToList();
                         break;
                     case "ngaybatdau-desc":
@@ -466,6 +532,7 @@ namespace Models.BusinessLogicLayer
                                                .OrderByDescending(gh => gh.NgayBatDau)
                                                .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                                .ToList();
                         break;
                     case "ngayketthuc-asc":
@@ -477,6 +544,7 @@ namespace Models.BusinessLogicLayer
                                                .OrderBy(gh => gh.NgayKetThuc)
                                                .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                                .ToList();
                         break;
                     case "ngayketthuc-desc":
@@ -488,6 +556,7 @@ namespace Models.BusinessLogicLayer
                                                .OrderByDescending(gh => gh.NgayKetThuc)
                                                .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                                .ToList();
                         break;
                     case "goiquangcao-asc":
@@ -499,6 +568,7 @@ namespace Models.BusinessLogicLayer
                                                .OrderBy(gh => gh.IdGoiQuangCaoNavigation.MaGoiQuangCao)
                                                .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                                .ToList();
                         break;
                     case "goiquangcao-desc":
@@ -510,6 +580,7 @@ namespace Models.BusinessLogicLayer
                                                .OrderByDescending(gh => gh.IdGoiQuangCaoNavigation.MaGoiQuangCao)
                                                .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                                .ToList();
                         break;
                     case "taikhoan-az":
@@ -521,6 +592,7 @@ namespace Models.BusinessLogicLayer
                                                .OrderBy(gh => gh.IdTaiKhoanNavigation.Ten)
                                                .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                                .ToList();
                         break;
                     case "taikhoan-za":
@@ -532,6 +604,7 @@ namespace Models.BusinessLogicLayer
                                                .OrderByDescending(gh => gh.IdTaiKhoanNavigation.Ten)
                                                .Include(gh => gh.IdGoiQuangCaoNavigation)
                                                   .Include(gh => gh.IdTaiKhoanNavigation)
+                                                  .Where(gh => gh.TinhTrang != "Sai dữ liệu")
                                                .ToList();
                         break;
 

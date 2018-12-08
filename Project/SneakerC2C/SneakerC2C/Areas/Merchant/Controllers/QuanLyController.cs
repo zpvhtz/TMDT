@@ -36,7 +36,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
         }
         public List<SanPham> Get()
         {
-            List<SanPham> list= ctx.SanPham.Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap") && sp.TinhTrang == "Không khoá")
+            List<SanPham> list= ctx.SanPham.Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap") && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang>DateTime.Now)
                                            .Include(sp => sp.IdTaiKhoanNavigation)
                                            .Include(sp => sp.IdHangSanPhamNavigation)
                                            .ToList();
@@ -44,7 +44,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
         }
         public List<SanPham> Get(int pagenumber, int pagesize)
         {
-            List<SanPham> list = ctx.SanPham.Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap") && sp.TinhTrang == "Không khoá")
+            List<SanPham> list = ctx.SanPham.Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap") && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                            .Include(sp => sp.IdTaiKhoanNavigation)
                                            .Include(sp => sp.IdHangSanPhamNavigation)
                                            .Skip((pagenumber - 1) * pagesize)
@@ -64,6 +64,9 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             ViewBag.TrangHienTai = pageNumber;
             ViewBag.TrangThai = "index";
             ViewBag.HangSanPham = hang;
+            //DateTime? date = ctx.SanPham.Where(t => t.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap")).Select(d => d.IdTaiKhoanNavigation.ThoiHanGianHang).SingleOrDefault();
+            DateTime date = ctx.TaiKhoan.Where(tk => tk.TenDangNhap == HttpContext.Session.GetString("TenDangNhap")).Select(tk => tk.ThoiHanGianHang).SingleOrDefault() ?? DateTime.Now;
+            ViewBag.Date = date;
             return View(list);
         }
         //search list sp all
@@ -91,7 +94,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                 list = ctx.SanPham.Where(l => l.MaSanPham.Contains(search) ||
                                                    l.TenSanPham.Contains(search) ||
                                                    l.Mau.Contains(search))
-                                       .Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap"))
+                                       .Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap") && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                        .Include(sp => sp.IdTaiKhoanNavigation)
                                            .Include(sp => sp.IdHangSanPhamNavigation)
                                        .Skip((pagenumber - 1) * pagesize)
@@ -113,7 +116,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                 list = ctx.SanPham.Where(l => l.MaSanPham.Contains(search) ||
                                                    l.TenSanPham.Contains(search) ||
                                                    l.Mau.Contains(search))
-                                       .Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap"))
+                                       .Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap") && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                        .Include(sp => sp.IdTaiKhoanNavigation)
                                         .Include(sp => sp.IdHangSanPhamNavigation)
                                        .ToList();
@@ -226,7 +229,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                                         .Select(s => s.IdSanPham)
                                         .Distinct()
                                         .ToList();
-            List<SanPham> list = ctx.SanPham.Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap"))
+            List<SanPham> list = ctx.SanPham.Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap") && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                             .Where(sp => listsize.Contains(sp.Id)).ToList();
             return list;
         }
@@ -239,7 +242,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                                         .Select(s => s.IdSanPham)
                                         .Distinct()
                                         .ToList();
-            List<SanPham> list = ctx.SanPham.Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap"))
+            List<SanPham> list = ctx.SanPham.Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap") && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                             .Where(sp => listsize.Contains(sp.Id))
                                            .Skip((pagenumber - 1) * pagesize)
                                            .Take(pagesize)
@@ -292,7 +295,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                 list = ctx.SanPham.Where(l => l.Gia.ToString().Contains(search) ||
                                                    l.TenSanPham.Contains(search) ||
                                                    l.Mau.Contains(search))
-                    .Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap"))
+                    .Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap")  && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                                 .Where(sp => listsize.Contains(sp.Id) &&sp.TinhTrang == "Không khoá")
                                                .Skip((pagenumber - 1) * pagesize)
                                                .Take(pagesize)
@@ -320,7 +323,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                 list = ctx.SanPham.Where(l => l.Gia.ToString().Contains(search) ||
                                                    l.TenSanPham.Contains(search) ||
                                                    l.Mau.Contains(search))
-                    .Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap")&& sp.TinhTrang == "Không khoá")
+                    .Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap")&& sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                                 .Where(sp => listsize.Contains(sp.Id))
                                                .ToList();
             }
@@ -340,7 +343,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
         public List<SanPham> GetHH ()
         {
             var store_tendangnhap = new SqlParameter("@TenDangNhap", HttpContext.Session.GetString("TenDangNhap"));
-            List<SanPham> list = ctx.SanPham.FromSql("p_hethang @TenDangNhap", store_tendangnhap).ToList();
+            List<SanPham> list = ctx.SanPham.Where(sp=>sp.IdTaiKhoanNavigation.ThoiHanGianHang>DateTime.Now).FromSql("p_hethang @TenDangNhap", store_tendangnhap).ToList();
             return list;
         }
         //lấy list sp từng trang
@@ -349,7 +352,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             var store_tendangnhap = new SqlParameter("@TenDangNhap", HttpContext.Session.GetString("TenDangNhap"));
             var store_pagesize = new SqlParameter("@pageSize", pagesize);
             var store_pagenumber = new SqlParameter("@pageNumber", pagenumber);
-            List<SanPham> list = ctx.SanPham.FromSql("P_HetHang_Pagging @TenDangNhap, @pageSize, @pageNumber", store_tendangnhap, store_pagesize, store_pagenumber).Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap") && sp.TinhTrang == "Không khoá").ToList();
+            List<SanPham> list = ctx.SanPham.Where(sp => sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now).FromSql("P_HetHang_Pagging @TenDangNhap, @pageSize, @pageNumber", store_tendangnhap, store_pagesize, store_pagenumber).Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap") && sp.TinhTrang == "Không khoá").ToList();
             return list;
         }
         public IActionResult HetHang(int? pagenumber)
@@ -380,7 +383,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                 var store_search = new SqlParameter("@search", search);
                 var store_pagesize = new SqlParameter("@pageSize", pagesize);
                 var store_pagenumber = new SqlParameter("@pageNumber", pagenumber);
-                list = ctx.SanPham.FromSql("P_HetHang_Search @TenDangNhap, @search, @pageSize, @pageNumber", store_tendangnhap, store_search, store_pagesize, store_pagenumber).ToList();
+                list = ctx.SanPham.Where(sp => sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now).FromSql("P_HetHang_Search @TenDangNhap, @search, @pageSize, @pageNumber", store_tendangnhap, store_search, store_pagesize, store_pagenumber).ToList();
             }
             return list;
         }
@@ -396,7 +399,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             {
                 var store_tendangnhap = new SqlParameter("@TenDangNhap", HttpContext.Session.GetString("TenDangNhap"));
                 var store_search = new SqlParameter("@search", search);
-                list = ctx.SanPham.FromSql("P_HetHang_Search_NotPagging @TenDangNhap, @search", store_tendangnhap, store_search).ToList();
+                list = ctx.SanPham.Where(sp => sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now).FromSql("P_HetHang_Search_NotPagging @TenDangNhap, @search", store_tendangnhap, store_search).ToList();
             }
             return list;
         }
@@ -417,48 +420,74 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             sp.TinhTrang = "Khoá_mer";
             ctx.SaveChanges();
         }
-        public IActionResult ThemSP(string item_them_ma,string item_them_tensp,string item_them_mau, string item_them_hang, string item_them_phanloai, string item_them_gia, string item_them_chitiet, string item_them_giamgia, IFormFile item_them_hinh,int item_them_size,int item_them_soluong)
+        public IActionResult ThemSP(string item_them_tensp,string item_them_mau, string item_them_hang, string item_them_phanloai, string item_them_gia, string item_them_chitiet, string item_them_giamgia, IFormFile item_them_hinh,int item_them_size,int item_them_soluong)
         {
-            SanPham sp = new SanPham();
-     
-            //string layma = ctx.SanPham
-            //    .OrderByDescending(h => h.MaSanPham)
-            //    .Select(h => h.MaSanPham)
-            //    .FirstOrDefault();
-            //int vitri = layma.IndexOf("-");
-            //string tmp = layma.Substring(0, vitri);
-            //int so = int.Parse(layma.Substring(vitri + 1, layma.Length - 1 - vitri));
-            //so = so + 1;
-            //string Ma = tmp + "-" + so;
-            string tentk = HttpContext.Session.GetString("TenDangNhap");
-            var idtk = ctx.SanPham.Where(s => s.IdTaiKhoanNavigation.TenDangNhap == tentk).Select(s => s.IdTaiKhoan).FirstOrDefault();
-            //Guid tk = ctx.TaiKhoan.Where(t => t.Ten == HttpContext.Session.GetString("TenDangNhap")).Select(t=>t.Id).SingleOrDefault();
-            sp.Id = Guid.Parse(Guid.NewGuid().ToString().ToUpper());
-            sp.MaSanPham = item_them_ma;
-            sp.TenSanPham = item_them_tensp;
-            sp.IdTaiKhoan = idtk;
-            sp.Mau = item_them_mau;
-            sp.IdHangSanPham = Guid.Parse(item_them_hang);
-            sp.PhanLoai = item_them_phanloai;
-            
-
-            sp.Gia = double.Parse(item_them_gia);
-
-            if (item_them_hinh != null)
+            DateTime date = ctx.TaiKhoan.Where(tk => tk.TenDangNhap == HttpContext.Session.GetString("TenDangNhap")).Select(tk => tk.ThoiHanGianHang).SingleOrDefault() ?? DateTime.Now;
+            ViewBag.Date = date;
+            if (date >DateTime.Now)
             {
-                var path = Directory.GetCurrentDirectory() + @"/wwwroot/Hinh/SanPham/" + item_them_hinh.FileName;
-                using (var stream = new FileStream(path, FileMode.Create))
+                string tentk = HttpContext.Session.GetString("TenDangNhap");
+                var idtk = ctx.SanPham.Where(s => s.IdTaiKhoanNavigation.TenDangNhap == tentk).Select(s => s.IdTaiKhoan).FirstOrDefault();
+                //Guid tk = ctx.TaiKhoan.Where(t => t.Ten == HttpContext.Session.GetString("TenDangNhap")).Select(t=>t.Id).SingleOrDefault();
+                SanPham sp = new SanPham();
+                string mamoi = "";
+                if (ctx.SanPham.Count() == 0)
                 {
-                    item_them_hinh.CopyTo(stream);
+                    mamoi = "G-1";
                 }
-                // full path to file in temp location
-                sp.Hinh = item_them_hinh.FileName;
+                else
+                {
+                    string layma = ctx.SanPham
+                                          .OrderByDescending(h => int.Parse(h.MaSanPham.Substring(2)))
+                                          .Select(h => h.MaSanPham)
+                                          .FirstOrDefault();
+                    int stt = int.Parse(layma.Substring(layma.IndexOf('-') + 1));
+                    stt += 1;
+                    mamoi = "G-" + stt.ToString();
+                }
+                sp.Id = Guid.Parse(Guid.NewGuid().ToString().ToUpper());
+                sp.MaSanPham = mamoi;
+                sp.TenSanPham = item_them_tensp;
+                sp.IdTaiKhoan = idtk;
+                sp.Mau = item_them_mau;
+                sp.IdHangSanPham = Guid.Parse(item_them_hang);
+                sp.PhanLoai = item_them_phanloai;
+
+
+                sp.Gia = double.Parse(item_them_gia);
+
+                if (item_them_hinh != null)
+                {
+                    int so = 0;
+                    string ten = item_them_hinh.FileName;
+                    string tentemp = ten;
+                    while (ctx.SanPham.Where(s => s.Hinh == tentemp).SingleOrDefault() != null)
+                    {
+                        so++;
+                        tentemp = ten.Substring(0, ten.IndexOf('.')) + so + ".jpg";
+
+                    }
+                    ten = tentemp;
+                    var path = Directory.GetCurrentDirectory() + @"/wwwroot/Hinh/SanPham/" + ten;
+                    //int so = 1;
+                    //while (ctx.SanPham.Where(s => s.Hinh == path).SingleOrDefault() != null)
+                    //{
+                    //    path = path + so;
+                    //    so++;
+                    //}
+                    using (var stream = new FileStream(path, FileMode.Create))
+                    {
+                        item_them_hinh.CopyTo(stream);
+                    }
+                    // full path to file in temp location
+                    sp.Hinh = ten;
+                }
+                sp.ChiTiet = item_them_chitiet;
+                sp.NgayDang = DateTime.Now;
+                sp.TinhTrang = "Chưa duyệt";
+                ctx.SanPham.Add(sp);
+                ctx.SaveChanges();
             }
-            sp.ChiTiet = item_them_chitiet;
-            sp.NgayDang = DateTime.Now;
-            sp.TinhTrang = "Chưa duyệt";
-            ctx.SanPham.Add(sp);
-            ctx.SaveChanges();
             return RedirectToAction("ListSP");
         }
         public IActionResult ChiTiet(string Ma)

@@ -35,19 +35,59 @@ namespace Models.BusinessLogicLayer
 
         public string AddToCart(string idtaikhoan, string idsizesanpham, int soluong)
         {
+            SizeSanPham sizesanpham = context.SizeSanPham.Where(s => s.Id == Guid.Parse(idsizesanpham)).SingleOrDefault();
+            int maxsoluong = sizesanpham.SoLuong ?? 0;
+
             GioHang giohang = new GioHang();
             giohang = context.GioHang.Where(gh => gh.IdTaiKhoan == Guid.Parse(idtaikhoan) && gh.IdSizeSanPham == Guid.Parse(idsizesanpham)).SingleOrDefault();
             if(giohang != null)
             {
-                giohang.SoLuong = giohang.SoLuong + soluong;
-                context.SaveChanges();
+                if(giohang.SoLuong + soluong > maxsoluong)
+                {
+                    return "Số lượng vượt quá hàng tồn kho";
+                }
+                else
+                {
+                    giohang.SoLuong = giohang.SoLuong + soluong;
+                    context.SaveChanges();
+                }
             }
             else
+            {
+                if(soluong > maxsoluong)
+                {
+                    return "Số lượng vượt quá hàng tồn kho";
+                }
+                else
+                {
+                    giohang = new GioHang();
+                    giohang.IdTaiKhoan = Guid.Parse(idtaikhoan);
+                    giohang.IdSizeSanPham = Guid.Parse(idsizesanpham);
+                    giohang.SoLuong = soluong;
+                    giohang.TinhTrang = "Không khoá";
+                    context.GioHang.Add(giohang);
+                    context.SaveChanges();
+                }
+            }
+            return "Thêm vào giỏ hàng thành công";
+        }
+
+        public string AddToCartByStorage(string idtaikhoan, string idsizesanpham, int soluong)
+        {
+            SizeSanPham sizesanpham = context.SizeSanPham.Where(s => s.Id == Guid.Parse(idsizesanpham)).SingleOrDefault();
+            int maxsoluong = sizesanpham.SoLuong ?? 0;
+
+            GioHang giohang = new GioHang();
+            giohang = context.GioHang.Where(gh => gh.IdTaiKhoan == Guid.Parse(idtaikhoan) && gh.IdSizeSanPham == Guid.Parse(idsizesanpham)).SingleOrDefault();
+            if(giohang == null)
             {
                 giohang = new GioHang();
                 giohang.IdTaiKhoan = Guid.Parse(idtaikhoan);
                 giohang.IdSizeSanPham = Guid.Parse(idsizesanpham);
-                giohang.SoLuong = soluong;
+                if (soluong > maxsoluong)
+                    giohang.SoLuong = maxsoluong;
+                else
+                    giohang.SoLuong = soluong;
                 giohang.TinhTrang = "Không khoá";
                 context.GioHang.Add(giohang);
                 context.SaveChanges();
@@ -92,6 +132,20 @@ namespace Models.BusinessLogicLayer
             GioHang giohang = context.GioHang.Where(gh => gh.IdSizeSanPham == Guid.Parse(idsizesanpham) && gh.IdTaiKhoan == Guid.Parse(idtaikhoan)).SingleOrDefault();
             giohang.SoLuong = quantity;
             context.SaveChanges();
+        }
+
+        public List<TaiKhoan> GetMerchants(string tendangnhap)
+        {
+            TaiKhoan taikhoan = context.TaiKhoan.Where(tk => tk.TenDangNhap == tendangnhap).SingleOrDefault();
+
+            var listgiohang = context.GioHang.Where(gh => gh.IdTaiKhoan == taikhoan.Id)
+                                             .Include(gh => gh.IdSizeSanPhamNavigation)
+                                             .Include(gh => gh.IdSizeSanPhamNavigation.IdSanPhamNavigation)
+                                             .Select(gh => gh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoan)
+                                             .ToList();
+
+            List<TaiKhoan> listtaikhoan = context.TaiKhoan.Where(tk => listgiohang.Contains(tk.Id)).ToList();
+            return listtaikhoan;
         }
     }
 }

@@ -90,7 +90,7 @@ namespace SneakerC2C.Areas.Customer.Controllers
                 {
                     foreach (var item in json)
                     {
-                        thongbao = giohangbus.AddToCart(taikhoan.Id.ToString(), item.Key, item.Value);
+                        thongbao = giohangbus.AddToCartByStorage(taikhoan.Id.ToString(), item.Key, item.Value);
                     }
                 }
                 list = giohangbus.GetGioHangs(tendangnhap);
@@ -108,6 +108,18 @@ namespace SneakerC2C.Areas.Customer.Controllers
                 }           
             }
             return View(list);
+        }
+
+        public void AddQuantity(string tendangnhap, string idsizesanpham, int quantity)
+        {
+            if(tendangnhap != null && tendangnhap != "")
+            {
+                TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+                TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoan(tendangnhap);
+
+                GioHangBUS giohangbus = new GioHangBUS();
+                giohangbus.AddQuantity(taikhoan.Id.ToString(), idsizesanpham, quantity);
+            }
         }
 
         public IActionResult PhanLoai(string ploai, int? pagenumber)

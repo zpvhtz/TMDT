@@ -19,7 +19,15 @@ namespace SneakerC2C.Areas.Customer.Controllers
             TaiKhoan taikhoan = new TaiKhoan();
             taikhoan = taikhoanbus.CheckTaiKhoan(tendangnhap);
             List<GioHang> list = giohangbus.GetGioHangs(tendangnhap);
+            List<TaiKhoan> listmerchant = giohangbus.GetMerchants(tendangnhap);
+            List<DiaChi> listaddress = taikhoanbus.GetAllAddress(tendangnhap);
+            DiaChi firstAddress = taikhoanbus.GetFirstAddress(tendangnhap);
+
             ViewBag.TaiKhoan = taikhoan;
+            ViewBag.Merchants = listmerchant;
+            ViewBag.FirstAddress = firstAddress;
+            ViewBag.ListAddress = listaddress;
+
             return View(list);
         }
     }

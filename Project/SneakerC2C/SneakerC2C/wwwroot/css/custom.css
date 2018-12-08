@@ -35,3 +35,7 @@
     background: none;
     outline: none;
 }
+
+.center-text-td {
+    text-align: center;
+}

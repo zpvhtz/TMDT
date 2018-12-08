@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #pragma checksum "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Views\Shared\_AdminTopMenuLayout.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "4fbc88bf441dae425635ec47bd8e31008b1d5f1c"
+=======
+#pragma checksum "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Views\Shared\_AdminTopMenuLayout.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "252594691c2e664f4ed65d60bcdcf00b2a47d70b"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #pragma checksum "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Views\Shared\_AdminTopMenuLayout.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "252594691c2e664f4ed65d60bcdcf00b2a47d70b"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -65,7 +69,11 @@ using SneakerC2C.Models;
             EndContext();
             BeginContext(223, 115, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "886ac62473f9441ab76e98b6dba3dc39", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8491b8f02c2548b9936965985997d195", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8491b8f02c2548b9936965985997d195", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -95,6 +103,7 @@ using SneakerC2C.Models;
             WriteLiteral("\r\n\r\n    <!-- Navbar Search -->\r\n    ");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(374, 499, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "77bf581099c345bcb307cf9e76028bad", async() => {
                 BeginContext(459, 2, true);
@@ -103,6 +112,8 @@ using SneakerC2C.Models;
                 BeginContext(846, 20, true);
                 WriteLiteral("        </div>\r\n    ");
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(374, 491, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "643bad3f8aed4979b527035372efc376", async() => {
                 BeginContext(459, 399, true);

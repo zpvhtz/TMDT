@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #pragma checksum "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "ea278e21a2c4da50dc018da43294714234488412"
+=======
+#pragma checksum "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "ac69755c751968833ab960673601a583fefcd976"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #pragma checksum "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "ac69755c751968833ab960673601a583fefcd976"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -18,7 +22,11 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 <<<<<<< HEAD
+<<<<<<< HEAD
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ea278e21a2c4da50dc018da43294714234488412", @"/Areas/Webmaster/Views/SanPham/Index.cshtml")]
+=======
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ac69755c751968833ab960673601a583fefcd976", @"/Areas/Webmaster/Views/SanPham/Index.cshtml")]
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ac69755c751968833ab960673601a583fefcd976", @"/Areas/Webmaster/Views/SanPham/Index.cshtml")]
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -113,7 +121,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(858, 47, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb8f49c3b59548a6a67037ec2c0e4e16", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "00aadbe936b34edb9c6956abe7558006", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "00aadbe936b34edb9c6956abe7558006", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -143,7 +155,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(931, 75, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4286fbfc87154c16ac9d936c9c65ead8", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1b25378b792146888ddc79571260ac96", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1b25378b792146888ddc79571260ac96", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -169,7 +185,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(1032, 89, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "317505b2c7064ee4956a9a92588b7e30", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c0874a8efd564200b415650e214370bf", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c0874a8efd564200b415650e214370bf", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -195,7 +215,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(1147, 89, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "802710d2c4714a6c8ae72034ca2ecafd", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "328b76f020c7450ea3379087489840d5", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "328b76f020c7450ea3379087489840d5", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -221,7 +245,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(1262, 91, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3aa273b4935b474ba03777da820c4472", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9cb80d4faac744df9a8c487cb17a48f2", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9cb80d4faac744df9a8c487cb17a48f2", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -247,7 +275,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(1379, 91, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e6bbf86452c048f39e4049f2153ae6c6", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "368a66ee025c49299190763e6177a8c4", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "368a66ee025c49299190763e6177a8c4", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -273,7 +305,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(1496, 75, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "32f2489018dd45c78d7db22d9d065838", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab9a48f042114bb58ed566d33f583494", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab9a48f042114bb58ed566d33f583494", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -299,7 +335,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(1597, 75, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3c9a02765c2b46b9a690470fb643c7de", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8b2a0f759d149eca59d2097970fc024", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8b2a0f759d149eca59d2097970fc024", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -325,7 +365,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(1885, 604, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "04ae7196648a41c38e7ab02c06cc429b", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20b2e227b8484bd6b248b041ae684e6c", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20b2e227b8484bd6b248b041ae684e6c", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -475,7 +519,11 @@ WriteAttributeValue("", 2144, ViewBag.CurrentFilter, 2144, 22, false);
             EndContext();
             BeginContext(3859, 91, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9a6ebc78436747fb8995f994424e5acb", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "93c009fc39df47d5b0bec6b5ecf03309", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "93c009fc39df47d5b0bec6b5ecf03309", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -536,7 +584,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             EndContext();
             BeginContext(4429, 110, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7783efc9bacb4727a20ddaf3c5490c44", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "919acf0c6e2d4dd7b5d01ad287dec491", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "919acf0c6e2d4dd7b5d01ad287dec491", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -587,7 +639,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             EndContext();
             BeginContext(4802, 115, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cea74d37a7ef4609b99b25218c5559c7", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f52d4a4ae87a4de1a75a20c3d517c586", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f52d4a4ae87a4de1a75a20c3d517c586", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -628,6 +684,7 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             WriteLiteral("\r\n");
             EndContext();
 #line 97 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
                                 break;
                             case "Chưa duyệt":
 <<<<<<< HEAD
@@ -739,6 +796,54 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             BeginContext(5149, 2, true);
             WriteLiteral("\r\n");
             EndContext();
+=======
+                                break;
+                            case "Chưa duyệt":
+
+#line default
+#line hidden
+            BeginContext(5007, 32, true);
+            WriteLiteral("                                ");
+            EndContext();
+            BeginContext(5039, 110, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ec7d052bebea423c811ec89d8117168e", async() => {
+                BeginContext(5140, 5, true);
+                WriteLiteral("Duyệt");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Controller = (string)__tagHelperAttribute_7.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_7);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Action = (string)__tagHelperAttribute_15.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_15);
+            if (__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues == null)
+            {
+                throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-ma", "Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper", "RouteValues"));
+            }
+            BeginWriteTagHelperAttribute();
+#line 99 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+                                                                                 WriteLiteral(item.MaSanPham);
+
+#line default
+#line hidden
+            __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
+            __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["ma"] = __tagHelperStringValueBuffer;
+            __tagHelperExecutionContext.AddTagHelperAttribute("asp-route-ma", __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["ma"], global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_13);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(5149, 2, true);
+            WriteLiteral("\r\n");
+            EndContext();
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 #line 100 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
                                 break;
                             default:
@@ -758,21 +863,30 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             WriteLiteral("                    </td>\r\n                </tr>\r\n");
             EndContext();
 #line 107 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                 }
 
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(5477, 97, true);
             WriteLiteral("            </tbody>\r\n        </table>\r\n        <ul class=\"pagination\" style=\"margin: 0 auto;\">\r\n");
             EndContext();
 #line 111 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(5478, 97, true);
             WriteLiteral("            </tbody>\r\n        </table>\r\n        <ul class=\"pagination\" style=\"margin: 0 auto;\">\r\n");
             EndContext();
 #line 111 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
              if (ViewBag.TrangHienTai == 1)
             {
@@ -780,10 +894,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(5634, 237, true);
             WriteLiteral("                <li class=\"paginate_button page-item previous disabled\" id=\"dataTable_previous\">\r\n                    <a href=\"#\" aria-controls=\"dataTable\" data-dt-idx=\"0\" tabindex=\"0\" class=\"page-link\">Trước</a>\r\n                </li>\r\n");
             EndContext();
 #line 116 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(5635, 237, true);
+            WriteLiteral("                <li class=\"paginate_button page-item previous disabled\" id=\"dataTable_previous\">\r\n                    <a href=\"#\" aria-controls=\"dataTable\" data-dt-idx=\"0\" tabindex=\"0\" class=\"page-link\">Trước</a>\r\n                </li>\r\n");
+            EndContext();
+#line 116 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(5635, 237, true);
             WriteLiteral("                <li class=\"paginate_button page-item previous disabled\" id=\"dataTable_previous\">\r\n                    <a href=\"#\" aria-controls=\"dataTable\" data-dt-idx=\"0\" tabindex=\"0\" class=\"page-link\">Trước</a>\r\n                </li>\r\n");
@@ -797,15 +918,21 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(5919, 89, true);
             WriteLiteral("                <li class=\"paginate_button page-item previous\" id=\"dataTable_previous\">\r\n");
             EndContext();
 #line 120 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(5920, 89, true);
             WriteLiteral("                <li class=\"paginate_button page-item previous\" id=\"dataTable_previous\">\r\n");
             EndContext();
 #line 120 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                      switch (ViewBag.TrangThai)
                     {
@@ -814,12 +941,21 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(6119, 28, true);
             WriteLiteral("                            ");
             EndContext();
             BeginContext(6147, 199, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e413cbe8af6641d38dd7cb2c7d5c1a95", async() => {
                 BeginContext(6337, 5, true);
+=======
+            BeginContext(6120, 28, true);
+            WriteLiteral("                            ");
+            EndContext();
+            BeginContext(6148, 199, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da880814072e48caa14e35d634a511ab", async() => {
+                BeginContext(6338, 5, true);
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(6120, 28, true);
             WriteLiteral("                            ");
@@ -844,7 +980,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 123 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+#line 123 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 123 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -868,10 +1008,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(6346, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 124 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(6347, 2, true);
+            WriteLiteral("\r\n");
+            EndContext();
+#line 124 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(6347, 2, true);
             WriteLiteral("\r\n");
@@ -884,12 +1031,21 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(6422, 28, true);
             WriteLiteral("                            ");
             EndContext();
             BeginContext(6450, 198, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61af8deaf98d46b6bdd739edf8161e2e", async() => {
                 BeginContext(6639, 5, true);
+=======
+            BeginContext(6423, 28, true);
+            WriteLiteral("                            ");
+            EndContext();
+            BeginContext(6451, 198, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0277b526c4a64587bc3b7fc49c67795b", async() => {
+                BeginContext(6640, 5, true);
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(6423, 28, true);
             WriteLiteral("                            ");
@@ -914,7 +1070,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 126 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+#line 126 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 126 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -938,10 +1098,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(6648, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 127 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(6649, 2, true);
+            WriteLiteral("\r\n");
+            EndContext();
+#line 127 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(6649, 2, true);
             WriteLiteral("\r\n");
@@ -954,12 +1121,21 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(6726, 28, true);
             WriteLiteral("                            ");
             EndContext();
             BeginContext(6754, 200, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fe4e9465632b4b0199fc95910b3d0213", async() => {
                 BeginContext(6945, 5, true);
+=======
+            BeginContext(6727, 28, true);
+            WriteLiteral("                            ");
+            EndContext();
+            BeginContext(6755, 200, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "070b38940936415f8b6170d279e650d6", async() => {
+                BeginContext(6946, 5, true);
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(6727, 28, true);
             WriteLiteral("                            ");
@@ -984,7 +1160,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 129 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+#line 129 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 129 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -1008,10 +1188,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(6954, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 130 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(6955, 2, true);
+            WriteLiteral("\r\n");
+            EndContext();
+#line 130 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(6955, 2, true);
             WriteLiteral("\r\n");
@@ -1024,12 +1211,21 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(7039, 28, true);
             WriteLiteral("                            ");
             EndContext();
             BeginContext(7067, 207, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c381594081fc447d98d3f586cb243422", async() => {
                 BeginContext(7265, 5, true);
+=======
+            BeginContext(7040, 28, true);
+            WriteLiteral("                            ");
+            EndContext();
+            BeginContext(7068, 207, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4f0f23206fdb4357828d8126bea3bc42", async() => {
+                BeginContext(7266, 5, true);
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(7040, 28, true);
             WriteLiteral("                            ");
@@ -1054,7 +1250,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 132 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+#line 132 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 132 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -1078,10 +1278,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(7274, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 133 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(7275, 2, true);
+            WriteLiteral("\r\n");
+            EndContext();
+#line 133 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(7275, 2, true);
             WriteLiteral("\r\n");
@@ -1094,10 +1301,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(7335, 23, true);
             WriteLiteral("                </li>\r\n");
             EndContext();
 #line 136 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(7336, 23, true);
+            WriteLiteral("                </li>\r\n");
+            EndContext();
+#line 136 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(7336, 23, true);
             WriteLiteral("                </li>\r\n");
@@ -1109,10 +1323,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(7373, 12, true);
             WriteLiteral("            ");
             EndContext();
 #line 137 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(7374, 12, true);
+            WriteLiteral("            ");
+            EndContext();
+#line 137 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(7374, 12, true);
             WriteLiteral("            ");
@@ -1127,15 +1348,21 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(7494, 226, true);
             WriteLiteral("                    <li class=\"paginate_button page-item\" disabled><a class=\"page-link\" aria-controls=\"dataTable\" data-dt-idx=\"0\" tabindex=\"0\" href=\"#\">...</a></li>\r\n                    <li class=\"paginate_button page-item\">\r\n");
             EndContext();
 #line 143 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(7495, 226, true);
             WriteLiteral("                    <li class=\"paginate_button page-item\" disabled><a class=\"page-link\" aria-controls=\"dataTable\" data-dt-idx=\"0\" tabindex=\"0\" href=\"#\">...</a></li>\r\n                    <li class=\"paginate_button page-item\">\r\n");
             EndContext();
 #line 143 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                          switch (ViewBag.TrangThai)
                         {
@@ -1143,6 +1370,7 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 
 #line default
 #line hidden
+<<<<<<< HEAD
 <<<<<<< HEAD
             BeginContext(7843, 32, true);
             WriteLiteral("                                ");
@@ -1155,10 +1383,18 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             BeginContext(7844, 32, true);
             WriteLiteral("                                ");
             EndContext();
+=======
+            BeginContext(7844, 32, true);
+            WriteLiteral("                                ");
+            EndContext();
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(7876, 140, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6dde4c6e865144bcb8a122fbf1af5a30", async() => {
                 BeginContext(7995, 17, false);
 #line 146 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                                                                                                                                                  Write(ViewBag.TongTrang);
 
@@ -1179,7 +1415,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 146 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+#line 146 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 146 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -1200,10 +1440,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(8015, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 147 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(8016, 2, true);
+            WriteLiteral("\r\n");
+            EndContext();
+#line 147 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(8016, 2, true);
             WriteLiteral("\r\n");
@@ -1216,6 +1463,7 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(8099, 32, true);
             WriteLiteral("                                ");
             EndContext();
@@ -1227,10 +1475,18 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             BeginContext(8100, 32, true);
             WriteLiteral("                                ");
             EndContext();
+=======
+            BeginContext(8100, 32, true);
+            WriteLiteral("                                ");
+            EndContext();
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(8132, 139, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "74c83124cbf843c88efc4d65dea8de4f", async() => {
                 BeginContext(8250, 17, false);
 #line 149 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                                                                                                                                                 Write(ViewBag.TongTrang);
 
@@ -1251,7 +1507,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 149 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+#line 149 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 149 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -1272,21 +1532,28 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(8270, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 150 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(8271, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 150 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                                 break;
                             case "search":
 
 #line default
 #line hidden
+<<<<<<< HEAD
 <<<<<<< HEAD
             BeginContext(8356, 32, true);
             WriteLiteral("                                ");
@@ -1299,10 +1566,18 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             BeginContext(8357, 32, true);
             WriteLiteral("                                ");
             EndContext();
+=======
+            BeginContext(8357, 32, true);
+            WriteLiteral("                                ");
+            EndContext();
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(8389, 141, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "22d29861fe9d441db9d147efacdac5b7", async() => {
                 BeginContext(8509, 17, false);
 #line 152 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                                                                                                                                                   Write(ViewBag.TongTrang);
 
@@ -1323,7 +1598,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 152 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+#line 152 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 152 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -1344,21 +1623,28 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(8529, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 153 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(8530, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 153 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                                 break;
                             case "searchandsort":
 
 #line default
 #line hidden
+<<<<<<< HEAD
 <<<<<<< HEAD
             BeginContext(8622, 32, true);
             WriteLiteral("                                ");
@@ -1371,10 +1657,18 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             BeginContext(8623, 32, true);
             WriteLiteral("                                ");
             EndContext();
+=======
+            BeginContext(8623, 32, true);
+            WriteLiteral("                                ");
+            EndContext();
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(8655, 148, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1aadb3e7cd7d47aa8d21230e1364b46d", async() => {
                 BeginContext(8782, 17, false);
 #line 155 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                                                                                                                                                          Write(ViewBag.TongTrang);
 
@@ -1395,7 +1689,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 155 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+#line 155 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 155 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -1416,10 +1714,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(8802, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 156 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(8803, 2, true);
+            WriteLiteral("\r\n");
+            EndContext();
+#line 156 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(8803, 2, true);
             WriteLiteral("\r\n");
@@ -1432,10 +1737,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(8871, 27, true);
             WriteLiteral("                    </li>\r\n");
             EndContext();
 #line 159 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(8872, 27, true);
+            WriteLiteral("                    </li>\r\n");
+            EndContext();
+#line 159 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(8872, 27, true);
             WriteLiteral("                    </li>\r\n");
@@ -1452,17 +1764,23 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(9061, 154, true);
             WriteLiteral("                        <li class=\"paginate_button page-item active\"><a href=\"#\" class=\"page-link\" aria-controls=\"dataTable\" data-dt-idx=\"2\" tabindex=\"0\">");
             EndContext();
             BeginContext(9216, 1, false);
 #line 165 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(9062, 154, true);
             WriteLiteral("                        <li class=\"paginate_button page-item active\"><a href=\"#\" class=\"page-link\" aria-controls=\"dataTable\" data-dt-idx=\"2\" tabindex=\"0\">");
             EndContext();
             BeginContext(9217, 1, false);
 #line 165 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                                                                                                                                                      Write(i);
 
@@ -1470,10 +1788,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line hidden
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(9217, 11, true);
             WriteLiteral("</a></li>\r\n");
             EndContext();
 #line 166 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(9218, 11, true);
+            WriteLiteral("</a></li>\r\n");
+            EndContext();
+#line 166 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(9218, 11, true);
             WriteLiteral("</a></li>\r\n");
@@ -1487,10 +1812,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(9300, 112, true);
             WriteLiteral("                        <li class=\"paginate_button page-item\" aria-controls=\"dataTables-example\" tabindex=\"0\">\r\n");
             EndContext();
 #line 170 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(9301, 112, true);
+            WriteLiteral("                        <li class=\"paginate_button page-item\" aria-controls=\"dataTables-example\" tabindex=\"0\">\r\n");
+            EndContext();
+#line 170 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(9301, 112, true);
             WriteLiteral("                        <li class=\"paginate_button page-item\" aria-controls=\"dataTables-example\" tabindex=\"0\">\r\n");
@@ -1504,6 +1836,7 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(9547, 36, true);
             WriteLiteral("                                    ");
             EndContext();
@@ -1515,10 +1848,18 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             BeginContext(9548, 36, true);
             WriteLiteral("                                    ");
             EndContext();
+=======
+            BeginContext(9548, 36, true);
+            WriteLiteral("                                    ");
+            EndContext();
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(9584, 163, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "906a57aa2abe4cd3a7979842ae9eaf06", async() => {
                 BeginContext(9742, 1, false);
 #line 173 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                                                                                                                                                                                             Write(i);
 
@@ -1539,7 +1880,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 173 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+#line 173 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 173 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -1563,10 +1908,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(9746, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 174 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(9747, 2, true);
+            WriteLiteral("\r\n");
+            EndContext();
+#line 174 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(9747, 2, true);
             WriteLiteral("\r\n");
@@ -1579,6 +1931,7 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(9838, 36, true);
             WriteLiteral("                                    ");
             EndContext();
@@ -1590,10 +1943,18 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             BeginContext(9839, 36, true);
             WriteLiteral("                                    ");
             EndContext();
+=======
+            BeginContext(9839, 36, true);
+            WriteLiteral("                                    ");
+            EndContext();
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(9875, 162, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7c4ca3f0f92f49ec8d7c2bc3598f6554", async() => {
                 BeginContext(10032, 1, false);
 #line 176 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                                                                                                                                                                                            Write(i);
 
@@ -1614,7 +1975,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 176 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+#line 176 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 176 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -1638,10 +2003,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(10036, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 177 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(10037, 2, true);
+            WriteLiteral("\r\n");
+            EndContext();
+#line 177 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(10037, 2, true);
             WriteLiteral("\r\n");
@@ -1654,6 +2026,7 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(10130, 36, true);
             WriteLiteral("                                    ");
             EndContext();
@@ -1665,10 +2038,18 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             BeginContext(10131, 36, true);
             WriteLiteral("                                    ");
             EndContext();
+=======
+            BeginContext(10131, 36, true);
+            WriteLiteral("                                    ");
+            EndContext();
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(10167, 164, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b71df73cdae451f910b3439a663a8dd", async() => {
                 BeginContext(10326, 1, false);
 #line 179 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                                                                                                                                                                                              Write(i);
 
@@ -1689,7 +2070,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 179 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+#line 179 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 179 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -1713,10 +2098,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(10330, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 180 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(10331, 2, true);
+            WriteLiteral("\r\n");
+            EndContext();
+#line 180 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(10331, 2, true);
             WriteLiteral("\r\n");
@@ -1729,6 +2121,7 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(10431, 36, true);
             WriteLiteral("                                    ");
             EndContext();
@@ -1740,10 +2133,18 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             BeginContext(10432, 36, true);
             WriteLiteral("                                    ");
             EndContext();
+=======
+            BeginContext(10432, 36, true);
+            WriteLiteral("                                    ");
+            EndContext();
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(10468, 171, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b1dd8187253b472ebcb87f30fbc606dc", async() => {
                 BeginContext(10634, 1, false);
 #line 182 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                                                                                                                                                                                                     Write(i);
 
@@ -1764,7 +2165,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 182 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+#line 182 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 182 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -1788,10 +2193,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(10638, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 183 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(10639, 2, true);
+            WriteLiteral("\r\n");
+            EndContext();
+#line 183 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(10639, 2, true);
             WriteLiteral("\r\n");
@@ -1804,15 +2216,21 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(10715, 31, true);
             WriteLiteral("                        </li>\r\n");
             EndContext();
 #line 186 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(10716, 31, true);
             WriteLiteral("                        </li>\r\n");
             EndContext();
 #line 186 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                     }
                 }
@@ -1821,10 +2239,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(10803, 12, true);
             WriteLiteral("            ");
             EndContext();
 #line 189 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(10804, 12, true);
+            WriteLiteral("            ");
+            EndContext();
+#line 189 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(10804, 12, true);
             WriteLiteral("            ");
@@ -1837,10 +2262,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(10879, 188, true);
             WriteLiteral("                <li class=\"paginate_button page-item next disabled\" id=\"dataTable_next\"><a class=\"page-link\" aria-controls=\"dataTable\" data-dt-idx=\"7\" tabindex=\"0\" href=\"#\">Tiếp</a></li>\r\n");
             EndContext();
 #line 192 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(10880, 188, true);
+            WriteLiteral("                <li class=\"paginate_button page-item next disabled\" id=\"dataTable_next\"><a class=\"page-link\" aria-controls=\"dataTable\" data-dt-idx=\"7\" tabindex=\"0\" href=\"#\">Tiếp</a></li>\r\n");
+            EndContext();
+#line 192 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(10880, 188, true);
             WriteLiteral("                <li class=\"paginate_button page-item next disabled\" id=\"dataTable_next\"><a class=\"page-link\" aria-controls=\"dataTable\" data-dt-idx=\"7\" tabindex=\"0\" href=\"#\">Tiếp</a></li>\r\n");
@@ -1854,15 +2286,21 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(11115, 81, true);
             WriteLiteral("                <li class=\"paginate_button page-item next\" id=\"dataTable_next\">\r\n");
             EndContext();
 #line 196 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(11116, 81, true);
             WriteLiteral("                <li class=\"paginate_button page-item next\" id=\"dataTable_next\">\r\n");
             EndContext();
 #line 196 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                      switch (ViewBag.TrangThai)
                     {
@@ -1871,12 +2309,21 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(11307, 28, true);
             WriteLiteral("                            ");
             EndContext();
             BeginContext(11335, 198, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7922f3f42602428789c96371e14b6219", async() => {
                 BeginContext(11525, 4, true);
+=======
+            BeginContext(11308, 28, true);
+            WriteLiteral("                            ");
+            EndContext();
+            BeginContext(11336, 198, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d039712f44ba4a0e80c304b7b5efbf88", async() => {
+                BeginContext(11526, 4, true);
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(11308, 28, true);
             WriteLiteral("                            ");
@@ -1901,7 +2348,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 199 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+#line 199 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 199 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -1925,10 +2376,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(11533, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 200 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(11534, 2, true);
+            WriteLiteral("\r\n");
+            EndContext();
+#line 200 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(11534, 2, true);
             WriteLiteral("\r\n");
@@ -1941,12 +2399,21 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(11609, 28, true);
             WriteLiteral("                            ");
             EndContext();
             BeginContext(11637, 197, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "47b5311be6884a9bad71a3843715d1f5", async() => {
                 BeginContext(11826, 4, true);
+=======
+            BeginContext(11610, 28, true);
+            WriteLiteral("                            ");
+            EndContext();
+            BeginContext(11638, 197, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0039ce60c57347709b500fa8c3d90db4", async() => {
+                BeginContext(11827, 4, true);
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(11610, 28, true);
             WriteLiteral("                            ");
@@ -1971,7 +2438,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 202 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+#line 202 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 202 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -1995,10 +2466,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(11834, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 203 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(11835, 2, true);
+            WriteLiteral("\r\n");
+            EndContext();
+#line 203 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(11835, 2, true);
             WriteLiteral("\r\n");
@@ -2011,12 +2489,21 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(11912, 28, true);
             WriteLiteral("                            ");
             EndContext();
             BeginContext(11940, 199, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f89367f2a99f484399e14fadbad26c85", async() => {
                 BeginContext(12131, 4, true);
+=======
+            BeginContext(11913, 28, true);
+            WriteLiteral("                            ");
+            EndContext();
+            BeginContext(11941, 199, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "95bbd87e5ea044a6aa0f9f19b1cd1ad7", async() => {
+                BeginContext(12132, 4, true);
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(11913, 28, true);
             WriteLiteral("                            ");
@@ -2041,7 +2528,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 205 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+#line 205 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 205 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -2065,10 +2556,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(12139, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 206 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(12140, 2, true);
+            WriteLiteral("\r\n");
+            EndContext();
+#line 206 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(12140, 2, true);
             WriteLiteral("\r\n");
@@ -2081,12 +2579,21 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(12224, 28, true);
             WriteLiteral("                            ");
             EndContext();
             BeginContext(12252, 206, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70475abc5b4745cdbedcd2b5b903d616", async() => {
                 BeginContext(12450, 4, true);
+=======
+            BeginContext(12225, 28, true);
+            WriteLiteral("                            ");
+            EndContext();
+            BeginContext(12253, 206, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ecb96910b394326a13255e38dfdbd9a", async() => {
+                BeginContext(12451, 4, true);
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(12225, 28, true);
             WriteLiteral("                            ");
@@ -2111,7 +2618,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             }
             BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 208 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+#line 208 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 208 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -2135,10 +2646,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(12458, 2, true);
             WriteLiteral("\r\n");
             EndContext();
 #line 209 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(12459, 2, true);
+            WriteLiteral("\r\n");
+            EndContext();
+#line 209 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(12459, 2, true);
             WriteLiteral("\r\n");
@@ -2151,20 +2669,27 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(12519, 23, true);
             WriteLiteral("                </li>\r\n");
             EndContext();
 #line 212 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(12520, 23, true);
             WriteLiteral("                </li>\r\n");
             EndContext();
 #line 212 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             }
 
 #line default
 #line hidden
+<<<<<<< HEAD
 <<<<<<< HEAD
             BeginContext(12557, 15, true);
             WriteLiteral("        </ul>\r\n");
@@ -2175,6 +2700,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             BeginContext(16429, 641, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "837ff05aa1da4978b94ea1f955a5f56f", async() => {
                 BeginContext(16492, 571, true);
+=======
+            BeginContext(12558, 15, true);
+            WriteLiteral("        </ul>\r\n");
+            EndContext();
+            BeginContext(16268, 162, true);
+            WriteLiteral("\r\n    </div>\r\n</div>\r\n<!--panel-body -->\r\n<!--Modal sua-->\r\n<div class=\"modal fade\" id=\"Chitietsizemodal\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n        ");
+            EndContext();
+            BeginContext(16430, 641, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3d4c52c846234a5a9c5ba142888e90da", async() => {
+                BeginContext(16493, 571, true);
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(12558, 15, true);
             WriteLiteral("        </ul>\r\n");
@@ -2222,10 +2758,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(17070, 22, true);
             WriteLiteral("\r\n    </div>\r\n</div>\r\n");
             EndContext();
 #line 312 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(17071, 22, true);
+            WriteLiteral("\r\n    </div>\r\n</div>\r\n");
+            EndContext();
+#line 312 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(17071, 22, true);
             WriteLiteral("\r\n    </div>\r\n</div>\r\n");
@@ -2238,23 +2781,30 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(17127, 29, true);
             WriteLiteral("    <script>\r\n        alert(\"");
             EndContext();
             BeginContext(17157, 26, false);
 #line 315 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(17128, 29, true);
             WriteLiteral("    <script>\r\n        alert(\"");
             EndContext();
             BeginContext(17158, 26, false);
 #line 315 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
           Write(Html.Raw(ViewBag.ThongBao));
 
 #line default
 #line hidden
             EndContext();
+<<<<<<< HEAD
 <<<<<<< HEAD
             BeginContext(17183, 20, true);
             WriteLiteral("\");\r\n    </script>\r\n");
@@ -2266,10 +2816,17 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             EndContext();
 #line 317 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
+            BeginContext(17184, 20, true);
+            WriteLiteral("\");\r\n    </script>\r\n");
+            EndContext();
+#line 317 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 }
 
 #line default
 #line hidden
+<<<<<<< HEAD
 <<<<<<< HEAD
             BeginContext(17206, 86, true);
             WriteLiteral("<script>\r\n    $(document).ready(function () {\r\n        //Sắp xếp\r\n        let sort = \"");
@@ -2283,13 +2840,24 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
             BeginContext(17294, 12, false);
 #line 321 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
+            BeginContext(17207, 86, true);
+            WriteLiteral("<script>\r\n    $(document).ready(function () {\r\n        //Sắp xếp\r\n        let sort = \"");
+            EndContext();
+            BeginContext(17294, 12, false);
+#line 321 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                Write(ViewBag.Sort);
 
 #line default
 #line hidden
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(17305, 338, true);
+=======
+            BeginContext(17306, 338, true);
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(17306, 338, true);
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -2308,8 +2876,13 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
         let search = """);
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(17644, 14, false);
 #line 333 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(17645, 14, false);
+#line 333 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(17645, 14, false);
 #line 333 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
@@ -2320,7 +2893,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line hidden
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(17658, 914, true);
+=======
+            BeginContext(17659, 914, true);
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(17659, 914, true);
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -2357,8 +2934,13 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
         let search = """);
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(18573, 14, false);
 #line 363 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+=======
+            BeginContext(18574, 14, false);
+#line 363 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(18574, 14, false);
 #line 363 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\SanPham\Index.cshtml"
@@ -2369,7 +2951,11 @@ AddHtmlAttributeValue("", 3884, item.Hinh, 3884, 10, false);
 #line hidden
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(18587, 634, true);
+=======
+            BeginContext(18588, 634, true);
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(18588, 634, true);
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca

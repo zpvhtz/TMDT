@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 F:\GitHub\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.deps.json
 F:\GitHub\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.json
 F:\GitHub\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.dev.json
@@ -11,6 +12,8 @@ F:\GitHub\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.Assembly
 F:\GitHub\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.dll
 F:\GitHub\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.pdb
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 C:\Code\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.deps.json
 C:\Code\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.json
 C:\Code\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.dev.json
@@ -22,4 +25,7 @@ C:\Code\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyIn
 C:\Code\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfo.cs
 C:\Code\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.dll
 C:\Code\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.pdb
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca

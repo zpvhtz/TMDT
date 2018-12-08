@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.deps.json
 F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.runtimeconfig.json
 F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.runtimeconfig.dev.json
@@ -74,6 +75,8 @@ F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.
 F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.dll
 F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.deps.json
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.runtimeconfig.json
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\bin\Debug\netcoreapp2.1\SneakerC2C.runtimeconfig.dev.json
@@ -150,4 +153,7 @@ C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.Vi
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.csproj.CopyComplete
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.dll
 C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca

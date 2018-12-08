@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #pragma checksum "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Home\Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "25c3222de66da3ea1b7b3f35d0a62208cc60b957"
+=======
+#pragma checksum "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Home\Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "25c3222de66da3ea1b7b3f35d0a62208cc60b957"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #pragma checksum "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Home\Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "25c3222de66da3ea1b7b3f35d0a62208cc60b957"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -136,7 +140,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(3191, 569, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "267aa6aeb2b843be972cfc42843c7ef8", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7c45cfb297194023b58118c51c44fe94", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7c45cfb297194023b58118c51c44fe94", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -257,7 +265,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(6309, 26, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 170 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Home\Index.cshtml"
+=======
+#line 170 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Home\Index.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 170 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\Home\Index.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca

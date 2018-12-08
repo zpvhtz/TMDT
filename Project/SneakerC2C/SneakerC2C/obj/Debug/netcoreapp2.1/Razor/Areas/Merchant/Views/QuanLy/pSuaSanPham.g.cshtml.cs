@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #pragma checksum "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Merchant\Views\QuanLy\pSuaSanPham.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "09c664def88c7fc6306319549bd44a6fa391a837"
+=======
+#pragma checksum "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Merchant\Views\QuanLy\pSuaSanPham.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "09c664def88c7fc6306319549bd44a6fa391a837"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #pragma checksum "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Merchant\Views\QuanLy\pSuaSanPham.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "09c664def88c7fc6306319549bd44a6fa391a837"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -137,7 +141,11 @@ WriteAttributeValue("", 1241, Model.Gia, 1241, 10, false);
             EndContext();
             BeginContext(1318, 96, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "67e229b77c214a6f8c513eef69355912", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "731cf5c8b3334afd8aca02e105c47781", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "731cf5c8b3334afd8aca02e105c47781", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca

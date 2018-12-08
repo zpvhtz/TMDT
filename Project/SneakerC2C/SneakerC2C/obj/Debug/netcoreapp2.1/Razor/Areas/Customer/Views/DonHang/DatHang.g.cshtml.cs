@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #pragma checksum "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "d23f8c43a313cd569df7925380b244dc0015f90d"
+=======
+#pragma checksum "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "7b5547f0b67fe497fc14814d411dbfb6e865be94"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #pragma checksum "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "7b5547f0b67fe497fc14814d411dbfb6e865be94"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -15,7 +19,11 @@ namespace AspNetCore
     using System.Linq;
     using System.Threading.Tasks;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 4 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+=======
+#line 4 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 4 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -26,7 +34,11 @@ using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 3 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+=======
+#line 3 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 3 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -35,7 +47,11 @@ using Microsoft.AspNetCore.Http;
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d23f8c43a313cd569df7925380b244dc0015f90d", @"/Areas/Customer/Views/DonHang/DatHang.cshtml")]
+=======
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7b5547f0b67fe497fc14814d411dbfb6e865be94", @"/Areas/Customer/Views/DonHang/DatHang.cshtml")]
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7b5547f0b67fe497fc14814d411dbfb6e865be94", @"/Areas/Customer/Views/DonHang/DatHang.cshtml")]
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -96,7 +112,11 @@ using Microsoft.AspNetCore.Http;
             WriteLiteral("\r\n");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 8 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+=======
+#line 8 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 8 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -109,8 +129,13 @@ using Microsoft.AspNetCore.Http;
             WriteLiteral("\r\n<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(228, 1496, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c44a3e0928a84dd8922eb2bf9e0cd9bd", async() => {
+=======
+            BeginContext(228, 1551, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ee79714a4ac478f81f6235144a1c94c", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(228, 1551, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ee79714a4ac478f81f6235144a1c94c", async() => {
@@ -131,7 +156,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 EndContext();
                 BeginContext(938, 93, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "bc8af02664c641939508d15fd2da4592", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9143bfcc5d7a4a9291942529e8a74de9", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9143bfcc5d7a4a9291942529e8a74de9", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -156,7 +185,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 EndContext();
                 BeginContext(1037, 89, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5e2f1547d2c242348ba99654b7af00e6", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "335708f38f3749a1b9d625324f23321e", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "335708f38f3749a1b9d625324f23321e", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -181,7 +214,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 EndContext();
                 BeginContext(1132, 66, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "e44b45bcf5e34db0922be329f9b28cce", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "60f7ab06038b4694bc4f2ba999f84b7a", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "60f7ab06038b4694bc4f2ba999f84b7a", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -204,7 +241,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 EndContext();
                 BeginContext(1204, 92, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "45cb3be0b6024ccb98ace4646d3f43df", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "69c81c9766834b8ca3cd6a31c03adf9a", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "69c81c9766834b8ca3cd6a31c03adf9a", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -228,7 +269,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 EndContext();
                 BeginContext(1304, 92, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "44e41d4addf144f888e728ef685795f3", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "593c6c9e02b44aca9a1cfc19b38ac217", async() => {
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "593c6c9e02b44aca9a1cfc19b38ac217", async() => {
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -290,9 +335,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             WriteLiteral("\r\n");
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(1726, 8485, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a024ecf756e54e4c8c48993c4e264545", async() => {
                 BeginContext(1732, 258, true);
+=======
+            BeginContext(1781, 10825, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "15e67f20484d4e45b86854ea0810f85f", async() => {
+                BeginContext(1787, 258, true);
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
             BeginContext(1781, 10825, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "15e67f20484d4e45b86854ea0810f85f", async() => {
@@ -308,9 +359,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 ");
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(1990, 139, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9294305ff1546f58d2b2240a6cd3366", async() => {
                     BeginContext(2054, 71, true);
+=======
+                BeginContext(2045, 139, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "46d4179091674c228ea2f62f5a3e6a3c", async() => {
+                    BeginContext(2109, 71, true);
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
                 BeginContext(2045, 139, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "46d4179091674c228ea2f62f5a3e6a3c", async() => {
@@ -337,6 +394,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(2129, 474, true);
                 WriteLiteral(@"
                 <a href=""#"">
@@ -357,6 +415,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6b06b5210ff24da69b77a9c74f2eb3df", async() => {
                     BeginContext(2678, 131, true);
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                 BeginContext(2184, 233, true);
                 WriteLiteral("\r\n                <a href=\"#\">\r\n                    <i class=\"fa fa-angle-right\"></i>\r\n                    <h4>Thanh Toán</h4>\r\n                </a>\r\n            </div>\r\n            <div class=\"user_merchant\">\r\n                <ul>\r\n");
                 EndContext();
@@ -379,6 +439,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 BeginContext(2678, 210, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3d6e3311648a436bb1051513a5bd89b4", async() => {
                     BeginContext(2753, 131, true);
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                     WriteLiteral("\r\n                        <li><i class=\"fa fa-sign-out\"></i></li>\r\n                        <li>Đăng Xuất</li>\r\n                    ");
                     EndContext();
@@ -486,7 +549,11 @@ WriteAttributeValue("", 3418, ViewBag.FirstAddress.Id, 3418, 24, false);
 ");
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 91 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+=======
+#line 94 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 94 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -501,7 +568,11 @@ WriteAttributeValue("", 3418, ViewBag.FirstAddress.Id, 3418, 24, false);
                 WriteLiteral("            ");
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 95 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+=======
+#line 98 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 98 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -513,7 +584,11 @@ WriteAttributeValue("", 3418, ViewBag.FirstAddress.Id, 3418, 24, false);
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 98 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+=======
+#line 101 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 101 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -532,8 +607,13 @@ WriteAttributeValue("", 3418, ViewBag.FirstAddress.Id, 3418, 24, false);
                                     <h5>");
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(4657, 77, false);
 #line 106 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+=======
+                BeginContext(5055, 77, false);
+#line 109 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
                 BeginContext(5055, 77, false);
 #line 109 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
@@ -547,7 +627,11 @@ WriteAttributeValue("", 3418, ViewBag.FirstAddress.Id, 3418, 24, false);
                 WriteLiteral("</h5>\r\n                                </a>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n");
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 111 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+=======
+#line 114 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 114 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -561,15 +645,21 @@ WriteAttributeValue("", 3418, ViewBag.FirstAddress.Id, 3418, 24, false);
                 WriteLiteral("                <div class=\"cart_theoshop_item\">\r\n                    <div class=\"sanpham_giohang sp_thanhtoan\">\r\n                        <div class=\"hinh_sanpham_giohang\"");
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginWriteAttribute("style", " style=\"", 5119, "\"", 5218, 3);
                 WriteAttributeValue("", 5127, "background-image:url(/Hinh/SanPham/", 5127, 35, true);
 #line 117 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 WriteAttributeValue("", 5162, item.IdSizeSanPhamNavigation.IdSanPhamNavigation.Hinh, 5162, 54, false);
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                 BeginWriteAttribute("style", " style=\"", 5517, "\"", 5616, 3);
                 WriteAttributeValue("", 5525, "background-image:url(/Hinh/SanPham/", 5525, 35, true);
 #line 120 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 WriteAttributeValue("", 5560, item.IdSizeSanPhamNavigation.IdSanPhamNavigation.Hinh, 5560, 54, false);
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 
 #line default
@@ -580,15 +670,21 @@ WriteAttributeValue("", 5560, item.IdSizeSanPhamNavigation.IdSanPhamNavigation.H
                 WriteLiteral("></div>\r\n                        <div class=\"form_ten_sp_giohang\">\r\n                            <h5>\r\n                                ");
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(5353, 209, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7a5602927c4a4c7687b5c0eb0a73d32d", async() => {
                     BeginContext(5499, 59, false);
 #line 120 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                 BeginContext(5751, 209, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fbb804ea6301452bb4d273a2817b528b", async() => {
                     BeginContext(5897, 59, false);
 #line 123 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                                                                                                                                                                             Write(item.IdSizeSanPhamNavigation.IdSanPhamNavigation.TenSanPham);
 
@@ -611,7 +707,11 @@ WriteAttributeValue("", 5560, item.IdSizeSanPhamNavigation.IdSanPhamNavigation.H
                 }
                 BeginWriteTagHelperAttribute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 120 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+=======
+#line 123 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 123 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -635,7 +735,11 @@ WriteAttributeValue("", 5560, item.IdSizeSanPhamNavigation.IdSanPhamNavigation.H
                 WriteLiteral("\r\n                            </h5>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"dongia_giohang dg_thanhtoan\">\r\n");
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 125 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+=======
+#line 128 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 128 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -649,8 +753,13 @@ WriteAttributeValue("", 5560, item.IdSizeSanPhamNavigation.IdSanPhamNavigation.H
                 WriteLiteral("                            <h5><del>");
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(6122, 76, false);
 #line 128 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+=======
+                BeginContext(6520, 76, false);
+#line 131 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
                 BeginContext(6520, 76, false);
 #line 131 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
@@ -664,8 +773,13 @@ WriteAttributeValue("", 5560, item.IdSizeSanPhamNavigation.IdSanPhamNavigation.H
                 WriteLiteral(" đ</del> ");
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(6208, 21, false);
 #line 128 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+=======
+                BeginContext(6606, 21, false);
+#line 131 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
                 BeginContext(6606, 21, false);
 #line 131 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
@@ -679,7 +793,11 @@ WriteAttributeValue("", 5560, item.IdSizeSanPhamNavigation.IdSanPhamNavigation.H
                 WriteLiteral(" đ</h5>\r\n");
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 129 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+=======
+#line 132 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 132 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -693,8 +811,13 @@ WriteAttributeValue("", 5560, item.IdSizeSanPhamNavigation.IdSanPhamNavigation.H
                 WriteLiteral("                            <h5>");
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(6355, 76, false);
 #line 132 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+=======
+                BeginContext(6753, 76, false);
+#line 135 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
                 BeginContext(6753, 76, false);
 #line 135 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
@@ -708,7 +831,11 @@ WriteAttributeValue("", 5560, item.IdSizeSanPhamNavigation.IdSanPhamNavigation.H
                 WriteLiteral(" đ</h5>\r\n");
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 #line 133 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+=======
+#line 136 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
 #line 136 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -717,17 +844,23 @@ WriteAttributeValue("", 5560, item.IdSizeSanPhamNavigation.IdSanPhamNavigation.H
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(6467, 176, true);
                 WriteLiteral("                    </div>\r\n                    <div class=\"soluong_giohang sl_thanhtoan\">\r\n                        <div class=\"tang_soluong\">\r\n                            <h5>");
                 EndContext();
                 BeginContext(6644, 12, false);
 #line 137 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                 BeginContext(6865, 176, true);
                 WriteLiteral("                    </div>\r\n                    <div class=\"soluong_giohang sl_thanhtoan\">\r\n                        <div class=\"tang_soluong\">\r\n                            <h5>");
                 EndContext();
                 BeginContext(7042, 12, false);
 #line 140 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                            Write(item.SoLuong);
 
@@ -735,15 +868,21 @@ WriteAttributeValue("", 5560, item.IdSizeSanPhamNavigation.IdSanPhamNavigation.H
 #line hidden
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(6656, 133, true);
                 WriteLiteral("</h5>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"thanhtien_giohang tt_thanhtoan\">\r\n");
                 EndContext();
 #line 141 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                 BeginContext(7054, 133, true);
                 WriteLiteral("</h5>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"thanhtien_giohang tt_thanhtoan\">\r\n");
                 EndContext();
 #line 144 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                          if (item.IdSizeSanPhamNavigation.IdSanPhamNavigation.GiamGia != null && item.IdSizeSanPhamNavigation.IdSanPhamNavigation.GiamGia != 0)
                         {
@@ -753,17 +892,23 @@ WriteAttributeValue("", 5560, item.IdSizeSanPhamNavigation.IdSanPhamNavigation.H
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(7221, 32, true);
                 WriteLiteral("                            <h5>");
                 EndContext();
                 BeginContext(7254, 22, false);
 #line 145 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                 BeginContext(7619, 32, true);
                 WriteLiteral("                            <h5>");
                 EndContext();
                 BeginContext(7652, 22, false);
 #line 148 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                            Write(tong.ToString("#,###"));
 
@@ -771,15 +916,21 @@ WriteAttributeValue("", 5560, item.IdSizeSanPhamNavigation.IdSanPhamNavigation.H
 #line hidden
                 EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(7276, 9, true);
                 WriteLiteral(" đ</h5>\r\n");
                 EndContext();
 #line 146 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                 BeginContext(7674, 9, true);
                 WriteLiteral(" đ</h5>\r\n");
                 EndContext();
 #line 149 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                         }
                         else
@@ -789,23 +940,30 @@ WriteAttributeValue("", 5560, item.IdSizeSanPhamNavigation.IdSanPhamNavigation.H
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(7495, 32, true);
                 WriteLiteral("                            <h5>");
                 EndContext();
                 BeginContext(7528, 22, false);
 #line 150 "F:\GitHub\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                 BeginContext(7893, 32, true);
                 WriteLiteral("                            <h5>");
                 EndContext();
                 BeginContext(7926, 22, false);
 #line 153 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
                            Write(tong.ToString("#,###"));
 
 #line default
 #line hidden
                 EndContext();
+<<<<<<< HEAD
 <<<<<<< HEAD
                 BeginContext(7550, 9, true);
                 WriteLiteral(" đ</h5>\r\n");
@@ -832,12 +990,30 @@ WriteAttributeValue("", 5560, item.IdSizeSanPhamNavigation.IdSanPhamNavigation.H
                 EndContext();
 #line 157 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
+                BeginContext(7948, 9, true);
+                WriteLiteral(" đ</h5>\r\n");
+                EndContext();
+#line 154 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+                        }
+
+#line default
+#line hidden
+                BeginContext(7984, 52, true);
+                WriteLiteral("                    </div>\r\n                </div>\r\n");
+                EndContext();
+#line 157 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\DonHang\DatHang.cshtml"
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             }
 
 #line default
 #line hidden
 <<<<<<< HEAD
+<<<<<<< HEAD
                 BeginContext(7653, 2551, true);
+=======
+                BeginContext(8051, 3435, true);
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
 =======
                 BeginContext(8051, 3435, true);
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
@@ -1000,9 +1176,12 @@ WriteAttributeValue("", 11753, item.Id, 11753, 8, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
             BeginContext(10211, 9, true);
             WriteLiteral("\r\n</html>");
 =======
+=======
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             BeginContext(12606, 13, true);
             WriteLiteral("\r\n</html>\r\n\r\n");
             EndContext();
@@ -1198,6 +1377,9 @@ WriteAttributeValue("", 11753, item.Id, 11753, 8, false);
         });
     });
 </script>");
+<<<<<<< HEAD
+>>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
+=======
 >>>>>>> de516272fca9727d7132f689e85e3345ec8ce1ca
             EndContext();
         }

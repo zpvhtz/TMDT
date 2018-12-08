@@ -73,46 +73,69 @@ CREATE TABLE HangSanPham
 	TinhTrang NVARCHAR(20)
 )
 
-CREATE TABLE PhieuGiao
+CREATE TABLE DonHang
 (
 	Id UNIQUEIDENTIFIER PRIMARY KEY,
-	MaPhieuGiao VARCHAR(10) UNIQUE NOT NULL,
-	CMNDGiao VARCHAR(20) NOT NULL,
-	IdTaiKhoan UNIQUEIDENTIFIER NOT NULL, --FK--
-	DiaChi NVARCHAR(200),
+	MaDonHang VARCHAR(10) UNIQUE NOT NULL,
+	CMNDNguoiGiao VARCHAR(20),
+	IdTaiKhoan UNIQUEIDENTIFIER NOT NULL, --FK (Người đặt)--
+	DiaChiGiao NVARCHAR(200),
 	NgayTao DATETIME,
 	NgayGiao DATETIME,
 	TongTien FLOAT,
-	DanhGia INT, --Chưa đánh giá/Đã đánh giá--
-	TinhTrang NVARCHAR(20)
+	DiemDanhGia FLOAT,
+	TinhTrangDanhGia NVARCHAR(20), --Chưa đánh giá/Đã đánh giá--
+	TinhTrang NVARCHAR(20) --Đã đặt, Đang giao, Đã thanh toán, Đã huỷ--
 )
 
-CREATE TABLE ChiTietPhieuGiao
+CREATE TABLE ChiTietDonHang
 (
-	IdPhieuGiao UNIQUEIDENTIFIER NOT NULL, --PK, FK--
+	IdDonHang UNIQUEIDENTIFIER NOT NULL, --PK, FK--
 	IdSizeSanPham UNIQUEIDENTIFIER NOT NULL, --PK, FK--
 	SoLuong INT,
-	Gia FLOAT
+	DonGia FLOAT
 )
 
-CREATE TABLE PhieuDat
-(
-	Id UNIQUEIDENTIFIER PRIMARY KEY,
-	MaPhieuDat VARCHAR(10) UNIQUE NOT NULL,
-	IdTaiKhoan UNIQUEIDENTIFIER NOT NULL, --FK--
-	DiaChi NVARCHAR(200),
-	NgayTao DATETIME,
-	TongTien FLOAT,
-	TinhTrang NVARCHAR(20)
-)
+--CREATE TABLE PhieuGiao
+--(
+--	Id UNIQUEIDENTIFIER PRIMARY KEY,
+--	MaPhieuGiao VARCHAR(10) UNIQUE NOT NULL,
+--	CMNDGiao VARCHAR(20) NOT NULL,
+--	IdTaiKhoan UNIQUEIDENTIFIER NOT NULL, --FK--
+--	DiaChi NVARCHAR(200),
+--	NgayTao DATETIME,
+--	NgayGiao DATETIME,
+--	TongTien FLOAT,
+--	DanhGia INT, --Chưa đánh giá/Đã đánh giá--
+--	TinhTrang NVARCHAR(20)
+--)
 
-CREATE TABLE ChiTietPhieuDat
-(
-	IdPhieuDat UNIQUEIDENTIFIER NOT NULL, --PK, FK--
-	IdSizeSanPham UNIQUEIDENTIFIER NOT NULL, --PK, FK--
-	SoLuong INT,
-	Gia FLOAT
-)
+--CREATE TABLE ChiTietPhieuGiao
+--(
+--	IdPhieuGiao UNIQUEIDENTIFIER NOT NULL, --PK, FK--
+--	IdSizeSanPham UNIQUEIDENTIFIER NOT NULL, --PK, FK--
+--	SoLuong INT,
+--	Gia FLOAT
+--)
+
+--CREATE TABLE PhieuDat
+--(
+--	Id UNIQUEIDENTIFIER PRIMARY KEY,
+--	MaPhieuDat VARCHAR(10) UNIQUE NOT NULL,
+--	IdTaiKhoan UNIQUEIDENTIFIER NOT NULL, --FK--
+--	DiaChi NVARCHAR(200),
+--	NgayTao DATETIME,
+--	TongTien FLOAT,
+--	TinhTrang NVARCHAR(20)
+--)
+
+--CREATE TABLE ChiTietPhieuDat
+--(
+--	IdPhieuDat UNIQUEIDENTIFIER NOT NULL, --PK, FK--
+--	IdSizeSanPham UNIQUEIDENTIFIER NOT NULL, --PK, FK--
+--	SoLuong INT,
+--	Gia FLOAT
+--)
 
 CREATE TABLE TinhThanh --Tỉnh thành--
 (
@@ -229,25 +252,35 @@ ALTER TABLE SizeSanPham
 	ADD
 		CONSTRAINT FK_SizeSanPham_IdSanPham FOREIGN KEY (IdSanPham) REFERENCES SanPham(Id)
 
-ALTER TABLE PhieuGiao
+ALTER TABLE DonHang
 	ADD
-		CONSTRAINT FK_PhieuGiao_IdTaiKhoan FOREIGN KEY (IdTaiKhoan) REFERENCES TaiKhoan(Id)
+		CONSTRAINT FK_DonHang_IdTaiKhoan FOREIGN KEY (IdTaiKhoan) REFERENCES TaiKhoan(Id)
 
-ALTER TABLE ChiTietPhieuGiao
+ALTER TABLE ChiTietDonHang
 	ADD
-		CONSTRAINT FK_ChiTietPhieuGiao_IdPhieuGiao FOREIGN KEY (IdPhieuGiao) REFERENCES PhieuGiao(Id),
-		CONSTRAINT FK_ChiTietPhieuGiao_IdSizeSanPham FOREIGN KEY (IdSizeSanPham) REFERENCES SizeSanPham(Id),
-		CONSTRAINT PK_ChiTietPhieuGiao_IdPhieuGiao_IdSanPham PRIMARY KEY (IdPhieuGiao, IdSizeSanPham)
+		CONSTRAINT FK_ChiTietDonHang_IdDonHang FOREIGN KEY (IdDonHang) REFERENCES DonHang(Id),
+		CONSTRAINT FK_ChiTietDonHang_IdSizeSanPham FOREIGN KEY (IdSizeSanPham) REFERENCES SizeSanPham(Id),
+		CONSTRAINT PK_ChiTietDonHang_IdDonHang_IdSanPham PRIMARY KEY (IdDonHang, IdSizeSanPham)
 
-ALTER TABLE PhieuDat
-	ADD
-		CONSTRAINT FK_PhieuDat_IdTaiKhoan FOREIGN KEY (IdTaiKhoan) REFERENCES TaiKhoan(Id)
+--ALTER TABLE PhieuGiao
+--	ADD
+--		CONSTRAINT FK_PhieuGiao_IdTaiKhoan FOREIGN KEY (IdTaiKhoan) REFERENCES TaiKhoan(Id)
 
-ALTER TABLE ChiTietPhieuDat
-	ADD
-		CONSTRAINT FK_ChiTietPhieuDat_IdPhieuDat FOREIGN KEY (IdPhieuDat) REFERENCES PhieuDat(Id),
-		CONSTRAINT FK_ChiTietPhieuDat_IdSizeSanPham FOREIGN KEY (IdSizeSanPham) REFERENCES SizeSanPham(Id),
-		CONSTRAINT PK_ChiTietPhieuDat_IdPhieuDat_IdSanPham PRIMARY KEY (IdPhieuDat, IdSizeSanPham)
+--ALTER TABLE ChiTietPhieuGiao
+--	ADD
+--		CONSTRAINT FK_ChiTietPhieuGiao_IdPhieuGiao FOREIGN KEY (IdPhieuGiao) REFERENCES PhieuGiao(Id),
+--		CONSTRAINT FK_ChiTietPhieuGiao_IdSizeSanPham FOREIGN KEY (IdSizeSanPham) REFERENCES SizeSanPham(Id),
+--		CONSTRAINT PK_ChiTietPhieuGiao_IdPhieuGiao_IdSanPham PRIMARY KEY (IdPhieuGiao, IdSizeSanPham)
+
+--ALTER TABLE PhieuDat
+--	ADD
+--		CONSTRAINT FK_PhieuDat_IdTaiKhoan FOREIGN KEY (IdTaiKhoan) REFERENCES TaiKhoan(Id)
+
+--ALTER TABLE ChiTietPhieuDat
+--	ADD
+--		CONSTRAINT FK_ChiTietPhieuDat_IdPhieuDat FOREIGN KEY (IdPhieuDat) REFERENCES PhieuDat(Id),
+--		CONSTRAINT FK_ChiTietPhieuDat_IdSizeSanPham FOREIGN KEY (IdSizeSanPham) REFERENCES SizeSanPham(Id),
+--		CONSTRAINT PK_ChiTietPhieuDat_IdPhieuDat_IdSanPham PRIMARY KEY (IdPhieuDat, IdSizeSanPham)
 
 ALTER TABLE DiaChi
 	ADD
@@ -372,12 +405,12 @@ AS
 	DEALLOCATE CUR
 GO
 
-CREATE TRIGGER TG_CongSoLuong_SizeSanPham_PhieuDat ON PhieuDat AFTER UPDATE
+CREATE TRIGGER TG_CongSoLuong_SizeSanPham_DonHang ON DonHang AFTER UPDATE
 AS
-	DECLARE @IdPhieuDat UNIQUEIDENTIFIER
+	DECLARE @IdDonHang UNIQUEIDENTIFIER
 	DECLARE @TinhTrang NVARCHAR(20)
 	--
-	SELECT @IdPhieuDat = Id, @TinhTrang = TinhTrang
+	SELECT @IdDonHang = Id, @TinhTrang = TinhTrang
 	FROM inserted
 	--
 	IF(@TinhTrang = N'Đã huỷ')
@@ -387,8 +420,8 @@ AS
 		--
 		DECLARE CUR CURSOR FOR
 		SELECT IdSizeSanPham, SoLuong
-		FROM ChiTietPhieuDat
-		WHERE IdPhieuDat = @IdPhieuDat
+		FROM ChiTietDonHang
+		WHERE IdDonHang = @IdDonHang
 		--
 		OPEN CUR
 		FETCH NEXT FROM CUR INTO @IdSizeSanPham, @SoLuong
@@ -399,67 +432,6 @@ AS
 			WHERE Id = @IdSizeSanPham
 			--
 			FETCH NEXT FROM CUR INTO @IdSizeSanPham, @SoLuong
-		END
-		CLOSE CUR
-		DEALLOCATE CUR
-	END
-GO
-
-CREATE TRIGGER TG_ThemPhieuGiao_PhieuDat ON PhieuDat AFTER UPDATE
-AS
-	DECLARE @TinhTrang NVARCHAR(20)
-	DECLARE @IdTaiKhoan UNIQUEIDENTIFIER
-	DECLARE @IdPhieuDat UNIQUEIDENTIFIER
-	DECLARE @DiaChi NVARCHAR(200)
-	DECLARE @TongTien FLOAT
-	--
-	SELECT @TinhTrang = TinhTrang, @IdTaiKhoan = IdTaiKhoan, @DiaChi = DiaChi, @TongTien = TongTien, @IdPhieuDat = Id
-	FROM inserted
-	--
-	IF(@TinhTrang = N'Đã xác nhận')
-	BEGIN
-		DECLARE @MaPhieuGiao VARCHAR(10)
-		--Lấy mã phiếu giao mới nhất--
-		SELECT TOP 1 @MaPhieuGiao = MaPhieuGiao
-		FROM PhieuGiao
-		ORDER BY CAST(SUBSTRING(MaPhieuGiao, 4, LEN(MaPhieuGiao)) AS INT) DESC
-		--
-		DECLARE @IdPhieuGiao UNIQUEIDENTIFIER
-		SET @IdPhieuGiao = NEWID()
-		--
-		IF(@MaPhieuGiao IS NULL)
-		BEGIN
-			INSERT INTO PhieuGiao
-				VALUES(@IdPhieuGiao, 'PG-1', '', @IdTaiKhoan, @DiaChi, GETDATE(), '', @TongTien, NULL, N'Đang chuẩn bị')
-		END
-		ELSE
-		BEGIN
-			--Lấy mã mới--
-			DECLARE @STT INT = CAST(SUBSTRING(@MaPhieuGiao, 4, LEN(@MaPhieuGiao)) AS INT)
-			SET @STT = @STT + 1
-			SET @MaPhieuGiao = 'PG-' + CONVERT(VARCHAR(7), @STT)
-			--
-			INSERT INTO PhieuGiao
-				VALUES(@IdPhieuGiao, @MaPhieuGiao, '', @IdTaiKhoan, @DiaChi, GETDATE(), '', @TongTien, NULL, N'Đang chuẩn bị')
-		END
-		--Thêm vào chi tiết--
-		DECLARE @IdSizeSanPham UNIQUEIDENTIFIER
-		DECLARE @SoLuong INT	
-		DECLARE @Gia FLOAT
-		--
-		DECLARE CUR CURSOR FOR
-		SELECT IdSizeSanPham, SoLuong, Gia
-		FROM ChiTietPhieuDat
-		WHERE IdPhieuDat = @IdPhieuDat
-		--
-		OPEN CUR
-		FETCH NEXT FROM CUR INTO @IdSizeSanPham, @SoLuong, @Gia
-		WHILE @@FETCH_STATUS = 0
-		BEGIN
-			INSERT INTO ChiTietPhieuGiao
-				VALUES(@IdPhieuGiao, @IdSizeSanPham, @SoLuong, @Gia)
-			--
-			FETCH NEXT FROM CUR INTO @IdSizeSanPham, @SoLuong, @Gia
 		END
 		CLOSE CUR
 		DEALLOCATE CUR

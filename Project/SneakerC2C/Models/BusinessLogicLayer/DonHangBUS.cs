@@ -109,5 +109,54 @@ namespace Models.BusinessLogicLayer
             GioHangBUS giohangbus = new GioHangBUS();
             giohangbus.DeleteAllFromCart(taikhoan.Id.ToString());
         }
+
+        public List<DonHang> GetDonHang(string tendangnhap, string tinhtrang)
+        {
+            List<DonHang> list = context.DonHang.Where(dh => dh.IdTaiKhoanNavigation.TenDangNhap == tendangnhap && dh.TinhTrang == tinhtrang)
+                                                .Include(dh => dh.IdTaiKhoanNavigation)
+                                                .ToList();
+            return list;
+        }
+
+        public List<ChiTietDonHang> GetChiTietDonHang(string tendangnhap, string tinhtrang)
+        {
+            List<ChiTietDonHang> list = context.ChiTietDonHang.Where(dh => dh.IdDonHangNavigation.TinhTrang == tinhtrang && dh.IdDonHangNavigation.IdTaiKhoanNavigation.TenDangNhap == tendangnhap)
+                                                              .OrderBy(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoan)
+                                                              .Include(dh => dh.IdDonHangNavigation)
+                                                              .Include(dh => dh.IdDonHangNavigation.IdTaiKhoanNavigation)
+                                                              .Include(dh => dh.IdSizeSanPhamNavigation)
+                                                              .Include(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation)
+                                                              .Include(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation)
+                                                              .ToList();
+            return list;
+        }
+
+        public DonHang GetExactDonHang(string id)
+        {
+            DonHang donhang = context.DonHang.Where(dh => dh.Id == Guid.Parse(id))
+                                             .Include(dh => dh.IdTaiKhoanNavigation)
+                                             .SingleOrDefault();
+            return donhang;
+        }
+
+        public List<ChiTietDonHang> GetExactChiTietDonHang(string id)
+        {
+            List<ChiTietDonHang> list = context.ChiTietDonHang.Where(dh => dh.IdDonHang == Guid.Parse(id))
+                                                              .OrderBy(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoan)
+                                                              .Include(dh => dh.IdDonHangNavigation)
+                                                              .Include(dh => dh.IdDonHangNavigation.IdTaiKhoanNavigation)
+                                                              .Include(dh => dh.IdSizeSanPhamNavigation)
+                                                              .Include(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation)
+                                                              .Include(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation)
+                                                              .ToList();
+            return list;
+        }
+
+        public void HuyDonHang(string madonhang)
+        {
+            DonHang donhang = context.DonHang.Where(dh => dh.MaDonHang == madonhang).SingleOrDefault();
+            donhang.TinhTrang = "Đã huỷ";
+            context.SaveChanges();
+        }
     }
 }

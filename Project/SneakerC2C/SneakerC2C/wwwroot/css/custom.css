@@ -39,3 +39,11 @@
 .center-text-td {
     text-align: center;
 }
+
+.trangthai-dahuy {
+    border-color: red !important;
+}
+
+.trangthai-dahuy i {
+    color: red !important;
+}

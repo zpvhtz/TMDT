@@ -1,0 +1,371 @@
+﻿@model Models.Database.DonHang
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "DonMua";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@if (Model != null)
+{
+    <div class="container">
+        <div class="customer_quanly">
+            <div class="cus_left">
+                <h4><span>Tên: </span>@ViewBag.TaiKhoan.Ten</h4>
+                <hr>
+                <div class="menu_cus">
+                    <a class="menu_cus_item" asp-area="Customer" asp-controller="TaiKhoan" asp-action="ThongTinTaiKhoan">
+                        <div class="menu_cus_icon" style="background-color: #2fdab8;">
+                            <i class="fa fa-user-o"></i>
+                        </div>
+                        <div class="menu_cus_content">
+                            <h5>Tài Khoản</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="menu_cus">
+                    <a class="menu_cus_item" asp-area="Customer" asp-controller="TaiKhoan" asp-action="ThongTinDiaChi">
+                        <div class="menu_cus_icon" style="background-color:rgb(68, 181, 255);">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="menu_cus_content">
+                            <h5>Địa Chỉ</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="menu_cus">
+                    <a class="menu_cus_item" asp-area="Customer" asp-controller="TaiKhoan" asp-action="DoiMatKhau">
+                        <div class="menu_cus_icon" style="background-color:rgb(255, 193, 7);">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                        <div class="menu_cus_content">
+                            <h5>Đổi mật khẩu</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="menu_cus">
+                    <a class="menu_cus_item" asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua">
+                        <div class="menu_cus_icon" style="background-color:rgb(255, 87, 34);">
+                            <i class="fa fa-shopping-basket"></i>
+                        </div>
+                        <div class="menu_cus_content">
+                            <h5>Đơn Mua</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="cus_right">
+                <div class="ql_donhang">
+                    <div class="goback">
+                        <a href="customer-donmua.html">
+                            <i class="fa fa-angle-left"></i>
+                            TRỞ LẠI
+                        </a>
+                    </div>
+                    <div class="ct_don">
+                        @if (Model.TinhTrang == "Đang giao" || Model.TinhTrang == "Đã thanh toán" || Model.TinhTrang == "Đã đánh giá" || Model.TinhTrang == "Đã huỷ")
+                        {
+                            <div class="trangthai_donmua">
+                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua">
+                                    <div class="trangthai_donmua_ct">
+                                        <div class="khung_trangthai">
+                                            <i class="fa fa-file-text-o"></i>
+                                        </div>
+                                    </div>
+                                    <h5>Đơn Hàng Đã Đặt</h5>
+                                    @*<h6>05-12-2018</h6>*@
+                                </a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="trangthai_donmua">
+                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua">
+                                    <div class="trangthai_donmua_ct">
+                                        <div class="khung_trangthai trangthai_color">
+                                            <i class="fa fa-file-text-o"></i>
+                                        </div>
+                                    </div>
+                                    <h5>Đơn Hàng Đã Đặt</h5>
+                                    @*<h6>05-12-2018</h6>*@
+                                </a>
+                            </div>
+                        }
+                        @if (Model.TinhTrang == "Đang giao")
+                        {
+                            <div class="trangthai_donmua">
+                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="danggiao">
+                                    <div class="trangthai_donmua_ct">
+                                        <div class="khung_trangthai trangthai_color">
+                                            <i class="fa fa-motorcycle"></i>
+                                        </div>
+                                    </div>
+                                    <h5>Đơn Hàng Đang Giao</h5>
+                                </a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="trangthai_donmua">
+                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="danggiao">
+                                    <div class="trangthai_donmua_ct">
+                                        <div class="khung_trangthai">
+                                            <i class="fa fa-motorcycle"></i>
+                                        </div>
+                                    </div>
+                                    <h5>Đơn Hàng Đang Giao</h5>
+                                </a>
+                            </div>
+                        }
+                        @if (Model.TinhTrang == "Đã thanh toán")
+                        {
+                            <div class="trangthai_donmua">
+                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dathanhtoan">
+                                    <div class="trangthai_donmua_ct">
+                                        <div class="khung_trangthai trangthai_color">
+                                            <i class="fa fa-usd"></i>
+                                        </div>
+                                    </div>
+                                    <h5>Đơn Hàng Đã Thanh Toán</h5>
+                                </a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="trangthai_donmua">
+                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dathanhtoan">
+                                    <div class="trangthai_donmua_ct">
+                                        <div class="khung_trangthai">
+                                            <i class="fa fa-usd"></i>
+                                        </div>
+                                    </div>
+                                    <h5>Đơn Hàng Đã Thanh Toán</h5>
+                                </a>
+                            </div>
+                        }
+                        @if (Model.TinhTrang == "Đã đánh giá")
+                        {
+                            <div class="trangthai_donmua">
+                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dadanhgia">
+                                    <div class="trangthai_donmua_ct">
+                                        <div class="khung_trangthai trangthai_color">
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <h5>Đơn Hàng Đã Đánh Giá</h5>
+                                </a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="trangthai_donmua">
+                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dadanhgia">
+                                    <div class="trangthai_donmua_ct">
+                                        <div class="khung_trangthai">
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <h5>Đơn Hàng Đã Đánh Giá</h5>
+                                </a>
+                            </div>
+                        }
+
+                        @if (Model.TinhTrang == "Đã huỷ")
+                        {
+                            <div class="trangthai_donmua">
+                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dahuy">
+                                    <div class="trangthai_donmua_ct">
+                                        <div class="khung_trangthai trangthai-dahuy">
+                                            <i class="fa fa-ban" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <h5>Đơn Hàng Đã Huỷ</h5>
+                                </a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="trangthai_donmua">
+                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dahuy">
+                                    <div class="trangthai_donmua_ct">
+                                        <div class="khung_trangthai">
+                                            <i class="fa fa-ban" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <h5>Đơn Hàng Đã Huỷ</h5>
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="ql_donhang">
+                    <div class="thongtin_nguoinhan">
+                        <h4>Thông Tin Nhận Hàng</h4>
+                        <h5 style="float:left;">@Model.IdTaiKhoanNavigation.Ten (@Model.IdTaiKhoanNavigation.DienThoai) <span>@Model.DiaChiGiao</span></h5>
+                        @if (Model.TinhTrang == "Đã đặt")
+                        {
+                            <h4 style="float:right;"><span><a href="#" onclick="AskToCancel('@Model.MaDonHang')" style="color: red;">Huỷ đơn hàng</a></span></h4>
+                        }
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+                <div class="ql_donhang">
+                    @{
+                        string idtaikhoan = "";
+                        int stt = 0;
+                        double tongtienchuaship = 0;
+                    }
+                    @foreach (var it in ViewBag.ChiTietDonhang)
+                    {
+                        string idtaikhoantemp = it.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoan.ToString();
+
+                        @if (idtaikhoantemp != idtaikhoan)
+                        {
+                            @if (stt != 0)
+                            {
+                                <hr />
+                            }
+                            <div class="tenshop_donhang">
+                                <div class="sanpham_giohang">
+                                    <a href="#">
+                                        <i class="fa fa-bank"></i>
+                                        <h5>@it.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenShop</h5>
+                                    </a>
+                                </div>
+                                <div class="trangthai_donhang id_donhang">
+                                    <span><b>Mã đơn hàng:</b> @Model.MaDonHang</span>
+                                </div>
+                            </div>
+
+                            idtaikhoan = idtaikhoantemp;
+                            stt++;
+                        }
+                        <hr>
+                        <div class="thongtin_donhang">
+                            <div class="sanpham_giohang sp_donhang">
+                                <div class="hinh_sanpham_giohang hinh_donhang" style="background-image:url(/Hinh/SanPham/@it.IdSizeSanPhamNavigation.IdSanPhamNavigation.Hinh);"></div>
+                                <div class="form_ten_sp_giohang ten_sp_donhang">
+                                    <h5>
+                                        @it.IdSizeSanPhamNavigation.IdSanPhamNavigation.TenSanPham
+                                    </h5>
+                                    <h5>x @it.SoLuong</h5>
+                                </div>
+                                <div class="thanhtien_giohang tt_donhang">
+                                    @if (it.IdSizeSanPhamNavigation.IdSanPhamNavigation.GiamGia != 0 && it.IdSizeSanPhamNavigation.IdSanPhamNavigation.GiamGia != null)
+                                    {
+                                        double gia = it.IdSizeSanPhamNavigation.IdSanPhamNavigation.Gia * (100 - it.IdSizeSanPhamNavigation.IdSanPhamNavigation.GiamGia) / 100 ?? 0;
+                                        <h5>@gia.ToString("#,###") đ</h5>
+                                        <h6><del>@it.IdSizeSanPhamNavigation.IdSanPhamNavigation.Gia.ToString("#,###") đ</del></h6>
+
+                                        tongtienchuaship = tongtienchuaship + (gia * it.SoLuong);
+                                    }
+                                    else
+                                    {
+                                        <h5>@it.IdSizeSanPhamNavigation.IdSanPhamNavigation.Gia.ToString("#,###") đ</h5>
+
+                                        tongtienchuaship = tongtienchuaship + it.IdSizeSanPhamNavigation.IdSanPhamNavigation.Gia * it.SoLuong;
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <hr>
+                    <div class="chitiet_donmua">
+                        <div class="tong_tienhang">
+                            <div class="txt_dathang tien_donmua">
+                                <p>Tổng tiền hàng</p>
+                            </div>
+                            <div class="gia_dathang gia_donmua">
+                                <p>@tongtienchuaship.ToString("#,###") đ</p>
+                            </div>
+                        </div>
+                        <div class="tong_tienhang">
+                            <div class="txt_dathang tien_donmua">
+                                <p>Phí vận chuyển</p>
+                            </div>
+                            <div class="gia_dathang gia_donmua">
+                                @{
+                                    double tienship = Model.TongTien.Value - tongtienchuaship;
+                                }
+                                <p>@tienship.ToString("#,###") đ</p>
+                            </div>
+                        </div>
+                        <div class="tong_tienhang">
+                            <div class="txt_dathang tien_donmua">
+                                <p>Tổng thanh toán</p>
+                            </div>
+                            <div class="gia_dathang gia_donmua">
+                                <p class="gia_tong">@Model.TongTien.Value.ToString("#,###") đ</p>
+                            </div>
+                        </div>
+                        <div class="tong_tienhang">
+                            <div class="txt_dathang tien_donmua">
+                                <p>Phương thức thanh toán</p>
+                            </div>
+                            <div class="gia_dathang gia_donmua">
+                                <p>Thanh toán khi nhận hàng</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Sweet Alert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!--Jquery-->
+    <script type="text/javascript" src="~/maintemplate/js/jquery-2.1.4.min.js"></script>
+
+    <!--Function-->
+    <script>
+        function AskToCancel(madonhang) {
+            swal({
+                title: `Bạn có chắc chắn huỷ đơn hàng ${madonhang}?`,
+                text: "Một khi huỷ, đơn hàng sẽ không không phục được",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    HuyDonHang(madonhang);
+                    swal("Đơn hàng của bạn đã được huỷ!", {
+                        icon: "success",
+                        button: "OK"
+                    })
+                    .then(() => {
+                        window.location.href = "@Url.Action("DonMua", "TaiKhoan")";
+                    });
+                }
+            });
+        }
+
+        function HuyDonHang(madonhang) {
+            let id = "";
+            $.ajax({
+                url: "/Customer/TaiKhoan/HuyDonMua",
+                type: "post",
+                data: { "madonhang": madonhang },
+                error: function (data) {
+                    alert("Error: " + data);
+                },
+                async: false
+                //Nhớ xài async hoặc dùng 1 request chứa tất cả dữ liệu, k là bị DDoS
+            });
+        }
+    </script>
+
+    <style>
+        .swal-modal {
+            border: 3px solid #bef4e9;
+        }
+    </style>
+}
+else
+{
+    <script>
+        window.location.href = "@Url.Action("Index", "Home")";
+    </script>
+}

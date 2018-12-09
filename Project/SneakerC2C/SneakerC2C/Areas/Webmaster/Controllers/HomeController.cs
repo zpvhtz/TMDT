@@ -22,19 +22,19 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             
             return View();
         }
-        //[HttpGet]
-        //public JsonResult GetThongKeMerchant(string nbd, string nkt)
-        //{
-        //    nbd = nbd ?? DateTime.Now.ToLongDateString();
-        //    nkt = nkt ?? DateTime.Now.ToLongDateString();
-        //    DateTime _nbd = DateTime.Parse(nbd);
-        //    DateTime _nkt = DateTime.Parse(nkt);
-        //    HomeBUS homeBus = new HomeBUS();
-        //    List<DoanhThuMerchant> list = homeBus.GetDoanhThuMerchants(_nbd, _nkt);
-        //    var json = JsonConvert.SerializeObject(list);
-        //    var json2 = JsonConvert.DeserializeObject(json);
-        //    return Json(json2);
-        //}
+        [HttpGet]
+        public JsonResult GetThongKeMerchant(string nbd, string nkt)
+        {
+            nbd = nbd ?? DateTime.Now.ToLongDateString();
+            nkt = nkt ?? DateTime.Now.ToLongDateString();
+            DateTime _nbd = DateTime.Parse(nbd);
+            DateTime _nkt = DateTime.Parse(nkt);
+            HomeBUS homeBus = new HomeBUS();
+            List<DoanhThuMerchant> list = homeBus.GetDoanhThuMerchants(_nbd, _nkt);
+            var json = JsonConvert.SerializeObject(list);
+            var json2 = JsonConvert.DeserializeObject(json);
+            return Json(json2);
+        }
 
         public JsonResult GetSoLuongNguoiDung()
         {

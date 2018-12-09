@@ -1,0 +1,191 @@
+﻿
+@model IEnumerable<Models.Database.DonHang>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "DaGiao";
+    Layout = "~/Views/Shared/_MerchantManagementLayout.cshtml";
+}
+
+
+<div class="container">
+    <div class="customer_quanly">
+        <div id="horizontalTab">
+            <ul class="resp-tabs-list">
+                <a asp-area="Merchant" asp-controller="DonHang" asp-action="ChoLayHang"><li>Chờ lấy hàng</li></a>
+                <a asp-area="Merchant" asp-controller="DonHang" asp-action="DangGiao"><li>Đang giao</li></a>
+                <a asp-area="Merchant" asp-controller="DonHang" asp-action="DaGiao"><li style="background-color: #fc636b">Hoàn thành</li></a>
+                <a asp-area="Merchant" asp-controller="DonHang" asp-action="DaHuy"><li>Đã Huỷ</li></a>
+            </ul>
+            <div class="resp-tabs-container">
+                <!--/tab_one-->
+                @foreach (var item in Model)
+                {
+                    <div class="tab1">
+                        <div class="form_donhang">
+                            <div class="ql_donhang">
+                                <div class="tenshop_donhang">
+                                    <div class="sanpham_giohang">
+                                        <a href="#">
+                                            <i class="fa fa-user"></i>
+                                            <h5>@item.IdTaiKhoanNavigation.TenDangNhap</h5>
+                                        </a>
+                                    </div>
+                                    <div class="trangthai_donhang id_donhang">
+                                        ID: @item.Id
+                                    </div>
+                                    <div class="trangthai_donhang id_donhang">Ngày giao: @item.NgayGiao</div>
+                                </div>
+                                <hr>
+                                @foreach (var ct in ViewBag.ChiTiet)
+                                {
+                                    @if (ct.IdDonHangNavigation.MaDonHang == item.MaDonHang)
+                                    {
+                                        <div class="thongtin_donhang">
+                                            <div class="sanpham_giohang sp_donhang">
+                                                <div class="hinh_sanpham_giohang hinh_donhang" style="background-image:url(/Hinh/SanPham/@ct.IdSizeSanPhamNavigation.IdSanPhamNavigation.Hinh);"></div>
+                                                <div class="form_ten_sp_giohang ten_sp_donban">
+                                                    <h5>
+                                                        @ct.IdSizeSanPhamNavigation.IdSanPhamNavigation.TenSanPham
+                                                    </h5>
+                                                </div>
+                                                <div class="soluong_donban">
+                                                    <h5>x @ct.SoLuong</h5>
+                                                </div>
+                                                <div class="donban_right">
+                                                    <div class="tongtien_donban">
+                                                        đ @ct.DonGia
+                                                        @*<h6>Thanh toán khi nhận hàng</h6>*@
+                                                    </div>
+                                                    <div class="trangthai_donban">
+                                                        @item.TinhTrang
+                                                        <h6>Nhớ đánh giá người mua nhé.</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                                <hr>
+                                <div class="chuthich_donban">
+                                    <div class="chuthich_giaohang">
+                                        <div class="button_donban">
+                                            @*<a asp-controller="DonHang" asp-action="CapNhat_Giao" asp-route-iddonhang="@item.Id" class="btn btn-danger">Cập nhập tình trạng đơn hàng</a>*@
+                                            <div class="button_donban">
+                                                <dialog id="xemlai_danhgia">
+                                                    <form method="dialog">
+                                                        <h3>Đánh Giá</h3>
+                                                        <h5>ID Đơn Hàng ACB123456</h5>
+                                                        <div class="danhgia_sao">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </div>
+                                                        <menu>
+                                                            <button class="button_thoat">Thoát</button>
+                                                        </menu>
+                                                    </form>
+                                                </dialog>
+                                                <button id="btn_xemlai_danhgia" class="button_chitiet">Xem Đánh Giá</button>
+                                            </div>
+                                            <div class="donban_right">
+                                                @item.TongTien
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //quanlysanpham -->
+<a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+
+<script src="js/modernizr.custom.js"></script>
+<!-- Custom-JavaScript-File-Links -->
+<!-- cart-js -->
+<script src="js/minicart.min.js"></script>
+<script>
+	// Mini Cart
+	paypal.minicart.render({
+		action: '#'
+	});
+
+	if (~window.location.search.indexOf('reset=true')) {
+		paypal.minicart.reset();
+	}
+</script>
+
+<!-- //cart-js -->
+<!-- script for responsive tabs -->
+<script src="js/easy-responsive-tabs.js"></script>
+<script>
+	$(document).ready(function () {
+	$('#horizontalTab').easyResponsiveTabs({
+	type: 'default', //Types: default, vertical, accordion
+	width: 'auto', //auto or any width like 600px
+	fit: true,   // 100% fit in a container
+	closed: 'accordion', // Start closed if in accordion view
+	activate: function(event) { // Callback function if tab is switched
+	var $tab = $(this);
+	var $info = $('#tabInfo');
+	var $name = $('span', $info);
+	$name.text($tab.text());
+	$info.show();
+	}
+	});
+	$('#verticalTab').easyResponsiveTabs({
+	type: 'vertical',
+	width: 'auto',
+	fit: true
+	});
+	});
+</script>
+<!-- //script for responsive tabs -->
+<!-- stats -->
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.countup.js"></script>
+<script>
+		$('.counter').countUp();
+</script>
+<!-- //stats -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- here stars scrolling icon -->
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+			});
+</script>
+<!-- //here ends scrolling icon -->
+<!-- for bootstrap working -->
+<script type="text/javascript" src="js/bootstrap.js"></script>

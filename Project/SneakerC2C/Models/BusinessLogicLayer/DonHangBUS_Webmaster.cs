@@ -65,6 +65,17 @@ namespace Models.BusinessLogicLayer
             return "Sửa thành công";
         }
 
+        public List<ChiTietDonHang> GetDetail(string madonhang)
+        {
+            return context.ChiTietDonHang.Where(ct => ct.IdDonHangNavigation.MaDonHang == madonhang)
+                                         .Include(ct => ct.IdDonHangNavigation)
+                                         .Include(ct => ct.IdSizeSanPhamNavigation)
+                                         .Include(ct => ct.IdSizeSanPhamNavigation.IdSanPhamNavigation)
+                                         .Include(ct => ct.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation)
+                                         .Include(ct => ct.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdHangSanPhamNavigation)
+                                         .ToList();
+        }
+
 
         //------------------------------------------------------ TIM KIEM - SAP XEP -----------------------------------------------------------------
 

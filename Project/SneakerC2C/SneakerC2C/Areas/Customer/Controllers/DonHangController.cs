@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -53,8 +54,12 @@ namespace SneakerC2C.Areas.Customer.Controllers
                 List<GiaShip> listgiaship = new List<GiaShip>();
                 listgiaship = giashipbus.GetGiaShips();
 
-                ViewBag.GiaShipNoiThanh = listgiaship.Where(gs => gs.Loai.Contains("Nội Thành")).SingleOrDefault();
-                ViewBag.GiaShipNgoaiThanh = listgiaship.Where(gs => gs.Loai.Contains("Ngoại Thành")).SingleOrDefault();
+                ViewBag.GiaShipNoiThanh = listgiaship.Where(gs => gs.Loai.Contains("Nội Thành"))
+                                                     .OrderByDescending(gs => gs.NgayCapNhat)
+                                                     .FirstOrDefault();
+                ViewBag.GiaShipNgoaiThanh = listgiaship.Where(gs => gs.Loai.Contains("Ngoại Thành"))
+                                                       .OrderByDescending(gs => gs.NgayCapNhat)
+                                                       .FirstOrDefault();
                 ViewBag.DiaChi = diachi;
             
                 return PartialView("pTienThanhToan", listdiachi);
@@ -90,7 +95,7 @@ namespace SneakerC2C.Areas.Customer.Controllers
             return "";
         }
 
-        public void CreateDonDatHang(string tendangnhap, string iddiachi, float tongtien)
+        public void CreateDonDatHang(string tendangnhap, string iddiachi, double tongtien)
         {
             string checktendangnhap = HttpContext.Session.GetString("TenDangNhap");
             if (checktendangnhap != null && checktendangnhap != "")

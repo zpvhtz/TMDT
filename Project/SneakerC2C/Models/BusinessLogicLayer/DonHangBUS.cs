@@ -39,7 +39,7 @@ namespace Models.BusinessLogicLayer
             return "Đặt hàng thành công";
         }
 
-        public void CreateDonDatHang(string tendangnhap, string iddiachi, float tongtien)
+        public void CreateDonDatHang(string tendangnhap, string iddiachi, double tongtien)
         {
             DonHang latestDonHang = context.DonHang.OrderByDescending(pd => int.Parse(pd.MaDonHang.Substring(3))).FirstOrDefault();
             string latestMa = "";
@@ -50,7 +50,7 @@ namespace Models.BusinessLogicLayer
             else
             {
                 int ma = int.Parse(latestDonHang.MaDonHang.Substring(3));
-                latestMa = "PD-" + (ma + 1).ToString();
+                latestMa = "DH-" + (ma + 1).ToString();
             }
 
             //Thêm đơn hàng

@@ -131,7 +131,11 @@ namespace AspNetCore
         ");
             EndContext();
             BeginContext(3191, 569, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87c5b1c5f18b45d19c7397bf3c6bf0ea", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "984a3fafbeb44fc48a636d1842baf8aa", async() => {
+>>>>>>> 17fec6fe6c77f0bf9d5c4c21eaa39d7dd6fa6207
                 BeginContext(3212, 541, true);
                 WriteLiteral(@"
             <div class=""input-group custom-search-form"">

@@ -160,7 +160,11 @@ namespace AspNetCore
                     ");
             EndContext();
             BeginContext(4154, 78, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d2b2b54db6f34a2792973b6e926afed7", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "20acfb3ceac44b139086cccf0fb09b11", async() => {
+>>>>>>> 17fec6fe6c77f0bf9d5c4c21eaa39d7dd6fa6207
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -189,7 +193,11 @@ namespace AspNetCore
                     ");
             EndContext();
             BeginContext(4598, 78, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "7f770959827b48179fc8198eaf4abe88", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "830b31a7f1884e6f99a646bd2cb68f7d", async() => {
+>>>>>>> 17fec6fe6c77f0bf9d5c4c21eaa39d7dd6fa6207
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -244,7 +252,11 @@ namespace AspNetCore
             WriteLiteral("                        <div class=\"col-md-3 product-men\">\r\n                            <div class=\"men-pro-item simpleCart_shelfItem\">\r\n                                <div class=\"men-thumb-item\">\r\n                                    ");
             EndContext();
             BeginContext(5807, 264, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c81f46d740624fe0ae26ce24705c24aa", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e84aa72556c0476eb6403157b6009e37", async() => {
+>>>>>>> 17fec6fe6c77f0bf9d5c4c21eaa39d7dd6fa6207
                 BeginContext(5898, 67, true);
                 WriteLiteral("\r\n                                        <div class=\"anhsanpham-4\"");
                 EndContext();
@@ -305,7 +317,11 @@ WriteAttributeValue("", 6009, item.Hinh, 6009, 10, false);
             WriteLiteral("                                            ");
             EndContext();
             BeginContext(6383, 131, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1497d05e08c46a2b6189b272b39b546", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6e7053433264819902c053ce0ccdd70", async() => {
+>>>>>>> 17fec6fe6c77f0bf9d5c4c21eaa39d7dd6fa6207
                 BeginContext(6475, 32, false);
 #line 153 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\Home\Index.cshtml"
                                                                                                                                   Write(item.TenSanPham.Substring(0, 18));
@@ -361,7 +377,11 @@ WriteAttributeValue("", 6009, item.Hinh, 6009, 10, false);
             WriteLiteral("                                            ");
             EndContext();
             BeginContext(6692, 111, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "534d931d478241e89e43fb223a90f598", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d270eab210ce47b0b3a69e649230d71c", async() => {
+>>>>>>> 17fec6fe6c77f0bf9d5c4c21eaa39d7dd6fa6207
                 BeginContext(6784, 15, false);
 #line 157 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\Home\Index.cshtml"
                                                                                                                                   Write(item.TenSanPham);
@@ -491,7 +511,11 @@ WriteAttributeValue("", 6009, item.Hinh, 6009, 10, false);
             WriteLiteral("                        <div class=\"col-md-3 product-men\">\r\n                            <div class=\"men-pro-item simpleCart_shelfItem\">\r\n                                <div class=\"men-thumb-item\">\r\n                                    ");
             EndContext();
             BeginContext(9867, 264, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c340ac9a2ac54fc0b077fa2321358e94", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6d4baab2467487bb263556cfb1adc8e", async() => {
+>>>>>>> 17fec6fe6c77f0bf9d5c4c21eaa39d7dd6fa6207
                 BeginContext(9958, 67, true);
                 WriteLiteral("\r\n                                        <div class=\"anhsanpham-4\"");
                 EndContext();
@@ -552,7 +576,11 @@ WriteAttributeValue("", 10069, item.Hinh, 10069, 10, false);
             WriteLiteral("                                            ");
             EndContext();
             BeginContext(10443, 131, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "17d6b5efd38442dc8f065cc09c0d98a2", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f90420187abb4bcb957ba358270a6304", async() => {
+>>>>>>> 17fec6fe6c77f0bf9d5c4c21eaa39d7dd6fa6207
                 BeginContext(10535, 32, false);
 #line 212 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\Home\Index.cshtml"
                                                                                                                                   Write(item.TenSanPham.Substring(0, 18));
@@ -608,7 +636,11 @@ WriteAttributeValue("", 10069, item.Hinh, 10069, 10, false);
             WriteLiteral("                                            ");
             EndContext();
             BeginContext(10752, 111, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "32d102619a7340dd9ae101ee55b8ce8c", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bf2143d547324fb9b38ce19ddc2f60df", async() => {
+>>>>>>> 17fec6fe6c77f0bf9d5c4c21eaa39d7dd6fa6207
                 BeginContext(10844, 15, false);
 #line 216 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\Home\Index.cshtml"
                                                                                                                                   Write(item.TenSanPham);
@@ -725,6 +757,7 @@ WriteAttributeValue("", 10069, item.Hinh, 10069, 10, false);
 
 #line default
 #line hidden
+<<<<<<< HEAD
             BeginContext(13430, 194, true);
             WriteLiteral("                    <div class=\"clearfix\"></div>\r\n                    <div class=\"clearfix\"></div>\r\n                </div>\r\n                <!--//tab_two-->\r\n                <div class=\"tab3\">\r\n");
             EndContext();
@@ -771,6 +804,182 @@ WriteAttributeValue("", 14331, item.Hinh, 14331, 10, false);
                 EndWriteAttribute();
                 BeginContext(14344, 49, true);
                 WriteLiteral("></div>\r\n                                        ");
+=======
+            BeginContext(13430, 1558, true);
+            WriteLiteral(@"                    <div class=""clearfix""></div>
+                    <div class=""clearfix""></div>
+                </div>
+                <!--//tab_two-->
+                <div class=""tab3"">
+
+                    <div class=""col-md-3 product-men"">
+                        <div class=""men-pro-item simpleCart_shelfItem"">
+                            <div class=""men-thumb-item"">
+                                <img src=""images/b1.jpg"" alt="""" class=""pro-image-front"">
+                                <img src=""images/b1.jpg"" alt="""" class=""pro-image-back"">
+                                <div class=""men-cart-pro"">
+                                    <div class=""inner-men-cart-pro"">
+                                        <a href=""single.html"" class=""link-product-add-cart"">Chi Tiết</a>
+                                    </div>
+                                </div>
+                                <span class=""product-new-top"">Yêu thích</span>
+
+                            </div>
+                        ");
+            WriteLiteral(@"    <div class=""item-info-product "">
+                                <h4><a href=""single.html"">Laptop Messenger Bag</a></h4>
+                                <div class=""info-product-price"">
+                                    <span class=""item_price"">$140.99</span>
+                                    <del>$169.71</del>
+                                </div>
+                                <div class=""snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2"">
+                                    ");
+            EndContext();
+            BeginContext(14988, 1197, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50d0eaf76a944c35ba0920dd52945067", async() => {
+                BeginContext(15019, 1159, true);
+                WriteLiteral(@"
+                                        <fieldset>
+                                            <input type=""hidden"" name=""cmd"" value=""_cart"" />
+                                            <input type=""hidden"" name=""add"" value=""1"" />
+                                            <input type=""hidden"" name=""business"" value="" "" />
+                                            <input type=""hidden"" name=""item_name"" value="" Laptop Messenger Bag"" />
+                                            <input type=""hidden"" name=""amount"" value=""30.99"" />
+                                            <input type=""hidden"" name=""discount_amount"" value=""1.00"" />
+                                            <input type=""hidden"" name=""currency_code"" value=""USD"" />
+                                            <input type=""hidden"" name=""return"" value="" "" />
+                                            <input type=""hidden"" name=""cancel_return"" value="" "" />
+                                            <input type=""submit"" name=""submit""");
+                WriteLiteral(" value=\"Thêm vào giỏ hàng\" class=\"button\" />\r\n                                        </fieldset>\r\n                                    ");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_7);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper.Method = (string)__tagHelperAttribute_8.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_8);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(16185, 1495, true);
+            WriteLiteral(@"
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class=""col-md-3 product-men"">
+                        <div class=""men-pro-item simpleCart_shelfItem"">
+                            <div class=""men-thumb-item"">
+                                <img src=""images/b2.jpg"" alt="""" class=""pro-image-front"">
+                                <img src=""images/b2.jpg"" alt="""" class=""pro-image-back"">
+                                <div class=""men-cart-pro"">
+                                    <div class=""inner-men-cart-pro"">
+                                        <a href=""single.html"" class=""link-product-add-cart"">Chi Tiết</a>
+                                    </div>
+                                </div>
+                                <span class=""product-new-top"">Yêu thích</span>
+
+                            </div>
+                            <div class=""item-info-product "">
+                  ");
+            WriteLiteral(@"              <h4><a href=""single.html"">Puma Backpack</a></h4>
+                                <div class=""info-product-price"">
+                                    <span class=""item_price"">$127.99</span>
+                                    <del>$169.71</del>
+                                </div>
+                                <div class=""snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2"">
+                                    ");
+            EndContext();
+            BeginContext(17680, 1189, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20e032cbcc544c54b0e55ac23ea8e029", async() => {
+                BeginContext(17711, 1151, true);
+                WriteLiteral(@"
+                                        <fieldset>
+                                            <input type=""hidden"" name=""cmd"" value=""_cart"" />
+                                            <input type=""hidden"" name=""add"" value=""1"" />
+                                            <input type=""hidden"" name=""business"" value="" "" />
+                                            <input type=""hidden"" name=""item_name"" value=""Puma Backpack"" />
+                                            <input type=""hidden"" name=""amount"" value=""30.99"" />
+                                            <input type=""hidden"" name=""discount_amount"" value=""1.00"" />
+                                            <input type=""hidden"" name=""currency_code"" value=""USD"" />
+                                            <input type=""hidden"" name=""return"" value="" "" />
+                                            <input type=""hidden"" name=""cancel_return"" value="" "" />
+                                            <input type=""submit"" name=""submit"" value=""");
+                WriteLiteral("Thêm vào giỏ hàng\" class=\"button\" />\r\n                                        </fieldset>\r\n                                    ");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_7);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper.Method = (string)__tagHelperAttribute_8.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_8);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(18869, 1498, true);
+            WriteLiteral(@"
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class=""col-md-3 product-men"">
+                        <div class=""men-pro-item simpleCart_shelfItem"">
+                            <div class=""men-thumb-item"">
+                                <img src=""images/b3.jpg"" alt="""" class=""pro-image-front"">
+                                <img src=""images/b3.jpg"" alt="""" class=""pro-image-back"">
+                                <div class=""men-cart-pro"">
+                                    <div class=""inner-men-cart-pro"">
+                                        <a href=""single.html"" class=""link-product-add-cart"">Chi Tiết</a>
+                                    </div>
+                                </div>
+                                <span class=""product-new-top"">Yêu thích</span>
+
+                            </div>
+                            <div class=""item-info-product "">
+                  ");
+            WriteLiteral(@"              <h4><a href=""single.html""> Laptop Backpack</a></h4>
+                                <div class=""info-product-price"">
+                                    <span class=""item_price"">$120.99</span>
+                                    <del>$189.71</del>
+                                </div>
+                                <div class=""snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2"">
+                                    ");
+            EndContext();
+            BeginContext(20367, 1192, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bdb6e68340cd491da6150bdf8a37a2bc", async() => {
+                BeginContext(20398, 1154, true);
+                WriteLiteral(@"
+                                        <fieldset>
+                                            <input type=""hidden"" name=""cmd"" value=""_cart"" />
+                                            <input type=""hidden"" name=""add"" value=""1"" />
+                                            <input type=""hidden"" name=""business"" value="" "" />
+                                            <input type=""hidden"" name=""item_name"" value="" Laptop Backpack"" />
+                                            <input type=""hidden"" name=""amount"" value=""30.99"" />
+                                            <input type=""hidden"" name=""discount_amount"" value=""1.00"" />
+                                            <input type=""hidden"" name=""currency_code"" value=""USD"" />
+                                            <input type=""hidden"" name=""return"" value="" "" />
+                                            <input type=""hidden"" name=""cancel_return"" value="" "" />
+                                            <input type=""submit"" name=""submit"" valu");
+                WriteLiteral("e=\"Thêm vào giỏ hàng\" class=\"button\" />\r\n                                        </fieldset>\r\n                                    ");
+>>>>>>> 17fec6fe6c77f0bf9d5c4c21eaa39d7dd6fa6207
                 EndContext();
             }
             );
@@ -784,7 +993,62 @@ WriteAttributeValue("", 14331, item.Hinh, 14331, 10, false);
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_6);
             if (__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues == null)
             {
+<<<<<<< HEAD
                 throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-id", "Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper", "RouteValues"));
+=======
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(21559, 1500, true);
+            WriteLiteral(@"
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class=""col-md-3 product-men"">
+                        <div class=""men-pro-item simpleCart_shelfItem"">
+                            <div class=""men-thumb-item"">
+                                <img src=""images/b4.jpg"" alt="""" class=""pro-image-front"">
+                                <img src=""images/b4.jpg"" alt="""" class=""pro-image-back"">
+                                <div class=""men-cart-pro"">
+                                    <div class=""inner-men-cart-pro"">
+                                        <a href=""single.html"" class=""link-product-add-cart"">Chi Tiết</a>
+                                    </div>
+                                </div>
+                                <span class=""product-new-top"">Yêu thích</span>
+
+                            </div>
+                            <div class=""item-info-product "">
+                  ");
+            WriteLiteral(@"              <h4><a href=""single.html"">Travel Duffel Bag </a></h4>
+                                <div class=""info-product-price"">
+                                    <span class=""item_price"">$190.99</span>
+                                    <del>$259.71</del>
+                                </div>
+                                <div class=""snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2"">
+                                    ");
+            EndContext();
+            BeginContext(23059, 1194, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c0db4193fe24451899ce799535e418f", async() => {
+                BeginContext(23090, 1156, true);
+                WriteLiteral(@"
+                                        <fieldset>
+                                            <input type=""hidden"" name=""cmd"" value=""_cart"" />
+                                            <input type=""hidden"" name=""add"" value=""1"" />
+                                            <input type=""hidden"" name=""business"" value="" "" />
+                                            <input type=""hidden"" name=""item_name"" value=""Travel Duffel Bag "" />
+                                            <input type=""hidden"" name=""amount"" value=""30.99"" />
+                                            <input type=""hidden"" name=""discount_amount"" value=""1.00"" />
+                                            <input type=""hidden"" name=""currency_code"" value=""USD"" />
+                                            <input type=""hidden"" name=""return"" value="" "" />
+                                            <input type=""hidden"" name=""cancel_return"" value="" "" />
+                                            <input type=""submit"" name=""submit"" va");
+                WriteLiteral("lue=\"Thêm vào giỏ hàng\" class=\"button\" />\r\n                                        </fieldset>\r\n                                    ");
+                EndContext();
+>>>>>>> 17fec6fe6c77f0bf9d5c4c21eaa39d7dd6fa6207
             }
             BeginWriteTagHelperAttribute();
 #line 268 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\Home\Index.cshtml"
@@ -803,6 +1067,7 @@ WriteAttributeValue("", 14331, item.Hinh, 14331, 10, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
+<<<<<<< HEAD
             BeginContext(14397, 162, true);
             WriteLiteral("\r\n                                    </div>\r\n                                    <div class=\"item-info-product \">\r\n                                        <h4>\r\n");
             EndContext();
@@ -826,6 +1091,54 @@ WriteAttributeValue("", 14331, item.Hinh, 14331, 10, false);
                 EndContext();
                 BeginContext(14857, 3, true);
                 WriteLiteral("...");
+=======
+            BeginContext(24253, 1497, true);
+            WriteLiteral(@"
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class=""col-md-3 product-men"">
+                        <div class=""men-pro-item simpleCart_shelfItem"">
+                            <div class=""men-thumb-item"">
+                                <img src=""images/b5.jpg"" alt="""" class=""pro-image-front"">
+                                <img src=""images/b5.jpg"" alt="""" class=""pro-image-back"">
+                                <div class=""men-cart-pro"">
+                                    <div class=""inner-men-cart-pro"">
+                                        <a href=""single.html"" class=""link-product-add-cart"">Chi Tiết</a>
+                                    </div>
+                                </div>
+                                <span class=""product-new-top"">Yêu thích</span>
+
+                            </div>
+                            <div class=""item-info-product "">
+                  ");
+            WriteLiteral(@"              <h4><a href=""single.html""> Hand-held Bag </a></h4>
+                                <div class=""info-product-price"">
+                                    <span class=""item_price"">$190.99</span>
+                                    <del>$259.71</del>
+                                </div>
+                                <div class=""snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2"">
+                                    ");
+            EndContext();
+            BeginContext(25750, 1191, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "028bd402932e49e7a3a5e22b892d2288", async() => {
+                BeginContext(25781, 1153, true);
+                WriteLiteral(@"
+                                        <fieldset>
+                                            <input type=""hidden"" name=""cmd"" value=""_cart"" />
+                                            <input type=""hidden"" name=""add"" value=""1"" />
+                                            <input type=""hidden"" name=""business"" value="" "" />
+                                            <input type=""hidden"" name=""item_name"" value="" Hand-held Bag "" />
+                                            <input type=""hidden"" name=""amount"" value=""30.99"" />
+                                            <input type=""hidden"" name=""discount_amount"" value=""1.00"" />
+                                            <input type=""hidden"" name=""currency_code"" value=""USD"" />
+                                            <input type=""hidden"" name=""return"" value="" "" />
+                                            <input type=""hidden"" name=""cancel_return"" value="" "" />
+                                            <input type=""submit"" name=""submit"" value");
+                WriteLiteral("=\"Thêm vào giỏ hàng\" class=\"button\" />\r\n                                        </fieldset>\r\n                                    ");
+>>>>>>> 17fec6fe6c77f0bf9d5c4c21eaa39d7dd6fa6207
                 EndContext();
             }
             );
@@ -839,7 +1152,62 @@ WriteAttributeValue("", 14331, item.Hinh, 14331, 10, false);
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_6);
             if (__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues == null)
             {
+<<<<<<< HEAD
                 throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-id", "Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper", "RouteValues"));
+=======
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(26941, 1498, true);
+            WriteLiteral(@"
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class=""col-md-3 product-men"">
+                        <div class=""men-pro-item simpleCart_shelfItem"">
+                            <div class=""men-thumb-item"">
+                                <img src=""images/b6.jpg"" alt="""" class=""pro-image-front"">
+                                <img src=""images/b6.jpg"" alt="""" class=""pro-image-back"">
+                                <div class=""men-cart-pro"">
+                                    <div class=""inner-men-cart-pro"">
+                                        <a href=""single.html"" class=""link-product-add-cart"">Chi Tiết</a>
+                                    </div>
+                                </div>
+                                <span class=""product-new-top"">Yêu thích</span>
+
+                            </div>
+                            <div class=""item-info-product "">
+                  ");
+            WriteLiteral(@"              <h4><a href=""single.html"">Butterflies Bag </a></h4>
+                                <div class=""info-product-price"">
+                                    <span class=""item_price"">$190.99</span>
+                                    <del>$259.71</del>
+                                </div>
+                                <div class=""snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2"">
+                                    ");
+            EndContext();
+            BeginContext(28439, 1191, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3b47e88cbea54cd1853d9d1a0535da40", async() => {
+                BeginContext(28470, 1153, true);
+                WriteLiteral(@"
+                                        <fieldset>
+                                            <input type=""hidden"" name=""cmd"" value=""_cart"" />
+                                            <input type=""hidden"" name=""add"" value=""1"" />
+                                            <input type=""hidden"" name=""business"" value="" "" />
+                                            <input type=""hidden"" name=""item_name"" value=""Butterflies Bag"" />
+                                            <input type=""hidden"" name=""amount"" value=""30.99"" />
+                                            <input type=""hidden"" name=""discount_amount"" value=""1.00"" />
+                                            <input type=""hidden"" name=""currency_code"" value=""USD"" />
+                                            <input type=""hidden"" name=""return"" value="" "" />
+                                            <input type=""hidden"" name=""cancel_return"" value="" "" />
+                                            <input type=""submit"" name=""submit"" value");
+                WriteLiteral("=\"Thêm vào giỏ hàng\" class=\"button\" />\r\n                                        </fieldset>\r\n                                    ");
+                EndContext();
+>>>>>>> 17fec6fe6c77f0bf9d5c4c21eaa39d7dd6fa6207
             }
             BeginWriteTagHelperAttribute();
 #line 276 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\Home\Index.cshtml"
@@ -858,6 +1226,7 @@ WriteAttributeValue("", 14331, item.Hinh, 14331, 10, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
+<<<<<<< HEAD
             BeginContext(14864, 2, true);
             WriteLiteral("\r\n");
             EndContext();
@@ -879,6 +1248,54 @@ WriteAttributeValue("", 14331, item.Hinh, 14331, 10, false);
 
 #line default
 #line hidden
+=======
+            BeginContext(29630, 1498, true);
+            WriteLiteral(@"
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class=""col-md-3 product-men"">
+                        <div class=""men-pro-item simpleCart_shelfItem"">
+                            <div class=""men-thumb-item"">
+                                <img src=""images/b7.jpg"" alt="""" class=""pro-image-front"">
+                                <img src=""images/b7.jpg"" alt="""" class=""pro-image-back"">
+                                <div class=""men-cart-pro"">
+                                    <div class=""inner-men-cart-pro"">
+                                        <a href=""single.html"" class=""link-product-add-cart"">Chi Tiết</a>
+                                    </div>
+                                </div>
+                                <span class=""product-new-top"">Yêu thích</span>
+
+                            </div>
+                            <div class=""item-info-product "">
+                  ");
+            WriteLiteral(@"              <h4><a href=""single.html"">Costa Swiss Bag </a></h4>
+                                <div class=""info-product-price"">
+                                    <span class=""item_price"">$290.99</span>
+                                    <del>$359.71</del>
+                                </div>
+                                <div class=""snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2"">
+                                    ");
+            EndContext();
+            BeginContext(31128, 1191, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5570b79b74454ec9a10a5eb403c11e0a", async() => {
+                BeginContext(31159, 1153, true);
+                WriteLiteral(@"
+                                        <fieldset>
+                                            <input type=""hidden"" name=""cmd"" value=""_cart"" />
+                                            <input type=""hidden"" name=""add"" value=""1"" />
+                                            <input type=""hidden"" name=""business"" value="" "" />
+                                            <input type=""hidden"" name=""item_name"" value=""Costa Swiss Bag"" />
+                                            <input type=""hidden"" name=""amount"" value=""30.99"" />
+                                            <input type=""hidden"" name=""discount_amount"" value=""1.00"" />
+                                            <input type=""hidden"" name=""currency_code"" value=""USD"" />
+                                            <input type=""hidden"" name=""return"" value="" "" />
+                                            <input type=""hidden"" name=""cancel_return"" value="" "" />
+                                            <input type=""submit"" name=""submit"" value");
+                WriteLiteral("=\"Thêm vào giỏ hàng\" class=\"button\" />\r\n                                        </fieldset>\r\n                                    ");
+>>>>>>> 17fec6fe6c77f0bf9d5c4c21eaa39d7dd6fa6207
                 EndContext();
             }
             );
@@ -892,7 +1309,62 @@ WriteAttributeValue("", 14331, item.Hinh, 14331, 10, false);
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_6);
             if (__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues == null)
             {
+<<<<<<< HEAD
                 throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-id", "Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper", "RouteValues"));
+=======
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(32319, 1500, true);
+            WriteLiteral(@"
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class=""col-md-3 product-men"">
+                        <div class=""men-pro-item simpleCart_shelfItem"">
+                            <div class=""men-thumb-item"">
+                                <img src=""images/b8.jpg"" alt="""" class=""pro-image-front"">
+                                <img src=""images/b8.jpg"" alt="""" class=""pro-image-back"">
+                                <div class=""men-cart-pro"">
+                                    <div class=""inner-men-cart-pro"">
+                                        <a href=""single.html"" class=""link-product-add-cart"">Chi Tiết</a>
+                                    </div>
+                                </div>
+                                <span class=""product-new-top"">Yêu thích</span>
+
+                            </div>
+                            <div class=""item-info-product "">
+                  ");
+            WriteLiteral(@"              <h4><a href=""single.html"">Noble Designs Bag </a></h4>
+                                <div class=""info-product-price"">
+                                    <span class=""item_price"">$120.99</span>
+                                    <del>$159.71</del>
+                                </div>
+                                <div class=""snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2"">
+                                    ");
+            EndContext();
+            BeginContext(33819, 1194, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2d5592a7388e491ebf47009a0cae20bd", async() => {
+                BeginContext(33850, 1156, true);
+                WriteLiteral(@"
+                                        <fieldset>
+                                            <input type=""hidden"" name=""cmd"" value=""_cart"" />
+                                            <input type=""hidden"" name=""add"" value=""1"" />
+                                            <input type=""hidden"" name=""business"" value="" "" />
+                                            <input type=""hidden"" name=""item_name"" value=""Noble Designs Bag "" />
+                                            <input type=""hidden"" name=""amount"" value=""30.99"" />
+                                            <input type=""hidden"" name=""discount_amount"" value=""1.00"" />
+                                            <input type=""hidden"" name=""currency_code"" value=""USD"" />
+                                            <input type=""hidden"" name=""return"" value="" "" />
+                                            <input type=""hidden"" name=""cancel_return"" value="" "" />
+                                            <input type=""submit"" name=""submit"" va");
+                WriteLiteral("lue=\"Thêm vào giỏ hàng\" class=\"button\" />\r\n                                        </fieldset>\r\n                                    ");
+                EndContext();
+>>>>>>> 17fec6fe6c77f0bf9d5c4c21eaa39d7dd6fa6207
             }
             BeginWriteTagHelperAttribute();
 #line 280 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\Home\Index.cshtml"
@@ -1006,9 +1478,15 @@ WriteAttributeValue("", 14331, item.Hinh, 14331, 10, false);
             BeginContext(16541, 235, true);
             WriteLiteral("                        <div class=\"col-md-3 product-men\">\r\n                            <div class=\"men-pro-item simpleCart_shelfItem\">\r\n                                <div class=\"men-thumb-item\">\r\n                                    ");
             EndContext();
+<<<<<<< HEAD
             BeginContext(16776, 264, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16cf872e017043509e5655f409a6164c", async() => {
                 BeginContext(16867, 67, true);
+=======
+            BeginContext(35584, 264, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c6cbe9c9782543629bd72d44479bb5e7", async() => {
+                BeginContext(35675, 67, true);
+>>>>>>> 17fec6fe6c77f0bf9d5c4c21eaa39d7dd6fa6207
                 WriteLiteral("\r\n                                        <div class=\"anhsanpham-4\"");
                 EndContext();
                 BeginWriteAttribute("style", " style=\"", 16934, "\"", 16990, 4);
@@ -1067,10 +1545,17 @@ WriteAttributeValue("", 16978, item.Hinh, 16978, 10, false);
             BeginContext(17308, 44, true);
             WriteLiteral("                                            ");
             EndContext();
+<<<<<<< HEAD
             BeginContext(17352, 131, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "673167f1d3c5405b82ecd3f9acc4cf59", async() => {
                 BeginContext(17444, 32, false);
 #line 320 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\Home\Index.cshtml"
+=======
+            BeginContext(36160, 131, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "521eb2ea2cf846e28e546cc92f97ece6", async() => {
+                BeginContext(36252, 32, false);
+#line 587 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\Home\Index.cshtml"
+>>>>>>> 17fec6fe6c77f0bf9d5c4c21eaa39d7dd6fa6207
                                                                                                                                   Write(item.TenSanPham.Substring(0, 18));
 
 #line default
@@ -1123,10 +1608,17 @@ WriteAttributeValue("", 16978, item.Hinh, 16978, 10, false);
             BeginContext(17617, 44, true);
             WriteLiteral("                                            ");
             EndContext();
+<<<<<<< HEAD
             BeginContext(17661, 111, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1336157561624fe0a8c84a6b91bf2b6f", async() => {
                 BeginContext(17753, 15, false);
 #line 324 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\Home\Index.cshtml"
+=======
+            BeginContext(36469, 111, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "65dfc2cfb0944256b56bda3099839564", async() => {
+                BeginContext(36561, 15, false);
+#line 591 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\Home\Index.cshtml"
+>>>>>>> 17fec6fe6c77f0bf9d5c4c21eaa39d7dd6fa6207
                                                                                                                                   Write(item.TenSanPham);
 
 #line default

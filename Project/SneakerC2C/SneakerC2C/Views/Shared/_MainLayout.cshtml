@@ -812,6 +812,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <script>
             $(document).ready(function () {
                 $('#local-storage').val(localStorage.getItem("Cart"));
+
+                setInterval(function () {
+                    $('#local-storage').val(localStorage.getItem("Cart"));
+                }, 3000);
             });
 
             $("#forgotForm").submit(function (e) {
@@ -889,7 +893,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     });
                 }
             });
-
             @*$("#btnCart").click(function () {
                 let tendangnhap = "@Context.Session.GetString("TenDangNhap")";
                 let cart = localStorage.getItem("Cart");

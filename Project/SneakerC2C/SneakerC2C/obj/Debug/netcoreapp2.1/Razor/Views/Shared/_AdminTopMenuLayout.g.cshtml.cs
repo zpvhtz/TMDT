@@ -60,7 +60,7 @@ using SneakerC2C.Models;
             WriteLiteral("<nav class=\"navbar navbar-expand navbar-dark bg-dark static-top\">\r\n    <button class=\"btn btn-link btn-sm text-white order-1 order-sm-0\" id=\"sidebarToggle\" href=\"#\">\r\n        <i class=\"fas fa-bars\"></i>\r\n    </button>\r\n    ");
             EndContext();
             BeginContext(223, 115, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "108d29e5b63c410f974a33209d98413f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "378805ad731e4a64899bb262f57fa0d4", async() => {
                 BeginContext(314, 20, true);
                 WriteLiteral("<b>SNKRX - Admin</b>");
                 EndContext();
@@ -87,7 +87,7 @@ using SneakerC2C.Models;
             WriteLiteral("\r\n\r\n    <!-- Navbar Search -->\r\n    ");
             EndContext();
             BeginContext(374, 499, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e0b925f09fa348f7a6ea8c526c60888d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0b8cc985adb849ae9b25d99443c9c295", async() => {
                 BeginContext(459, 2, true);
                 WriteLiteral("\r\n");
                 EndContext();

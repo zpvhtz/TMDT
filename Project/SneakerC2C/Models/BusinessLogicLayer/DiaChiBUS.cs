@@ -58,6 +58,14 @@ namespace Models.BusinessLogicLayer
             return diachi;
         }
 
+        public DiaChi GetDiaChiMer(string tendangnhap)
+        {
+            return context.DiaChi.Where(dc => dc.IdTaiKhoanNavigation.TenDangNhap == tendangnhap && dc.TinhTrang == "Không khoá")
+                                 .Include(dc => dc.IdTaiKhoanNavigation)
+                                 .Include(dc => dc.IdTinhThanhNavigation)
+                                 .SingleOrDefault();
+        }
+
         public List<TinhThanh> GetTinhThanhs()
         {
             List<TinhThanh> tinhthanh = context.TinhThanh.ToList();

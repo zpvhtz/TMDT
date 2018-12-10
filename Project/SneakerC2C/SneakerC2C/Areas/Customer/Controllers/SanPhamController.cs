@@ -35,11 +35,22 @@ namespace SneakerC2C.Areas.Customer.Controllers
             SanPhamBUS sanphambus = new SanPhamBUS();
             SizeSanPhamBUS sizesanphambus = new SizeSanPhamBUS();
             GioHangBUS giohangbus = new GioHangBUS();
+            DiaChiBUS diachibus = new DiaChiBUS();
+            
             SanPham sanpham = sanphambus.GetSanPham(idd);
+
+            DiaChi diachi = diachibus.GetDiaChiMer(sanpham.IdTaiKhoanNavigation.TenDangNhap);
+            ViewBag.DiaChiMerchant = diachi;
+
             List<SizeSanPham> listsizesanpham = sizesanphambus.GetSize(idd);
             ViewBag.ListSizeSanPham = listsizesanpham;
+
             List<HangSanPham> hang = ctx.HangSanPham.ToList();
             ViewBag.Hang = hang;
+
+            List<SanPham> spmoi = sanphambus.GetSanPhams("", "", 1, 4);
+            ViewBag.SanPhamMoi = spmoi;
+
             return View(sanpham);
         }
         //trang list san pham

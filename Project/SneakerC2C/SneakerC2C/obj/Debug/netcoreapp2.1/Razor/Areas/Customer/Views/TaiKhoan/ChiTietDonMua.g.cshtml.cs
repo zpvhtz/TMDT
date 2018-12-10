@@ -85,7 +85,7 @@ namespace AspNetCore
             WriteLiteral("</h4>\r\n                <hr>\r\n                <div class=\"menu_cus\">\r\n                    ");
             EndContext();
             BeginContext(459, 441, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ac2fa395a2b4566ad262a0ffb4e7a89", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "60e0f4d1d23340ba87a3c58f3807f86a", async() => {
                 BeginContext(560, 336, true);
                 WriteLiteral(@"
                         <div class=""menu_cus_icon"" style=""background-color: #2fdab8;"">
@@ -119,7 +119,7 @@ namespace AspNetCore
             WriteLiteral("\r\n                </div>\r\n                <div class=\"menu_cus\">\r\n                    ");
             EndContext();
             BeginContext(986, 450, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6ec07e5e775d4b75bed28f1b79888208", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7b246eb44f4f4aeb862c820a4dddf70e", async() => {
                 BeginContext(1085, 347, true);
                 WriteLiteral(@"
                         <div class=""menu_cus_icon"" style=""background-color:rgb(68, 181, 255);"">
@@ -153,7 +153,7 @@ namespace AspNetCore
             WriteLiteral("\r\n                </div>\r\n                <div class=\"menu_cus\">\r\n                    ");
             EndContext();
             BeginContext(1522, 444, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ea9d9bb7b4444ab4afb90f0352ab4887", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f3dae5a975904ded80660e55863c930b", async() => {
                 BeginContext(1617, 345, true);
                 WriteLiteral(@"
                         <div class=""menu_cus_icon"" style=""background-color:rgb(255, 193, 7);"">
@@ -187,7 +187,7 @@ namespace AspNetCore
             WriteLiteral("\r\n                </div>\r\n                <div class=\"menu_cus\">\r\n                    ");
             EndContext();
             BeginContext(2052, 446, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a0a97a8e4834de3ac5550565acae931", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6a53398606b44920b37fdbcb5b958049", async() => {
                 BeginContext(2143, 351, true);
                 WriteLiteral(@"
                         <div class=""menu_cus_icon"" style=""background-color:rgb(255, 87, 34);"">
@@ -242,7 +242,7 @@ namespace AspNetCore
             WriteLiteral("                            <div class=\"trangthai_donmua\">\r\n                                ");
             EndContext();
             BeginContext(3207, 543, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d688254b687943fcb9efb89817e29648", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5dbb7bf15f2b4925ad516e694f0b9676", async() => {
                 BeginContext(3276, 377, true);
                 WriteLiteral(@"
                                     <div class=""trangthai_donmua_ct"">
@@ -288,7 +288,7 @@ namespace AspNetCore
             WriteLiteral("                            <div class=\"trangthai_donmua\">\r\n                                ");
             EndContext();
             BeginContext(3964, 559, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9f0f014e5a194d92a04b7742bd98c38f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0d473f6f337145d4b0fec105512eecac", async() => {
                 BeginContext(4033, 393, true);
                 WriteLiteral(@"
                                     <div class=""trangthai_donmua_ct"">
@@ -341,7 +341,7 @@ namespace AspNetCore
             WriteLiteral("                            <div class=\"trangthai_donmua\">\r\n                                ");
             EndContext();
             BeginContext(4769, 531, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "646f48b9dde84a3f9e5f82ee196fa0c3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "531c4b483a9e47ca907229db76f47393", async() => {
                 BeginContext(4869, 427, true);
                 WriteLiteral(@"
                                     <div class=""trangthai_donmua_ct"">
@@ -390,7 +390,7 @@ namespace AspNetCore
             WriteLiteral("                            <div class=\"trangthai_donmua\">\r\n                                ");
             EndContext();
             BeginContext(5514, 515, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49f31df793274d53b8c0977b9dd074d8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2a268b54d1054c929585ce5025d0cbe5", async() => {
                 BeginContext(5614, 411, true);
                 WriteLiteral(@"
                                     <div class=""trangthai_donmua_ct"">
@@ -446,7 +446,7 @@ namespace AspNetCore
             WriteLiteral("                            <div class=\"trangthai_donmua\">\r\n                                ");
             EndContext();
             BeginContext(6279, 531, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8e43f25d286d480687536bf25affdcba", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "18f31fab30594613b13ca37d9cfe712a", async() => {
                 BeginContext(6382, 424, true);
                 WriteLiteral(@"
                                     <div class=""trangthai_donmua_ct"">
@@ -495,7 +495,7 @@ namespace AspNetCore
             WriteLiteral("                            <div class=\"trangthai_donmua\">\r\n                                ");
             EndContext();
             BeginContext(7024, 515, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e92e53bfe9649cd9cf65ecb73aba513", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fcb483031074ed18249f400a4bda1ff", async() => {
                 BeginContext(7127, 408, true);
                 WriteLiteral(@"
                                     <div class=""trangthai_donmua_ct"">
@@ -551,7 +551,7 @@ namespace AspNetCore
             WriteLiteral("                            <div class=\"trangthai_donmua\">\r\n                                ");
             EndContext();
             BeginContext(7802, 528, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "360e6959345a44f1ae11b5d45ce2d340", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5869d2dfd80a4ed69a32b4bfcd020f0b", async() => {
                 BeginContext(7903, 423, true);
                 WriteLiteral(@"
                                     <div class=""trangthai_donmua_ct"">
@@ -600,7 +600,7 @@ namespace AspNetCore
             WriteLiteral("                            <div class=\"trangthai_donmua\">\r\n                                ");
             EndContext();
             BeginContext(8544, 512, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f916da1275704979ace8b3d0e0b414c3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5c23d2dbc3ab4ea7a370831590546428", async() => {
                 BeginContext(8645, 407, true);
                 WriteLiteral(@"
                                     <div class=""trangthai_donmua_ct"">
@@ -656,7 +656,7 @@ namespace AspNetCore
             WriteLiteral("                            <div class=\"trangthai_donmua\">\r\n                                ");
             EndContext();
             BeginContext(9301, 537, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "89674d81d1f8401dbbebc5ef8edac76e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bee5ec147a644f02a424e75194258c16", async() => {
                 BeginContext(9398, 436, true);
                 WriteLiteral(@"
                                     <div class=""trangthai_donmua_ct"">
@@ -705,7 +705,7 @@ namespace AspNetCore
             WriteLiteral("                            <div class=\"trangthai_donmua\">\r\n                                ");
             EndContext();
             BeginContext(10052, 521, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bc39cd3058e94b8fafbd3afd7f736a0b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c4c9ef4f84b54862b9e1cc4255a15ba1", async() => {
                 BeginContext(10149, 420, true);
                 WriteLiteral(@"
                                     <div class=""trangthai_donmua_ct"">
@@ -1078,7 +1078,7 @@ WriteAttributeValue("", 13143, it.IdSizeSanPhamNavigation.IdSanPhamNavigation.Hi
             WriteLiteral("    <!--Jquery-->\r\n    ");
             EndContext();
             BeginContext(17083, 84, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0d7a1c008c9140d8a32f998f5f9d8454", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bae427c992c84695bba632fcbc94e4a7", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

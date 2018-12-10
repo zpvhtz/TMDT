@@ -98,7 +98,7 @@ namespace AspNetCore
                         ");
             EndContext();
             BeginContext(1049, 47, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e15f99da23f4109bc2c52fc53223ca2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "be0561a6a8554847aae5a7ce10011610", async() => {
                 BeginContext(1075, 12, true);
                 WriteLiteral("Sắp xếp theo");
                 EndContext();
@@ -124,7 +124,7 @@ namespace AspNetCore
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(1122, 98, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69de58b33e0b46fca51e393228e5668a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ee5e44a90074fa588e96f5a178b090d", async() => {
                 BeginContext(1188, 23, true);
                 WriteLiteral("Ngày bất đầu (Tăng dần)");
                 EndContext();
@@ -146,7 +146,7 @@ namespace AspNetCore
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(1246, 99, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e68bfd98d3c042779f655349d5d88623", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad356a1dc3274ec099ffe685951ff987", async() => {
                 BeginContext(1313, 23, true);
                 WriteLiteral("Ngày bất đầu (Giảm dần)");
                 EndContext();
@@ -168,7 +168,7 @@ namespace AspNetCore
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(1371, 100, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee929a7916f4339a9c32c562b50be27", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f3ecd84b0b5847a09a069fea338c998e", async() => {
                 BeginContext(1438, 24, true);
                 WriteLiteral("Ngày kết thúc (Tăng dần)");
                 EndContext();
@@ -190,7 +190,7 @@ namespace AspNetCore
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(1497, 101, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "33f07a1ec0764fd89bcd6d5199d149b2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9515b54c7a81469b9b30732283805598", async() => {
                 BeginContext(1565, 24, true);
                 WriteLiteral("Ngày kết thúc (Giảm dần)");
                 EndContext();
@@ -212,7 +212,7 @@ namespace AspNetCore
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(1624, 97, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e7ee48743acf4df08666239d214cae2e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "27776028795d4d34a3d95cd999719764", async() => {
                 BeginContext(1690, 22, true);
                 WriteLiteral("Mã gói quảng cáo (A-Z)");
                 EndContext();
@@ -234,7 +234,7 @@ namespace AspNetCore
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(1747, 94, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd31dcdbee73479a9cc91c394e3fa397", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "040d50136d054529bffce5e35aa67050", async() => {
                 BeginContext(1813, 19, true);
                 WriteLiteral("Gói quảng cáo (Z-A)");
                 EndContext();
@@ -256,7 +256,7 @@ namespace AspNetCore
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(1867, 91, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9fdf0641abbc4da4b1e39ce345bd532e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c0a09fc4ee9d4ed1bbf60a1f547decc9", async() => {
                 BeginContext(1930, 19, true);
                 WriteLiteral("Tên tài khoản (A-Z)");
                 EndContext();
@@ -278,7 +278,7 @@ namespace AspNetCore
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(1984, 91, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb83835967e74cd096f49eab24a48e27", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2aae3a2fa7fb4836ad4897495db10cdd", async() => {
                 BeginContext(2047, 19, true);
                 WriteLiteral("Tên tài khoản (Z-A)");
                 EndContext();
@@ -306,7 +306,7 @@ namespace AspNetCore
                 ");
             EndContext();
             BeginContext(2347, 574, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6cf9d7dd4d2b4a80b131073cf5c42682", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "47e6d3a79a9642ebb71f87051e47d1f9", async() => {
                 BeginContext(2412, 502, true);
                 WriteLiteral(@"
                     <div class=""input-group custom-search-form"">
@@ -454,7 +454,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("                            ");
             EndContext();
             BeginContext(4654, 126, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4e44943c2bfd49e989f22ccf329bbb65", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "080e8e09d7c0404093f1b5184eda373d", async() => {
                 BeginContext(4772, 4, true);
                 WriteLiteral("Khoá");
                 EndContext();
@@ -492,7 +492,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("\r\n                            ");
             EndContext();
             BeginContext(4810, 126, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bc97eef390774e179877586b09a5dd63", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c0bc9c2100e346bcbb4e410bd4bd4a3b", async() => {
                 BeginContext(4929, 3, true);
                 WriteLiteral("Huỷ");
                 EndContext();
@@ -543,7 +543,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("                            ");
             EndContext();
             BeginContext(5204, 131, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "761b6c9f844e46f8a0b6a1c4d1769074", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "07b6650c5ab94ca7af7360ddffd6a0b3", async() => {
                 BeginContext(5324, 7, true);
                 WriteLiteral("Mở khoá");
                 EndContext();
@@ -630,7 +630,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("                                    ");
             EndContext();
             BeginContext(6412, 135, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "db1ef25cd654436b87af3dd28f65f321", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6eefc4e1911b4da8adedf282ffbba38c", async() => {
                 BeginContext(6538, 5, true);
                 WriteLiteral("Trước");
                 EndContext();
@@ -677,7 +677,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("                                    ");
             EndContext();
             BeginContext(6675, 134, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b35d2e993332462a89fa5497d1b440d5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b14a086465c94cbb940d8e6d100a10ab", async() => {
                 BeginContext(6800, 5, true);
                 WriteLiteral("Trước");
                 EndContext();
@@ -724,7 +724,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("                                    ");
             EndContext();
             BeginContext(6939, 136, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9070a0be74e145af93ea8a703a31fe73", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fe89f7f2c10b4a49826905d7c8b24beb", async() => {
                 BeginContext(7066, 5, true);
                 WriteLiteral("Trước");
                 EndContext();
@@ -771,7 +771,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("                                    ");
             EndContext();
             BeginContext(7212, 143, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "79327bdc24664cb0bc37eeb9c9c07a2d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "37c3b46389cf4a42877fae634a29f6aa", async() => {
                 BeginContext(7346, 5, true);
                 WriteLiteral("Trước");
                 EndContext();
@@ -855,7 +855,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("                                            ");
             EndContext();
             BeginContext(8465, 141, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7f0fcbcaece743bfbd55b1857aaa18bf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f710c3dd6f946c5a720b5cb50257f50", async() => {
                 BeginContext(8585, 17, false);
 #line 145 "F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\QuangCao\Index.cshtml"
                                                                                                                                                               Write(ViewBag.TongTrang);
@@ -906,7 +906,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("                                            ");
             EndContext();
             BeginContext(8758, 140, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "71080ffe5efb4db28fe367fd362b38c5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4dcfed2a22014b2db2afa067a0f3f39b", async() => {
                 BeginContext(8877, 17, false);
 #line 148 "F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\QuangCao\Index.cshtml"
                                                                                                                                                              Write(ViewBag.TongTrang);
@@ -957,7 +957,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("                                            ");
             EndContext();
             BeginContext(9052, 142, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "928ae0ef17874bd695b13084ac87e6ae", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "23868ee549db44b8a1849cc3a36fa9e0", async() => {
                 BeginContext(9173, 17, false);
 #line 151 "F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\QuangCao\Index.cshtml"
                                                                                                                                                                Write(ViewBag.TongTrang);
@@ -1008,7 +1008,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("                                            ");
             EndContext();
             BeginContext(9355, 149, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a31b19bed3a5475c9ca9772cafd6f5ee", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6275f6cfb30142c186ed5e760afba0fc", async() => {
                 BeginContext(9483, 17, false);
 #line 154 "F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\QuangCao\Index.cshtml"
                                                                                                                                                                       Write(ViewBag.TongTrang);
@@ -1135,7 +1135,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("                                            ");
             EndContext();
             BeginContext(10859, 99, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb1a2de51fa44073ab6f674624a4c041", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d3e05b86be42403d8a8940630c585899", async() => {
                 BeginContext(10953, 1, false);
 #line 178 "F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\QuangCao\Index.cshtml"
                                                                                                                                     Write(i);
@@ -1186,7 +1186,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("                                            ");
             EndContext();
             BeginContext(11110, 98, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "018ab6614f9c497aa3e56cab27ae7a11", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a44dbe0eedf142f292ceea209e43e952", async() => {
                 BeginContext(11203, 1, false);
 #line 181 "F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\QuangCao\Index.cshtml"
                                                                                                                                    Write(i);
@@ -1237,7 +1237,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("                                            ");
             EndContext();
             BeginContext(11362, 100, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "705ea6dfc3fd43c0b935d28048a16f40", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7205850734f140028a9cad2e0b0f4b73", async() => {
                 BeginContext(11457, 1, false);
 #line 184 "F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\QuangCao\Index.cshtml"
                                                                                                                                      Write(i);
@@ -1288,7 +1288,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("                                            ");
             EndContext();
             BeginContext(11623, 107, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "62dca5140c6445489fe3f3c842c86938", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bc48f2ac8d8a439eb018612a1c8694cb", async() => {
                 BeginContext(11725, 1, false);
 #line 187 "F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\QuangCao\Index.cshtml"
                                                                                                                                             Write(i);
@@ -1383,7 +1383,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("                                    ");
             EndContext();
             BeginContext(12872, 134, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "37e8402e4f41478eac94da3f2a3bb96c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cca1a949702141c59cc45683ff2ed918", async() => {
                 BeginContext(12998, 4, true);
                 WriteLiteral("Tiếp");
                 EndContext();
@@ -1430,7 +1430,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("                                    ");
             EndContext();
             BeginContext(13134, 133, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f0e58f4c97745a19a477a5ae6a45a92", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ee6472807ff64969b96bfcd81528e9e0", async() => {
                 BeginContext(13259, 4, true);
                 WriteLiteral("Tiếp");
                 EndContext();
@@ -1477,7 +1477,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("                                    ");
             EndContext();
             BeginContext(13397, 135, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "508c796811f248419cf7bd2668fdfe4b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b2c14d1f85d43adb4a66d9db68b9411", async() => {
                 BeginContext(13524, 4, true);
                 WriteLiteral("Tiếp");
                 EndContext();
@@ -1524,7 +1524,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
             WriteLiteral("                                    ");
             EndContext();
             BeginContext(13669, 142, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f7eb66608284ce0a915324e2f5762be", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f37d1bd05aeb4434822a62c4770b5957", async() => {
                 BeginContext(13803, 4, true);
                 WriteLiteral("Tiếp");
                 EndContext();
@@ -1588,7 +1588,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
                 ");
             EndContext();
             BeginContext(14333, 4633, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e0c40124e414421ba7d6011842979abf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8d3521e07d784bb384925c5ccb890d49", async() => {
                 BeginContext(14438, 103, true);
                 WriteLiteral("\r\n                    <div class=\"modal-content\">\r\n                        <div class=\"modal-header\">\r\n");
                 EndContext();
@@ -1616,7 +1616,7 @@ WriteAttributeValue("", 4099, Url.Content("~/Hinh/quangcao/" + @item.Hinh), 4099
                 WriteLiteral("                                        ");
                 EndContext();
                 BeginContext(15565, 53, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "534effc28236422cb159c88c71e15cc1", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7d6a0c12e37d4b2fa44d15976bfa8d3c", async() => {
                     BeginContext(15591, 18, false);
 #line 249 "F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Webmaster\Views\QuangCao\Index.cshtml"
                                                             Write(item.MaGoiQuangCao);
@@ -1751,7 +1751,7 @@ WriteAttributeValue("", 17243, DateTime.Now.Year.ToString(), 17243, 29, false);
                 ");
             EndContext();
             BeginContext(19301, 2248, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "92c1dfd96744483b83c39a8475718603", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fbdae6db53cb476a9c22ed2c32e5505c", async() => {
                 BeginContext(19403, 103, true);
                 WriteLiteral("\r\n                    <div class=\"modal-content\">\r\n                        <div class=\"modal-header\">\r\n");
                 EndContext();

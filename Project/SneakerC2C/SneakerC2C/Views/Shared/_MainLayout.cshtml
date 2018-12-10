@@ -73,10 +73,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <!-- header-bot -->
             <div class="col-md-4 logo_agile">
-                <h1><a href="index.html"><span>SNKRX</span></a></h1>
+                <h1><a asp-area="Customer" asp-controller="Home" asp-action="Index"><span>SNKRX</span></a></h1>
             </div>
             <!-- header-bot -->
-            <div class="col-md-4 agileits-social top_content">
+            @*<div class="col-md-4 agileits-social top_content">
                 <ul class="social-nav model-3d-0 footer-social w3_agile_social">
                     <li class="share">Chia sẻ trên : </li>
                     <li>
@@ -107,7 +107,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 
-            </div>
+            </div>*@
             <div class="clearfix"></div>
         </div>
     </div>
@@ -456,13 +456,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="footer">
         <div class="footer_agile_inner_info_w3l">
             <div class="col-md-3 footer-left">
-                <h2 style="line-height:1;"><a href="index.html"><span>SNKRX</span></a></h2>
+                <h2 style="line-height:1;"><a asp-area="Customer" asp-controller="Home" asp-action="Index"><span>SNKRX</span></a></h2>
                 <p>
                     Lorem ipsum quia dolor
                     sit amet, consectetur, adipisci velit, sed quia non
                     numquam eius modi tempora.
                 </p>
-                <ul class="social-nav model-3d-0 footer-social w3_agile_social two">
+                @*<ul class="social-nav model-3d-0 footer-social w3_agile_social two">
                     <li>
                         <a href="#" class="facebook">
                             <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
@@ -487,7 +487,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
                         </a>
                     </li>
-                </ul>
+                </ul>*@
             </div>
             <div class="col-md-9 footer-right">
                 <div class="sign-grds">
@@ -543,11 +543,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="col-md-3 sign-gd flickr-post" style="width:30%">
                         <h4>Thanh toán</h4>
                         <ul>
-                            <li><a href="#"><img src="images/paypal.jpg" alt=" " class="img-responsive" /></a></li>
+                            <li><a href="#"><img src="~/maintemplate/images/paypal.jpg" alt=" " class="img-responsive" /></a></li>
                         </ul>
                         <h4 style="padding-top: 25px;">Đơn vị vận chuyển</h4>
                         <ul>
-                            <li><a href="#"><img src="images/ghtk.jpg" alt=" " class="img-responsive" /></a></li>
+                            <li><a href="#"><img src="~/maintemplate/images/ghtk.jpg" alt=" " class="img-responsive" /></a></li>
                         </ul>
                     </div>
                     <div class="clearfix"></div>

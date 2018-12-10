@@ -83,8 +83,7 @@ CREATE TABLE DonHang
 	NgayTao DATETIME,
 	NgayGiao DATETIME,
 	TongTien FLOAT,
-	DiemDanhGia FLOAT,
-	TinhTrangDanhGia NVARCHAR(20), --Chưa đánh giá/Đã đánh giá--
+	TinhTrangDanhGiaCustomer NVARCHAR(20), --Chưa đánh giá, đã đánh giá--
 	TinhTrang NVARCHAR(20) --Đã đặt, Đang giao, Đã thanh toán, Đã huỷ--
 )
 
@@ -93,7 +92,9 @@ CREATE TABLE ChiTietDonHang
 	IdDonHang UNIQUEIDENTIFIER NOT NULL, --PK, FK--
 	IdSizeSanPham UNIQUEIDENTIFIER NOT NULL, --PK, FK--
 	SoLuong INT,
-	DonGia FLOAT
+	DonGia FLOAT,
+	DiemCustomerDanhGia FLOAT,
+	DiemMerchantDanhGia FLOAT
 )
 
 --CREATE TABLE PhieuGiao
@@ -663,3 +664,7 @@ INSERT INTO GoiQuangCao
 INSERT INTO QuangCao
 	VALUES ('51791099-c591-436f-aa87-6e9d860378ac','QC-1','8804015b-62f8-46ed-b2bd-e662a1730381','18D79B1D-EE48-459A-AD1D-09A05A4773AD','','2018-9-1','2018-9-9','',N'Không khoá'),
 		   ('14329aca-9c43-4736-94bf-e420778a17f0','QC-2','8804015b-62f8-46ed-b2bd-e662a1730381','18D79B1D-EE48-459A-AD1D-09A05A4773AD','','2018-9-17','2018-10-11','',N'Không khoá')
+
+--Update số lượng để thử cho đơn hàng--
+UPDATE SizeSanPham
+SET SoLuong = 20

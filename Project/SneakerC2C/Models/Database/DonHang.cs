@@ -18,8 +18,7 @@ namespace Models.Database
         public DateTime? NgayTao { get; set; }
         public DateTime? NgayGiao { get; set; }
         public double? TongTien { get; set; }
-        public double? DiemDanhGia { get; set; }
-        public string TinhTrangDanhGia { get; set; }
+        public string TinhTrangDanhGiaCustomer { get; set; }
         public string TinhTrang { get; set; }
 
         public TaiKhoan IdTaiKhoanNavigation { get; set; }

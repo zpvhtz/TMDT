@@ -68,8 +68,7 @@ namespace Models.BusinessLogicLayer
             donhang.NgayTao = DateTime.Now;
             donhang.NgayGiao = null;
             donhang.TongTien = tongtien;
-            donhang.DiemDanhGia = 0;
-            donhang.TinhTrangDanhGia = "Chưa đánh giá";
+            donhang.TinhTrangDanhGiaCustomer = "Chưa đánh giá";
             donhang.TinhTrang = "Đã đặt";
 
             context.DonHang.Add(donhang);

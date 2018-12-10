@@ -198,8 +198,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <!--KHong dung vao-->
         <form asp-area="Customer" asp-controller="SanPham" asp-action="GioHang" asp-route-tendangnhap="@Context.Session.GetString("TenDangNhap")" method="post" id="frmSubmit" class="last">
-            <input id="local-storage" type="hidden" value="" name="cart" />
-            <button class="w3view-cart" type="submit" id="btnCart"><i class="fa fa-cart-arrow-down" aria-hidden="true" hidden></i></button>
+            <input id="local-storage" type="text" value="" name="cart" hidden readonly/>
+            <button class="w3view-cart" type="submit" id="btnCart" hidden><i class="fa fa-cart-arrow-down" aria-hidden="true" hidden></i></button>
         </form>
 
         <!--Khong dung-->

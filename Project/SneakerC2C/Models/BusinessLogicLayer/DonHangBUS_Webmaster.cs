@@ -141,7 +141,7 @@ namespace Models.BusinessLogicLayer
                                                         || temp.CmndnguoiGiao.Contains(search)
                                                         || temp.DiaChiGiao.Contains(search)
 
-                                                        || temp.TinhTrangDanhGia.Contains(search)
+                                                        || temp.TinhTrangDanhGiaCustomer.Contains(search)
                                                         || temp.TinhTrang.Contains(search))
                                             .Skip((pagenumber - 1) * pagesize)
                                             .Take(pagesize)
@@ -163,7 +163,7 @@ namespace Models.BusinessLogicLayer
                                                         || temp.CmndnguoiGiao.Contains(search)
                                                         || temp.DiaChiGiao.Contains(search)
 
-                                                        || temp.TinhTrangDanhGia.Contains(search)
+                                                        || temp.TinhTrangDanhGiaCustomer.Contains(search)
                                                         || temp.TinhTrang.Contains(search))
                                             .ToList();
             }
@@ -186,7 +186,7 @@ namespace Models.BusinessLogicLayer
                                                                 || temp.CmndnguoiGiao.Contains(search)
                                                                 || temp.DiaChiGiao.Contains(search)
 
-                                                                || temp.TinhTrangDanhGia.Contains(search)
+                                                                || temp.TinhTrangDanhGiaCustomer.Contains(search)
                                                                 || temp.TinhTrang.Contains(search))
                                                    .Skip((pagenumber - 1) * pagesize)
                                                    .Take(pagesize)
@@ -198,7 +198,7 @@ namespace Models.BusinessLogicLayer
                                                                 || temp.CmndnguoiGiao.Contains(search)
                                                                 || temp.DiaChiGiao.Contains(search)
 
-                                                                || temp.TinhTrangDanhGia.Contains(search)
+                                                                || temp.TinhTrangDanhGiaCustomer.Contains(search)
                                                                 || temp.TinhTrang.Contains(search))
                                                .Skip((pagenumber - 1) * pagesize)
                                                .Take(pagesize)
@@ -226,7 +226,7 @@ namespace Models.BusinessLogicLayer
                                                                 || temp.CmndnguoiGiao.Contains(search)
                                                                 || temp.DiaChiGiao.Contains(search)
 
-                                                                || temp.TinhTrangDanhGia.Contains(search)
+                                                                || temp.TinhTrangDanhGiaCustomer.Contains(search)
                                                                 || temp.TinhTrang.Contains(search))
                                                .OrderBy(l => l.NgayTao)
                                                .ToList();
@@ -236,7 +236,7 @@ namespace Models.BusinessLogicLayer
                                                                 || temp.CmndnguoiGiao.Contains(search)
                                                                 || temp.DiaChiGiao.Contains(search)
 
-                                                                || temp.TinhTrangDanhGia.Contains(search)
+                                                                || temp.TinhTrangDanhGiaCustomer.Contains(search)
                                                                 || temp.TinhTrang.Contains(search))
                                                .OrderByDescending(l => l.NgayTao)
                                                .ToList();

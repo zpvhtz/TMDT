@@ -34,10 +34,15 @@
                                     <div class="trangthai_donhang id_donhang">Ngày đặt: @item.NgayTao</div>
                                 </div>
                                 <hr>
+                                @{ 
+                                    double tongtienhang = 0;
+                                }
                                 @foreach (var ct in ViewBag.ChiTiet)
                                 {
                                     @if (ct.IdDonHangNavigation.MaDonHang == item.MaDonHang)
                                     {
+                                        tongtienhang += ct.DonGia * ct.SoLuong;
+
                                         <div class="thongtin_donhang">
                                             <div class="sanpham_giohang sp_donhang">
                                                 <div class="hinh_sanpham_giohang hinh_donhang" style="background-image:url(/Hinh/SanPham/@ct.IdSizeSanPhamNavigation.IdSanPhamNavigation.Hinh);"></div>
@@ -71,7 +76,7 @@
                                             <a asp-controller="DonHang" asp-action="GetChiTiet" asp-route-id="@item.Id" class="btn btn-danger btnChiTiet">Chi tiết</a>
                                             <a asp-controller="DonHang" asp-action="Huy" asp-route-iddonhang="@item.Id" class="btn btn-danger">Huỷ đơn</a>
                                             <div class="donban_right col-lg-2">
-                                                @item.TongTien
+                                                @tongtienhang.ToString("#,###") đ
                                             </div>
                                         </div>
                                     </div>

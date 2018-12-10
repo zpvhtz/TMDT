@@ -50,6 +50,7 @@ namespace Models.BusinessLogicLayer
             var list = from donhang in context.DonHang
                        where donhang.NgayGiao.Value.Month >= nbd.Month && donhang.NgayGiao.Value.Month <= nkt.Month
                           && donhang.NgayGiao.Value.Year >= nbd.Year && donhang.NgayGiao.Value.Year <= nkt.Year
+                          && donhang.TinhTrang =="Đã thanh toán"
                        group new { donhang } by new { donhang.NgayGiao.Value.Month, donhang.NgayGiao.Value.Year } into khoadeptrai
                        select new DoanhThuMerchant
                        {

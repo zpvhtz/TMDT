@@ -10,6 +10,8 @@ function LoadDuLieuArea(nbd, nkt) {
         if (this.readyState == 4 && this.status == 200) {
             dt = [];
             lbl = [];
+            console.log(dt);
+            console.log(lbl);
             obj = JSON.parse(this.responseText);
             for (let i = 0; i < obj.length; i++) {
                 lbl.push(obj[i]["Thang"]);

@@ -78,7 +78,7 @@
                         <td>
                             <button class="btn btn-primary btnSuaDonHang" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
                             <button class="btn btn-primary btnChiTiet" type="button" data-toggle="modal" data-target="#chitietModal">Chi Tiết</button>
-                            <button class="btn btn-primary btnInDonHang" type="button" data-toggle="modal" data-target="#suaModal">In</button>
+                            <a asp-controller="Report" asp-action="Index" asp-route-idDonHang="@item.Id" class="btn btn-danger btnChiTiet">In</a>
                         </td>
                     </tr>
                 }

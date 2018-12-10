@@ -44,11 +44,11 @@ namespace Models.BusinessLogicLayer
 
             //----------------------- chuan hoa du lieu ----------------------- 
             //----------------------- kiem tra loai -----------------------
-            GiaShip = context.GiaShip.Where(temp => temp.Loai == Loai).SingleOrDefault();
-            if (GiaShip != null)
-            {
-                return "Loại ship này đã tồn tại";
-            }
+            //GiaShip = context.GiaShip.Where(temp => temp.Loai == Loai).SingleOrDefault();
+            //if (GiaShip != null)
+            //{
+            //    return "Loại ship này đã tồn tại";
+            //}
             //----------------------- them -----------------------
             GiaShip = new GiaShip();
             GiaShip.Id = Guid.Parse(Guid.NewGuid().ToString().ToUpper());

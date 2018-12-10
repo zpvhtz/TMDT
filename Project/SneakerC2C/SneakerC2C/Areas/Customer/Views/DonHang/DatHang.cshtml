@@ -281,7 +281,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             }
         });
 
-        $("#txtTienDatHang").text(totalPrice.toLocaleString() + ' đ');
+        $("#txtTienDatHang").text(totalPrice.toLocaleString('en-EN') + ' đ');
     }
 
     function GetPhiShip(id) {
@@ -338,7 +338,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         let price = parseFloat(pricetext);
         totalPrice += price;
 
-        $("#txtTongTienThanhToan").text(totalPrice.toLocaleString() + ' đ');
+        $("#txtTongTienThanhToan").text(totalPrice.toLocaleString('en-EN') + ' đ');
     }
 
     function CreateDonDatHang() {

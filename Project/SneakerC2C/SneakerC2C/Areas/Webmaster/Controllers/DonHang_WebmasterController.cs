@@ -37,6 +37,13 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             return View(list);
         }
 
+        public IActionResult GetDetail(string madonhang)
+        {
+            DonHangBUS_Webmaster donhangbus = new DonHangBUS_Webmaster();
+            List<ChiTietDonHang> list = donhangbus.GetDetail(madonhang);
+            return PartialView("pDetail", list);
+        }
+
         public IActionResult EditDonHang(string item_sua_madonhang, string item_sua_cmndnguoigiao, string item_sua_tinhtrang)
         {
             DonHangBUS_Webmaster DonHang = new DonHangBUS_Webmaster();

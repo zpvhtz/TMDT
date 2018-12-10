@@ -141,7 +141,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             }
                             else
                             {
-                                <h5 class="realPrice">@item.IdSizeSanPhamNavigation.IdSanPhamNavigation.Gia.Value.ToString("#,###") đ</h5>
+                                @*<h5 class="realPrice">@item.IdSizeSanPhamNavigation.IdSanPhamNavigation.Gia.Value.ToString("#,###") đ</h5>*@
                             }
                         </div>
                         <div class="soluong_giohang">
@@ -253,7 +253,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             let price = parseFloat(pricetext);
             let quantity = $(this).closest('.cart_theoshop_item').find('.soluong').val();
             eachPrice = price * quantity;
-            $(this).closest('.cart_theoshop_item').find('.thanhtien_giohang').html(`<h5>${eachPrice.toLocaleString()} đ</h5>`);
+    console.log(eachPrice.toLocaleString());
+            $(this).closest('.cart_theoshop_item').find('.thanhtien_giohang').html(`<h5>${eachPrice.toLocaleString("#,###")} đ</h5>`);
         });
     }
 

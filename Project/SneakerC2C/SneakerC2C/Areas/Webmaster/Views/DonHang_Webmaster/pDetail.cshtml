@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Models.Database.ChiTietDonHang>
+
+<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+    <thead class="thead-dark">
+        <tr>
+            <th>Mã Đơn Hàng</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Tên Shop</th>
+            <th>Size</th>
+            <th>Số Lượng</th>
+            <th>Đơn Giá</th>
+        </tr>
+    </thead>
+    <tbody class="body-content">
+        @foreach (var item in Model)
+        {
+            <tr class="odd gradeX">
+                <td class="item-madonhang">@item.IdDonHangNavigation.MaDonHang</td>
+                <td class="item-cmndnguoigiao">@item.IdSizeSanPhamNavigation.IdSanPhamNavigation.TenSanPham</td>
+                <td class="item-diachigiao">@item.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenShop</td>
+                <td class="item-ngaytao">@item.IdSizeSanPhamNavigation.Size</td>
+                <td class="item-ngaygiao">@item.SoLuong</td>
+                <td class="item-tongtien">@item.DonGia</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -86,6 +86,93 @@ namespace SneakerC2C.Areas.Customer.Controllers
             return View(taikhoan);
         }
 
+        public IActionResult ChiTietDonMua(string id)
+        {
+            string sessionval = HttpContext.Session.GetString("TenDangNhap");
+            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+            TaiKhoan taikhoan = new TaiKhoan();
+            DonHangBUS donhangbus = new DonHangBUS();
+            DonHang donhang = new DonHang();
+            List<ChiTietDonHang> listchitietdonhang = new List<ChiTietDonHang>();
+            if (sessionval != "" && sessionval != null)
+            {
+                taikhoan = taikhoanbus.CheckTaiKhoan(sessionval);
+                donhang = donhangbus.GetExactDonHang(id);
+                listchitietdonhang = donhangbus.GetExactChiTietDonHang(id);
+            }
+            else
+            {
+                taikhoan = null;
+                donhang = null;
+            }
+            HangSanPhamBUS hangsanphambus = new HangSanPhamBUS();
+            List<HangSanPham> hang = hangsanphambus.GetHangSanPhams();
+            ViewBag.Hang = hang;
+            ViewBag.TaiKhoan = taikhoan;
+            ViewBag.ChiTietDonHang = listchitietdonhang;
+            return View(donhang);
+        }
+
+        public IActionResult DonMua(string tinhtrang)
+        {
+            if(tinhtrang == null || tinhtrang == "")
+            {
+                tinhtrang = "Đã đặt";
+            }
+            else
+            {
+                switch(tinhtrang)
+                {
+                    case "danggiao":
+                        tinhtrang = "Đang giao";
+                        break;
+                    case "dathanhtoan":
+                        tinhtrang = "Đã thanh toán";
+                        break;
+                    case "dadanhgia":
+                        tinhtrang = "Đã đánh giá";
+                        break;
+                    case "dahuy":
+                        tinhtrang = "Đã huỷ";
+                        break;
+                }
+            }
+
+            string sessionval = HttpContext.Session.GetString("TenDangNhap");
+            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+            TaiKhoan taikhoan = new TaiKhoan();
+            DonHangBUS donhangbus = new DonHangBUS();
+            List<DonHang> listdonhang = new List<DonHang>();
+            List<ChiTietDonHang> listchitietdonhang = new List<ChiTietDonHang>();
+            if (sessionval != "" && sessionval != null)
+            {
+                taikhoan = taikhoanbus.CheckTaiKhoan(sessionval);
+                listdonhang = donhangbus.GetDonHang(taikhoan.TenDangNhap, tinhtrang);
+                listchitietdonhang = donhangbus.GetChiTietDonHang(taikhoan.TenDangNhap, tinhtrang);
+            }
+            else
+            {
+                taikhoan = null;
+                listdonhang = null;
+            }
+            HangSanPhamBUS hangsanphambus = new HangSanPhamBUS();
+            List<HangSanPham> hang = hangsanphambus.GetHangSanPhams();
+            ViewBag.Hang = hang;
+            ViewBag.TaiKhoan = taikhoan;
+            ViewBag.ChiTietDonHang = listchitietdonhang;
+            return View(listdonhang);
+        }
+
+        public void HuyDonMua(string madonhang)
+        {
+            string sessionval = HttpContext.Session.GetString("TenDangNhap");
+            if (sessionval != "" && sessionval != null)
+            {
+                DonHangBUS donhangbus = new DonHangBUS();
+                donhangbus.HuyDonHang(madonhang);
+            }
+        }
+
         public string ThemDiaChi(string tendangnhap, string diachi, string tinhthanh)
         {
             string checktendangnhap = HttpContext.Session.GetString("TenDangNhap");

@@ -125,7 +125,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                         </div>
                         <div class="sanpham_giohang">
-                            <input type="text" value="@item.IdSizeSanPham" class="txt-id-sanpham" hidden readonly/>
+                            <input type="text" value="@item.IdSizeSanPham" class="txt-id-sanpham" hidden readonly />
                             <div class="hinh_sanpham_giohang" style="background-image:url(/Hinh/SanPham/@item.IdSizeSanPhamNavigation.IdSanPhamNavigation.Hinh);"></div>
                             <div class="form_ten_sp_giohang">
                                 <h5>
@@ -167,7 +167,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             }
                         </div>
                         <div class="thaotac_giohang">
-                            <form asp-area="Customer" asp-controller="TaiKhoan" asp-action="DeleteFromCart" asp-route-idsizesanpham="@item.IdSizeSanPham" style="width: 100%;">
+                            <form asp-area="Customer" asp-controller="TaiKhoan" asp-action="DeleteFromCart" class="frmDeleteFromCart" style="width: 100%;">
+                                <input type="text" class="txtIdSizeXoa" name="idsizesanpham" value="@item.IdSizeSanPham" readonly hidden />
                                 <button class="button-xoa" type="submit">Xoá</button>
                                 @*<input type="submit" value="Xoá" class="button-xoa">*@
                             </form>
@@ -195,7 +196,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
             </div>
         </div>
+        <!--KHong dung vao-->
+        <form asp-area="Customer" asp-controller="SanPham" asp-action="GioHang" asp-route-tendangnhap="@Context.Session.GetString("TenDangNhap")" method="post" id="frmSubmit" class="last">
+            <input id="local-storage" type="hidden" value="" name="cart" />
+            <button class="w3view-cart" type="submit" id="btnCart"><i class="fa fa-cart-arrow-down" aria-hidden="true" hidden></i></button>
+        </form>
 
+        <!--Khong dung-->
+        <form asp-area="Customer" asp-controller="TaiKhoan" asp-action="DeleteFromCart" id="frmDeleteFromCart2" style="width: 100%;">
+            <input type="text" id="txtDeleteFromCart2" name="idsizesanpham" readonly hidden />
+            <button class="button-xoa" type="submit" hidden>Xoá</button>
+            @*<input type="submit" value="Xoá" class="button-xoa">*@
+        </form>
     </body>
 </html>
 <script type="text/javascript" src="~/maintemplate/js/jquery-2.1.4.min.js"></script>
@@ -378,6 +390,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         }
         else {
             window.location.href = `/Customer/DonHang/DatHang?tendangnhap=${tendangnhap}`;
+        }
+    });
+
+    $(".frmDeleteFromCart").submit(function(e){
+        e.preventDefault();
+        let idsizesanpham = $(this).closest('.thaotac_giohang').find('.txtIdSizeXoa').val();
+        let tendangnhap = "@Context.Session.GetString("TenDangNhap")";
+        if(tendangnhap == "" || tendangnhap == null)
+        {
+            let item = JSON.parse(localStorage.getItem("Cart"));
+            delete item[idsizesanpham];
+            localStorage.clear();
+            localStorage.setItem("Cart", JSON.stringify(item));
+            $('#local-storage').val(localStorage.getItem("Cart"));
+            $('#frmSubmit').submit();
+        }
+        else
+        {
+            $("#txtDeleteFromCart2").val(idsizesanpham);
+            $("#frmDeleteFromCart2").submit();
         }
     });
 </script>

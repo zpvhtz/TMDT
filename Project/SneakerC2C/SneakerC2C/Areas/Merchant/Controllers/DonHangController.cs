@@ -120,9 +120,9 @@ namespace SneakerC2C.Areas.Merchant.Controllers
         }
         public IActionResult GetChiTiet(string id)
         {
-        //    string tentk = HttpContext.Session.GetString("TenDangNhap");
-           
-            List<ChiTietDonHang> list = ctx.ChiTietDonHang.Where(s => s.IdDonHang == Guid.Parse(id))
+            //    string tentk = HttpContext.Session.GetString("TenDangNhap");
+            string tendangnhap = HttpContext.Session.GetString("TenDangNhap");
+            List<ChiTietDonHang> list = ctx.ChiTietDonHang.Where(s => s.IdDonHang == Guid.Parse(id) && s.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenDangNhap == tendangnhap)
                                                           .Include(s => s.IdDonHangNavigation)
                                                           .Include(s => s.IdDonHangNavigation.IdTaiKhoanNavigation)
                                                           .Include(s => s.IdSizeSanPhamNavigation)

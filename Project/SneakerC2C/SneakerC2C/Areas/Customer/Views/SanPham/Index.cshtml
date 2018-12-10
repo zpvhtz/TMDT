@@ -93,10 +93,11 @@
                 </div>
                 <div class="brands-color">
                     <h5 class="tieude_h5_single">Size :</h5>
-                    <select id="sltSizeSanPham" onchange="change_country(this.value)" class="frm-field required sect">
+                    <select id="sltSizeSanPham" @*onchange="change_country(this.value)"*@ class="frm-field required sect">
                         @foreach (var item in ViewBag.ListSizeSanPham)
                         {
-                            <option value="@item.Id">@item.Size</option>
+                                <option value="@item.Id">@item.Size</option>
+
                         }
                     </select>
                 </div>
@@ -463,7 +464,7 @@
         value = parseInt(value) - 1;
 
         $("#txtSoLuong").val(value);
-    });
+        });
 
     $("#btnThemVaoGioHang").click(function () {
         let tendangnhap = "@Context.Session.GetString("TenDangNhap")";

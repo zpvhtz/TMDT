@@ -1,9 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using Models.Database;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace Models.BusinessLogicLayer
 {
@@ -73,7 +76,33 @@ namespace Models.BusinessLogicLayer
                                                 .ToList();
             return list;
         }
+        public List<SanPham> GetBanChay()
+        {
+            var slist = context.ChiTietDonHang.Include(c => c.IdSizeSanPhamNavigation)
+                                              .Include(c=>c.IdDonHangNavigation)
+                                            .Where(c=>c.IdDonHangNavigation.TinhTrang=="Đã giao")
+                                           .GroupBy(c => c.IdSizeSanPhamNavigation.IdSanPham)
+                                           .Select(c => new
+                                           {
+                                               IdSanPham = c.Key,
+                                               SoLuong = c.Sum(x => x.SoLuong)
+                                           }).OrderByDescending(x=>x.SoLuong).ToList();
+            var listsanpham = slist.Select(c => c.IdSanPham).ToList();
+            List<SanPham> list = context.SanPham.Where(sp => listsanpham.Contains(sp.Id))
+                                                .Include(sp => sp.IdTaiKhoanNavigation)
+                                                .Include(sp => sp.IdHangSanPhamNavigation).ToList();
+            List<SanPham> listphu = context.SanPham.Where(sp => !listsanpham.Contains(sp.Id))
+                                                .Include(sp => sp.IdTaiKhoanNavigation)
+                                                .Include(sp => sp.IdHangSanPhamNavigation)
+                                                .OrderBy(sp => sp.MaSanPham)
+                                                .ToList();
+            foreach(var item in listphu)
+            {
+                list.Add(item);
+            }
 
+            return list;
+        }
         public List<SanPham> GetSanPhams(string column, string dieukien, int pagenumber, int pagesize)
         {
             List<SanPham> list = new List<SanPham>();
@@ -100,7 +129,7 @@ namespace Models.BusinessLogicLayer
             }
             return list;
         }
-
+        
         public List<SanPham> Sort(string sortorder, int pagesize, int pagenumber)
         {
             List<SanPham> list = new List<SanPham>();
@@ -489,14 +518,13 @@ namespace Models.BusinessLogicLayer
                                               .ToList();
                         break;
                     case "banchay":
-                        list = context.SanPham.Where(sp => (sp.MaSanPham.Contains(search) ||
+                        list = GetBanChay();
+                        list = list.Where(sp => (sp.MaSanPham.Contains(search) ||
                                                    sp.TenSanPham.Contains(search) ||
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
                                                    .Where(sp => sp.TinhTrang == "Không khoá")
-                                              .Include(sp => sp.IdTaiKhoanNavigation)
-                                              .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.NgayDang)
                                               .Skip((pagenumber - 1) * pagesize)
                                               .Take(pagesize)
@@ -581,10 +609,9 @@ namespace Models.BusinessLogicLayer
                                               .ToList();
                         break;
                     case "banchay":
-                        list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
+                        list = GetBanChay();
+                        list = list.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
                                               .Where(sp => sp.TinhTrang == "Không khoá")
-                            .Include(sp => sp.IdTaiKhoanNavigation)
-                                              .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.NgayDang)
                                               .Skip((pagenumber - 1) * pagesize)
                                               .Take(pagesize)
@@ -668,10 +695,9 @@ namespace Models.BusinessLogicLayer
                                               .ToList();
                         break;
                     case "banchay":
+                        list = GetBanChay();
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
                                               .Where(sp => sp.TinhTrang == "Không khoá")
-                            .Include(sp => sp.IdTaiKhoanNavigation)
-                                              .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.NgayDang)
                                               .Skip((pagenumber - 1) * pagesize)
                                               .Take(pagesize)
@@ -775,14 +801,13 @@ namespace Models.BusinessLogicLayer
                                               .ToList();
                         break;
                     case "banchay":
-                        list = context.SanPham.Where(sp => (sp.MaSanPham.Contains(search) ||
+                        list = GetBanChay();
+                        list = list.Where(sp => (sp.MaSanPham.Contains(search) ||
                                                    sp.TenSanPham.Contains(search) ||
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
                                               .Where(sp => sp.TinhTrang == "Không khoá")
-                                                   .Include(sp => sp.IdTaiKhoanNavigation)
-                                              .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.NgayDang)
                                               .ToList();
                         break;
@@ -851,10 +876,9 @@ namespace Models.BusinessLogicLayer
                                               .ToList();
                         break;
                     case "banchay":
-                        list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
+                        list = GetBanChay();
+                        list = list.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
                                               .Where(sp => sp.TinhTrang == "Không khoá")
-                            .Include(sp => sp.IdTaiKhoanNavigation)
-                                              .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.NgayDang)
                                               .ToList();
                         break;
@@ -922,10 +946,9 @@ namespace Models.BusinessLogicLayer
                                               .ToList();
                         break;
                     case "banchay":
-                        list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
+                        list = GetBanChay();
+                        list = list.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
                                               .Where(sp => sp.TinhTrang == "Không khoá")
-                            .Include(sp => sp.IdTaiKhoanNavigation)
-                                              .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.NgayDang)
                                               .ToList();
                         break;

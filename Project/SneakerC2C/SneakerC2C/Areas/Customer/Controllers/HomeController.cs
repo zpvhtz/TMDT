@@ -32,9 +32,11 @@ namespace SneakerC2C.Areas.Customer.Controllers
             List<SanPham> spnam = sanphambus.GetSanPhams("PhanLoai", "Nam", pagenumber, pagesize);
             List<SanPham> spnu = sanphambus.GetSanPhams("PhanLoai", "Nữ", pagenumber, pagesize);
             List<SanPham> spmoi = sanphambus.GetSanPhams("", "", pagenumber, pagesize);
+            List<SanPham> spbanchay = sanphambus.GetBanChay();
             ViewBag.SanPhamNam = spnam;
             ViewBag.SanPhamNu = spnu;
             ViewBag.SanPhamMoi = spmoi;
+            ViewBag.SanPhamBanChay = spbanchay;
             return View();
         }
         

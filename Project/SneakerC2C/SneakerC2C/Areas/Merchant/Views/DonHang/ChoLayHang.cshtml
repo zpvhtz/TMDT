@@ -68,7 +68,7 @@
                                 <div class="chuthich_donban">
                                     <div class="chuthich_giaohang">
                                         <div class="button_donban row">
-                                            @*<a asp-controller="DonHang" asp-action="CapNhat_Giao" asp-route-iddonhang="@item.Id" class="btn btn-danger">Cập nhập tình trạng đơn hàng</a>*@
+                                            <a asp-controller="DonHang" asp-action="GetChiTiet" asp-route-id="@item.Id" class="btn btn-danger btnChiTiet">Chi tiết</a>
                                             <a asp-controller="DonHang" asp-action="Huy" asp-route-iddonhang="@item.Id" class="btn btn-danger">Huỷ đơn</a>
                                             <div class="donban_right col-lg-2">
                                                 @item.TongTien
@@ -85,3 +85,19 @@
         </div>
     </div>
 </div>
+@*<script>
+    $(".btnChiTiet").click(function () {
+        let id = $(this).closest(".tenshop_donhang").find(".trangthai_donhang id_donhang").val();
+        $.ajax({
+            url: "/Merchant/DonHang/GetChiTiet",
+            type: "post",
+            data: { "id": id },
+            success: function (data) {
+                $("#modal-body-suachitiet").html(data);
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            }
+        });
+    });
+</script>*@

@@ -118,5 +118,30 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             List<DonHang> list = ctx.DonHang.Where(sp => tenmer.Contains(sp.Id) && sp.TinhTrang == "Huỷ").Include(sp => sp.IdTaiKhoanNavigation).ToList();
             return View(list);
         }
+        public IActionResult GetChiTiet(string id)
+        {
+        //    string tentk = HttpContext.Session.GetString("TenDangNhap");
+           
+            List<ChiTietDonHang> list = ctx.ChiTietDonHang.Where(s => s.IdDonHang == Guid.Parse(id))
+                                                          .Include(s => s.IdDonHangNavigation)
+                                                          .Include(s => s.IdDonHangNavigation.IdTaiKhoanNavigation)
+                                                          .Include(s => s.IdSizeSanPhamNavigation)
+                                                          .Include(s => s.IdSizeSanPhamNavigation.IdSanPhamNavigation)
+                                                          .Include(s => s.IdSizeSanPhamNavigation.IdSanPhamNavigation)
+                                                          .ToList();
+            var iddon = ctx.DonHang.Where(s => s.Id == Guid.Parse(id)).Select(s => s.Id).SingleOrDefault();
+            ViewBag.Id = iddon;
+            var ten = ctx.DonHang.Where(s => s.Id == Guid.Parse(id)).Select(s => s.IdTaiKhoanNavigation.Ten).SingleOrDefault();
+            ViewBag.HoTen = ten;
+            double tongtien = ctx.ChiTietDonHang.Where(s => s.IdDonHang == Guid.Parse(id)).Sum(s => (s.SoLuong * s.DonGia)).Value;
+            ViewBag.TongTien = tongtien;
+            var tinhtrang = ctx.DonHang.Where(s => s.Id == Guid.Parse(id)).Select(s => s.TinhTrang).SingleOrDefault();
+            ViewBag.TinhTrang = tinhtrang;
+            var don = ctx.DonHang.Where(s => s.Id == Guid.Parse(id)).Select(s=>s.DiaChiGiao).SingleOrDefault();
+            ViewBag.DiaChi = don;
+            var cus = ctx.DonHang.Where(s => s.Id == Guid.Parse(id)).Select(s => s.IdTaiKhoanNavigation.TenDangNhap).SingleOrDefault();
+            ViewBag.Ten = cus;
+            return View(list);
+        }
     }
 }

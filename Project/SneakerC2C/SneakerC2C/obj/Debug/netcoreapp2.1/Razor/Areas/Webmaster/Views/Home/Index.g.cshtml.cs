@@ -253,9 +253,15 @@ namespace AspNetCore
             BeginContext(3381, 220, true);
             WriteLiteral("\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<!------------------------------------------------- Search Area ------------------------------------------------->\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-lg-12\">      \r\n        ");
             EndContext();
+<<<<<<< HEAD
             BeginContext(3601, 569, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3ffa73173c544db48abc83520959fe3e", async() => {
                 BeginContext(3622, 541, true);
+=======
+            BeginContext(3191, 569, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f5a673147c954ef1b99af559585c8212", async() => {
+                BeginContext(3212, 541, true);
+>>>>>>> c0e9a871b4a45578729fe5ad26c2c0ba21987523
                 WriteLiteral(@"
             <div class=""input-group custom-search-form"">
                 <input type=""month"" id=""nbd"" name=""nbd"" class=""form-control"" value=""2018-01"" size=""100"">

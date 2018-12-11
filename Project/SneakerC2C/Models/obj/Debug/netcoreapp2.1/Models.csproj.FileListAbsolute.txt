@@ -8,6 +8,7 @@ F:\ASP.NET\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.Assembl
 F:\ASP.NET\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfo.cs
 F:\ASP.NET\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.dll
 F:\ASP.NET\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.pdb
+<<<<<<< HEAD
 F:\ASP.NET\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.csprojAssemblyReference.cache
 F:\GitHub\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.deps.json
 F:\GitHub\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.json
@@ -20,3 +21,5 @@ F:\GitHub\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.Assembly
 F:\GitHub\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.dll
 F:\GitHub\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.pdb
 F:\GitHub\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.csprojAssemblyReference.cache
+=======
+>>>>>>> c0e9a871b4a45578729fe5ad26c2c0ba21987523

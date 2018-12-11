@@ -220,3 +220,53 @@ AS
 		DEALLOCATE CUR
 	END
 GO
+
+CREATE TRIGGER TG_CapNhatTinhTrang_DonHang ON ChiTietDonHang AFTER UPDATE
+AS
+	DECLARE @IdDonHang UNIQUEIDENTIFIER
+	DECLARE @TongChiTietDonHang INT
+	DECLARE @TongChiTietDonHangDaXuLy INT
+	--
+	SELECT @IdDonHang = IdDonHang
+	FROM inserted
+	--
+	SELECT @TongChiTietDonHang = COUNT(*)
+	FROM ChiTietDonHang
+	WHERE IdDonHang = @IdDonHang
+	--
+	SELECT @TongChiTietDonHangDaXuLy = COUNT(*)
+	FROM ChiTietDonHang
+	WHERE IdDonHang = @IdDonHang AND TinhTrangChiTiet = N'Đã xử lý'
+	--
+	IF(@TongChiTietDonHang = @TongChiTietDonHangDaXuLy)
+	BEGIN
+		UPDATE DonHang
+		SET	TinhTrang = N'Đã xử lý'
+		WHERE Id = @IdDonHang
+	END
+GO
+
+CREATE TRIGGER TG_CapNhatTinhTrangDanhGiaCustumer_DonHang ON ChiTietDonHang AFTER UPDATE
+AS
+	DECLARE @IdDonHang UNIQUEIDENTIFIER
+	DECLARE @TongChiTietDonHang INT
+	DECLARE @TongChiTietDonHangDaDanhGia INT
+	--
+	SELECT @IdDonHang = IdDonHang
+	FROM inserted
+	--
+	SELECT @TongChiTietDonHang = COUNT(*)
+	FROM ChiTietDonHang
+	WHERE IdDonHang = @IdDonHang
+	--
+	SELECT @TongChiTietDonHangDaDanhGia = COUNT(*)
+	FROM ChiTietDonHang
+	WHERE IdDonHang = @IdDonHang AND DiemMerchantDanhGia != 0
+	--
+	IF(@TongChiTietDonHang = @TongChiTietDonHangDaDanhGia)
+	BEGIN
+		UPDATE DonHang
+		SET	TinhTrangDanhGiaCustomer = N'Đã đánh giá'
+		WHERE Id = @IdDonHang
+	END
+GO

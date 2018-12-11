@@ -63,7 +63,7 @@
                         </a>
                     </div>
                     <div class="ct_don">
-                        @if (Context.Request.QueryString.Value.Contains("tinhtrang=danggiao") || Context.Request.QueryString.Value.Contains("tinhtrang=dathanhtoan") || Context.Request.QueryString.Value.Contains("tinhtrang=dadanhgia") || Context.Request.QueryString.Value.Contains("tinhtrang=dahuy"))
+                        @if (Context.Request.QueryString.Value.Contains("tinhtrang=danggiao") || Context.Request.QueryString.Value.Contains("tinhtrang=dangxuly") || Context.Request.QueryString.Value.Contains("tinhtrang=daxuly") || Context.Request.QueryString.Value.Contains("tinhtrang=dahuy"))
                         {
                             <div class="trangthai_donmua">
                                 <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua">
@@ -117,55 +117,55 @@
                                 </a>
                             </div>
                         }
-                        @if (Context.Request.QueryString.Value.Contains("tinhtrang=dathanhtoan"))
+                        @if (Context.Request.QueryString.Value.Contains("tinhtrang=dangxuly"))
                         {
                             <div class="trangthai_donmua">
-                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dathanhtoan">
+                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dangxuly">
                                     <div class="trangthai_donmua_ct">
                                         <div class="khung_trangthai trangthai_color">
                                             <i class="fa fa-usd"></i>
                                         </div>
                                     </div>
-                                    <h5>Đơn Hàng Đã Thanh Toán</h5>
+                                    <h5>Đơn Hàng Đang Xử Lý</h5>
                                 </a>
                             </div>
                         }
                         else
                         {
                             <div class="trangthai_donmua">
-                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dathanhtoan">
+                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dangxuly">
                                     <div class="trangthai_donmua_ct">
                                         <div class="khung_trangthai">
                                             <i class="fa fa-usd"></i>
                                         </div>
                                     </div>
-                                    <h5>Đơn Hàng Đã Thanh Toán</h5>
+                                    <h5>Đơn Hàng Đang Xử Lý</h5>
                                 </a>
                             </div>
                         }
-                        @if (Context.Request.QueryString.Value.Contains("tinhtrang=dadanhgia"))
+                        @if (Context.Request.QueryString.Value.Contains("tinhtrang=daxuly"))
                         {
                             <div class="trangthai_donmua">
-                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dadanhgia">
+                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="daxuly">
                                     <div class="trangthai_donmua_ct">
                                         <div class="khung_trangthai trangthai_color">
                                             <i class="fa fa-star"></i>
                                         </div>
                                     </div>
-                                    <h5>Đơn Hàng Đã Đánh Giá</h5>
+                                    <h5>Đơn Hàng Đã Xử Lý</h5>
                                 </a>
                             </div>
                         }
                         else
                         {
                             <div class="trangthai_donmua">
-                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dadanhgia">
+                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="daxuly">
                                     <div class="trangthai_donmua_ct">
                                         <div class="khung_trangthai">
                                             <i class="fa fa-star"></i>
                                         </div>
                                     </div>
-                                    <h5>Đơn Hàng Đã Đánh Giá</h5>
+                                    <h5>Đơn Hàng Đã Xử Lý</h5>
                                 </a>
                             </div>
                         }

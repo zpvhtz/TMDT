@@ -126,11 +126,11 @@ namespace SneakerC2C.Areas.Customer.Controllers
                     case "danggiao":
                         tinhtrang = "Đang giao";
                         break;
-                    case "dathanhtoan":
-                        tinhtrang = "Đã thanh toán";
+                    case "dangxuly":
+                        tinhtrang = "Đang xử lý";
                         break;
-                    case "dadanhgia":
-                        tinhtrang = "Đã đánh giá";
+                    case "daxuly":
+                        tinhtrang = "Đã xử lý";
                         break;
                     case "dahuy":
                         tinhtrang = "Đã huỷ";

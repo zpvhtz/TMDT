@@ -39,6 +39,18 @@ namespace Models.BusinessLogicLayer
             return list;
         }
 
+        public string CheckMa(string ma)
+        {
+            ViTriQuangcao vitri = new ViTriQuangcao();
+            vitri = context.ViTriQuangcao.Where(gh => gh.MaViTri == ma).SingleOrDefault();
+            if (vitri == null)
+            {
+                return null;
+            }
+            return vitri.MaViTri;
+        }
+
+
         public string CreateViTriQuangcao(string ma, string ten, string trangquangcao, double dongia, string chuthich)
         {
             ViTriQuangcao vitri;

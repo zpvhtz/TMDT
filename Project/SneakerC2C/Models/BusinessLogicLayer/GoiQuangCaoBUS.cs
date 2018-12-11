@@ -39,6 +39,17 @@ namespace Models.BusinessLogicLayer
             return list;
         }
 
+        public string CheckMa(string ma)
+        {
+            GoiQuangCao goi = new GoiQuangCao();
+            goi = context.GoiQuangCao.Where(gh => gh.MaGoiQuangCao== ma).SingleOrDefault();
+            if (goi == null)
+            {
+                return null;
+            }
+            return goi.MaGoiQuangCao;
+        }
+
         public string CreateGoiQuangCao(string ma, string vitriquangcao, double tongtien, int thoiluong)
         {
             GoiQuangCao goi;

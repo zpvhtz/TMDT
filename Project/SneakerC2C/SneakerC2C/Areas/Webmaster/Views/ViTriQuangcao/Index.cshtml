@@ -226,6 +226,7 @@
                             <h4 class="modal-title"><b>Vị Trí Quảng Cáo</b></h4>
                         </div>
                         <div class="modal-body">
+                            <p id="them_thongbao_ma" style="color: red;"></p>
                             <div class="form-group">
                                 <label>Mã</label>
                                 <input type="text" class="form-control" id="item_them_ma" name="item_them_ma" required>
@@ -253,7 +254,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-warning" id="btnThemTrang">Thêm</button>
+                            <button type="submit" class="btn btn-warning" id="btnThemModal" disabled>Thêm</button>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                         </div>
                     </div>
@@ -397,4 +398,35 @@
         href = href.toString().replace(/\/&/g, '&');
         $link.attr('href', href);
     });
+            function checkma(ma) {
+
+                $.ajax({
+                    url: "/Webmaster/ViTriQuangcao/CheckMa",
+                    type: "post",
+                    data: { "ma": ma },
+
+                    success: function (data) {
+                        if (data == null) {
+                            $(`#them_thongbao_ma`).text("");
+                            $("#btnThemModal").attr('disabled', false);
+                        }
+                        else {
+                            $("#btnThemModal").attr('disabled', true);
+                            $(`#them_thongbao_ma`).text("Mã đã tồn tại");
+                            
+                        }
+
+                    },
+
+
+                    error: function (data) {
+                        alert("Error: " + data);
+                    }
+                });
+            }
+            $("#item_them_ma").change(function () {
+                var ma = document.getElementById("item_them_ma").value;
+               
+                checkma(ma);
+            });
         </script>

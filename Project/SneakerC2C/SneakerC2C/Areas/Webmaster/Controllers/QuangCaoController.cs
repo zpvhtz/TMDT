@@ -57,8 +57,11 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             var uniqueFileName = GetUniqueFileName(item_them_hinh.FileName);
                 var fileName = Path.GetFileName(item_them_hinh.FileName);
                 var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\Hinh\\QuangCao", fileName);
-                item_them_hinh.CopyTo(new FileStream(filePath, FileMode.Create));
+            var filestream = new FileStream(filePath, FileMode.Create);
+                item_them_hinh.CopyTo(filestream);
                 string hinh = fileName;
+            filestream.Close();
+                
                
 
                 string thongbao = quangcao.CreateQuangCao(item_them_ma, item_them_goiquangcao, item_them_taikhoan, hinh, item_them_ngaybatdau, item_them_chuthich);
@@ -83,7 +86,9 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
                 var uniqueFileName = GetUniqueFileName(item_sua_hinh.FileName);
                 var fileName = Path.GetFileName(item_sua_hinh.FileName);
                 var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\Hinh\\QuangCao", fileName);
-                item_sua_hinh.CopyTo(new FileStream(filePath, FileMode.Create));
+                var filestream = new FileStream(filePath, FileMode.Create);
+                item_sua_hinh.CopyTo(filestream);
+                filestream.Close();
                 hinh = fileName;
             }
             else hinh = null;
@@ -179,6 +184,10 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
         {
             QuangCaoBUS quangcao = new QuangCaoBUS();
             List<QuangCaoThichHop> qc = quangcao.GetDates(nam, thang, goi);
+            if(qc.Count==0)
+            {
+                return null;
+            }
             return qc;
         }
         public int GetThoiLuong(string goi)
@@ -190,6 +199,18 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
         {
             QuangCaoBUS quangcao = new QuangCaoBUS();
             return quangcao.GetTenViTri(goi);
+        }
+        public string CheckMa(string ma)
+        {
+            QuangCaoBUS quangcao = new QuangCaoBUS();
+
+            return quangcao.CheckMa(ma);
+        }
+        public string CheckTaiKhoan(string taikhoan)
+        {
+            QuangCaoBUS quangcao = new QuangCaoBUS();
+
+            return quangcao.CheckTaiKhoan(taikhoan);
         }
     }
 }

@@ -223,6 +223,8 @@
                 </ul>
             </div>
         </div>
+        </div>
+    </div>
         <!-- /.panel-body -->
         <!-------------------------------------------------------- INSERT MODAL ---------------------------------------------------------->
 
@@ -236,10 +238,10 @@
                             <h4 class="modal-title"><b>Quảng Cáo</b></h4>
                         </div>
                         <div class="modal-body">
-                            <p id="them-thongbao-ma" style="color: red;"></p>
+                            <p id="them_thongbao_ma" style="color: red;"></p>
                             <div class="form-group">
                                 <label>Mã</label>
-                                <input type="text" class="form-control" id="item_them_ma" name="item_them_ma" required>
+                                <input type="text" class="form-control" id="item_them_ma" name="item_them_ma" required />
                             </div>
                             <div class="form-group">
                                 <label>Mã Gói</label>
@@ -258,7 +260,7 @@
                                 <label>Thời Lượng</label>
                                 <input type="text" class="form-control" id="item_them_thoiluong" name="item_them_thoiluong" disable readonly />
                             </div>
-                            <p id="them-thongbao-taikhoan" style="color: red;"></p>
+                            <p id="them_thongbao_taikhoan" style="color: red;"></p>
                             <div class="form-group">
                                 <label>Tài Khoản</label>
                                 <input type="text" class="form-control" id="item_them_taikhoan" name="item_them_taikhoan" required />
@@ -275,7 +277,7 @@
                                 <input type="number" class="form-control" id="item_them_nam" name="item_them_nam" required min="@DateTime.Now.Year.ToString()" readonly onchange="changenam()" />
 
                             </div>
-                            <p id="them-thongbao-thang" style="color: red;"></p>
+                            <p id="them_thongbao_thang" style="color: red;"></p>
                             <div class="form-group">
                                 <label>Chọn tháng bắt đầu</label>
 
@@ -297,7 +299,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-warning" id="btnThemTrang">Thêm</button>
+                            <button type="submit" class="btn btn-warning" id="btnThemModal" disabled>Thêm</button>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                         </div>
                     </div>
@@ -346,8 +348,8 @@
                     </div>
                 </form>
             </div>
-        </div>
-
+       
+    </div>
         @if (ViewBag.ThongBao != null)
         {
             <script>
@@ -451,6 +453,10 @@
                     type: "post",
                     data: { "nam": nam, "thang":thang, "goi":goi },
                     success: function (data) {
+                        if (data == null) {
+                            $(`#them_thongbao_thang`).text("Tháng " + thang + " không có ngày phù hợp"); 
+                        }
+                        else $(`#them_thongbao_thang`).text("test");
                         var select = document.getElementById("item_them_ngay");
                         for (var i in data) {
                             var option = document.createElement("option");
@@ -560,6 +566,71 @@
                 getthoiluong(goi);
                 gettenvitri(goi);
             }
+
+            function checktaikhoan(taikhoan) {
+                
+                    $.ajax({
+                        url: "/Webmaster/QuangCao/CheckTaiKhoan",
+                        type: "post",
+                        data: { "taikhoan": taikhoan },
+
+                        success: function (data) {
+                            if (data != null) {
+                                $(`#them_thongbao_taikhoan`).text("");
+                                $("#btnThemModal").attr('disabled', false);
+                            }
+                            else {
+                                $(`#them_thongbao_taikhoan`).text("Không tìm thấy tài khoản này");
+                                $("#btnThemModal").attr('disabled', true);
+                            }
+
+                        },
+
+
+                        error: function (data) {
+                            alert("Error: " + data);
+                        }
+                    });
+            }
+            function checkma(ma) {
+
+                $.ajax({
+                    url: "/Webmaster/QuangCao/CheckMa",
+                    type: "post",
+                    data: { "ma": ma },
+
+                    success: function (data) {
+                        if (data == null) {
+                            $(`#them_thongbao_ma`).text("");
+                            $("#btnThemModal").attr('disabled', false);
+                        }
+                        else {
+                            $("#btnThemModal").attr('disabled', true);
+                            $(`#them_thongbao_ma`).text("Mã đã tồn tại");
+                            
+                        }
+
+                    },
+
+
+                    error: function (data) {
+                        alert("Error: " + data);
+                    }
+                });
+            }
+            $("#item_them_ma").change(function () {
+                var ma = document.getElementById("item_them_ma").value;
+               
+                checkma(ma);
+            });
+            $("#item_them_taikhoan").change(function () {
+                var taikhoan = document.getElementById("item_them_taikhoan").value;
+                checktaikhoan(taikhoan);
+            });
+
+
+            
+            
            //function ngayketthuc() {
            //     var nam = document.getElementById('item_them_nam').value;
            //     var ngay = document.getElementById('item_them_ngay').value;

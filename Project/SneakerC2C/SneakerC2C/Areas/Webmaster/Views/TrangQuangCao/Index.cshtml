@@ -220,10 +220,12 @@
                             <h4 class="modal-title"><b>Trang Quảng Cáo</b></h4>
                         </div>
                         <div class="modal-body">
+                            <p id="them_thongbao_ma" style="color: red;"></p>
                             <div class="form-group">
                                 <label>Mã</label>
                                 <input type="text" class="form-control" id="item_them_ma" name="item_them_ma" required>
                             </div>
+                            <p id="them_thongbao_ten" style="color: red;"></p>
                             <div class="form-group">
                                 <label>Tên</label>
                                 <input type="text" class="form-control" id="item_them_ten" name="item_them_ten" required>
@@ -234,7 +236,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-warning" id="btnThemTrang">Thêm</button>
+                            <button type="submit" class="btn btn-warning" id="btnThemModal" disabled>Thêm</button>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                         </div>
                     </div>
@@ -256,6 +258,7 @@
                                 <label>Mã</label>
                                 <input type="text" class="form-control" id="item_sua_ma" name="item_sua_ma" readonly>
                             </div>
+                            <p id="sua_thongbao_ten" style="color: red;"></p>
                             <div class="form-group">
                                 <label>Tên</label>
                                 <input type="text" class="form-control" id="item_sua_ten" name="item_sua_ten">
@@ -266,7 +269,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-warning">Sửa</button>
+                            <button type="submit" class="btn btn-warning" id="btnSuaModal">Sửa</button>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                         </div>
                     </div>
@@ -330,12 +333,12 @@
             });
         }
     });
-
+let tenbandau;
     $(".btnSuaTrang").click(function () {
         let ma = $(this).closest('tr').find('.item-ma').text();
         let ten = $(this).closest('tr').find('.item-ten').text();
         let chuthich = $(this).closest('tr').find('.item-chuthich').text();
-
+        tenbandau = ten;
 
         $("#item_sua_ma").val(ma.trim());
         $("#item_sua_ten").val(ten.trim());
@@ -361,4 +364,107 @@
         href = href.toString().replace(/\/&/g, '&');
         $link.attr('href', href);
     });
+            function checkma(ma) {
+
+                $.ajax({
+                    url: "/Webmaster/TrangQuangCao/CheckMa",
+                    type: "post",
+                    data: { "ma": ma },
+
+                    success: function (data) {
+                        if (data == null) {
+                            $(`#them_thongbao_ma`).text("");
+                            $("#btnThemModal").attr('disabled', false);
+                        }
+                        else {
+                            $("#btnThemModal").attr('disabled', true);
+                            $(`#them_thongbao_ma`).text("Mã đã tồn tại");
+                            
+                        }
+
+                    },
+
+
+                    error: function (data) {
+                        alert("Error: " + data);
+                    }
+                });
+            }
+            $("#item_them_ma").change(function () {
+                var ma = document.getElementById("item_them_ma").value;
+                
+                checkma(ma);
+                
+            });
+             $("#item_them_ten").change(function () {
+              
+                var ten =document.getElementById("item_them_ten").value;
+                
+                checkten(ten);
+            });
+            function checkten(ten) {
+
+                $.ajax({
+                    url: "/Webmaster/TrangQuangCao/CheckTen",
+                    type: "post",
+                    data: { "ten": ten },
+
+                    success: function (data) {
+                        if (data == null) {
+                            $(`#them_thongbao_ten`).text("");
+                            $("#btnThemModal").attr('disabled', false);
+                        }
+                        else {
+                            $("#btnThemModal").attr('disabled', true);
+                            $(`#them_thongbao_ten`).text("Tên đã tồn tại");
+                            
+                        }
+
+                    },
+
+
+                    error: function (data) {
+                        alert("Error: " + data);
+                    }
+                });
+            }
+            function checktensua(ten) {
+
+                $.ajax({
+                    url: "/Webmaster/TrangQuangCao/CheckTen",
+                    type: "post",
+                    data: { "ten": ten },
+
+                    success: function (data) {
+                        if (data == null) {
+                            $(`#sua_thongbao_ten`).text("");
+                            $("#btnSuaModal").attr('disabled', false);
+                        }
+                        else {
+                            $("#btnSuaModal").attr('disabled', true);
+                            $(`#sua_thongbao_ten`).text("Tên đã tồn tại");
+                            
+                        }
+
+                    },
+
+
+                    error: function (data) {
+                        alert("Error: " + data);
+                    }
+                });
+            }
+             $("#item_sua_ten").change(function () {
+                var ten = document.getElementById("item_sua_ten").value;
+                if(tenbandau!=ten)
+                checktensua(ten);
+                else 
+                {
+            $(`#sua_thongbao_ten`).text("");
+                            $("#btnSuaModal").attr('disabled', false);
+            }
+
+            });
+           
+           
         </script>

@@ -40,6 +40,18 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             string thongbao = trang.CreateTrangQuangCao(item_them_ma, item_them_ten, item_them_chuthich);
             return RedirectToAction("Index", "TrangQuangCao", new { thongbao = thongbao });
         }
+        public string CheckMa(string ma)
+        {
+            TrangQuangCaoBUS trang = new TrangQuangCaoBUS();
+
+            return trang.CheckMa(ma);
+        }
+        public string CheckTen(string ten)
+        {
+            TrangQuangCaoBUS trang = new TrangQuangCaoBUS();
+
+            return trang.CheckTen(ten);
+        }
 
         public IActionResult EditTrangQuangCao(string item_sua_ma, string item_sua_ten, string item_sua_chuthich)
         {

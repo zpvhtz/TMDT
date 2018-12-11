@@ -43,6 +43,12 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             string thongbao = goi.CreateGoiQuangCao(item_them_ma, item_them_vitriquangcao, item_them_tongtien, item_them_thoiluong);
             return RedirectToAction("Index", "GoiQuangCao", new { thongbao = thongbao });
         }
+        public string CheckMa(string ma)
+        {
+            GoiQuangCaoBUS goi = new GoiQuangCaoBUS();
+
+            return goi.CheckMa(ma);
+        }
 
         public IActionResult EditGoiQuangCao(string item_sua_ma, string item_sua_vitriquangcao, double item_sua_tongtien, int item_sua_thoiluong)
         {

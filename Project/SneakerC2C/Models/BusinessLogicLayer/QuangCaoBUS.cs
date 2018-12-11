@@ -75,6 +75,26 @@ namespace Models.BusinessLogicLayer
             goiqc = context.GoiQuangCao.Where(gh => gh.Id == Guid.Parse(goi)).Include(gh => gh.IdViTriNavigation).SingleOrDefault();
             return goiqc.IdViTriNavigation.TenViTri;
         }
+        public string CheckMa(string ma)
+        {
+            QuangCao qc = new QuangCao();
+            qc = context.QuangCao.Where(gh => gh.MaQuangCao==ma).SingleOrDefault();
+            if (qc==null)
+            {
+                return null;
+            }
+            return qc.MaQuangCao;
+        }
+        public string CheckTaiKhoan(string taikhoan)
+        {
+            TaiKhoan tk = new TaiKhoan();
+            tk = context.TaiKhoan.Where(gh => gh.TenDangNhap == taikhoan).SingleOrDefault();
+            if (tk == null)
+            {
+                return null;
+            }
+            return tk.TenDangNhap;
+        }
 
 
         public List<QuangCao> GetQuangCaos(int pagenumber, int pagesize)
@@ -102,7 +122,7 @@ namespace Models.BusinessLogicLayer
             {
                 return "Quảng cáo này đã tồn tại";
             }
-            tk = context.TaiKhoan.Where(gh => gh.Id == Guid.Parse(taikhoan)).SingleOrDefault();
+            tk = context.TaiKhoan.Where(gh => gh.TenDangNhap == taikhoan).SingleOrDefault();
             if( tk == null)
             {
                 return "Không tồn tại tài khoản này";
@@ -114,7 +134,8 @@ namespace Models.BusinessLogicLayer
             quangcao.MaQuangCao = ma;
 
             quangcao.IdGoiQuangCao = Guid.Parse(goiquangcao);
-            quangcao.IdTaiKhoan = Guid.Parse(taikhoan);
+
+            quangcao.IdTaiKhoan = tk.Id;
           
             quangcao.Hinh = hinh;
             quangcao.NgayBatDau = ngaybatdau;

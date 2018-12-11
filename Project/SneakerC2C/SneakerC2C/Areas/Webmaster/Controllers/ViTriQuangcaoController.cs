@@ -64,6 +64,12 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             string thongbao = vitri.UnlockViTriQuangcao(mavitri);
             return RedirectToAction("Index", "ViTriQuangcao", new { thongbao = thongbao });
         }
+        public string CheckMa(string ma)
+        {
+            ViTriQuangcaoBUS vitri = new ViTriQuangcaoBUS();
+
+            return vitri.CheckMa(ma);
+        }
 
         public IActionResult Sort(string sortorder, int? pagenumber)
         {

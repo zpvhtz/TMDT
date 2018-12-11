@@ -35,6 +35,28 @@ namespace Models.BusinessLogicLayer
             return list;
         }
 
+        public string CheckMa(string ma)
+        {
+            TrangQuangCao trang = new TrangQuangCao();
+            trang = context.TrangQuangCao.Where(gh => gh.MaTrang == ma).SingleOrDefault();
+            if (trang == null)
+            {
+                return null;
+            }
+            return trang.MaTrang;
+        }
+
+        public string CheckTen(string ten)
+        {
+            TrangQuangCao trang = new TrangQuangCao();
+            trang = context.TrangQuangCao.Where(gh => gh.TenTrang == ten).SingleOrDefault();
+            if (trang == null)
+            {
+                return null;
+            }
+            return trang.TenTrang;
+        }
+
         public string CreateTrangQuangCao(string ma, string ten, string chuthich)
         {
             TrangQuangCao trang;

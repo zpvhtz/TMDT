@@ -89,7 +89,7 @@
                         {
                             <button class="btn btn-primary  btnSuaGoi" type="button" data-toggle="modal" data-target="#suaModal" disabled>Sửa</button>
 
-                            <a asp-controller="QuangCao" asp-action="UnlockQuangCao" asp-route-maquangcao="@item.MaQuangCao" class="btn btn-danger">Mở khoá</a>
+                         
                         }
                     </td>
                 </tr>
@@ -562,6 +562,9 @@
                 document.getElementById('item_them_nam').value = null;
                 document.getElementById('item_them_ngay').value = null;
                 document.getElementById('item_them_thang').value = null;
+                while (document.getElementById("item_them_ngay").options.length > 0) {
+                    document.getElementById("item_them_ngay").remove(0);
+                }
                 //document.getElementById('item_them_ngayketthuc').value = null;
                 getthoiluong(goi);
                 gettenvitri(goi);

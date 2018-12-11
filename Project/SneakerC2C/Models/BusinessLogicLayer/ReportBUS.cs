@@ -30,13 +30,18 @@ namespace Models.BusinessLogicLayer
         public List<ChiTietDonHang> GetChiTietDonHang(string Id)
         {
             return context.ChiTietDonHang.Where(x => x.IdDonHang == Guid.Parse(Id))                                                            
-                                        .Include(dh => dh.IdDonHangNavigation)
-                                        .Include(dh => dh.IdDonHangNavigation.IdTaiKhoanNavigation)
-                                        .Include(dh => dh.IdSizeSanPhamNavigation)
-                                        .Include(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation)
-                                        .Include(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation)
-                                        .OrderBy(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenShop)
+                                        //.Include(dh => dh.IdDonHangNavigation)
+                                        //.Include(dh => dh.IdDonHangNavigation.IdTaiKhoanNavigation)
+                                        //.Include(dh => dh.IdSizeSanPhamNavigation)
+                                        //.Include(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation)
+                                        //.Include(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation)
+                                        //.OrderBy(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenShop)
                                         .ToList();
         }
+        public TaiKhoan GetTaiKhoanById(Guid IdTaiKhoan)
+        {
+            return context.TaiKhoan.Where(x => x.Id == IdTaiKhoan).SingleOrDefault();
+        }
+
     }
 }

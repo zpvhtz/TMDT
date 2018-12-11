@@ -39,7 +39,7 @@ namespace Models.BusinessLogicLayer
 
         //------------------------------------------------------ THEM SUA XOA -----------------------------------------------------------------
 
-        public string EditDonHang(string MaDonHang, string CMNDNguoiGiao, string TinhTrang)
+        public string EditDonHang(string MaDonHang, string CMNDNguoiGiao, string TinhTrang, DateTime NgayGiao)
         {
             DonHang DonHang = new DonHang();
 
@@ -56,6 +56,17 @@ namespace Models.BusinessLogicLayer
             if (TinhTrang != null) //Đã đặt, Đang giao, Đã thanh toán, Đã huỷ
             {
                 DonHang.TinhTrang = TinhTrang;
+            }
+            if (NgayGiao != null) //Đã đặt, Đang giao, Đã thanh toán, Đã huỷ
+            {
+                if(NgayGiao > DateTime.Now)
+                {
+                    return "Ngày giao phải bé hơn hoặc bằng" + DateTime.Now.Date.ToString();
+                }
+                else
+                {
+                    DonHang.NgayGiao = NgayGiao;
+                }
             }
             //if (TinhTrangDanhGia != null) // --Chưa đánh giá/Đã đánh giá--
             //{

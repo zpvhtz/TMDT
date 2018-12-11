@@ -69,7 +69,7 @@ namespace Models.BusinessLogicLayer
             donhang.NgayGiao = null;
             donhang.TongTien = tongtien;
             donhang.TinhTrangDanhGiaCustomer = "Chưa đánh giá";
-            donhang.TinhTrang = "Đã đặt";
+            donhang.TinhTrang = "Chưa xử lý";
 
             context.DonHang.Add(donhang);
             context.SaveChanges();
@@ -98,7 +98,7 @@ namespace Models.BusinessLogicLayer
                 chitietdonhang.DonGia = dongia;
                 chitietdonhang.DiemCustomerDanhGia = 0;
                 chitietdonhang.DiemMerchantDanhGia = 0;
-                chitietdonhang.TinhTrangChiTiet = "Chưa xử lý";
+                chitietdonhang.TinhTrangChiTiet = "Đã đặt";
                 context.ChiTietDonHang.Add(chitietdonhang);
                 context.SaveChanges();
 
@@ -114,22 +114,62 @@ namespace Models.BusinessLogicLayer
 
         public List<DonHang> GetDonHang(string tendangnhap, string tinhtrang)
         {
-            List<DonHang> list = context.DonHang.Where(dh => dh.IdTaiKhoanNavigation.TenDangNhap == tendangnhap && dh.TinhTrang == tinhtrang)
-                                                .Include(dh => dh.IdTaiKhoanNavigation)
-                                                .ToList();
+            List<DonHang> list = new List<DonHang>();
+
+            if(tinhtrang == "Đã xử lý")
+            {
+                list = context.DonHang.Where(dh => dh.IdTaiKhoanNavigation.TenDangNhap == tendangnhap && dh.TinhTrang == "Đã xử lý")
+                                      .Include(dh => dh.IdTaiKhoanNavigation)
+                                      .ToList();
+            }
+            else
+            {
+                if(tinhtrang == "Đã đặt")
+                {
+                    List<ChiTietDonHang> listchitiet = new List<ChiTietDonHang>();
+                    listchitiet = context.ChiTietDonHang.Where(ct => ct.TinhTrangChiTiet != tinhtrang).ToList();
+
+                    var listid = listchitiet.Select(ct => ct.IdDonHang).ToList();
+                    list = context.DonHang.Where(dh => !listid.Contains(dh.Id)).ToList();
+                }
+                else
+                {
+                    List<ChiTietDonHang> listchitiet = new List<ChiTietDonHang>();
+                    listchitiet = context.ChiTietDonHang.Where(ct => ct.TinhTrangChiTiet == tinhtrang).ToList();
+
+                    var listid = listchitiet.Select(ct => ct.IdDonHang).ToList();
+                    list = context.DonHang.Where(dh => listid.Contains(dh.Id)).ToList();
+                }
+            }
             return list;
         }
 
         public List<ChiTietDonHang> GetChiTietDonHang(string tendangnhap, string tinhtrang)
         {
-            List<ChiTietDonHang> list = context.ChiTietDonHang.Where(dh => dh.IdDonHangNavigation.TinhTrang == tinhtrang && dh.IdDonHangNavigation.IdTaiKhoanNavigation.TenDangNhap == tendangnhap)
-                                                              .OrderBy(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoan)
-                                                              .Include(dh => dh.IdDonHangNavigation)
-                                                              .Include(dh => dh.IdDonHangNavigation.IdTaiKhoanNavigation)
-                                                              .Include(dh => dh.IdSizeSanPhamNavigation)
-                                                              .Include(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation)
-                                                              .Include(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation)
-                                                              .ToList();
+            List<ChiTietDonHang> list = new List<ChiTietDonHang>();
+            if (tinhtrang == "Đã xử lý")
+            {
+                list = context.ChiTietDonHang.Where(dh => dh.TinhTrangChiTiet == tinhtrang && dh.IdDonHangNavigation.IdTaiKhoanNavigation.TenDangNhap == tendangnhap)
+                                             .OrderBy(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoan)
+                                             .Include(dh => dh.IdDonHangNavigation)
+                                             .Include(dh => dh.IdDonHangNavigation.IdTaiKhoanNavigation)
+                                             .Include(dh => dh.IdSizeSanPhamNavigation)
+                                             .Include(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation)
+                                             .Include(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation)
+                                             .ToList();
+            }
+            else
+            {
+                list = context.ChiTietDonHang.Where(dh => dh.TinhTrangChiTiet == tinhtrang && dh.IdDonHangNavigation.IdTaiKhoanNavigation.TenDangNhap == tendangnhap)
+                                             .OrderBy(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoan)
+                                             .Include(dh => dh.IdDonHangNavigation)
+                                             .Include(dh => dh.IdDonHangNavigation.IdTaiKhoanNavigation)
+                                             .Include(dh => dh.IdSizeSanPhamNavigation)
+                                             .Include(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation)
+                                             .Include(dh => dh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation)
+                                             .ToList();
+            }
+             
             return list;
         }
 

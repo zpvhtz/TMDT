@@ -32,7 +32,7 @@ namespace Models.BusinessLogicLayer
                 if(item.SoLuong > sizesanpham.SoLuong)
                 {
                     string thongbao = "";
-                    thongbao = sizesanpham.IdSanPhamNavigation.TenSanPham + " có số lượng vượt quá tồn kho (SL kho: )" + sizesanpham.SoLuong;
+                    thongbao = sizesanpham.IdSanPhamNavigation.TenSanPham + " có số lượng vượt quá tồn kho (SL kho: " + sizesanpham.SoLuong + ")";
                     return thongbao;
                 }
             }
@@ -96,6 +96,9 @@ namespace Models.BusinessLogicLayer
                 chitietdonhang.IdSizeSanPham = item.IdSizeSanPham;
                 chitietdonhang.SoLuong = item.SoLuong;
                 chitietdonhang.DonGia = dongia;
+                chitietdonhang.DiemCustomerDanhGia = 0;
+                chitietdonhang.DiemMerchantDanhGia = 0;
+                chitietdonhang.TinhTrangChiTiet = "Chưa xử lý";
                 context.ChiTietDonHang.Add(chitietdonhang);
                 context.SaveChanges();
 

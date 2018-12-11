@@ -17,6 +17,7 @@ namespace SneakerC2C.Areas.Customer.Controllers
         private TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
         private GiaShipBUS giashipbus = new GiaShipBUS();
         private DonHangBUS donhangbus = new DonHangBUS();
+        private HangSanPhamBUS hangsanphambus = new HangSanPhamBUS();
 
         public IActionResult DatHang(string tendangnhap)
         {
@@ -29,7 +30,9 @@ namespace SneakerC2C.Areas.Customer.Controllers
                 List<TaiKhoan> listmerchant = giohangbus.GetMerchants(tendangnhap);
                 List<DiaChi> listaddress = taikhoanbus.GetAllAddress(tendangnhap);
                 DiaChi firstAddress = taikhoanbus.GetFirstAddress(tendangnhap);
+                List<HangSanPham> hang = hangsanphambus.GetHangSanPhams();
 
+                ViewBag.Hang = hang;
                 ViewBag.TaiKhoan = taikhoan;
                 ViewBag.Merchants = listmerchant;
                 ViewBag.FirstAddress = firstAddress;

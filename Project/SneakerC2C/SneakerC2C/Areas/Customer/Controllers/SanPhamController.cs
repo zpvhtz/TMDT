@@ -118,6 +118,8 @@ namespace SneakerC2C.Areas.Customer.Controllers
                     }
                 }           
             }
+            List<HangSanPham> hang = ctx.HangSanPham.ToList();
+            ViewBag.Hang = hang;
             return View(list);
         }
 

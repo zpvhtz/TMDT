@@ -11,6 +11,7 @@ namespace Models.Database
         public double? DonGia { get; set; }
         public double? DiemCustomerDanhGia { get; set; }
         public double? DiemMerchantDanhGia { get; set; }
+        public string TinhTrangChiTiet { get; set; }
 
         public DonHang IdDonHangNavigation { get; set; }
         public SizeSanPham IdSizeSanPhamNavigation { get; set; }

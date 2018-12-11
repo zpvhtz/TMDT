@@ -6,7 +6,8 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
-    Layout = null;
+    ViewData["Title"] = "DonHang";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -34,35 +35,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="~/css/custom.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="container-fluid bg_header_knb">
-        <div class="container">
-            <div class="icon_header_knb">
-                <i class="fa fa-shopping-bag"></i>
-            </div>
-            <div class="logo_header_knb">
-                <a asp-area="Customer" asp-controller="Home" asp-action="Index">
-                    <h4><span>Trang Chủ</span></h4>
-                </a>
-                <a href="#">
-                    <i class="fa fa-angle-right"></i>
-                    <h4>Thanh Toán</h4>
-                </a>
-            </div>
-            <div class="user_merchant">
-                <ul>
-                    @*<a href="#">*@
-                    <li><i class="fa fa-user"></i></li>
-                    <li>@ViewBag.TaiKhoan.TenDangNhap</li>
-                    @*</a>*@
-                    <li class="gach_khoangcach">|</li>
-                    <a asp-area="Customer" asp-controller="Authentication" asp-action="LogOut">
-                        <li><i class="fa fa-sign-out"></i></li>
-                        <li>Đăng Xuất</li>
+    @*<div class="container-fluid bg_header_knb">
+            <div class="container">
+                <div class="icon_header_knb">
+                    <i class="fa fa-shopping-bag"></i>
+                </div>
+                <div class="logo_header_knb">
+                    <a asp-area="Customer" asp-controller="Home" asp-action="Index">
+                        <h4><span>Trang Chủ</span></h4>
                     </a>
-                </ul>
+                    <a href="#">
+                        <i class="fa fa-angle-right"></i>
+                        <h4>Thanh Toán</h4>
+                    </a>
+                </div>
+                <div class="user_merchant">
+                    <ul>
+                        <li><i class="fa fa-user"></i></li>
+                        <li>@ViewBag.TaiKhoan.TenDangNhap</li>
+                        <li class="gach_khoangcach">|</li>
+                        <a asp-area="Customer" asp-controller="Authentication" asp-action="LogOut">
+                            <li><i class="fa fa-sign-out"></i></li>
+                            <li>Đăng Xuất</li>
+                        </a>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </div>
+        </div>*@
+    <!-- //header -->
     <div class="container-fluid bg_giohang">
         <div class="container">
             <div class="thanhtoan">
@@ -72,7 +72,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="content_diachi" id="partialDiaChi">
                     <!--Đây sử dụng partial view pDiaChi-->
-                    <input type="text" value="@ViewBag.FirstAddress.Id" id="txtIdDiaChi" readonly hidden/>
+                    <input type="text" value="@ViewBag.FirstAddress.Id" id="txtIdDiaChi" readonly hidden />
                     <h4><b>@ViewBag.TaiKhoan.Ten (@ViewBag.TaiKhoan.DienThoai) </b>@ViewBag.FirstAddress.Duong, @ViewBag.FirstAddress.IdTinhThanhNavigation.TenTinhThanh</h4>
                     <a href="#" data-toggle="modal" data-target="#addressModal">Thay Đổi</a>
                 </div>
@@ -179,7 +179,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                 </div>
             </div>
-            <div class="form_chuthich">
+            <div class="form_chuthich margin-frm-donhang">
                 <div class="form_padding_15_30">
                     <div class="tong_tienhang">
                         <div class="txt_dathang">
@@ -234,11 +234,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach(var item in ViewBag.ListAddress)
+                            @foreach (var item in ViewBag.ListAddress)
                             {
                                 <tr>
                                     <td class="item-duong">
-                                        <input type="text" value="@item.Id" readonly hidden class="item-idduong"/>
+                                        <input type="text" value="@item.Id" readonly hidden class="item-idduong" />
                                         @item.Duong
                                     </td>
                                     <td class="item-tinhthanh">@item.IdTinhThanhNavigation.TenTinhThanh</td>
@@ -251,7 +251,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </table>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCloseAddressModal">Close</button>
                 </div>
             </div>
 
@@ -386,7 +386,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     $(".btnChonDiaChiMoi").click(function () {
         let iddiachi = $(this).closest('tr').find('.item-idduong').val();
         GetDiaChi(iddiachi);
-        $("#addressModal").modal('toggle');
+
+        let close = document.getElementById("btnCloseAddressModal");
+        close.click();
+        //$("#btnCloseAddressModal").click();
+        //$("#addressModal").modal('hide');
         GetPhiShip(iddiachi);
         GetTongPhiShip();
         //console.log(iddiachi);

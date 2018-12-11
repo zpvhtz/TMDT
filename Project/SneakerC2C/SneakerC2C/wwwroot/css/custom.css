@@ -47,3 +47,11 @@
 .trangthai-dahuy i {
     color: red !important;
 }
+
+.z-index-giohang {
+    z-index: 999 !important;
+}
+
+.margin-frm-donhang {
+    margin: 15px 0px;
+}

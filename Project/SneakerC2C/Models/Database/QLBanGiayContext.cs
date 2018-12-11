@@ -49,6 +49,8 @@ namespace Models.Database
             {
                 entity.HasKey(e => new { e.IdDonHang, e.IdSizeSanPham });
 
+                entity.Property(e => e.TinhTrangChiTiet).HasMaxLength(20);
+
                 entity.HasOne(d => d.IdDonHangNavigation)
                     .WithMany(p => p.ChiTietDonHang)
                     .HasForeignKey(d => d.IdDonHang)
@@ -105,7 +107,7 @@ namespace Models.Database
             modelBuilder.Entity<DonHang>(entity =>
             {
                 entity.HasIndex(e => e.MaDonHang)
-                    .HasName("UQ__DonHang__129584AC38F2C6FB")
+                    .HasName("UQ__DonHang__129584ACC3BD9B9F")
                     .IsUnique();
 
                 entity.Property(e => e.Id).ValueGeneratedNever();
@@ -140,7 +142,7 @@ namespace Models.Database
             modelBuilder.Entity<GianHang>(entity =>
             {
                 entity.HasIndex(e => e.MaGianHang)
-                    .HasName("UQ__GianHang__1772B230853909B9")
+                    .HasName("UQ__GianHang__1772B230A82055CB")
                     .IsUnique();
 
                 entity.Property(e => e.Id).ValueGeneratedNever();
@@ -186,7 +188,7 @@ namespace Models.Database
             modelBuilder.Entity<GoiQuangCao>(entity =>
             {
                 entity.HasIndex(e => e.MaGoiQuangCao)
-                    .HasName("UQ__GoiQuang__7CE51DE3ABC9587A")
+                    .HasName("UQ__GoiQuang__7CE51DE30F43A07B")
                     .IsUnique();
 
                 entity.Property(e => e.Id).ValueGeneratedNever();
@@ -208,7 +210,7 @@ namespace Models.Database
             modelBuilder.Entity<HangSanPham>(entity =>
             {
                 entity.HasIndex(e => e.MaHang)
-                    .HasName("UQ__HangSanP__19C0DB1C1CB5EACB")
+                    .HasName("UQ__HangSanP__19C0DB1C4DA8E5B2")
                     .IsUnique();
 
                 entity.Property(e => e.Id).ValueGeneratedNever();
@@ -251,7 +253,7 @@ namespace Models.Database
             modelBuilder.Entity<LoaiNguoiDung>(entity =>
             {
                 entity.HasIndex(e => e.MaLoaiNguoiDung)
-                    .HasName("UQ__LoaiNguo__8D1973186E8663CE")
+                    .HasName("UQ__LoaiNguo__8D1973188C710306")
                     .IsUnique();
 
                 entity.Property(e => e.Id).ValueGeneratedNever();
@@ -269,7 +271,7 @@ namespace Models.Database
             modelBuilder.Entity<QuangCao>(entity =>
             {
                 entity.HasIndex(e => e.MaQuangCao)
-                    .HasName("UQ__QuangCao__9353FEC320F1DD4E")
+                    .HasName("UQ__QuangCao__9353FEC319531312")
                     .IsUnique();
 
                 entity.Property(e => e.Id).ValueGeneratedNever();
@@ -307,7 +309,7 @@ namespace Models.Database
             modelBuilder.Entity<SanPham>(entity =>
             {
                 entity.HasIndex(e => e.MaSanPham)
-                    .HasName("UQ__SanPham__FAC7442CD14FDF88")
+                    .HasName("UQ__SanPham__FAC7442C11D5B747")
                     .IsUnique();
 
                 entity.Property(e => e.Id).ValueGeneratedNever();
@@ -360,15 +362,15 @@ namespace Models.Database
             modelBuilder.Entity<TaiKhoan>(entity =>
             {
                 entity.HasIndex(e => e.Cmnd)
-                    .HasName("UQ__TaiKhoan__F67C8D0B74AFA9AC")
+                    .HasName("UQ__TaiKhoan__F67C8D0B4A84F7D4")
                     .IsUnique();
 
                 entity.HasIndex(e => e.Email)
-                    .HasName("UQ__TaiKhoan__A9D10534AF0AAA9A")
+                    .HasName("UQ__TaiKhoan__A9D10534AA23A6E9")
                     .IsUnique();
 
                 entity.HasIndex(e => e.TenDangNhap)
-                    .HasName("UQ__TaiKhoan__55F68FC0917A7B36")
+                    .HasName("UQ__TaiKhoan__55F68FC028753819")
                     .IsUnique();
 
                 entity.Property(e => e.Id).ValueGeneratedNever();
@@ -417,7 +419,7 @@ namespace Models.Database
             modelBuilder.Entity<TinhThanh>(entity =>
             {
                 entity.HasIndex(e => e.MaTinhThanh)
-                    .HasName("UQ__TinhThan__B8FF995FB2453654")
+                    .HasName("UQ__TinhThan__B8FF995F5D4FB55B")
                     .IsUnique();
 
                 entity.Property(e => e.Id).ValueGeneratedNever();
@@ -435,7 +437,7 @@ namespace Models.Database
             modelBuilder.Entity<TrangQuangCao>(entity =>
             {
                 entity.HasIndex(e => e.MaTrang)
-                    .HasName("UQ__TrangQua__399828AE60542024")
+                    .HasName("UQ__TrangQua__399828AEF60125A8")
                     .IsUnique();
 
                 entity.Property(e => e.Id).ValueGeneratedNever();
@@ -455,7 +457,7 @@ namespace Models.Database
             modelBuilder.Entity<ViTriQuangcao>(entity =>
             {
                 entity.HasIndex(e => e.MaViTri)
-                    .HasName("UQ__ViTriQua__B08B247E97589BDD")
+                    .HasName("UQ__ViTriQua__B08B247E385C8CDD")
                     .IsUnique();
 
                 entity.Property(e => e.Id).ValueGeneratedNever();

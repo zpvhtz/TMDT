@@ -68,7 +68,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
         public IActionResult CapNhat(string iddonhang)
         {
             var donhang = ctx.DonHang.Where(s => s.Id == Guid.Parse(iddonhang)).SingleOrDefault();
-            donhang.TinhTrang = "Đã giao";
+            donhang.TinhTrang = "Đã thanh toán";
             donhang.NgayGiao = DateTime.Now;
             ctx.SaveChanges();
             return RedirectToAction("DaGiao");
@@ -89,13 +89,13 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                                         .Select(s => s.IdDonHang)
                                         .Distinct()
                                         .ToList();
-            List<DonHang> list = ctx.DonHang.Where(sp => tenmer.Contains(sp.Id) && sp.TinhTrang == "Đã giao").Include(sp => sp.IdTaiKhoanNavigation).ToList();
+            List<DonHang> list = ctx.DonHang.Where(sp => tenmer.Contains(sp.Id) && sp.TinhTrang == "Đã thanh toán").Include(sp => sp.IdTaiKhoanNavigation).ToList();
             return View(list);
         }
         public IActionResult Huy(string iddonhang)
         {
             var donhang = ctx.DonHang.Where(s => s.Id == Guid.Parse(iddonhang)).SingleOrDefault();
-            donhang.TinhTrang = "Huỷ";
+            donhang.TinhTrang = "Đã huỷ";
             ctx.SaveChanges();
             return RedirectToAction("DaHuy");
         }
@@ -115,7 +115,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                                         .Select(s => s.IdDonHang)
                                         .Distinct()
                                         .ToList();
-            List<DonHang> list = ctx.DonHang.Where(sp => tenmer.Contains(sp.Id) && sp.TinhTrang == "Huỷ").Include(sp => sp.IdTaiKhoanNavigation).ToList();
+            List<DonHang> list = ctx.DonHang.Where(sp => tenmer.Contains(sp.Id) && sp.TinhTrang == "Đã huỷ").Include(sp => sp.IdTaiKhoanNavigation).ToList();
             return View(list);
         }
         public IActionResult GetChiTiet(string id)

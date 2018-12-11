@@ -14,6 +14,15 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
     {
         public IActionResult Index(string thongbao)
         {
+            HomeBUS bus = new HomeBUS();
+            int temp1 =  bus.GetTaiKhoanMoiTrongThang();
+            ViewBag.NewAccount = temp1;
+            int temp2 = bus.GetSanPhamMoiTrongThang();
+            ViewBag.NewProDuct = temp2;
+            int temp3 = bus.GetDonHangChuaXuLy();
+            ViewBag.NewBill = temp3;
+            int temp4 = bus.GetGoiQuangCao();
+            ViewBag.QuangCao = temp4;
             //Thông báo
             if (thongbao != null)
             {

@@ -116,5 +116,39 @@ namespace Models.BusinessLogicLayer
             List<DoanhThuGianHang> listthongke = list.ToList();
             return listthongke;
         }
+
+        public int GetTaiKhoanMoiTrongThang()
+        {
+            int month_now = DateTime.Now.Month;
+            int year_now = DateTime.Now.Year;
+            var result = (from tk in context.TaiKhoan
+                          where (tk.NgayTao.Value.Month == month_now && tk.NgayTao.Value.Year == year_now)
+                          select tk.Id).Count();
+            return result;
+        }
+        public int GetSanPhamMoiTrongThang()
+        {
+            int month_now = DateTime.Now.Month;
+            int year_now = DateTime.Now.Year;
+            var result = (from sp in context.SanPham
+                          where (sp.NgayDang.Value.Month == month_now && sp.NgayDang.Value.Year == year_now)
+                          select sp.Id).Count();
+            return result;
+        }
+        public int GetDonHangChuaXuLy()
+        {
+            int month_now = DateTime.Now.Month;
+            int year_now = DateTime.Now.Year;
+            var result = (from dh in context.DonHang
+                          where (dh.NgayTao.Value.Month == month_now && dh.NgayTao.Value.Year == year_now
+                                 && dh.TinhTrang != "Đã thanh toán")
+                          select dh.Id).Count();
+            return result;
+        }
+        public int GetGoiQuangCao()
+        {
+            var result = (from qc in context.GoiQuangCao select qc.Id).Count();
+            return result;
+        }
     }
 }

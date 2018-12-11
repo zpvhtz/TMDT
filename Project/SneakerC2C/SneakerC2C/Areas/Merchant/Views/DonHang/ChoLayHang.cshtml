@@ -9,10 +9,11 @@
     <div class="customer_quanly">
         <div id="horizontalTab">
             <ul class="resp-tabs-list">
+                <a asp-area="Merchant" asp-controller="DonHang" asp-action="ChoXuLy"><li>Chờ xử lý</li></a>
                 <a asp-area="Merchant" asp-controller="DonHang" asp-action="ChoLayHang"><li style="background-color: #fc636b">Chờ lấy hàng</li></a>
                 <a asp-area="Merchant" asp-controller="DonHang" asp-action="DangGiao"><li>Đang giao</li></a>
-                <a asp-area="Merchant" asp-controller="DonHang" asp-action="DaGiao"> <li>Hoàn thành</li></a>
-                <a asp-area="Merchant" asp-controller="DonHang" asp-action="DaHuy"><li>Đã Huỷ</li></a>
+                <a asp-area="Merchant" asp-controller="DonHang" asp-action="DaGiao"> <li>Đã giao</li></a>
+
             </ul>
             <div class="resp-tabs-container">
                 <!--/tab_one-->
@@ -60,7 +61,7 @@
                                                         <h6>Thanh toán khi nhận hàng</h6>
                                                     </div>
                                                     <div class="trangthai_donban">
-                                                        Chờ lấy hàng
+                                                        @ct.TinhTrangChiTiet
                                                         <h6>Để tránh việc giao hàng trễ,vui lòng giao hàng trước ngày mai.</h6>
                                                     </div>
                                                  
@@ -72,10 +73,11 @@
                                 <hr>
                                 <div class="chuthich_donban">
                                     <div class="chuthich_giaohang">
-                                        <div class="button_donban row">
+                                        <div class="button_donban">
+                                            <a asp-controller="DonHang" asp-action="GiaoHang" asp-route-iddonhang="@item.Id" class="btn btn-info">Cập nhật giao hàng</a>
                                             <a asp-controller="DonHang" asp-action="GetChiTiet" asp-route-id="@item.Id" class="btn btn-danger btnChiTiet">Chi tiết</a>
-                                            <a asp-controller="DonHang" asp-action="Huy" asp-route-iddonhang="@item.Id" class="btn btn-danger">Huỷ đơn</a>
-                                            <div class="donban_right col-lg-2">
+                                            @*<a asp-controller="DonHang" asp-action="Huy" asp-route-iddonhang="@item.Id" class="btn btn-danger">Huỷ đơn</a>*@
+                                            <div class="donban_right">
                                                 @tongtienhang.ToString("#,###") đ
                                             </div>
                                         </div>

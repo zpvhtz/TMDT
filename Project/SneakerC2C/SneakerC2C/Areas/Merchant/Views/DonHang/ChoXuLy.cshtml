@@ -3,20 +3,18 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
-    ViewData["Title"] = "DaHuy";
+    ViewData["Title"] = "ChoXuLy";
     Layout = "~/Views/Shared/_MerchantManagementLayout.cshtml";
 }
-
-
 
 <div class="container">
     <div class="customer_quanly">
         <div id="horizontalTab">
             <ul class="resp-tabs-list">
+                <a asp-area="Merchant" asp-controller="DonHang" asp-action="ChoXuLy"><li style="background-color: #fc636b">Chờ xử lý</li></a>
                 <a asp-area="Merchant" asp-controller="DonHang" asp-action="ChoLayHang"><li>Chờ lấy hàng</li></a>
                 <a asp-area="Merchant" asp-controller="DonHang" asp-action="DangGiao"><li>Đang giao</li></a>
-                <a asp-area="Merchant" asp-controller="DonHang" asp-action="DaGiao"><li>Hoàn thành</li></a>
-                <a asp-area="Merchant" asp-controller="DonHang" asp-action="DaHuy"><li style="background-color: #fc636b">Đã Huỷ</li></a>
+                <a asp-area="Merchant" asp-controller="DonHang" asp-action="DaGiao"><li>Đã giao</li></a>
             </ul>
             <div class="resp-tabs-container">
                 <!--/tab_one-->
@@ -58,8 +56,8 @@
                                                         @*<h6>Thanh toán khi nhận hàng</h6>*@
                                                     </div>
                                                     <div class="trangthai_donban">
-                                                        @item.TinhTrang
-                                                        @*<h6>Để tránh việc giao hàng trễ,vui lòng giao hàng trước ngày mai.</h6>*@
+                                                        @ct.TinhTrangChiTiet
+                                                        <h6>Vui lòng xử lý đơn hàng.</h6>
                                                     </div>
                                                 </div>
                                             </div>
@@ -72,12 +70,10 @@
                                 }
                                 <hr>
                                 <div class="chuthich_donban">
+                                    <a asp-controller="DonHang" asp-action="XuLy" asp-route-iddonhang="@item.Id" class="btn btn-info">Tiếp nhận xử lý</a>
                                     <a asp-controller="DonHang" asp-action="GetChiTiet" asp-route-id="@item.Id" class="btn btn-danger btnChiTiet">Chi tiết</a>
                                     <div class="donban_right">
                                         @item.TongTien
-                                    </div>
-                                    <div class="chuthich_giaohang chuthich_donban">
-                                        <p>Nếu khách không nhận hàng, vui lòng liên hệ SNRX <a href="contact.html">Ở Đây</a> để được hoàn phí trả hàng.</p>
                                     </div>
                                 </div>
                             </div>

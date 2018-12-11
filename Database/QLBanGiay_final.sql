@@ -84,7 +84,7 @@ CREATE TABLE DonHang
 	NgayGiao DATETIME,
 	TongTien FLOAT,
 	TinhTrangDanhGiaCustomer NVARCHAR(20), --Chưa đánh giá, đã đánh giá--
-	TinhTrang NVARCHAR(20) --Đã đặt, Đang giao, Đang xử lý, Đã xử lý, Đã huỷ--
+	TinhTrang NVARCHAR(20) --Chưa xử lý, Đã xử lý--
 )
 
 CREATE TABLE ChiTietDonHang
@@ -95,49 +95,8 @@ CREATE TABLE ChiTietDonHang
 	DonGia FLOAT,
 	DiemCustomerDanhGia FLOAT, --1 - 5 | 0 là chưa đánh giá--
 	DiemMerchantDanhGia FLOAT, --1 - 5 | 0 là chưa đánh giá--
-	TinhTrangChiTiet NVARCHAR(20) --Chưa xử lý, Đã xử lý--
+	TinhTrangChiTiet NVARCHAR(20) --Đã đặt, Đang giao, Đang xử lý, Đã xử lý, Đã huỷ--
 )
-
---CREATE TABLE PhieuGiao
---(
---	Id UNIQUEIDENTIFIER PRIMARY KEY,
---	MaPhieuGiao VARCHAR(10) UNIQUE NOT NULL,
---	CMNDGiao VARCHAR(20) NOT NULL,
---	IdTaiKhoan UNIQUEIDENTIFIER NOT NULL, --FK--
---	DiaChi NVARCHAR(200),
---	NgayTao DATETIME,
---	NgayGiao DATETIME,
---	TongTien FLOAT,
---	DanhGia INT, --Chưa đánh giá/Đã đánh giá--
---	TinhTrang NVARCHAR(20)
---)
-
---CREATE TABLE ChiTietPhieuGiao
---(
---	IdPhieuGiao UNIQUEIDENTIFIER NOT NULL, --PK, FK--
---	IdSizeSanPham UNIQUEIDENTIFIER NOT NULL, --PK, FK--
---	SoLuong INT,
---	Gia FLOAT
---)
-
---CREATE TABLE PhieuDat
---(
---	Id UNIQUEIDENTIFIER PRIMARY KEY,
---	MaPhieuDat VARCHAR(10) UNIQUE NOT NULL,
---	IdTaiKhoan UNIQUEIDENTIFIER NOT NULL, --FK--
---	DiaChi NVARCHAR(200),
---	NgayTao DATETIME,
---	TongTien FLOAT,
---	TinhTrang NVARCHAR(20)
---)
-
---CREATE TABLE ChiTietPhieuDat
---(
---	IdPhieuDat UNIQUEIDENTIFIER NOT NULL, --PK, FK--
---	IdSizeSanPham UNIQUEIDENTIFIER NOT NULL, --PK, FK--
---	SoLuong INT,
---	Gia FLOAT
---)
 
 CREATE TABLE TinhThanh --Tỉnh thành--
 (
@@ -263,26 +222,6 @@ ALTER TABLE ChiTietDonHang
 		CONSTRAINT FK_ChiTietDonHang_IdDonHang FOREIGN KEY (IdDonHang) REFERENCES DonHang(Id),
 		CONSTRAINT FK_ChiTietDonHang_IdSizeSanPham FOREIGN KEY (IdSizeSanPham) REFERENCES SizeSanPham(Id),
 		CONSTRAINT PK_ChiTietDonHang_IdDonHang_IdSanPham PRIMARY KEY (IdDonHang, IdSizeSanPham)
-
---ALTER TABLE PhieuGiao
---	ADD
---		CONSTRAINT FK_PhieuGiao_IdTaiKhoan FOREIGN KEY (IdTaiKhoan) REFERENCES TaiKhoan(Id)
-
---ALTER TABLE ChiTietPhieuGiao
---	ADD
---		CONSTRAINT FK_ChiTietPhieuGiao_IdPhieuGiao FOREIGN KEY (IdPhieuGiao) REFERENCES PhieuGiao(Id),
---		CONSTRAINT FK_ChiTietPhieuGiao_IdSizeSanPham FOREIGN KEY (IdSizeSanPham) REFERENCES SizeSanPham(Id),
---		CONSTRAINT PK_ChiTietPhieuGiao_IdPhieuGiao_IdSanPham PRIMARY KEY (IdPhieuGiao, IdSizeSanPham)
-
---ALTER TABLE PhieuDat
---	ADD
---		CONSTRAINT FK_PhieuDat_IdTaiKhoan FOREIGN KEY (IdTaiKhoan) REFERENCES TaiKhoan(Id)
-
---ALTER TABLE ChiTietPhieuDat
---	ADD
---		CONSTRAINT FK_ChiTietPhieuDat_IdPhieuDat FOREIGN KEY (IdPhieuDat) REFERENCES PhieuDat(Id),
---		CONSTRAINT FK_ChiTietPhieuDat_IdSizeSanPham FOREIGN KEY (IdSizeSanPham) REFERENCES SizeSanPham(Id),
---		CONSTRAINT PK_ChiTietPhieuDat_IdPhieuDat_IdSanPham PRIMARY KEY (IdPhieuDat, IdSizeSanPham)
 
 ALTER TABLE DiaChi
 	ADD
@@ -518,6 +457,58 @@ AS
 		END
 		CLOSE CUR
 		DEALLOCATE CUR
+	END
+GO
+
+--Trigger cập nhật tình trạng đơn hàng khi mọi merchant đều đã xử lý--
+CREATE TRIGGER TG_CapNhatTinhTrang_DonHang ON ChiTietDonHang AFTER UPDATE
+AS
+	DECLARE @IdDonHang UNIQUEIDENTIFIER
+	DECLARE @TongChiTietDonHang INT
+	DECLARE @TongChiTietDonHangDaXuLy INT
+	--
+	SELECT @IdDonHang = IdDonHang
+	FROM inserted
+	--
+	SELECT @TongChiTietDonHang = COUNT(*)
+	FROM ChiTietDonHang
+	WHERE IdDonHang = @IdDonHang
+	--
+	SELECT @TongChiTietDonHangDaXuLy = COUNT(*)
+	FROM ChiTietDonHang
+	WHERE IdDonHang = @IdDonHang AND TinhTrangChiTiet = N'Đã xử lý'
+	--
+	IF(@TongChiTietDonHang = @TongChiTietDonHangDaXuLy)
+	BEGIN
+		UPDATE DonHang
+		SET	TinhTrang = N'Đã xử lý'
+		WHERE Id = @IdDonHang
+	END
+GO
+
+--Trigger cập nhật tình trạng đánh giá của đơn hàng khi customer đều đã đánh giá--
+CREATE TRIGGER TG_CapNhatTinhTrangDanhGiaCustumer_DonHang ON ChiTietDonHang AFTER UPDATE
+AS
+	DECLARE @IdDonHang UNIQUEIDENTIFIER
+	DECLARE @TongChiTietDonHang INT
+	DECLARE @TongChiTietDonHangDaDanhGia INT
+	--
+	SELECT @IdDonHang = IdDonHang
+	FROM inserted
+	--
+	SELECT @TongChiTietDonHang = COUNT(*)
+	FROM ChiTietDonHang
+	WHERE IdDonHang = @IdDonHang
+	--
+	SELECT @TongChiTietDonHangDaDanhGia = COUNT(*)
+	FROM ChiTietDonHang
+	WHERE IdDonHang = @IdDonHang AND DiemMerchantDanhGia != 0
+	--
+	IF(@TongChiTietDonHang = @TongChiTietDonHangDaDanhGia)
+	BEGIN
+		UPDATE DonHang
+		SET	TinhTrangDanhGiaCustomer = N'Đã đánh giá'
+		WHERE Id = @IdDonHang
 	END
 GO
 

@@ -5,6 +5,7 @@ let lblstr = "";
 let temp = 0;
 
 function LoadDuLieuArea(nbd, nkt) {
+    Clear();
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -106,17 +107,19 @@ function Test() {
         }
     });
 }
-function Test1() {
+
+
+function Clear() {
     // Set new default font family and font color to mimic Bootstrap's default styling
     Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
     Chart.defaults.global.defaultFontColor = '#292b2c';
     // Area Chart Example
-    var ctx = document.getElementById("myAreaChart1");
+    var ctx = document.getElementById("myAreaChart");
     var myLineChart = new Chart(ctx, {
         type: 'line',
         data: {
             //labels: ["Mar 1", "Mar 2", "Mar 3", "Mar 4"],
-            labels: lbl,
+            labels: null,
             datasets: [{
                 label: "Doanh Thu",//ten cột
                 lineTension: 0.3,
@@ -130,7 +133,7 @@ function Test1() {
                 pointHitRadius: 50,
                 pointBorderWidth: 2,
                 //data: [10000, 30162, 1, 18394, 18287, 28682, 1, 33259, 25849, 24159, 32651, 31984, 38451],
-                data: dt,
+                data: null,
             }],
         },
         options: {
@@ -165,5 +168,3 @@ function Test1() {
         }
     });
 }
-
-

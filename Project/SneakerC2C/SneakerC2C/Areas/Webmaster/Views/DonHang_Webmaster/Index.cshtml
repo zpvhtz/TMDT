@@ -69,7 +69,7 @@
                         <td class="item-cmndnguoigiao">@item.CmndnguoiGiao</td>
                         <td class="item-diachigiao">@item.DiaChiGiao</td>
                         <td class="item-ngaytao">@item.NgayTao</td>
-                        <td class="item-ngaygiao">@item.NgayGiao</td>
+                        <td class="item-ngaygiao">@item.NgayGiao</td>   
                         <td class="item-tongtien">@item.TongTien</td>
                         <td class="item-tinhtrangdanhgia">@item.TinhTrangDanhGiaCustomer</td>
                         <td class="item-tinhtrang">@item.TinhTrang</td>
@@ -259,6 +259,10 @@
                                 <input type="text" class="form-control" id="item-sua-cmndnguoigiao" name="item_sua_cmndnguoigiao">
                             </div>
                             <div class="form-group">
+                                <label>Ngày Giao</label>
+                                <input type="date" class="form-control" id="item-sua-ngaygiao" name="item_sua_ngaygiao" value="2018-01-01" min="2018-01-01" max="2019-01-01">
+                            </div>
+                            <div class="form-group">
                                 <label>Tình Trạng Giao Hàng</label>
                                 <select class="form-control" id="item-sua-tinhtrang" name="item_sua_tinhtrang">
                                     <option value="Đã đặt">Đã đặt</option>
@@ -277,7 +281,7 @@
             </div>
         </div>
 
-        <!-------------------------------------------------------- UPDATE MODAL ---------------------------------------------------------->
+        <!-------------------------------------------------------- CHI TIET MODAL ---------------------------------------------------------->
         <div class="modal fade" id="chitietModal" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
@@ -309,10 +313,12 @@
         let madonhang = $(this).closest('tr').find('.item-madonhang').text();
         let cmndnguoigiao = $(this).closest('tr').find('.item-cmndnguoigiao').text();
         let tinhtrang = $(this).closest('tr').find('.item-tinhtrang').text();
+        let ngaygiao = $(this).closest('tr').find('.item-ngaygiao').text();
 
         $("#item-sua-madonhang").val(madonhang.trim());
         $("#item-sua-cmndnguoigiao").val(cmndnguoigiao.trim());
         $("#item-sua-tinhtrang").val(tinhtrang.trim());
+        $("#item-sua-ngaygiao").val(ngaygiao.trim());
 
 
     });

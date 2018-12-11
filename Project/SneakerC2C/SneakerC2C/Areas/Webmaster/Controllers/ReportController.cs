@@ -18,12 +18,24 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             DonHang donHang = new DonHang();
             donHang = bus.GetDonHang(idDonHang);
 
-            ViewBag.MaDonHang = donHang.MaDonHang;
+            Guid idTaiKhoan= donHang.IdTaiKhoan;
+            TaiKhoan taikhoan = bus.GetTaiKhoanById(idTaiKhoan);
+
+            //Thong tin khach
             ViewBag.Ten = donHang.IdTaiKhoanNavigation.Ten;
             ViewBag.DiaChi = donHang.DiaChiGiao;
-            ViewBag.NgayTao = donHang.NgayTao;
-            ViewBag.NgayGiao = donHang.NgayGiao;
+            ViewBag.Email = taikhoan.Email;
+            ViewBag.SDT = taikhoan.DienThoai;
 
+            //Thong tin don hang
+            ViewBag.MaDonHang = donHang.MaDonHang;
+            ViewBag.NgayTao = donHang.NgayTao;
+            if(donHang.NgayGiao !=null)
+            {
+                ViewBag.NgayGiao = donHang.NgayGiao;
+            }
+
+            //Tat ca chi tiet don hang
             List<ChiTietDonHang> model = bus.GetChiTietDonHang(idDonHang);            
             return View(model);
         }

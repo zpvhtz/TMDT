@@ -7,6 +7,7 @@ namespace Models.Database
     {
         public Guid IdDonHang { get; set; }
         public Guid IdSizeSanPham { get; set; }
+        public DateTime? NgayGiao { get; set; }
         public int? SoLuong { get; set; }
         public double? DonGia { get; set; }
         public double? DiemCustomerDanhGia { get; set; }

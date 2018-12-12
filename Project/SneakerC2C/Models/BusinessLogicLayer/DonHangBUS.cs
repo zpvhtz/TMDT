@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace Models.BusinessLogicLayer
 {
@@ -199,6 +200,21 @@ namespace Models.BusinessLogicLayer
             DonHang donhang = context.DonHang.Where(dh => dh.MaDonHang == madonhang).SingleOrDefault();
             donhang.TinhTrang = "Đã huỷ";
             context.SaveChanges();
+        }
+
+        public void CustomerDanhGia(string iddonhang, string idmerchant, int radio_check)
+        {
+            List<ChiTietDonHang> listchitietdonhang = new List<ChiTietDonHang>();
+            listchitietdonhang = context.ChiTietDonHang.Where(c => c.IdDonHang == Guid.Parse(iddonhang) && c.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoan == Guid.Parse(idmerchant))
+                                                       .Include(c => c.IdSizeSanPhamNavigation)
+                                                       .Include(c => c.IdSizeSanPhamNavigation.IdSanPhamNavigation)
+                                                       .ToList();
+            foreach(var item in listchitietdonhang)
+            {
+                item.DiemCustomerDanhGia = radio_check;
+            }
+            context.SaveChanges();
+
         }
     }
 }

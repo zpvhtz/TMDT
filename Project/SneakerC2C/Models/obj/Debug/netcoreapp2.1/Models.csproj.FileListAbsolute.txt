@@ -1,25 +1,3 @@
-F:\Github stuffs\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.deps.json
-F:\Github stuffs\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.json
-F:\Github stuffs\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.dev.json
-F:\Github stuffs\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.dll
-F:\Github stuffs\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.pdb
-F:\Github stuffs\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.csproj.CoreCompileInputs.cache
-F:\Github stuffs\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfoInputs.cache
-F:\Github stuffs\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfo.cs
-F:\Github stuffs\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.dll
-F:\Github stuffs\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.pdb
-F:\ASP.NET\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.deps.json
-F:\ASP.NET\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.json
-F:\ASP.NET\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.dev.json
-F:\ASP.NET\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.dll
-F:\ASP.NET\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.pdb
-F:\ASP.NET\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.csprojAssemblyReference.cache
-F:\ASP.NET\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.csproj.CoreCompileInputs.cache
-F:\ASP.NET\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfoInputs.cache
-F:\ASP.NET\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfo.cs
-F:\ASP.NET\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.dll
-F:\ASP.NET\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.pdb
-<<<<<<< HEAD
 C:\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.deps.json
 C:\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.json
 C:\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.dev.json
@@ -31,16 +9,3 @@ C:\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfoInp
 C:\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfo.cs
 C:\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.dll
 C:\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.pdb
-=======
-C:\Code\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.deps.json
-C:\Code\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.json
-C:\Code\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.runtimeconfig.dev.json
-C:\Code\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.dll
-C:\Code\TMDT\Project\SneakerC2C\Models\bin\Debug\netcoreapp2.1\Models.pdb
-C:\Code\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.csprojAssemblyReference.cache
-C:\Code\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.csproj.CoreCompileInputs.cache
-C:\Code\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfoInputs.cache
-C:\Code\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfo.cs
-C:\Code\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.dll
-C:\Code\TMDT\Project\SneakerC2C\Models\obj\Debug\netcoreapp2.1\Models.pdb
->>>>>>> 7ad2de472aaba977ef96853f8d4ce17da509595a

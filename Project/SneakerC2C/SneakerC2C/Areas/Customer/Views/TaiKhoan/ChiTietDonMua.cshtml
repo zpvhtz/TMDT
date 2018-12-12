@@ -63,7 +63,7 @@
                         </a>
                     </div>
                     <div class="ct_don">
-                        @if (Model.TinhTrang == "Đang giao" || Model.TinhTrang == "Đã thanh toán" || Model.TinhTrang == "Đã đánh giá" || Model.TinhTrang == "Đã huỷ")
+                        @if (Context.Request.QueryString.Value.Contains("tinhtrang=danggiao") || Context.Request.QueryString.Value.Contains("tinhtrang=dangxuly") || Context.Request.QueryString.Value.Contains("tinhtrang=daxuly") || Context.Request.QueryString.Value.Contains("tinhtrang=dahuy"))
                         {
                             <div class="trangthai_donmua">
                                 <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua">
@@ -82,7 +82,7 @@
                             <div class="trangthai_donmua">
                                 <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua">
                                     <div class="trangthai_donmua_ct">
-                                        <div class="khung_trangthai trangthai_color">
+                                        <div class="khung_trangthai">
                                             <i class="fa fa-file-text-o"></i>
                                         </div>
                                     </div>
@@ -91,7 +91,7 @@
                                 </a>
                             </div>
                         }
-                        @if (Model.TinhTrang == "Đang giao")
+                        @if (Context.Request.QueryString.Value.Contains("tinhtrang=danggiao"))
                         {
                             <div class="trangthai_donmua">
                                 <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="danggiao">
@@ -117,60 +117,60 @@
                                 </a>
                             </div>
                         }
-                        @if (Model.TinhTrang == "Đã thanh toán")
+                        @if (Context.Request.QueryString.Value.Contains("tinhtrang=dangxuly"))
                         {
                             <div class="trangthai_donmua">
-                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dathanhtoan">
+                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dangxuly">
                                     <div class="trangthai_donmua_ct">
                                         <div class="khung_trangthai trangthai_color">
                                             <i class="fa fa-usd"></i>
                                         </div>
                                     </div>
-                                    <h5>Đơn Hàng Đã Thanh Toán</h5>
+                                    <h5>Đơn Hàng Đang Xử Lý</h5>
                                 </a>
                             </div>
                         }
                         else
                         {
                             <div class="trangthai_donmua">
-                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dathanhtoan">
+                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dangxuly">
                                     <div class="trangthai_donmua_ct">
                                         <div class="khung_trangthai">
                                             <i class="fa fa-usd"></i>
                                         </div>
                                     </div>
-                                    <h5>Đơn Hàng Đã Thanh Toán</h5>
+                                    <h5>Đơn Hàng Đang Xử Lý</h5>
                                 </a>
                             </div>
                         }
-                        @if (Model.TinhTrangDanhGiaCustomer == "Đã đánh giá")
+                        @if (Context.Request.QueryString.Value.Contains("tinhtrang=daxuly"))
                         {
                             <div class="trangthai_donmua">
-                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dadanhgia">
+                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="daxuly">
                                     <div class="trangthai_donmua_ct">
                                         <div class="khung_trangthai trangthai_color">
                                             <i class="fa fa-star"></i>
                                         </div>
                                     </div>
-                                    <h5>Đơn Hàng Đã Đánh Giá</h5>
+                                    <h5>Đơn Hàng Đã Xử Lý</h5>
                                 </a>
                             </div>
                         }
                         else
                         {
                             <div class="trangthai_donmua">
-                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dadanhgia">
+                                <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="daxuly">
                                     <div class="trangthai_donmua_ct">
                                         <div class="khung_trangthai">
                                             <i class="fa fa-star"></i>
                                         </div>
                                     </div>
-                                    <h5>Đơn Hàng Đã Đánh Giá</h5>
+                                    <h5>Đơn Hàng Đã Xử Lý</h5>
                                 </a>
                             </div>
                         }
 
-                        @if (Model.TinhTrang == "Đã huỷ")
+                        @if (Context.Request.QueryString.Value.Contains("tinhtrang=dahuy"))
                         {
                             <div class="trangthai_donmua">
                                 <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dahuy">
@@ -320,14 +320,15 @@
     <div id="danhgiaModal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content modal-width">
-                <form asp-area="Customer" asp-controller="TaiKhoan" asp-action="DanhGia" method="post">
+                <form asp-area="Customer" asp-controller="TaiKhoan" asp-action="CustomerDanhGia" method="post">
                     <div class="modal-header">
                         <h4 class="modal-title">Đánh Giá</h4>
                     </div>
                     <div class="modal-body">
                         <h5>Mã Đơn Hàng @Model.MaDonHang</h5>
                         <h5 id="modal-ten-shop"></h5>
-                        <input type="text" id="id-nmerchant-danhgia" value="" hidden readonly />
+                        <input type="text" id="id-nmerchant-danhgia" name="idmerchant" value="" hidden readonly />
+                        <input type="text" id="id-donhang-danhgia" name="iddonhang" value="@Model.Id" hidden readonly />
                         <label class="radio_pt_tt">
                             <div class="danhgia_sao">
                                 <i class="fa fa-star"></i>
@@ -336,7 +337,7 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </div>
-                            <input type="radio" checked="checked" name="radio_check">
+                            <input type="radio" value="5" checked="checked" name="radio_check">
                             <span class="checkmark"></span>
                         </label>
                         <label class="radio_pt_tt">
@@ -346,7 +347,7 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </div>
-                            <input type="radio" name="radio_check">
+                            <input type="radio" value="4" name="radio_check">
                             <span class="checkmark"></span>
                         </label>
                         <label class="radio_pt_tt">
@@ -355,7 +356,7 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </div>
-                            <input type="radio" name="radio_check">
+                            <input type="radio" value="3" name="radio_check">
                             <span class="checkmark"></span>
                         </label>
                         <label class="radio_pt_tt">
@@ -363,20 +364,20 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </div>
-                            <input type="radio" name="radio_check">
+                            <input type="radio" value="2" name="radio_check">
                             <span class="checkmark"></span>
                         </label>
                         <label class="radio_pt_tt">
                             <div class="danhgia_sao">
                                 <i class="fa fa-star"></i>
                             </div>
-                            <input type="radio" name="radio_check">
+                            <input type="radio" value="1" name="radio_check">
                             <span class="checkmark"></span>
                         </label>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
-                        <button type="button" class="btn btn-primary">Gửi Đánh Giá</button>
+                        <button type="submit" class="btn btn-primary">Gửi Đánh Giá</button>
                     </div>
                 </form>
             </div><!-- /.modal-content -->

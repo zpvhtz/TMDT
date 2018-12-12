@@ -77,11 +77,9 @@ CREATE TABLE DonHang
 (
 	Id UNIQUEIDENTIFIER PRIMARY KEY,
 	MaDonHang VARCHAR(10) UNIQUE NOT NULL,
-	CMNDNguoiGiao VARCHAR(20),
 	IdTaiKhoan UNIQUEIDENTIFIER NOT NULL, --FK (Người đặt)--
 	DiaChiGiao NVARCHAR(200),
 	NgayTao DATETIME,
-	NgayGiao DATETIME,
 	TongTien FLOAT,
 	TinhTrangDanhGiaCustomer NVARCHAR(20), --Chưa đánh giá, đã đánh giá--
 	TinhTrang NVARCHAR(20) --Chưa xử lý, Đã xử lý--
@@ -91,6 +89,7 @@ CREATE TABLE ChiTietDonHang
 (
 	IdDonHang UNIQUEIDENTIFIER NOT NULL, --PK, FK--
 	IdSizeSanPham UNIQUEIDENTIFIER NOT NULL, --PK, FK--
+	NgayGiao DATETIME,
 	SoLuong INT,
 	DonGia FLOAT,
 	DiemCustomerDanhGia FLOAT, --1 - 5 | 0 là chưa đánh giá--
@@ -503,7 +502,7 @@ AS
 	--
 	SELECT @TongChiTietDonHangDaDanhGia = COUNT(*)
 	FROM ChiTietDonHang
-	WHERE IdDonHang = @IdDonHang AND DiemMerchantDanhGia != 0
+	WHERE IdDonHang = @IdDonHang AND DiemCustomerDanhGia != 0
 	--
 	IF(@TongChiTietDonHang = @TongChiTietDonHangDaDanhGia)
 	BEGIN

@@ -86,6 +86,13 @@ namespace SneakerC2C.Areas.Customer.Controllers
             return View(taikhoan);
         }
 
+        public IActionResult CustomerDanhGia(string iddonhang, string idmerchant, int radio_check)
+        {
+            DonHangBUS donhangbus = new DonHangBUS();
+            donhangbus.CustomerDanhGia(iddonhang, idmerchant, radio_check);
+            return RedirectToAction("ChiTietDonMua", new { id = iddonhang });
+        }
+
         public IActionResult ChiTietDonMua(string id)
         {
             string sessionval = HttpContext.Session.GetString("TenDangNhap");

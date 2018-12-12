@@ -72,8 +72,10 @@
                                 <div class="chuthich_donban">
                                     <div class="chuthich_giaohang">
                                         <div class="button_donban">
+                                            <input type="text" value="@item.MaDonHang" class="value-madonhang" readonly hidden />
+                                            <input type="text" value="@item.Id" class="value-iddonhang" readonly hidden />
                                             <a asp-controller="DonHang" asp-action="GetChiTiet" asp-route-id="@item.Id" class="btn btn-danger btnChiTiet">Chi tiết</a>
-                                            <button class="btn btn-primary btnDanhGia" type="button" data-toggle="modal" data-target="#danhgiaModal">Đánh giá</button>
+                                            @*<button class="btn btn-primary btnDanhGia" type="button" data-toggle="modal" data-target="#danhgiaModal">Đánh giá</button>*@
                                             <div class="donban_right">
                                                 @item.TongTien
                                             </div>
@@ -89,74 +91,6 @@
         </div>
     </div>
 </div>
-<!---modal đánh giá-->
-@*<div class="modal fade" id="danhgiaModal" role="dialog">
-    <div class="modal-dialog">
-         Modal content
-        <form asp-controller="DonHang" asp-action="DanhGia" method="post">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Hãng sản phẩm</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Tên khách hàng</label>
-                        <input type="text" class="form-control" id="item-ten" name="item_ten" value="@ViewBag.Tmp" readonly>
-                    </div>
-                            <div class="form-group">
-                                <input type="radio" value="1" name="@item.DiemCustomerDanhGia">
-                                <label><i class="fa fa-star"></i></label>
-                            </div>
-                            <div class="form-group">
-                                <input type="radio" value="2" name="@item.DiemCustomerDanhGia">
-                                <label><i class="fa fa-star"></i><i class="fa fa-star"></i></label>
-                            </div>
-                            <div class="form-group">
-                                <input type="radio" value="3" name="@item.DiemCustomerDanhGia">
-                                <label><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></label>
-                            </div>
-                            <div class="form-group">
-                                <input type="radio" value="4" name="@item.DiemCustomerDanhGia">
-                                <label><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></label>
-                            </div>
-                            <div class="form-group">
-                                <input type="radio" value="5" name="@item.DiemCustomerDanhGia">
-                                <label><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></label>
-                            </div>
-                        }
-                    }
-
-                    @*<div class="danhgia_sao">
-                    <input type="radio" class="fa fa-star" id="1s" name="1sao" />
-                    <input type="radio" class="fa fa-star" id="2s" name="2sao" />
-                    <input type="radio" class="fa fa-star" id="3s" name="3sao" />
-                    <input type="radio" class="fa fa-star" id="4s" name="4sao" />
-                    <input type="radio" class="fa fa-star" id="5s" name="5sao" />
-                    @*<i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-                </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-warning" id="btnDanhGia">Đánh giá</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>*@
-
-<script>
-    $(document).ready(function () {
-        $(".btnDanhGia").click(function () {
-            let pId = $(this).closest(".sanpham_giohang").find(".txtid-sanpham").val();
-            $("#item-ten").val(pId.trim());
-        });
-    });
-</script>
 
 
 @*<!-- //quanlysanpham -->

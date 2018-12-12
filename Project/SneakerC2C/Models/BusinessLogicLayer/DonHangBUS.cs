@@ -63,11 +63,9 @@ namespace Models.BusinessLogicLayer
             DonHang donhang = new DonHang();
             donhang.Id = guid;
             donhang.MaDonHang = latestMa;
-            donhang.CmndnguoiGiao = "Chưa có";
             donhang.IdTaiKhoan = taikhoan.Id;
             donhang.DiaChiGiao = diachi.Duong + " " + diachi.IdTinhThanhNavigation.TenTinhThanh;
             donhang.NgayTao = DateTime.Now;
-            donhang.NgayGiao = null;
             donhang.TongTien = tongtien;
             donhang.TinhTrangDanhGiaCustomer = "Chưa đánh giá";
             donhang.TinhTrang = "Chưa xử lý";

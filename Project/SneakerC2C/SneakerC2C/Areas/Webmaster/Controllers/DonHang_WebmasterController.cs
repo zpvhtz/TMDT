@@ -44,15 +44,15 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             return PartialView("pDetail", list);
         }
 
-        public IActionResult EditDonHang(string item_sua_madonhang, string item_sua_cmndnguoigiao, string item_sua_tinhtrang,string item_sua_ngaygiao)
-        {
-            item_sua_ngaygiao = item_sua_ngaygiao ?? DateTime.Now.ToLongDateString();
-            DateTime _item_sua_ngaygiao = DateTime.Parse(item_sua_ngaygiao);
+        //public IActionResult EditDonHang(string item_sua_madonhang, string item_sua_cmndnguoigiao, string item_sua_tinhtrang,string item_sua_ngaygiao)
+        //{
+        //    item_sua_ngaygiao = item_sua_ngaygiao ?? DateTime.Now.ToLongDateString();
+        //    DateTime _item_sua_ngaygiao = DateTime.Parse(item_sua_ngaygiao);
 
-            DonHangBUS_Webmaster DonHang = new DonHangBUS_Webmaster();
-            string thongbao = DonHang.EditDonHang(item_sua_madonhang, item_sua_cmndnguoigiao, item_sua_tinhtrang, _item_sua_ngaygiao);
-            return RedirectToAction("Index", "DonHang_Webmaster", new { thongbao = thongbao });
-        }
+        //    DonHangBUS_Webmaster DonHang = new DonHangBUS_Webmaster();
+        //    string thongbao = DonHang.EditDonHang(item_sua_madonhang, item_sua_cmndnguoigiao, item_sua_tinhtrang, _item_sua_ngaygiao);
+        //    return RedirectToAction("Index", "DonHang_Webmaster", new { thongbao = thongbao });
+        //}
 
         public IActionResult Sort(string sortorder, int? pagenumber)
         {

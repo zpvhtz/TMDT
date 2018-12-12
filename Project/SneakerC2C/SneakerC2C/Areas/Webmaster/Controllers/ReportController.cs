@@ -30,10 +30,10 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             //Thong tin don hang
             ViewBag.MaDonHang = donHang.MaDonHang;
             ViewBag.NgayTao = donHang.NgayTao;
-            if(donHang.NgayGiao !=null)
-            {
-                ViewBag.NgayGiao = donHang.NgayGiao;
-            }
+            //if(donHang.NgayGiao !=null)
+            //{
+            //    ViewBag.NgayGiao = donHang.NgayGiao;
+            //}
 
             //Tat ca chi tiet don hang
             List<ChiTietDonHang> model = bus.GetChiTietDonHang(idDonHang);            

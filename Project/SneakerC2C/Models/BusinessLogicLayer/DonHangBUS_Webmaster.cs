@@ -39,42 +39,37 @@ namespace Models.BusinessLogicLayer
 
         //------------------------------------------------------ THEM SUA XOA -----------------------------------------------------------------
 
-        public string EditDonHang(string MaDonHang, string CMNDNguoiGiao, string TinhTrang, DateTime NgayGiao)
-        {
-            DonHang DonHang = new DonHang();
+        //public string EditDonHang(string MaDonHang, string TinhTrang, DateTime NgayGiao)
+        //{
+        //    DonHang DonHang = new DonHang();
 
-            //----------------------- chuan hoa du lieu ----------------------- 
-            //----------------------- kiem tra ma -----------------------
-            DonHang = context.DonHang.Where(temp => temp.MaDonHang == MaDonHang).SingleOrDefault();
+        //    //----------------------- chuan hoa du lieu ----------------------- 
+        //    //----------------------- kiem tra ma -----------------------
+        //    DonHang = context.DonHang.Where(temp => temp.MaDonHang == MaDonHang).SingleOrDefault();
 
-            //----------------------- sua -----------------------
-
-            if (CMNDNguoiGiao != null)
-            {
-                DonHang.CmndnguoiGiao = CMNDNguoiGiao;
-            }
-            if (TinhTrang != null) //Đã đặt, Đang giao, Đã thanh toán, Đã huỷ
-            {
-                DonHang.TinhTrang = TinhTrang;
-            }
-            if (NgayGiao != null) //Đã đặt, Đang giao, Đã thanh toán, Đã huỷ
-            {
-                if(NgayGiao > DateTime.Now)
-                {
-                    return "Ngày giao phải bé hơn hoặc bằng" + DateTime.Now.Date.ToString();
-                }
-                else
-                {
-                    DonHang.NgayGiao = NgayGiao;
-                }
-            }
-            //if (TinhTrangDanhGia != null) // --Chưa đánh giá/Đã đánh giá--
-            //{
-            //    DonHang.TinhTrangDanhGia = TinhTrangDanhGia;
-            //}
-            context.SaveChanges();
-            return "Sửa thành công";
-        }
+        //    //----------------------- sua -----------------------
+        //    if (TinhTrang != null) //Đã đặt, Đang giao, Đã thanh toán, Đã huỷ
+        //    {
+        //        DonHang.TinhTrang = TinhTrang;
+        //    }
+        //    if (NgayGiao != null) //Đã đặt, Đang giao, Đã thanh toán, Đã huỷ
+        //    {
+        //        if(NgayGiao > DateTime.Now)
+        //        {
+        //            return "Ngày giao phải bé hơn hoặc bằng" + DateTime.Now.Date.ToString();
+        //        }
+        //        else
+        //        {
+        //            DonHang.NgayGiao = NgayGiao;
+        //        }
+        //    }
+        //    //if (TinhTrangDanhGia != null) // --Chưa đánh giá/Đã đánh giá--
+        //    //{
+        //    //    DonHang.TinhTrangDanhGia = TinhTrangDanhGia;
+        //    //}
+        //    context.SaveChanges();
+        //    return "Sửa thành công";
+        //}
 
         public List<ChiTietDonHang> GetDetail(string madonhang)
         {
@@ -149,7 +144,6 @@ namespace Models.BusinessLogicLayer
             else
             {
                 list = context.DonHang.Where(temp => temp.MaDonHang.Contains(search)
-                                                        || temp.CmndnguoiGiao.Contains(search)
                                                         || temp.DiaChiGiao.Contains(search)
 
                                                         || temp.TinhTrangDanhGiaCustomer.Contains(search)
@@ -171,7 +165,6 @@ namespace Models.BusinessLogicLayer
             else
             {
                 list = context.DonHang.Where(temp => temp.MaDonHang.Contains(search)
-                                                        || temp.CmndnguoiGiao.Contains(search)
                                                         || temp.DiaChiGiao.Contains(search)
 
                                                         || temp.TinhTrangDanhGiaCustomer.Contains(search)
@@ -194,7 +187,6 @@ namespace Models.BusinessLogicLayer
                 {
                     case "ngaytao-az":
                         list = context.DonHang.Where(temp => temp.MaDonHang.Contains(search)
-                                                                || temp.CmndnguoiGiao.Contains(search)
                                                                 || temp.DiaChiGiao.Contains(search)
 
                                                                 || temp.TinhTrangDanhGiaCustomer.Contains(search)
@@ -206,7 +198,6 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "ngaytao-za":
                         list = context.DonHang.Where(temp => temp.MaDonHang.Contains(search)
-                                                                || temp.CmndnguoiGiao.Contains(search)
                                                                 || temp.DiaChiGiao.Contains(search)
 
                                                                 || temp.TinhTrangDanhGiaCustomer.Contains(search)
@@ -234,7 +225,6 @@ namespace Models.BusinessLogicLayer
                 {
                     case "ngaytao-az":
                         list = context.DonHang.Where(temp => temp.MaDonHang.Contains(search)
-                                                                || temp.CmndnguoiGiao.Contains(search)
                                                                 || temp.DiaChiGiao.Contains(search)
 
                                                                 || temp.TinhTrangDanhGiaCustomer.Contains(search)
@@ -244,7 +234,6 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "ngaytao-za":
                         list = context.DonHang.Where(temp => temp.MaDonHang.Contains(search)
-                                                                || temp.CmndnguoiGiao.Contains(search)
                                                                 || temp.DiaChiGiao.Contains(search)
 
                                                                 || temp.TinhTrangDanhGiaCustomer.Contains(search)

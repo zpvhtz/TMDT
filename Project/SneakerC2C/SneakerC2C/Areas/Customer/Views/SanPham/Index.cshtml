@@ -251,53 +251,55 @@
                 <h3 class="wthree_text_info"><span>SẢN PHẨM</span> MỚI</h3>
                 @foreach (var item in ViewBag.SanPhamMoi)
                 {
+                    
                     <div class="col-md-3 product-men single">
                         <div class="men-pro-item simpleCart_shelfItem">
-                            <div class="men-thumb-item">
-                                <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-front">
-                                <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-back">
-                                <div class="men-cart-pro">
-                                    <div class="inner-men-cart-pro">
-                                        <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id" class="link-product-add-cart">Quick View</a>
+                                <div class="men-thumb-item">
+                                    <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" asp-route-id="@item.Id">
+                                        <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-front">
+                                        <img src="~/Hinh/SanPham/@item.Hinh" alt="" class="pro-image-back">
+                                        <div class="men-cart-pro">
+                                            <div class="inner-men-cart-pro">
+                                                <div class="link-product-add-cart">Quick View</div>
+                                            </div>
+                                        </div>
+                                        <span class="product-new-top">New</span>
+                                    </a>
+                                </div>
+                                <div class="item-info-product ">
+                                    <h4><a href="single.html">@item.TenSanPham</a></h4>
+                                    <div class="info-product-price">
+                                        @if (item.GiamGia != null && item.GiamGia != 0)
+                                        {
+                                            double gia = item.Gia * (100 - item.GiamGia) / 100 ?? 0;
+                                            <span class="item_price">@gia.ToString("#,###") đ</span>
+                                            <del>@item.Gia.ToString("#,###") đ</del>
+                                        }
+                                        else
+                                        {
+                                            <span class="item_price">@item.Gia.ToString("#,###") đ</span>
+                                        }
                                     </div>
-                                </div>
-                                <span class="product-new-top">New</span>
+                                    @*<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                    <form action="#" method="post">
+                        <fieldset>
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="add" value="1">
+                            <input type="hidden" name="business" value=" ">
+                            <input type="hidden" name="item_name" value="Sleeveless Solid Blue Top">
+                            <input type="hidden" name="amount" value="30.99">
+                            <input type="hidden" name="discount_amount" value="1.00">
+                            <input type="hidden" name="currency_code" value="USD">
+                            <input type="hidden" name="return" value=" ">
+                            <input type="hidden" name="cancel_return" value=" ">
+                            <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button">
+                        </fieldset>
+                    </form>
+                </div>*@
 
-                            </div>
-                            <div class="item-info-product ">
-                                <h4><a href="single.html">@item.TenSanPham</a></h4>
-                                <div class="info-product-price">
-                                    @if (item.GiamGia != null && item.GiamGia != 0)
-                                    {
-                                        double gia = item.Gia * (100 - item.GiamGia) / 100 ?? 0;
-                                        <span class="item_price">@gia.ToString("#,###") đ</span>
-                                        <del>@item.Gia.ToString("#,###") đ</del>
-                                    }
-                                    else
-                                    {
-                                        <span class="item_price">@item.Gia.ToString("#,###") đ</span>
-                                    }
                                 </div>
-                                @*<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart">
-                                            <input type="hidden" name="add" value="1">
-                                            <input type="hidden" name="business" value=" ">
-                                            <input type="hidden" name="item_name" value="Sleeveless Solid Blue Top">
-                                            <input type="hidden" name="amount" value="30.99">
-                                            <input type="hidden" name="discount_amount" value="1.00">
-                                            <input type="hidden" name="currency_code" value="USD">
-                                            <input type="hidden" name="return" value=" ">
-                                            <input type="hidden" name="cancel_return" value=" ">
-                                            <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button">
-                                        </fieldset>
-                                    </form>
-                                </div>*@
-
-                            </div>
                         </div>
-                    </div>
+                        </div>
                 }
                 <div class="clearfix"> </div>
                 <!--//slider_owl-->

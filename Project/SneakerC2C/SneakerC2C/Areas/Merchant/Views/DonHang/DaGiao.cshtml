@@ -2,7 +2,7 @@
 @model IEnumerable<Models.Database.DonHang>
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
-    ViewData["Title"] = "DaGiao";
+    ViewData["Title"] = "DaXuLy";
     Layout = "~/Views/Shared/_MerchantManagementLayout.cshtml";
 }
 
@@ -14,7 +14,7 @@
                 <a asp-area="Merchant" asp-controller="DonHang" asp-action="ChoXuLy"><li>Chờ xử lý</li></a>
                 <a asp-area="Merchant" asp-controller="DonHang" asp-action="ChoLayHang"><li>Chờ lấy hàng</li></a>
                 <a asp-area="Merchant" asp-controller="DonHang" asp-action="DangGiao"><li>Đang giao</li></a>
-                <a asp-area="Merchant" asp-controller="DonHang" asp-action="DaGiao"><li style="background-color: #fc636b">Đã giao</li></a>
+                <a asp-area="Merchant" asp-controller="DonHang" asp-action="DaGiao"><li style="background-color: #fc636b">Đã xử lý</li></a>
                 @*<a asp-area="Merchant" asp-controller="DonHang" asp-action="DaHuy"><li>Đã Huỷ</li></a>*@
             </ul>
             <div class="resp-tabs-container">

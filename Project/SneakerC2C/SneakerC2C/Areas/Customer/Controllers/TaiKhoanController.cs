@@ -117,7 +117,7 @@ namespace SneakerC2C.Areas.Customer.Controllers
         {
             if(tinhtrang == null || tinhtrang == "")
             {
-                tinhtrang = "Đã đặt";
+                tinhtrang = "Chưa xử lý";
             }
             else
             {

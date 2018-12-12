@@ -233,7 +233,12 @@
                                     </a>
                                 </div>
                                 <div class="trangthai_donhang id_donhang">
-                                    <span><b>Mã đơn hàng:</b> @Model.MaDonHang</span>
+                                    @if (it.DiemCustomerDanhGia == 0 && it.TinhTrangChiTiet == "Đã xử lý")
+                                    {
+                                        <input type="text" value="@it.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoan" readonly hidden class="txt-idtaikhoan-danhgia" />
+                                        <h4 style="float:right;"><span><a class="a-danhgia-modal" href="#" data-toggle="modal" data-target="#danhgiaModal" style="color: red;">Đánh giá</a></span></h4>
+                                    }
+                                    @*<span><b>Mã đơn hàng:</b> @Model.MaDonHang</span>*@
                                 </div>
                             </div>
 
@@ -312,6 +317,72 @@
         </div>
     </div>
 
+    <div id="danhgiaModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content modal-width">
+                <form asp-area="Customer" asp-controller="TaiKhoan" asp-action="DanhGia" method="post">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Đánh Giá</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Mã Đơn Hàng @Model.MaDonHang</h5>
+                        <h5 id="modal-ten-shop"></h5>
+                        <input type="text" id="id-nmerchant-danhgia" value="" hidden readonly />
+                        <label class="radio_pt_tt">
+                            <div class="danhgia_sao">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <input type="radio" checked="checked" name="radio_check">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="radio_pt_tt">
+                            <div class="danhgia_sao">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <input type="radio" name="radio_check">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="radio_pt_tt">
+                            <div class="danhgia_sao">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <input type="radio" name="radio_check">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="radio_pt_tt">
+                            <div class="danhgia_sao">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <input type="radio" name="radio_check">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="radio_pt_tt">
+                            <div class="danhgia_sao">
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <input type="radio" name="radio_check">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
+                        <button type="button" class="btn btn-primary">Gửi Đánh Giá</button>
+                    </div>
+                </form>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
     <!--Sweet Alert-->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
@@ -355,6 +426,15 @@
                 //Nhớ xài async hoặc dùng 1 request chứa tất cả dữ liệu, k là bị DDoS
             });
         }
+
+        $(".a-danhgia-modal").click(function () {
+            let id = $(this).closest(".id_donhang").find('.txt-idtaikhoan-danhgia').val();
+            let tenshop = $(this).closest('.tenshop_donhang').find('.sanpham_giohang a h5').text();
+            $("#id-nmerchant-danhgia").val(id);
+            $("#modal-ten-shop").text(`Shop ${tenshop}`);
+            console.log($("#id-nmerchant-danhgia").val());
+            console.log(tenshop.trim());
+        });
     </script>
 
     <style>

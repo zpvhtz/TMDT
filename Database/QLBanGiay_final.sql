@@ -95,7 +95,7 @@ CREATE TABLE ChiTietDonHang
 	DonGia FLOAT,
 	DiemCustomerDanhGia FLOAT, --1 - 5 | 0 là chưa đánh giá--
 	DiemMerchantDanhGia FLOAT, --1 - 5 | 0 là chưa đánh giá--
-	TinhTrangChiTiet NVARCHAR(20) --Đã đặt, Đang giao, Đang xử lý, Đã xử lý, Đã huỷ--
+	TinhTrangChiTiet NVARCHAR(20) --Chưa xử lý, Đang giao, Đang xử lý, Đã xử lý, Đã huỷ--
 )
 
 CREATE TABLE TinhThanh --Tỉnh thành--

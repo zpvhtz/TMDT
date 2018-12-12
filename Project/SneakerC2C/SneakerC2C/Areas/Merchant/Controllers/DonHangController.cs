@@ -126,7 +126,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                                            .ToList();
             foreach (var item in donhang)
             {
-                item.TinhTrangChiTiet = "Đã giao";
+                item.TinhTrangChiTiet = "Đã xử lý";
             }
             ctx.SaveChanges();
             return RedirectToAction("DaGiao");
@@ -136,14 +136,14 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             string tentk = HttpContext.Session.GetString("TenDangNhap");
             
 
-            List<ChiTietDonHang> chitiet = ctx.ChiTietDonHang.Where(s => s.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenDangNhap == tentk && s.TinhTrangChiTiet == "Đã giao")
+            List<ChiTietDonHang> chitiet = ctx.ChiTietDonHang.Where(s => s.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenDangNhap == tentk && s.TinhTrangChiTiet == "Đã xử lý")
                                        .Include(s => s.IdDonHangNavigation)
                                        .Include(s => s.IdSizeSanPhamNavigation)
                                        .Include(s => s.IdSizeSanPhamNavigation.IdSanPhamNavigation)
                                        .Include(s => s.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation)
                                        .ToList();
             ViewBag.ChiTiet = chitiet;
-            var tenmer = ctx.ChiTietDonHang.Where(s => s.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenDangNhap == tentk && s.TinhTrangChiTiet == "Đã giao")
+            var tenmer = ctx.ChiTietDonHang.Where(s => s.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenDangNhap == tentk && s.TinhTrangChiTiet == "Đã xử lý")
                                         .Include(s => s.IdSizeSanPhamNavigation)
                                         .Select(s => s.IdDonHang)
                                         .Distinct()
@@ -170,7 +170,9 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             ViewBag.HoTen = ten;
             double tongtien = ctx.ChiTietDonHang.Where(s => s.IdDonHang == Guid.Parse(id)).Sum(s => (s.SoLuong * s.DonGia)).Value;
             ViewBag.TongTien = tongtien;
-            var tinhtrang = ctx.ChiTietDonHang.Where(s => s.IdDonHang == Guid.Parse(id)).Select(s => s.TinhTrangChiTiet).SingleOrDefault();
+            var tinhtrang = ctx.ChiTietDonHang.Where(s => s.IdDonHang == Guid.Parse(id) && s.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenDangNhap == tendangnhap)
+                                              .Select(s => s.TinhTrangChiTiet)
+                                              .FirstOrDefault();
             ViewBag.TinhTrang = tinhtrang;
             var don = ctx.DonHang.Where(s => s.Id == Guid.Parse(id)).Select(s=>s.DiaChiGiao).SingleOrDefault();
             ViewBag.DiaChi = don;

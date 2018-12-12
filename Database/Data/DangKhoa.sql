@@ -15,28 +15,3 @@ insert into DonHang(Id,MaDonHang,CMNDNguoiGiao,IDTaiKhoan,DiaChiGiao,NgayTao,Nga
 		   ('A1400367-1450-491D-A618-1A1769DE0198','DH-007',N'12345678908','9D042E88-B462-4811-9FED-4CC6A1C7A3AC',N'176 An Dương Vương','20180910','20180915',900000,N'Đã đánh giá',N'Đã thanh toán'),
 		   ('891E3F2B-DE2D-4EFF-BE05-2B567ECFD522','DH-008',N'12345678908','9D042E88-B462-4811-9FED-4CC6A1C7A3AC',N'176 An Dương Vương','20181201','20181201',490000,N'Đã đánh giá',N'Đã thanh toán')	
 		   
-		   
-		   
-		   
-			
-		   where Ngay
-select NgayGiao,TongTien
-select * from DonHang
-
-group by Month(Ngay)
-
-select * from DonHang -> Id -> TaiKhoan
-
-select * from TaiKhoan
-
-select * from ChiTietDonHang('DH-006',40,1)
-
-		   ('0D10B0E2-109F-472F-AE84-2AB999FB5C2A','DH-006',N'12345678904','9D042E88-B462-4811-9FED-4CC6A1C7A3AC',N'176 An Dương Vương','20180802','20180805',120000,N'Đã đánh giá',N'Đã thanh toán'),
-
-		   select * from SizeSanPham
-
-		   select* from ChiTietDonHang where IdDonHang=
-
-		   select count(Id) 
-		   from DonHang 
-		   where TinhTrang !=N'Đã thanh toán'

@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Example 2</title>
+    <title>In đơn hàng @ViewBag.MaDonHang</title>
     <link rel="stylesheet" href="~/report/style.css" media="all" />
 </head>
 <body>
@@ -19,63 +19,123 @@
             <div>325/5 Hoà Hảo F4 Q10 TPHCM</div>
             <div>(08)34 673 896</div>
             <div class="email">snkrxemail@gmail.com</a></div>
-        </div>
+        </div>  
     </header>
     <main>
 
-        <div id="details" class="clearfix">
-            <div id="client">
-                <div class="to">Thông Tin Người Mua Hàng:</div>
-                <h2 class="name">@ViewBag.Ten</h2>
-                <div class="phone">@ViewBag.SDT</div>
-                <div class="address">@ViewBag.DiaChi</div>
-                <div class="email">@ViewBag.Email</a></div>
-            </div>
-            <div id="invoice">
-                <h1>@ViewBag.MaDonHang</h1>
-                <div class="date"><b>Ngày Tạo:</b> @ViewBag.NgayTao</div>
+    <div id="details" class="clearfix">
+        <div id="client">
+            <div class="to">Thông Tin Người Mua Hàng:</div>
+            <h2 class="name">@ViewBag.Ten</h2>
+            <div class="phone">@ViewBag.SDT</div>
+            <div class="address">@ViewBag.DiaChi</div>
+            <div class="email">@ViewBag.Email</div>
+        </div>
+        <div id="invoice">
+            <h1>@ViewBag.MaDonHang</h1>
+            <div class="date"><b>Ngày Tạo:</b> @ViewBag.NgayTao</div>
+            @if (ViewBag.NgayGiao != null)
+            {
                 <div class="date"><b>Ngày Giao:</b> @ViewBag.NgayGiao</div>
-            </div>
+            }
         </div>
+    </div>
 
-            <table border="0" cellspacing="0" cellpadding="0">
-                <thead>
-                    <tr>
-                        <th class="no">#</th>
-                        <th class="desc"><h3>Tên Sản Phẩm</h3></th>
-                        <th class="qty">Đơn Giá</th>
-                        <th class="total">Số Lượng</th>
-                    </tr>
-                </thead>
+    @{
+
+        int stt = 1;
+        double thanhtien = 0;
+        double tongtienchuaship = 0;
+        //int check_footer = -1;
+        string shop_name = "null_temp";
+        string shop_sdt = "null_temp";
+        string shop_address = "null_temp";
+    }
+
+    <table border="0" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th class="no">STT</th>
+                <th class="total"><h3>Tên Sản Phẩm/Shop</h3></th>
+                <th class="total"><h3>Đơn Giá</h3></th>
+                <th class="total"><h3>Số Lượng</h3></th>
+                <th class="total"><h3>Thành Tiền</h3></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            //check_footer = 0;
+
+            @if (shop_name != item.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenShop)
+            {
+                //check_footer = 1
+                shop_name = item.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenShop;
+                shop_sdt = item.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.DienThoai;
+
+                //tongtienchuaship = 0;
+                stt = 1;
                 <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td class="no"></td>
-                            <td class="desc">@item.IdSizeSanPham</td>
-                            <td class="unit">@item.DonGia</td>
-                            <td class="qty">@item.SoLuong</td>
-                        </tr>
-                    }
-                </tbody>
-                <tfoot>
                     <tr>
-                        <td colspan="1"></td>
-                        <td colspan="2">SUBTOTAL</td>
-                        <td>$5,200.00</td>
+                        <th class="unit"></th>
+                        <th class="unit" style="text-align:left"><h2>Shop: &nbsp;&nbsp;&nbsp;&nbsp; @shop_name - @shop_sdt </h2></th>
+                        <th class="unit"><h3></h3></th>
+                        <th class="unit"><h3></h3></th>
+                        <th class="unit"><h3></h3></th>
                     </tr>
+                </tbody>
+            }
+            else
+            {
+                check_footer = 0;
+            }
+            <tbody>
+                <tr>
+                    <td class="desc" style="text-align:center">@stt</td>
+                    <th class="desc"><h3>@item.IdSizeSanPhamNavigation.IdSanPhamNavigation.TenSanPham</h3></th>
+                    <td class="desc" style="text-align:center">@item.DonGia.Value.ToString("#,###")đ</td>
+                    <td class="desc" style="text-align:center">@item.SoLuong</td>
+                    @{
+                        thanhtien = item.DonGia.Value * item.SoLuong.Value;
+                    }
+                    <td class="desc" style="text-align:right">@thanhtien.ToString("#,###")đ</td>
+                </tr>
+                @{
+                    stt++;
+                    tongtienchuaship = tongtienchuaship + thanhtien;
+                }
+            </tbody>
 
-                </tfoot>
-            </table>
+        }
+        <tfoot>
+            <tr>
+                <td colspan="2"></td>
+                <td colspan="2" style="text-align:right"><h3>Tổng Tiền:</h3></td>
+                <td colspan="2"style="text-align:right"><h3>@tongtienchuaship.ToString("#,###")đ</h3></td>
+            </tr>
+        </tfoot>
+    </table>
+    <table border="0" cellspacing="0" cellpadding="0">
 
-        <div id="thanks">Cảm ơn bạn đã tin tưởng và sử dụng dịch vụ của chúng tôi!</div>
-        <div id="notices">
-            <div>Ghi chú:</div>
-            <div class="notice">Hãy báo cáo cho đơn vị chúng tôi nếu bạn gặp vấn đề khi giao dịch</div>
-        </div>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="thanks">Cảm ơn bạn đã tin tưởng và sử dụng dịch vụ của chúng tôi!</div>
+    <div id="notices">
+        <div>Ghi chú:</div>
+        <div class="notice">Hãy báo cáo cho đơn vị chúng tôi nếu bạn gặp vấn đề khi giao dịch</div>
+    </div>
+
     </main>
-    <footer>
-        Invoice was created on a computer and is valid without the signature and seal.
-    </footer>
+
 </body>
 </html>

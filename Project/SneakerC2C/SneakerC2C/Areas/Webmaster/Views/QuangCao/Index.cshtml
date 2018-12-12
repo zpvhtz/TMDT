@@ -59,6 +59,7 @@
                     <th>Mã Gói Quảng Cáo</th>
                     <th>Tên Tài Khoản</th>
                     <th>Hình</th>
+                    <th>Đường dẫn</th>
                     <th>Ngày bắt đầu</th>
                     <th>Ngày kết thúc</th>
                     <th>Chú thích</th>
@@ -138,7 +139,7 @@
 
                             <li class="paginate_button page-item active"> <a href="#" aria-controls="dataTable" tabindex="0" class="page-link">...</a> </li>
                             <li class="paginate_button page-item active">
-                                <a href="#" aria-controls="dataTable" tabindex="0" class="page-link">
+                                <a href="#" aria-controls="dataTable" tabindex="0" class="page-link">@i</a>
 
                                     @switch (ViewBag.TrangThai)
                                     {
@@ -519,18 +520,22 @@
             }
             
             function changenam() {
-                alert 
-            if (document.getElementbyID('item_them_nam').value < @DateTime.Now.Year)
-            {
-             document.getElementbyID('item_them_nam').value  = @DateTime.Now.Year;
-            }
-            else {
-                document.getElementById('item_them_thang').readOnly = false;
-                
-
                 var nam = document.getElementById('item_them_nam').value;
                 var goi = document.getElementById('item_them_goiquangcao').value;
                 var thang = document.getElementById('item_them_thang').value;  
+                
+               if (nam < @DateTime.Now.Year.ToString())
+               {
+                   alert("something1");
+                   document.getElementById('item_them_nam').value = @DateTime.Now.Year.ToString();
+                   
+               }
+               
+                   
+                document.getElementById('item_them_thang').readOnly = false;
+                alert("something2");
+                nam = document.getElementById('item_them_nam').value;
+                
 
 
 
@@ -545,30 +550,35 @@
                
                 document.getElementById("item_them_ngay").options.length = 0;
                 document.getElementById("item_them_thang").value = null;
-              }
+              
             }
                 
 
 
                 
-           async function changethang() {
-                if (document.getElementbyID('item_them_thang').value > 12)
+            async function changethang() { 
+
+                var nam = document.getElementById('item_them_nam').value;
+                var goi = document.getElementById('item_them_goiquangcao').value;
+                var thang = document.getElementById('item_them_thang').value;     
+                if (thang > 12)
                {
-             document.getElementbyID('item_them_thang').value  = null;
-               }
-            else {
+                    document.getElementById('item_them_thang').value = 12;
+                }
+                if (thang < 1) {
+                    document.getElementById('item_them_thang').value = document.getElementById('item_them_thang').min;
+                }
+                thang = document.getElementById('item_them_thang').value;
                while (document.getElementById("item_them_ngay").options.length > 0) {
                    document.getElementById("item_them_ngay").remove(0);
                }
                     document.getElementById('item_them_ngay').readOnly = false;
-                var nam = document.getElementById('item_them_nam').value;    
-                var goi = document.getElementById('item_them_goiquangcao').value;      
-                var thang = document.getElementById('item_them_thang').value;     
+                
                 availabledates(nam, thang, goi);
                 
                
             }
-            }
+            
             
             function changengay() {  
                 

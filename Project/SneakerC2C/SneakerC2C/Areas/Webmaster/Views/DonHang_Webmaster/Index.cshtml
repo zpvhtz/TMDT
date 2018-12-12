@@ -56,7 +56,7 @@
                     <th>Ngày Giao</th>
                     <th>Tổng Tiền</th>
                     <th>Tình Trạng Đánh Giá Của Customer</th>
-                    <th>Tình Trạng</th>
+                    <th>Tình Trạng Chi Tiết</th>
                     <th>Chức Năng</th>
 
                 </tr>
@@ -263,12 +263,14 @@
                                 <input type="date" class="form-control" id="item-sua-ngaygiao" name="item_sua_ngaygiao" value="2018-01-01" min="2018-01-01" max="2019-01-01">
                             </div>
                             <div class="form-group">
-                                <label>Tình Trạng Giao Hàng</label>
-                                <select class="form-control" id="item-sua-tinhtrang" name="item_sua_tinhtrang">
-                                    <option value="Đã đặt">Đã đặt</option>
+                                <label>Tình Trạng Chi Tiết</label>
+                                <select class="form-control" id="item-sua-tinhtrang" name="item_sua_tinhtrang" readonly>
+                                    @*<option value="Đã đặt">Đã đặt</option>
                                     <option value="Đang giao">Đang giao</option>
                                     <option value="Đã thanh toán">Đã thanh toán</option>
-                                    <option value="Đã huỷ">Đã huỷ</option>
+                                    <option value="Đã huỷ">Đã huỷ</option>*@
+                                    <option value="Chưa xử lý">Chưa xử lý</option>
+                                    <option value="Đã xử lý">Đã xử lý</option>
                                 </select>
                             </div>
                         </div>

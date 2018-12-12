@@ -74,6 +74,7 @@
                             Thông Tin Thanh Toán
                         </div>
                     </div>
+
                     @foreach (var item in Model)
                     {
                         <div class="ct_thanhtoan">
@@ -90,23 +91,36 @@
                                         @item.IdSizeSanPhamNavigation.IdSanPhamNavigation.TenSanPham
                                     </h5>
                                 </div>
-                                <div class="dongia_ct">₫ @item.DonGia</div>
+
+                                @if (item.IdSizeSanPhamNavigation.IdSanPhamNavigation.GiamGia != 0 && item.IdSizeSanPhamNavigation.IdSanPhamNavigation.GiamGia != null)
+                                {
+                                    double gia = item.IdSizeSanPhamNavigation.IdSanPhamNavigation.Gia * (100 - item.IdSizeSanPhamNavigation.IdSanPhamNavigation.GiamGia) / 100 ?? 0;
+                                    <div class="dongia_ct"><del>@item.DonGia.Value.ToString("#,###") đ</del> @gia.ToString("#,###") đ</div>
+                                }
+                                else
+                                {
+                                    <div class="dongia_ct">@item.DonGia.Value.ToString("#,###") đ</div>
+                                }
                                 <div class="soluong_ct">x @item.SoLuong</div>
-                                <div class="thanhtien_ct">đ @item.DonGia*@item.SoLuong</div>
+                                @{
+                                    double thanhtien = item.DonGia.Value * item.SoLuong.Value;
+                                }
+                                <div class="thanhtien_ct">@thanhtien.ToString("#,###") đ</div>
                             </div>
                         </div>
                         <hr>
-                        <div class="chitiet_donmua">
-                            <div class="tong_tienhang">
-                                <div class="txt_dathang">
-                                    <p>Tổng tiền hàng</p>
-                                </div>
-                                <div class="gia_dathang">
-                                    <p>₫ @ViewBag.TongTien</p>
-                                </div>
+
+                    }
+                    <div class="chitiet_donmua">
+                        <div class="tong_tienhang">
+                            <div class="txt_dathang">
+                                <p>Tổng tiền hàng</p>
+                            </div>
+                            <div class="gia_dathang">
+                                <p>@ViewBag.TongTien.ToString("#,###") đ</p>
                             </div>
                         </div>
-                    }
+                    </div>
                 </div>
             </div>
     </div>

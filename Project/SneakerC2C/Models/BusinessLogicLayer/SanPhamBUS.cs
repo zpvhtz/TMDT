@@ -26,7 +26,7 @@ namespace Models.BusinessLogicLayer
 
         public SanPham GetSanPham(string id)
         {
-            SanPham sanpham = context.SanPham.Where(sp => sp.Id == Guid.Parse(id) && sp.TinhTrang =="Không khoá")
+            SanPham sanpham = context.SanPham.Where(sp => sp.Id == Guid.Parse(id) && sp.TinhTrang =="Không khoá" &&sp.IdTaiKhoanNavigation.ThoiHanGianHang>DateTime.Now)
                                              .Include(sp => sp.IdTaiKhoanNavigation)
                                              .Include(sp => sp.IdHangSanPhamNavigation)
                                              .SingleOrDefault();
@@ -35,7 +35,7 @@ namespace Models.BusinessLogicLayer
 
         public List<SanPham> GetSanPhams()
         {
-            List<SanPham> list = context.SanPham.Where( sp=>sp.TinhTrang == "Không khoá")
+            List<SanPham> list = context.SanPham.Where( sp=>sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                                 .OrderBy(sp => sp.MaSanPham)
                                                 .Include(sp => sp.IdHangSanPhamNavigation)
                                                 .Include(sp => sp.IdTaiKhoanNavigation)
@@ -45,7 +45,7 @@ namespace Models.BusinessLogicLayer
 
         public List<SanPham> GetSanPhams(string ploai)
         {
-            List<SanPham> list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá")
+            List<SanPham> list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                                 .Include(sp => sp.IdTaiKhoanNavigation)
                                                 .Include(sp => sp.IdHangSanPhamNavigation)
                                                 .OrderByDescending(sp => sp.MaSanPham)
@@ -55,7 +55,7 @@ namespace Models.BusinessLogicLayer
 
         public List<SanPham> GetSanPhams(string ploai, int pagenumber, int pagesize)
         {
-            List<SanPham> list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá")
+            List<SanPham> list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                                 .Include(sp => sp.IdTaiKhoanNavigation)
                                                 .Include(sp => sp.IdHangSanPhamNavigation)
                                                 .OrderByDescending(sp => sp.MaSanPham)
@@ -67,7 +67,7 @@ namespace Models.BusinessLogicLayer
 
         public List<SanPham> GetSanPhams(int pagenumber, int pagesize)
         {
-            List<SanPham> list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá")
+            List<SanPham> list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                                 .Include(sp => sp.IdTaiKhoanNavigation)
                                                 .Include(sp => sp.IdHangSanPhamNavigation)
                                                 .OrderByDescending(sp => sp.MaSanPham)
@@ -88,10 +88,10 @@ namespace Models.BusinessLogicLayer
                                                SoLuong = c.Sum(x => x.SoLuong)
                                            }).OrderByDescending(x=>x.SoLuong).ToList();
             var listsanpham = slist.Select(c => c.IdSanPham).ToList();
-            List<SanPham> list = context.SanPham.Where(sp => listsanpham.Contains(sp.Id))
+            List<SanPham> list = context.SanPham.Where(sp => listsanpham.Contains(sp.Id) && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                                 .Include(sp => sp.IdTaiKhoanNavigation)
                                                 .Include(sp => sp.IdHangSanPhamNavigation).ToList();
-            List<SanPham> listphu = context.SanPham.Where(sp => !listsanpham.Contains(sp.Id))
+            List<SanPham> listphu = context.SanPham.Where(sp => !listsanpham.Contains(sp.Id) && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                                 .Include(sp => sp.IdTaiKhoanNavigation)
                                                 .Include(sp => sp.IdHangSanPhamNavigation)
                                                 .OrderBy(sp => sp.MaSanPham)
@@ -109,7 +109,7 @@ namespace Models.BusinessLogicLayer
             switch (column)
             {
                 case "PhanLoai":
-                    list = context.SanPham.Where(sp => sp.PhanLoai == dieukien && sp.TinhTrang == "Không khoá")
+                    list = context.SanPham.Where(sp => sp.PhanLoai == dieukien && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                           .Include(sp => sp.IdTaiKhoanNavigation)
                                           .Include(sp => sp.IdHangSanPhamNavigation)
                                           .OrderByDescending(sp => sp.MaSanPham)
@@ -118,7 +118,7 @@ namespace Models.BusinessLogicLayer
                                           .ToList();
                     break;
                 default:
-                   list = context.SanPham.Where(sp=>sp.TinhTrang == "Không khoá")
+                   list = context.SanPham.Where(sp=>sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                             .Include(sp => sp.IdTaiKhoanNavigation)
                                           .Include(sp => sp.IdHangSanPhamNavigation)
                                           .OrderByDescending(sp => sp.MaSanPham)
@@ -136,7 +136,7 @@ namespace Models.BusinessLogicLayer
             switch (sortorder)
             {
                 case "masanpham-az":
-                    list = context.SanPham.Where(sp=>sp.TinhTrang == "Không khoá")
+                    list = context.SanPham.Where(sp=>sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                             .OrderBy(sp => sp.MaSanPham)
                                           .Include(sp => sp.IdTaiKhoanNavigation)
                                           .Include(sp => sp.IdHangSanPhamNavigation)
@@ -145,7 +145,7 @@ namespace Models.BusinessLogicLayer
                                           .ToList();
                     break;
                 case "masanpham-za":
-                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá")
+                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                             .OrderByDescending(sp => sp.MaSanPham)
                                           .Include(sp => sp.IdTaiKhoanNavigation)
                                           .Include(sp => sp.IdHangSanPhamNavigation)
@@ -154,7 +154,7 @@ namespace Models.BusinessLogicLayer
                                           .ToList();
                     break;
                 case "tensanpham-az":
-                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá")
+                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                             .OrderBy(sp => sp.TenSanPham)
                                           .Include(sp => sp.IdTaiKhoanNavigation)
                                           .Include(sp => sp.IdHangSanPhamNavigation)
@@ -163,7 +163,7 @@ namespace Models.BusinessLogicLayer
                                           .ToList();
                     break;
                 case "tensanpham-za":
-                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá")
+                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                             .OrderByDescending(sp => sp.TenSanPham)
                                           .Include(sp => sp.IdTaiKhoanNavigation)
                                           .Include(sp => sp.IdHangSanPhamNavigation)
@@ -172,7 +172,7 @@ namespace Models.BusinessLogicLayer
                                           .ToList();
                     break;
                 case "gia-asc":
-                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá")
+                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                             .OrderBy(sp => sp.Gia)
                                           .Include(sp => sp.IdTaiKhoanNavigation)
                                           .Include(sp => sp.IdHangSanPhamNavigation)
@@ -181,7 +181,7 @@ namespace Models.BusinessLogicLayer
                                           .ToList();
                     break;
                 case "gia-desc":
-                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá")
+                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                             .OrderByDescending(sp => sp.Gia)
                                           .Include(sp => sp.IdTaiKhoanNavigation)
                                           .Include(sp => sp.IdHangSanPhamNavigation)
@@ -190,7 +190,7 @@ namespace Models.BusinessLogicLayer
                                           .ToList();
                     break;
                 case "moinhat":
-                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá")
+                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                             .OrderByDescending(sp => sp.NgayDang)
                                           .Include(sp => sp.IdTaiKhoanNavigation)
                                           .Include(sp => sp.IdHangSanPhamNavigation)
@@ -208,49 +208,49 @@ namespace Models.BusinessLogicLayer
             switch (sortorder)
             {
                 case "masanpham-az":
-                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá")
+                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                             .OrderBy(sp => sp.MaSanPham)
                                           .Include(sp => sp.IdTaiKhoanNavigation)
                                           .Include(sp => sp.IdHangSanPhamNavigation)
                                           .ToList();
                     break;
                 case "masanpham-za":
-                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá")
+                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                     .OrderByDescending(sp => sp.MaSanPham)
                                           .Include(sp => sp.IdTaiKhoanNavigation)
                                           .Include(sp => sp.IdHangSanPhamNavigation)
                                           .ToList();
                     break;
                 case "tensanpham-az":
-                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá")
+                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                             .OrderBy(sp => sp.TenSanPham)
                                           .Include(sp => sp.IdTaiKhoanNavigation)
                                           .Include(sp => sp.IdHangSanPhamNavigation)
                                           .ToList();
                     break;
                 case "tensanpham-za":
-                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá")
+                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                             .OrderByDescending(sp => sp.TenSanPham)
                                           .Include(sp => sp.IdTaiKhoanNavigation)
                                           .Include(sp => sp.IdHangSanPhamNavigation)
                                           .ToList();
                     break;
                 case "gia-asc":
-                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá")
+                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                             .OrderBy(sp => sp.Gia)
                                           .Include(sp => sp.IdTaiKhoanNavigation)
                                           .Include(sp => sp.IdHangSanPhamNavigation)
                                           .ToList();
                     break;
                 case "gia-desc":
-                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá")
+                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                             .OrderByDescending(sp => sp.Gia)
                                           .Include(sp => sp.IdTaiKhoanNavigation)
                                           .Include(sp => sp.IdHangSanPhamNavigation)
                                           .ToList();
                     break;
                 case "moinhat":
-                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá")
+                    list = context.SanPham.Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                             .OrderByDescending(sp => sp.NgayDang)
                                           .Include(sp => sp.IdTaiKhoanNavigation)
                                           .Include(sp => sp.IdHangSanPhamNavigation)
@@ -274,7 +274,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search) ||
                                                    sp.Gia.ToString().Contains(search))
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -298,7 +298,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search) ||
                                                    sp.Gia.ToString().Contains(search))
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .ToList();
@@ -310,7 +310,7 @@ namespace Models.BusinessLogicLayer
         {
             List<SanPham> list = new List<SanPham>();
             list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice)
-                                    .Where(sp => sp.TinhTrang == "Không khoá")
+                                    .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                   .Include(sp => sp.IdHangSanPhamNavigation)
                                   .Include(sp => sp.IdTaiKhoanNavigation)
                                   .Skip((pagenumber - 1) * pagesize)
@@ -323,7 +323,7 @@ namespace Models.BusinessLogicLayer
         {
             List<SanPham> list = new List<SanPham>();
             list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice)
-                                        .Where(sp => sp.TinhTrang == "Không khoá")
+                                        .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                   .Include(sp => sp.IdHangSanPhamNavigation)
                                   .Include(sp => sp.IdTaiKhoanNavigation)
                                   .ToList();
@@ -340,7 +340,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
-                                      .Where(sp => sp.TinhTrang == "Không khoá")
+                                      .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                                    .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -352,7 +352,7 @@ namespace Models.BusinessLogicLayer
             {
                 ploai = ploai == "Nam" ? "Nam" : "Nữ";
                 list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
-                                        .Where(sp => sp.TinhTrang == "Không khoá")
+                                        .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -363,7 +363,7 @@ namespace Models.BusinessLogicLayer
             if(mahang != null && mahang != "")
             {
                 list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
-                                      .Where(sp => sp.TinhTrang == "Không khoá")
+                                      .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                     .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -384,7 +384,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
-                                      .Where(sp => sp.TinhTrang == "Không khoá")
+                                      .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                        .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .ToList();
@@ -394,7 +394,7 @@ namespace Models.BusinessLogicLayer
             {
                 ploai = ploai == "Nam" ? "Nam" : "Nữ";
                 list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
-                                       .Where(sp => sp.TinhTrang == "Không khoá")
+                                       .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .ToList();
@@ -403,7 +403,7 @@ namespace Models.BusinessLogicLayer
             if (mahang != null && mahang != "")
             {
                 list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
-                                      .Where(sp => sp.TinhTrang == "Không khoá")
+                                      .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                         .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .ToList();
@@ -425,7 +425,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                               .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.MaSanPham)
@@ -439,7 +439,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                               .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderByDescending(sp => sp.MaSanPham)
@@ -453,7 +453,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                               .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.TenSanPham)
@@ -467,7 +467,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                               .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderByDescending(sp => sp.TenSanPham)
@@ -481,7 +481,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                               .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.Gia)
@@ -495,7 +495,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                               .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderByDescending(sp => sp.Gia)
@@ -509,7 +509,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                               .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.NgayDang)
@@ -524,7 +524,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                               .OrderBy(sp => sp.NgayDang)
                                               .Skip((pagenumber - 1) * pagesize)
                                               .Take(pagesize)
@@ -540,7 +540,7 @@ namespace Models.BusinessLogicLayer
                 {
                     case "masanpham-az":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
-                                                .Where(sp => sp.TinhTrang == "Không khoá")
+                                                .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                               .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.MaSanPham)
@@ -550,7 +550,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "masanpham-za":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderByDescending(sp => sp.MaSanPham)
@@ -560,7 +560,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "tensanpham-az":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.TenSanPham)
@@ -570,7 +570,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "tensanpham-za":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderByDescending(sp => sp.TenSanPham)
@@ -580,7 +580,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "gia-asc":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.Gia)
@@ -590,7 +590,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "gia-desc":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderByDescending(sp => sp.Gia)
@@ -600,7 +600,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "moinhat":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.NgayDang)
@@ -611,7 +611,7 @@ namespace Models.BusinessLogicLayer
                     case "banchay":
                         list = GetBanChay();
                         list = list.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                               .OrderBy(sp => sp.NgayDang)
                                               .Skip((pagenumber - 1) * pagesize)
                                               .Take(pagesize)
@@ -626,7 +626,7 @@ namespace Models.BusinessLogicLayer
                 {
                     case "masanpham-az":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.MaSanPham)
@@ -636,7 +636,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "masanpham-za":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderByDescending(sp => sp.MaSanPham)
@@ -646,7 +646,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "tensanpham-az":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.TenSanPham)
@@ -656,7 +656,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "tensanpham-za":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderByDescending(sp => sp.TenSanPham)
@@ -666,7 +666,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "gia-asc":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.Gia)
@@ -676,7 +676,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "gia-desc":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderByDescending(sp => sp.Gia)
@@ -686,7 +686,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "moinhat":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.NgayDang)
@@ -697,7 +697,7 @@ namespace Models.BusinessLogicLayer
                     case "banchay":
                         list = GetBanChay();
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                               .OrderBy(sp => sp.NgayDang)
                                               .Skip((pagenumber - 1) * pagesize)
                                               .Take(pagesize)
@@ -722,7 +722,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                                    .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.MaSanPham)
@@ -734,7 +734,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                                    .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderByDescending(sp => sp.MaSanPham)
@@ -746,7 +746,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                                    .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.TenSanPham)
@@ -758,7 +758,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                                    .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderByDescending(sp => sp.TenSanPham)
@@ -770,7 +770,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                                    .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.Gia)
@@ -782,7 +782,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                                    .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderByDescending(sp => sp.Gia)
@@ -794,7 +794,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                                    .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.NgayDang)
@@ -807,7 +807,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search)) &&
                                                    sp.Gia >= minprice && sp.Gia <= maxprice)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                               .OrderBy(sp => sp.NgayDang)
                                               .ToList();
                         break;
@@ -821,7 +821,7 @@ namespace Models.BusinessLogicLayer
                 {
                     case "masanpham-az":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.MaSanPham)
@@ -829,7 +829,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "masanpham-za":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderByDescending(sp => sp.MaSanPham)
@@ -837,7 +837,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "tensanpham-az":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.TenSanPham)
@@ -845,7 +845,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "tensanpham-za":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderByDescending(sp => sp.TenSanPham)
@@ -853,7 +853,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "gia-asc":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.Gia)
@@ -861,7 +861,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "gia-desc":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderByDescending(sp => sp.Gia)
@@ -869,7 +869,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "moinhat":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.NgayDang)
@@ -878,7 +878,7 @@ namespace Models.BusinessLogicLayer
                     case "banchay":
                         list = GetBanChay();
                         list = list.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.PhanLoai == ploai)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                               .OrderBy(sp => sp.NgayDang)
                                               .ToList();
                         break;
@@ -891,7 +891,7 @@ namespace Models.BusinessLogicLayer
                 {
                     case "masanpham-az":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.MaSanPham)
@@ -899,7 +899,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "masanpham-za":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderByDescending(sp => sp.MaSanPham)
@@ -907,7 +907,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "tensanpham-az":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.TenSanPham)
@@ -915,7 +915,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "tensanpham-za":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderByDescending(sp => sp.TenSanPham)
@@ -923,7 +923,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "gia-asc":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
-                                             .Where(sp => sp.TinhTrang == "Không khoá")
+                                             .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.Gia)
@@ -931,7 +931,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "gia-desc":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
-                                             .Where(sp => sp.TinhTrang == "Không khoá")
+                                             .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderByDescending(sp => sp.Gia)
@@ -939,7 +939,7 @@ namespace Models.BusinessLogicLayer
                         break;
                     case "moinhat":
                         list = context.SanPham.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                             .Include(sp => sp.IdTaiKhoanNavigation)
                                               .Include(sp => sp.IdHangSanPhamNavigation)
                                               .OrderBy(sp => sp.NgayDang)
@@ -948,7 +948,7 @@ namespace Models.BusinessLogicLayer
                     case "banchay":
                         list = GetBanChay();
                         list = list.Where(sp => sp.Gia >= minprice && sp.Gia <= maxprice && sp.IdHangSanPhamNavigation.MaHang == mahang)
-                                              .Where(sp => sp.TinhTrang == "Không khoá")
+                                              .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                               .OrderBy(sp => sp.NgayDang)
                                               .ToList();
                         break;
@@ -975,7 +975,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search) ||
                                                    sp.Gia.ToString().Contains(search))
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -989,7 +989,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search) ||
                                                    sp.Gia.ToString().Contains(search))
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1003,7 +1003,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search) ||
                                                    sp.Gia.ToString().Contains(search))
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1017,7 +1017,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search) ||
                                                    sp.Gia.ToString().Contains(search))
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1031,7 +1031,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search) ||
                                                    sp.Gia.ToString().Contains(search))
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1045,7 +1045,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search) ||
                                                    sp.Gia.ToString().Contains(search))
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1059,7 +1059,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search) ||
                                                    sp.Gia.ToString().Contains(search))
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1089,7 +1089,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search) ||
                                                    sp.Gia.ToString().Contains(search))
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderBy(sp => sp.MaSanPham)
@@ -1101,7 +1101,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search) ||
                                                    sp.Gia.ToString().Contains(search))
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderByDescending(sp => sp.MaSanPham)
@@ -1113,7 +1113,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search) ||
                                                    sp.Gia.ToString().Contains(search))
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderBy(sp => sp.TenSanPham)
@@ -1125,7 +1125,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search) ||
                                                    sp.Gia.ToString().Contains(search))
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderByDescending(sp => sp.TenSanPham)
@@ -1137,7 +1137,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search) ||
                                                    sp.Gia.ToString().Contains(search))
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderBy(sp => sp.Gia)
@@ -1149,7 +1149,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search) ||
                                                    sp.Gia.ToString().Contains(search))
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderByDescending(sp => sp.Gia)
@@ -1161,7 +1161,7 @@ namespace Models.BusinessLogicLayer
                                                    sp.IdTaiKhoanNavigation.TenShop.Contains(search) ||
                                                    sp.Mau.Contains(search) ||
                                                    sp.Gia.ToString().Contains(search))
-                                                   .Where(sp => sp.TinhTrang == "Không khoá")
+                                                   .Where(sp => sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderByDescending(sp => sp.NgayDang)
@@ -1184,7 +1184,7 @@ namespace Models.BusinessLogicLayer
                 switch (sortorder)
                 {
                     case "masanpham-az":
-                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai &&sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai &&sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1193,7 +1193,7 @@ namespace Models.BusinessLogicLayer
                                       .ToList();
                         break;
                     case "masanpham-za":
-                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1202,7 +1202,7 @@ namespace Models.BusinessLogicLayer
                                       .ToList();
                         break;
                     case "tensanpham-az":
-                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1211,7 +1211,7 @@ namespace Models.BusinessLogicLayer
                                       .ToList();
                         break;
                     case "tensanpham-za":
-                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1220,7 +1220,7 @@ namespace Models.BusinessLogicLayer
                                       .ToList();
                         break;
                     case "gia-asc":
-                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1229,7 +1229,7 @@ namespace Models.BusinessLogicLayer
                                       .ToList();
                         break;
                     case "gia-desc":
-                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1238,7 +1238,7 @@ namespace Models.BusinessLogicLayer
                                       .ToList();
                         break;
                     case "moinhat":
-                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1263,49 +1263,49 @@ namespace Models.BusinessLogicLayer
                 switch (sortorder)
                 {
                     case "masanpham-az":
-                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderBy(sp => sp.MaSanPham)
                                       .ToList();
                         break;
                     case "masanpham-za":
-                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderByDescending(sp => sp.MaSanPham)
                                       .ToList();
                         break;
                     case "tensanpham-az":
-                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá") 
+                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now) 
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderBy(sp => sp.TenSanPham)
                                       .ToList();
                         break;
                     case "tensanpham-za":
-                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderByDescending(sp => sp.TenSanPham)
                                       .ToList();
                         break;
                     case "gia-asc":
-                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderBy(sp => sp.Gia)
                                       .ToList();
                         break;
                     case "gia-desc":
-                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderByDescending(sp => sp.Gia)
                                       .ToList();
                         break;
                     case "moinhat":
-                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.PhanLoai == ploai && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderByDescending(sp => sp.NgayDang)
@@ -1328,7 +1328,7 @@ namespace Models.BusinessLogicLayer
                 switch (sortorder)
                 {
                     case "masanpham-az":
-                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1337,7 +1337,7 @@ namespace Models.BusinessLogicLayer
                                       .ToList();
                         break;
                     case "masanpham-za":
-                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1346,7 +1346,7 @@ namespace Models.BusinessLogicLayer
                                       .ToList();
                         break;
                     case "tensanpham-az":
-                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1355,7 +1355,7 @@ namespace Models.BusinessLogicLayer
                                       .ToList();
                         break;
                     case "tensanpham-za":
-                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1364,7 +1364,7 @@ namespace Models.BusinessLogicLayer
                                       .ToList();
                         break;
                     case "gia-asc":
-                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1373,7 +1373,7 @@ namespace Models.BusinessLogicLayer
                                       .ToList();
                         break;
                     case "gia-desc":
-                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1382,7 +1382,7 @@ namespace Models.BusinessLogicLayer
                                       .ToList();
                         break;
                     case "moinhat":
-                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .Skip((pagenumber - 1) * pagesize)
@@ -1407,49 +1407,49 @@ namespace Models.BusinessLogicLayer
                 switch (sortorder)
                 {
                     case "masanpham-az":
-                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderBy(sp => sp.MaSanPham)
                                       .ToList();
                         break;
                     case "masanpham-za":
-                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderByDescending(sp => sp.MaSanPham)
                                       .ToList();
                         break;
                     case "tensanpham-az":
-                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderBy(sp => sp.TenSanPham)
                                       .ToList();
                         break;
                     case "tensanpham-za":
-                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderByDescending(sp => sp.TenSanPham)
                                       .ToList();
                         break;
                     case "gia-asc":
-                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderBy(sp => sp.Gia)
                                       .ToList();
                         break;
                     case "gia-desc":
-                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderByDescending(sp => sp.Gia)
                                       .ToList();
                         break;
                     case "moinhat":
-                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá")
+                        list = context.SanPham.Where(sp => sp.IdHangSanPhamNavigation.MaHang == mahang && sp.TinhTrang == "Không khoá" && sp.IdTaiKhoanNavigation.ThoiHanGianHang > DateTime.Now)
                                       .Include(sp => sp.IdTaiKhoanNavigation)
                                       .Include(sp => sp.IdHangSanPhamNavigation)
                                       .OrderByDescending(sp => sp.NgayDang)

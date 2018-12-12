@@ -98,7 +98,7 @@ namespace Models.BusinessLogicLayer
                 chitietdonhang.DonGia = dongia;
                 chitietdonhang.DiemCustomerDanhGia = 0;
                 chitietdonhang.DiemMerchantDanhGia = 0;
-                chitietdonhang.TinhTrangChiTiet = "Đã đặt";
+                chitietdonhang.TinhTrangChiTiet = "Chưa xử lý";
                 context.ChiTietDonHang.Add(chitietdonhang);
                 context.SaveChanges();
 
@@ -124,7 +124,7 @@ namespace Models.BusinessLogicLayer
             }
             else
             {
-                if(tinhtrang == "Đã đặt")
+                if(tinhtrang == "Chưa xử lý")
                 {
                     List<ChiTietDonHang> listchitiet = new List<ChiTietDonHang>();
                     listchitiet = context.ChiTietDonHang.Where(ct => ct.TinhTrangChiTiet != tinhtrang).ToList();

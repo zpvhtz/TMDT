@@ -41,7 +41,7 @@ namespace Models.BusinessLogicLayer
             GoiQuangCao goiqc = new GoiQuangCao();
             
             goiqc = context.GoiQuangCao.Where(gh => gh.Id == Guid.Parse(goi)).SingleOrDefault();
-            SqlConnection con = new SqlConnection("Server =.\\QUACHDAIVYTRUE; Database = QLBanGiay; User id = sa; Password = daivypro; Integrated Security = True");
+            SqlConnection con = new SqlConnection("Server=.;Database=QLBanGiay;Integrated Security=True;");
             var cmd = new SqlCommand("select day from [dbo].[ngaythichhop](@thang,@nam,@goi)", con);
             con.Open();
             cmd.CommandType = CommandType.Text;

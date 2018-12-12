@@ -1,4 +1,7 @@
-﻿CREATE DATABASE QLBanGiay
+﻿USE master
+GO
+--
+CREATE DATABASE QLBanGiay
 GO
 --
 USE QLBanGiay
@@ -660,3 +663,30 @@ INSERT INTO QuangCao
 --Update số lượng để thử cho đơn hàng--
 UPDATE SizeSanPham
 SET SoLuong = 20
+GO
+
+--FUNCTION--
+CREATE FUNCTION daysinmonth(@month int, @year int) 
+returns table
+as 
+return (WITH N(N)AS 
+(SELECT 1 FROM(VALUES(1),(1),(1),(1),(1),(1))M(N)),
+tally(N)AS(SELECT ROW_NUMBER()OVER(ORDER BY N.N)FROM N,N a)
+SELECT N day,datefromparts(@year,@month,N) dates FROM tally
+WHERE N <= day(EOMONTH(datefromparts(@year,@month,1))))
+GO
+
+		select * from [dbo].[daysinmonth](12,2016)
+GO
+
+CREATE FUNCTION ngaythichhop(@month int,@year int,@idgoi uniqueidentifier)
+returns table
+as
+
+return (
+Select day from [dbo].[daysinmonth](@month,@year)
+where (((select count(*) from QuangCao where IdGoiQuangCao IN (Select ID from GoiQuangCao where IdVitri = (Select IdViTri from GoiQuangCao where Id=@idgoi))  AND tinhtrang=N'Không khoá' AND ngaybatdau >= dates And Ngaybatdau < (Select DATEADD(day,((Select thoiluong from GoiQuangCao where @idgoi=Id)*7),dates)))=0)
+AND ( (select count(*) from QuangCao where IdGoiQuangCao IN (Select ID from GoiQuangCao where IdVitri = (Select IdViTri from GoiQuangCao where Id=@idgoi)) AND tinhtrang=N'Không khoá' AND ngayketthuc > dates  And ngayketthuc <= (Select DATEADD(day,((Select thoiluong from GoiQuangCao where @idgoi=Id)*7),dates)))=0)
+AND NOT ((Select top 1 ngaybatdau from QuangCao where IdGoiQuangCao IN (Select ID from GoiQuangCao where IdVitri = (Select IdViTri from GoiQuangCao where Id=@idgoi)) AND tinhtrang=N'Không khoá' AND ngaybatdau<dates  order by NgayBatDau DESC) > (Select top 1 ngayketthuc from QuangCao where IdGoiQuangCao IN (Select ID from GoiQuangCao where IdVitri = (Select IdViTri from GoiQuangCao where Id=@idgoi)) AND tinhtrang=N'Không khoá' AND ngayketthuc <=dates  order by NgayKetThuc DESC))
+OR (Select count(*) from QuangCao where tinhtrang=N'Không khoá' AND IdGoiQuangCao IN (Select ID from GoiQuangCao where IdVitri = (Select IdViTri from GoiQuangCao where Id=@idgoi)) ) = 0))
+GO

@@ -48,7 +48,7 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             return View(list);
         }
 
-        public IActionResult CreateQuangCao(string item_them_ma, string item_them_goiquangcao, string item_them_taikhoan, IFormFile item_them_hinh, int item_them_nam, int item_them_thang, int item_them_ngay, string item_them_ngayketthuc, string item_them_chuthich)
+        public IActionResult CreateQuangCao(string item_them_ma, string item_them_goiquangcao, string item_them_taikhoan, IFormFile item_them_hinh, int item_them_nam, int item_them_thang, int item_them_ngay, string item_them_ngayketthuc, string item_them_duongdan, string item_them_chuthich)
         {
             QuangCaoBUS quangcao = new QuangCaoBUS();
             DateTime item_them_ngaybatdau = new DateTime(item_them_nam, item_them_thang, item_them_ngay);
@@ -64,7 +64,7 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
                 
                
 
-                string thongbao = quangcao.CreateQuangCao(item_them_ma, item_them_goiquangcao, item_them_taikhoan, hinh, item_them_ngaybatdau, item_them_chuthich);
+                string thongbao = quangcao.CreateQuangCao(item_them_ma, item_them_goiquangcao, item_them_taikhoan, hinh, item_them_ngaybatdau, item_them_duongdan, item_them_chuthich);
                 
             return RedirectToAction("Index", "QuangCao", new { thongbao = thongbao });
         }
@@ -77,7 +77,7 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
                       + Path.GetExtension(fileName);
         }
 
-        public IActionResult EditQuangCao(string item_sua_ma, string item_sua_goiquangcao, string item_sua_taikhoan, IFormFile item_sua_hinh, DateTime item_sua_ngaybatdau, DateTime item_sua_ngayketthuc, string item_sua_chuthich)
+        public IActionResult EditQuangCao(string item_sua_ma, string item_sua_goiquangcao, string item_sua_taikhoan, IFormFile item_sua_hinh, DateTime item_sua_ngaybatdau, DateTime item_sua_ngayketthuc, string item_sua_duongdan, string item_sua_chuthich)
         {
             QuangCaoBUS quangcao = new QuangCaoBUS();
             string hinh;
@@ -92,7 +92,7 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
                 hinh = fileName;
             }
             else hinh = null;
-            string thongbao = quangcao.EditQuangCao(item_sua_ma, item_sua_goiquangcao, item_sua_taikhoan, hinh, item_sua_ngaybatdau, item_sua_ngayketthuc, item_sua_chuthich);
+            string thongbao = quangcao.EditQuangCao(item_sua_ma, item_sua_goiquangcao, item_sua_taikhoan, hinh, item_sua_ngaybatdau, item_sua_ngayketthuc, item_sua_duongdan, item_sua_chuthich);
             return RedirectToAction("Index", "QuangCao", new { thongbao = thongbao });
         }
 

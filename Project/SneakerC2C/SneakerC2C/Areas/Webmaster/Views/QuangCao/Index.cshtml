@@ -72,7 +72,8 @@
                     <td class="item-ma">@item.MaQuangCao</td>
                     <td class="item-goiquangcao">@item.IdGoiQuangCaoNavigation.MaGoiQuangCao</td>
                     <td class="item-taikhoan">@item.IdTaiKhoanNavigation.TenDangNhap</td>
-                    <td class="item-hinh"><img src="@Url.Content("~/Hinh/quangcao/" + @item.Hinh)"/></td>
+                    <td class="item-hinh"><img src="@Url.Content("~/Hinh/quangcao/" + @item.Hinh)" /></td>
+                    <td class="item-duongdan">@item.DuongDan</td>
                     <td class="item-ngaybatdau">@item.NgayBatDau</td>
                     <td class="item-ngayketthuc">@item.NgayKetThuc</td>
                     <td class="item-chuthich">@item.ChuThich</td>
@@ -89,7 +90,7 @@
                         {
                             <button class="btn btn-primary  btnSuaGoi" type="button" data-toggle="modal" data-target="#suaModal" disabled>Sửa</button>
 
-                         
+
                         }
                     </td>
                 </tr>
@@ -272,6 +273,10 @@
 
                             </div>
                             <div class="form-group">
+                                <label>Chọn đường dẫn</label>
+                                <input type="text" class="form-control" id="item_them_duongdan" name="item_them_duongdan"  />
+                            </div>
+                            <div class="form-group">
                                 <label>Chọn năm bắt đầu</label>
 
                                 <input type="number" class="form-control" id="item_them_nam" name="item_them_nam" required min="@DateTime.Now.Year.ToString()" readonly onchange="changenam()" />
@@ -335,7 +340,10 @@
                                 <input type="file" class="form-control" id="item_sua_hinh" name="item_sua_hinh" accept='image/*' />
 
                             </div>
-
+                            <div class="form-group">
+                                <label>Chọn đường dẫn</label>
+                                <input type="text" class="form-control" id="item_sua_duongdan" name="item_sua_duongdan" />
+                            </div>
                             <div class="form-group">
                                 <label>Chú Thích </label>
                                 <input type="text" class="form-control" id="item_sua_chuthich" name="item_sua_chuthich" />
@@ -456,7 +464,7 @@
                         if (data == null) {
                             $(`#them_thongbao_thang`).text("Tháng " + thang + " không có ngày phù hợp"); 
                         }
-                        else $(`#them_thongbao_thang`).text("test");
+                        else $(`#them_thongbao_thang`).text("");
                         var select = document.getElementById("item_them_ngay");
                         for (var i in data) {
                             var option = document.createElement("option");
@@ -511,6 +519,12 @@
             }
             
             function changenam() {
+                alert 
+            if (document.getElementbyID('item_them_nam').value < @DateTime.Now.Year)
+            {
+             document.getElementbyID('item_them_nam').value  = @DateTime.Now.Year;
+            }
+            else {
                 document.getElementById('item_them_thang').readOnly = false;
                 
 
@@ -531,13 +545,18 @@
                
                 document.getElementById("item_them_ngay").options.length = 0;
                 document.getElementById("item_them_thang").value = null;
-              
+              }
             }
                 
 
 
                 
-           async function changethang() {  
+           async function changethang() {
+                if (document.getElementbyID('item_them_thang').value > 12)
+               {
+             document.getElementbyID('item_them_thang').value  = null;
+               }
+            else {
                while (document.getElementById("item_them_ngay").options.length > 0) {
                    document.getElementById("item_them_ngay").remove(0);
                }
@@ -548,7 +567,7 @@
                 availabledates(nam, thang, goi);
                 
                
-            
+            }
             }
             
             function changengay() {  

@@ -109,7 +109,7 @@ namespace Models.BusinessLogicLayer
             return list;
         }
 
-        public string CreateQuangCao(string ma, string goiquangcao, string taikhoan, string hinh, DateTime ngaybatdau, string chuthich)
+        public string CreateQuangCao(string ma, string goiquangcao, string taikhoan, string hinh, DateTime ngaybatdau, string duongdan, string chuthich)
         {
             QuangCao quangcao;
             GoiQuangCao goi;
@@ -136,6 +136,7 @@ namespace Models.BusinessLogicLayer
             quangcao.IdGoiQuangCao = Guid.Parse(goiquangcao);
 
             quangcao.IdTaiKhoan = tk.Id;
+            quangcao.DuongDan = duongdan;
           
             quangcao.Hinh = hinh;
             quangcao.NgayBatDau = ngaybatdau;
@@ -150,7 +151,7 @@ namespace Models.BusinessLogicLayer
             return "Thêm thành công";
         }
 
-        public string EditQuangCao(string ma, string goiquangcao, string taikhoan, string hinh, DateTime ngaybatdau, DateTime ngayketthuc, string chuthich)
+        public string EditQuangCao(string ma, string goiquangcao, string taikhoan, string hinh, DateTime ngaybatdau, DateTime ngayketthuc, string duongdan, string chuthich)
         {
             QuangCao quangcao = new QuangCao();
             GoiQuangCao goi;
@@ -161,7 +162,7 @@ namespace Models.BusinessLogicLayer
             {
                 quangcao.Hinh = hinh;
             }
-            
+            quangcao.DuongDan = duongdan;
             quangcao.ChuThich = chuthich;
             context.SaveChanges();
             return "Sửa thành công";

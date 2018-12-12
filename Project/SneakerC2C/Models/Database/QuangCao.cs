@@ -12,6 +12,7 @@ namespace Models.Database
         public string Hinh { get; set; }
         public DateTime? NgayBatDau { get; set; }
         public DateTime? NgayKetThuc { get; set; }
+        public string DuongDan { get; set; }
         public string ChuThich { get; set; }
         public string TinhTrang { get; set; }
 

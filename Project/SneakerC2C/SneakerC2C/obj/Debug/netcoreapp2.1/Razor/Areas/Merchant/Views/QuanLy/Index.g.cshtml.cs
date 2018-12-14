@@ -61,7 +61,11 @@ namespace AspNetCore
             ");
             EndContext();
             BeginContext(510, 238, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0fbf903441aa40eb955c8617cb54c5d2", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d0f2546e4ea340afa3b348aafcde0cd9", async() => {
+>>>>>>> 68c7fc5608e6d971dcda9fa29bd9d95a5a0fd84f
                 BeginContext(577, 167, true);
                 WriteLiteral("\r\n                <div class=\"menu_knb_icon\">\r\n                    <i class=\"fa fa-inbox\"></i>\r\n                </div>\r\n                <h4>Sản Phẩm</h4>\r\n            ");
                 EndContext();
@@ -87,7 +91,11 @@ namespace AspNetCore
             WriteLiteral("\r\n        </div>\r\n        <div class=\"menu_knb_part\">\r\n            ");
             EndContext();
             BeginContext(815, 241, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5017477004444747832ccba65d93c9bc", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f50b68446eea4a3093b01dce3ad04750", async() => {
+>>>>>>> 68c7fc5608e6d971dcda9fa29bd9d95a5a0fd84f
                 BeginContext(887, 165, true);
                 WriteLiteral("\r\n                <div class=\"menu_knb_icon\">\r\n                    <i class=\"fa fa-tags\"></i>\r\n                </div>\r\n                <h4>Đơn Bán</h4>\r\n            ");
                 EndContext();

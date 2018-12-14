@@ -132,7 +132,11 @@ WriteAttributeValue("", 1241, Model.Gia, 1241, 10, false);
             WriteLiteral(">\r\n</div>\r\n<div class=\"form-group\">\r\n    <label>Hinh</label>\r\n    ");
             EndContext();
             BeginContext(1318, 96, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "bdb778f3778a4fd48e8d3865daa5e1f5", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "32fecec962194118a4a2d4da7476f75f", async() => {
+>>>>>>> 68c7fc5608e6d971dcda9fa29bd9d95a5a0fd84f
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

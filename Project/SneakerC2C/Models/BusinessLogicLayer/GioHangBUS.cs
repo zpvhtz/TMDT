@@ -72,6 +72,21 @@ namespace Models.BusinessLogicLayer
             return "Thêm vào giỏ hàng thành công";
         }
 
+        public string CheckSoLuongCart(string idsizesanpham, int soluong)
+        {
+            SizeSanPham sizesanpham = context.SizeSanPham.Where(s => s.Id == Guid.Parse(idsizesanpham)).SingleOrDefault();
+            int maxsoluong = sizesanpham.SoLuong ?? 0;
+
+            if(soluong > maxsoluong)
+            {
+                return "Số lượng vượt quá hàng tồn kho";
+            }
+            else
+            {
+                return "Thêm vào giỏ hàng thành công";
+            }
+        }
+
         public string AddToCartByStorage(string idtaikhoan, string idsizesanpham, int soluong)
         {
             SizeSanPham sizesanpham = context.SizeSanPham.Where(s => s.Id == Guid.Parse(idsizesanpham)).SingleOrDefault();

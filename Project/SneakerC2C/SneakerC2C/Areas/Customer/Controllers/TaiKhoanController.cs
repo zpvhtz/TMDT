@@ -229,7 +229,7 @@ namespace SneakerC2C.Areas.Customer.Controllers
             return "";
         }
 
-        public async Task<IActionResult> CreateTaiKhoan(string tendangnhap, string matkhau, string confirmmatkhau, string ten, string email)
+        public async Task<IActionResult> CreateTaiKhoan(string tendangnhap, string matkhau, string confirmmatkhau, string ten, string email, string diachi, string tinhthanh)
         {
             string thongbao = "";
             if (matkhau != confirmmatkhau)
@@ -240,11 +240,21 @@ namespace SneakerC2C.Areas.Customer.Controllers
 
             TaiKhoanBUS taikhoan = new TaiKhoanBUS();
             thongbao = taikhoan.CreateTaiKhoan(tendangnhap, matkhau, ten, "", email, "", "", "15CF8A9B-517E-4BAE-91E2-F30C596990ED", "Chưa kích hoạt");
+
+            DiaChiBUS diachibus = new DiaChiBUS();
+            CreateDiaChi(tendangnhap, diachi, tinhthanh);
+
             if (thongbao == "Vui lòng kiểm tra hộp thư email để kích hoạt tài khoản")
             {
                 await ActivationMail(tendangnhap);
             }
             return RedirectToAction("Index", "Home", new { thongbao = thongbao });
+        }
+
+        public void CreateDiaChi(string tendangnhap, string diachi, string tinhthanh)
+        {
+            DiaChiBUS diachibus = new DiaChiBUS();
+            diachibus.CreateDiaChi(tendangnhap, diachi, tinhthanh);
         }
 
         public IActionResult EditTaiKhoan(string tendangnhap, string ten, string email, string dienthoai)
@@ -391,6 +401,13 @@ namespace SneakerC2C.Areas.Customer.Controllers
                 return thongbao;
             }
             return "";
+        }
+
+        public string CheckSoLuongCart(string idsizesanpham, int soluong)
+        {
+            GioHangBUS giohangbus = new GioHangBUS();
+            string thongbao = giohangbus.CheckSoLuongCart(idsizesanpham, soluong);
+            return thongbao;
         }
 
         public IActionResult DeleteFromCart(string idsizesanpham)

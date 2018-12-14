@@ -93,7 +93,7 @@
                 </div>
                 <div class="brands-color">
                     <h5 class="tieude_h5_single">Size :</h5>
-                    <select id="sltSizeSanPham" @*onchange="change_country(this.value)"*@ class="frm-field required sect">
+                    <select id="sltSizeSanPham" class="frm-field required sect">
                         @foreach (var item in ViewBag.ListSizeSanPham)
                         {
                                 <option value="@item.Id">@item.Size</option>
@@ -143,7 +143,7 @@
                             </fieldset>
                         </form>
                     </div>
-
+                    <p style="color: red; font-size: medium;" id="p-thongbao-hethang" hidden></p>
                 </div>
                 @*<ul class="social-nav model-3d-0 footer-social w3_agile_social single_page_w3ls">
                         <li class="share">Chia sẻ trên : </li>
@@ -334,75 +334,147 @@
         };
     </script>
     <script>
-    $("#txtSoLuong").keydown(validateNumber);
+        $(document).ready(function () {
+            let idsizesanpham = $("#sltSizeSanPham option:selected").val().trim();
+            let soluong = parseInt($("#txtSoLuong").val());
 
-    $("#txtSoLuong").change(function(){
-        let val = $(this).val();
-        if (val < 0)
-            $("#txtSoLuong").val(0);
-    });
-
-    $("#txtSoLuong").keyup(function () {
-        let val = $(this).val();
-        if (val < 0)
-            $("#txtSoLuong").val(0);
-    });
-
-    $("#txtTangSoLuong").click(function () {
-        let value = $("#txtSoLuong").val();
-        value = parseInt(value) + 1;
-
-        $("#txtSoLuong").val(value);
-    });
-
-    $("#txtGiamSoLuong").click(function () {
-        let value = $("#txtSoLuong").val();
-        value = parseInt(value) - 1;
-
-        if(value <= 0)
-        value = 1;
-
-        $("#txtSoLuong").val(value);
-        });
-
-    $("#btnThemVaoGioHang").click(function () {
-        let tendangnhap = "@Context.Session.GetString("TenDangNhap")";
-        let idsizesanpham = $("#sltSizeSanPham option:selected").val().trim();
-        let soluong = parseInt($("#txtSoLuong").val());
-        let arrCartItem = {};
-
-        if (tendangnhap == "") {
-            //Lấy list
-            arrCartItem = GetCart();
-            if (arrCartItem == null) {
-                arrCartItem = new Object();
-            }
-            //Nếu tồn tại
-            if (arrCartItem[idsizesanpham]) {
-                let soluongcu = arrCartItem[idsizesanpham];
-                arrCartItem[idsizesanpham] = parseInt(soluongcu) + soluong;
-            }
-            else {
-                arrCartItem[idsizesanpham] = soluong;
-            }
-            //Add to storage
-            localStorage.setItem("Cart", JSON.stringify(arrCartItem));
-            alert("Thêm vào giỏ hàng thành công");
-            $('#local-storage').val(localStorage.getItem("Cart"));
-        }
-        else {
+            let size = $("#sltSizeSanPham option:selected").text().trim();
             $.ajax({
-                url: "/Customer/TaiKhoan/AddToCart",
+                url: "/Customer/SanPham/CheckSoLuongSP",
                 type: "post",
-                data: { "idsizesanpham": idsizesanpham, "soluong": soluong },
+                data: { "idsizesanpham": idsizesanpham },
                 success: function (data) {
-                    alert(data);
+                    if (data == 0) {
+                        $("#btnThemVaoGioHang").attr('disabled', true);
+                        $("#btnThemVaoGioHang").css('background', 'grey');
+                        $("#p-thongbao-hethang").attr('hidden', false);
+                        $("#p-thongbao-hethang").text(`Size ${size} đã hết hàng`);
+                    }
+                    else {
+                        $("#btnThemVaoGioHang").attr('disabled', false);
+                        $("#btnThemVaoGioHang").css('background', '#2fdab8');
+                        $("#p-thongbao-hethang").attr('hidden', true);
+                    }
                 },
                 error: function (data) {
                     alert("Error: " + data);
                 }
             });
-        }
-    });
+        });
+
+        $("#txtSoLuong").keydown(validateNumber);
+
+        $("#txtSoLuong").change(function(){
+            let val = $(this).val();
+            if (val < 0)
+                $("#txtSoLuong").val(0);
+        });
+
+        $("#txtSoLuong").keyup(function () {
+            let val = $(this).val();
+            if (val < 0)
+                $("#txtSoLuong").val(0);
+        });
+
+        $("#txtTangSoLuong").click(function () {
+            let value = $("#txtSoLuong").val();
+            value = parseInt(value) + 1;
+
+            $("#txtSoLuong").val(value);
+        });
+
+        $("#txtGiamSoLuong").click(function () {
+            let value = $("#txtSoLuong").val();
+            value = parseInt(value) - 1;
+
+            if(value <= 0)
+            value = 1;
+
+            $("#txtSoLuong").val(value);
+        });
+
+        $("#sltSizeSanPham").change(function () {
+            let idsizesanpham = $("#sltSizeSanPham option:selected").val().trim();
+            let soluong = parseInt($("#txtSoLuong").val());
+
+            let size = $("#sltSizeSanPham option:selected").text().trim();
+            $.ajax({
+                url: "/Customer/SanPham/CheckSoLuongSP",
+                type: "post",
+                data: { "idsizesanpham": idsizesanpham },
+                success: function (data) {
+                    if (data == 0) {
+                        $("#btnThemVaoGioHang").attr('disabled', true);
+                        $("#btnThemVaoGioHang").css('background', 'grey');
+                        $("#p-thongbao-hethang").attr('hidden', false);
+                        $("#p-thongbao-hethang").text(`Size ${size} đã hết hàng`);
+                    }
+                    else {
+                        $("#btnThemVaoGioHang").attr('disabled', false);
+                        $("#btnThemVaoGioHang").css('background', '#2fdab8');
+                        $("#p-thongbao-hethang").attr('hidden', true);
+                    }
+                },
+                error: function (data) {
+                    alert("Error: " + data);
+                }
+            });
+        });
+
+        $("#btnThemVaoGioHang").click(function () {
+            let tendangnhap = "@Context.Session.GetString("TenDangNhap")";
+            let idsizesanpham = $("#sltSizeSanPham option:selected").val().trim();
+            let soluong = parseInt($("#txtSoLuong").val());
+            let arrCartItem = {};
+
+            if (tendangnhap == "") {
+                $.ajax({
+                    url: "/Customer/TaiKhoan/CheckSoLuongCart",
+                    type: "post",
+                    data: { "idsizesanpham": idsizesanpham, "soluong": soluong },
+                    success: function (data) {
+                        if(data == "Số lượng vượt quá hàng tồn kho"){
+                            alert(data);
+                        }
+                        else {
+                            //Lấy list
+                            arrCartItem = GetCart();
+                            if (arrCartItem == null) {
+                                arrCartItem = new Object();
+                            }
+                            //Nếu tồn tại
+                            /*if (arrCartItem[idsizesanpham]) {
+                                let soluongcu = arrCartItem[idsizesanpham];
+                                arrCartItem[idsizesanpham] = parseInt(soluong);
+                            }
+                            else {
+                                arrCartItem[idsizesanpham] = soluong;
+                            }*/
+                            arrCartItem[idsizesanpham] = parseInt(soluong);
+                            //Add to storage
+                            localStorage.setItem("Cart", JSON.stringify(arrCartItem));
+                            alert("Thêm vào giỏ hàng thành công");
+                            $('#local-storage').val(localStorage.getItem("Cart"));
+                        }
+                    },
+                    error: function (data) {
+                        alert("Error: " + data);
+                    }
+                });
+            }
+            else {
+                $.ajax({
+                    url: "/Customer/TaiKhoan/AddToCart",
+                    type: "post",
+                    data: { "idsizesanpham": idsizesanpham, "soluong": soluong },
+                    success: function (data) {
+                        alert(data);
+                    },
+                    error: function (data) {
+                        alert("Error: " + data);
+                    }
+                });
+            }
+        });
     </script>
 }

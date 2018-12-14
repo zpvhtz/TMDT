@@ -29,5 +29,11 @@ namespace Models.BusinessLogicLayer
                                                         .ToList();
             return list;
         }
+
+        public int GetSoLuong(string id)
+        {
+            SizeSanPham sizesanpham = context.SizeSanPham.Where(s => s.Id == Guid.Parse(id)).SingleOrDefault();
+            return sizesanpham.SoLuong ?? 0;
+        }
     }
 }

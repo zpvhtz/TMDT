@@ -341,5 +341,11 @@ namespace SneakerC2C.Areas.Customer.Controllers
         {
             return ((list.Count / pageSize) + 1);
         }
+
+        public int CheckSoLuongSP(string idsizesanpham)
+        {
+            SizeSanPhamBUS sizesanphambus = new SizeSanPhamBUS();
+            return sizesanphambus.GetSoLuong(idsizesanpham);
+        }
     }
 }

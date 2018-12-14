@@ -306,11 +306,11 @@
                     </div>
                     <div class="form-group">
                         <label>Điện thoại</label>
-                        <input type="text" class="form-control" id="item-sua-dienthoai" name="item_sua_dienthoai" maxlength="20">
+                        <input type="text" class="form-control" id="item-sua-dienthoai" name="item_sua_dienthoai" maxlength="20" pattern=".{10,12}" required oninvalid="this.setCustomValidity('Số điện thoại chứa 10 - 12 ký tự')" onchange="this.setCustomValidity('')"
                     </div>
                     <div class="form-group">
                         <label>CMND</label>
-                        <input type="text" class="form-control" id="item-sua-cmnd" name="item_sua_cmnd" maxlength="20">
+                        <input type="text" class="form-control" id="item-sua-cmnd" name="item_sua_cmnd" maxlength="20" pattern=".{9,10}" required oninvalid="this.setCustomValidity('CMND không hợp lệ')" onchange="this.setCustomValidity('')">
                     </div>
                 </div>
                 <div class="modal-footer">

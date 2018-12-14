@@ -46,5 +46,12 @@ namespace SneakerC2C.Areas.Customer.Controllers
             TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoanResetPassword(key);
             return View(taikhoan);
         }
+
+        public IActionResult DangKy()
+        {
+            TinhThanhBUS tinhthanhbus = new TinhThanhBUS();
+            List<TinhThanh> list = tinhthanhbus.GetTinhThanhs();
+            return PartialView("pDangKy", list);
+        }
     }
 }

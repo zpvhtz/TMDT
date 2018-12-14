@@ -44,6 +44,7 @@
     @{
 
         int stt = 1;
+        int stt_merchant = 0;
         double thanhtien = 0;
         double tongtienchuaship = 0;
         //int check_footer = -1;
@@ -56,10 +57,10 @@
         <thead>
             <tr>
                 <th class="no">STT</th>
-                <th class="total"><h3>Tên Sản Phẩm/Shop</h3></th>
-                <th class="total"><h3>Đơn Giá</h3></th>
-                <th class="total"><h3>Số Lượng</h3></th>
-                <th class="total"><h3>Thành Tiền</h3></th>
+                <th class="no">Tên Sản Phẩm/Shop</th>
+                <th class="no">Đơn Giá</th>
+                <th class="no">Số Lượng</th>
+                <th class="no">Thành Tiền</th>
             </tr>
         </thead>
         @foreach (var item in Model)
@@ -68,6 +69,7 @@
 
             @if (shop_name != item.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenShop)
             {
+                stt_merchant++;
                 //check_footer = 1
                 shop_name = item.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenShop;
                 shop_sdt = item.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.DienThoai;
@@ -76,22 +78,20 @@
                 stt = 1;
                 <tbody>
                     <tr>
-                        <th class="unit"></th>
+                        <th class="unit"><h2>@stt_merchant.</h2></th>
                         <th class="unit" style="text-align:left"><h2>Shop: &nbsp;&nbsp;&nbsp;&nbsp; @shop_name - @shop_sdt </h2></th>
                         <th class="unit"><h3></h3></th>
                         <th class="unit"><h3></h3></th>
                         <th class="unit"><h3></h3></th>
                     </tr>
                 </tbody>
+                
             }
-            else
-            {
-                //check_footer = 0;
-            }
+
             <tbody>
                 <tr>
-                    <td class="desc" style="text-align:center">@stt</td>
-                    <th class="desc"><h3>@item.IdSizeSanPhamNavigation.IdSanPhamNavigation.TenSanPham</h3></th>
+                    <td class="desc" style="text-align:center">@stt_merchant . @stt</td>
+                    <td class="desc" style="text-decoration-color:black"><h3>@item.IdSizeSanPhamNavigation.IdSanPhamNavigation.TenSanPham</h3></td>
                     <td class="desc" style="text-align:center">@item.DonGia.Value.ToString("#,###")đ</td>
                     <td class="desc" style="text-align:center">@item.SoLuong</td>
                     @{
@@ -109,8 +109,8 @@
         <tfoot>
             <tr>
                 <td colspan="2"></td>
-                <td colspan="2" style="text-align:right"><h3>Tổng Tiền:</h3></td>
-                <td colspan="2"style="text-align:right"><h3>@tongtienchuaship.ToString("#,###")đ</h3></td>
+                <td colspan="2" style="text-align:right"><h2>Tổng Tiền:</h2></td>
+                <td colspan="2" style="text-align:right"><h2>@tongtienchuaship.ToString("#,###")đ</h2></td>
             </tr>
         </tfoot>
     </table>

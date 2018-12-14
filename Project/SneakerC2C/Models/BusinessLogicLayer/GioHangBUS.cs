@@ -142,7 +142,7 @@ namespace Models.BusinessLogicLayer
             taikhoan = context.TaiKhoan.Where(tk => tk.Id == sanpham.IdTaiKhoan).SingleOrDefault();
 
             giohang.IdSizeSanPham = Guid.Parse(item.Key);
-            giohang.IdTaiKhoan = Guid.Parse("3BA4CBB1-98AC-4768-BCE2-0B226C49DC56");
+            giohang.IdTaiKhoan = Guid.Parse("3BA4CBB1-98AC-4768-BCE2-0B226C49DC56"); //Code cứng là đúng r do cho đại k có đăng nhập :v CẤM XOÁ
             giohang.SoLuong = item.Value;
             giohang.TinhTrang = "Không khoá";
             giohang.IdSizeSanPhamNavigation = sizesanpham;

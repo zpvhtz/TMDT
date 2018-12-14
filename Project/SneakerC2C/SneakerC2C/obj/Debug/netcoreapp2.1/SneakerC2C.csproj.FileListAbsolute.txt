@@ -257,3 +257,5 @@ F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Snea
 F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.dll
 F:\Github stuffs\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\SneakerC2C.pdb
 F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\Home\pDangKy.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\Home\About.g.cshtml.cs
+F:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\obj\Debug\netcoreapp2.1\Razor\Areas\Customer\Views\Home\Contact.g.cshtml.cs

@@ -39,6 +39,20 @@ namespace SneakerC2C.Areas.Customer.Controllers
             ViewBag.SanPhamBanChay = spbanchay;
             return View();
         }
+
+        public IActionResult About()
+        {
+            List<HangSanPham> hang = ctx.HangSanPham.ToList();
+            ViewBag.Hang = hang;
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            List<HangSanPham> hang = ctx.HangSanPham.ToList();
+            ViewBag.Hang = hang;
+            return View();
+        }
         
         public IActionResult ResetPassword(string key)
         {

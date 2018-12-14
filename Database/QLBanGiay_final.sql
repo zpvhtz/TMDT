@@ -515,6 +515,24 @@ AS
 	END
 GO
 
+--Trigger tính lại điểm đánh giá--
+CREATE TRIGGER TG_CongDiemDanhGia ON DanhGia AFTER INSERT
+AS
+	DECLARE @IdTaiKhoanDuocDanhGia UNIQUEIDENTIFIER
+	DECLARE @DiemTrungBinh FLOAT
+	--
+	SELECT @IdTaiKhoanDuocDanhGia = IdTaiKhoanDuocDanhGia
+	FROM inserted
+	--
+	SELECT @DiemTrungBinh = AVG(Diem)
+	FROM DanhGia
+	WHERE IdTaiKhoanDuocDanhGia = @IdTaiKhoanDuocDanhGia
+	--
+	UPDATE TaiKhoan
+	SET DanhGia = @DiemTrungBinh
+	WHERE Id = @IdTaiKhoanDuocDanhGia
+GO
+
 --DỮ LIỆU--
 INSERT INTO LoaiNguoiDung
 	VALUES ('75523BB6-C366-4A28-A85C-B4C8C1D5747A', 'USR-WMT', N'Webmaster', N'Không khoá'),

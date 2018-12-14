@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Models.BusinessLogicLayer;
 using Models.Database;
 
 namespace SneakerC2C.Areas.Merchant.Controllers
@@ -203,6 +204,21 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                 item.DiemMerchantDanhGia = radio_check;
             }
             ctx.SaveChanges();
+
+            //Đánh giá
+            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+            TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoan(HttpContext.Session.GetString("TenDangNhap"));
+            DonHang donhang = ctx.DonHang.Where(dh => dh.Id == Guid.Parse(iddonhang)).SingleOrDefault();
+
+            DanhGia danhgia = new DanhGia();
+            danhgia.Id = Guid.Parse(Guid.NewGuid().ToString().ToUpper());
+            danhgia.IdTaiKhoanDanhGia = taikhoan.Id;
+            danhgia.IdTaiKhoanDuocDanhGia = donhang.IdTaiKhoan;
+            danhgia.Diem = radio_check;
+            ctx.DanhGia.Add(danhgia);
+            ctx.SaveChanges();
+
+            //Return
             return RedirectToAction("DaGiao");
         }
     }

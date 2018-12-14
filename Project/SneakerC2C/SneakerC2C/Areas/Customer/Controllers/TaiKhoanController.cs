@@ -88,8 +88,17 @@ namespace SneakerC2C.Areas.Customer.Controllers
 
         public IActionResult CustomerDanhGia(string iddonhang, string idmerchant, int radio_check)
         {
+            TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
+            TaiKhoan taikhoan = new TaiKhoan();
             DonHangBUS donhangbus = new DonHangBUS();
-            donhangbus.CustomerDanhGia(iddonhang, idmerchant, radio_check);
+
+            string sessionval = HttpContext.Session.GetString("TenDangNhap");
+            if(sessionval != "" && sessionval != null)
+            {
+                taikhoan = taikhoanbus.CheckTaiKhoan(sessionval);
+                donhangbus.CustomerDanhGia(iddonhang, idmerchant, radio_check);
+                donhangbus.CustomerDanhGiaTable(taikhoan.Id.ToString(), idmerchant, radio_check);
+            }
             return RedirectToAction("ChiTietDonMua", new { id = iddonhang });
         }
 

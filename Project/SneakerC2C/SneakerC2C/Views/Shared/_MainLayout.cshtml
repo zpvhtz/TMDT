@@ -131,7 +131,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav menu__list">
                                 <li class="active menu__item menu__item--current"><a class="menu__link" asp-area="Customer" asp-controller="Home" asp-action="Index">Trang Chủ <span class="sr-only">(current)</span></a></li>
-                                <li class=" menu__item"><a class="menu__link" href="about.html">Giới Thiệu</a></li>
+                                <li class=" menu__item"><a class="menu__link" asp-area="Customer" asp-controller="Home" asp-action="About">Giới Thiệu</a></li>
                                 <li class=" menu__item"><a class="menu__link" asp-area="Customer" asp-controller="SanPham" asp-action="PhanLoai" asp-route-ploai="Nam">Giày Nam</a></li>
                                 <li class=" menu__item"><a class="menu__link" asp-area="Customer" asp-controller="SanPham" asp-action="PhanLoai" asp-route-ploai="Nu">Giày Nữ</a></li>
                                 <li class="menu__item dropdown">
@@ -143,7 +143,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         }
                                     </ul>
                                 </li>
-                                <li class=" menu__item"><a class="menu__link" href="#">Liên Hệ</a></li>
+                                <li class=" menu__item"><a class="menu__link" asp-area="Customer" asp-controller="Home" asp-action="Contact">Liên Hệ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -460,8 +460,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a asp-area="Customer" asp-controller="Home" asp-action="Index">Trang Chủ</a></li>
                             <li><a asp-area="Customer" asp-controller="SanPham" asp-action="PhanLoai" asp-route-ploai="Nam">Giày Nam</a></li>
                             <li><a asp-area="Customer" asp-controller="SanPham" asp-action="PhanLoai" asp-route-ploai="Nu">Giày Nữ</a></li>
-                            <li><a href="#">Giới Thiệu Về SNKRX</a></li>
-                            <li><a href="#">Liên Hệ</a></li>
+                            <li><a asp-area="Customer" asp-controller="Home" asp-action="About">Giới Thiệu Về SNKRX</a></li>
+                            <li><a asp-area="Customer" asp-controller="Home" asp-action="Contact">Liên Hệ</a></li>
                         </ul>
                     </div>
 

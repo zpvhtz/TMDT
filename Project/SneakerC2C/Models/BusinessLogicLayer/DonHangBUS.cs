@@ -214,5 +214,16 @@ namespace Models.BusinessLogicLayer
             context.SaveChanges();
 
         }
+
+        public void CustomerDanhGiaTable(string iddanhgia, string idduocdanhgia, int radio_check)
+        {
+            DanhGia danhgia = new DanhGia();
+            danhgia.Id = Guid.Parse(Guid.NewGuid().ToString().ToUpper());
+            danhgia.IdTaiKhoanDanhGia = Guid.Parse(iddanhgia);
+            danhgia.IdTaiKhoanDuocDanhGia = Guid.Parse(idduocdanhgia);
+            danhgia.Diem = radio_check;
+            context.DanhGia.Add(danhgia);
+            context.SaveChanges();
+        }
     }
 }

@@ -529,7 +529,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             alert("Vui lòng đăng nhập để thanh toán");
         }
         else {
-            window.location.href = `/Customer/DonHang/DatHang?tendangnhap=${tendangnhap}`;
+            let tendangnhap = "@Context.Session.GetString("TenDangNhap")";
+            $.ajax({
+                url: "/Customer/DonHang/CheckDonHang",
+                type: "post",
+                data: { "tendangnhap": tendangnhap },
+                success: function (data) {
+                    if (data == "Đặt hàng thành công") {
+                        window.location.href = `/Customer/DonHang/DatHang?tendangnhap=${tendangnhap}`;
+                        //alert(data);
+                        //CreateDonDatHang();
+                    }
+                    else {
+                        alert(data);
+                    }
+                },
+                error: function (data) {
+                    alert("Error: " + data);
+                },
+                async: false
+                //Nhớ xài async hoặc dùng 1 request chứa tất cả dữ liệu, k là bị DDoS
+            });
         }
     });
 

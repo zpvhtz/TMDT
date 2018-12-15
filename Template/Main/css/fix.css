@@ -1294,3 +1294,10 @@
   color: #666;
   font-size: 14px;
 }
+.ngay_thang button {
+  margin-left: 30px;
+  padding: 10px 25px;
+  background-color: #2fdab8;
+  border: none;
+  color: #fff;
+}

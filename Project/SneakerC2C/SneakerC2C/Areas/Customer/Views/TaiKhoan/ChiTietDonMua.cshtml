@@ -238,6 +238,10 @@
                                         <input type="text" value="@it.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoan" readonly hidden class="txt-idtaikhoan-danhgia" />
                                         <h4 style="float:right;"><span><a class="a-danhgia-modal" href="#" data-toggle="modal" data-target="#danhgiaModal" style="color: red;">Đánh giá</a></span></h4>
                                     }
+                                    @if (it.DiemCustomerDanhGia > 0 && it.TinhTrangChiTiet == "Đã xử lý")
+                                    {
+                                        <h4 style="float:right;"><span><a style="color: red;">Điểm đánh giá: @it.DiemCustomerDanhGia</a></span></h4>
+                                    }
                                     @*<span><b>Mã đơn hàng:</b> @Model.MaDonHang</span>*@
                                 </div>
                             </div>

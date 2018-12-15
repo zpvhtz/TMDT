@@ -74,23 +74,24 @@
 <div class="container">
     <div class="quangcao">
         <div class="quangcao_item">
-            <a href="#">
-                <div class="fix_kichthuoc_qc anh_quangcao1" style="background-image: url();"></div>
+            <a href="#" id="VTA1a">
+                <img class="fix_kichthuoc_qc anh_quangcao1" id="VTA1" src="~/Hinh/QuangCao/qc250x200_1.jpg" />
+                @*<div class="fix_kichthuoc_qc anh_quangcao1" id="VTA1" style="background: url('~/Hinh/QuangCao/giphy(10).gif');"></div>*@
             </a>
         </div>
         <div class="quangcao_item">
-            <a href="#">
-                <div class="fix_kichthuoc_qc anh_quangcao1" style="background-image: url();"></div>
+            <a href="#" id="VTA2a">
+                <img class="fix_kichthuoc_qc anh_quangcao1" id="VTA2" src="~/Hinh/QuangCao/qc250x200_2.jpg" />
             </a>
         </div>
         <div class="quangcao_item">
-            <a href="#">
-                <div class="fix_kichthuoc_qc anh_quangcao1" style="background-image: url();"></div>
+            <a href="#" id="VTA3a">
+                <img class="fix_kichthuoc_qc anh_quangcao1" id="VTA3" src="~/Hinh/QuangCao/qc250x200_3.jpg" />
             </a>
         </div>
         <div class="quangcao_item">
-            <a href="#">
-                <div class="fix_kichthuoc_qc anh_quangcao1" style="background-image: url();"></div>
+            <a href="#" id="VTA4a">
+                <img class="fix_kichthuoc_qc anh_quangcao1" id="VTA4" src="~/Hinh/QuangCao/qc250x200_4.jpg" />
             </a>
         </div>
     </div>
@@ -378,13 +379,13 @@
 <div class="container">
     <div class="quangcao">
         <div class="quangcao_item2">
-            <a href="#">
-                <div class="fix_kichthuoc_qc anh_quangcao2" style="background-image: url();background-color: chocolate;"></div>
+            <a href="#" id="VTB1a">
+                <img class="fix_kichthuoc_qc anh_quangcao2" id="VTB1" src="~/Hinh/QuangCao/qc570x180_1.jpg" />
             </a>
         </div>
         <div class="quangcao_item2">
-            <a href="#">
-                <div class="fix_kichthuoc_qc anh_quangcao2" style="background-image: url();"></div>
+            <a href="#" id="VTB2a">
+                <img class="fix_kichthuoc_qc anh_quangcao2" id="VTB2" src="~/Hinh/QuangCao/qc570x180_2.jpg" />
             </a>
         </div>
     </div>
@@ -436,3 +437,50 @@
     </div>
 </div>
 <!--grids-->
+<script src="~/admintemplate2/vendor/jquery/jquery.min.js"></script>
+<script>
+    window.onload = loadhetquangcao();
+    function loadquangcao(mavitri) {
+        let taga = mavitri + "a";
+        $.ajax({
+            url: "/Customer/QuangCao/LoadQuangCao",
+            type: "post",
+            data: { "mavitri": mavitri },
+            dataType: 'json',
+
+            success: function (data) {
+                if (data != null) {
+
+                    //let obj = JSON.parse(data);
+
+                    $("#"+taga).attr("href", "http://www."+data.DuongDan);
+                    $("#"+mavitri).attr("src", "/Hinh/QuangCao/"+data.Hinh);
+                    //alert(data);
+                }
+                else {
+
+                    document.getElementById(taga).href = "#";
+
+                }
+
+
+
+            },
+
+
+            error: function (jqXHR, exception) {
+                alert( exception + " " + jqXHR.status);
+            }
+
+        });
+
+    }
+    function loadhetquangcao() {
+        loadquangcao('VTA1');
+        loadquangcao('VTA2');
+        loadquangcao('VTA3');
+        loadquangcao('VTA4');
+        loadquangcao('VTB1');
+        loadquangcao('VTB2');
+    }
+</script>

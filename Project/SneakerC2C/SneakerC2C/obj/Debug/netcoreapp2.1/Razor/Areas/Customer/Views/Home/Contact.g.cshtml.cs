@@ -73,11 +73,7 @@ using Microsoft.AspNetCore.Http;
                     <li>");
             EndContext();
             BeginContext(500, 77, false);
-<<<<<<< HEAD
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ec9df8e599f648a3b763b712bb59f7db", async() => {
-=======
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "07eb3a20e7da43cf9795f6751eda1d38", async() => {
->>>>>>> e74041296e4875fb5e35ff4346dfa89bbe31a664
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d91abb836b644a41aa24f3cabf3a077b", async() => {
                 BeginContext(564, 9, true);
                 WriteLiteral("Trang Chủ");
                 EndContext();

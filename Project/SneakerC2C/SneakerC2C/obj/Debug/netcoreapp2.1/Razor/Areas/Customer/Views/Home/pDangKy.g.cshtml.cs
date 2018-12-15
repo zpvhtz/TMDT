@@ -57,11 +57,7 @@ using Microsoft.AspNetCore.Http;
             WriteLiteral("\r\n<h3 class=\"agileinfo_sign\">Đăng Ký</h3>\r\n");
             EndContext();
             BeginContext(213, 2714, false);
-<<<<<<< HEAD
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1c87cff984cb4de8856443cea16eef0f", async() => {
-=======
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a2f9d9b631bc4214b90678fdb3139db8", async() => {
->>>>>>> e74041296e4875fb5e35ff4346dfa89bbe31a664
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "03823083d9f84421a75a65ad3da70048", async() => {
                 BeginContext(307, 2082, true);
                 WriteLiteral(@"
     <div class=""styled-input agile-styled-input-top"">
@@ -114,11 +110,7 @@ using Microsoft.AspNetCore.Http;
                 WriteLiteral("                ");
                 EndContext();
                 BeginContext(2462, 52, false);
-<<<<<<< HEAD
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0791f8c67011441799bce531c01330ff", async() => {
-=======
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4bd324513a5c4715b797751561db217f", async() => {
->>>>>>> e74041296e4875fb5e35ff4346dfa89bbe31a664
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "587ca5c200464ee088fda61db2c6ed59", async() => {
                     BeginContext(2488, 17, false);
 #line 47 "D:\ASP.NET\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\Home\pDangKy.cshtml"
                                     Write(item.TenTinhThanh);

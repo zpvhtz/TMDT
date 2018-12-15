@@ -353,7 +353,7 @@
   height: auto;
   background-color: #fff;
   display: flex;
-  /*margin: 15px 0;*/
+  /* margin: 15px 0; */
   padding: 15px 0;
   box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,.09);
 }
@@ -466,7 +466,7 @@
   justify-content: center;
 }
 .cart_theoshop {
-  /*margin: 0 0 15px 0;*/
+  /* margin: 0 0 15px 0; */
   box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,.09);
 }
 .cart_theoshop_header {
@@ -1293,4 +1293,11 @@
   padding: 10px 0;
   color: #666;
   font-size: 14px;
+}
+.ngay_thang button {
+  margin-left: 30px;
+  padding: 10px 25px;
+  background-color: #2fdab8;
+  border: none;
+  color: #fff;
 }

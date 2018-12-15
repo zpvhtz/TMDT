@@ -366,7 +366,7 @@ WriteAttributeValue("", 4097, item.IdSizeSanPhamNavigation.IdSanPhamNavigation.H
             ");
             EndContext();
             BeginContext(6295, 3115, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "477986b954364a2a80f3d958f7dd58a2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "37fa1c93f6fb4fef8b95820234313b1a", async() => {
                 BeginContext(6389, 229, true);
                 WriteLiteral("\r\n                <div class=\"modal-header\">\r\n                    <h4 class=\"modal-title\">Đánh Giá</h4>\r\n                </div>\r\n                <div class=\"modal-body\">\r\n                    <h5 id=\"modal-madonhang\">Mã Đơn Hàng: ");
                 EndContext();
@@ -469,7 +469,7 @@ WriteAttributeValue("", 6738, ViewBag.DonHang.Id, 6738, 19, false);
             WriteLiteral("\r\n        </div><!-- /.modal-content -->\r\n    </div><!-- /.modal-dialog -->\r\n</div><!-- /.modal -->\r\n<!-- js -->\r\n");
             EndContext();
             BeginContext(9524, 84, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c71c910aa24c4538abb9091b0ed0f76f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ff107d582a3c45cabce5fbd25f6f5009", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

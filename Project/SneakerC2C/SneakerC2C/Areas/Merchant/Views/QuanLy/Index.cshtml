@@ -11,7 +11,7 @@
     <div class="menu_quanly_knb">
         <div class="menu_knb_part">
             <a asp-area="Merchant" asp-controller="QuanLy" asp-action="ListSP">
-                <div class="menu_knb_icon">
+                <div class="menu_knb_icon" id="btntest">
                     <i class="fa fa-inbox"></i>
                 </div>
                 <h4>Sản Phẩm</h4>
@@ -64,3 +64,38 @@
             <p> câu hỏi thường gặp và tài liệu hướng dẫn.</p>
         </div>
     </div>
+<div class="modal fade" id="thongbaoModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <form asp-controller="QuanLy" asp-action="EditSP" enctype="multipart/form-data" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Sản phẩm</h4>
+                </div>
+                <div class="modal-body" id="modal-body-suachitiet">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-warning" id="btnSua">Sửa</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    document.getElementById('btntest').addEventListener('click', function() {
+        $.ajax({
+            url: "/Webmaster/SanPham/GetSizeSanPham",
+            type: "get",
+            success: function (data) {
+                $("#modal-body-size").html(data);
+                                       },
+            error: function (data) {
+                alert("Error: " + data);
+                                    }
+             });
+    });
+ 
+</script>

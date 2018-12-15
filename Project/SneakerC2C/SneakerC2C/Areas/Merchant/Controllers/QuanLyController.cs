@@ -23,15 +23,32 @@ namespace SneakerC2C.Areas.Merchant.Controllers
         {
             ctx = context;
         }
+        public IActionResult InThongBao()
+        {
+            string tentk = HttpContext.Session.GetString("TenDangNhap");
+
+            List<SizeSanPham> test = ctx.SizeSanPham.Where(s => s.IdSanPhamNavigation.IdTaiKhoanNavigation.TenDangNhap == tentk && s.SoLuong == 0).ToList();
+
+            //TempData["AlertMessage"] = message;
+
+            //foreach (var item in test)
+            //{
+            //    message = "Sản phẩm" + item.IdSanPhamNavigation.TenSanPham + "đã hết size" + item.Size;
+            //}
+            return View("pIn", test);
+        }
         public IActionResult Index(string thongbao)
         {
-            List<HangSanPham> hang = ctx.HangSanPham.ToList();
-            ViewBag.HangSanPham = hang;
-            //Thông báo
             if (thongbao != null)
             {
                 ViewBag.ThongBao = thongbao;
             }
+            List<HangSanPham> hang = ctx.HangSanPham.ToList();
+            ViewBag.HangSanPham = hang;
+            
+            //thongbao = "Sản phẩm" + item.IdSanPhamNavigation.TenSanPham + "đã hết size" + item.Size;
+            //Thông báo
+
             return View();
         }
         public List<SanPham> Get()
@@ -52,8 +69,11 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                                            .ToList();
             return list;
         }
+       
         public IActionResult ListSP(string thongbao, int? pagenumber)
         {
+            
+
             pageNumber = pagenumber ?? 1;
             List<SizeSanPham> size = ctx.SizeSanPham.ToList();
             ViewBag.Size = size;

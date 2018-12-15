@@ -9,13 +9,21 @@
 
 <div class="container">
     <div class="customer_quanly">
-        <div id="horizontalTab">
-            <ul class="resp-tabs-list">
+        <div id="horizontalTab" style="width:100%">
+            <ul class="resp-tabs-list" style="width:100%">
                 <a asp-area="Merchant" asp-controller="DonHang" asp-action="ChoXuLy"><li style="background-color: #fc636b">Chờ xử lý</li></a>
                 <a asp-area="Merchant" asp-controller="DonHang" asp-action="ChoLayHang"><li>Chờ lấy hàng</li></a>
                 <a asp-area="Merchant" asp-controller="DonHang" asp-action="DangGiao"><li>Đang giao</li></a>
                 <a asp-area="Merchant" asp-controller="DonHang" asp-action="DaGiao"><li>Đã xử lý</li></a>
+                <a asp-area="Merchant" asp-controller="DonHang" asp-action="DaHuy"><li>Đã Huỷ</li></a>
             </ul>
+            <div class="col-md-5 header-middle fix_timkiem_merchant">
+                <form asp-action="Search_XL" asp-controller="DonHang">
+                    <input type="search" name="search" placeholder="Tìm kiếm..." required="">
+                    <input type="submit" value=" ">
+                    <div class="clearfix"></div>
+                </form>
+            </div>
             <div class="resp-tabs-container">
                 <!--/tab_one-->
                 @foreach (var item in Model)
@@ -89,13 +97,13 @@
 <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 
 <!-- js -->
-<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="~/maintemplate/js/jquery-2.1.4.min.js"></script>
 <!-- //js -->
 
-<script src="js/modernizr.custom.js"></script>
+<script src="~/maintemplatejs/modernizr.custom.js"></script>
 <!-- Custom-JavaScript-File-Links -->
 <!-- cart-js -->
-<script src="js/minicart.min.js"></script>
+<script src="~/maintemplatejs/minicart.min.js"></script>
 <script>
 	// Mini Cart
 	paypal.minicart.render({
@@ -109,7 +117,7 @@
 
 <!-- //cart-js -->
 <!-- script for responsive tabs -->
-<script src="js/easy-responsive-tabs.js"></script>
+<script src="~/maintemplatejs/easy-responsive-tabs.js"></script>
 <script>
 	$(document).ready(function () {
 	$('#horizontalTab').easyResponsiveTabs({
@@ -134,15 +142,15 @@
 </script>
 <!-- //script for responsive tabs -->
 <!-- stats -->
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/jquery.countup.js"></script>
+<script src="~/maintemplatejs/jquery.waypoints.min.js"></script>
+<script src="~/maintemplatejs/jquery.countup.js"></script>
 <script>
 		$('.counter').countUp();
 </script>
 <!-- //stats -->
 <!-- start-smoth-scrolling -->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="~/maintemplatejs/move-top.js"></script>
+<script type="text/javascript" src="~/maintemplatejs/jquery.easing.min.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){
@@ -169,6 +177,6 @@
 </script>
 <!-- //here ends scrolling icon -->
 <!-- for bootstrap working -->
-<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="~/maintemplatejs/bootstrap.js"></script>
 
 

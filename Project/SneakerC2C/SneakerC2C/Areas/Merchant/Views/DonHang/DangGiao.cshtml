@@ -9,14 +9,21 @@
 
 <div class="container">
     <div class="customer_quanly">
-        <div id="horizontalTab">
-            <ul class="resp-tabs-list">
+        <div id="horizontalTab" style="width:100%">
+            <ul class="resp-tabs-list" style="width:100%">
                 <a asp-area="Merchant" asp-controller="DonHang" asp-action="ChoXuLy"><li>Chờ xử lý</li></a>
                 <a asp-area="Merchant" asp-controller="DonHang" asp-action="ChoLayHang"><li>Chờ lấy hàng</li></a>
                 <a asp-area="Merchant" asp-controller="DonHang" asp-action="DangGiao"><li style="background-color: #fc636b">Đang giao</li></a>
                 <a asp-area="Merchant" asp-controller="DonHang" asp-action="DaGiao"><li>Đã xử lý</li></a>
-                @*<a asp-area="Merchant" asp-controller="DonHang" asp-action="DaHuy"><li>Đã Huỷ</li></a>*@
+                <a asp-area="Merchant" asp-controller="DonHang" asp-action="DaHuy"><li>Đã Huỷ</li></a>
             </ul>
+            <div class="col-md-5 header-middle fix_timkiem_merchant">
+                <form asp-action="Search_DG" asp-controller="DonHang">
+                    <input type="search" name="search" placeholder="Tìm kiếm..." required="">
+                    <input type="submit" value=" ">
+                    <div class="clearfix"></div>
+                </form>
+            </div>
             <div class="resp-tabs-container">
                 <!--/tab_one-->
                 @foreach (var item in Model)

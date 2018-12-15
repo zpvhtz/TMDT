@@ -19,15 +19,15 @@ namespace SneakerC2C.Areas.Merchant.Controllers
         {
             ctx = context;
         }
-        //public IActionResult Index(string thongbao)
-        //{
-        //    //Thông báo
-        //    if (thongbao != null)
-        //    {
-        //        ViewBag.ThongBao = thongbao;
-        //    }
-        //    return View();
-        //}
+        public IActionResult Index(string thongbao)
+        {
+            //Thông báo
+            if (thongbao != null)
+            {
+                ViewBag.ThongBao = thongbao;
+            }
+            return View();
+        }
 
         public IActionResult ChoXuLy()
         {
@@ -64,6 +64,11 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             ctx.SaveChanges();
             return RedirectToAction("ChoLayHang");
         }
+        public IActionResult Search_XL(string search)
+        {
+            List<DonHang> list = ctx.DonHang.Where(s => s.MaDonHang.ToString().Contains(search)).Include(s => s.IdTaiKhoanNavigation).ToList();
+            return View("XuLy", list);
+        }
         public IActionResult ChoLayHang()
         {
             string tentk = HttpContext.Session.GetString("TenDangNhap");
@@ -83,6 +88,11 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             List<DonHang> list = ctx.DonHang.Where(sp => tenmer.Contains(sp.Id)).Include(sp => sp.IdTaiKhoanNavigation).ToList();
             return View(list);
         }
+        public IActionResult Search_LH(string search)
+        {
+            List<DonHang> list = ctx.DonHang.Where(s => s.MaDonHang.ToString().Contains(search)).Include(s => s.IdTaiKhoanNavigation).ToList();
+            return View("ChoLayHang", list);
+        }
         //cap nhật giao hàng
         public IActionResult GiaoHang(string iddonhang)
         {
@@ -98,6 +108,11 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             }
             ctx.SaveChanges();
             return RedirectToAction("DangGiao");
+        }
+        public IActionResult Search_DG(string search)
+        {
+            List<DonHang> list = ctx.DonHang.Where(s => s.MaDonHang.ToString().Contains(search)).Include(s => s.IdTaiKhoanNavigation).ToList();
+            return View("DangGiao", list);
         }
         public IActionResult DangGiao()
         {
@@ -154,6 +169,40 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             //List<DonHang> tmp = ctx.DonHang.Where(sp => tenmer.Contains(sp.Id)).Include(sp => sp.IdTaiKhoanNavigation).ToList();
             //ViewBag.Test = tmp;
             return View(list);
+        }
+        public IActionResult Search_G(string search)
+        {
+            List<DonHang> list = ctx.DonHang.Where(s => s.MaDonHang.ToString().Contains(search)).Include(s => s.IdTaiKhoanNavigation).ToList();
+            return View("DaGiao", list);
+        }
+        public IActionResult DaHuy()
+        {
+            string tentk = HttpContext.Session.GetString("TenDangNhap");
+
+            var dh = ctx.DonHang.Where(s => s.TinhTrang == "Đã huỷ").Select(s => s.Id).ToList();
+            List<ChiTietDonHang> ct = ctx.ChiTietDonHang.Where(s => dh.Contains(s.IdDonHang) && s.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenDangNhap == tentk).ToList();
+            ViewBag.ChiTiet = ct;
+            //List<ChiTietDonHang> chitiet = ctx.ChiTietDonHang.Where(s => s.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenDangNhap == tentk)
+            //                           .Include(s => s.IdDonHangNavigation)
+            //                           .Include(s => s.IdSizeSanPhamNavigation)
+            //                           .Include(s => s.IdSizeSanPhamNavigation.IdSanPhamNavigation)
+            //                           .Include(s => s.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation)
+            //                           .ToList();
+            //ViewBag.ChiTiet = chitiet;
+            var tenmer = ctx.ChiTietDonHang.Where(s => s.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenDangNhap == tentk)
+                                        .Include(s => s.IdSizeSanPhamNavigation)
+                                        .Select(s => s.IdDonHang)
+                                        .Distinct()
+                                        .ToList();
+            List<DonHang> list = ctx.DonHang.Where(sp => tenmer.Contains(sp.Id)&& sp.TinhTrang=="Đã huỷ").Include(sp => sp.IdTaiKhoanNavigation).ToList();
+            //List<DonHang> tmp = ctx.DonHang.Where(sp => tenmer.Contains(sp.Id)).Include(sp => sp.IdTaiKhoanNavigation).ToList();
+            //ViewBag.Test = tmp;
+            return View(list);
+        }
+        public IActionResult Search_DH(string search)
+        {
+            List<DonHang> list = ctx.DonHang.Where(s => s.MaDonHang.ToString().Contains(search)).Include(s => s.IdTaiKhoanNavigation).ToList();
+            return View("DaHuy", list);
         }
         public IActionResult GetChiTiet(string id)
         {

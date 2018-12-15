@@ -13323,23 +13323,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\ASUS\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\tnngo\\.nuget\\packages\\": {},
+>>>>>>> a10b0906cc6a925608f67fe7ead432fcb2d969e6
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
       "projectName": "Models",
       "projectPath": "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
       "outputPath": "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\Models\\obj\\",
+=======
+      "projectUniqueName": "C:\\Code\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
+      "projectName": "Models",
+      "projectPath": "C:\\Code\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
+      "packagesPath": "C:\\Users\\tnngo\\.nuget\\packages\\",
+      "outputPath": "C:\\Code\\TMDT\\Project\\SneakerC2C\\Models\\obj\\",
+>>>>>>> a10b0906cc6a925608f67fe7ead432fcb2d969e6
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\tnngo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> a10b0906cc6a925608f67fe7ead432fcb2d969e6
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

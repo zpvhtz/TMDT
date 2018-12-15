@@ -144,6 +144,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             foreach (var item in donhang)
             {
                 item.TinhTrangChiTiet = "Đã xử lý";
+                item.NgayGiao = DateTime.Now;
             }
             ctx.SaveChanges();
             return RedirectToAction("DaGiao");
@@ -225,6 +226,13 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             DonHang donhang = ctx.DonHang.Where(dh => dh.Id == Guid.Parse(id)).SingleOrDefault();
             ViewBag.DonHang = donhang;
 
+            var ngay = ctx.ChiTietDonHang.Where(s => s.IdDonHang == Guid.Parse(id) && s.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenDangNhap == tendangnhap)
+                                       .Include(s => s.IdDonHangNavigation)
+                                       .Include(s => s.IdSizeSanPhamNavigation)
+                                       .Include(s => s.IdSizeSanPhamNavigation.IdSanPhamNavigation)
+                                       .Include(s => s.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation)
+                                       .Select(s => s.NgayGiao).FirstOrDefault();
+            ViewBag.NgayGiao = ngay;
 
             double diemdanhgia = ctx.ChiTietDonHang.Where(dh => dh.IdDonHang == Guid.Parse(id) && dh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenDangNhap == tendangnhap).Select(dh => dh.DiemMerchantDanhGia).FirstOrDefault() ?? 0;
             ViewBag.DiemDanhGia=diemdanhgia;

@@ -216,12 +216,12 @@
                                     }
                                 </div>
                                 @*<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                <form action="#" method="post">
-                                    <fieldset>
-                                        <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btnThemGioHang">
-                                    </fieldset>
-                                </form>
-                            </div>*@
+                                        <form action="#" method="post">
+                                            <fieldset>
+                                                <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btnThemGioHang">
+                                            </fieldset>
+                                        </form>
+                                    </div>*@
                             </div>
                         </div>
                     </div>
@@ -274,12 +274,12 @@
                                     </div>
                                 </div>
                                 @*<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btnThemVaoGioHang" />
-                                        </fieldset>
-                                    </form>
-                                </div>*@
+                                        <form action="#" method="post">
+                                            <fieldset>
+                                                <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btnThemVaoGioHang" />
+                                            </fieldset>
+                                        </form>
+                                    </div>*@
                             </div>
                         </div>
                     </div>
@@ -483,6 +483,27 @@
         }
     </ul>
 </div>
+<!-- Quảng cáo-->
+<div class="container">
+    <div class="quangcao">
+        <div class="quangcao_item3">
+            <a href="#" id="VTC1a">
+                <img class="fix_kichthuoc_qc anh_quangcao3" id="VTC1" src="~/Hinh/QuangCao/qc350x110_1.jpg" />
+            </a>
+        </div>
+        <div class="quangcao_item3">
+            <a href="#" id="VTC2a">
+                <img class="fix_kichthuoc_qc anh_quangcao3" id="VTC2" src="~/Hinh/QuangCao/qc350x110_2.jpg" />
+            </a>
+        </div>
+        <div class="quangcao_item3">
+            <a href="#" id="VTC3a">
+                <img class="fix_kichthuoc_qc anh_quangcao3" id="VTC3" src="~/Hinh/QuangCao/qc350x110_3.jpg" />
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Quảng cáo-->
 <br />
 <!--hết phân trang-->
 <!-- js -->
@@ -580,4 +601,46 @@
         console.log("a");
         console.log($(this).val());
     });
+    
+window.onload = loadhetquangcao();
+function loadquangcao(mavitri) {
+        let taga = mavitri + "a";
+        $.ajax({
+            url: "/Customer/QuangCao/LoadQuangCao",
+            type: "post",
+            data: { "mavitri": mavitri },
+            dataType: 'json',
+
+            success: function (data) {
+                if (data != null) {
+                    
+                    //let obj = JSON.parse(data);
+                   
+                    $("#"+taga).attr("href", "http://www."+data.DuongDan);
+                    $("#"+mavitri).attr("src", "/Hinh/QuangCao/"+data.Hinh);
+                    //alert(data);
+                }
+                else {
+                      
+                    document.getElementById(taga).href = "#";
+                    
+                }
+
+                   
+
+            },
+
+
+            error: function (jqXHR, exception) {
+                alert( exception + " " + jqXHR.status);
+            }
+           
+        });
+        
+    }
+    function loadhetquangcao() {
+        loadquangcao('VTC1');
+        loadquangcao('VTC2');
+        loadquangcao('VTC3');
+    }
 </script>

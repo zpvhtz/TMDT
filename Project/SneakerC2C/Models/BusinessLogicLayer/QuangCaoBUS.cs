@@ -35,6 +35,21 @@ namespace Models.BusinessLogicLayer
             return list;
         }
 
+        public QuangCao LoadQuangCao(string mavitri)
+        {
+            QuangCao qc = new QuangCao();
+            qc = context.QuangCao.Where(gh => gh.IdGoiQuangCaoNavigation.IdViTriNavigation.MaViTri == mavitri && gh.NgayBatDau <= DateTime.Now && gh.NgayKetThuc > DateTime.Now && gh.TinhTrang == "Không khoá")
+               
+               .SingleOrDefault();
+           // qc = context.QuangCao.Where(gh => gh.MaQuangCao=="QC-2001").SingleOrDefault();
+            if (qc == null)
+            {
+                return null;
+            }
+           
+            return qc;
+        }
+
         public List<QuangCaoThichHop> GetDates (int nam,int thang, string goi)
         {
             List<QuangCaoThichHop> lst = new List<QuangCaoThichHop>();

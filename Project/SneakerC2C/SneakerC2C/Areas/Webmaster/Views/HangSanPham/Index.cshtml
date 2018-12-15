@@ -48,7 +48,7 @@
             <thead class="thead-dark">
                 <tr class="odd gradeX">
                     <th>Mã hãng</th>
-                    <th><a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort" asp-route-sortorder="@ViewBag.NameSort" asp-route-currentFilter="@ViewBag.CurrentFilter">Tên hãng</a></th>
+                    <th>Tên hãng</th>
                     @*<th><a asp-area="Webmaster" asp-controller="SanPham" asp-action="Sort" asp-route-sortorder="@ViewBag.ShopSort" asp-route-currentFilter="@ViewBag.CurrentFilter">Tên shop</a></th>
                     <th>Màu</th>
                     <th>Hãng</th>
@@ -257,10 +257,10 @@
                     <h4 class="modal-title">Hãng sản phẩm</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
+                    @*<div class="form-group">
                             <label>Mã hãng</label>
                             <input type="text" class="form-control" id="item-them-mahang" name="item_them_mahang" required>
-                        </div>
+                        </div>*@
                     <div class="form-group">
                         <label>Tên hãng</label>
                         <input type="text" class="form-control" id="item-them-ten" name="item_them_ten" required>

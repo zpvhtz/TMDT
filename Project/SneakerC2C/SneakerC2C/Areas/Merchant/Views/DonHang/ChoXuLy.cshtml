@@ -39,14 +39,19 @@
                                         </a>
                                     </div>
                                     <div class="trangthai_donhang id_donhang">
-                                        ID Đơn Hàng @item.Id
+                                        ID: @item.MaDonHang
                                     </div>
+                                    <div class="trangthai_donhang id_donhang">Ngày đặt: @item.NgayTao</div>
                                 </div>
                                 <hr>
+                                @{
+                                    double tongtienhang = 0;
+                                }
                                 @foreach (var ct in ViewBag.ChiTiet)
                                 {
                                     if (ct.IdDonHangNavigation.MaDonHang == item.MaDonHang)
                                     {
+                                        tongtienhang += ct.DonGia * ct.SoLuong;
                                         <div class="thongtin_donhang">
                                             <div class="sanpham_giohang sp_donhang">
                                                 <div class="hinh_sanpham_giohang hinh_donhang" style="background-image:url(/Hinh/SanPham/@ct.IdSizeSanPhamNavigation.IdSanPhamNavigation.Hinh);"></div>
@@ -60,7 +65,7 @@
                                                 </div>
                                                 <div class="donban_right">
                                                     <div class="tongtien_donban">
-                                                        đ @ct.DonGia
+                                                        @ct.DonGia.ToString("#,###") đ
                                                         @*<h6>Thanh toán khi nhận hàng</h6>*@
                                                     </div>
                                                     <div class="trangthai_donban">
@@ -77,11 +82,13 @@
                                     }
                                 }
                                 <hr>
-                                <div class="chuthich_donban">
-                                    <a asp-controller="DonHang" asp-action="XuLy" asp-route-iddonhang="@item.Id" class="btn btn-info">Tiếp nhận xử lý</a>
-                                    <a asp-controller="DonHang" asp-action="GetChiTiet" asp-route-id="@item.Id" class="btn btn-danger btnChiTiet">Chi tiết</a>
-                                    <div class="donban_right">
-                                        @item.TongTien
+                                <div class="chuthich_donban" style="display: flex;">                                  
+                                    <div class="tong_tien_mer">
+                                       Tổng tiền hàng: @tongtienhang.ToString("#,###") đ
+                                    </div>
+                                    <div class="button_xuly_merchant">
+                                        <a asp-controller="DonHang" asp-action="XuLy" asp-route-iddonhang="@item.Id" class="btn btn-info">Tiếp nhận xử lý</a>
+                                        <a asp-controller="DonHang" asp-action="GetChiTiet" asp-route-id="@item.Id" class="btn btn-danger btnChiTiet">Chi tiết</a>
                                     </div>
                                 </div>
                             </div>

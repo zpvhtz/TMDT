@@ -1294,3 +1294,15 @@
   color: #666;
   font-size: 14px;
 }
+.tong_tien_mer {
+    width: 54%;
+    text-align: right;
+}
+.button_xuly_merchant {
+    width: 46%;
+    display: flex;
+    justify-content: flex-end;
+}
+.button_xuly_merchant a {
+    margin-left: 15px;
+}

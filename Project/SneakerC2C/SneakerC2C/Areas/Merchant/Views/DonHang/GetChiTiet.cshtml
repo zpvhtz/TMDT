@@ -76,6 +76,17 @@
                     </div>
 
                 }
+                @if (ViewBag.DanhGia == false)
+                {
+                    <div class="ct_donban_part">
+                        <div class="donban_icon">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                        <div class="donban_content">
+                            <p>Điểm đánh giá: @ViewBag.DiemDanhGia</p> 
+                        </div>
+                    </div>
+                }
             </div>
         </div>
         <div class="form_chuthich">
@@ -88,7 +99,10 @@
                         Thông Tin Thanh Toán
                     </div>
                 </div>
-
+                @{ 
+                    double thanhtien = 0;
+                    double tongtien = 0;
+                }
                 @foreach (var item in Model)
                 {
                     <div class="ct_thanhtoan">
@@ -111,7 +125,7 @@
                             @if (item.IdSizeSanPhamNavigation.IdSanPhamNavigation.GiamGia != 0 && item.IdSizeSanPhamNavigation.IdSanPhamNavigation.GiamGia != null)
                             {
                                 double gia = item.IdSizeSanPhamNavigation.IdSanPhamNavigation.Gia * (100 - item.IdSizeSanPhamNavigation.IdSanPhamNavigation.GiamGia) / 100 ?? 0;
-                                <div class="dongia_ct"><del>@item.DonGia.Value.ToString("#,###") đ</del> @gia.ToString("#,###") đ</div>
+                                <div class="dongia_ct"><del>@item.IdSizeSanPhamNavigation.IdSanPhamNavigation.Gia.Value.ToString("#,###") đ</del> @gia.ToString("#,###") đ</div>
                             }
                             else
                             {
@@ -119,7 +133,8 @@
                             }
                             <div class="soluong_ct">x @item.SoLuong</div>
                             @{
-                                double thanhtien = item.DonGia.Value * item.SoLuong.Value;
+                                thanhtien = item.DonGia.Value * item.SoLuong.Value;
+                                tongtien += thanhtien;
                             }
                             <div class="thanhtien_ct">@thanhtien.ToString("#,###") đ</div>
                         </div>
@@ -133,7 +148,7 @@
                             <p>Tổng tiền hàng</p>
                         </div>
                         <div class="gia_dathang">
-                            <p>@ViewBag.TongTien.ToString("#,###") đ</p>
+                            <p>@tongtien.ToString("#,###") đ</p>
                         </div>
                     </div>
                 </div>

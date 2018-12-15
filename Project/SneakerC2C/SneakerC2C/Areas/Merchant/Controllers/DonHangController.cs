@@ -215,7 +215,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                                                           .Include(s => s.IdSizeSanPhamNavigation.IdSanPhamNavigation)
                                                           .Include(s => s.IdSizeSanPhamNavigation.IdSanPhamNavigation)
                                                           .ToList();
-            var iddon = ctx.DonHang.Where(s => s.Id == Guid.Parse(id)).Select(s => s.Id).SingleOrDefault();
+            var iddon = ctx.DonHang.Where(s => s.Id == Guid.Parse(id)).Select(s => s.MaDonHang).SingleOrDefault();
             ViewBag.Id = iddon;
             var ten = ctx.DonHang.Where(s => s.Id == Guid.Parse(id)).Select(s => s.IdTaiKhoanNavigation.Ten).SingleOrDefault();
             ViewBag.HoTen = ten;
@@ -225,7 +225,9 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             DonHang donhang = ctx.DonHang.Where(dh => dh.Id == Guid.Parse(id)).SingleOrDefault();
             ViewBag.DonHang = donhang;
 
+
             double diemdanhgia = ctx.ChiTietDonHang.Where(dh => dh.IdDonHang == Guid.Parse(id) && dh.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoanNavigation.TenDangNhap == tendangnhap).Select(dh => dh.DiemMerchantDanhGia).FirstOrDefault() ?? 0;
+            ViewBag.DiemDanhGia=diemdanhgia;
             bool danhgia = diemdanhgia > 0 ? false : true;
             ViewBag.DanhGia = danhgia;
 

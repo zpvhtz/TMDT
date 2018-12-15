@@ -18,32 +18,59 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
         {
             ctx = context;
         }
-        public IActionResult Index(string thongbao)
+        public List<HangSanPham> Get()
         {
-            if(thongbao !=null)
+            List<HangSanPham> list = ctx.HangSanPham.OrderBy(h => h.MaHang).ToList();
+            return list;
+        }
+        public List<HangSanPham> Get(int pagenumber, int pagesize)
+        {
+            List<HangSanPham> list = ctx.HangSanPham.OrderBy(h => h.MaHang)
+                                                  .Skip((pagenumber - 1) * pagesize)
+                                                  .Take(pagesize)
+                                                  .ToList();
+            return list;
+        }
+        public IActionResult Index(string thongbao, int? pagenumber)
+        {
+            pageNumber = pagenumber ?? 1;
+            if (thongbao !=null)
             {
                 ViewBag.ThongBao = thongbao;
             }
-            List<HangSanPham> list = ctx.HangSanPham.OrderBy(h=>h.MaHang).ToList();
+            List<HangSanPham> list = Get(pageNumber, pageSize);
+            List<HangSanPham> tong = Get();
+            //ViewBag
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TrangThai = "index";
             return View(list);
         }
         public IActionResult ThemHangSanPham(string item_them_mahang,string item_them_ten)
         {
-            
+
             //Mã tự tăng
-            //string layma = ctx.HangSanPham
-            //    .OrderByDescending(h => h.MaHang)
-            //    .Select(h => h.MaHang)
-            //    .FirstOrDefault();
-            //int vitri = layma.IndexOf("-");
-            //string tmp = layma.Substring(0, vitri);
-            //int so = int.Parse(layma.Substring(vitri + 1, layma.Length-1-vitri));
-            //so = so + 1;
-            //string Ma = tmp +"-"+ so;
-            //
+
             HangSanPham hang = new HangSanPham();
+            string mamoi = "";
+            if (ctx.HangSanPham.Count() == 0)
+            {
+                mamoi = "H-1";
+            }
+            else
+            {
+                string layma = ctx.HangSanPham
+                                      .OrderByDescending(h => int.Parse(h.MaHang.Substring(2)))
+                                      .Select(h => h.MaHang)
+                                      .FirstOrDefault();
+                int stt = int.Parse(layma.Substring(layma.IndexOf('-') + 1));
+                stt += 1;
+                mamoi = "H-" + stt.ToString();
+            }
+                //
+                
             hang.Id = Guid.Parse(Guid.NewGuid().ToString().ToUpper());
-            hang.MaHang = item_them_mahang;
+            hang.MaHang = mamoi;
             hang.TenHang = item_them_ten;
             hang.TinhTrang = "Không khoá";
             ctx.Add(hang);

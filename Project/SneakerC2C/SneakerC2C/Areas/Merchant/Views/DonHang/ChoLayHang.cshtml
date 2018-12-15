@@ -37,7 +37,7 @@
                                         </a>
                                     </div>
                                     <div class="trangthai_donhang id_donhang">
-                                        ID: @item.Id
+                                        ID: @item.MaDonHang
                                     </div>
                                     <div class="trangthai_donhang id_donhang">Ngày đặt: @item.NgayTao</div>
                                 </div>
@@ -64,7 +64,7 @@
                                                 </div>
                                                 <div class="donban_right">
                                                     <div class="tongtien_donban">
-                                                        đ @ct.DonGia
+                                                        @ct.DonGia.ToString("#,###") đ
                                                         <h6>Thanh toán khi nhận hàng</h6>
                                                     </div>
                                                     <div class="trangthai_donban">
@@ -78,16 +78,13 @@
                                     }
                                 }
                                 <hr>
-                                <div class="chuthich_donban">
-                                    <div class="chuthich_giaohang">
-                                        <div class="button_donban">
-                                            <a asp-controller="DonHang" asp-action="GiaoHang" asp-route-iddonhang="@item.Id" class="btn btn-info">Cập nhật giao hàng</a>
-                                            <a asp-controller="DonHang" asp-action="GetChiTiet" asp-route-id="@item.Id" class="btn btn-danger btnChiTiet">Chi tiết</a>
-                                            @*<a asp-controller="DonHang" asp-action="Huy" asp-route-iddonhang="@item.Id" class="btn btn-danger">Huỷ đơn</a>*@
-                                            <div class="donban_right">
-                                                @tongtienhang.ToString("#,###") đ
-                                            </div>
-                                        </div>
+                                <div class="chuthich_donban" style="display: flex;">
+                                    <div class="tong_tien_mer">
+                                        Tổng tiền hàng: @tongtienhang.ToString("#,###") đ
+                                    </div>
+                                    <div class="button_xuly_merchant">
+                                        <a asp-controller="DonHang" asp-action="GiaoHang" asp-route-iddonhang="@item.Id" class="btn btn-info">Cập nhật giao hàng</a>
+                                        <a asp-controller="DonHang" asp-action="GetChiTiet" asp-route-id="@item.Id" class="btn btn-danger btnChiTiet">Chi tiết</a>
                                     </div>
                                 </div>
                             </div>

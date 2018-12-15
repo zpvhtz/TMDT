@@ -90,7 +90,15 @@ namespace AspNetCore
                 ");
             EndContext();
             BeginContext(640, 4336, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f6f758654171449496562449b4187de8", async() => {
+=======
+<<<<<<< HEAD
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d3094b379c5d4cc9af90fac525e57761", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3fe5077e585946289f35617fdc9ef7a6", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
                 BeginContext(709, 2, true);
                 WriteLiteral("\r\n");
                 EndContext();
@@ -226,7 +234,15 @@ WriteAttributeValue("", 2253, ct.IdSizeSanPhamNavigation.IdSanPhamNavigation.Hin
                 WriteLiteral("                                    <hr>\r\n                                    <div class=\"chuthich_donban\">\r\n                                        ");
                 EndContext();
                 BeginContext(4264, 117, false);
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1346941b604442d9b2bdcbbdde0ba9e7", async() => {
+=======
+<<<<<<< HEAD
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5c6198c171f94d2ead2fed5010ab979e", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9852902d54cb46afa9de2cc6351db958", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
                     BeginContext(4362, 15, true);
                     WriteLiteral("Tiếp nhận xử lý");
                     EndContext();
@@ -264,7 +280,15 @@ WriteAttributeValue("", 2253, ct.IdSizeSanPhamNavigation.IdSanPhamNavigation.Hin
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(4423, 122, false);
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4b6f3bc2993462ea21bad822d0ae10f", async() => {
+=======
+<<<<<<< HEAD
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68cc4608cd1847c3815a8ef95dde0269", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4174f04f36124418a69d6161916ebc45", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
                     BeginContext(4533, 8, true);
                     WriteLiteral("Chi tiết");
                     EndContext();
@@ -348,7 +372,15 @@ WriteAttributeValue("", 2253, ct.IdSizeSanPhamNavigation.IdSanPhamNavigation.Hin
             WriteLiteral("\r\n                <!--//tab_one-->\r\n                <!--/chờ lấy hàng-->\r\n                ");
             EndContext();
             BeginContext(5066, 5002, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "04cd8b0b8afc487caba3e686bd9c084a", async() => {
+=======
+<<<<<<< HEAD
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bad0299044224636b3d0d00e4ab3f87f", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "56dbd2917064457b89db7d51839a2a83", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
                 BeginContext(5138, 2, true);
                 WriteLiteral("\r\n");
                 EndContext();
@@ -518,7 +550,15 @@ WriteAttributeValue("", 7020, ct.IdSizeSanPhamNavigation.IdSanPhamNavigation.Hin
                                                 ");
                 EndContext();
                 BeginContext(9034, 124, false);
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "278c33c26b8144798e84f68822cd9dbc", async() => {
+=======
+<<<<<<< HEAD
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "586986829d944082bbecda74637c28ba", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9c30f1db0e9c4783a4f86fc576594a31", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
                     BeginContext(9136, 18, true);
                     WriteLiteral("Cập nhật giao hàng");
                     EndContext();
@@ -556,7 +596,15 @@ WriteAttributeValue("", 7020, ct.IdSizeSanPhamNavigation.IdSanPhamNavigation.Hin
                 WriteLiteral("\r\n                                                ");
                 EndContext();
                 BeginContext(9208, 122, false);
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d59bfd0228ad4285830e2b820d9e8cec", async() => {
+=======
+<<<<<<< HEAD
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423306c2a962483c8b9948381e7f710b", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d2b38a2377764fe7b4a389811785ae0e", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
                     BeginContext(9318, 8, true);
                     WriteLiteral("Chi tiết");
                     EndContext();
@@ -645,7 +693,15 @@ WriteAttributeValue("", 7020, ct.IdSizeSanPhamNavigation.IdSanPhamNavigation.Hin
             WriteLiteral("\r\n                <!--//tab_two-->\r\n                <!--Đang giao-->\r\n                ");
             EndContext();
             BeginContext(10154, 4881, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9429b7cfffa141e69ee8c2addaf8ae38", async() => {
+=======
+<<<<<<< HEAD
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "40a14385e1114834837f2f8b2b2a8706", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87fe7208f6b74db88a6283f73eec0a0f", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
                 BeginContext(10224, 2, true);
                 WriteLiteral("\r\n");
                 EndContext();
@@ -796,7 +852,15 @@ WriteAttributeValue("", 11873, ct.IdSizeSanPhamNavigation.IdSanPhamNavigation.Hi
                                                 ");
                 EndContext();
                 BeginContext(14072, 135, false);
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f65094f89b3546599c8e1dd70c9678a8", async() => {
+=======
+<<<<<<< HEAD
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7792732ae5cd4e9bb2ab71e14aff9e64", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53038ecca91540dcacc11ee83d42e06b", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
                     BeginContext(14175, 28, true);
                     WriteLiteral("Cập nhập tình trạng đơn hàng");
                     EndContext();
@@ -834,7 +898,15 @@ WriteAttributeValue("", 11873, ct.IdSizeSanPhamNavigation.IdSanPhamNavigation.Hi
                 WriteLiteral("\r\n                                                ");
                 EndContext();
                 BeginContext(14257, 122, false);
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9271bb9546d44c5e8f4d8f97522d33a0", async() => {
+=======
+<<<<<<< HEAD
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91397091fa3f487cbba4e567ac8a4e49", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3c82be2460bc4699bf3f8d979476215b", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
                     BeginContext(14367, 8, true);
                     WriteLiteral("Chi tiết");
                     EndContext();
@@ -923,7 +995,15 @@ WriteAttributeValue("", 11873, ct.IdSizeSanPhamNavigation.IdSanPhamNavigation.Hi
             WriteLiteral("\r\n                ");
             EndContext();
             BeginContext(15053, 5007, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1dd45f7699e846f8b8d97c959e8acefd", async() => {
+=======
+<<<<<<< HEAD
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e013b3116b48425593d3d43e3f5e367c", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4e3e0bae25684da08e1d0f92307a47c9", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
                 BeginContext(15121, 2, true);
                 WriteLiteral("\r\n");
                 EndContext();
@@ -1095,7 +1175,15 @@ WriteAttributeValue("", 19105, item.Id, 19105, 8, false);
                 WriteLiteral(" class=\"value-iddonhang\" readonly hidden />\r\n                                                ");
                 EndContext();
                 BeginContext(19207, 122, false);
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "88bf462208ed47bc8af0b1ba806043e1", async() => {
+=======
+<<<<<<< HEAD
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c7e80aa9940f48c791fd18b196b3db1a", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "66bff5c16e2042558b402c36ef7c7db8", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
                     BeginContext(19317, 8, true);
                     WriteLiteral("Chi tiết");
                     EndContext();
@@ -1184,7 +1272,15 @@ WriteAttributeValue("", 19105, item.Id, 19105, 8, false);
             WriteLiteral("\r\n                <!---Đã huỷ-->\r\n                ");
             EndContext();
             BeginContext(20110, 5006, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8166681cc9a244b288570bcd62928ab1", async() => {
+=======
+<<<<<<< HEAD
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "636e1b3500824d28a2afdd3b083b1e98", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "176d88842b034dde9171ca8fda925419", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
                 BeginContext(20177, 2, true);
                 WriteLiteral("\r\n");
                 EndContext();
@@ -1356,7 +1452,15 @@ WriteAttributeValue("", 24161, item.Id, 24161, 8, false);
                 WriteLiteral(" class=\"value-iddonhang\" readonly hidden />\r\n                                                ");
                 EndContext();
                 BeginContext(24263, 122, false);
+<<<<<<< HEAD
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "822c659a4a224a258d04dcb04f102b31", async() => {
+=======
+<<<<<<< HEAD
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "de0499dfd35740a8985eeec0ef8ae00b", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c133906d544c4efea00f11029893bb28", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
                     BeginContext(24373, 8, true);
                     WriteLiteral("Chi tiết");
                     EndContext();
@@ -1445,7 +1549,15 @@ WriteAttributeValue("", 24161, item.Id, 24161, 8, false);
             WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<!-- //quanlysanpham -->\r\n<a href=\"#home\" class=\"scroll\" id=\"toTop\" style=\"display: block;\"> <span id=\"toTopHover\" style=\"opacity: 1;\"> </span></a>\r\n\r\n<!-- js -->\r\n");
             EndContext();
             BeginContext(25338, 84, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed3d837b59784037966967ee3c844987", async() => {
+=======
+<<<<<<< HEAD
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7bd584827aba4d2c8a275ac396893261", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1b365485c9cb4a74ac9b1c546da69fea", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -1464,7 +1576,15 @@ WriteAttributeValue("", 24161, item.Id, 24161, 8, false);
             WriteLiteral("\r\n<!-- //js -->\r\n\r\n");
             EndContext();
             BeginContext(25441, 61, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d368a6e813214b58b5b0cf93c93aacc1", async() => {
+=======
+<<<<<<< HEAD
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c9e8638a3d64c3bb74e169ec235858c", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "036e68118f6043e98612c05eee6ab823", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -1482,7 +1602,15 @@ WriteAttributeValue("", 24161, item.Id, 24161, 8, false);
             WriteLiteral("\r\n<!-- Custom-JavaScript-File-Links -->\r\n<!-- cart-js -->\r\n");
             EndContext();
             BeginContext(25561, 57, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd5786a0d6cd4bdc9001725b3baac1bb", async() => {
+=======
+<<<<<<< HEAD
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "981022cba81a406b81211c57ed97462a", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a86287f88b12439c8257910bb2682ba0", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -1500,7 +1628,15 @@ WriteAttributeValue("", 24161, item.Id, 24161, 8, false);
             WriteLiteral("\r\n<script>\r\n\t// Mini Cart\r\n\tpaypal.minicart.render({\r\n\t\taction: \'#\'\r\n\t});\r\n\r\n\tif (~window.location.search.indexOf(\'reset=true\')) {\r\n\t\tpaypal.minicart.reset();\r\n\t}\r\n</script>\r\n\r\n<!-- //cart-js -->\r\n<!-- script for responsive tabs -->\r\n");
             EndContext();
             BeginContext(25852, 65, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "255f914a6c544e6cbcf29aaa41e0cc05", async() => {
+=======
+<<<<<<< HEAD
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b71cfa1db384a4f8bf91f49d124e81a", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c2cfafe9e8324b69a129560fc8c1843b", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -1543,7 +1679,15 @@ WriteAttributeValue("", 24161, item.Id, 24161, 8, false);
 ");
             EndContext();
             BeginContext(26587, 65, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a8d285cf9c04ca88737ca1a67ba8cff", async() => {
+=======
+<<<<<<< HEAD
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a44582e53754cc7b09836a7b9be9908", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9c0478e94e9e4ff2b1aa6285a78ae58a", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -1561,7 +1705,15 @@ WriteAttributeValue("", 24161, item.Id, 24161, 8, false);
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(26654, 59, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "18f366ed5fc34a29a9037baec97991d3", async() => {
+=======
+<<<<<<< HEAD
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2a5502b19a9a4b5cb463efb383d57809", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "edc6690f7bc145df902dad9b0551a5e2", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -1579,7 +1731,15 @@ WriteAttributeValue("", 24161, item.Id, 24161, 8, false);
             WriteLiteral("\r\n<script>\r\n\t\t$(\'.counter\').countUp();\r\n</script>\r\n<!-- //stats -->\r\n<!-- start-smoth-scrolling -->\r\n");
             EndContext();
             BeginContext(26814, 76, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8f15a48361a4a89b5f6f1adb13570ab", async() => {
+=======
+<<<<<<< HEAD
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "22e36794f6284bcb889cd0f6dccbb690", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "127e07aab5864b5984a888a109675b4c", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -1598,7 +1758,15 @@ WriteAttributeValue("", 24161, item.Id, 24161, 8, false);
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(26892, 85, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab4bdfcde3624711ae83da80eca8ec95", async() => {
+=======
+<<<<<<< HEAD
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b1efdf5f6e304254aeefbeb220513b36", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1d07ecc7c6a74a64893b84dbf718e4d0", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -1644,7 +1812,15 @@ WriteAttributeValue("", 24161, item.Id, 24161, 8, false);
 ");
             EndContext();
             BeginContext(27664, 77, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "38166368ee8f47c885721dce0c216b7a", async() => {
+=======
+<<<<<<< HEAD
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b820b588a78c451f9ce3028ec04ba23e", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "44a8440560f045a09b539b47b4f9c5fc", async() => {
+>>>>>>> 96b7957b58e5d639837778bae0d4d444f492b7dc
+>>>>>>> 1b05d82df4016d0d2cded809840bd4e4034eac19
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

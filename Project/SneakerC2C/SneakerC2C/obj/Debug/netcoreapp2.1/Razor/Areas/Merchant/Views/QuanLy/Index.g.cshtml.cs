@@ -66,7 +66,7 @@ namespace AspNetCore
             ");
             EndContext();
             BeginContext(510, 251, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4c6c8332fafb4b2295601c7aaeef147c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a28a4b3140ca432ca05d0f75c625f66d", async() => {
                 BeginContext(577, 180, true);
                 WriteLiteral("\r\n                <div class=\"menu_knb_icon\" id=\"btntest\">\r\n                    <i class=\"fa fa-inbox\"></i>\r\n                </div>\r\n                <h4>Sản Phẩm</h4>\r\n            ");
                 EndContext();
@@ -92,7 +92,7 @@ namespace AspNetCore
             WriteLiteral("\r\n        </div>\r\n        <div class=\"menu_knb_part\">\r\n            ");
             EndContext();
             BeginContext(828, 238, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "78c1e9807d214131a1d514ff5d33b697", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8135db3a42de4bbcb8c656880eb980a1", async() => {
                 BeginContext(897, 165, true);
                 WriteLiteral("\r\n                <div class=\"menu_knb_icon\">\r\n                    <i class=\"fa fa-tags\"></i>\r\n                </div>\r\n                <h4>Đơn Bán</h4>\r\n            ");
                 EndContext();
@@ -163,7 +163,7 @@ namespace AspNetCore
         ");
             EndContext();
             BeginContext(2533, 750, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a3ffa1767469400ca31994c02207cf6c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "76deb4da2ace4a4486015346838191d5", async() => {
                 BeginContext(2627, 649, true);
                 WriteLiteral(@"
             <div class=""modal-content"">

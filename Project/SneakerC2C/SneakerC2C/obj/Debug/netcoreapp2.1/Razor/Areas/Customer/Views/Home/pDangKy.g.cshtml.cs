@@ -57,7 +57,7 @@ using Microsoft.AspNetCore.Http;
             WriteLiteral("\r\n<h3 class=\"agileinfo_sign\">Đăng Ký</h3>\r\n");
             EndContext();
             BeginContext(213, 2714, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d9ee8f70edf345fcaddfef0a502a8ae1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9a6e6440960e40db8e69e555cf18174a", async() => {
                 BeginContext(307, 2082, true);
                 WriteLiteral(@"
     <div class=""styled-input agile-styled-input-top"">
@@ -110,7 +110,7 @@ using Microsoft.AspNetCore.Http;
                 WriteLiteral("                ");
                 EndContext();
                 BeginContext(2462, 52, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc378043e2714c648e97ad0dfde72f00", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "de7cecddde1943c8a97cf7b475c062bd", async() => {
                     BeginContext(2488, 17, false);
 #line 47 "C:\Code\TMDT\Project\SneakerC2C\SneakerC2C\Areas\Customer\Views\Home\pDangKy.cshtml"
                                     Write(item.TenTinhThanh);

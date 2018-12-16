@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -126,6 +127,15 @@ namespace SneakerC2C.Areas.Customer.Controllers
             ViewBag.Hang = hang;
             ViewBag.TaiKhoan = taikhoan;
             ViewBag.ChiTietDonHang = listchitietdonhang;
+
+            //Kiểm tra có  cho huỷ hay không
+            bool huydonhang;
+            List<ChiTietDonHang> listhuydon = listchitietdonhang.Where(c => c.TinhTrangChiTiet != "Chưa xử lý").ToList();
+            if (listhuydon.Count == 0)
+                huydonhang = true;
+            else
+                huydonhang = false;
+            ViewBag.HuyDonHang = huydonhang;
             return View(donhang);
         }
 

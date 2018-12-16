@@ -533,6 +533,34 @@ AS
 	WHERE Id = @IdTaiKhoanDuocDanhGia
 GO
 
+create proc p_CanhCao
+as
+	select * from TaiKhoan where DanhGia<=1.5 and Id in
+	(
+		select IdTaiKhoan
+		from ChiTietDonHang c, SizeSanPham s, SanPham sp
+		where c.IdSizeSanPham=s.Id and s.IdSanPham=sp.Id AND c.DiemCustomerDanhGia > 0
+		group by IdTaiKhoan
+		having count(distinct(IdDonHang)) >= 5
+	)
+	
+go
+
+create proc p_CanhCao_Customer
+as
+	select *
+	from TaiKhoan
+	where DanhGia <= 1.5 and Id in
+	(
+		select IdTaiKhoan
+		from DonHang dh JOIN ChiTietDonHang ct ON dh.Id = ct.IdDonHang
+		where ct.DiemMerchantDanhGia > 0
+		group by IdTaiKhoan
+		having count(distinct(Id)) >= 5
+	)
+	
+go
+
 --DỮ LIỆU--
 INSERT INTO LoaiNguoiDung
 	VALUES ('75523BB6-C366-4A28-A85C-B4C8C1D5747A', 'USR-WMT', N'Webmaster', N'Không khoá'),

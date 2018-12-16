@@ -37,20 +37,33 @@ namespace Models.BusinessLogicLayer
             return list;
         }
 
-        public string CreateGianHang(string ma, string ten, float gia, int thoigian)
+        public string CreateGianHang(string ten, float gia, int thoigian)
         {
+            string magianhangmoi = "";
+            GianHang gianhangcu = context.GianHang.OrderByDescending(gh => gh.MaGianHang.Substring(gh.MaGianHang.IndexOf('-') + 1)).FirstOrDefault();
+            if(gianhangcu == null)
+            {
+                magianhangmoi = "GH-1";
+            }
+            else
+            {
+                string magianhangcu = gianhangcu.MaGianHang;
+                int stt = int.Parse(magianhangcu.Substring(magianhangcu.IndexOf('-') + 1));
+                stt += 1;
+                magianhangmoi = "GH-" + stt.ToString();
+            }
             GianHang gianhang;
             //Kiểm tra
             //Tên đăng nhập
-            gianhang = context.GianHang.Where(gh => gh.MaGianHang == ma).SingleOrDefault();
-            if (gianhang != null)
-            {
-                return "Gian hàng đã tồn tại";
-            }
+            //gianhang = context.GianHang.Where(gh => gh.MaGianHang == ma).SingleOrDefault();
+            //if (gianhang != null)
+            //{
+            //    return "Gian hàng đã tồn tại";
+            //}
             //Thêm
             gianhang = new GianHang();
             gianhang.Id = Guid.Parse(Guid.NewGuid().ToString().ToUpper());
-            gianhang.MaGianHang = ma;
+            gianhang.MaGianHang = magianhangmoi;
             gianhang.TenGianHang = ten;
             gianhang.Gia = gia;
             gianhang.ThoiGian = thoigian;

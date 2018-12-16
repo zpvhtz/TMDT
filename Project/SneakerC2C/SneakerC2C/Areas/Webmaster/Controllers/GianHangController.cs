@@ -34,10 +34,10 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             return View(list);
         }
 
-        public IActionResult CreateGianHang(string item_them_ma, string item_them_ten, float item_them_gia, int item_them_thoigian)
+        public IActionResult CreateGianHang(string item_them_ten, float item_them_gia, int item_them_thoigian)
         {
             GianHangBUS gianhang = new GianHangBUS();
-            string thongbao = gianhang.CreateGianHang(item_them_ma, item_them_ten, item_them_gia, item_them_thoigian);
+            string thongbao = gianhang.CreateGianHang(item_them_ten, item_them_gia, item_them_thoigian);
             return RedirectToAction("Index", "GianHang", new { thongbao = thongbao });
         }
 

@@ -199,6 +199,8 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             ViewBag.TongTrang = TongTrang(tong);
             ViewBag.TrangThai = "search";
             ViewBag.Search = search;
+            List<HangSanPham> hang = ctx.HangSanPham.ToList();
+            ViewBag.HangSanPham = hang;
             return View("ListSP", list);
         }
         //search list sp all

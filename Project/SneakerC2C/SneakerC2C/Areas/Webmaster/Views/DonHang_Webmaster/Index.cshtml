@@ -70,7 +70,7 @@
                         <td class="item-tinhtrangdanhgia">@item.TinhTrangDanhGiaCustomer</td>
                         <td class="item-tinhtrang">@item.TinhTrang</td>
                         <td>
-                            <button class="btn btn-primary btnSuaDonHang" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>
+                            @*<button class="btn btn-primary btnSuaDonHang" type="button" data-toggle="modal" data-target="#suaModal">Sửa</button>*@
                             <button class="btn btn-primary btnChiTiet" type="button" data-toggle="modal" data-target="#chitietModal">Chi Tiết</button>
                             <a asp-controller="Report" asp-action="Index" asp-route-idDonHang="@item.Id" class="btn btn-danger btnChiTiet">In</a>
                         </td>

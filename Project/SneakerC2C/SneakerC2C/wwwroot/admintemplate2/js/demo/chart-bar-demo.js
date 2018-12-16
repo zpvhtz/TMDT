@@ -14,10 +14,21 @@ function LoadDuLieuBar(nbd, nkt) {
             console.log(dt_bar);
             for (let i = 0; i < obj_bar.length; i++) {
                 lbl_bar.push(obj_bar[i]["Thang"]);
-                dt_bar.push(parseInt(obj_bar[i]["ThuNhap"]));
+                dt_bar.push(parseInt(obj_bar[i]["DoanhThu"]));
+            }
+            if (dt_bar < 100000) {
+                temp_bar = Math.round((Math.max(...dt_bar) / 20000)) * 20000 + 20000
+            }
+            else {
+                if (dt_bar < 1000000) {
+                    temp_bar = Math.round((Math.max(...dt_bar) / 200000)) * 200000 + 200000
+                }
+                else {
+                    temp_bar = Math.round((Math.max(...dt_bar) / 2000000)) * 2000000 + 2000000
+                }
             }
             let temp2_bar = (Math.max(...dt_bar) / 200000)
-            temp_bar = Math.round((Math.max(...dt_bar) / 200000)) * 200000 + 200000
+
             console.log(temp_bar);
             Test_bar();
 
@@ -58,14 +69,14 @@ function Test_bar() {
               display: false
             },
             ticks: {
-              maxTicksLimit: 100
+              maxTicksLimit: 10
             }
           }],
           yAxes: [{
             ticks: {
               min: 0,
                 max: temp_bar,
-              maxTicksLimit: 10
+              maxTicksLimit: 100
             },
             gridLines: {
               display: true

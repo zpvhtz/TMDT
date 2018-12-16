@@ -53,7 +53,7 @@ namespace AspNetCore
             WriteLiteral("\r\n<div class=\"container\">\r\n    <div class=\"Banhang-content\">\r\n        <h3>Quản lý shop của bạn một cách hiệu quả hơn</h3>\r\n        <h3>trên SNRKX với SNRKX - Kênh Người bán</h3>\r\n    </div>\r\n    <div class=\"Banhang-img\">\r\n        ");
             EndContext();
             BeginContext(328, 50, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c111520c64a1448a969a3e0f4106ade9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "4ba3b610c73f4a4dbfad36b6b9f88009", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

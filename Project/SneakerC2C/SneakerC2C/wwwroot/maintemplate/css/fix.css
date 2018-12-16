@@ -1194,6 +1194,8 @@
 .quangcao_item {
   width: 25%;
   height: 200px;
+  display: flex;
+  justify-content: center;
 }
 .fix_kichthuoc_qc {
   background-repeat: no-repeat;

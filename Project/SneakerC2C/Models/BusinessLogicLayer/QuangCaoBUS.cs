@@ -29,7 +29,7 @@ namespace Models.BusinessLogicLayer
             List<QuangCao> list = context.QuangCao.OrderBy(gh => gh.MaQuangCao)
                 .Include(gh => gh.IdGoiQuangCaoNavigation)
                 .Include(gh => gh.IdTaiKhoanNavigation)
-                .Where(gh =>gh.TinhTrang != "Sai dữ liệu")
+                .Where(gh =>gh.TinhTrang == "Không khoá")
                 .ToList();
                 
             return list;

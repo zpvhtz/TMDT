@@ -76,6 +76,17 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             SanPham sp = ctx.SanPham.Where(h => h.MaSanPham == ma).SingleOrDefault();
             sp.TinhTrang = "Khoá";
             ctx.SaveChanges();
+
+            List<SizeSanPham> listsize = ctx.SizeSanPham.Where(s => s.IdSanPhamNavigation.MaSanPham == ma)
+                                                        .Include(s => s.IdSanPhamNavigation)
+                                                        .ToList();
+
+            foreach(var item in listsize)
+            {
+                item.TinhTrang = "Khoá";
+            }
+            ctx.SaveChanges();
+
             return RedirectToAction("Index", "SanPham");
         }
         public IActionResult UnLockSP(string ma)
@@ -83,6 +94,17 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             SanPham sp = ctx.SanPham.Where(h => h.MaSanPham == ma).SingleOrDefault();
             sp.TinhTrang = "Không khoá";
             ctx.SaveChanges();
+
+            List<SizeSanPham> listsize = ctx.SizeSanPham.Where(s => s.IdSanPhamNavigation.MaSanPham == ma)
+                                                        .Include(s => s.IdSanPhamNavigation)
+                                                        .ToList();
+
+            foreach (var item in listsize)
+            {
+                item.TinhTrang = "Không khoá";
+            }
+            ctx.SaveChanges();
+
             return RedirectToAction("Index", "SanPham");
         }
         public IActionResult GetSizeSanPham(string masp)

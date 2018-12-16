@@ -82,14 +82,14 @@ namespace SneakerC2C
                     template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
                 );
 
-                //routes.MapRoute(
-                //    name: "default",
-                //    template: "{controller=Home}/{action=Index}/{id?}");
-                //Cmt lại để khi nào làm Web chính sẽ mở
-
                 routes.MapRoute(
                     name: "default",
-                    template: "{area=Webmaster}/{controller=Home}/{action=Index}/{id?}");
+                    template: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
+                //Cmt lại để khi nào làm Web chính sẽ mở
+
+                //routes.MapRoute(
+                //    name: "default",
+                //    template: "{area=Webmaster}/{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

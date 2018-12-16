@@ -443,6 +443,13 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             SanPham sp = ctx.SanPham.Where(s => s.Id == Guid.Parse(id)).SingleOrDefault();
             sp.TinhTrang = "Khoá_mer";
             ctx.SaveChanges();
+
+            List<SizeSanPham> listsize = ctx.SizeSanPham.Where(s => s.IdSanPham == Guid.Parse(id)).ToList();
+            foreach(var item in listsize)
+            {
+                item.TinhTrang = "Khoá";
+            }
+            ctx.SaveChanges();
         }
         public IActionResult ThemSP(string item_them_tensp,string item_them_mau, string item_them_hang, string item_them_phanloai, string item_them_gia, string item_them_chitiet, string item_them_giamgia, IFormFile item_them_hinh,int item_them_size,int item_them_soluong)
         {

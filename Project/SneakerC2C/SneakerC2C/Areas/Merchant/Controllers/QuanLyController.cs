@@ -76,7 +76,11 @@ namespace SneakerC2C.Areas.Merchant.Controllers
        
         public IActionResult ListSP(string thongbao, int? pagenumber)
         {
-            
+            //Thông báo
+            if (thongbao != null)
+            {
+                ViewBag.ThongBaoList = thongbao;
+            }
 
             pageNumber = pagenumber ?? 1;
             List<SizeSanPham> size = ctx.SizeSanPham.ToList();
@@ -93,6 +97,98 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             ViewBag.Date = date;
             return View(list);
         }
+
+        public List<SanPham> GetCD()
+        {
+            List<SanPham> list = ctx.SanPham.Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap"))
+                                          .Where(sp => sp.TinhTrang == "Chưa duyệt")
+                                           .Include(sp => sp.IdTaiKhoanNavigation)
+                                          .Include(sp => sp.IdHangSanPhamNavigation)
+                                          .ToList();
+            return list;
+        }
+        public List<SanPham> GetCD(int pagenumber, int pagesize)
+        {
+            List<SanPham> list = ctx.SanPham.Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap"))
+                                          .Where(sp => sp.TinhTrang == "Chưa duyệt")
+                                           .Include(sp => sp.IdTaiKhoanNavigation)
+                                          .Include(sp => sp.IdHangSanPhamNavigation)
+                                           .Skip((pagenumber - 1) * pagesize)
+                                           .Take(pagesize)
+                                           .ToList();
+            return list;
+        }
+
+        public IActionResult ChuaDuyetSP(int? pagenumber)
+        {
+            pageNumber = pagenumber ?? 1;
+            List<SizeSanPham> size = ctx.SizeSanPham.ToList();
+            ViewBag.Size = size;
+            List<SanPham> list = GetCD(pageNumber, pageSizeAll);
+            List<SanPham> tong = GetCD();
+            List<HangSanPham> hang = ctx.HangSanPham.ToList();
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TrangThai = "index";
+            ViewBag.HangSanPham = hang;
+            return View(list);
+        }
+
+
+        public IActionResult SearchCD(string search, int? pagenumber)
+        {
+            pageNumber = pagenumber ?? 1;
+            List<SanPham> list = pSearchCD(search, pageSizeAll, pageNumber);
+            List<SanPham> tong = pSearchCD(search, pageSizeAll);
+            ViewBag.TrangHienTai = pageNumber;
+            ViewBag.TongTrang = TongTrang(tong);
+            ViewBag.TrangThai = "search";
+            ViewBag.Search = search;
+            return View("ChuaDuyetSP", list);
+        }
+        //search list sp all
+        public List<SanPham> pSearchCD(string search, int pagesize, int pagenumber)
+        {
+            List<SanPham> list = new List<SanPham>();
+            if (search == null)
+            {
+                list = GetCD(1, pagesize);
+            }
+            else
+            {
+                list = ctx.SanPham.Where(l => l.MaSanPham.Contains(search) ||
+                                                   l.TenSanPham.Contains(search) ||
+                                                   l.Mau.Contains(search))
+                                       .Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap") && sp.TinhTrang == "Chưa duyệt")
+                                       .Include(sp => sp.IdTaiKhoanNavigation)
+                                           .Include(sp => sp.IdHangSanPhamNavigation)
+                                       .Skip((pagenumber - 1) * pagesize)
+                                       .Take(pagesize)
+                                       .ToList();
+            }
+            return list;
+        }
+        //search list sp all
+        public List<SanPham> pSearchCD(string search, int pagesize)
+        {
+            List<SanPham> list = new List<SanPham>();
+            if (search == null)
+            {
+                list = GetCD(1, pagesize);
+            }
+            else
+            {
+                list = ctx.SanPham.Where(l => l.MaSanPham.Contains(search) ||
+                                                   l.TenSanPham.Contains(search) ||
+                                                   l.Mau.Contains(search))
+                                       .Where(sp => sp.IdTaiKhoanNavigation.TenDangNhap == HttpContext.Session.GetString("TenDangNhap") && sp.TinhTrang == "Chưa duyệt")
+                                       .Include(sp => sp.IdTaiKhoanNavigation)
+                                        .Include(sp => sp.IdHangSanPhamNavigation)
+                                       .ToList();
+            }
+            return list;
+        }
+
         //search list sp all
         public IActionResult Search(string search, int? pagenumber)
         {
@@ -520,7 +616,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                 ctx.SanPham.Add(sp);
                 ctx.SaveChanges();
             }
-            return RedirectToAction("ListSP");
+            return RedirectToAction("ListSP", new { thongbao = "Thêm thành công!!!" });
         }
         public IActionResult ChiTiet(string Ma)
         {
@@ -578,7 +674,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
                 sizesp.SoLuong = item_sua_soluong;
                 ctx.SaveChanges();
             }
-            return RedirectToAction("ListSP");
+            return RedirectToAction("ListSP", new { thongbao = "Sửa thành công!!!" });
         }
 
         public IActionResult GetProductDetails(string id)

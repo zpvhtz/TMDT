@@ -6,10 +6,11 @@
 }
 <div class="row">
     <div class="col-lg-12">
-        <h2 class="page-header">DANH SÁCH HÃNG SẢN PHẨM</h2>
+        <h1 class="page-header">DANH SÁCH HÃNG SẢN PHẨM</h1>
     </div>
     <!-- /.col-lg-12 -->
 </div>
+<hr/>
 <div class="panel panel-default">
     <div class="panel-body">
         <!-- Search form -->
@@ -28,7 +29,7 @@
                     </select>
                 </div>
             </div>
-            <div class="col-lg-6"></div>
+   
             <div class="col-lg-3">
                 <form asp-controller="HangSanPham" asp-action="Search" method="get">
                     <div class="input-group custom-search-form">
@@ -253,7 +254,7 @@
         <form asp-controller="HangSanPham" asp-action="ThemHangSanPham" method="post">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
                     <h4 class="modal-title">Hãng sản phẩm</h4>
                 </div>
                 <div class="modal-body">
@@ -280,7 +281,7 @@
         <form asp-controller="HangSanPham" asp-action="SuaHangSanPham" method="post">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
                     <h4 class="modal-title">Hãng sản phẩm</h4>
                 </div>
                 <div class="modal-body">

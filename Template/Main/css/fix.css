@@ -1301,3 +1301,20 @@
   border: none;
   color: #fff;
 }
+.tt_trogiup {
+  width: 70%;
+  margin-top: 50px;
+}
+.tt_trogiup h2 {
+  text-align: center;
+}
+.tt_trogiup h4 {
+  line-height: 2;
+}
+.txt_tt_trogiup {
+  width: 100%;
+}
+.anh_hotro img {
+  width: 100%;
+  height: auto;
+}

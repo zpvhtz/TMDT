@@ -202,7 +202,7 @@
                     <div class="thongtin_nguoinhan">
                         <h4>Thông Tin Nhận Hàng</h4>
                         <h5 style="float:left;">@Model.IdTaiKhoanNavigation.Ten (@Model.IdTaiKhoanNavigation.DienThoai) <span>@Model.DiaChiGiao</span></h5>
-                        @if (Model.TinhTrang == "Đã đặt")
+                        @if (ViewBag.HuyDonHang == true)
                         {
                             <h4 style="float:right;"><span><a href="#" onclick="AskToCancel('@Model.MaDonHang')" style="color: red;">Huỷ đơn hàng</a></span></h4>
                         }

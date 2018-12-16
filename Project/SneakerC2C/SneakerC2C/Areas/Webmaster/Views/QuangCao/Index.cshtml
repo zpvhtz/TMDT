@@ -73,7 +73,8 @@
                     <td class="item-ma">@item.MaQuangCao</td>
                     <td class="item-goiquangcao">@item.IdGoiQuangCaoNavigation.MaGoiQuangCao</td>
                     <td class="item-taikhoan">@item.IdTaiKhoanNavigation.TenDangNhap</td>
-                    <td class="item-hinh"><img src="@Url.Content("~/Hinh/quangcao/" + @item.Hinh)" /></td>
+                    <td class="item-hinh"><img src="@Url.Content("~/Hinh/quangcao/" + @item.Hinh)" width="200" height="200"/></td>
+                    @*<td class="item-hinh"><div style="background-image:@Url.Content("~/Hinh/quangcao/" + @item.Hinh)"></div></td>*@
                     <td class="item-duongdan">@item.DuongDan</td>
                     <td class="item-ngaybatdau">@item.NgayBatDau</td>
                     <td class="item-ngayketthuc">@item.NgayKetThuc</td>

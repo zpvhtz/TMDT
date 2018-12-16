@@ -270,10 +270,10 @@
                                         </div>
                                         <div class="button_ct_huy">
                                             <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="ChiTietDonMua" asp-route-id="@item.Id"><button>Xem Chi Tiết Đơn Hàng</button></a>
-                                            @if (item.TinhTrang == "Đã đặt")
+                                            @*@if (item.TinhTrang == "Đã đặt")
                                             {
                                                 <a onclick="AskToCancel('@item.MaDonHang');"><button>Huỷ Đơn Hàng</button></a>
-                                            }
+                                            }*@
                                         </div>
                                     </div>
                                 </div>

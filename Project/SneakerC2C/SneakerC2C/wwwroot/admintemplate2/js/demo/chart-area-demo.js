@@ -11,16 +11,28 @@ function LoadDuLieuArea(nbd, nkt) {
         if (this.readyState == 4 && this.status == 200) {
             dt = [];
             lbl = [];
-            console.log(dt);
-            console.log(lbl);
+            //console.log(dt);
+            //console.log(lbl);
             obj = JSON.parse(this.responseText);
             for (let i = 0; i < obj.length; i++) {
                 lbl.push(obj[i]["Thang"]);
                 dt.push(parseInt(obj[i]["ThuNhap"]));
             }
             let temp2 = (Math.max(...dt) / 200000)
-            temp = Math.round((Math.max(...dt) / 200000)) * 200000 + 200000
+            if (dt < 100000) {
+                temp = Math.round((Math.max(...dt) / 20000)) * 20000 + 20000
+            }
+            else
+            {
+                if (dt < 1000000) {
+                    temp = Math.round((Math.max(...dt) / 200000)) * 200000 + 200000
+                }
+                else {
+                        temp = Math.round((Math.max(...dt) / 2000000)) * 2000000 + 2000000
+                }                                  
+            }
             Test();
+
 
         }
     };
@@ -39,7 +51,17 @@ function LoadDuLieuArea1(nbd, nkt) {
                 dt.push(parseInt(obj[i]["ThuNhap"]));
             }
             let temp2 = (Math.max(...dt) / 200000)
-            temp = Math.round((Math.max(...dt) / 200000)) * 200000 + 200000
+            if (dt < 100000) {
+                temp = Math.round((Math.max(...dt) / 20000)) * 20000 + 20000
+            }
+            else {
+                if (dt < 1000000) {
+                    temp = Math.round((Math.max(...dt) / 200000)) * 200000 + 200000
+                }
+                else {
+                    temp = Math.round((Math.max(...dt) / 2000000)) * 2000000 + 2000000
+                }
+            }
             Test1();
 
         }

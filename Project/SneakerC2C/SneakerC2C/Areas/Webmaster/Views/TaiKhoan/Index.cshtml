@@ -9,10 +9,11 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h2 class="page-header">DANH SÁCH TÀI KHOẢN</h2>
+        <h1 class="page-header">DANH SÁCH TÀI KHOẢN</h1>
     </div>
     <!-- /.col-lg-12 -->
 </div>
+<hr>
 
 <div class="panel panel-default">
     <div class="panel-body">
@@ -32,10 +33,14 @@
                     </select>
                 </div>
             </div>
+<<<<<<< HEAD
             <div class="col-lg-1">
                 <button class="btn btn-danger btnCanhBao" data-toggle="modal" data-target="#canhbaoModal">Cảnh báo</button>
             </div>
             <div class="col-lg-5"></div>
+=======
+
+>>>>>>> b01988c770ded180b6ae203109795f538461a4e5
             <div class="col-lg-3">
                 <form asp-controller="TaiKhoan" asp-action="Search" method="get">
                     <div class="input-group custom-search-form">
@@ -214,6 +219,7 @@
         </ul>
     </div>
 </div>
+</br>
 <!-- /.panel-body -->
 <!--canhcao--->
 <div class="modal fade" id="canhbaoModal" role="dialog">
@@ -241,7 +247,7 @@
         <form asp-controller="TaiKhoan" asp-action="CreateTaiKhoan" method="post">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
                     <h4 class="modal-title">Tài khoản</h4>
                 </div>
                 <div class="modal-body">
@@ -302,7 +308,7 @@
         <form asp-controller="TaiKhoan" asp-action="EditTaiKhoan" method="post">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
                     <h4 class="modal-title">Tài khoản</h4>
                 </div>
                 <div class="modal-body">

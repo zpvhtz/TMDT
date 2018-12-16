@@ -30,6 +30,12 @@ namespace Models.BusinessLogicLayer
             foreach(var item in listgiohang)
             {
                 SizeSanPham sizesanpham = context.SizeSanPham.Where(s => s.Id == item.IdSizeSanPham).Include(s => s.IdSanPhamNavigation).SingleOrDefault();
+                if(sizesanpham.TinhTrang == "Khoá")
+                {
+                    string thongbao = "";
+                    thongbao = "Sản phẩm " + sizesanpham.IdSanPhamNavigation.TenSanPham + " đã hết kinh doanh. Vui lòng gỡ sản phẩm khỏi giỏ hàng";
+                    return thongbao;
+                }
                 if(item.SoLuong > sizesanpham.SoLuong)
                 {
                     string thongbao = "";
@@ -196,7 +202,15 @@ namespace Models.BusinessLogicLayer
         public void HuyDonHang(string madonhang)
         {
             DonHang donhang = context.DonHang.Where(dh => dh.MaDonHang == madonhang).SingleOrDefault();
-            donhang.TinhTrang = "Đã huỷ";
+            donhang.TinhTrang = "Chưa xử lý";
+
+            List<ChiTietDonHang> chitietdonhang = context.ChiTietDonHang.Where(dh => dh.IdDonHangNavigation.MaDonHang == madonhang)
+                                                                        .Include(dh => dh.IdDonHangNavigation)
+                                                                        .ToList();
+            foreach(var item in chitietdonhang)
+            {
+                item.TinhTrangChiTiet = "Đã huỷ";
+            }
             context.SaveChanges();
         }
 

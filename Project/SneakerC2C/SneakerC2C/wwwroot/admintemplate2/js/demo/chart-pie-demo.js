@@ -11,14 +11,20 @@ function LoadDuLieuPie() {
             dt_pie = [];
             lbl_pie = [];
             obj_pie = JSON.parse(this.responseText);
-            console.log(dt_pie);
-            console.log(lbl_pie);
+            //console.log(dt_pie);
+            //xconsole.log(lbl_pie);
             for (let i = 0; i < obj_pie.length; i++) {
                 lbl_pie.push(obj_pie[i]["TenLoaiNguoiDung"]);
                 dt_pie.push(parseInt(obj_pie[i]["SoLuong"]));
             }
+            if (dt_bar < 1000000) {
+                temp_pie = Math.round((Math.max(...dt_pie) / 200000)) * 200000 + 200000
+            }
+            if (dt_bar > 1000000) {
+                temp_pie = Math.round((Math.max(...dt_pie) / 2000000)) * 2000000 + 2000000
+            }
             let temp2 = (Math.max(...dt) / 200000)
-            temp_pie = Math.round((Math.max(...dt) / 200000)) * 200000 + 200000
+
             Test_pie();
 
         }

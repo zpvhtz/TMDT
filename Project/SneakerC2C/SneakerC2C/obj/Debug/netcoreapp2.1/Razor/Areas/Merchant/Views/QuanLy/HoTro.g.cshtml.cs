@@ -53,7 +53,7 @@ namespace AspNetCore
             WriteLiteral("\r\n<div class=\"container tt_trogiup\">\r\n    <h2>Chào Mừng Bạn Đến Với Trung Tâm Trợ Giúp Người Bán</h2>\r\n    <br>\r\n    <h4>Các câu hỏi thường gặp:</h4>\r\n    <div class=\"txt_tt_trogiup\">\r\n        ");
             EndContext();
             BeginContext(353, 112, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ac73888852b4b95a82411e31186dc1c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "54c9b8738f9149b2abf9b54a88416f28", async() => {
                 BeginContext(429, 32, true);
                 WriteLiteral("Đăng 1 sản phẩm mới như thế nào?");
                 EndContext();
@@ -79,7 +79,7 @@ namespace AspNetCore
             WriteLiteral("\r\n    </div>\r\n    <div class=\"txt_tt_trogiup\">\r\n        ");
             EndContext();
             BeginContext(521, 129, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9554997454e148cc830e774568d83c3c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53cd01bb8d0843508535ba1e46f58a8f", async() => {
                 BeginContext(597, 49, true);
                 WriteLiteral("Vì sao sản phẩm của Shop tôi bị khóa hoặc bị xóa?");
                 EndContext();

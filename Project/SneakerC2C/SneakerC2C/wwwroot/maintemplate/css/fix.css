@@ -9,9 +9,12 @@
   color: #fc636b;
   padding: 5px 0;
 }
+.menu li{
+    width:20%
+}
 .Banhang-img {
-  width: 350px;
-  margin: 0 auto;
+    width: 350px;
+    margin: 0 auto;
 }
 /*Phân trang*/
 .phantrang {

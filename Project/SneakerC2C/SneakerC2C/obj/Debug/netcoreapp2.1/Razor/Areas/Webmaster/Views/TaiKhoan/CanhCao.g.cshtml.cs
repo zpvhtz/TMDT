@@ -141,7 +141,7 @@ namespace AspNetCore
             WriteLiteral("                            ");
             EndContext();
             BeginContext(1511, 128, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e34e2bbd46934d4c80fb22eeed59b277", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e2f2ad28c87a45949c225e0adc7c0fef", async() => {
                 BeginContext(1631, 4, true);
                 WriteLiteral("Khoá");
                 EndContext();
@@ -189,7 +189,7 @@ namespace AspNetCore
             WriteLiteral("                            ");
             EndContext();
             BeginContext(1772, 133, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7e473deb3bc9475faa3d51cf218bfdd2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "286e3460a3e343e095e7e54afb6b2ee0", async() => {
                 BeginContext(1894, 7, true);
                 WriteLiteral("Mở khoá");
                 EndContext();

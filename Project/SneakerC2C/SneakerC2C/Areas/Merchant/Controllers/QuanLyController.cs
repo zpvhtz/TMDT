@@ -23,11 +23,15 @@ namespace SneakerC2C.Areas.Merchant.Controllers
         {
             ctx = context;
         }
-        public IActionResult InThongBao()
+        [HttpPost]
+        public IActionResult InThongBao(SizeSanPham size)
         {
             string tentk = HttpContext.Session.GetString("TenDangNhap");
 
-            List<SizeSanPham> test = ctx.SizeSanPham.Where(s => s.IdSanPhamNavigation.IdTaiKhoanNavigation.TenDangNhap == tentk && s.SoLuong == 0).ToList();
+            List<SizeSanPham> test = ctx.SizeSanPham.Where(s => s.IdSanPhamNavigation.IdTaiKhoanNavigation.TenDangNhap == tentk && s.SoLuong == 0)
+                                                    .Include(s=>s.IdSanPhamNavigation)
+                                                    .Include(s=>s.IdSanPhamNavigation.IdTaiKhoanNavigation)
+                                                    .ToList();
 
             //TempData["AlertMessage"] = message;
 
@@ -35,7 +39,7 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             //{
             //    message = "Sản phẩm" + item.IdSanPhamNavigation.TenSanPham + "đã hết size" + item.Size;
             //}
-            return View("pIn", test);
+            return PartialView(test);
         }
         public IActionResult Index(string thongbao)
         {

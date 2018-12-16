@@ -34,7 +34,7 @@
 <div class="form-group">
     <label>Hinh</label>
     <img class="form-control" src="~/Hinh/SanPham/@Model.Hinh" style="width:200px; height:200px;" />
-    <input type="file" class="form-control" id="item-sua-hinh" name="item_sua_hinh" multiple>
+    <input type="file" class="form-control" id="item-sua-hinh" name="item_sua_hinh" accept="image/x-png,image/gif,image/jpeg" multiple />
 </div>
 <div class="form-group">
     <label>Chi tiết</label>
@@ -42,7 +42,7 @@
 </div>
 <div class="form-group">
     <label>Giảm giá</label>
-    <input type="text" class="form-control" id="item-sua-giamgia" name="item_sua_giamgia" value="@Model.GiamGia">
+    <input type="number" class="form-control" id="item-sua-giamgia" name="item_sua_giamgia" value="@Model.GiamGia">
 </div>
 <div class="form-group">
     <label>Size</label>
@@ -81,7 +81,12 @@
 </script>
 <script>
      $("#item-sua-gia").keydown(validateNumber);
-   $("item-sua-giamgia").keydown(validateNumber);
+    $("#item-sua-giamgia").change(function(){
+     if($(this).val() < 0)
+          $(this).val(0);
+     if($(this).val() > 100)
+          $(this).val(100);
+});
     $("#item-sua-size").change(function(){
         let id = $(this).val();
         if (id == "không")

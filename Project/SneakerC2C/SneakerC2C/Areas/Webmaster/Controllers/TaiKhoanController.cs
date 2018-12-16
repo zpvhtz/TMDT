@@ -15,6 +15,11 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
     {
         const int pageSize = 10;
         int pageNumber = 1;
+        private readonly QLBanGiayContext ctx;
+        public TaiKhoanController(QLBanGiayContext context)
+        {
+            ctx = context;
+        }
 
         public IActionResult Index(string thongbao, int? pagenumber)
         {
@@ -174,6 +179,21 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             ViewBag.Sort = sortorder;
             return View("Index", list);
         }
+        //những tài khoản có điểm đánh giá <=1,5
+        //public IActionResult CanhCao()
+        //{
+        //    //            select count(distinct (IdDonHang)) from ChiTietDonHang ct, SizeSanPham s
+        //    //where ct.IdSizeSanPham = s.Id
+        //    //group by IdDonHang
+            
+        //    var list = ctx.TaiKhoan.Where(s => s.DanhGia <= 1.5).Select(s =>s.Id).ToList();
+            
+        //    foreach(var item in list)
+        //    {
+
+        //    }
+        //}
+
 
         public int TongTrang(List<TaiKhoan> list)
         {

@@ -286,7 +286,7 @@
                         </div>
                         <div class="form-group">
                             <label>Hình</label>
-                            <input type="file" class="form-control" id="item-them-hinh" name="item_them_hinh">
+                            <input type="file" class="form-control" id="item-them-hinh" name="item_them_hinh" accept="image/x-png,image/gif,image/jpeg" multiple>
                         </div>
                         <div class="form-group">
                             <label>Chi tiết</label>
@@ -294,7 +294,7 @@
                         </div>
                         <div class="form-group">
                             <label>Giảm giá</label>
-                            <input type="text" class="form-control" id="item-them-giamgia" name="item_them_giamgia">
+                            <input type="number" class="form-control" id="item-them-giamgia" name="item_them_giamgia" min="0" max="100">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -351,7 +351,12 @@
     <script>
 
    $("#item-them-gia").keydown(validateNumber);
-   $("item-them-giamgia").keydown(validateNumber);
+    $("#item-them-giamgia").change(function(){
+     if($(this).val() < 0)
+          $(this).val(0);
+     if($(this).val() > 100)
+          $(this).val(100);
+});
    $(".pageNumber").click(function () {
         //Get addtional href
         let search = "@ViewBag.Search";

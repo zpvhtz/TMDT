@@ -1,0 +1,17 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "HoTro";
+    Layout = "~/Views/Shared/_MerchantManagementLayout.cshtml";
+}
+
+<div class="container tt_trogiup">
+    <h2>Chào Mừng Bạn Đến Với Trung Tâm Trợ Giúp Người Bán</h2>
+    <br>
+    <h4>Các câu hỏi thường gặp:</h4>
+    <div class="txt_tt_trogiup">
+        <a asp-area="Merchant" asp-controller="QuanLy" asp-action="HoTroTaoSanPham">Đăng 1 sản phẩm mới như thế nào?</a>
+    </div>
+    <div class="txt_tt_trogiup">
+        <a asp-area="Merchant" asp-controller="QuanLy" asp-action="HoTroXoaSanPham">Vì sao sản phẩm của Shop tôi bị khóa hoặc bị xóa?</a>
+    </div>
+</div>

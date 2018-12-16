@@ -701,5 +701,20 @@ namespace SneakerC2C.Areas.Merchant.Controllers
         {
             return ((list.Count / pageSize) + 1);
         }
+
+        public IActionResult HoTro()
+        {
+            return View();
+        }
+
+        public IActionResult HoTroTaoSanPham()
+        {
+            return View();
+        }
+
+        public IActionResult HoTroXoaSanPham()
+        {
+            return View();
+        }
     }
 }

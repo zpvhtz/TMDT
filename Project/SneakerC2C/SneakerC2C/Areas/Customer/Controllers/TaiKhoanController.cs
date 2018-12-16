@@ -432,6 +432,7 @@ namespace SneakerC2C.Areas.Customer.Controllers
                 return RedirectToAction("GioHang", "SanPham", new { tendangnhap = tendangnhap });
             }
             return RedirectToAction("Index", "Home");
-    }
+        }
+        //var list = ctx.ChiTietDonHang..GroupBy(s => s.IdDonHang).Count();
     }
 }

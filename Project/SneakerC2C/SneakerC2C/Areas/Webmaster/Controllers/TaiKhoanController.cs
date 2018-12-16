@@ -185,14 +185,29 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
         //    //            select count(distinct (IdDonHang)) from ChiTietDonHang ct, SizeSanPham s
         //    //where ct.IdSizeSanPham = s.Id
         //    //group by IdDonHang
-            
-        //    var list = ctx.TaiKhoan.Where(s => s.DanhGia <= 1.5).Select(s =>s.Id).ToList();
-            
-        //    foreach(var item in list)
-        //    {
+        //    //List<TaiKhoan> tk = new List<TaiKhoan>();
+        //    //var list = ctx.TaiKhoan.Where(s => s.DanhGia <= 1.5).Select(s => s.Id).ToList();
+        //    //int dem = 0;
+        //    ////foreach (var item in ctx.ChiTietDonHang)
+        //    ////{
+        //    ////    if()
+        //    ////    dem++;
+        //    ////}
+        //    //foreach(var tmp in list)
+        //    //{
+        //    //    string id;
+        //    //    foreach(var item in ctx.ChiTietDonHang)
+        //    //    {
+        //    //        if(tmp==item.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoan)
+        //    //        {
+        //    //            dem++;
+        //    //            id = item.IdDonHang.ToString();
+        //    //        }
+        //    //    }
+        //    //}
 
-        //    }
-        //}
+            
+        }
 
 
         public int TongTrang(List<TaiKhoan> list)

@@ -33,7 +33,10 @@
                     </select>
                 </div>
             </div>
-
+            <div class="col-lg-1">
+                <button class="btn btn-danger btnCanhBao" data-toggle="modal" data-target="#canhbaoModal">Cảnh báo</button>
+            </div>
+            <div class="col-lg-5"></div>
             <div class="col-lg-3">
                 <form asp-controller="TaiKhoan" asp-action="Search" method="get">
                     <div class="input-group custom-search-form">
@@ -214,6 +217,25 @@
 </div>
 </br>
 <!-- /.panel-body -->
+<!--canhcao--->
+<div class="modal fade" id="canhbaoModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Gian hàng</h4>
+            </div>
+            <div class="modal-body" id="canhbaoModal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Modal thêm -->
 <div class="modal fade" id="themModal" role="dialog">
     <div class="modal-dialog">
@@ -325,9 +347,9 @@
 </div>
 
 <!-- Modal địa chỉ -->
-<div class="modal fade" id="diachiModal" role="dialog">
+@*<div class="modal fade" id="diachiModal" role="dialog">
     <div class="modal-dialog">
-        <!-- Modal content-->
+         Modal content
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -341,12 +363,12 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
 
 <!-- Modal gian hàng -->
-<div class="modal fade" id="gianhangModal" role="dialog">
+@*<div class="modal fade" id="gianhangModal" role="dialog">
     <div class="modal-dialog">
-        <!-- Modal content-->
+         Modal content
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -360,7 +382,9 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
+
+
 
 @if (ViewBag.ThongBao != null)
 {
@@ -479,5 +503,18 @@
         href = href.join('/');
         href = href.toString().replace(/\/&/g, '&');
         $link.attr('href', href);
+    });
+
+    $(".btnCanhBao").click(function () {
+        $.ajax({
+            url: "/Webmaster/TaiKhoan/CanhCao",
+            type: "get",
+            success: function (data) {
+                $("#canhbaoModal-body").html(data);
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            }
+        });
     });
 </script>

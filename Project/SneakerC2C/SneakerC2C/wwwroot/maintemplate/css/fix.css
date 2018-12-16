@@ -9,9 +9,12 @@
   color: #fc636b;
   padding: 5px 0;
 }
+.menu li{
+    width:20%
+}
 .Banhang-img {
-  width: 350px;
-  margin: 0 auto;
+    width: 350px;
+    margin: 0 auto;
 }
 /*Phân trang*/
 .phantrang {
@@ -1307,12 +1310,32 @@
 }
 .button_xuly_merchant a {
     margin-left: 15px;
-=======
+}
 .ngay_thang button {
   margin-left: 30px;
   padding: 10px 25px;
   background-color: #2fdab8;
   border: none;
   color: #fff;
->>>>>>> e74041296e4875fb5e35ff4346dfa89bbe31a664
+}
+.tt_trogiup {
+    width: 70%;
+    margin-top: 50px;
+}
+
+    .tt_trogiup h2 {
+        text-align: center;
+    }
+
+    .tt_trogiup h4 {
+        line-height: 2;
+    }
+
+.txt_tt_trogiup {
+    width: 100%;
+}
+
+.anh_hotro img {
+    width: 100%;
+    height: auto;
 }

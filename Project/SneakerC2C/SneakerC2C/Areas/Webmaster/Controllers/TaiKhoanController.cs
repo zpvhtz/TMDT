@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Models;
 using Models.BusinessLogicLayer;
 using Models.Database;
@@ -179,37 +180,26 @@ namespace SneakerC2C.Areas.Webmaster.Controllers
             ViewBag.Sort = sortorder;
             return View("Index", list);
         }
-        //những tài khoản có điểm đánh giá <=1,5
-        //public IActionResult CanhCao()
-        //{
-        //    //            select count(distinct (IdDonHang)) from ChiTietDonHang ct, SizeSanPham s
-        //    //where ct.IdSizeSanPham = s.Id
-        //    //group by IdDonHang
-        //    //List<TaiKhoan> tk = new List<TaiKhoan>();
-        //    //var list = ctx.TaiKhoan.Where(s => s.DanhGia <= 1.5).Select(s => s.Id).ToList();
-        //    //int dem = 0;
-        //    ////foreach (var item in ctx.ChiTietDonHang)
-        //    ////{
-        //    ////    if()
-        //    ////    dem++;
-        //    ////}
-        //    //foreach(var tmp in list)
-        //    //{
-        //    //    string id;
-        //    //    foreach(var item in ctx.ChiTietDonHang)
-        //    //    {
-        //    //        if(tmp==item.IdSizeSanPhamNavigation.IdSanPhamNavigation.IdTaiKhoan)
-        //    //        {
-        //    //            dem++;
-        //    //            id = item.IdDonHang.ToString();
-        //    //        }
-        //    //    }
-        //    //}
-
-            
-        
-
-
+        public IActionResult CanhCao()
+        {
+            List<TaiKhoan> list = ctx.TaiKhoan.FromSql("p_CanhCao").ToList();
+            List<TaiKhoan> list2 = ctx.TaiKhoan.FromSql("p_CanhCao_Customer").ToList();
+            List<Guid> listguid = new List<Guid>();
+            foreach(var item in list)
+            {
+                listguid.Add(item.Id);
+            }
+            foreach(var item in list2)
+            {
+                listguid.Add(item.Id);
+            }
+            List<TaiKhoan> listtaikhoan = ctx.TaiKhoan.Where(t => listguid.Contains(t.Id))
+                                                      .Include(t => t.DanhGiaIdTaiKhoanDanhGiaNavigation)
+                                                      .Include(t => t.DanhGiaIdTaiKhoanDuocDanhGiaNavigation)
+                                                      .Include(t => t.IdLoaiNguoiDungNavigation)
+                                                      .ToList();
+            return PartialView("CanhCao",listtaikhoan);
+        }
         public int TongTrang(List<TaiKhoan> list)
         {
             return ((list.Count / pageSize) + 1);

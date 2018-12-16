@@ -6284,6 +6284,7 @@
       "sha512": "HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
       "type": "package",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
+      "hasTools": true,
       "files": [
         ".nupkg.metadata",
         "ThirdPartyNotices.rtf",
@@ -6589,6 +6590,7 @@
       "sha512": "+mMAfPku3xFvFgzEYtFYZ6yek8EJz6NJq6AhO/yaqW2RS+6INWS54dfhy3qOddX2EXqE1ZEhkz5L1Zf1F8rAdQ==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.tools/2.1.4",
+      "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -13323,23 +13325,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\ASUS\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\tnngo\\.nuget\\packages\\": {},
+>>>>>>> 30ddb9c8b27d029cfaebf2cdab92b22cccfcfae7
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
       "projectName": "Models",
       "projectPath": "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
       "outputPath": "F:\\GitHub\\TMDT\\Project\\SneakerC2C\\Models\\obj\\",
+=======
+      "projectUniqueName": "C:\\Code\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
+      "projectName": "Models",
+      "projectPath": "C:\\Code\\TMDT\\Project\\SneakerC2C\\Models\\Models.csproj",
+      "packagesPath": "C:\\Users\\tnngo\\.nuget\\packages\\",
+      "outputPath": "C:\\Code\\TMDT\\Project\\SneakerC2C\\Models\\obj\\",
+>>>>>>> 30ddb9c8b27d029cfaebf2cdab92b22cccfcfae7
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\tnngo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 30ddb9c8b27d029cfaebf2cdab92b22cccfcfae7
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

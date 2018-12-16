@@ -1,0 +1,193 @@
+﻿
+@model IEnumerable<Models.Database.SanPham>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "ChuaDuyetSP";
+    Layout = "~/Views/Shared/_MerchantManagementLayout.cshtml";
+}
+
+<div class="new_arrivals_agile_w3ls_info menu-qlsp">
+    <div class="container">
+        <div id="horizontalTab">
+            <ul class="resp-tabs-list menu">
+                <a asp-area="Merchant" asp-controller="QuanLy" asp-action="ListSP"><li>Tất cả</li></a>
+                <a asp-area="Merchant" asp-controller="QuanLy" asp-action="ConHang"><li>còn hàng</li></a>
+                <a asp-area="Merchant" asp-controller="QuanLy" asp-action="HetHang"><li>hết hàng</li></a>
+                <a asp-area="Merchant" asp-controller="QuanLy" asp-action="KhoaSP"><li>đã bị khoá</li></a>
+                <a asp-area="Merchant" asp-controller="QuanLy" asp-action="ChuaDuyetSP"><li style="background-color: #fc636b">chưa duyệt</li></a>
+            </ul>
+            <div class="col-md-5 header-middle fix_timkiem_merchant">
+                <form asp-action="SearchCD" asp-controller="QuanLy">
+                    <input type="search" name="search" placeholder="Tìm kiếm..." required="">
+                    <input type="submit" value=" ">
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+            <div class="resp-tabs-container">
+                <!--/tab_one-->
+                <div class="tab1">
+                    @{
+                        int i = 0;
+                    }
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-3 product-men margin_merchant">
+                            <div class="men-pro-item simpleCart_shelfItem">
+                                <div class="men-thumb-item">
+                                    <div class="men-thumb-item">
+                                        <input class="txtid-sanpham" type="text" hidden value="@item.Id" />
+                                        <div class="anhsanpham-3" style="background-image: url(/Hinh/SanPham/@item.Hinh);"></div>
+                                    </div>
+                                </div>
+                                <div class="item-info-product ">
+                                    <h4><a href="single.html" class="tieude_sanpham">@item.TenSanPham</a></h4>
+                                    <div class="info-product-price">
+                                        @if (item.GiamGia != null && item.GiamGia != 0)
+                                        {
+                                            double gia = item.Gia * (100 - item.GiamGia) / 100 ?? 0;
+                                            <p><span class="item_price">@gia.ToString("#,###") đ</span> <del>- @item.Gia.Value.ToString("#,###") đ</del></p>
+                                        }
+                                        else
+                                        {
+                                            <p><span class="item_price">@item.Gia.Value.ToString("#,###") đ</span></p>
+                                        }
+                                    </div>
+                                    <div class="button-sua-xoa">
+                                        <form>
+                                            @*<input type="button" value="Sửa" class="button-sua" onclick="location.href='#'" />*@
+                                            <input type="button" value="Xoá" class="button-xoa btnXoa" />
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        i++;
+                        if (i % 4 == 0)
+                        {
+                            <div class="clearfix"></div>
+                        }
+                    }
+                </div>
+                <!--//tab_one-->
+            </div>
+        </div>
+    </div>
+    <div>
+        <ul class="phantrang modal-1" style="padding-top: 1.5em;">
+            @if (ViewBag.TrangHienTai == 1)
+            {
+                <li class="paginate_button page-item previous disabled" id="dataTable_previous">
+                    <a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Trước</a>
+                </li>
+            }
+            else
+            {
+                <li class="paginate_button page-item previous" id="dataTable_previous">
+                    @switch (ViewBag.TrangThai)
+                    {
+                        case "index":
+                            <a asp-controller="QuanLy" asp-action="ChuaDuyetSP" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link pageNumber">Trước</a>
+                            break;
+                        case "search":
+                            <a asp-controller="QuanLy" asp-action="SearchCD" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai - 1)" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link pageNumber">Trước</a>
+                            break;
+                    }
+                </li>
+            }
+            @for (int k = 1; k <= ViewBag.TongTrang; k++)
+            {
+                if (k > 5)
+                {
+                    <li class="paginate_button page-item" disabled><a class="page-link" aria-controls="dataTable" data-dt-idx="0" tabindex="0" href="#">...</a></li>
+                    <li class="paginate_button page-item">
+                        @switch (ViewBag.TrangThai)
+                        {
+                            case "index":
+                                <a asp-controller="QuanLy" asp-action="ChuaDuyetSP" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                break;
+
+                            case "search":
+                                <a asp-controller="QuanLy" asp-action="SearchCD" asp-route-pagenumber="@Html.Raw(ViewBag.TongTrang)" class="pageNumber">@ViewBag.TongTrang</a>
+                                break;
+
+                        }
+                    </li>
+                    break;
+                }
+                else
+                {
+                    if (k == ViewBag.TrangHienTai)
+                    {
+                        <li class="paginate_button page-item active"><a href="#" class="page-link" aria-controls="dataTable" data-dt-idx="2" tabindex="0">@k</a></li>
+                    }
+                    else
+                    {
+                        <li class="paginate_button page-item" aria-controls="dataTables-example" tabindex="0">
+                            @switch (ViewBag.TrangThai)
+                            {
+                                case "index":
+                                    <a asp-controller="QuanLy" asp-action="ChuaDuyetSP" asp-route-pagenumber="@k" class="page-link pageNumber" aria-controls="dataTable" data-dt-idx="3" tabindex="0">@i</a>
+                                    break;
+                                case "search":
+                                    <a asp-controller="QuanLy" asp-action="SearchCD" asp-route-pagenumber="@k" class="page-link pageNumber" aria-controls="dataTable" data-dt-idx="3" tabindex="0">@i</a>
+                                    break;
+                            }
+                        </li>
+                    }
+                }
+            }
+            @if (ViewBag.TrangHienTai == ViewBag.TongTrang)
+            {
+                <li class="paginate_button page-item next disabled" id="dataTable_next"><a class="page-link" aria-controls="dataTable" data-dt-idx="7" tabindex="0" href="#">Tiếp</a></li>
+            }
+            else
+            {
+                <li class="paginate_button page-item next" id="dataTable_next">
+                    @switch (ViewBag.TrangThai)
+                    {
+                        case "index":
+                            <a asp-controller="QuanLy" asp-action="ChuaDuyetSP" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link pageNumber">Tiếp</a>
+                            break;
+                        case "search":
+                            <a asp-controller="QuanLy" asp-action="SearchCD" asp-route-pagenumber="@Html.Raw(ViewBag.TrangHienTai + 1)" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link pageNumber">Tiếp</a>
+                            break;
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="~/maintemplate/js/jquery-2.1.4.min.js"></script>
+<script>
+   $(".pageNumber").click(function () {
+        //Get addtional href
+        let search = "@ViewBag.Search";
+        //Href
+        var $link = $('.pageNumber');
+        var href = $link.attr('href').split('/');
+        if (search != null && search != '') {
+            href.push('&search=' + search); //here you set your new asp-route-pagenumber value
+        }
+        href = href.join('/');
+        href = href.toString().replace(/\/&/g, '&');
+        $link.attr('href', href);
+    });
+    @*$(".btnXoa").click(function () {
+        let id = $(this).closest(".men-pro-item").find(".txtid-sanpham").val();
+        $.ajax({
+            url: "/Merchant/QuanLy/XoaSP",
+            type: "post",
+            data: { "id": id },
+            success: function (data) {
+                alert("Xoá thành công");
+                window.location = "@Url.Action("ListSP", "QuanLy")";
+            },
+            error: function (data) {
+                alert("Error: " + data);
+            }
+        });*@
+    });
+</script>
+
+
+

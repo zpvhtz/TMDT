@@ -169,3 +169,30 @@ GO
 
 --exec P_HetHang_Search 'merchant1', N'Aktiv', 12, 1
 
+create proc p_CanhCao
+as
+	select * from TaiKhoan where DanhGia<=1.5 and Id in
+	(
+		select IdTaiKhoan
+		from ChiTietDonHang c, SizeSanPham s, SanPham sp
+		where c.IdSizeSanPham=s.Id and s.IdSanPham=sp.Id AND c.DiemCustomerDanhGia > 0
+		group by IdTaiKhoan
+		having count(distinct(IdDonHang)) >= 5
+	)
+	
+go
+
+create proc p_CanhCao_Customer
+as
+	select *
+	from TaiKhoan
+	where DanhGia <= 1.5 and Id in
+	(
+		select IdTaiKhoan
+		from DonHang dh JOIN ChiTietDonHang ct ON dh.Id = ct.IdDonHang
+		where ct.DiemMerchantDanhGia > 0
+		group by IdTaiKhoan
+		having count(distinct(Id)) >= 5
+	)
+	
+go

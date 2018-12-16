@@ -451,7 +451,8 @@ namespace SneakerC2C.Areas.Merchant.Controllers
             if (date >DateTime.Now)
             {
                 string tentk = HttpContext.Session.GetString("TenDangNhap");
-                var idtk = ctx.SanPham.Where(s => s.IdTaiKhoanNavigation.TenDangNhap == tentk).Select(s => s.IdTaiKhoan).FirstOrDefault();
+                //var idtk = ctx.SanPham.Where(s => s.IdTaiKhoanNavigation.TenDangNhap == tentk).Select(s => s.IdTaiKhoan).FirstOrDefault();
+                var idtk = ctx.TaiKhoan.Where(t => t.TenDangNhap == tentk).Select(t => t.Id).FirstOrDefault();
                 //Guid tk = ctx.TaiKhoan.Where(t => t.Ten == HttpContext.Session.GetString("TenDangNhap")).Select(t=>t.Id).SingleOrDefault();
                 SanPham sp = new SanPham();
                 string mamoi = "";

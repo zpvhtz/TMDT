@@ -58,6 +58,8 @@ namespace SneakerC2C.Areas.Customer.Controllers
         {
             TaiKhoanBUS taikhoanbus = new TaiKhoanBUS();
             TaiKhoan taikhoan = taikhoanbus.CheckTaiKhoanResetPassword(key);
+            List<HangSanPham> hang = ctx.HangSanPham.ToList();
+            ViewBag.Hang = hang;
             return View(taikhoan);
         }
 

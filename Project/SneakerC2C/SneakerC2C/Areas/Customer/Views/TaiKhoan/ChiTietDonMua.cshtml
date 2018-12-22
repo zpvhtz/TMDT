@@ -117,7 +117,7 @@
                                 </a>
                             </div>
                         }
-                        @if (Context.Request.QueryString.Value.Contains("tinhtrang=dangxuly"))
+                        @*@if (Context.Request.QueryString.Value.Contains("tinhtrang=dangxuly"))
                         {
                             <div class="trangthai_donmua">
                                 <a asp-area="Customer" asp-controller="TaiKhoan" asp-action="DonMua" asp-route-tinhtrang="dangxuly">
@@ -142,7 +142,7 @@
                                     <h5>Đơn Hàng Đang Xử Lý</h5>
                                 </a>
                             </div>
-                        }
+                        }*@
                         @if (Context.Request.QueryString.Value.Contains("tinhtrang=daxuly"))
                         {
                             <div class="trangthai_donmua">
@@ -255,7 +255,7 @@
                                 <div class="hinh_sanpham_giohang hinh_donhang" style="background-image:url(/Hinh/SanPham/@it.IdSizeSanPhamNavigation.IdSanPhamNavigation.Hinh);"></div>
                                 <div class="form_ten_sp_giohang ten_sp_donhang">
                                     <h5>
-                                        @it.IdSizeSanPhamNavigation.IdSanPhamNavigation.TenSanPham
+                                        @it.IdSizeSanPhamNavigation.IdSanPhamNavigation.TenSanPham (Size: @it.IdSizeSanPhamNavigation.Size)
                                     </h5>
                                     <h5>x @it.SoLuong</h5>
                                 </div>

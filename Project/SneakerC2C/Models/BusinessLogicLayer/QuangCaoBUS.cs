@@ -124,7 +124,7 @@ namespace Models.BusinessLogicLayer
             return list;
         }
 
-        public string CreateQuangCao(string ma, string goiquangcao, string taikhoan, string hinh, DateTime ngaybatdau, string duongdan, string chuthich)
+        public string CreateQuangCao(/*string ma, */string goiquangcao, string taikhoan, string hinh, DateTime ngaybatdau, string duongdan, string chuthich)
         {
             QuangCao quangcao;
             GoiQuangCao goi;
@@ -132,21 +132,37 @@ namespace Models.BusinessLogicLayer
 
             //Kiểm tra
             //Tên đăng nhập
-            quangcao = context.QuangCao.Where(gh => gh.MaQuangCao == ma).SingleOrDefault();
-            if (quangcao != null)
-            {
-                return "Quảng cáo này đã tồn tại";
-            }
+            //quangcao = context.QuangCao.Where(gh => gh.MaQuangCao == ma).SingleOrDefault();
+            //if (quangcao != null)
+            //{
+            //    return "Quảng cáo này đã tồn tại";
+            //}
             tk = context.TaiKhoan.Where(gh => gh.TenDangNhap == taikhoan).SingleOrDefault();
             if( tk == null)
             {
                 return "Không tồn tại tài khoản này";
             }
-           
+
+            //Get mã quảng cáo
+            string magianhangmoi = "";
+            QuangCao gianhangcu = context.QuangCao.OrderByDescending(gh => gh.MaQuangCao.Substring(2)).FirstOrDefault();
+            if (gianhangcu == null)
+            {
+                magianhangmoi = "QC1";
+            }
+            else
+            {
+                string magianhangcu = gianhangcu.MaQuangCao;
+                int stt = int.Parse(magianhangcu.Substring(2));
+                stt += 1;
+                magianhangmoi = "QC" + stt.ToString();
+            }
+
+
             //Thêm
             quangcao = new QuangCao();
             quangcao.Id = Guid.Parse(Guid.NewGuid().ToString().ToUpper());
-            quangcao.MaQuangCao = ma;
+            quangcao.MaQuangCao = magianhangmoi;
 
             quangcao.IdGoiQuangCao = Guid.Parse(goiquangcao);
 
